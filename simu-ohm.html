@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loi d'Ohm - Laboratoire Virtuel</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f4f4f9; padding: 20px; text-align: center; }
+        .container { max-width: 600px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-top: 8px solid #e91e63; }
+        h2 { color: #e91e63; }
+        .calcul-box { display: flex; justify-content: space-around; margin: 30px 0; align-items: center; }
+        .param { display: flex; flex-direction: column; gap: 10px; }
+        input { padding: 10px; width: 100px; border: 2px solid #eee; border-radius: 8px; text-align: center; font-size: 1.1em; }
+        .result { font-size: 1.5em; font-weight: bold; color: #28a745; margin-top: 20px; padding: 15px; background: #f0fff4; border-radius: 8px; }
+        .btn-retour { display: inline-block; margin-bottom: 20px; color: #666; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <a href="simulations.html" class="btn-retour">← Retour au labo</a>
+    <div class="container">
+        <h2>⚡ Calculateur Loi d'Ohm</h2>
+        <p>Entrez deux valeurs pour trouver la troisième (\( U = R \times I \))</p>
+        
+        <div class="calcul-box">
+            <div class="param">
+                <label>U (Volts)</label>
+                <input type="number" id="u" placeholder="?">
+            </div>
+            <div class="param">
+                <label>R (Ohms)</label>
+                <input type="number" id="r" placeholder="?">
+            </div>
+            <div class="param">
+                <label>I (Ampères)</label>
+                <input type="number" id="i" placeholder="?">
+            </div>
+        </div>
+        
+        <button onclick="calculerOhm()" style="padding: 10px 20px; background: #e91e63; color: white; border: none; border-radius: 5px; cursor: pointer;">Calculer</button>
+        <div id="resOhm" class="result">En attente...</div>
+    </div>
+
+    <script>
+        function calculerOhm() {
+            let u = document.getElementById('u').value;
+            let r = document.getElementById('r').value;
+            let i = document.getElementById('i').value;
+            let res = document.getElementById('resOhm');
+
+            if (u && r && !i) {
+                res.innerText = "I = " + (u / r).toFixed(3) + " A";
+            } else if (u && i && !r) {
+                res.innerText = "R = " + (u / i).toFixed(2) + " Ω";
+            } else if (r && i && !u) {
+                res.innerText = "U = " + (r * i).toFixed(2) + " V";
+            } else {
+                res.innerText = "Laissez une case vide pour la calculer !";
+            }
+        }
+    </script>
+</body>
+</html>
