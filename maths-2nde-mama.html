@@ -3,47 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maths 2nde MAMA - BO</title>
+    <title>Maths 2nde Pro - Suivi Delagrave</title>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; background-color: #f4f4f9; padding: 20px; }
-        .container { max-width: 800px; margin: auto; }
-        header { background: #0969da; color: white; padding: 20px; border-radius: 8px; text-align: center; position: relative; }
-        .btn-retour { position: absolute; left: 15px; top: 15px; color: white; text-decoration: none; font-weight: bold; }
-        .section { background: white; margin-top: 20px; padding: 20px; border-radius: 8px; border-left: 5px solid #0969da; }
-        h3 { color: #0969da; border-bottom: 1px solid #eee; padding-bottom: 5px; }
-        ul { list-style: none; padding: 0; }
-        li { margin-bottom: 10px; padding: 10px; background: #f9f9f9; border-radius: 4px; display: flex; justify-content: space-between; }
-        .badge { background: #e1effe; color: #0969da; padding: 2px 8px; border-radius: 10px; font-size: 0.8em; }
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f4f7f9; padding: 20px; color: #333; }
+        .container { max-width: 1000px; margin: auto; }
+        header { background: #0056b3; color: white; padding: 25px; border-radius: 10px; text-align: center; margin-bottom: 25px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        
+        .domain-box { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-top: 4px solid #0056b3; }
+        .domain-header { background: #e9ecef; padding: 10px 15px; font-weight: bold; color: #0056b3; border-bottom: 1px solid #dee2e6; }
+        
+        ul { list-style: none; padding: 0; margin: 0; }
+        li { padding: 12px 15px; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center; transition: 0.2s; }
+        li:hover { background: #f8f9fa; }
+        li:last-child { border-bottom: none; }
+        
+        .ch-num { background: #0056b3; color: white; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 0.8em; margin-right: 12px; flex-shrink: 0; }
+        .ch-title { flex-grow: 1; font-size: 0.95em; }
+        .badge { font-size: 0.75em; padding: 2px 8px; border-radius: 4px; margin-left: 10px; }
+        .bg-blue { background: #e1f5fe; color: #0288d1; }
+        .bg-green { background: #e8f5e9; color: #2e7d32; }
+
+        .transversal { margin-top: 30px; background: #fff; padding: 20px; border-radius: 8px; border: 1px dashed #0056b3; }
+        .competences { display: flex; justify-content: space-around; flex-wrap: wrap; margin-top: 15px; gap: 10px; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <a href="index.html" class="btn-retour">← Accueil</a>
-            <h1>📘 Mathématiques - 2nde MAMA</h1>
-        </header>
 
-        <div class="section">
-            <h2>📖 Domaines du Programme (BO)</h2>
-            
-            <h3>📊 Statistique et probabilités</h3>
+<div class="container">
+    <header>
+        <h1>📘 Mathématiques 2<sup>nde</sup> Pro</h1>
+        <p>Progression conforme au manuel Delagrave & Programme Officiel</p>
+    </header>
+
+    <div class="grid">
+        <div class="domain-box">
+            <div class="domain-header">📊 Statistique et probabilités [cite: 150]</div>
             <ul>
-                <li><span>Statistique à une variable</span> <span class="badge">BO</span></li>
-                <li><span>Fluctuations et Probabilités</span> <span class="badge">BO</span></li>
+                <li><div class="ch-num">1</div><div class="ch-title">Proportionnalité – Pourcentages</div></li>
+                <li><div class="ch-num">2</div><div class="ch-title">Statistiques à une variable</div></li>
+                <li><div class="ch-num">3</div><div class="ch-title">Calculs statistiques</div></li>
+                <li><div class="ch-num">4</div><div class="ch-title">Fréquence d’échantillons – Probabilité</div></li>
             </ul>
+        </div>
 
-            <h3>📈 Algèbre - Analyse</h3>
+        <div class="domain-box">
+            <div class="domain-header">📈 Algèbre - Analyse [cite: 203]</div>
             <ul>
-                <li><span>Résolution de problèmes du 1er degré</span> <span class="badge">BO</span></li>
-                <li><span>Fonctions (Linéaires, Affines, Carré)</span> <span class="badge">BO</span></li>
+                <li><div class="ch-num">5</div><div class="ch-title">Résolution d’un problème du $1^{er}$ degré</div></li>
+                <li><div class="ch-num">6</div><div class="ch-title">Notion de fonction</div></li>
+                <li><div class="ch-num">7</div><div class="ch-title">Fonction affine</div></li>
+                <li><div class="ch-num">8</div><div class="ch-title">Fonctions de référence</div></li>
             </ul>
+        </div>
 
-            <h3>📐 Géométrie</h3>
+        <div class="domain-box" style="grid-column: span 1;">
+            <div class="domain-header">📐 Géométrie [cite: 312]</div>
             <ul>
-                <li><span>Géométrie plane (Pythagore, Thalès)</span> <span class="badge">BO</span></li>
-                <li><span>Solides usuels et Volumes</span> <span class="badge">BO</span></li>
+                <li><div class="ch-num">9</div><div class="ch-title">Géométrie dans le triangle</div></li>
+                <li><div class="ch-num">10</div><div class="ch-title">Aires et volumes</div></li>
             </ul>
         </div>
     </div>
+
+    <div class="transversal">
+        <h3>🛠️ Modules transversaux & Méthodes</h3>
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+            <div>
+                <strong>Algorithmique [cite: 341]</strong>
+                <ul style="font-size: 0.85em; color: #555;">
+                    <li>• Instructions d'entrée/sortie</li>
+                    <li>• Boucles bornées et non bornées</li>
+                    <li>• Utilisation de Python</li>
+                </ul>
+            </div>
+            <div>
+                <strong>Automatismes [cite: 369]</strong>
+                <ul style="font-size: 0.85em; color: #555;">
+                    <li>• Calcul mental et puissances de 10</li>
+                    <li>• Transformation de formules</li>
+                    <li>• Équations de type $ax=b$</li>
+                </ul>
+            </div>
+            <div>
+                <strong>Logique [cite: 401]</strong>
+                <ul style="font-size: 0.85em; color: #555;">
+                    <li>• Ensembles et sous-ensembles</li>
+                    <li>• Intersection et réunion</li>
+                    <li>• Implication et équivalence</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="transversal" style="border-color: #2e7d32;">
+        <h3 style="color: #2e7d32;">🎯 Compétences travaillées [cite: 45]</h3>
+        <div class="competences">
+            <span class="badge bg-green">S'approprier</span>
+            <span class="badge bg-green">Analyser</span>
+            <span class="badge bg-green">Raisonner</span>
+            <span class="badge bg-green">Réaliser</span>
+            <span class="badge bg-green">Valider</span>
+            <span class="badge bg-green">Communiquer</span>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
