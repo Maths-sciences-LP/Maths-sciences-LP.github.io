@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ch06 – Caractéristiques et transmission d'un son | Cours</title>
+<style>
+:root{--p:#6f42c1;--pl:#f3eeff;--pd:#4b2e83;--g:#28a745;--gl:#e8f5e9;--o:#fd7e14;--ol:#fff3e0;--r:#dc3545;--rl:#fdecea;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f5f5;color:#222;line-height:1.6;}
+header{background:var(--p);color:#fff;padding:16px 24px;display:flex;align-items:center;gap:12px;}
+header h1{font-size:1.3rem;}header .badge{background:rgba(255,255,255,.25);padding:3px 10px;border-radius:12px;font-size:.85rem;}
+nav{background:var(--pd);padding:8px 24px;display:flex;gap:16px;flex-wrap:wrap;}
+nav a{color:rgba(255,255,255,.85);text-decoration:none;font-size:.9rem;padding:3px 8px;border-radius:4px;transition:.2s;}
+nav a:hover{background:rgba(255,255,255,.2);}nav a.active{background:rgba(255,255,255,.3);font-weight:600;}
+.container{max-width:860px;margin:24px auto;padding:0 16px;}
+.card{background:#fff;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.08);margin-bottom:20px;overflow:hidden;}
+.card-header{background:var(--p);color:#fff;padding:10px 18px;font-weight:600;font-size:1rem;}
+.card-body{padding:18px;}
+.def-box{background:var(--pl);border-left:4px solid var(--p);padding:12px 16px;border-radius:0 6px 6px 0;margin:12px 0;}
+.def-box strong{color:var(--pd);}
+.prop-box{background:#e8f4fd;border-left:4px solid #0d6efd;padding:12px 16px;border-radius:0 6px 6px 0;margin:12px 0;}
+.prop-box strong{color:#0a3d8f;}
+.attn-box{background:var(--ol);border-left:4px solid var(--o);padding:12px 16px;border-radius:0 6px 6px 0;margin:12px 0;}
+.attn-box strong{color:#b45300;}
+.ex-box{background:#f8f9fa;border:1px solid #dee2e6;padding:12px 16px;border-radius:6px;margin:12px 0;}
+.ex-box strong{color:var(--p);}
+table{width:100%;border-collapse:collapse;margin:12px 0;}
+th{background:var(--p);color:#fff;padding:8px 12px;text-align:left;}
+td{padding:8px 12px;border-bottom:1px solid #eee;}
+tr:nth-child(even) td{background:#f9f6ff;}
+.footer-links{text-align:center;margin-top:32px;padding:16px;background:#fff;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.08);}
+.footer-links a{color:var(--p);text-decoration:none;margin:0 12px;font-weight:500;}
+.footer-links a:hover{text-decoration:underline;}
+h2{color:var(--pd);font-size:1.1rem;margin:16px 0 8px;}
+p{margin:6px 0;}
+</style>
+<script>MathJax={tex:{inlineMath:[['$','$']]},startup:{typeset:true}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<header>
+  <div>
+    <div class="badge">Acoustique – Chapitre 6</div>
+    <h1>Caractéristiques et transmission d'un son</h1>
+  </div>
+</header>
+<nav>
+  <a href="pc-2nde-pro.html">← Accueil PC</a>
+  <a href="pc2-ch06_lecon.html" class="active">Cours</a>
+  <a href="pc2-ch06_exos.html">Exercices</a>
+  <a href="pc2-ch06_ds.html">Devoir</a>
+</nav>
+<div class="container">
+
+  <div class="card">
+    <div class="card-header">1. Qu'est-ce qu'un son ?</div>
+    <div class="card-body">
+      <div class="def-box"><strong>Définition :</strong> Un son est une <strong>vibration mécanique</strong> qui se propage dans un milieu matériel (solide, liquide ou gazeux) sous forme d'ondes de pression.</div>
+      <p>Le son est produit par la vibration d'un objet (corde, membrane, colonne d'air…). Ces vibrations se transmettent aux molécules du milieu et créent des zones alternées de compression et de dépression.</p>
+      <div class="attn-box"><strong>⚠ Attention :</strong> Le son ne se propage <strong>pas dans le vide</strong> car il a besoin d'un milieu matériel pour se transmettre.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">2. Caractéristiques d'un son</div>
+    <div class="card-body">
+      <h2>a) La fréquence (hauteur du son)</h2>
+      <div class="def-box"><strong>Définition :</strong> La <strong>fréquence</strong> $f$ d'un son est le nombre de vibrations par seconde. Elle s'exprime en <strong>hertz (Hz)</strong>.</div>
+      <div class="prop-box"><strong>Propriété :</strong> Plus la fréquence est élevée, plus le son est <strong>aigu</strong>. Plus la fréquence est faible, plus le son est <strong>grave</strong>.</div>
+      <p>L'oreille humaine perçoit les sons dont la fréquence est comprise entre <strong>20 Hz et 20 000 Hz</strong>.</p>
+      <table>
+        <tr><th>Type d'onde</th><th>Fréquence</th><th>Exemple</th></tr>
+        <tr><td>Infrason</td><td>$f &lt; 20$ Hz</td><td>Séismes, éléphants</td></tr>
+        <tr><td>Son audible</td><td>$20$ Hz $leq f leq 20000$ Hz</td><td>Musique, voix humaine</td></tr>
+        <tr><td>Ultrason</td><td>$f &gt; 20000$ Hz</td><td>Chauves-souris, échographie</td></tr>
+      </table>
+      
+      <h2>b) L'amplitude (intensité du son)</h2>
+      <div class="def-box"><strong>Définition :</strong> L'<strong>amplitude</strong> d'un son correspond à l'intensité des vibrations. Plus l'amplitude est grande, plus le son est <strong>fort (fort)</strong>.</div>
+      <p>Le niveau sonore se mesure en <strong>décibels (dB)</strong>. Le seuil de douleur est fixé à <strong>120 dB</strong>.</p>
+      
+      <h2>c) Le timbre (qualité du son)</h2>
+      <div class="def-box"><strong>Définition :</strong> Le <strong>timbre</strong> est la qualité d'un son qui permet de distinguer deux instruments jouant la même note à la même intensité.</div>
+      <p>Le timbre dépend de la forme de la vibration et des harmoniques présents dans le son.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">3. Propagation du son</div>
+    <div class="card-body">
+      <div class="def-box"><strong>Définition :</strong> La <strong>célérité</strong> (ou vitesse) du son $v$ est la vitesse à laquelle le son se propage dans un milieu.</div>
+      <table>
+        <tr><th>Milieu</th><th>Célérité approximative</th></tr>
+        <tr><td>Air (20°C)</td><td>$v approx 340$ m/s</td></tr>
+        <tr><td>Eau</td><td>$v approx 1500$ m/s</td></tr>
+        <tr><td>Acier</td><td>$v approx 5000$ m/s</td></tr>
+      </table>
+      <div class="prop-box"><strong>Propriété :</strong> Le son se propage <strong>plus vite</strong> dans les solides que dans les liquides, et plus vite dans les liquides que dans les gaz.</div>
+      
+      <h2>Relation fondamentale</h2>
+      <div class="def-box"><strong>Formule :</strong> $$v = d div t$$ où $v$ est la célérité en m/s, $d$ la distance en m, $t$ le temps en s.</div>
+      <div class="ex-box"><strong>Exemple :</strong> Un éclair est vu 3 secondes avant que le tonnerre soit entendu. La distance de l'orage est : $d = v 	imes t = 340 	imes 3 = 1020$ m $approx 1$ km.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">4. Relation fréquence – longueur d'onde – célérité</div>
+    <div class="card-body">
+      <div class="def-box"><strong>Définition :</strong> La <strong>longueur d'onde</strong> $lambda$ est la distance parcourue par le son pendant une période $T$ (durée d'une vibration).</div>
+      <div class="prop-box"><strong>Formule :</strong> $$lambda = rac{v}{f}$$ avec $lambda$ en m, $v$ en m/s et $f$ en Hz.</div>
+      <div class="ex-box"><strong>Exemple :</strong> Pour un son de fréquence $f = 440$ Hz (note La) dans l'air : $lambda = rac{340}{440} approx 0{,}77$ m.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">5. Résumé</div>
+    <div class="card-body">
+      <table>
+        <tr><th>Caractéristique</th><th>Grandeur physique</th><th>Unité</th></tr>
+        <tr><td>Hauteur</td><td>Fréquence $f$</td><td>hertz (Hz)</td></tr>
+        <tr><td>Intensité</td><td>Amplitude / Niveau sonore</td><td>décibel (dB)</td></tr>
+        <tr><td>Timbre</td><td>Forme de l'onde</td><td>—</td></tr>
+        <tr><td>Propagation</td><td>Célérité $v$</td><td>m/s</td></tr>
+        <tr><td>Longueur d'onde</td><td>$lambda = v / f$</td><td>mètre (m)</td></tr>
+      </table>
+    </div>
+  </div>
+
+</div>
+<div class="footer-links">
+  <a href="pc-2nde-pro.html">← Retour au sommaire</a>
+  <a href="pc2-ch06_exos.html">Exercices →</a>
+  <a href="pc2-ch06_ds.html">Devoir →</a>
+</div>
+</body>
+</html>
