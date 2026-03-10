@@ -2,12 +2,10 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Ch.14 &mdash; Lumi&egrave;re, couleurs et photod&eacute;tecteurs &mdash; 2nde Pro MAMA</title>
-<script>
-MathJax = {tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]}};
-</script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch14 &ndash; Lumi&egrave;re, couleurs et photod&eacute;tecteurs &mdash; 2nde Pro MAMA</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <style>
 :root{--p:#6f42c1;--s:#2f855a;--d:#c53030;--o:#d97706;--t:#2d3748}
 body{font-family:'Segoe UI',system-ui,sans-serif;background:#f8fafc;color:var(--t);line-height:1.7;margin:0;padding:20px}
@@ -42,479 +40,803 @@ th{background:#f3f0ff;font-weight:600;color:var(--p)}
 .exo .exo-num{font-weight:700;color:var(--p);font-size:.85em;text-transform:uppercase;margin-bottom:4px}
 details.corr summary{cursor:pointer;font-weight:600;color:#2f855a;font-size:.88em;margin-top:10px;padding:4px 0}
 details.corr .corr-body{background:#f0fff4;border-left:4px solid #2f855a;padding:10px 14px;margin-top:6px;border-radius:0 6px 6px 0;font-size:.9em}
-.svg-wrap{text-align:center;margin:18px 0}
-/* Cercles de couleur pour synthèse additive */
-.couleurs-additive{display:flex;justify-content:center;align-items:center;gap:0;margin:18px auto;position:relative;width:260px;height:220px}
+.chart-container{position:relative;max-width:600px;margin:18px auto}
+.spectre-container{margin:18px 0;text-align:center}
+.rgb-container{margin:18px auto;text-align:center;max-width:400px}
 </style>
 </head>
 <body>
 <div class="c">
-<header>
-  <h1>Chapitre 14 &mdash; Lumi&egrave;re, couleurs et photod&eacute;tecteurs</h1>
-  <p class="sous-titre">Physique-Chimie &mdash; 2<sup>nde</sup> Pro MAMA &mdash; Ann&eacute;e 2025-2026</p>
-</header>
+  <header>
+    <p class="sous-titre">Physique&ndash;Chimie &mdash; 2nde Pro MAMA &mdash; Ann&eacute;e 2025&ndash;2026</p>
+    <h1>Chapitre 14 &mdash; Lumi&egrave;re, couleurs et photod&eacute;tecteurs</h1>
+    <p class="sous-titre">Menuiserie &bull; Agencement &bull; Ameublement</p>
+  </header>
 
-<a class="nb" href="index.html">&larr; Retour au sommaire</a>
+  <a class="nb" href="pc-2nde-pro.html">&larr; Retour au sommaire</a>
 
-<div class="objectifs">
-  <strong>Objectifs du chapitre :</strong>
+  <div class="objectifs">
+    <strong>Objectifs du chapitre</strong>
+    <ul>
+      <li>Comprendre la nature ondulatoire de la lumi&egrave;re et les notions de longueur d&rsquo;onde et fr&eacute;quence.</li>
+      <li>Distinguer synth&egrave;se additive (RGB) et synth&egrave;se soustractive (CMJ) et leurs applications en MAMA.</li>
+      <li>Conna&icirc;tre les principales sources lumineuses utilis&eacute;es en atelier et leurs caract&eacute;ristiques.</li>
+      <li>Identifier les types de photod&eacute;tecteurs et leurs applications en menuiserie et agencement.</li>
+      <li>Calculer un &eacute;clairement et utiliser la loi en 1/d&sup2;.</li>
+    </ul>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2>1. Introduction &mdash; La lumi&egrave;re en MAMA</h2>
+
+  <p>
+    En menuiserie, agencement et ameublement, l&rsquo;&eacute;clairage joue un r&ocirc;le essentiel &agrave; plusieurs niveaux :
+  </p>
   <ul>
-    <li>Conna&icirc;tre le spectre de la lumi&egrave;re visible et les longueurs d&apos;onde associ&eacute;es</li>
-    <li>Distinguer synth&egrave;se additive (lumi&egrave;re RVB) et synth&egrave;se soustractive (pigments CMJ)</li>
-    <li>Expliquer la couleur d&apos;un objet en termes d&apos;absorption et de r&eacute;flexion</li>
-    <li>Calculer un &eacute;clairement en lux &agrave; partir du flux lumineux</li>
-    <li>Identifier et choisir un photod&eacute;tecteur adapt&eacute; &agrave; une application MAMA</li>
+    <li><strong>Atelier de fabrication</strong> : un bon &eacute;clairage permet de travailler avec pr&eacute;cision sur les machines, d&rsquo;&eacute;viter les accidents et de contr&ocirc;ler la qualit&eacute; des pi&egrave;ces usin&eacute;es.</li>
+    <li><strong>Showroom et magasin de meubles</strong> : l&rsquo;&eacute;clairage met en valeur les teintes du bois, les laques et les rev&ecirc;tements. Un mauvais &eacute;clairage peut faire para&icirc;tre une teinte ch&ecirc;ne comme du noyer !</li>
+    <li><strong>Finition et vernissage</strong> : lors de l&rsquo;application de lasures, peintures ou vernis, la qualit&eacute; de la lumi&egrave;re conditionne la perception exacte des couleurs.</li>
   </ul>
-</div>
 
-<!-- ===== SECTION 1 ===== -->
-<h2>1. La lumi&egrave;re blanche et le spectre visible</h2>
+  <div class="ex">
+    <span class="label label-ex">Exemple concret</span><br>
+    Un client choisit un plan de travail en ch&ecirc;ne clair sous un &eacute;clairage fluorescent &agrave; la boutique. Une fois install&eacute; chez lui sous des spots halog&egrave;nes, la teinte semble beaucoup plus jaune&ndash;dor&eacute;e. Ce ph&eacute;nom&egrave;ne est d&ucirc; &agrave; la <strong>temp&eacute;rature de couleur</strong> et &agrave; l&rsquo;<strong>indice de rendu des couleurs (IRC)</strong> diff&eacute;rents selon les sources.
+  </div>
 
-<div class="def">
-  <span class="label label-def">D&eacute;finition</span><br>
-  La <strong>lumi&egrave;re blanche</strong> est la superposition de toutes les radiations color&eacute;es du spectre visible. Un prisme ou un r&eacute;seau la d&eacute;compose en un <strong>spectre continu</strong> allant du violet au rouge.
-</div>
+  <h3>Comparaison rapide des sources lumineuses</h3>
+  <p>
+    Trois grandes familles de lampes coexistent dans les ateliers et showrooms :
+  </p>
+  <ul>
+    <li><strong>Incandescente</strong> : filament chauff&eacute; &agrave; tr&egrave;s haute temp&eacute;rature. Lumi&egrave;re chaude, IRC proche de 100, mais tr&egrave;s &eacute;nergivore (15&nbsp;lm/W). Quasi-abandonn&eacute;e en Europe.</li>
+    <li><strong>Fluorescente (n&eacute;on)</strong> : d&eacute;charge &eacute;lectrique dans un gaz excite des phosphores. Meilleure efficacit&eacute; (&sim;70&nbsp;lm/W), IRC variable (80&ndash;90). Encore fr&eacute;quente dans les anciens ateliers.</li>
+    <li><strong>LED (diode &eacute;lectroluminescente)</strong> : technologie moderne, lumi&egrave;re blanche obtenue par conversion de phosphore. Efficacit&eacute; exc&eacute;llente (100&ndash;180&nbsp;lm/W), IRC jusqu&rsquo;&agrave; 98, dur&eacute;e de vie &gt;&nbsp;50&nbsp;000 heures. Standard actuel en MAMA.</li>
+  </ul>
 
-<div class="prop">
-  <span class="label label-prop">Spectre visible</span><br>
-  Le spectre visible correspond aux longueurs d&apos;onde \(\lambda\) comprises entre <strong>400 nm (violet)</strong> et <strong>700 nm (rouge)</strong>.<br>
-  1 nm = 1 nanom&egrave;tre = \(10^{-9}\) m.
-</div>
+  <div class="att">
+    <span class="label label-att">Point cl&eacute; MAMA</span><br>
+    Pour la <strong>finition du bois</strong> (teinture, lasure, peinture), choisir une source avec un <strong>IRC &ge; 90</strong> est indispensable pour ne pas se tromper de couleur. Un IRC &lt; 80 peut fausser la perception des teintes et entra&icirc;ner des d&eacute;fauts de qualit&eacute; sur les pi&egrave;ces finies.
+  </div>
 
-<!-- SVG spectre visible -->
-<div class="svg-wrap">
-<svg width="580" height="70" viewBox="0 0 580 70" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Spectre visible de la lumi&egrave;re">
-  <defs>
-    <linearGradient id="spectre" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%"   stop-color="#7b00ff"/>
-      <stop offset="14%"  stop-color="#4400ff"/>
-      <stop offset="25%"  stop-color="#0044ff"/>
-      <stop offset="40%"  stop-color="#00cc44"/>
-      <stop offset="55%"  stop-color="#aacc00"/>
-      <stop offset="68%"  stop-color="#ffcc00"/>
-      <stop offset="80%"  stop-color="#ff6600"/>
-      <stop offset="100%" stop-color="#ff0000"/>
-    </linearGradient>
-  </defs>
-  <rect x="20" y="10" width="540" height="35" fill="url(#spectre)" rx="6"/>
-  <!-- Ticks longueurs d'onde -->
-  <text x="20"  y="60" font-family="Segoe UI,sans-serif" font-size="10" fill="#4a5568" text-anchor="middle">400 nm</text>
-  <text x="117" y="60" font-family="Segoe UI,sans-serif" font-size="10" fill="#4a5568" text-anchor="middle">450 nm</text>
-  <text x="214" y="60" font-family="Segoe UI,sans-serif" font-size="10" fill="#4a5568" text-anchor="middle">500 nm</text>
-  <text x="311" y="60" font-family="Segoe UI,sans-serif" font-size="10" fill="#4a5568" text-anchor="middle">560 nm</text>
-  <text x="408" y="60" font-family="Segoe UI,sans-serif" font-size="10" fill="#4a5568" text-anchor="middle">620 nm</text>
-  <text x="560" y="60" font-family="Segoe UI,sans-serif" font-size="10" fill="#4a5568" text-anchor="middle">700 nm</text>
-  <!-- Lignes de repère -->
-  <line x1="20"  y1="45" x2="20"  y2="52" stroke="#4a5568" stroke-width="1"/>
-  <line x1="117" y1="45" x2="117" y2="52" stroke="#4a5568" stroke-width="1"/>
-  <line x1="214" y1="45" x2="214" y2="52" stroke="#4a5568" stroke-width="1"/>
-  <line x1="311" y1="45" x2="311" y2="52" stroke="#4a5568" stroke-width="1"/>
-  <line x1="408" y1="45" x2="408" y2="52" stroke="#4a5568" stroke-width="1"/>
-  <line x1="560" y1="45" x2="560" y2="52" stroke="#4a5568" stroke-width="1"/>
-</svg>
-<p style="font-size:.82em;color:#718096;margin-top:2px">Figure 1 &mdash; Spectre de la lumi&egrave;re visible (400 &agrave; 700 nm)</p>
-</div>
+  <!-- ============================================================ -->
+  <h2>2. Nature de la lumi&egrave;re</h2>
 
-<table>
-  <thead>
-    <tr><th>Couleur</th><th>Longueur d&apos;onde \(\lambda\)</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>Violet</td><td>400 &ndash; 450 nm</td></tr>
-    <tr><td>Bleu</td><td>450 &ndash; 490 nm</td></tr>
-    <tr><td>Vert</td><td>490 &ndash; 560 nm</td></tr>
-    <tr><td>Jaune</td><td>560 &ndash; 590 nm</td></tr>
-    <tr><td>Orange</td><td>590 &ndash; 620 nm</td></tr>
-    <tr><td>Rouge</td><td>620 &ndash; 700 nm</td></tr>
-  </tbody>
-</table>
+  <div class="def">
+    <span class="label label-def">D&eacute;finition</span><br>
+    La <strong>lumi&egrave;re visible</strong> est un <strong>rayonnement &eacute;lectromagn&eacute;tique</strong> dont la longueur d&rsquo;onde est comprise entre <strong>380&nbsp;nm et 780&nbsp;nm</strong> (1&nbsp;nm = 10<sup>&minus;9</sup>&nbsp;m). C&rsquo;est la seule partie du spectre &eacute;lectromagn&eacute;tique d&eacute;tectable par l&rsquo;&oelig;il humain.
+  </div>
 
-<!-- ===== SECTION 2 ===== -->
-<h2>2. Synth&egrave;se additive des couleurs</h2>
+  <h3>La longueur d&rsquo;onde d&eacute;termine la couleur</h3>
 
-<div class="def">
-  <span class="label label-def">D&eacute;finition</span><br>
-  La <strong>synth&egrave;se additive</strong> est le m&eacute;lange de lumi&egrave;res color&eacute;es. Les <strong>couleurs primaires</strong> sont le <strong>Rouge (R)</strong>, le <strong>Vert (V)</strong> et le <strong>Bleu (B)</strong> = syst&egrave;me RVB (ou RGB en anglais).
-</div>
-
-<!-- SVG synthèse additive : 3 cercles qui se superposent -->
-<div class="svg-wrap">
-<svg width="300" height="260" viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Synth&egrave;se additive RVB">
-  <rect width="300" height="260" fill="#111" rx="10"/>
-  <!-- Cercle Rouge -->
-  <circle cx="130" cy="100" r="80" fill="red" opacity="0.6"/>
-  <!-- Cercle Vert -->
-  <circle cx="170" cy="100" r="80" fill="lime" opacity="0.6"/>
-  <!-- Cercle Bleu -->
-  <circle cx="150" cy="155" r="80" fill="blue" opacity="0.6"/>
-
-  <!-- Labels couleurs primaires -->
-  <text x="90"  y="70" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="13" fill="#fff" font-weight="bold">R</text>
-  <text x="210" y="70" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="13" fill="#fff" font-weight="bold">V</text>
-  <text x="150" y="240" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="13" fill="#fff" font-weight="bold">B</text>
-
-  <!-- Intersections -->
-  <text x="150" y="90" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="11" fill="#fff" font-weight="bold">Jaune</text>
-  <text x="110" y="165" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="11" fill="#fff" font-weight="bold">Magenta</text>
-  <text x="192" y="165" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="11" fill="#fff" font-weight="bold">Cyan</text>
-  <text x="150" y="135" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="11" fill="#fff" font-weight="bold">Blanc</text>
-</svg>
-<p style="font-size:.82em;color:#718096;margin-top:4px">Figure 2 &mdash; Synth&egrave;se additive : m&eacute;lange de lumi&egrave;res Rouge, Vert et Bleu</p>
-</div>
-
-<table>
-  <thead>
-    <tr><th>M&eacute;lange de lumi&egrave;res</th><th>Couleur obtenue</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>Rouge + Vert</td><td><strong>Jaune</strong></td></tr>
-    <tr><td>Rouge + Bleu</td><td><strong>Magenta</strong></td></tr>
-    <tr><td>Vert + Bleu</td><td><strong>Cyan</strong></td></tr>
-    <tr><td>Rouge + Vert + Bleu</td><td><strong>Blanc</strong></td></tr>
-    <tr><td>Aucune lumi&egrave;re</td><td><strong>Noir</strong> (absence de lumi&egrave;re)</td></tr>
-  </tbody>
-</table>
-
-<div class="prop">
-  <span class="label label-prop">Applications</span><br>
-  Tous les &eacute;crans (TV, smartphone, moniteur, vid&eacute;oprojecteur) utilisent la <strong>synth&egrave;se additive</strong>. Chaque pixel est compos&eacute; de trois sous-pixels R, V, B dont l&apos;intensit&eacute; combine pour reproduire n&apos;importe quelle couleur.
-</div>
-
-<!-- ===== SECTION 3 ===== -->
-<h2>3. Synth&egrave;se soustractive des couleurs</h2>
-
-<div class="def">
-  <span class="label label-def">D&eacute;finition</span><br>
-  La <strong>synth&egrave;se soustractive</strong> est le m&eacute;lange de pigments, d&apos;encres ou de filtres. Les <strong>couleurs primaires</strong> sont le <strong>Cyan (C)</strong>, le <strong>Magenta (M)</strong> et le <strong>Jaune (J)</strong> = syst&egrave;me CMJ (ou CMYK en imprimerie, o&ugrave; K = Noir).
-</div>
-
-<!-- SVG synthèse soustractive -->
-<div class="svg-wrap">
-<svg width="300" height="260" viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Synth&egrave;se soustractive CMJ">
-  <rect width="300" height="260" fill="#fff" rx="10" stroke="#e2e8f0" stroke-width="1"/>
-  <!-- Cercle Cyan -->
-  <circle cx="130" cy="100" r="80" fill="cyan" opacity="0.6"/>
-  <!-- Cercle Magenta -->
-  <circle cx="170" cy="100" r="80" fill="magenta" opacity="0.6"/>
-  <!-- Cercle Jaune -->
-  <circle cx="150" cy="155" r="80" fill="yellow" opacity="0.6"/>
-
-  <!-- Labels couleurs primaires -->
-  <text x="88"  y="66" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="12" fill="#333" font-weight="bold">Cyan</text>
-  <text x="212" y="66" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="12" fill="#333" font-weight="bold">Magenta</text>
-  <text x="150" y="248" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="12" fill="#333" font-weight="bold">Jaune</text>
-
-  <!-- Intersections -->
-  <text x="150" y="90" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="11" fill="#333" font-weight="bold">Bleu</text>
-  <text x="108" y="165" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="11" fill="#333" font-weight="bold">Vert</text>
-  <text x="193" y="165" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="11" fill="#333" font-weight="bold">Rouge</text>
-  <text x="150" y="135" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="11" fill="#333" font-weight="bold">Noir*</text>
-</svg>
-<p style="font-size:.82em;color:#718096;margin-top:4px">Figure 3 &mdash; Synth&egrave;se soustractive CMJ (* noir th&eacute;orique ; en pratique brun fonc&eacute;)</p>
-</div>
-
-<table>
-  <thead>
-    <tr><th>M&eacute;lange de pigments</th><th>Couleur obtenue</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>Cyan + Magenta</td><td><strong>Bleu</strong></td></tr>
-    <tr><td>Cyan + Jaune</td><td><strong>Vert</strong></td></tr>
-    <tr><td>Magenta + Jaune</td><td><strong>Rouge</strong></td></tr>
-    <tr><td>Cyan + Magenta + Jaune</td><td><strong>Noir</strong> (en th&eacute;orie)</td></tr>
-  </tbody>
-</table>
-
-<div class="prop">
-  <span class="label label-prop">Applications MAMA</span><br>
-  &bull; <strong>Imprimerie</strong> (notice de meuble, catalogue) : syst&egrave;me CMYK (Cyan, Magenta, Jaune, blacK).<br>
-  &bull; <strong>Peinture et lasure du bois</strong> : le m&eacute;lange de pigments suit la synth&egrave;se soustractive.<br>
-  &bull; <strong>Teinture du bois</strong> : les pigments absorbent certaines longueurs d&apos;onde et transmettent/r&eacute;fl&eacute;chissent les autres.
-</div>
-
-<!-- ===== SECTION 4 ===== -->
-<h2>4. Couleur des objets opaques</h2>
-
-<div class="def">
-  <span class="label label-def">Principe</span><br>
-  La couleur per&ccedil;ue d&apos;un objet opaque sous lumi&egrave;re blanche est d&eacute;termin&eacute;e par les radiations qu&apos;il <strong>r&eacute;fl&eacute;chit</strong>. Les autres radiations sont <strong>absorb&eacute;es</strong> par l&apos;objet.
-</div>
-
-<table>
-  <thead>
-    <tr><th>Objet</th><th>Couleur per&ccedil;ue</th><th>Ce qu&apos;il r&eacute;fl&eacute;chit</th><th>Ce qu&apos;il absorbe</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>Objet blanc</td><td>Blanc</td><td>Toutes les couleurs</td><td>Rien (ou presque)</td></tr>
-    <tr><td>Objet noir</td><td>Noir</td><td>Aucune couleur</td><td>Tout le spectre visible</td></tr>
-    <tr><td>Objet rouge</td><td>Rouge</td><td>Rouge</td><td>Vert et bleu</td></tr>
-    <tr><td>Objet vert</td><td>Vert</td><td>Vert</td><td>Rouge et bleu</td></tr>
-    <tr><td>Objet bleu</td><td>Bleu</td><td>Bleu</td><td>Rouge et vert</td></tr>
-    <tr><td>Objet jaune</td><td>Jaune</td><td>Rouge + vert</td><td>Bleu</td></tr>
-  </tbody>
-</table>
-
-<div class="ex">
-  <span class="label label-ex">Application MAMA &mdash; Rendu des couleurs du bois</span><br>
-  Un parquet de ch&ecirc;ne &eacute;clair&eacute; par une ampoule &agrave; spectre chaud (riche en rouge/orange) para&icirc;tra plus dor&eacute; que sous lumi&egrave;re blanche froide. Les finisseurs doivent choisir les teintures et lasures en tenant compte de la temp&eacute;rature de couleur de l&apos;&eacute;clairage du local final (IR de couleur, CRI).
-</div>
-
-<div class="att">
-  <span class="label label-att">Point de vigilance</span><br>
-  Un objet color&eacute; sous lumi&egrave;re monochromatique peut para&icirc;tre diff&eacute;rent. Exemple : un objet rouge &eacute;clair&eacute; par lumi&egrave;re verte appara&icirc;t <strong>noir</strong> (il n&apos;a pas de rouge &agrave; r&eacute;fl&eacute;chir et absorbe le vert).
-</div>
-
-<!-- ===== SECTION 5 ===== -->
-<h2>5. Flux lumineux et &eacute;clairement</h2>
-
-<div class="def">
-  <span class="label label-def">D&eacute;finitions</span><br>
-  &bull; Le <strong>flux lumineux</strong> \(\Phi\) (phi) est la puissance lumineuse totale &eacute;mise par une source. Unit&eacute; : le <strong>lumen (lm)</strong>.<br>
-  &bull; L&apos;<strong>&eacute;clairement</strong> \(E\) est le flux lumineux re&ccedil;u par unit&eacute; de surface. Unit&eacute; : le <strong>lux (lx)</strong>.
-</div>
-
-<div class="formule">
-  \[ E = \frac{\Phi}{S} \]
-  <small>\(E\) : &eacute;clairement en lux (lx) &mdash; \(\Phi\) : flux lumineux en lumens (lm) &mdash; \(S\) : surface en m&sup2;</small>
-</div>
-
-<table>
-  <thead>
-    <tr><th>Lieu / activit&eacute;</th><th>&Eacute;clairement recommand&eacute;</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>Atelier menuiserie &ndash; zone de travail</td><td>500 lx (minimum)</td></tr>
-    <tr><td>Bureau, salle de classe</td><td>300 lx</td></tr>
-    <tr><td>Showroom d&apos;ameublement</td><td>300 &agrave; 500 lx (selon zones)</td></tr>
-    <tr><td>Couloir, circulation</td><td>100 lx</td></tr>
-    <tr><td>Ensoleillement ext&eacute;rieur</td><td>50 000 &agrave; 100 000 lx</td></tr>
-  </tbody>
-</table>
-
-<h3>Comparaison des sources lumineuses</h3>
-<table>
-  <thead>
-    <tr><th>Type de source</th><th>Flux type (lm) pour 60 W &eacute;quiv.</th><th>Rendement lumineux</th><th>Dur&eacute;e de vie</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>Ampoule incandescente (60 W)</td><td>~800 lm</td><td>~13 lm/W (5&nbsp;%)</td><td>~1 000 h</td></tr>
-    <tr><td>Fluocompacte (12 W)</td><td>~800 lm</td><td>~67 lm/W (20&nbsp;%)</td><td>~8 000 h</td></tr>
-    <tr><td>LED (8 W)</td><td>~800 lm</td><td>~100 lm/W (50&nbsp;%)</td><td>~25 000 h</td></tr>
-  </tbody>
-</table>
-
-<div class="meth">
-  <span class="label label-meth">M&eacute;thode &mdash; Calculer l&apos;&eacute;clairement</span><br>
-  Une LED &eacute;met un flux de 2 000 lm &eacute;clairant un plan de travail de 4 m&sup2;. Calculer l&apos;&eacute;clairement.<br><br>
-  \[ E = \frac{\Phi}{S} = \frac{2\,000}{4} = 500 \text{ lx} \]
-  L&apos;&eacute;clairement est de <strong>500 lx</strong>, conforme &agrave; la norme pour un atelier menuiserie.
-</div>
-
-<!-- ===== SECTION 6 ===== -->
-<h2>6. Photod&eacute;tecteurs</h2>
-
-<div class="def">
-  <span class="label label-def">D&eacute;finition</span><br>
-  Un <strong>photod&eacute;tecteur</strong> est un composant &eacute;lectronique dont les caract&eacute;ristiques (r&eacute;sistance, courant) varient en fonction de la lumi&egrave;re re&ccedil;ue.
-</div>
-
-<h3>6.1 La LDR (photor&eacute;sistance)</h3>
-
-<div class="prop">
-  <span class="label label-prop">Principe</span><br>
-  La <strong>LDR</strong> (Light Dependent Resistor) est une r&eacute;sistance dont la valeur <strong>diminue quand la lumi&egrave;re augmente</strong>.<br>
-  &bull; Dans le noir : r&eacute;sistance tr&egrave;s &eacute;lev&eacute;e (m&eacute;gohms).<br>
-  &bull; En pleine lumi&egrave;re : r&eacute;sistance tr&egrave;s basse (quelques centaines d&apos;ohms).
-</div>
-
-<!-- SVG LDR symbolique -->
-<div class="svg-wrap">
-<svg width="220" height="100" viewBox="0 0 220 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Symbole LDR">
-  <rect width="220" height="100" fill="#f8fafc" rx="8"/>
-  <!-- Résistance (rectangle) -->
-  <line x1="20" y1="50" x2="60" y2="50" stroke="#4a5568" stroke-width="2"/>
-  <rect x="60" y="36" width="80" height="28" fill="#fff" stroke="#4a5568" stroke-width="2" rx="3"/>
-  <line x1="140" y1="50" x2="180" y2="50" stroke="#4a5568" stroke-width="2"/>
-  <!-- Flèches lumière -->
-  <defs>
-    <marker id="sun" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
-      <path d="M0,0 L6,3 L0,6 Z" fill="#d97706"/>
-    </marker>
-  </defs>
-  <line x1="170" y1="20" x2="125" y2="40" stroke="#d97706" stroke-width="1.5" marker-end="url(#sun)"/>
-  <line x1="155" y1="12" x2="115" y2="38" stroke="#d97706" stroke-width="1.5" marker-end="url(#sun)"/>
-  <text x="110" y="85" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="12" fill="#4a5568" font-weight="bold">LDR</text>
-  <text x="110" y="98" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="10" fill="#718096">R diminue si lumi&egrave;re augmente</text>
-  <!-- Labels bornes -->
-  <text x="10" y="48" font-family="Segoe UI,sans-serif" font-size="10" fill="#4a5568">A</text>
-  <text x="188" y="48" font-family="Segoe UI,sans-serif" font-size="10" fill="#4a5568">B</text>
-</svg>
-</div>
-
-<div class="ex">
-  <span class="label label-ex">Utilisation</span><br>
-  D&eacute;tecteur cr&eacute;pusculaire : quand la nuit tombe, la LDR voit sa r&eacute;sistance augmenter &rarr; le circuit commande l&apos;allumage de l&apos;&eacute;clairage public ou des lampes ext&eacute;rieures d&apos;un b&acirc;timent.
-</div>
-
-<h3>6.2 La photodiode</h3>
-
-<div class="prop">
-  <span class="label label-prop">Principe</span><br>
-  La <strong>photodiode</strong> est une diode qui, soumise &agrave; la lumi&egrave;re, g&eacute;n&egrave;re un <strong>courant &eacute;lectrique</strong> proportionnel &agrave; l&apos;&eacute;clairement re&ccedil;u. Elle peut fonctionner en mode photov olta&iuml;que (g&eacute;n&eacute;rateur) ou en mode photoconduction (d&eacute;tecteur).
-</div>
-
-<div class="ex">
-  <span class="label label-ex">Utilisations</span><br>
-  &bull; <strong>T&eacute;l&eacute;commande infrarouge</strong> (volets roulants, &eacute;clairage automatis&eacute;) : la photodiode IR re&ccedil;oit les impulsions de la t&eacute;l&eacute;commande.<br>
-  &bull; <strong>Capteur solaire</strong> : les panneaux photovolta&iuml;ques sont constitu&eacute;s de photodiodes en silicium.
-</div>
-
-<h3>6.3 Le phototransistor</h3>
-
-<div class="prop">
-  <span class="label label-prop">Principe</span><br>
-  Le <strong>phototransistor</strong> est un transistor dont la <strong>base est sensible &agrave; la lumi&egrave;re</strong>. Il amplifie le courant g&eacute;n&eacute;r&eacute; par la lumi&egrave;re : il est plus sensible que la photodiode simple.
-</div>
-
-<div class="ex">
-  <span class="label label-ex">Utilisations</span><br>
-  &bull; <strong>Barri&egrave;re lumineuse</strong> dans les machines-outils (scie &agrave; format, d&eacute;fonceuse CNC) : le phototransistor d&eacute;tecte l&apos;interruption du faisceau et d&eacute;clenche l&apos;arr&ecirc;t d&apos;urgence.<br>
-  &bull; <strong>D&eacute;tecteur de pr&eacute;sence</strong> dans un couloir : le phototransistor re&ccedil;oit la lumi&egrave;re IR d&apos;une diode en face.
-</div>
-
-<table>
-  <thead>
-    <tr><th>Composant</th><th>Grandeur affect&eacute;e</th><th>Caract&eacute;ristique</th><th>Application type</th></tr>
-  </thead>
-  <tbody>
+  <table>
     <tr>
-      <td><strong>LDR</strong></td>
-      <td>R&eacute;sistance</td>
-      <td>R diminue si lumi&egrave;re augmente</td>
-      <td>D&eacute;tecteur cr&eacute;pusculaire, variateur auto</td>
+      <th>Couleur</th>
+      <th>Longueur d&rsquo;onde (&lambda;)</th>
+      <th>Aperçu</th>
     </tr>
     <tr>
-      <td><strong>Photodiode</strong></td>
-      <td>Courant</td>
-      <td>G&eacute;n&egrave;re un courant proportionnel &agrave; \(E\)</td>
-      <td>T&eacute;l&eacute;commande IR, panneaux solaires</td>
+      <td>Violet</td>
+      <td>380 &ndash; 450 nm</td>
+      <td><span style="display:inline-block;width:40px;height:16px;background:#8b00ff;border-radius:3px;vertical-align:middle;"></span></td>
     </tr>
     <tr>
-      <td><strong>Phototransistor</strong></td>
-      <td>Courant amplifi&eacute;</td>
-      <td>Plus sensible que la photodiode</td>
-      <td>Barri&egrave;re lumineuse, d&eacute;tecteur pr&eacute;sence</td>
+      <td>Bleu</td>
+      <td>450 &ndash; 495 nm</td>
+      <td><span style="display:inline-block;width:40px;height:16px;background:#0000ff;border-radius:3px;vertical-align:middle;"></span></td>
     </tr>
-  </tbody>
-</table>
+    <tr>
+      <td>Vert</td>
+      <td>495 &ndash; 570 nm</td>
+      <td><span style="display:inline-block;width:40px;height:16px;background:#00aa00;border-radius:3px;vertical-align:middle;"></span></td>
+    </tr>
+    <tr>
+      <td>Jaune</td>
+      <td>570 &ndash; 590 nm</td>
+      <td><span style="display:inline-block;width:40px;height:16px;background:#ffee00;border-radius:3px;vertical-align:middle;border:1px solid #ccc;"></span></td>
+    </tr>
+    <tr>
+      <td>Orange</td>
+      <td>590 &ndash; 620 nm</td>
+      <td><span style="display:inline-block;width:40px;height:16px;background:#ff7700;border-radius:3px;vertical-align:middle;"></span></td>
+    </tr>
+    <tr>
+      <td>Rouge</td>
+      <td>620 &ndash; 780 nm</td>
+      <td><span style="display:inline-block;width:40px;height:16px;background:#ff0000;border-radius:3px;vertical-align:middle;"></span></td>
+    </tr>
+  </table>
 
-<!-- ===== SECTION 7 ===== -->
-<h2>7. Applications MAMA</h2>
+  <h3>Relation entre c&eacute;l&eacute;rit&eacute;, longueur d&rsquo;onde et fr&eacute;quence</h3>
 
-<div class="prop">
-  <span class="label label-prop">M&eacute;tiers du bois et de l&apos;agencement</span><br>
-  <strong>Gestion de l&apos;&eacute;clairage LED en showroom :</strong><br>
-  &bull; La technologie LED permet un r&eacute;glage fin de l&apos;intensit&eacute; (variateur) et de la couleur (LED RVB ou CCT r&eacute;glable) pour mettre en valeur les essences de bois et les mat&eacute;riaux d&apos;ameublement.<br>
-  &bull; Un showroom de cuisine haut de gamme utilise un IRC (Indice de Rendu des Couleurs) &gt; 90 pour un rendu fid&egrave;le des couleurs de mobilier.<br><br>
+  <div class="formule">
+    \( c = \lambda \times f \)
+    <small>
+      \(c\) : c&eacute;l&eacute;rit&eacute; de la lumi&egrave;re dans le vide \(= 3 \times 10^8\) m/s &mdash;
+      \(\lambda\) : longueur d&rsquo;onde en m&egrave;tres (m) &mdash;
+      \(f\) : fr&eacute;quence en hertz (Hz)
+    </small>
+  </div>
 
-  <strong>D&eacute;tecteurs dans les machines-outils :</strong><br>
-  &bull; Les barri&egrave;res lumineuses &agrave; phototransistors prot&egrave;gent les op&eacute;rateurs sur les d&eacute;fonceuses CNC, scies &agrave; ruban et plaqueuses de chants : si la main interrompt le faisceau, la machine s&apos;arr&ecirc;te en quelques millisecondes.<br><br>
+  <p>
+    Plus la longueur d&rsquo;onde est <strong>courte</strong>, plus la fr&eacute;quence est <strong>&eacute;lev&eacute;e</strong> (et l&rsquo;&eacute;nergie du photon plus grande). La lumi&egrave;re violette est donc plus &eacute;nerg&eacute;tique que la lumi&egrave;re rouge.
+  </p>
 
-  <strong>Panneaux solaires pour ateliers autonomes :</strong><br>
-  &bull; Des photodiodes (cellules photovolta&iuml;ques) peuvent alimenter l&apos;&eacute;clairage d&apos;appoint d&apos;un atelier ou d&apos;un hangar de stockage de bois, r&eacute;duisant la facture &eacute;nerg&eacute;tique.
+  <h3>Spectre visible &mdash; repr&eacute;sentation</h3>
+
+  <div class="spectre-container">
+    <svg width="720" height="80" viewBox="0 0 720 80" style="max-width:100%;border-radius:8px;overflow:visible;">
+      <defs>
+        <linearGradient id="spectrumGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%"   stop-color="#8b00ff"/>
+          <stop offset="10%"  stop-color="#6600ff"/>
+          <stop offset="18%"  stop-color="#0000ff"/>
+          <stop offset="32%"  stop-color="#00aaff"/>
+          <stop offset="45%"  stop-color="#00cc00"/>
+          <stop offset="57%"  stop-color="#aacc00"/>
+          <stop offset="62%"  stop-color="#ffee00"/>
+          <stop offset="70%"  stop-color="#ff9900"/>
+          <stop offset="78%"  stop-color="#ff4400"/>
+          <stop offset="100%" stop-color="#cc0000"/>
+        </linearGradient>
+      </defs>
+      <rect x="40" y="8" width="640" height="38" rx="6" fill="url(#spectrumGrad)"/>
+      <rect x="40" y="8" width="640" height="38" rx="6" fill="none" stroke="#aaa" stroke-width="1"/>
+      <!-- Tick marks -->
+      <line x1="40"  y1="46" x2="40"  y2="54" stroke="#555" stroke-width="1.5"/>
+      <text x="40"  y="67" text-anchor="middle" font-size="11" fill="#555">380 nm</text>
+      <line x1="112" y1="46" x2="112" y2="54" stroke="#555" stroke-width="1.5"/>
+      <text x="112" y="67" text-anchor="middle" font-size="11" fill="#555">450 nm</text>
+      <line x1="184" y1="46" x2="184" y2="54" stroke="#555" stroke-width="1.5"/>
+      <text x="184" y="67" text-anchor="middle" font-size="11" fill="#555">495 nm</text>
+      <line x1="324" y1="46" x2="324" y2="54" stroke="#555" stroke-width="1.5"/>
+      <text x="324" y="67" text-anchor="middle" font-size="11" fill="#555">570 nm</text>
+      <line x1="420" y1="46" x2="420" y2="54" stroke="#555" stroke-width="1.5"/>
+      <text x="420" y="67" text-anchor="middle" font-size="11" fill="#555">620 nm</text>
+      <line x1="680" y1="46" x2="680" y2="54" stroke="#555" stroke-width="1.5"/>
+      <text x="680" y="67" text-anchor="middle" font-size="11" fill="#555">780 nm</text>
+      <!-- Color labels inside bar -->
+      <text x="76"  y="32" text-anchor="middle" font-size="10" fill="white" font-weight="bold">Violet</text>
+      <text x="148" y="32" text-anchor="middle" font-size="10" fill="white" font-weight="bold">Bleu</text>
+      <text x="254" y="32" text-anchor="middle" font-size="10" fill="white" font-weight="bold">Vert</text>
+      <text x="372" y="32" text-anchor="middle" font-size="10" fill="#333" font-weight="bold">Jaune</text>
+      <text x="450" y="32" text-anchor="middle" font-size="10" fill="white" font-weight="bold">Orange</text>
+      <text x="570" y="32" text-anchor="middle" font-size="10" fill="white" font-weight="bold">Rouge</text>
+    </svg>
+    <p style="font-size:.82em;color:#718096;margin:6px 0 0;">Spectre visible &mdash; de 380&nbsp;nm (violet) &agrave; 780&nbsp;nm (rouge)</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2>3. Lumi&egrave;re blanche et couleurs</h2>
+
+  <div class="prop">
+    <span class="label label-prop">Propri&eacute;t&eacute;</span><br>
+    La <strong>lumi&egrave;re blanche</strong> est la superposition de toutes les radiations du spectre visible. Newton l&rsquo;a d&eacute;montr&eacute; en 1666 en faisant passer un faisceau de lumi&egrave;re solaire &agrave; travers un <strong>prisme</strong> : le prisme d&eacute;compose la lumi&egrave;re blanche en arc-en-ciel (dispersion chromatique). Un second prisme inverse le ph&eacute;nom&egrave;ne et reconstitue la lumi&egrave;re blanche.
+  </div>
+
+  <h3>3.1 Synth&egrave;se additive (RGB)</h3>
+
+  <div class="def">
+    <span class="label label-def">D&eacute;finition</span><br>
+    La <strong>synth&egrave;se additive</strong> consiste &agrave; <em>additionner</em> des lumi&egrave;res color&eacute;es. Les trois couleurs primaires additives sont le <strong>Rouge (R)</strong>, le <strong>Vert (G &mdash; Green)</strong> et le <strong>Bleu (B)</strong>. Ce syst&egrave;me s&rsquo;applique aux &eacute;crans, aux projecteurs et aux &eacute;clairages LED color&eacute;s.
+  </div>
+
+  <p>R&egrave;gles de m&eacute;lange en synth&egrave;se additive :</p>
+  <ul>
+    <li><strong>R + G</strong> = Jaune</li>
+    <li><strong>R + B</strong> = Magenta</li>
+    <li><strong>G + B</strong> = Cyan</li>
+    <li><strong>R + G + B</strong> = Blanc</li>
+    <li>Absence de toutes les couleurs = Noir</li>
+  </ul>
+
+  <!-- SVG RGB Venn diagram -->
+  <div class="rgb-container">
+    <svg width="320" height="265" viewBox="0 0 320 265" style="max-width:100%;">
+      <rect width="320" height="265" fill="#111" rx="10"/>
+      <!-- Red circle -->
+      <circle cx="130" cy="110" r="72" fill="red" fill-opacity="0.55"/>
+      <!-- Green circle -->
+      <circle cx="190" cy="110" r="72" fill="lime" fill-opacity="0.55"/>
+      <!-- Blue circle -->
+      <circle cx="160" cy="165" r="72" fill="blue" fill-opacity="0.55"/>
+      <!-- Primary color labels -->
+      <text x="84"  y="88"  fill="white" font-size="13" font-weight="bold" text-anchor="middle">Rouge</text>
+      <text x="236" y="88"  fill="white" font-size="13" font-weight="bold" text-anchor="middle">Vert</text>
+      <text x="160" y="236" fill="white" font-size="13" font-weight="bold" text-anchor="middle">Bleu</text>
+      <!-- Secondary color labels in intersection zones -->
+      <text x="160" y="100" fill="yellow"  font-size="11" font-weight="bold" text-anchor="middle">Jaune</text>
+      <text x="103" y="160" fill="#ff88ff" font-size="11" font-weight="bold" text-anchor="middle">Magenta</text>
+      <text x="217" y="160" fill="cyan"    font-size="11" font-weight="bold" text-anchor="middle">Cyan</text>
+      <!-- White center -->
+      <text x="160" y="140" fill="white" font-size="12" font-weight="bold" text-anchor="middle">Blanc</text>
+    </svg>
+    <p style="font-size:.82em;color:#718096;margin:4px 0 0;">Synth&egrave;se additive &mdash; superposition de lumi&egrave;res RGB</p>
+  </div>
+
+  <div class="ex">
+    <span class="label label-ex">Application MAMA</span><br>
+    Les <strong>&eacute;clairages LED RGB</strong> utilis&eacute;s dans les showrooms de meubles fonctionnent sur le principe de la synth&egrave;se additive. En faisant varier l&rsquo;intensit&eacute; des LED rouge, verte et bleue, on obtient n&rsquo;importe quelle teinte d&rsquo;&eacute;clairage pour mettre en valeur diff&eacute;rents types de bois ou de rev&ecirc;tements.
+  </div>
+
+  <h3>3.2 Synth&egrave;se soustractive (CMJ)</h3>
+
+  <div class="def">
+    <span class="label label-def">D&eacute;finition</span><br>
+    La <strong>synth&egrave;se soustractive</strong> s&rsquo;applique lorsque l&rsquo;on m&eacute;lange des <em>mati&egrave;res color&eacute;es</em> (peintures, encres, teintures). Chaque pigment <strong>absorbe</strong> (soustrait) certaines longueurs d&rsquo;onde. Les couleurs primaires soustractives sont le <strong>Cyan (C)</strong>, le <strong>Magenta (M)</strong> et le <strong>Jaune (J / Yellow)</strong>.
+  </div>
+
+  <p>R&egrave;gles de m&eacute;lange en synth&egrave;se soustractive :</p>
+  <ul>
+    <li><strong>C + M</strong> = Bleu</li>
+    <li><strong>C + J</strong> = Vert</li>
+    <li><strong>M + J</strong> = Rouge</li>
+    <li><strong>C + M + J</strong> = Noir (th&eacute;oriquement)</li>
+  </ul>
+
+  <div class="ex">
+    <span class="label label-ex">Application MAMA</span><br>
+    <ul>
+      <li><strong>Teintures pour bois</strong> : le menuisier m&eacute;lange des teintures &agrave; base de pigments. Un m&eacute;lange de teinture jaune et de teinture bleue donne une teinture verte (synth&egrave;se soustractive).</li>
+      <li><strong>Peintures et laques</strong> : le coloriste d&rsquo;une cabine de peinture m&eacute;lange des bases pigmentaires selon les m&ecirc;mes principes pour obtenir la teinte RAL souhait&eacute;e par le client.</li>
+      <li><strong>Impression num&eacute;rique</strong> : les machines &agrave; imprimer les rev&ecirc;tements d&eacute;coratifs (papier bois, stratifi&eacute; HPL) utilisent des encres CMJN (Cyan, Magenta, Jaune + Noir).</li>
+    </ul>
+  </div>
+
+  <div class="att">
+    <span class="label label-att">Ne pas confondre</span><br>
+    <strong>Synth&egrave;se additive</strong> : on ajoute de la lumi&egrave;re (fond noir &rarr; blanc). Utilis&eacute;e pour les &eacute;crans et l&rsquo;&eacute;clairage LED color&eacute;.<br>
+    <strong>Synth&egrave;se soustractive</strong> : on retire des longueurs d&rsquo;onde (fond blanc &rarr; noir). Utilis&eacute;e pour les peintures, teintures et impressions.
+  </div>
+
+  <!-- ============================================================ -->
+  <h2>4. Sources lumineuses en MAMA</h2>
+
+  <h3>4.1 Tableau comparatif des sources</h3>
+
+  <table>
+    <tr>
+      <th>Type de source</th>
+      <th>Temp&eacute;rature de couleur</th>
+      <th>IRC</th>
+      <th>Efficacit&eacute; (lm/W)</th>
+      <th>Dur&eacute;e de vie</th>
+    </tr>
+    <tr>
+      <td>Incandescente</td>
+      <td>2 700 K</td>
+      <td>100</td>
+      <td>15</td>
+      <td>1 000 h</td>
+    </tr>
+    <tr>
+      <td>Halog&egrave;ne</td>
+      <td>3 000 K</td>
+      <td>99</td>
+      <td>25</td>
+      <td>2 000 h</td>
+    </tr>
+    <tr>
+      <td>Fluorescente (n&eacute;on)</td>
+      <td>4 000 K</td>
+      <td>85</td>
+      <td>70</td>
+      <td>8 000 h</td>
+    </tr>
+    <tr>
+      <td>LED standard</td>
+      <td>2 700 &ndash; 6 500 K</td>
+      <td>80 &ndash; 90</td>
+      <td>100 &ndash; 130</td>
+      <td>25 000 h</td>
+    </tr>
+    <tr>
+      <td>LED haute performance</td>
+      <td>2 700 &ndash; 5 000 K</td>
+      <td>90 &ndash; 98</td>
+      <td>140 &ndash; 180</td>
+      <td>50 000 h</td>
+    </tr>
+  </table>
+
+  <h3>4.2 Temp&eacute;rature de couleur</h3>
+
+  <div class="def">
+    <span class="label label-def">D&eacute;finition</span><br>
+    La <strong>temp&eacute;rature de couleur</strong>, exprim&eacute;e en <strong>Kelvin (K)</strong>, caract&eacute;rise la teinte de la lumi&egrave;re &eacute;mise par une source. Plus la valeur est &eacute;lev&eacute;e, plus la lumi&egrave;re est &laquo;&nbsp;froide&nbsp;&raquo; (bleutée). Plus elle est basse, plus la lumi&egrave;re est &laquo;&nbsp;chaude&nbsp;&raquo; (jaun&acirc;tre).
+  </div>
+
+  <table>
+    <tr>
+      <th>Plage en K</th>
+      <th>Type</th>
+      <th>Usage recommand&eacute; en MAMA</th>
+    </tr>
+    <tr>
+      <td>2 700 &ndash; 3 000 K</td>
+      <td>Blanc chaud</td>
+      <td>Showroom, ambiance, exposition de meubles</td>
+    </tr>
+    <tr>
+      <td>3 000 &ndash; 4 000 K</td>
+      <td>Blanc neutre</td>
+      <td>Espaces de vente, accueil client</td>
+    </tr>
+    <tr>
+      <td>4 000 &ndash; 5 000 K</td>
+      <td>Blanc froid</td>
+      <td>Atelier, contr&ocirc;le qualit&eacute;</td>
+    </tr>
+    <tr>
+      <td>5 000 &ndash; 6 500 K</td>
+      <td>Lumi&egrave;re du jour</td>
+      <td>Finition, cabine de peinture, correspondance couleur</td>
+    </tr>
+  </table>
+
+  <h3>4.3 Indice de Rendu des Couleurs (IRC / CRI)</h3>
+
+  <div class="def">
+    <span class="label label-def">D&eacute;finition</span><br>
+    L&rsquo;<strong>Indice de Rendu des Couleurs (IRC)</strong>, appel&eacute; aussi CRI en anglais (<em>Color Rendering Index</em>), mesure la capacit&eacute; d&rsquo;une source lumineuse &agrave; restituer fid&egrave;lement les couleurs des objets &eacute;clair&eacute;s. Il varie de 0 &agrave; 100. Un IRC de 100 correspond &agrave; la lumi&egrave;re du soleil.
+  </div>
+
+  <ul>
+    <li><strong>IRC &lt; 80</strong> : rendu des couleurs m&eacute;diocre &mdash; &agrave; &eacute;viter pour tout travail de finition.</li>
+    <li><strong>IRC 80 &ndash; 90</strong> : rendu acceptable pour les zones de circulation et atelier g&eacute;n&eacute;ral.</li>
+    <li><strong>IRC &ge; 90</strong> : rendu excellent, n&eacute;cessaire pour la finition du bois, la correspondance des teintes et la cabine de peinture.</li>
+    <li><strong>IRC &ge; 95</strong> : rendu professionnel, recommand&eacute; pour le contr&ocirc;le qualit&eacute; des teintes et les showrooms haut de gamme.</li>
+  </ul>
+
+  <div class="meth">
+    <span class="label label-meth">M&eacute;thode MAMA</span><br>
+    Pour choisir l&rsquo;&eacute;clairage d&rsquo;un poste de finition :
+    <ol>
+      <li>V&eacute;rifier que l&rsquo;<strong>IRC &ge; 90</strong> (id&eacute;alement 95 ou plus).</li>
+      <li>Choisir une <strong>temp&eacute;rature de couleur de 5 000 K</strong> (lumi&egrave;re du jour) pour la correspondance des couleurs.</li>
+      <li>S&rsquo;assurer d&rsquo;un <strong>&eacute;clairement &ge; 750 lux</strong> sur le plan de travail.</li>
+      <li>Privil&eacute;gier les LED haute performance (meilleure efficacit&eacute; &eacute;nerg&eacute;tique et grande dur&eacute;e de vie).</li>
+    </ol>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2>5. Les photod&eacute;tecteurs</h2>
+
+  <div class="def">
+    <span class="label label-def">D&eacute;finition</span><br>
+    Un <strong>photod&eacute;tecteur</strong> est un composant &eacute;lectronique qui <strong>convertit un signal lumineux en signal &eacute;lectrique</strong>. La grandeur &eacute;lectrique produite (tension, courant ou r&eacute;sistance) varie en fonction de l&rsquo;&eacute;clairement re&ccedil;u par le composant.
+  </div>
+
+  <h3>5.1 La LDR (Light Dependent Resistor &mdash; Photor&eacute;sistance)</h3>
+
+  <div class="prop">
+    <span class="label label-prop">Principe</span><br>
+    La <strong>LDR</strong> (photor&eacute;sistance) est un composant dont la <strong>r&eacute;sistance diminue quand l&rsquo;&eacute;clairement augmente</strong>. Elle est fabriqu&eacute;e en sulfure de cadmium (CdS). En obscurit&eacute; totale, sa r&eacute;sistance peut atteindre plusieurs m&eacute;gaohms ; en pleine lumi&egrave;re, elle tombe &agrave; quelques centaines d&rsquo;ohms.
+    <br><br>
+    Valeurs typiques : <strong>1&nbsp;k&Omega; (lumi&egrave;re) &ndash; 1&nbsp;M&Omega; (obscurit&eacute;)</strong>. Temps de r&eacute;ponse lent (quelques millisecondes &agrave; quelques secondes).
+  </div>
+
+  <h3>5.2 La photodiode</h3>
+
+  <div class="prop">
+    <span class="label label-prop">Principe</span><br>
+    La <strong>photodiode</strong> est une diode semiconductrice qui g&eacute;n&egrave;re un <strong>courant &eacute;lectrique proportionnel &agrave; l&rsquo;&eacute;clairement</strong> re&ccedil;u. Elle est tr&egrave;s rapide (temps de r&eacute;ponse de l&rsquo;ordre de la nanoseconde) et pr&eacute;cise. Elle est mont&eacute;e en sens inverse (polarisation inverse). Tr&egrave;s utilis&eacute;e dans les t&eacute;l&eacute;commandes infrarouges et les barri&egrave;res optiques.
+  </div>
+
+  <h3>5.3 Le phototransistor</h3>
+
+  <div class="prop">
+    <span class="label label-prop">Principe</span><br>
+    Le <strong>phototransistor</strong> fonctionne comme un transistor dont la base est command&eacute;e par la lumi&egrave;re. Il fournit un <strong>courant amplifi&eacute;</strong> compar&eacute; &agrave; la photodiode, ce qui le rend utile dans les circuits d&rsquo;alarme et de d&eacute;tection de pr&eacute;sence o&ugrave; l&rsquo;on a besoin d&rsquo;un signal plus puissant.
+  </div>
+
+  <h3>5.4 Les capteurs d&rsquo;image CCD et CMOS</h3>
+
+  <div class="prop">
+    <span class="label label-prop">Principe</span><br>
+    Les capteurs <strong>CCD</strong> (<em>Charge-Coupled Device</em>) et <strong>CMOS</strong> (<em>Complementary Metal-Oxide Semiconductor</em>) sont des matrices de millions de photodiodes organis&eacute;es en pixels. Ils capturent une image enti&egrave;re. Ils &eacute;quipent les cam&eacute;ras num&eacute;riques, t&eacute;l&eacute;phones et syst&egrave;mes de vision industrielle.
+  </div>
+
+  <h3>5.5 Tableau comparatif</h3>
+
+  <table>
+    <tr>
+      <th>Photod&eacute;tecteur</th>
+      <th>Grandeur &eacute;lectrique</th>
+      <th>Caract&eacute;ristique principale</th>
+      <th>Applications MAMA</th>
+    </tr>
+    <tr>
+      <td>LDR</td>
+      <td>R&eacute;sistance (k&Omega;)</td>
+      <td>R diminue avec la lumi&egrave;re &mdash; 1&nbsp;k&Omega; &agrave; 1&nbsp;M&Omega; &mdash; r&eacute;ponse lente</td>
+      <td>&Eacute;clairage automatique atelier, veilleuse</td>
+    </tr>
+    <tr>
+      <td>Photodiode</td>
+      <td>Courant (µA)</td>
+      <td>Courant proportionnel &agrave; l&rsquo;&eacute;clairement &mdash; tr&egrave;s rapide (ns)</td>
+      <td>Barri&egrave;re optique machine, t&eacute;l&eacute;commande IR</td>
+    </tr>
+    <tr>
+      <td>Phototransistor</td>
+      <td>Courant amplifi&eacute; (mA)</td>
+      <td>Signal amplifi&eacute; &mdash; r&eacute;ponse rapide &mdash; plus sensible que photodiode</td>
+      <td>D&eacute;tection de pr&eacute;sence, comptage pi&egrave;ces</td>
+    </tr>
+    <tr>
+      <td>CCD / CMOS</td>
+      <td>Image num&eacute;rique</td>
+      <td>Matrice de pixels &mdash; haute r&eacute;solution &mdash; traitement logiciel</td>
+      <td>Contr&ocirc;le qualit&eacute; par vision, cam&eacute;ra atelier</td>
+    </tr>
+  </table>
+
+  <h3>5.6 Applications concr&egrave;tes en MAMA</h3>
+
+  <div class="ex">
+    <span class="label label-ex">Exemples d&rsquo;application</span>
+    <ul>
+      <li><strong>&Eacute;clairage automatique</strong> : une LDR d&eacute;tecte la luminosit&eacute; ambiante. Quand elle passe en dessous d&rsquo;un seuil (soir&eacute;e, nuages), les lumi&egrave;res de l&rsquo;atelier s&rsquo;allument automatiquement &mdash; &eacute;conomie d&rsquo;&eacute;nergie garantie.</li>
+      <li><strong>D&eacute;tection de pr&eacute;sence</strong> : un rideau de photodiodes infrarouges d&eacute;tecte le passage d&rsquo;une pi&egrave;ce de bois sur un tapis roulant pour commander un arr&ecirc;t de s&eacute;curit&eacute;.</li>
+      <li><strong>Contr&ocirc;le qualit&eacute; par vision</strong> : une cam&eacute;ra CCD/CMOS analyse les d&eacute;fauts de surface d&rsquo;un panneau stratifi&eacute; en sortie de presse. Elle d&eacute;tecte les bulles, &eacute;raflures ou d&eacute;fauts de teinte inacceptables.</li>
+      <li><strong>S&eacute;curit&eacute; machine</strong> : les barri&egrave;res optiques autour des scies circulaires et toupies utilisent des &eacute;metteurs infrarouge et des photodiodes r&eacute;ceptrices. Si le faisceau est interrompu (main du menuisier), la machine s&rsquo;arr&ecirc;te imm&eacute;diatement.</li>
+    </ul>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2>6. &Eacute;clairement et flux lumineux</h2>
+
+  <h3>6.1 D&eacute;finitions</h3>
+
+  <div class="def">
+    <span class="label label-def">D&eacute;finition &mdash; Flux lumineux</span><br>
+    Le <strong>flux lumineux</strong> &Phi; (phi), exprim&eacute; en <strong>lumen (lm)</strong>, repr&eacute;sente la puissance totale lumineuse &eacute;mise par une source, pond&eacute;r&eacute;e par la sensibilit&eacute; de l&rsquo;&oelig;il humain. Une ampoule LED de 9&nbsp;W &eacute;met typiquement 800&nbsp;lm.
+  </div>
+
+  <div class="def">
+    <span class="label label-def">D&eacute;finition &mdash; &Eacute;clairement</span><br>
+    L&rsquo;<strong>&eacute;clairement</strong> E, exprim&eacute; en <strong>lux (lx)</strong>, est le flux lumineux re&ccedil;u par unit&eacute; de surface. Il d&eacute;pend &agrave; la fois du flux &eacute;mis par la source et de la distance entre la source et la surface &eacute;clair&eacute;e.
+  </div>
+
+  <div class="formule">
+    \( E = \dfrac{\Phi}{S} \)
+    <small>
+      \(E\) : &eacute;clairement en lux (lx) &mdash;
+      \(\Phi\) : flux lumineux en lumens (lm) &mdash;
+      \(S\) : surface &eacute;clair&eacute;e en m&egrave;tres carr&eacute;s (m&sup2;)
+    </small>
+  </div>
+
+  <h3>6.2 Valeurs d&rsquo;&eacute;clairement recommand&eacute;es</h3>
+
+  <table>
+    <tr>
+      <th>Type de local / t&acirc;che</th>
+      <th>&Eacute;clairement recommand&eacute;</th>
+    </tr>
+    <tr>
+      <td>Couloir, zone de circulation</td>
+      <td>100 &ndash; 200 lux</td>
+    </tr>
+    <tr>
+      <td>Bureau, salle de r&eacute;union</td>
+      <td>500 lux</td>
+    </tr>
+    <tr>
+      <td>Atelier menuiserie g&eacute;n&eacute;ral</td>
+      <td>750 lux</td>
+    </tr>
+    <tr>
+      <td>T&acirc;ches pr&eacute;cises, machines-outils</td>
+      <td>1 000 lux</td>
+    </tr>
+    <tr>
+      <td>Contr&ocirc;le qualit&eacute;, finition, cabine de peinture</td>
+      <td>1 000 &ndash; 1 500 lux</td>
+    </tr>
+  </table>
+
+  <h3>6.3 Loi de l&rsquo;inverse du carr&eacute; de la distance</h3>
+
+  <div class="prop">
+    <span class="label label-prop">Loi physique</span><br>
+    L&rsquo;&eacute;clairement produit par une source ponctuelle est <strong>inversement proportionnel au carr&eacute; de la distance</strong> entre la source et la surface &eacute;clair&eacute;e. Lorsque la distance double, l&rsquo;&eacute;clairement est divis&eacute; par 4.
+  </div>
+
+  <div class="formule">
+    \( E \propto \dfrac{1}{d^2} \)
+    <small>
+      \(d\) : distance entre la source et la surface (en m) &mdash;
+      Si \(d\) double, \(E\) est divis&eacute; par 4.
+    </small>
+  </div>
+
+  <div class="ex">
+    <span class="label label-ex">Exemple chiffr&eacute;</span><br>
+    Une lampe produit 1&nbsp;000 lux &agrave; 1&nbsp;m de distance.<br>
+    &bull; &Agrave; 2&nbsp;m : \( E = 1000 / 2^2 = 250 \) lux.<br>
+    &bull; &Agrave; 0,5&nbsp;m : \( E = 1000 / 0{,}5^2 = 4\,000 \) lux.<br><br>
+    En atelier MAMA, il est donc pr&eacute;f&eacute;rable de rapprocher les luminaires du plan de travail plut&ocirc;t que de multiplier le nombre de lampes &mdash; mais attention &agrave; ne pas &ecirc;blouir l&rsquo;op&eacute;rateur !
+  </div>
+
+  <!-- ============================================================ -->
+  <h2>7. Comparaison de l&rsquo;efficacit&eacute; lumineuse &mdash; Graphique</h2>
+
+  <p>
+    Le graphique ci-dessous compare l&rsquo;<strong>efficacit&eacute; lumineuse</strong> (en lm/W) des principales technologies d&rsquo;&eacute;clairage. Plus la valeur est &eacute;lev&eacute;e, moins la lampe consomme d&rsquo;&eacute;nergie pour produire la m&ecirc;me quantit&eacute; de lumi&egrave;re.
+  </p>
+
+  <div class="chart-container">
+    <canvas id="chartEfficacite" width="600" height="380"></canvas>
+  </div>
+
+  <script>
+  (function() {
+    var ctx = document.getElementById('chartEfficacite').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Incandescente', 'Halog\u00e8ne', 'Fluorescente', 'LED standard', 'LED haute perf.'],
+        datasets: [{
+          label: 'Efficacit\u00e9 lumineuse (lm/W)',
+          data: [15, 25, 70, 120, 160],
+          backgroundColor: [
+            'rgba(220, 50, 50, 0.75)',
+            'rgba(230, 130, 30, 0.75)',
+            'rgba(60, 140, 220, 0.75)',
+            'rgba(111, 66, 193, 0.75)',
+            'rgba(47, 133, 90, 0.75)'
+          ],
+          borderColor: [
+            'rgba(180, 20, 20, 1)',
+            'rgba(190, 100, 10, 1)',
+            'rgba(30, 100, 190, 1)',
+            'rgba(80, 40, 160, 1)',
+            'rgba(20, 100, 60, 1)'
+          ],
+          borderWidth: 2,
+          borderRadius: 6
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          title: {
+            display: true,
+            text: 'Efficacit\u00e9 lumineuse des sources (lm/W)',
+            font: { size: 15, weight: 'bold' },
+            color: '#4a5568',
+            padding: { bottom: 14 }
+          },
+          tooltip: {
+            callbacks: {
+              label: function(ctx) { return ctx.parsed.y + ' lm/W'; }
+            }
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            max: 180,
+            title: {
+              display: true,
+              text: 'lm/W',
+              font: { size: 13 }
+            },
+            ticks: { stepSize: 20 }
+          },
+          x: {
+            ticks: { font: { size: 12 } }
+          }
+        }
+      }
+    });
+  })();
+  </script>
+
+  <!-- ============================================================ -->
+  <h2>8. Diagramme du spectre visible &mdash; compl&eacute;t&eacute;</h2>
+
+  <p>
+    Le diagramme ci-dessous situe le spectre visible dans le contexte plus large du spectre &eacute;lectromagn&eacute;tique. Les <strong>ultraviolets (UV)</strong> se trouvent &agrave; gauche (longueurs d&rsquo;onde &lt;&nbsp;380&nbsp;nm) et les <strong>infrarouges (IR)</strong> &agrave; droite (&lambda;&nbsp;&gt;&nbsp;780&nbsp;nm). Ces deux r&eacute;gions sont invisibles &agrave; l&rsquo;&oelig;il nu mais exploit&eacute;es dans de nombreux capteurs industriels.
+  </p>
+
+  <div class="spectre-container">
+    <svg width="720" height="112" viewBox="0 0 720 112" style="max-width:100%;border-radius:8px;overflow:visible;">
+      <defs>
+        <linearGradient id="spectrumGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%"   stop-color="#8b00ff"/>
+          <stop offset="10%"  stop-color="#6600ff"/>
+          <stop offset="18%"  stop-color="#0000ff"/>
+          <stop offset="32%"  stop-color="#00aaff"/>
+          <stop offset="45%"  stop-color="#00cc00"/>
+          <stop offset="57%"  stop-color="#aacc00"/>
+          <stop offset="62%"  stop-color="#ffee00"/>
+          <stop offset="70%"  stop-color="#ff9900"/>
+          <stop offset="78%"  stop-color="#ff4400"/>
+          <stop offset="100%" stop-color="#cc0000"/>
+        </linearGradient>
+      </defs>
+      <!-- UV zone -->
+      <rect x="0" y="10" width="40" height="40" fill="#d9b3ff" rx="4"/>
+      <text x="20" y="34" text-anchor="middle" font-size="10" fill="#5b21b6" font-weight="bold">UV</text>
+      <!-- Spectrum bar -->
+      <rect x="40" y="10" width="640" height="40" fill="url(#spectrumGrad2)"/>
+      <rect x="40" y="10" width="640" height="40" fill="none" stroke="#aaa" stroke-width="1"/>
+      <!-- IR zone -->
+      <rect x="680" y="10" width="40" height="40" fill="#ffccaa" rx="4"/>
+      <text x="700" y="34" text-anchor="middle" font-size="10" fill="#92400e" font-weight="bold">IR</text>
+      <!-- Tick marks and labels -->
+      <line x1="40"  y1="50" x2="40"  y2="60" stroke="#555" stroke-width="1.5"/>
+      <text x="40"  y="74" text-anchor="middle" font-size="11" fill="#555">380 nm</text>
+      <line x1="112" y1="50" x2="112" y2="60" stroke="#555" stroke-width="1.5"/>
+      <text x="112" y="74" text-anchor="middle" font-size="11" fill="#555">450 nm</text>
+      <line x1="184" y1="50" x2="184" y2="60" stroke="#555" stroke-width="1.5"/>
+      <text x="184" y="74" text-anchor="middle" font-size="11" fill="#555">495 nm</text>
+      <line x1="324" y1="50" x2="324" y2="60" stroke="#555" stroke-width="1.5"/>
+      <text x="324" y="74" text-anchor="middle" font-size="11" fill="#555">570 nm</text>
+      <line x1="420" y1="50" x2="420" y2="60" stroke="#555" stroke-width="1.5"/>
+      <text x="420" y="74" text-anchor="middle" font-size="11" fill="#555">620 nm</text>
+      <line x1="680" y1="50" x2="680" y2="60" stroke="#555" stroke-width="1.5"/>
+      <text x="680" y="74" text-anchor="middle" font-size="11" fill="#555">780 nm</text>
+      <!-- Color labels inside bar -->
+      <text x="76"  y="34" text-anchor="middle" font-size="10" fill="white" font-weight="bold">Violet</text>
+      <text x="148" y="34" text-anchor="middle" font-size="10" fill="white" font-weight="bold">Bleu</text>
+      <text x="254" y="34" text-anchor="middle" font-size="10" fill="white" font-weight="bold">Vert</text>
+      <text x="372" y="34" text-anchor="middle" font-size="10" fill="#333" font-weight="bold">Jaune</text>
+      <text x="450" y="34" text-anchor="middle" font-size="10" fill="white" font-weight="bold">Orange</text>
+      <text x="570" y="34" text-anchor="middle" font-size="10" fill="white" font-weight="bold">Rouge</text>
+      <!-- Bottom legend -->
+      <text x="360" y="102" text-anchor="middle" font-size="11" fill="#718096">&lambda; croissante &rarr; &nbsp;|&nbsp; fr&eacute;quence d&eacute;croissante &rarr;</text>
+    </svg>
+    <p style="font-size:.82em;color:#718096;margin:6px 0 0;">Spectre &eacute;lectromagn&eacute;tique visible entre UV (&lambda; &lt; 380 nm) et IR (&lambda; &gt; 780 nm)</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2>9. &Agrave; retenir</h2>
+
+  <div class="retenir">
+    <span class="label label-ret">&Agrave; retenir</span>
+    <ol>
+      <li>
+        <strong>La lumi&egrave;re visible</strong> est un rayonnement &eacute;lectromagn&eacute;tique de longueur d&rsquo;onde comprise entre <strong>380 et 780 nm</strong>. La relation \(c = \lambda \times f\) relie c&eacute;l&eacute;rit&eacute; (\(3 \times 10^8\) m/s), longueur d&rsquo;onde et fr&eacute;quence.
+      </li>
+      <li>
+        <strong>Synth&egrave;se additive (RGB)</strong> pour les &eacute;clairages LED color&eacute;s et &eacute;crans : R+G+B = Blanc. <strong>Synth&egrave;se soustractive (CMJ)</strong> pour les peintures et teintures : C+M+J = Noir. Ce sont deux logiques oppos&eacute;es.
+      </li>
+      <li>
+        En MAMA, choisir une source LED avec <strong>IRC &ge; 90</strong> (id&eacute;alement 95) est indispensable pour tout travail de finition, teinture ou contr&ocirc;le de couleur du bois.
+      </li>
+      <li>
+        L&rsquo;<strong>&eacute;clairement</strong> E (en lux) se calcule par \(E = \Phi / S\). Il suit la loi de l&rsquo;inverse du carr&eacute; de la distance : si on double la distance, l&rsquo;&eacute;clairement est divis&eacute; par 4. Un atelier de menuiserie doit disposer de <strong>750 lux minimum</strong>.
+      </li>
+      <li>
+        Les <strong>photod&eacute;tecteurs</strong> (LDR, photodiode, phototransistor, CCD/CMOS) transforment la lumi&egrave;re en signal &eacute;lectrique. Ils permettent l&rsquo;automatisation de l&rsquo;&eacute;clairage, la s&eacute;curit&eacute; des machines et le contr&ocirc;le qualit&eacute; par vision en MAMA.
+      </li>
+    </ol>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2>10. Mini-exercices</h2>
+
+  <!-- Exercice 1 -->
+  <div class="exo">
+    <div class="exo-num">Exercice 1 &mdash; Fr&eacute;quence de la lumi&egrave;re verte</div>
+    <p>
+      La lumi&egrave;re verte utilis&eacute;e dans un &eacute;clairage LED de showroom a une longueur d&rsquo;onde de <strong>&lambda; = 535 nm</strong>.
+    </p>
+    <ol>
+      <li>Rappeler la relation entre c&eacute;l&eacute;rit&eacute; de la lumi&egrave;re, longueur d&rsquo;onde et fr&eacute;quence.</li>
+      <li>Convertir 535 nm en m&egrave;tres.</li>
+      <li>Calculer la fr&eacute;quence f de cette lumi&egrave;re. Exprimer le r&eacute;sultat en terahertz (THz).</li>
+    </ol>
+    <p><em>Donn&eacute;e : c = 3,00 &times; 10<sup>8</sup> m/s.</em></p>
+    <details class="corr">
+      <summary>Voir la correction</summary>
+      <div class="corr-body">
+        <p><strong>1.</strong> La relation fondamentale est : \(c = \lambda \times f\), donc \( f = \dfrac{c}{\lambda} \).</p>
+        <p><strong>2.</strong> Conversion : \(\lambda = 535 \text{ nm} = 535 \times 10^{-9} \text{ m} = 5{,}35 \times 10^{-7} \text{ m}\).</p>
+        <p><strong>3.</strong> Calcul de la fr&eacute;quence :</p>
+        <p style="text-align:center;">
+          \( f = \dfrac{3{,}00 \times 10^8}{5{,}35 \times 10^{-7}} \approx 5{,}61 \times 10^{14} \text{ Hz} = \mathbf{561 \text{ THz}} \)
+        </p>
+        <p>La lumi&egrave;re verte &agrave; 535 nm a une fr&eacute;quence d&rsquo;environ <strong>561 THz</strong>. Elle appartient bien &agrave; la plage du vert (495&ndash;570 nm).</p>
+      </div>
+    </details>
+  </div>
+
+  <!-- Exercice 2 -->
+  <div class="exo">
+    <div class="exo-num">Exercice 2 &mdash; Flux lumineux n&eacute;cessaire pour un atelier</div>
+    <p>
+      Un atelier de menuiserie poss&egrave;de une surface de travail de <strong>S = 12 m&sup2;</strong>. La norme recommande un &eacute;clairement minimal de <strong>E = 750 lux</strong>.
+    </p>
+    <ol>
+      <li>Rappeler la formule liant &eacute;clairement, flux lumineux et surface.</li>
+      <li>Calculer le flux lumineux total &Phi; n&eacute;cessaire pour respecter la norme.</li>
+      <li>Combien faut-il de lampes LED de 800 lm chacune pour atteindre ce flux ? Arrondir au nombre entier sup&eacute;rieur.</li>
+    </ol>
+    <details class="corr">
+      <summary>Voir la correction</summary>
+      <div class="corr-body">
+        <p><strong>1.</strong> La formule est : \( E = \dfrac{\Phi}{S} \), donc \( \Phi = E \times S \).</p>
+        <p><strong>2.</strong> Application num&eacute;rique :</p>
+        <p style="text-align:center;">\( \Phi = 750 \times 12 = \mathbf{9\,000 \text{ lm}} \)</p>
+        <p><strong>3.</strong> Nombre de lampes :</p>
+        <p style="text-align:center;">\( n = \dfrac{9\,000}{800} = 11{,}25 \rightarrow \mathbf{12 \text{ lampes}} \) (valeur arrondie au sup&eacute;rieur)</p>
+      </div>
+    </details>
+  </div>
+
+  <!-- Exercice 3 -->
+  <div class="exo">
+    <div class="exo-num">Exercice 3 &mdash; Pont diviseur de tension avec LDR</div>
+    <p>
+      Une LDR est utilis&eacute;e pour commander l&rsquo;&eacute;clairage automatique d&rsquo;un atelier. Elle est mont&eacute;e en s&eacute;rie avec une r&eacute;sistance fixe de <strong>R = 10 k&Omega;</strong> et aliment&eacute;e par une tension <strong>U = 12 V</strong> (pont diviseur de tension). La tension U<sub>R</sub> est mesur&eacute;e aux bornes de la r&eacute;sistance fixe.
+    </p>
+    <ul>
+      <li>En <strong>obscurit&eacute;</strong> : R<sub>LDR</sub> = 100 k&Omega;</li>
+      <li>En <strong>pleine lumi&egrave;re</strong> : R<sub>LDR</sub> = 1 k&Omega;</li>
+    </ul>
+    <ol>
+      <li>Rappeler la formule du pont diviseur de tension.</li>
+      <li>Calculer la tension U<sub>R</sub> aux bornes de la r&eacute;sistance fixe en obscurit&eacute;.</li>
+      <li>Calculer la tension U<sub>R</sub> aux bornes de la r&eacute;sistance fixe en pleine lumi&egrave;re.</li>
+      <li>Dans quel cas U<sub>R</sub> est-elle suffisante pour activer un syst&egrave;me command&eacute; &agrave; partir de 5 V ? Interpr&eacute;ter.</li>
+    </ol>
+    <details class="corr">
+      <summary>Voir la correction</summary>
+      <div class="corr-body">
+        <p><strong>1.</strong> Formule du pont diviseur : \( U_R = U \times \dfrac{R}{R + R_{\text{LDR}}} \).</p>
+        <p><strong>2. En obscurit&eacute;</strong> (R<sub>LDR</sub> = 100 k&Omega;) :</p>
+        <p style="text-align:center;">
+          \( U_R = 12 \times \dfrac{10}{10 + 100} = 12 \times \dfrac{10}{110} \approx \mathbf{1{,}09 \text{ V}} \)
+        </p>
+        <p><strong>3. En pleine lumi&egrave;re</strong> (R<sub>LDR</sub> = 1 k&Omega;) :</p>
+        <p style="text-align:center;">
+          \( U_R = 12 \times \dfrac{10}{10 + 1} = 12 \times \dfrac{10}{11} \approx \mathbf{10{,}9 \text{ V}} \)
+        </p>
+        <p><strong>4.</strong> U<sub>R</sub> &gt; 5 V uniquement <strong>en pleine lumi&egrave;re</strong> (10,9 V &gt; 5 V). En obscurit&eacute;, U<sub>R</sub> = 1,09 V : le syst&egrave;me n&rsquo;est pas activ&eacute;.<br>
+        Interpr&eacute;tation : en inversant la logique de commande, on peut programmer l&rsquo;&eacute;clairage pour s&rsquo;allumer <strong>quand il fait sombre</strong> (U<sub>R</sub> basse &rArr; seuil non atteint &rArr; relais activ&eacute;).</p>
+      </div>
+    </details>
+  </div>
+
+  <!-- Exercice 4 -->
+  <div class="exo">
+    <div class="exo-num">Exercice 4 &mdash; &Eacute;clairage d&rsquo;un poste de finition du bois</div>
+    <p>
+      Un chef d&rsquo;atelier souhaite &eacute;quiper son poste de finition. Il dispose d&rsquo;un espace de <strong>20 m&sup2;</strong> et veut respecter les contraintes suivantes :
+    </p>
+    <ul>
+      <li>&Eacute;clairement minimal : <strong>E = 750 lux</strong></li>
+      <li>Indice de rendu des couleurs : <strong>IRC = 95</strong> (mod&egrave;le LED s&eacute;lectionn&eacute;)</li>
+      <li>Nombre de lampes pr&eacute;vu : <strong>8 lampes LED</strong></li>
+    </ul>
+    <ol>
+      <li>Calculer le flux lumineux total n&eacute;cessaire &Phi;<sub>total</sub>.</li>
+      <li>Calculer le flux lumineux n&eacute;cessaire par lampe (&Phi;<sub>lampe</sub>).</li>
+      <li>Des LED de 1 800 lm (IRC 95) sont disponibles. Valident-elles les besoins ? Justifier par le calcul.</li>
+      <li>Pourquoi est-il essentiel de choisir IRC = 95 pour ce poste de finition ?</li>
+    </ol>
+    <details class="corr">
+      <summary>Voir la correction</summary>
+      <div class="corr-body">
+        <p><strong>1.</strong> Flux total n&eacute;cessaire :</p>
+        <p style="text-align:center;">\( \Phi_{\text{total}} = E \times S = 750 \times 20 = \mathbf{15\,000 \text{ lm}} \)</p>
+        <p><strong>2.</strong> Flux par lampe :</p>
+        <p style="text-align:center;">\( \Phi_{\text{lampe}} = \dfrac{15\,000}{8} = \mathbf{1\,875 \text{ lm / lampe}} \)</p>
+        <p><strong>3.</strong> Avec 8 lampes de 1 800 lm :</p>
+        <p style="text-align:center;">\( \Phi_{\text{total}} = 8 \times 1\,800 = 14\,400 \text{ lm} \)</p>
+        <p style="text-align:center;">\( E = \dfrac{14\,400}{20} = 720 \text{ lux} &lt; 750 \text{ lux} \)</p>
+        <p>Les LED de 1 800 lm sont <strong>insuffisantes</strong> : l&rsquo;&eacute;clairement obtenu (720 lux) est inf&eacute;rieur &agrave; la valeur minimale requise. Il faudrait choisir des LED d&rsquo;au moins <strong>1 875 lm</strong> &mdash; par exemple des mod&egrave;les 2 000 lm pour disposer d&rsquo;une marge.</p>
+        <p><strong>4.</strong> Un IRC = 95 garantit que la source restitue les couleurs &agrave; 95 % de fid&eacute;lit&eacute; par rapport &agrave; la lumi&egrave;re solaire. Pour la <strong>finition du bois</strong>, cela assure que la teinte de la lasure ou de la peinture appliqu&eacute;e en atelier correspond exactement &agrave; la couleur perçue chez le client. Avec un IRC plus faible, des &eacute;carts de teinte pourraient appara&icirc;tre, entra&icirc;nant des <strong>reprises co&ucirc;teuses et des litiges commerciaux</strong>.</p>
+      </div>
+    </details>
+  </div>
+
 </div>
-
-<!-- ===== SECTION 8 ===== -->
-<h2>8. Tableau de synth&egrave;se</h2>
-
-<table>
-  <thead>
-    <tr><th>Notion</th><th>D&eacute;finition / formule</th><th>Unit&eacute;</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>Spectre visible</td><td>\(\lambda\) = 400 &agrave; 700 nm</td><td>nm (nanom&egrave;tres)</td></tr>
-    <tr><td>Synth&egrave;se additive</td><td>R + V + B = Blanc</td><td>&mdash;</td></tr>
-    <tr><td>Synth&egrave;se soustractive</td><td>C + M + J = Noir (th&eacute;orique)</td><td>&mdash;</td></tr>
-    <tr><td>Flux lumineux</td><td>\(\Phi\) = puissance lumineuse &eacute;mise</td><td>lumen (lm)</td></tr>
-    <tr><td>&Eacute;clairement</td><td>\(E = \Phi / S\)</td><td>lux (lx)</td></tr>
-    <tr><td>LDR</td><td>R diminue si lumi&egrave;re augmente</td><td>&Omega; (ohm)</td></tr>
-    <tr><td>Photodiode</td><td>G&eacute;n&egrave;re un courant sous lumi&egrave;re</td><td>A (amp&egrave;res)</td></tr>
-    <tr><td>Phototransistor</td><td>Amplifie un signal lumineux</td><td>&mdash;</td></tr>
-  </tbody>
-</table>
-
-<!-- ===== SECTION 9 ===== -->
-<h2>9. &Agrave; retenir</h2>
-
-<div class="retenir">
-  <span class="label label-ret">Essentiel</span>
-  <ol>
-    <li>La <strong>lumi&egrave;re blanche</strong> est la superposition de toutes les couleurs du spectre visible (\(\lambda\) = 400 &agrave; 700 nm).</li>
-    <li>La <strong>synth&egrave;se additive</strong> (RVB) m&eacute;lange des lumi&egrave;res : R + V + B = Blanc. Utilis&eacute;e dans les &eacute;crans.</li>
-    <li>La <strong>synth&egrave;se soustractive</strong> (CMJ) m&eacute;lange des pigments : C + M + J = Noir. Utilis&eacute;e en imprimerie et peinture.</li>
-    <li>L&apos;<strong>&eacute;clairement</strong> se calcule par \(E = \Phi / S\) en lux. La norme pour un atelier menuiserie est <strong>500 lx minimum</strong>.</li>
-    <li>Les <strong>photod&eacute;tecteurs</strong> (LDR, photodiode, phototransistor) convertissent la lumi&egrave;re en signal &eacute;lectrique : ils sont pr&eacute;sents dans les machines, la domotique et les panneaux solaires.</li>
-  </ol>
-</div>
-
-<!-- ===== SECTION 10 ===== -->
-<h2>10. Mini-exercices</h2>
-
-<div class="exo">
-  <div class="exo-num">Exercice 1 &mdash; Identifier la synth&egrave;se</div>
-  <p>Pour chaque situation, indiquer s&apos;il s&apos;agit de synth&egrave;se additive ou soustractive :</p>
-  <ol type="a">
-    <li>Un peintre m&eacute;lange du bleu cyan et du jaune pour obtenir du vert.</li>
-    <li>Un &eacute;cran de t&eacute;l&eacute;vision affiche du blanc en allumant les trois sous-pixels R, V et B &agrave; pleine intensit&eacute;.</li>
-    <li>Une lasure brune est obtenue en m&eacute;langeant plusieurs pigments dans un atelier de finition.</li>
-  </ol>
-  <details class="corr">
-    <summary>Voir la correction</summary>
-    <div class="corr-body">
-      a) M&eacute;lange de pigments (cyan + jaune &rarr; vert) : <strong>synth&egrave;se soustractive</strong>.<br>
-      b) M&eacute;lange de lumi&egrave;res &eacute;mises par les LED de l&apos;&eacute;cran : <strong>synth&egrave;se additive</strong>.<br>
-      c) M&eacute;lange de pigments : <strong>synth&egrave;se soustractive</strong>.
-    </div>
-  </details>
-</div>
-
-<div class="exo">
-  <div class="exo-num">Exercice 2 &mdash; Calculer un &eacute;clairement</div>
-  <p>Un atelier de menuiserie mesure 8 m &times; 6 m (soit 48 m&sup2;). L&apos;installation &eacute;lectrique comprend 12 dalles LED &eacute;mettant chacune un flux de 3 500 lm.</p>
-  <ol type="a">
-    <li>Calculer le flux total &eacute;mis par les 12 dalles.</li>
-    <li>Calculer l&apos;&eacute;clairement moyen re&ccedil;u par le plan de travail.</li>
-    <li>Cette installation est-elle conforme &agrave; la norme (500 lx) ?</li>
-  </ol>
-  <details class="corr">
-    <summary>Voir la correction</summary>
-    <div class="corr-body">
-      a) \(\Phi_{total} = 12 \times 3\,500 = 42\,000 \text{ lm}\)<br>
-      b) \(E = \dfrac{\Phi}{S} = \dfrac{42\,000}{48} = 875 \text{ lx}\)<br>
-      c) 875 lx &gt; 500 lx : l&apos;installation est <strong>bien conforme</strong> &agrave; la norme (voire surdimensionn&eacute;e, ce qui laisse une marge pour les zones d&apos;ombre et les pertes de r&eacute;flexion sur les parois).
-    </div>
-  </details>
-</div>
-
-<div class="exo">
-  <div class="exo-num">Exercice 3 &mdash; Choisir un photod&eacute;tecteur</div>
-  <p>Pour chaque application, choisir le photod&eacute;tecteur le plus adapt&eacute; (LDR, photodiode ou phototransistor) et justifier :</p>
-  <ol type="a">
-    <li>D&eacute;tection de la pr&eacute;sence d&apos;une main devant une lame de scie (s&eacute;curit&eacute; machine).</li>
-    <li>Allumage automatique de l&apos;&eacute;clairage ext&eacute;rieur d&apos;un hangar &agrave; bois au cr&eacute;puscule.</li>
-    <li>R&eacute;ception du signal infrarouge d&apos;une t&eacute;l&eacute;commande de volet roulant.</li>
-  </ol>
-  <details class="corr">
-    <summary>Voir la correction</summary>
-    <div class="corr-body">
-      a) <strong>Phototransistor</strong> : grande sensibilit&eacute;, r&eacute;ponse rapide indispensable pour la s&eacute;curit&eacute; machine (barri&egrave;re lumineuse).<br>
-      b) <strong>LDR</strong> : variation lente et progressive de l&apos;intensit&eacute; lumineuse ambiante au cr&eacute;puscule &rarr; la LDR est simple, robuste et peu co&ucirc;teuse pour ce type de d&eacute;tection.<br>
-      c) <strong>Photodiode IR</strong> : con&ccedil;ue pour recevoir les impulsions cod&eacute;es en infrarouge des t&eacute;l&eacute;commandes, bonne sensibilit&eacute; dans la plage 850-950 nm.
-    </div>
-  </details>
-</div>
-
-</div><!-- .c -->
 <script src="nav.js"></script>
 </body>
 </html>
