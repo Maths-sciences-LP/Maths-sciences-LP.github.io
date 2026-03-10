@@ -311,6 +311,7 @@
           'Sois <strong>sincère</strong> et <strong>concret</strong> : donne des exemples précis tirés de tes expériences.',
           'Montre que tu connais la formation visée et explique <strong>pourquoi elle te correspond</strong>.',
           'Mets en avant tes <strong>stages PFMP</strong>, projets d\'atelier et compétences acquises en bac pro ICCER.',
+          'Même si tu vises une filière <strong>différente</strong> (management, commerce, informatique...), valorise les compétences transversales de ton bac pro : rigueur, autonomie, travail en équipe, gestion de projet.',
           'La lettre Parcoursup est limitée à <strong>1 500 caractères</strong> (espaces compris).',
           'Relis-toi plusieurs fois et fais relire par un adulte.'
         ],
@@ -327,29 +328,29 @@
           {
             title: 'Étape 2 – Quelle formation vises-tu ?',
             fields: [
-              { id: 'g-formation', label: 'Nom de la formation', placeholder: 'Ex : BTS FED (Fluides Énergies Domotique), MC Technicien en énergies renouvelables...' },
-              { id: 'g-etablissement', label: 'Établissement visé', placeholder: 'Ex : Lycée Diderot, Paris' },
-              { id: 'g-pourquoi', label: 'Pourquoi cette formation t\'intéresse ?', placeholder: 'Ex : Pendant mes stages, j\'ai découvert l\'installation de pompes à chaleur et je souhaite approfondir mes connaissances en génie climatique...', type: 'textarea', full: true, hint: 'Explique ce qui t\'attire et pourquoi ça correspond à ton projet.' }
+              { id: 'g-formation', label: 'Nom de la formation', placeholder: 'Ex : BTS FED, BTS Électrotechnique, MC Technicien EnR, BTS MCO, BUT GMP, Licence...' },
+              { id: 'g-etablissement', label: 'Établissement visé', placeholder: 'Ex : Lycée Diderot, Paris / IUT de Créteil...' },
+              { id: 'g-pourquoi', label: 'Pourquoi cette formation t\'intéresse ?', placeholder: 'Ex : Pendant mes stages, j\'ai découvert... et je souhaite approfondir... / Cette formation me permettrait de développer de nouvelles compétences en...', type: 'textarea', full: true, hint: 'Explique ce qui t\'attire et pourquoi ça correspond à ton projet. Même si la filière est différente de l\'ICCER, fais le lien avec ton parcours.' }
             ]
           },
           {
             title: 'Étape 3 – Tes expériences',
             fields: [
-              { id: 'g-stages', label: 'Tes stages PFMP et expériences', placeholder: 'Ex : J\'ai effectué 22 semaines de stage, notamment chez Daikin où j\'ai installé des systèmes de climatisation, et chez Engie où j\'ai participé à la mise en service de chaudières...', type: 'textarea', full: true, hint: 'Décris tes stages (entreprise, durée, ce que tu as fait et appris).' },
-              { id: 'g-projets', label: 'Projets scolaires ou personnels en lien', placeholder: 'Ex : En atelier, j\'ai réalisé l\'installation complète d\'un circuit de chauffage avec plancher chauffant...', type: 'textarea', full: true, hint: 'Projets réalisés en atelier ou centres d\'intérêt en lien.' }
+              { id: 'g-stages', label: 'Tes stages PFMP et expériences', placeholder: 'Ex : J\'ai effectué 22 semaines de stage, notamment chez ... où j\'ai appris à ... Cela m\'a permis de développer ...', type: 'textarea', full: true, hint: 'Décris tes stages (entreprise, durée, ce que tu as fait et appris). Même pour une filière différente, tes stages montrent ton sérieux et tes compétences transversales.' },
+              { id: 'g-projets', label: 'Projets scolaires, personnels ou extra-scolaires', placeholder: 'Ex : En atelier, j\'ai réalisé... / Je fais du sport en club / Je m\'intéresse à... / J\'ai un projet personnel de...', type: 'textarea', full: true, hint: 'Projets en atelier, activités extra-scolaires, centres d\'intérêt en lien avec la formation visée.' }
             ]
           },
           {
             title: 'Étape 4 – Tes qualités et compétences',
             fields: [
               { id: 'g-qualites', label: 'Tes qualités principales', placeholder: 'Ex : Je suis rigoureux et méthodique, j\'aime le travail en équipe sur chantier, je suis autonome...', type: 'textarea', full: true, hint: 'Cite 2-3 qualités avec un exemple concret si possible.' },
-              { id: 'g-competences', label: 'Compétences techniques acquises en ICCER', placeholder: 'Ex : Installation de systèmes de chauffage et climatisation, raccordements fluidiques et électriques, mise en service, lecture de plans, utilisation d\'appareils de mesure...', type: 'textarea', full: true }
+              { id: 'g-competences', label: 'Compétences acquises en bac pro', placeholder: 'Ex : Compétences techniques (installation, lecture de plans, mesures...), compétences transversales (organisation, respect des normes de sécurité, relation client...)', type: 'textarea', full: true, hint: 'Compétences techniques ICCER + compétences transversales utiles pour ta future formation.' }
             ]
           },
           {
             title: 'Étape 5 – Ton projet professionnel',
             fields: [
-              { id: 'g-projet-pro', label: 'Ton projet après cette formation', placeholder: 'Ex : Je souhaite devenir technicien en génie climatique spécialisé en énergies renouvelables, puis évoluer vers un poste de chef d\'équipe...', type: 'textarea', full: true, hint: 'Décris ton objectif (métier visé, poursuite d\'études...).' }
+              { id: 'g-projet-pro', label: 'Ton projet après cette formation', placeholder: 'Ex : Je souhaite devenir technicien en génie climatique... / Je vise un métier dans le management... / Mon objectif est de...', type: 'textarea', full: true, hint: 'Décris ton objectif (métier visé, poursuite d\'études...). Montre la cohérence entre ton parcours et ton projet.' }
             ]
           }
         ],
@@ -380,13 +381,13 @@
           return t;
         },
         template: function() {
-          return '<p>Objet : Candidature en <input class="tpl-blank" type="text" placeholder="nom de la formation (ex : BTS FED)" style="width:260px"> au sein de <input class="tpl-blank" type="text" placeholder="nom de l\'établissement" style="width:220px"></p>'
+          return '<p>Objet : Candidature en <input class="tpl-blank" type="text" placeholder="nom de la formation (ex : BTS FED, BTS Électrotechnique, MC, Licence...)" style="width:320px"> au sein de <input class="tpl-blank" type="text" placeholder="nom de l\'établissement" style="width:220px"></p>'
             + '<p>Madame, Monsieur,</p>'
             + '<p>Actuellement en <input class="tpl-blank" type="text" placeholder="classe actuelle (ex : Terminale Bac Pro ICCER)" style="width:280px"> au lycée <input class="tpl-blank" type="text" placeholder="nom du lycée" style="width:200px">, je me permets de vous soumettre ma candidature pour intégrer votre formation en <input class="tpl-blank" type="text" placeholder="nom de la formation" style="width:220px">.</p>'
-            + '<p>Cette formation m\'intéresse particulièrement car <input class="tpl-blank" type="text" placeholder="raisons de ton intérêt (lien avec tes stages, le génie climatique, les EnR...)" style="width:100%">.</p>'
-            + '<p>Au cours de ma formation en bac pro ICCER, j\'ai effectué plusieurs stages (PFMP) notamment chez <input class="tpl-blank" type="text" placeholder="nom de l\'entreprise" style="width:180px"> où j\'ai pu <input class="tpl-blank" type="text" placeholder="décrire ce que tu as fait (installation, mise en service, raccordements...)" style="width:100%">. Ces expériences ont confirmé mon intérêt pour ce domaine.</p>'
-            + '<p>Mes atouts pour réussir sont <input class="tpl-blank" type="text" placeholder="tes qualités (rigueur, autonomie, esprit d\'équipe...)" style="width:100%">. J\'ai également acquis des compétences techniques telles que <input class="tpl-blank" type="text" placeholder="compétences (installation chauffage/clim, lecture de plans, raccordements...)" style="width:100%">.</p>'
-            + '<p>À terme, mon projet professionnel est de <input class="tpl-blank" type="text" placeholder="ton projet (devenir technicien en génie climatique, chef d\'équipe...)" style="width:100%">. Votre formation constitue une étape essentielle pour y parvenir.</p>'
+            + '<p>Cette formation m\'intéresse particulièrement car <input class="tpl-blank" type="text" placeholder="raisons de ton intérêt (lien avec ton parcours, tes stages, ton projet...)" style="width:100%">.</p>'
+            + '<p>Au cours de ma formation en bac pro ICCER, j\'ai effectué plusieurs stages (PFMP) notamment chez <input class="tpl-blank" type="text" placeholder="nom de l\'entreprise" style="width:180px"> où j\'ai pu <input class="tpl-blank" type="text" placeholder="décrire ce que tu as fait et les compétences développées" style="width:100%">. Ces expériences m\'ont permis de développer <input class="tpl-blank" type="text" placeholder="compétences transversales (rigueur, autonomie, travail en équipe, organisation...)" style="width:100%">.</p>'
+            + '<p>Mes atouts pour réussir dans cette formation sont <input class="tpl-blank" type="text" placeholder="tes qualités et compétences en lien avec la formation visée" style="width:100%">.</p>'
+            + '<p>À terme, mon projet professionnel est de <input class="tpl-blank" type="text" placeholder="ton projet (métier visé, poursuite d\'études...)" style="width:100%">. Votre formation constitue une étape essentielle pour y parvenir.</p>'
             + '<p>Je reste à votre disposition pour tout entretien complémentaire et vous prie d\'agréer, Madame, Monsieur, l\'expression de mes salutations distinguées.</p>'
             + '<p><input class="tpl-blank" type="text" placeholder="Prénom NOM" style="width:200px"></p>';
         }
