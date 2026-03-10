@@ -550,17 +550,17 @@ details p,details li{margin:5px 0;color:#4a5568}
       </div>
       <div class="slider-row">
         <label>\(b\)</label>
-        <input type="range" id="sb" min="-10" max="10" step="1" value="-3" oninput="updateChart()">
+        <input type="range" id="sb" min="-15" max="15" step="1" value="-3" oninput="updateChart()">
         <span id="vb">-3</span>
       </div>
       <div class="slider-row">
         <label>\(c\)</label>
-        <input type="range" id="sc" min="-15" max="15" step="1" value="-9" oninput="updateChart()">
+        <input type="range" id="sc" min="-20" max="20" step="1" value="-9" oninput="updateChart()">
         <span id="vc">-9</span>
       </div>
       <div class="slider-row">
         <label>\(d\)</label>
-        <input type="range" id="sd" min="-20" max="20" step="1" value="2" oninput="updateChart()">
+        <input type="range" id="sd" min="-30" max="30" step="1" value="2" oninput="updateChart()">
         <span id="vd">2</span>
       </div>
       <p id="formulaDisplay" style="margin:8px 0 0 0;font-size:.9em;color:#4a5568">
@@ -1148,7 +1148,7 @@ function predef(n) {
   var defs = {
     1: {a: 1,    b: -3,    c: -9,   d: 2},
     2: {a: -1,   b: 0,     c: 3,    d: 1},
-    3: {a: 4,    b: -14,   c: 120,  d: 0},
+    3: {a: 4,    b: -14,   c: 12,   d: 0},
     4: {a: -0.5, b: 6,     c: -18,  d: 30}
   };
   var co = defs[n];
