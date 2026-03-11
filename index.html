@@ -129,6 +129,18 @@
     .btn-simu-link { background: #f0fdf4; color: #15803d; border: 1px solid #bbf7d0; }
     .btn-simu-link:hover { background: #16a34a; color: #fff; border-color: transparent; }
 
+    /* Outils — ambre */
+    .card-outils .card-header { background: #fffbeb; border-bottom: 3px solid #d97706; }
+    .card-outils .card-title { color: #b45309; }
+    .btn-outils { background: #fffbeb; color: #b45309; border: 1px solid #fde68a; }
+    .btn-outils:hover { background: #d97706; color: #fff; border-color: transparent; }
+
+    /* Outils élèves — cyan */
+    .card-eleve .card-header { background: #ecfeff; border-bottom: 3px solid #0891b2; }
+    .card-eleve .card-title { color: #0e7490; }
+    .btn-eleve { background: #ecfeff; color: #0e7490; border: 1px solid #a5f3fc; }
+    .btn-eleve:hover { background: #0891b2; color: #fff; border-color: transparent; }
+
     /* ── Classes ── */
     .classes-grid {
       display: grid;
@@ -188,6 +200,53 @@
     .about-text p { font-size: .93rem; color: #334155; margin-bottom: 8px; }
     .about-text p:last-child { margin: 0; }
 
+    /* ── Météo bandeau ── */
+    .meteo-banner {
+      background: #fff;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 10px 16px;
+    }
+    .meteo-banner-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow-x: auto;
+    }
+    .meteo-banner-label {
+      font-size: .75rem;
+      font-weight: 700;
+      color: #64748b;
+      white-space: nowrap;
+      margin-right: 4px;
+    }
+    .meteo-banner-day {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: #f8fafc;
+      white-space: nowrap;
+      font-size: .78rem;
+      color: #334155;
+    }
+    .meteo-banner-day:first-of-type {
+      background: #eff6ff;
+      border: 1.5px solid #bfdbfe;
+      font-weight: 700;
+    }
+    .meteo-banner-day .mbd-jour { font-weight: 600; color: #475569; }
+    .meteo-banner-day .mbd-icon { font-size: 1.1rem; }
+    .meteo-banner-day .mbd-temp { font-weight: 700; }
+    .meteo-banner-day .mbd-min { color: #94a3b8; font-weight: 400; }
+    .meteo-banner-loading { font-size: .8rem; color: #94a3b8; }
+    @media (max-width: 600px) {
+      .meteo-banner-inner { gap: 6px; }
+      .meteo-banner-day { padding: 4px 7px; font-size: .72rem; }
+    }
+
     /* ── Footer ── */
     footer {
       background: #1e3a5f;
@@ -216,6 +275,13 @@
     <p class="sub">Cours et exercices pour les élèves de Bac Professionnel</p>
     <p class="credit">M. Azzouz &middot; Lycée Eugène Hénaff &middot; Académie de Créteil</p>
   </header>
+
+  <!-- ── Météo bandeau ── -->
+  <div class="meteo-banner" id="meteo-banner">
+    <div class="meteo-banner-inner" id="meteo-container">
+      <span class="meteo-banner-loading">Chargement météo...</span>
+    </div>
+  </div>
 
   <main>
 
@@ -269,6 +335,37 @@
           <div class="card-body">
             <div class="btn-group">
               <a href="simulations.html" class="btn btn-simu-link">Toutes les simulations</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card card-eleve">
+          <div class="card-header">
+            <span class="card-icon">🎓</span>
+            <div>
+              <div class="card-title">Outils élèves</div>
+              <div class="card-desc">Prépare ta candidature Parcoursup</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="btn-group">
+              <a href="lettre-motivation-parcoursup.html" class="btn btn-eleve">Lettre de motivation Parcoursup</a>
+              <a href="cv-eleve.html" class="btn btn-eleve">Générateur de CV</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card card-outils">
+          <div class="card-header">
+            <span class="card-icon">🛠️</span>
+            <div>
+              <div class="card-title">Outils enseignant</div>
+              <div class="card-desc">Générateurs de documents administratifs</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="btn-group">
+              <a href="ccf-convocations.html" class="btn btn-outils">Convocations CCF</a>
             </div>
           </div>
         </div>
@@ -329,6 +426,57 @@
   <footer>
     <p>Site pédagogique &mdash; M. Azzouz &mdash; Lycée Eugène Hénaff &mdash; Académie de Créteil</p>
   </footer>
+
+  <script>
+    (function() {
+      var JOURS = ['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'];
+      var MOIS = ['jan','fév','mar','avr','mai','juin','juil','août','sep','oct','nov','déc'];
+
+      // WMO Weather interpretation codes → emoji
+      var WMO = {
+        0:'☀️', 1:'🌤️', 2:'⛅', 3:'☁️',
+        45:'🌫️', 48:'🌫️',
+        51:'🌦️', 53:'🌦️', 55:'🌧️',
+        56:'🌧️', 57:'🌧️',
+        61:'🌧️', 63:'🌧️', 65:'🌧️',
+        66:'🌧️', 67:'🌧️',
+        71:'🌨️', 73:'🌨️', 75:'❄️',
+        77:'❄️',
+        80:'🌦️', 81:'🌧️', 82:'⛈️',
+        85:'🌨️', 86:'❄️',
+        95:'⛈️', 96:'⛈️', 99:'⛈️'
+      };
+      var url = 'https://api.open-meteo.com/v1/forecast?latitude=48.87&longitude=2.42'
+        + '&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_sum,wind_speed_10m_max'
+        + '&timezone=Europe%2FParis&forecast_days=7';
+
+      fetch(url)
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+          var d = data.daily;
+          var html = '<span class="meteo-banner-label">Bagnolet</span>';
+          for (var i = 0; i < d.time.length; i++) {
+            var date = new Date(d.time[i] + 'T00:00:00');
+            var jour = JOURS[date.getDay()];
+            var code = d.weather_code[i];
+            var icon = WMO[code] || '🌡️';
+            var tMax = Math.round(d.temperature_2m_max[i]);
+            var tMin = Math.round(d.temperature_2m_min[i]);
+
+            html += '<span class="meteo-banner-day">';
+            html += '<span class="mbd-jour">' + jour + '</span>';
+            html += '<span class="mbd-icon">' + icon + '</span>';
+            html += '<span class="mbd-temp">' + tMax + '°</span>';
+            html += '<span class="mbd-min">' + tMin + '°</span>';
+            html += '</span>';
+          }
+          document.getElementById('meteo-container').innerHTML = html;
+        })
+        .catch(function() {
+          document.getElementById('meteo-banner').style.display = 'none';
+        });
+    })();
+  </script>
 
 </body>
 </html>

@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Générateur de lettre de motivation – Bac Pro ICCER</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: #f5f7fa;
+      color: #1e293b;
+      line-height: 1.6;
+    }
+    nav {
+      background: #1e3a5f;
+      position: sticky; top: 0; z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,.25);
+    }
+    nav ul { list-style: none; display: flex; max-width: 960px; margin: 0 auto; }
+    nav a {
+      display: block; padding: 14px 22px; color: #cbd5e1;
+      text-decoration: none; font-weight: 600; font-size: .95rem;
+      transition: background .2s, color .2s;
+    }
+    nav a:hover, nav a.active { background: #2563eb; color: #fff; }
+    header {
+      background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+      color: #fff; text-align: center; padding: 40px 20px 32px;
+    }
+    header h1 {
+      font-size: clamp(1.3rem, 3.5vw, 2rem);
+      font-weight: 800; margin-bottom: 6px;
+    }
+    header p { font-size: .95rem; opacity: .85; }
+
+    main { max-width: 900px; margin: 0 auto; padding: 28px 16px 64px; }
+
+    /* ── Context selector ── */
+    .context-selector {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px; margin-bottom: 24px;
+    }
+    .ctx-btn {
+      padding: 16px 14px;
+      background: #fff;
+      border: 2.5px solid #e2e8f0;
+      border-radius: 12px;
+      cursor: pointer;
+      text-align: center;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .ctx-btn:hover { border-color: #93c5fd; }
+    .ctx-btn.active { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37,99,235,.15); }
+    .ctx-icon { font-size: 1.6rem; margin-bottom: 6px; }
+    .ctx-title { font-weight: 700; font-size: .92rem; color: #1e3a5f; margin-bottom: 2px; }
+    .ctx-desc { font-size: .75rem; color: #64748b; }
+
+    /* ── Mode selector ── */
+    .mode-selector {
+      display: flex; gap: 12px; margin-bottom: 24px; flex-wrap: wrap;
+    }
+    .mode-btn {
+      flex: 1; min-width: 200px;
+      padding: 18px 20px;
+      background: #fff;
+      border: 2.5px solid #e2e8f0;
+      border-radius: 12px;
+      cursor: pointer;
+      text-align: left;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .mode-btn:hover { border-color: #93c5fd; }
+    .mode-btn.active { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37,99,235,.15); }
+    .mode-btn-title { font-weight: 700; font-size: 1rem; color: #1e3a5f; margin-bottom: 4px; }
+    .mode-btn-desc { font-size: .82rem; color: #64748b; }
+
+    /* ── Sections ── */
+    .form-section {
+      background: #fff; border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.08);
+      padding: 24px; margin-bottom: 20px;
+    }
+    .form-section h2 {
+      font-size: 1.05rem; font-weight: 700; color: #1e3a5f;
+      border-left: 4px solid #2563eb; padding-left: 12px; margin-bottom: 16px;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+    }
+    .form-group { display: flex; flex-direction: column; }
+    .form-group.full { grid-column: 1 / -1; }
+    .form-group label {
+      font-size: .82rem; font-weight: 600; color: #475569; margin-bottom: 4px;
+    }
+    .form-group input, .form-group select, .form-group textarea {
+      padding: 9px 12px; border: 1.5px solid #e2e8f0; border-radius: 7px;
+      font-size: .92rem; font-family: inherit; transition: border-color .2s;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      outline: none; border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37,99,235,.12);
+    }
+    .form-group textarea { min-height: 80px; resize: vertical; }
+    .form-hint { font-size: .76rem; color: #94a3b8; margin-top: 3px; }
+
+    /* ── Guided steps ── */
+    .step-indicator {
+      display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap;
+    }
+    .step-dot {
+      width: 32px; height: 32px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .82rem; font-weight: 700;
+      background: #e2e8f0; color: #64748b;
+      transition: background .2s, color .2s;
+    }
+    .step-dot.active { background: #2563eb; color: #fff; }
+    .step-dot.done { background: #16a34a; color: #fff; }
+
+    .step-panel { display: none; }
+    .step-panel.active { display: block; }
+
+    .step-nav { display: flex; gap: 12px; margin-top: 18px; }
+
+    /* ── Template mode ── */
+    .template-area {
+      min-height: 300px; line-height: 1.8; font-size: .92rem;
+    }
+    .template-area .tpl-blank {
+      display: inline-block;
+      border-bottom: 2px solid #2563eb;
+      min-width: 150px;
+      padding: 2px 6px;
+      margin: 0 2px;
+      color: #2563eb;
+      font-weight: 600;
+      background: #eff6ff;
+      border-radius: 3px;
+      font-family: inherit;
+      font-size: .9rem;
+    }
+    .template-area .tpl-blank:focus {
+      outline: none;
+      border-color: #1d4ed8;
+      box-shadow: 0 0 0 3px rgba(37,99,235,.15);
+    }
+    .template-area .tpl-blank::placeholder { color: #93c5fd; font-weight: 400; }
+
+    /* ── Buttons ── */
+    .btn-primary, .btn-secondary {
+      padding: 11px 24px; border-radius: 7px;
+      font-weight: 700; font-size: .92rem;
+      cursor: pointer; border: none;
+      transition: background .2s, transform .1s;
+    }
+    .btn-primary { background: #2563eb; color: #fff; }
+    .btn-primary:hover { background: #1d4ed8; transform: translateY(-1px); }
+    .btn-secondary { background: #f1f5f9; color: #475569; border: 1.5px solid #e2e8f0; }
+    .btn-secondary:hover { background: #e2e8f0; }
+
+    /* ── Preview / Output ── */
+    #output-zone { display: none; }
+    #output-zone.visible { display: block; }
+    .letter-preview {
+      background: #fff; border: 2px solid #1e3a5f; border-radius: 4px;
+      padding: 32px 36px; margin-bottom: 20px; font-size: .92rem;
+      line-height: 1.8; white-space: pre-wrap;
+      font-family: 'Georgia', 'Times New Roman', serif;
+    }
+    .letter-preview p { margin-bottom: 12px; }
+
+    .btn-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
+
+    .tips-box {
+      background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 8px;
+      padding: 16px 20px; margin-bottom: 20px;
+    }
+    .tips-box h3 { font-size: .9rem; color: #1d4ed8; margin-bottom: 8px; }
+    .tips-box ul { padding-left: 18px; font-size: .84rem; color: #334155; }
+    .tips-box li { margin-bottom: 4px; }
+
+    @media print {
+      body { background: #fff; }
+      nav, header, footer, .context-selector, .mode-selector, .btn-row, .tips-box,
+      .step-indicator, .step-nav, #template-mode, #guided-mode { display: none !important; }
+      main { padding: 0; max-width: 100%; }
+      #output-zone, #output-zone .form-section { display: block !important; }
+      #output-zone h2, #output-zone #char-count { display: none !important; }
+      .letter-preview { border: none; padding: 20px; font-size: 11pt; box-shadow: none; }
+      .form-section:not(#output-zone .form-section) { display: none !important; }
+    }
+
+    @media (max-width: 600px) {
+      nav a { padding: 11px 13px; font-size: .82rem; }
+      .form-section { padding: 16px; }
+      .letter-preview { padding: 20px; }
+      .context-selector { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="maths-term-iccer.html">Mathématiques</a></li>
+      <li><a href="pc-term-iccer.html">Physique-Chimie</a></li>
+      <li><a href="simulations.html">Simulations</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1 id="page-title">Générateur de lettre de motivation</h1>
+    <p id="page-subtitle">Bac Pro ICCER – Crée ta lettre de motivation en quelques minutes</p>
+  </header>
+
+  <main>
+
+    <!-- ── Choix du contexte ── -->
+    <div class="context-selector" id="context-selector">
+      <button class="ctx-btn active" onclick="switchContext('parcoursup')">
+        <div class="ctx-icon">🎓</div>
+        <div class="ctx-title">Parcoursup</div>
+        <div class="ctx-desc">Poursuite d'études (BTS, MC...)</div>
+      </button>
+      <button class="ctx-btn" onclick="switchContext('emploi')">
+        <div class="ctx-icon">💼</div>
+        <div class="ctx-title">Emploi</div>
+        <div class="ctx-desc">Recherche d'un premier emploi</div>
+      </button>
+      <button class="ctx-btn" onclick="switchContext('stage')">
+        <div class="ctx-icon">🔧</div>
+        <div class="ctx-title">Stage</div>
+        <div class="ctx-desc">Stage en entreprise (PFMP)</div>
+      </button>
+      <button class="ctx-btn" onclick="switchContext('alternance')">
+        <div class="ctx-icon">📋</div>
+        <div class="ctx-title">Alternance</div>
+        <div class="ctx-desc">Contrat d'apprentissage</div>
+      </button>
+    </div>
+
+    <!-- ── Conseils ── -->
+    <div class="tips-box" id="tips-box"></div>
+
+    <!-- ── Mode Selector ── -->
+    <div class="mode-selector">
+      <button class="mode-btn active" onclick="switchMode('guided')" id="btn-mode-guided">
+        <div class="mode-btn-title">Mode guidé</div>
+        <div class="mode-btn-desc">Réponds à des questions simples, la lettre se construit automatiquement.</div>
+      </button>
+      <button class="mode-btn" onclick="switchMode('template')" id="btn-mode-template">
+        <div class="mode-btn-title">Modèle à compléter</div>
+        <div class="mode-btn-desc">Complète directement les champs d'une lettre pré-rédigée.</div>
+      </button>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════ -->
+    <!--  MODE GUIDÉ                                        -->
+    <!-- ══════════════════════════════════════════════════ -->
+    <div id="guided-mode"></div>
+
+    <!-- ══════════════════════════════════════════════════ -->
+    <!--  MODE MODÈLE À COMPLÉTER                           -->
+    <!-- ══════════════════════════════════════════════════ -->
+    <div id="template-mode" style="display:none;"></div>
+
+    <!-- ══════════════════════════════════════════════════ -->
+    <!--  APERÇU FINAL                                     -->
+    <!-- ══════════════════════════════════════════════════ -->
+    <div id="output-zone">
+      <div class="form-section">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+          <h2 style="margin-bottom:0;">Aperçu de ta lettre</h2>
+          <span id="char-count" style="font-size:.82rem;color:#64748b;background:#f1f5f9;padding:4px 14px;border-radius:20px;"></span>
+        </div>
+        <div class="letter-preview" id="letter-output"></div>
+        <div class="btn-row">
+          <button class="btn-primary" onclick="copierLettre()">Copier le texte</button>
+          <button class="btn-primary" onclick="window.print()">Imprimer / PDF</button>
+          <button class="btn-primary" onclick="telechargerWord()">Télécharger Word</button>
+          <button class="btn-secondary" onclick="telechargerTxt()">Télécharger .txt</button>
+          <button class="btn-secondary" onclick="modifierLettre()">Modifier</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer style="background:#1e3a5f;color:#94a3b8;text-align:center;padding:18px;font-size:.8rem;">
+    <p>Maths – Sciences en LP &mdash; M. Azzouz &mdash; Lycée Eugène Hénaff &mdash; Académie de Créteil</p>
+  </footer>
+
+  <script>
+    var currentStep = 1;
+    var currentMode = 'guided';
+    var currentContext = 'parcoursup';
+
+    /* ══════════════════════════════════════════════════════
+       DONNÉES PAR CONTEXTE
+       ══════════════════════════════════════════════════════ */
+    var CTX = {
+      parcoursup: {
+        charLimit: 1500,
+        fileName: 'lettre-motivation-parcoursup',
+        tips: [
+          'Sois <strong>sincère</strong> et <strong>concret</strong> : donne des exemples précis tirés de tes expériences.',
+          'Montre que tu connais la formation visée et explique <strong>pourquoi elle te correspond</strong>.',
+          'Mets en avant tes <strong>stages PFMP</strong>, projets d\'atelier et compétences acquises en bac pro ICCER.',
+          'Même si tu vises une filière <strong>différente</strong> (management, commerce, informatique...), valorise les compétences transversales de ton bac pro : rigueur, autonomie, travail en équipe, gestion de projet.',
+          'La lettre Parcoursup est limitée à <strong>1 500 caractères</strong> (espaces compris).',
+          'Relis-toi plusieurs fois et fais relire par un adulte.'
+        ],
+        steps: [
+          {
+            title: 'Étape 1 – Qui es-tu ?',
+            fields: [
+              { id: 'g-prenom', label: 'Prénom', placeholder: 'Ton prénom', full: false },
+              { id: 'g-nom', label: 'Nom', placeholder: 'Ton nom', full: false },
+              { id: 'g-classe', label: 'Classe actuelle', placeholder: 'Ex : Terminale Bac Pro ICCER', full: false },
+              { id: 'g-lycee', label: 'Lycée', placeholder: 'Ex : Lycée Eugène Hénaff, Bagnolet', full: false }
+            ]
+          },
+          {
+            title: 'Étape 2 – Quelle formation vises-tu ?',
+            fields: [
+              { id: 'g-formation', label: 'Nom de la formation', placeholder: 'Ex : BTS FED, BTS Électrotechnique, MC Technicien EnR, BTS MCO, BUT GMP, Licence...' },
+              { id: 'g-etablissement', label: 'Établissement visé', placeholder: 'Ex : Lycée Diderot, Paris / IUT de Créteil...' },
+              { id: 'g-pourquoi', label: 'Pourquoi cette formation t\'intéresse ?', placeholder: 'Ex : Pendant mes stages, j\'ai découvert... et je souhaite approfondir... / Cette formation me permettrait de développer de nouvelles compétences en...', type: 'textarea', full: true, hint: 'Explique ce qui t\'attire et pourquoi ça correspond à ton projet. Même si la filière est différente de l\'ICCER, fais le lien avec ton parcours.' }
+            ]
+          },
+          {
+            title: 'Étape 3 – Tes expériences',
+            fields: [
+              { id: 'g-stages', label: 'Tes stages PFMP et expériences', placeholder: 'Ex : J\'ai effectué 22 semaines de stage, notamment chez ... où j\'ai appris à ... Cela m\'a permis de développer ...', type: 'textarea', full: true, hint: 'Décris tes stages (entreprise, durée, ce que tu as fait et appris). Même pour une filière différente, tes stages montrent ton sérieux et tes compétences transversales.' },
+              { id: 'g-projets', label: 'Projets scolaires, personnels ou extra-scolaires', placeholder: 'Ex : En atelier, j\'ai réalisé... / Je fais du sport en club / Je m\'intéresse à... / J\'ai un projet personnel de...', type: 'textarea', full: true, hint: 'Projets en atelier, activités extra-scolaires, centres d\'intérêt en lien avec la formation visée.' }
+            ]
+          },
+          {
+            title: 'Étape 4 – Tes qualités et compétences',
+            fields: [
+              { id: 'g-qualites', label: 'Tes qualités principales', placeholder: 'Ex : Je suis rigoureux et méthodique, j\'aime le travail en équipe sur chantier, je suis autonome...', type: 'textarea', full: true, hint: 'Cite 2-3 qualités avec un exemple concret si possible.' },
+              { id: 'g-competences', label: 'Compétences acquises en bac pro', placeholder: 'Ex : Compétences techniques (installation, lecture de plans, mesures...), compétences transversales (organisation, respect des normes de sécurité, relation client...)', type: 'textarea', full: true, hint: 'Compétences techniques ICCER + compétences transversales utiles pour ta future formation.' }
+            ]
+          },
+          {
+            title: 'Étape 5 – Ton projet professionnel',
+            fields: [
+              { id: 'g-projet-pro', label: 'Ton projet après cette formation', placeholder: 'Ex : Je souhaite devenir technicien en génie climatique... / Je vise un métier dans le management... / Mon objectif est de...', type: 'textarea', full: true, hint: 'Décris ton objectif (métier visé, poursuite d\'études...). Montre la cohérence entre ton parcours et ton projet.' }
+            ]
+          }
+        ],
+        generate: function() {
+          var p = val('g-prenom'), n = val('g-nom'), cl = val('g-classe'), ly = val('g-lycee');
+          var form = val('g-formation'), etab = val('g-etablissement'), pq = val('g-pourquoi');
+          var st = val('g-stages'), pr = val('g-projets'), qu = val('g-qualites');
+          var comp = val('g-competences'), pp = val('g-projet-pro');
+          if (!p || !form) { alert('Remplis au moins ton prénom et le nom de la formation.'); return null; }
+          var t = 'Objet : Candidature en ' + form;
+          if (etab) t += ' – ' + etab;
+          t += '\n\nMadame, Monsieur,\n\n';
+          t += 'Actuellement en ' + (cl || 'terminale bac professionnel ICCER');
+          if (ly) t += ' au lycée ' + ly;
+          t += ', je me permets de vous soumettre ma candidature pour intégrer votre formation en ' + form + '.\n\n';
+          if (pq) t += endDot(pq) + '\n\n';
+          if (st) t += endDot(st) + '\n\n';
+          if (pr) t += endDot(pr) + '\n\n';
+          if (qu || comp) {
+            var q = '';
+            if (qu) q += qu;
+            if (comp) { if (q) q += ' De plus, j\'ai acquis des compétences techniques : '; q += comp; }
+            t += endDot(q) + '\n\n';
+          }
+          if (pp) t += 'À terme, ' + endDot(pp) + ' Votre formation constitue une étape essentielle pour y parvenir.\n\n';
+          t += 'Je reste à votre disposition pour tout entretien complémentaire et vous prie d\'agréer, Madame, Monsieur, l\'expression de mes salutations distinguées.\n\n';
+          t += p + ' ' + n.toUpperCase();
+          return t;
+        },
+        template: function() {
+          return '<p>Objet : Candidature en <input class="tpl-blank" type="text" placeholder="nom de la formation (ex : BTS FED, BTS Électrotechnique, MC, Licence...)" style="width:320px"> au sein de <input class="tpl-blank" type="text" placeholder="nom de l\'établissement" style="width:220px"></p>'
+            + '<p>Madame, Monsieur,</p>'
+            + '<p>Actuellement en <input class="tpl-blank" type="text" placeholder="classe actuelle (ex : Terminale Bac Pro ICCER)" style="width:280px"> au lycée <input class="tpl-blank" type="text" placeholder="nom du lycée" style="width:200px">, je me permets de vous soumettre ma candidature pour intégrer votre formation en <input class="tpl-blank" type="text" placeholder="nom de la formation" style="width:220px">.</p>'
+            + '<p>Cette formation m\'intéresse particulièrement car <input class="tpl-blank" type="text" placeholder="raisons de ton intérêt (lien avec ton parcours, tes stages, ton projet...)" style="width:100%">.</p>'
+            + '<p>Au cours de ma formation en bac pro ICCER, j\'ai effectué plusieurs stages (PFMP) notamment chez <input class="tpl-blank" type="text" placeholder="nom de l\'entreprise" style="width:180px"> où j\'ai pu <input class="tpl-blank" type="text" placeholder="décrire ce que tu as fait et les compétences développées" style="width:100%">. Ces expériences m\'ont permis de développer <input class="tpl-blank" type="text" placeholder="compétences transversales (rigueur, autonomie, travail en équipe, organisation...)" style="width:100%">.</p>'
+            + '<p>Mes atouts pour réussir dans cette formation sont <input class="tpl-blank" type="text" placeholder="tes qualités et compétences en lien avec la formation visée" style="width:100%">.</p>'
+            + '<p>À terme, mon projet professionnel est de <input class="tpl-blank" type="text" placeholder="ton projet (métier visé, poursuite d\'études...)" style="width:100%">. Votre formation constitue une étape essentielle pour y parvenir.</p>'
+            + '<p>Je reste à votre disposition pour tout entretien complémentaire et vous prie d\'agréer, Madame, Monsieur, l\'expression de mes salutations distinguées.</p>'
+            + '<p><input class="tpl-blank" type="text" placeholder="Prénom NOM" style="width:200px"></p>';
+        }
+      },
+
+      emploi: {
+        charLimit: 0,
+        fileName: 'lettre-motivation-emploi',
+        tips: [
+          'Adresse ta lettre à <strong>une entreprise précise</strong>, pas une lettre générique.',
+          'Mets en avant tes <strong>22 semaines de stages PFMP</strong> et les compétences concrètes acquises.',
+          'Parle des <strong>compétences ICCER</strong> : installation chauffage/clim, raccordements, mise en service, énergies renouvelables.',
+          'Montre ta <strong>motivation pour le terrain</strong> : tu es opérationnel et prêt à travailler.',
+          'N\'oublie pas de mentionner tes <strong>habilitations</strong> (électrique, manipulation de fluides frigorigènes...) si tu les as.',
+          'Relis-toi et fais relire par un adulte avant d\'envoyer.'
+        ],
+        steps: [
+          {
+            title: 'Étape 1 – Tes coordonnées',
+            fields: [
+              { id: 'g-prenom', label: 'Prénom', placeholder: 'Ton prénom' },
+              { id: 'g-nom', label: 'Nom', placeholder: 'Ton nom' },
+              { id: 'g-adresse', label: 'Adresse', placeholder: 'Ex : 12 rue des Lilas, 93100 Bagnolet', full: true },
+              { id: 'g-telephone', label: 'Téléphone', placeholder: 'Ex : 06 12 34 56 78' },
+              { id: 'g-email', label: 'Email', placeholder: 'Ex : prenom.nom@email.fr' }
+            ]
+          },
+          {
+            title: 'Étape 2 – L\'entreprise et le poste visé',
+            fields: [
+              { id: 'g-entreprise', label: 'Nom de l\'entreprise', placeholder: 'Ex : Daikin, Engie, Atlantic, artisan local...' },
+              { id: 'g-poste', label: 'Poste recherché', placeholder: 'Ex : Installateur en chauffage et climatisation, Technicien CVC...' },
+              { id: 'g-pourquoi', label: 'Pourquoi cette entreprise ?', placeholder: 'Ex : Votre entreprise est spécialisée dans l\'installation de pompes à chaleur et je souhaite m\'investir dans ce secteur en plein essor...', type: 'textarea', full: true, hint: 'Montre que tu connais l\'entreprise et son activité.' }
+            ]
+          },
+          {
+            title: 'Étape 3 – Ta formation et tes stages',
+            fields: [
+              { id: 'g-stages', label: 'Tes stages PFMP et expériences', placeholder: 'Ex : Lors de mes PFMP, j\'ai travaillé chez Engie Cofely où j\'ai installé des systèmes de chauffage collectif, réalisé des raccordements fluidiques et participé à la mise en service d\'une PAC air/eau...', type: 'textarea', full: true, hint: 'Décris tes expériences les plus pertinentes pour le poste.' },
+              { id: 'g-projets', label: 'Réalisations en atelier', placeholder: 'Ex : Installation complète d\'un circuit de chauffage avec chaudière gaz et radiateurs, mise en service d\'une climatisation split...', type: 'textarea', full: true }
+            ]
+          },
+          {
+            title: 'Étape 4 – Tes compétences et qualités',
+            fields: [
+              { id: 'g-competences', label: 'Compétences techniques', placeholder: 'Ex : Installation et mise en service de systèmes de chauffage (chaudières, PAC), climatisation (splits, gainable), raccordements fluidiques et électriques, lecture de plans, brasage cuivre...', type: 'textarea', full: true },
+              { id: 'g-habilitations', label: 'Habilitations et certifications', placeholder: 'Ex : Habilitation électrique B1V, manipulation de fluides frigorigènes, SST...', full: true },
+              { id: 'g-qualites', label: 'Tes qualités', placeholder: 'Ex : Rigoureux, ponctuel, bon esprit d\'équipe, autonome sur chantier...', type: 'textarea', full: true }
+            ]
+          },
+          {
+            title: 'Étape 5 – Disponibilité',
+            fields: [
+              { id: 'g-disponibilite', label: 'Ta disponibilité', placeholder: 'Ex : Disponible immédiatement / À partir de juillet 2026', full: true },
+              { id: 'g-complement', label: 'Information complémentaire (facultatif)', placeholder: 'Ex : Permis B, véhicule personnel...', full: true }
+            ]
+          }
+        ],
+        generate: function() {
+          var p = val('g-prenom'), n = val('g-nom'), adr = val('g-adresse');
+          var tel = val('g-telephone'), email = val('g-email');
+          var ent = val('g-entreprise'), poste = val('g-poste'), pq = val('g-pourquoi');
+          var st = val('g-stages'), pr = val('g-projets');
+          var comp = val('g-competences'), hab = val('g-habilitations'), qu = val('g-qualites');
+          var dispo = val('g-disponibilite'), compl = val('g-complement');
+          if (!p || !poste) { alert('Remplis au moins ton prénom et le poste recherché.'); return null; }
+          var t = p + ' ' + n.toUpperCase() + '\n';
+          if (adr) t += adr + '\n';
+          if (tel) t += tel + '\n';
+          if (email) t += email + '\n';
+          t += '\n';
+          if (ent) t += 'À l\'attention du responsable du recrutement\n' + ent + '\n\n';
+          t += 'Objet : Candidature au poste de ' + poste;
+          if (ent) t += ' – ' + ent;
+          t += '\n\nMadame, Monsieur,\n\n';
+          t += 'Titulaire du baccalauréat professionnel ICCER (Installateur en Chauffage, Climatisation et Énergies Renouvelables)';
+          t += ', je me permets de vous adresser ma candidature pour le poste de ' + poste + '.\n\n';
+          if (pq) t += endDot(pq) + '\n\n';
+          if (st) t += endDot(st) + '\n\n';
+          if (pr) t += endDot(pr) + '\n\n';
+          if (comp) t += 'Sur le plan technique, ' + endDot(comp.charAt(0).toLowerCase() + comp.slice(1)) + '\n\n';
+          if (hab) t += 'Je dispose des habilitations suivantes : ' + endDot(hab) + '\n\n';
+          if (qu) t += endDot(qu) + '\n\n';
+          if (dispo) t += endDot(dispo) + '\n';
+          if (compl) t += endDot(compl) + '\n';
+          t += '\nJe serais ravi de vous rencontrer pour vous démontrer ma motivation. Dans l\'attente de votre réponse, je vous prie d\'agréer, Madame, Monsieur, l\'expression de mes salutations distinguées.\n\n';
+          t += p + ' ' + n.toUpperCase();
+          return t;
+        },
+        template: function() {
+          return '<p><input class="tpl-blank" type="text" placeholder="Prénom NOM" style="width:200px"></p>'
+            + '<p><input class="tpl-blank" type="text" placeholder="Adresse" style="width:300px"></p>'
+            + '<p><input class="tpl-blank" type="text" placeholder="Téléphone" style="width:160px"> – <input class="tpl-blank" type="text" placeholder="Email" style="width:220px"></p>'
+            + '<p>&nbsp;</p>'
+            + '<p>Objet : Candidature au poste de <input class="tpl-blank" type="text" placeholder="intitulé du poste (ex : installateur CVC)" style="width:280px"> – <input class="tpl-blank" type="text" placeholder="nom de l\'entreprise" style="width:200px"></p>'
+            + '<p>Madame, Monsieur,</p>'
+            + '<p>Titulaire du baccalauréat professionnel ICCER (Installateur en Chauffage, Climatisation et Énergies Renouvelables), je me permets de vous adresser ma candidature pour le poste de <input class="tpl-blank" type="text" placeholder="intitulé du poste" style="width:240px"> au sein de votre entreprise.</p>'
+            + '<p>Votre entreprise m\'intéresse car <input class="tpl-blank" type="text" placeholder="raisons (spécialisation, réputation, secteur d\'activité...)" style="width:100%">.</p>'
+            + '<p>Au cours de mes 22 semaines de stages (PFMP), j\'ai acquis une expérience concrète du terrain. Chez <input class="tpl-blank" type="text" placeholder="nom de l\'entreprise de stage" style="width:180px">, j\'ai notamment <input class="tpl-blank" type="text" placeholder="missions réalisées (installation, raccordements, mise en service...)" style="width:100%">.</p>'
+            + '<p>Mes compétences techniques incluent <input class="tpl-blank" type="text" placeholder="compétences (installation chauffage/clim, brasage cuivre, lecture de plans...)" style="width:100%">. Je dispose également de <input class="tpl-blank" type="text" placeholder="habilitations (habilitation électrique, fluides frigorigènes, SST...)" style="width:100%">.</p>'
+            + '<p>Rigoureux et motivé, <input class="tpl-blank" type="text" placeholder="qualités supplémentaires et exemples" style="width:100%">.</p>'
+            + '<p><input class="tpl-blank" type="text" placeholder="Disponibilité (ex : Disponible immédiatement)" style="width:300px">.</p>'
+            + '<p>Je serais ravi de vous rencontrer pour vous démontrer ma motivation. Dans l\'attente de votre réponse, je vous prie d\'agréer, Madame, Monsieur, l\'expression de mes salutations distinguées.</p>'
+            + '<p><input class="tpl-blank" type="text" placeholder="Prénom NOM" style="width:200px"></p>';
+        }
+      },
+
+      stage: {
+        charLimit: 0,
+        fileName: 'lettre-motivation-stage',
+        tips: [
+          'Précise bien les <strong>dates et la durée</strong> du stage recherché.',
+          'Explique ce que tu espères <strong>apprendre et découvrir</strong> pendant ce stage.',
+          'Mets en avant ce que tu sais <strong>déjà faire</strong> grâce à tes cours d\'atelier et stages précédents.',
+          'Montre que tu connais <strong>l\'activité de l\'entreprise</strong> (chauffage, clim, EnR, plomberie...).',
+          'Précise que le stage est <strong>encadré par le lycée</strong> (convention de stage).',
+          'Sois poli, professionnel et relis-toi avant d\'envoyer.'
+        ],
+        steps: [
+          {
+            title: 'Étape 1 – Tes informations',
+            fields: [
+              { id: 'g-prenom', label: 'Prénom', placeholder: 'Ton prénom' },
+              { id: 'g-nom', label: 'Nom', placeholder: 'Ton nom' },
+              { id: 'g-classe', label: 'Classe', placeholder: 'Ex : 1re Bac Pro ICCER' },
+              { id: 'g-lycee', label: 'Lycée', placeholder: 'Ex : Lycée Eugène Hénaff, Bagnolet' }
+            ]
+          },
+          {
+            title: 'Étape 2 – Le stage recherché',
+            fields: [
+              { id: 'g-entreprise', label: 'Entreprise visée', placeholder: 'Ex : Daikin, plombier-chauffagiste local...' },
+              { id: 'g-periode', label: 'Période et durée du stage', placeholder: 'Ex : Du 3 au 28 mars 2026 (4 semaines)' },
+              { id: 'g-pourquoi', label: 'Pourquoi cette entreprise ?', placeholder: 'Ex : Votre entreprise est spécialisée dans l\'installation de pompes à chaleur, ce qui correspond à ma formation...', type: 'textarea', full: true, hint: 'Montre que tu connais l\'entreprise.' }
+            ]
+          },
+          {
+            title: 'Étape 3 – Ce que tu sais faire',
+            fields: [
+              { id: 'g-competences', label: 'Ce que tu as appris en cours et en atelier', placeholder: 'Ex : En atelier, j\'ai appris à réaliser des raccordements cuivre par brasage, installer des radiateurs, lire des plans d\'installation...', type: 'textarea', full: true, hint: 'Décris ce que tu maîtrises déjà.' },
+              { id: 'g-stages-precedents', label: 'Stages précédents (si tu en as fait)', placeholder: 'Ex : J\'ai déjà effectué un stage de 3 semaines chez un plombier-chauffagiste où j\'ai assisté à l\'installation d\'une chaudière gaz...', type: 'textarea', full: true }
+            ]
+          },
+          {
+            title: 'Étape 4 – Tes objectifs et qualités',
+            fields: [
+              { id: 'g-objectifs', label: 'Que souhaites-tu apprendre pendant ce stage ?', placeholder: 'Ex : Je souhaite découvrir l\'installation de climatisations en conditions réelles, participer à des mises en service, observer le travail en équipe sur chantier...', type: 'textarea', full: true },
+              { id: 'g-qualites', label: 'Tes qualités', placeholder: 'Ex : Motivé, ponctuel, curieux, respectueux des consignes de sécurité...', type: 'textarea', full: true }
+            ]
+          }
+        ],
+        generate: function() {
+          var p = val('g-prenom'), n = val('g-nom'), cl = val('g-classe'), ly = val('g-lycee');
+          var ent = val('g-entreprise'), per = val('g-periode'), pq = val('g-pourquoi');
+          var comp = val('g-competences'), stpr = val('g-stages-precedents');
+          var obj = val('g-objectifs'), qu = val('g-qualites');
+          if (!p || !ent) { alert('Remplis au moins ton prénom et le nom de l\'entreprise.'); return null; }
+          var t = 'Objet : Demande de stage en entreprise';
+          if (per) t += ' – ' + per;
+          t += '\n\nMadame, Monsieur,\n\n';
+          t += 'Actuellement en ' + (cl || 'bac professionnel ICCER');
+          if (ly) t += ' au lycée ' + ly;
+          t += ', je recherche un stage en entreprise';
+          if (per) t += ' pour la période du ' + per;
+          t += ' dans le cadre de ma formation (PFMP). Je me permets de solliciter votre entreprise' ;
+          if (ent) t += ', ' + ent + ',';
+          t += ' pour effectuer ce stage.\n\n';
+          if (pq) t += endDot(pq) + '\n\n';
+          if (comp) t += 'Au cours de ma formation, j\'ai déjà acquis des bases solides : ' + endDot(comp) + '\n\n';
+          if (stpr) t += endDot(stpr) + '\n\n';
+          if (obj) t += endDot(obj) + '\n\n';
+          if (qu) t += endDot(qu) + '\n\n';
+          t += 'Ce stage fera l\'objet d\'une convention entre votre entreprise et mon lycée. Je suis couvert par l\'assurance de l\'établissement.\n\n';
+          t += 'Je reste à votre disposition pour convenir d\'un rendez-vous et vous prie d\'agréer, Madame, Monsieur, l\'expression de mes salutations distinguées.\n\n';
+          t += p + ' ' + n.toUpperCase();
+          return t;
+        },
+        template: function() {
+          return '<p>Objet : Demande de stage en entreprise – <input class="tpl-blank" type="text" placeholder="période (ex : du 3 au 28 mars 2026)" style="width:280px"></p>'
+            + '<p>Madame, Monsieur,</p>'
+            + '<p>Actuellement en <input class="tpl-blank" type="text" placeholder="classe (ex : 1re Bac Pro ICCER)" style="width:220px"> au lycée <input class="tpl-blank" type="text" placeholder="nom du lycée" style="width:200px">, je recherche un stage en entreprise dans le cadre de ma formation (PFMP). Je me permets de solliciter votre entreprise, <input class="tpl-blank" type="text" placeholder="nom de l\'entreprise" style="width:200px">, pour effectuer ce stage.</p>'
+            + '<p>Votre entreprise m\'intéresse car <input class="tpl-blank" type="text" placeholder="raisons (spécialisation en chauffage, clim, EnR...)" style="width:100%">.</p>'
+            + '<p>Au cours de ma formation ICCER, j\'ai déjà acquis des bases solides : <input class="tpl-blank" type="text" placeholder="compétences (raccordements cuivre, lecture de plans, installation radiateurs...)" style="width:100%">.</p>'
+            + '<p>Ce stage me permettrait de <input class="tpl-blank" type="text" placeholder="objectifs (découvrir le travail sur chantier, participer à des installations...)" style="width:100%">.</p>'
+            + '<p><input class="tpl-blank" type="text" placeholder="Tes qualités (motivé, ponctuel, curieux, respectueux des consignes de sécurité...)" style="width:100%">.</p>'
+            + '<p>Ce stage fera l\'objet d\'une convention entre votre entreprise et mon lycée. Je suis couvert par l\'assurance de l\'établissement.</p>'
+            + '<p>Je reste à votre disposition pour convenir d\'un rendez-vous et vous prie d\'agréer, Madame, Monsieur, l\'expression de mes salutations distinguées.</p>'
+            + '<p><input class="tpl-blank" type="text" placeholder="Prénom NOM" style="width:200px"></p>';
+        }
+      },
+
+      alternance: {
+        charLimit: 0,
+        fileName: 'lettre-motivation-alternance',
+        tips: [
+          'Précise la <strong>formation visée en alternance</strong> (BTS FED, MC, BP...).',
+          'Indique le <strong>rythme d\'alternance</strong> si tu le connais (ex : 2 semaines école / 2 semaines entreprise).',
+          'Mets en avant tes <strong>stages PFMP</strong> : tu as déjà une expérience du terrain.',
+          'Montre que l\'alternance est un <strong>choix réfléchi</strong> : tu veux allier théorie et pratique.',
+          'L\'entreprise cherche quelqu\'un d\'<strong>opérationnel et motivé</strong> : montre que tu l\'es.',
+          'N\'oublie pas de mentionner tes <strong>habilitations</strong> si tu les as.'
+        ],
+        steps: [
+          {
+            title: 'Étape 1 – Tes coordonnées',
+            fields: [
+              { id: 'g-prenom', label: 'Prénom', placeholder: 'Ton prénom' },
+              { id: 'g-nom', label: 'Nom', placeholder: 'Ton nom' },
+              { id: 'g-telephone', label: 'Téléphone', placeholder: 'Ex : 06 12 34 56 78' },
+              { id: 'g-email', label: 'Email', placeholder: 'Ex : prenom.nom@email.fr' }
+            ]
+          },
+          {
+            title: 'Étape 2 – La formation et l\'entreprise',
+            fields: [
+              { id: 'g-formation', label: 'Formation en alternance visée', placeholder: 'Ex : BTS FED option C (Domotique et Bâtiments Communicants), MC Technicien en énergies renouvelables...' },
+              { id: 'g-rythme', label: 'Rythme d\'alternance (si connu)', placeholder: 'Ex : 2 semaines en entreprise / 2 semaines en formation' },
+              { id: 'g-entreprise', label: 'Entreprise visée', placeholder: 'Ex : Daikin, Atlantic, Engie, artisan local...' },
+              { id: 'g-pourquoi', label: 'Pourquoi cette entreprise pour ton alternance ?', placeholder: 'Ex : Votre entreprise est reconnue dans l\'installation de systèmes de génie climatique et j\'aimerais mettre en pratique mes connaissances tout en préparant mon BTS...', type: 'textarea', full: true }
+            ]
+          },
+          {
+            title: 'Étape 3 – Ton expérience',
+            fields: [
+              { id: 'g-stages', label: 'Tes stages PFMP et réalisations', placeholder: 'Ex : J\'ai réalisé 22 semaines de stage en entreprise. Chez Engie, j\'ai participé à l\'installation de pompes à chaleur et à la mise en service de chaudières gaz à condensation...', type: 'textarea', full: true },
+              { id: 'g-competences', label: 'Compétences techniques', placeholder: 'Ex : Installation chauffage et climatisation, raccordements fluidiques et électriques, mise en service, brasage cuivre, lecture de plans...', type: 'textarea', full: true },
+              { id: 'g-habilitations', label: 'Habilitations et certifications', placeholder: 'Ex : Habilitation électrique B1V, SST...', full: true }
+            ]
+          },
+          {
+            title: 'Étape 4 – Motivation et projet',
+            fields: [
+              { id: 'g-motivation', label: 'Pourquoi l\'alternance ?', placeholder: 'Ex : L\'alternance me permet de continuer à apprendre sur le terrain tout en approfondissant mes connaissances théoriques. C\'est le meilleur moyen de progresser dans le génie climatique...', type: 'textarea', full: true },
+              { id: 'g-qualites', label: 'Tes qualités', placeholder: 'Ex : Motivé, rigoureux, ponctuel, j\'ai l\'habitude du travail sur chantier grâce à mes stages...', type: 'textarea', full: true },
+              { id: 'g-projet-pro', label: 'Ton projet professionnel', placeholder: 'Ex : Devenir technicien en génie climatique spécialisé en énergies renouvelables, puis évoluer vers chef d\'équipe...', type: 'textarea', full: true }
+            ]
+          }
+        ],
+        generate: function() {
+          var p = val('g-prenom'), n = val('g-nom'), tel = val('g-telephone'), email = val('g-email');
+          var form = val('g-formation'), rythme = val('g-rythme'), ent = val('g-entreprise'), pq = val('g-pourquoi');
+          var st = val('g-stages'), comp = val('g-competences'), hab = val('g-habilitations');
+          var motiv = val('g-motivation'), qu = val('g-qualites'), pp = val('g-projet-pro');
+          if (!p || !form) { alert('Remplis au moins ton prénom et la formation visée.'); return null; }
+          var t = p + ' ' + n.toUpperCase() + '\n';
+          if (tel) t += tel + '\n';
+          if (email) t += email + '\n';
+          t += '\nObjet : Candidature pour un contrat d\'alternance en ' + form;
+          if (ent) t += ' – ' + ent;
+          t += '\n\nMadame, Monsieur,\n\n';
+          t += 'Actuellement titulaire (ou en cours d\'obtention) du baccalauréat professionnel ICCER, je recherche une entreprise pour effectuer ma formation en ' + form + ' en alternance';
+          if (rythme) t += ' (rythme : ' + rythme + ')';
+          t += '. Je me permets de vous proposer ma candidature.\n\n';
+          if (pq) t += endDot(pq) + '\n\n';
+          if (motiv) t += endDot(motiv) + '\n\n';
+          if (st) t += endDot(st) + '\n\n';
+          if (comp) t += 'Mes compétences techniques incluent : ' + endDot(comp) + '\n\n';
+          if (hab) t += 'Je dispose des habilitations suivantes : ' + endDot(hab) + '\n\n';
+          if (qu) t += endDot(qu) + '\n\n';
+          if (pp) t += 'À terme, ' + endDot(pp) + '\n\n';
+          t += 'Motivé et opérationnel, je serais ravi de mettre mes compétences au service de votre entreprise tout en poursuivant ma montée en compétences. Je reste à votre disposition pour un entretien.\n\n';
+          t += 'Veuillez agréer, Madame, Monsieur, l\'expression de mes salutations distinguées.\n\n';
+          t += p + ' ' + n.toUpperCase();
+          return t;
+        },
+        template: function() {
+          return '<p><input class="tpl-blank" type="text" placeholder="Prénom NOM" style="width:200px"></p>'
+            + '<p><input class="tpl-blank" type="text" placeholder="Téléphone" style="width:160px"> – <input class="tpl-blank" type="text" placeholder="Email" style="width:220px"></p>'
+            + '<p>&nbsp;</p>'
+            + '<p>Objet : Candidature pour un contrat d\'alternance en <input class="tpl-blank" type="text" placeholder="formation (ex : BTS FED)" style="width:240px"> – <input class="tpl-blank" type="text" placeholder="nom de l\'entreprise" style="width:200px"></p>'
+            + '<p>Madame, Monsieur,</p>'
+            + '<p>Titulaire du baccalauréat professionnel ICCER, je recherche une entreprise pour effectuer ma formation en <input class="tpl-blank" type="text" placeholder="nom de la formation" style="width:240px"> en alternance. Je me permets de vous proposer ma candidature.</p>'
+            + '<p>Votre entreprise m\'intéresse car <input class="tpl-blank" type="text" placeholder="raisons (spécialisation, projets, secteur...)" style="width:100%">.</p>'
+            + '<p>L\'alternance est pour moi le meilleur moyen de <input class="tpl-blank" type="text" placeholder="motivation (allier théorie et pratique, progresser sur le terrain...)" style="width:100%">.</p>'
+            + '<p>Au cours de mes stages PFMP (22 semaines), j\'ai acquis une solide expérience : chez <input class="tpl-blank" type="text" placeholder="entreprise de stage" style="width:180px">, j\'ai <input class="tpl-blank" type="text" placeholder="missions réalisées" style="width:100%">.</p>'
+            + '<p>Mes compétences techniques incluent <input class="tpl-blank" type="text" placeholder="compétences (installation chauffage/clim, raccordements, mise en service...)" style="width:100%">.</p>'
+            + '<p><input class="tpl-blank" type="text" placeholder="Qualités (motivé, rigoureux, habitué au travail sur chantier...)" style="width:100%">.</p>'
+            + '<p>À terme, mon projet est de <input class="tpl-blank" type="text" placeholder="projet professionnel" style="width:100%">.</p>'
+            + '<p>Motivé et opérationnel, je serais ravi de mettre mes compétences au service de votre entreprise. Je reste à votre disposition pour un entretien.</p>'
+            + '<p>Veuillez agréer, Madame, Monsieur, l\'expression de mes salutations distinguées.</p>'
+            + '<p><input class="tpl-blank" type="text" placeholder="Prénom NOM" style="width:200px"></p>';
+        }
+      }
+    };
+
+    /* ══════════════════════════════════════════════════════
+       FONCTIONS UTILITAIRES
+       ══════════════════════════════════════════════════════ */
+    function val(id) {
+      var el = document.getElementById(id);
+      return el ? el.value.trim() : '';
+    }
+
+    function endDot(s) {
+      s = s.trim();
+      if (s && s.charAt(s.length - 1) !== '.') s += '.';
+      return s;
+    }
+
+    /* ── Changement de contexte ── */
+    function switchContext(ctx) {
+      currentContext = ctx;
+      var btns = document.querySelectorAll('.ctx-btn');
+      var keys = ['parcoursup', 'emploi', 'stage', 'alternance'];
+      for (var i = 0; i < btns.length; i++) {
+        btns[i].classList.toggle('active', keys[i] === ctx);
+      }
+      document.getElementById('output-zone').classList.remove('visible');
+      buildTips();
+      buildGuided();
+      buildTemplate();
+      currentStep = 1;
+      switchMode(currentMode);
+    }
+
+    /* ── Conseils ── */
+    function buildTips() {
+      var c = CTX[currentContext];
+      var h = '<h3>Conseils pour ta lettre</h3><ul>';
+      for (var i = 0; i < c.tips.length; i++) h += '<li>' + c.tips[i] + '</li>';
+      h += '</ul>';
+      document.getElementById('tips-box').innerHTML = h;
+    }
+
+    /* ── Construction du mode guidé ── */
+    function buildGuided() {
+      var c = CTX[currentContext];
+      var steps = c.steps;
+      var h = '<div class="step-indicator" id="step-indicator">';
+      for (var i = 0; i < steps.length; i++) {
+        h += '<div class="step-dot' + (i === 0 ? ' active' : '') + '" data-step="' + (i+1) + '">' + (i+1) + '</div>';
+      }
+      h += '</div>';
+      for (var i = 0; i < steps.length; i++) {
+        var s = steps[i];
+        h += '<div class="step-panel' + (i === 0 ? ' active' : '') + '" id="step-' + (i+1) + '">';
+        h += '<div class="form-section"><h2>' + s.title + '</h2><div class="form-grid">';
+        for (var j = 0; j < s.fields.length; j++) {
+          var f = s.fields[j];
+          var cls = f.full ? ' full' : '';
+          h += '<div class="form-group' + cls + '">';
+          h += '<label for="' + f.id + '">' + f.label + '</label>';
+          if (f.type === 'textarea') {
+            h += '<textarea id="' + f.id + '" placeholder="' + f.placeholder + '"></textarea>';
+          } else {
+            h += '<input type="text" id="' + f.id + '" placeholder="' + f.placeholder + '">';
+          }
+          if (f.hint) h += '<span class="form-hint">' + f.hint + '</span>';
+          h += '</div>';
+        }
+        h += '</div>';
+        h += '<div class="step-nav">';
+        if (i > 0) h += '<button class="btn-secondary" onclick="prevStep(' + i + ')">Précédent</button>';
+        if (i < steps.length - 1) {
+          h += '<button class="btn-primary" onclick="nextStep(' + (i+2) + ')">Suivant</button>';
+        } else {
+          h += '<button class="btn-primary" onclick="genererLettre()">Générer ma lettre</button>';
+        }
+        h += '</div></div></div>';
+      }
+      document.getElementById('guided-mode').innerHTML = h;
+    }
+
+    /* ── Construction du mode modèle ── */
+    function buildTemplate() {
+      var c = CTX[currentContext];
+      var h = '<div class="form-section">';
+      h += '<h2>Complète les champs en bleu</h2>';
+      h += '<p style="font-size:.84rem;color:#64748b;margin-bottom:16px;">Clique sur chaque champ bleu et remplace-le par tes informations.</p>';
+      h += '<div class="template-area" id="template-area">' + c.template() + '</div>';
+      h += '<div id="char-count-tpl" style="font-size:.82rem;color:#64748b;margin-top:10px;"></div>';
+      h += '<div class="btn-row">';
+      h += '<button class="btn-primary" onclick="genererDepuisTemplate()">Aperçu de la lettre</button>';
+      h += '<button class="btn-secondary" onclick="buildTemplate();switchMode(\'template\')">Réinitialiser</button>';
+      h += '</div></div>';
+      document.getElementById('template-mode').innerHTML = h;
+      initTemplateCounter();
+    }
+
+    function initTemplateCounter() {
+      var area = document.getElementById('template-area');
+      if (!area) return;
+      area.addEventListener('input', function() {
+        var nodes = area.querySelectorAll('p');
+        var text = '';
+        for (var i = 0; i < nodes.length; i++) {
+          var p = nodes[i];
+          for (var j = 0; j < p.childNodes.length; j++) {
+            var n = p.childNodes[j];
+            if (n.nodeType === 3) text += n.textContent;
+            else if (n.classList && n.classList.contains('tpl-blank')) text += n.value || '';
+          }
+          text += '\n\n';
+        }
+        var len = text.trim().length;
+        var el = document.getElementById('char-count-tpl');
+        var limit = CTX[currentContext].charLimit;
+        if (limit) {
+          el.textContent = len + ' / ' + limit.toLocaleString('fr-FR') + ' caractères';
+          el.style.color = len > limit ? '#dc2626' : '#64748b';
+        } else {
+          el.textContent = len + ' caractères';
+          el.style.color = '#64748b';
+        }
+      });
+    }
+
+    /* ── Modes ── */
+    function switchMode(mode) {
+      currentMode = mode;
+      document.getElementById('guided-mode').style.display = mode === 'guided' ? '' : 'none';
+      document.getElementById('template-mode').style.display = mode === 'template' ? '' : 'none';
+      document.getElementById('btn-mode-guided').classList.toggle('active', mode === 'guided');
+      document.getElementById('btn-mode-template').classList.toggle('active', mode === 'template');
+      document.getElementById('output-zone').classList.remove('visible');
+    }
+
+    /* ── Navigation étapes ── */
+    function goToStep(n) {
+      currentStep = n;
+      var panels = document.querySelectorAll('.step-panel');
+      var dots = document.querySelectorAll('.step-dot');
+      for (var i = 0; i < panels.length; i++) panels[i].classList.toggle('active', i === n - 1);
+      for (var i = 0; i < dots.length; i++) {
+        dots[i].classList.remove('active', 'done');
+        if (i + 1 < n) dots[i].classList.add('done');
+        if (i + 1 === n) dots[i].classList.add('active');
+      }
+    }
+    function nextStep(n) { goToStep(n); }
+    function prevStep(n) { goToStep(n); }
+
+    /* ── Génération ── */
+    function genererLettre() {
+      var txt = CTX[currentContext].generate();
+      if (txt) afficherLettre(txt);
+    }
+
+    function genererDepuisTemplate() {
+      var nodes = document.getElementById('template-area').querySelectorAll('p');
+      var text = '';
+      for (var i = 0; i < nodes.length; i++) {
+        var p = nodes[i];
+        var line = '';
+        for (var j = 0; j < p.childNodes.length; j++) {
+          var n = p.childNodes[j];
+          if (n.nodeType === 3) line += n.textContent;
+          else if (n.classList && n.classList.contains('tpl-blank')) line += n.value || n.placeholder;
+        }
+        text += line.trim() + '\n\n';
+      }
+      afficherLettre(text.trim());
+    }
+
+    function afficherLettre(txt) {
+      var el = document.getElementById('letter-output');
+      el.textContent = txt;
+      var countEl = document.getElementById('char-count');
+      var limit = CTX[currentContext].charLimit;
+      if (limit) {
+        countEl.textContent = txt.length + ' / ' + limit.toLocaleString('fr-FR') + ' caractères';
+        countEl.style.display = '';
+        if (txt.length > limit) {
+          countEl.style.color = '#dc2626'; countEl.style.background = '#fef2f2';
+        } else {
+          countEl.style.color = '#16a34a'; countEl.style.background = '#f0fdf4';
+        }
+      } else {
+        countEl.style.display = 'none';
+      }
+      document.getElementById('output-zone').classList.add('visible');
+      document.getElementById('output-zone').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    /* ── Actions ── */
+    function copierLettre() {
+      var txt = document.getElementById('letter-output').textContent;
+      navigator.clipboard.writeText(txt).then(function() { alert('Lettre copiée dans le presse-papiers !'); });
+    }
+
+    function telechargerTxt() {
+      var txt = document.getElementById('letter-output').textContent;
+      var blob = new Blob([txt], { type: 'text/plain;charset=utf-8' });
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = CTX[currentContext].fileName + '.txt';
+      a.click();
+      URL.revokeObjectURL(a.href);
+    }
+
+    function telechargerWord() {
+      var txt = document.getElementById('letter-output').textContent;
+      var paragraphs = txt.split('\n\n').filter(function(p) { return p.trim(); });
+      var body = '';
+      for (var i = 0; i < paragraphs.length; i++) {
+        var lines = paragraphs[i].split('\n');
+        for (var j = 0; j < lines.length; j++) {
+          body += '<p style="font-family:Calibri,sans-serif;font-size:11pt;line-height:1.6;margin:0 0 6pt 0;">' +
+            lines[j].replace(/&/g,'&amp;').replace(/</g,'&lt;') + '</p>';
+        }
+        body += '<p style="font-size:11pt;margin:0 0 6pt 0;">&nbsp;</p>';
+      }
+      var html = '<html xmlns:o="urn:schemas-microsoft-com:office:office" ' +
+        'xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">' +
+        '<head><meta charset="utf-8"><style>@page{margin:2.5cm;}</style></head>' +
+        '<body>' + body + '</body></html>';
+      var blob = new Blob([html], { type: 'application/msword' });
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = CTX[currentContext].fileName + '.doc';
+      a.click();
+      URL.revokeObjectURL(a.href);
+    }
+
+    function modifierLettre() {
+      document.getElementById('output-zone').classList.remove('visible');
+      if (currentMode === 'guided') goToStep(1);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    /* ── Initialisation ── */
+    switchContext('parcoursup');
+  </script>
+
+</body>
+</html>
