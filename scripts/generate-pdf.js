@@ -264,8 +264,9 @@ async function generatePDF() {
       preferCSSPageSize: false,
       displayHeaderFooter: true,
       headerTemplate: `
-        <div style="font-size:7pt; color:#999; width:100%; text-align:center; padding:0 15mm;">
-          <span style="font-weight:600;">Maths & Sciences LP</span>
+        <div style="font-size:7pt; color:#999; width:100%; display:flex; justify-content:space-between; padding:0 15mm;">
+          <span style="font-weight:600;">Maths &amp; Sciences LP</span>
+          <span>Na\u00efm Azzouz</span>
         </div>
       `,
       footerTemplate: `
