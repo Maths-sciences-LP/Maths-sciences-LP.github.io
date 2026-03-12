@@ -373,7 +373,7 @@
   if (window.location.host.indexOf('github.io') === -1) return; // skip en local
   var s = document.createElement('script');
   s.async = true;
-  s.dataset.goatcounter = 'https://maths-sciences-lp.goatcounter.com/count';
+  s.dataset.goatcounter = 'https://maths-sciences.goatcounter.com/count';
   s.src = '//gc.zgo.at/count.js';
   document.head.appendChild(s);
 })();
