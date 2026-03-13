@@ -62,6 +62,127 @@
   <tr><td colspan="3"><strong>Total</strong></td><td><strong>20 pts</strong></td></tr>
 </table>
 
+<!-- ===== SOCLE ===== -->
+<div class="diff-socle">
+<span class="tag-socle">Socle</span>
+
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 1</span>
+    <span class="exo-title">Le réseau électrique et le transformateur – pas à pas</span>
+    <span class="pts">20 points</span>
+  </div>
+
+  <div class="intro-box">
+    <strong>Contexte :</strong> Une usine utilise un réseau électrique avec des transformateurs pour alimenter ses machines. Le technicien doit comprendre les niveaux de tension.
+  </div>
+
+  <div class="svg-wrap">
+    <svg width="680" height="170" viewBox="0 0 680 170" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto">
+      <defs><marker id="arr-s" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#374151"/></marker></defs>
+      <rect x="10" y="55" width="110" height="60" rx="6" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+      <text x="65" y="80" text-anchor="middle" font-size="11" font-weight="bold" fill="#b45309">Centrale</text>
+      <text x="65" y="97" text-anchor="middle" font-size="10" fill="#78350f">Production</text>
+      <line x1="120" y1="85" x2="170" y2="85" stroke="#374151" stroke-width="2" marker-end="url(#arr-s)"/>
+      <rect x="170" y="50" width="120" height="70" rx="6" fill="#ede9fe" stroke="#6d28d9" stroke-width="2"/>
+      <text x="230" y="76" text-anchor="middle" font-size="10" font-weight="bold" fill="#6d28d9">Transfo</text>
+      <text x="230" y="92" text-anchor="middle" font-size="10" fill="#4c1d95">→ 400 kV</text>
+      <line x1="290" y1="85" x2="340" y2="85" stroke="#374151" stroke-width="2" marker-end="url(#arr-s)"/>
+      <text x="315" y="75" text-anchor="middle" fill="#2da44e" font-size="9" font-weight="bold">HT</text>
+      <rect x="340" y="50" width="120" height="70" rx="6" fill="#d1fae5" stroke="#065f46" stroke-width="2"/>
+      <text x="400" y="76" text-anchor="middle" font-size="10" font-weight="bold" fill="#065f46">Transfo</text>
+      <text x="400" y="92" text-anchor="middle" font-size="10" fill="#064e3b">→ 230 V</text>
+      <line x1="460" y1="85" x2="510" y2="85" stroke="#374151" stroke-width="2" marker-end="url(#arr-s)"/>
+      <text x="485" y="75" text-anchor="middle" fill="#c53030" font-size="9" font-weight="bold">BT</text>
+      <rect x="510" y="55" width="110" height="60" rx="6" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+      <text x="565" y="80" text-anchor="middle" font-size="11" font-weight="bold" fill="#1d4ed8">Usines /</text>
+      <text x="565" y="97" text-anchor="middle" font-size="10" fill="#1e3a8a">Logements</text>
+    </svg>
+  </div>
+
+  <p class="q">
+    <span class="q-num">1.</span>
+    <span class="comp comp-app">APP</span>
+    Compléter les phrases en vous aidant du schéma :
+    <span class="pts-q">4 pts</span>
+  </p>
+  <p>a) La tension de transport HT est d'environ __________ kV.</p>
+  <p>b) La tension d'utilisation BT est d'environ __________ V.</p>
+  <p>c) Pour transporter l'énergie sur de longues distances, on __________ (élève / abaisse) la tension.</p>
+  <p>d) L'appareil qui modifie la tension s'appelle un __________ .</p>
+  <div class="rep-zone" style="min-height:80px">…</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>a) <strong>400</strong> kV. b) <strong>230</strong> V. c) On <strong>élève</strong> la tension. d) Un <strong>transformateur</strong>.</p>
+  </div>
+
+  <p class="q">
+    <span class="q-num">2.</span>
+    <span class="comp comp-rea">REA</span>
+    Calculer la puissance d'une perceuse. On vous guide :
+    <span class="pts-q">4 pts</span>
+  </p>
+  <p>La perceuse fonctionne sous \(U = 230\ \text{V}\) avec \(I = 5\ \text{A}\) et \(\cos\varphi = 1\).</p>
+  <p><strong>Formule :</strong> \(P = U \times I \times \cos\varphi\)</p>
+  <p>\(P = \)__________ \(\times\) __________ \(\times\) __________ \(=\) __________ W</p>
+  <div class="rep-zone" style="min-height:50px">…</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>\(P = 230 \times 5 \times 1 = \mathbf{1\,150\ W}\)</p>
+  </div>
+
+  <p class="q">
+    <span class="q-num">3.</span>
+    <span class="comp comp-rea">REA</span>
+    Calculer les pertes Joule dans un câble. On vous guide :
+    <span class="pts-q">4 pts</span>
+  </p>
+  <p>Le câble a une résistance \(R = 0{,}5\ \Omega\) et est parcouru par \(I = 10\ \text{A}\).</p>
+  <p><strong>Formule :</strong> \(P_{\text{pertes}} = R \times I^2\)</p>
+  <p>\(P_{\text{pertes}} = \)__________ \(\times\) __________² \(=\) __________ \(\times\) __________ \(=\) __________ W</p>
+  <p>Ces pertes se dissipent sous forme de __________ (chaleur / lumière).</p>
+  <div class="rep-zone" style="min-height:60px">…</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>\(P_{\text{pertes}} = 0{,}5 \times 10^2 = 0{,}5 \times 100 = \mathbf{50\ W}\)</p>
+    <p>Sous forme de <strong>chaleur</strong>.</p>
+  </div>
+
+  <p class="q">
+    <span class="q-num">4.</span>
+    <span class="comp comp-ana">ANA</span>
+    Un transformateur a \(U_1 = 20\,000\ \text{V}\), \(N_1 = 1\,000\) spires, \(N_2 = 50\) spires.
+    <span class="pts-q">4 pts</span>
+  </p>
+  <p><strong>Formule :</strong> \(U_2 = U_1 \times \dfrac{N_2}{N_1}\)</p>
+  <p>\(U_2 = \)__________ \(\times \dfrac{\text{______}}{\text{______}} = \)__________ V</p>
+  <p>Ce transformateur est __________ (élévateur / abaisseur).</p>
+  <div class="rep-zone" style="min-height:60px">…</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>\(U_2 = 20\,000 \times \dfrac{50}{1\,000} = \mathbf{1\,000\ V}\)</p>
+    <p>C'est un transformateur <strong>abaisseur</strong> (\(U_2 < U_1\)).</p>
+  </div>
+
+  <p class="q">
+    <span class="q-num">5.</span>
+    <span class="comp comp-com">COM</span>
+    Compléter : « On transporte l'énergie à haute tension pour __________ le courant, ce qui __________ les pertes Joule dans les câbles. »
+    <span class="pts-q">4 pts</span>
+  </p>
+  <div class="rep-zone" style="min-height:40px">…</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>On transporte à haute tension pour <strong>réduire</strong> le courant, ce qui <strong>diminue</strong> les pertes Joule.</p>
+  </div>
+</div>
+
+</div><!-- fin diff-socle -->
+
+<!-- ===== STANDARD ===== -->
+<div class="diff-standard">
+<span class="tag-standard">Standard</span>
+
 <!-- EXERCICE 1 -->
 <div class="exo">
   <div class="exo-header">
@@ -259,7 +380,146 @@
 </div>
 
 </div>
+
+</div><!-- fin diff-standard -->
+
+<!-- ===== APPROFONDISSEMENT ===== -->
+<div class="diff-appro">
+<span class="tag-appro">Approfondissement</span>
+
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 1</span>
+    <span class="exo-title">Optimisation d'une ligne d'alimentation industrielle</span>
+    <span class="pts">10 points</span>
+  </div>
+
+  <div class="intro-box">
+    <strong>Contexte :</strong> Un site industriel est alimenté par une ligne MT de 5 km. Le bureau d'étude compare deux solutions de transport pour alimenter les équipements du site consommant une puissance totale de \(P = 200\ \text{kW}\) (\(\cos\varphi = 0{,}85\)). La résistance linéique du câble est \(r = 0{,}4\ \Omega/\text{km}\) (aller-retour).
+  </div>
+
+  <p class="q">
+    <span class="q-num">1.</span>
+    <span class="comp comp-rea">REA</span>
+    Calculer la résistance totale \(R\) du câble aller-retour sur 5 km.
+    <span class="pts-q">1 pt</span>
+  </p>
+  <div class="rep-zone" style="min-height:50px">…</div>
+
+  <p class="q">
+    <span class="q-num">2.</span>
+    <span class="comp comp-ana">ANA</span>
+    <strong>Solution A – Transport en BT (400 V triphasé) :</strong> Calculer le courant de ligne \(I_A\), les pertes Joule \(P_{J,A}\), et le rendement \(\eta_A\).
+    <span class="pts-q">3 pts</span>
+  </p>
+  <div class="rep-zone" style="min-height:80px">…</div>
+
+  <p class="q">
+    <span class="q-num">3.</span>
+    <span class="comp comp-ana">ANA</span>
+    <strong>Solution B – Transport en MT (20 kV triphasé) :</strong> Calculer le courant de ligne \(I_B\), les pertes Joule \(P_{J,B}\), et le rendement \(\eta_B\).
+    <span class="pts-q">3 pts</span>
+  </p>
+  <div class="rep-zone" style="min-height:80px">…</div>
+
+  <p class="q">
+    <span class="q-num">4.</span>
+    <span class="comp comp-val">VAL</span>
+    Calculer le rapport des pertes \(P_{J,A} / P_{J,B}\). Montrer que ce rapport est égal au carré du rapport des tensions. Conclure.
+    <span class="pts-q">2 pts</span>
+  </p>
+  <div class="rep-zone" style="min-height:70px">…</div>
+
+  <p class="q">
+    <span class="q-num">5.</span>
+    <span class="comp comp-com">COM</span>
+    Le coût de l'électricité est de 0,15 €/kWh. Calculer le surcoût annuel dû aux pertes pour chaque solution (fonctionnement 3 000 h/an). La solution MT nécessite un transformateur à 25 000 €. En combien de temps l'investissement est-il rentabilisé ?
+    <span class="pts-q">1 pt</span>
+  </p>
+  <div class="rep-zone" style="min-height:80px">…</div>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \(R = r \times L = 0{,}4 \times 5 = \mathbf{2\ \Omega}\)</p>
+    <p><strong>2. Solution A (400 V) :</strong></p>
+    <p>\(I_A = \dfrac{P}{\sqrt{3} \times U \times \cos\varphi} = \dfrac{200\,000}{1{,}732 \times 400 \times 0{,}85} \approx \mathbf{340\ A}\)</p>
+    <p>\(P_{J,A} = R \times I_A^2 = 2 \times 340^2 = \mathbf{231\,200\ W \approx 231\ kW}\)</p>
+    <p>\(\eta_A = \dfrac{200}{200 + 231} \times 100 \approx \mathbf{46\ \%}\) (catastrophique !)</p>
+    <p><strong>3. Solution B (20 kV) :</strong></p>
+    <p>\(I_B = \dfrac{200\,000}{1{,}732 \times 20\,000 \times 0{,}85} \approx \mathbf{6{,}8\ A}\)</p>
+    <p>\(P_{J,B} = 2 \times 6{,}8^2 \approx \mathbf{92\ W}\)</p>
+    <p>\(\eta_B = \dfrac{200\,000}{200\,092} \times 100 \approx \mathbf{99{,}95\ \%}\)</p>
+    <p><strong>4.</strong> \(\dfrac{P_{J,A}}{P_{J,B}} = \dfrac{231\,200}{92} \approx 2\,513 = \left(\dfrac{20\,000}{400}\right)^2 = 50^2 = 2\,500\). Le rapport est bien le carré du rapport des tensions.</p>
+    <p><strong>5.</strong> Surcoût annuel A : \(231 \times 3\,000 \times 0{,}15 \approx 103\,950\ €\). Surcoût annuel B : \(0{,}092 \times 3\,000 \times 0{,}15 \approx 41\ €\). Économie annuelle : \(\approx 103\,900\ €\). Rentabilisation du transformateur : \(25\,000 / 103\,900 \approx\) quelques jours ! L'investissement est immédiatement rentable.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 2</span>
+    <span class="exo-title">Dimensionnement d'un poste de transformation</span>
+    <span class="pts">10 points</span>
+  </div>
+
+  <div class="intro-box">
+    <strong>Contexte :</strong> Un technicien ERA-MA dimensionne le poste de transformation d'un nouvel atelier. Les besoins sont : 3 moteurs triphasés de 15 kW chacun (\(\cos\varphi = 0{,}8\)), éclairage 10 kW (\(\cos\varphi = 1\)), prises de courant 8 kW (\(\cos\varphi = 0{,}95\)). Le transformateur MT/BT reçoit du 20 kV et délivre du 400 V.
+  </div>
+
+  <p class="q">
+    <span class="q-num">1.</span>
+    <span class="comp comp-rea">REA</span>
+    Calculer la puissance active totale de l'atelier.
+    <span class="pts-q">1 pt</span>
+  </p>
+  <div class="rep-zone" style="min-height:50px">…</div>
+
+  <p class="q">
+    <span class="q-num">2.</span>
+    <span class="comp comp-ana">ANA</span>
+    La puissance apparente de chaque charge est \(S = P / \cos\varphi\). Calculer la puissance apparente de chaque type de charge puis la puissance apparente totale.
+    <span class="pts-q">3 pts</span>
+  </p>
+  <div class="rep-zone" style="min-height:90px">…</div>
+
+  <p class="q">
+    <span class="q-num">3.</span>
+    <span class="comp comp-val">VAL</span>
+    Les puissances normalisées de transformateur sont : 100, 160, 250, 400, 630 kVA. Choisir le transformateur adapté (en ajoutant une marge de 20 %). Justifier.
+    <span class="pts-q">2 pts</span>
+  </p>
+  <div class="rep-zone" style="min-height:60px">…</div>
+
+  <p class="q">
+    <span class="q-num">4.</span>
+    <span class="comp comp-rea">REA</span>
+    Calculer le courant nominal côté secondaire (400 V) et côté primaire (20 kV) du transformateur choisi.
+    <span class="pts-q">2 pts</span>
+  </p>
+  <div class="rep-zone" style="min-height:70px">…</div>
+
+  <p class="q">
+    <span class="q-num">5.</span>
+    <span class="comp comp-com">COM</span>
+    Rédiger une note technique (5 lignes) justifiant le choix du transformateur et les protections à prévoir côté BT.
+    <span class="pts-q">2 pts</span>
+  </p>
+  <div class="rep-zone" style="min-height:80px">…</div>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \(P_{\text{totale}} = 3 \times 15 + 10 + 8 = 45 + 10 + 8 = \mathbf{63\ kW}\)</p>
+    <p><strong>2.</strong> Moteurs : \(S_M = 45 / 0{,}8 = 56{,}25\ \text{kVA}\). Éclairage : \(S_E = 10 / 1 = 10\ \text{kVA}\). Prises : \(S_P = 8 / 0{,}95 \approx 8{,}42\ \text{kVA}\). Total : \(S \approx 56{,}25 + 10 + 8{,}42 \approx \mathbf{74{,}7\ kVA}\).</p>
+    <p><strong>3.</strong> Avec marge 20 % : \(74{,}7 \times 1{,}2 \approx 89{,}6\ \text{kVA}\). On choisit le transformateur <strong>100 kVA</strong> (première puissance normalisée supérieure).</p>
+    <p><strong>4.</strong> \(I_2 = \dfrac{S}{\sqrt{3} \times U_2} = \dfrac{100\,000}{1{,}732 \times 400} \approx \mathbf{144\ A}\). \(I_1 = \dfrac{100\,000}{1{,}732 \times 20\,000} \approx \mathbf{2{,}9\ A}\).</p>
+    <p><strong>5.</strong> Le transformateur 100 kVA couvre les besoins actuels (74,7 kVA) avec une marge de 25 %, permettant d'éventuelles extensions. Côté BT, prévoir un disjoncteur général 160 A, des disjoncteurs divisionnaires pour chaque départ moteur (calibre ≈ 30 A avec courbe D) et pour l'éclairage/prises (calibre 32-40 A avec courbe C).</p>
+  </div>
+</div>
+
+</div><!-- fin diff-appro -->
+
+</div>
 <script>function toggle(b){var d=b.nextElementSibling;if(d.style.display==='block'){d.style.display='none';b.textContent='Voir la correction'}else{d.style.display='block';b.textContent='Masquer la correction'}}</script>
 <script src="/nav.js"></script>
+<script src="../../../diff.js"></script>
 </body>
 </html>
