@@ -3,25 +3,189 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>DS Ch02 – Probabilités – 1ère Pro</title>
+<title>DS Ch02 – Probabilités – 1ère Bac Pro</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <link rel="stylesheet" href="../../../styles.css">
 <link rel="stylesheet" href="../../../print.css" media="print">
-<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}</style>
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
+.dh{display:flex;flex-wrap:wrap;gap:10px;background:#eef2f7;padding:14px 18px;border-radius:8px;margin-bottom:28px;font-size:.9em}
+.dh-item{display:flex;align-items:center;gap:6px}
+.dh-item strong{color:var(--p)}
+.partie{border:1px solid #e2e8f0;border-radius:10px;padding:20px;margin:24px 0}
+.partie-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid var(--p)}
+.partie-title{font-weight:700;font-size:1.1em;color:var(--p)}
+.pts{background:var(--p);color:#fff;font-weight:700;font-size:.85em;padding:3px 10px;border-radius:12px}
+.answer-line{border-bottom:1px solid #aaa;margin:6px 0;height:28px;display:block}
+.bareme{font-style:italic;color:#718096;font-size:.85em}
+.comp{font-size:.72em;padding:2px 7px;border-radius:4px;font-weight:700;white-space:nowrap}
+.comp-app{background:#dbeafe;color:#1d4ed8}
+.comp-ana{background:#fef3c7;color:#b45309}
+.comp-rea{background:#d1fae5;color:#065f46}
+.comp-val{background:#ede9fe;color:#6d28d9}
+.comp-com{background:#cffafe;color:#0e7490}
+.comp-legend{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;font-size:.82em}
+.comp-legend span{padding:3px 9px;border-radius:4px;font-weight:600}
+@media print{.nb,.bc{display:none}}</style>
 </head>
 <body>
 <div class="c">
-<a href="../../../maths-1ere-pro.html" class="nb">← Retour au sommaire</a>
+<a href="../../../maths-1ere-pro.html" class="nb">&larr; RETOUR SOMMAIRE</a>
 <header>
-  <h1>Devoir Surveillé – Chapitre 02 – Probabilités</h1>
-  <p class="sous-titre">1ère Bac Pro | Statistique et probabilités | Mathématiques</p>
+  <h1>Devoir Surveillé – Chapitre 2</h1>
+  <p class="sous-titre">Probabilités &nbsp;|&nbsp; 1<sup>ère</sup> Bac Pro</p>
 </header>
-
-<div class="objectifs">
-  <h3>Devoir surveillé</h3>
-  <p>Contenu à venir.</p>
+<div class="dh">
+  <div class="dh-item">&#128337; <strong>Durée :</strong> 1 heure</div>
+  <div class="dh-item">&#129518; <strong>Calculatrice :</strong> autorisée</div>
+  <div class="dh-item">&#9997; <strong>Barème :</strong> 20 points</div>
+  <div class="dh-item">&#128196; <strong>Documents :</strong> non autorisés</div>
+</div>
+<div class="comp-legend">
+  <span class="comp comp-app">APP – S'Approprier</span>
+  <span class="comp comp-ana">ANA – Analyser</span>
+  <span class="comp comp-rea">REA – Réaliser</span>
+  <span class="comp comp-val">VAL – Valider</span>
+  <span class="comp comp-com">COM – Communiquer</span>
 </div>
 
+<!-- ═══════════════ EXERCICE 1 ═══════════════ -->
+<div class="partie">
+<div class="partie-header">
+  <span class="partie-title">Exercice 1 – Contrôle qualité en production</span>
+  <span class="pts">8 points</span>
+</div>
+
+<p>Une usine fabrique des pièces métalliques sur deux lignes de production. Un contrôle qualité est effectué sur un lot de <strong>500 pièces</strong>. Les résultats sont consignés dans le tableau suivant.</p>
+
+<table class="styled-table" style="margin:16px auto;text-align:center">
+<thead><tr><th></th><th>Conforme (C)</th><th>Défectueuse (D)</th><th>Total</th></tr></thead>
+<tbody>
+<tr><td><strong>Ligne A</strong></td><td>252</td><td>28</td><td>280</td></tr>
+<tr><td><strong>Ligne B</strong></td><td>198</td><td>22</td><td>220</td></tr>
+<tr><td><strong>Total</strong></td><td>450</td><td>50</td><td>500</td></tr>
+</tbody>
+</table>
+
+<p>On choisit une pièce au hasard dans le lot. On note :</p>
+<ul>
+  <li>\(A\) : « la pièce provient de la ligne A »</li>
+  <li>\(D\) : « la pièce est défectueuse »</li>
+</ul>
+
+<p><strong>1.</strong> <span class="comp comp-app">APP</span> Déterminer \(P(A)\) et \(P(D)\). <span class="bareme">(2 pts)</span></p>
+<span class="answer-line"></span>
+<span class="answer-line"></span>
+
+<p><strong>2.</strong> <span class="comp comp-rea">REA</span> Calculer \(P(A \cap D)\), la probabilité que la pièce provienne de la ligne A <strong>et</strong> soit défectueuse. <span class="bareme">(1,5 pt)</span></p>
+<span class="answer-line"></span>
+
+<p><strong>3.</strong> <span class="comp comp-ana">ANA</span> Calculer \(P_A(D)\), la probabilité qu'une pièce soit défectueuse sachant qu'elle provient de la ligne A. <span class="bareme">(1,5 pt)</span></p>
+<span class="answer-line"></span>
+
+<p><strong>4.</strong> <span class="comp comp-ana">ANA</span> Calculer de même \(P_B(D)\). Quelle ligne de production a le meilleur taux de conformité ? <span class="bareme">(2 pts)</span></p>
+<span class="answer-line"></span>
+<span class="answer-line"></span>
+
+<p><strong>5.</strong> <span class="comp comp-com">COM</span> Compléter l'arbre de probabilités ci-dessous sur votre copie. <span class="bareme">(1 pt)</span></p>
+<p style="text-align:center;color:#718096;border:1px dashed #ccc;padding:20px;border-radius:8px;margin:12px 0">
+<em>Arbre pondéré à compléter :</em><br>
+1<sup>er</sup> niveau : Ligne A / Ligne B<br>
+2<sup>e</sup> niveau : Conforme / Défectueuse
+</p>
+
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
+<div class="corr" style="display:none">
+<p><strong>1.</strong> \(P(A) = \dfrac{280}{500} = 0{,}56\) et \(P(D) = \dfrac{50}{500} = 0{,}10\).</p>
+<p><strong>2.</strong> \(P(A \cap D) = \dfrac{28}{500} = 0{,}056\).</p>
+<p><strong>3.</strong> \(P_A(D) = \dfrac{28}{280} = \dfrac{1}{10} = 0{,}10\), soit 10 % de pièces défectueuses sur la ligne A.</p>
+<p><strong>4.</strong> \(P_B(D) = \dfrac{22}{220} = \dfrac{1}{10} = 0{,}10\), soit 10 % également.
+Les deux lignes ont le <strong>même taux de défaut</strong> (10 %). Aucune ligne n'est meilleure que l'autre en termes de conformité.</p>
+<p><strong>5.</strong> Arbre pondéré :<br>
+— Branche A (0,56) puis C (0,90) ou D (0,10)<br>
+— Branche B (0,44) puis C (0,90) ou D (0,10)</p>
+</div>
+</div>
+
+<!-- ═══════════════ EXERCICE 2 ═══════════════ -->
+<div class="partie">
+<div class="partie-header">
+  <span class="partie-title">Exercice 2 – Espérance et prise de décision</span>
+  <span class="pts">12 points</span>
+</div>
+
+<p>Un technicien de maintenance intervient sur des chaudières. Avant chaque intervention, il peut choisir entre deux options :</p>
+<ul>
+  <li><strong>Option 1 :</strong> Effectuer un diagnostic rapide (coût : 40 €)</li>
+  <li><strong>Option 2 :</strong> Effectuer un diagnostic complet (coût : 100 €)</li>
+</ul>
+<p>L'expérience montre que :</p>
+<ul>
+  <li>Avec le diagnostic rapide, la probabilité de détecter la panne du premier coup est \(0{,}6\). En cas d'échec, une seconde intervention coûte 150 € supplémentaires.</li>
+  <li>Avec le diagnostic complet, la probabilité de détecter la panne du premier coup est \(0{,}95\). En cas d'échec, une seconde intervention coûte aussi 150 €.</li>
+</ul>
+
+<p><strong>1.</strong> <span class="comp comp-com">COM</span> Compléter l'arbre de probabilités pour l'<strong>Option 1</strong> (diagnostic rapide). <span class="bareme">(2 pts)</span></p>
+<p style="text-align:center;color:#718096;border:1px dashed #ccc;padding:20px;border-radius:8px;margin:12px 0">
+<em>Arbre à compléter :</em><br>
+Succès (probabilité 0,6) → coût total : ...<br>
+Échec (probabilité ...) → coût total : ...
+</p>
+<span class="answer-line"></span>
+
+<p><strong>2.</strong> <span class="comp comp-rea">REA</span> Calculer le coût total dans chacun des cas (succès / échec) pour l'Option 1. <span class="bareme">(2 pts)</span></p>
+<span class="answer-line"></span>
+<span class="answer-line"></span>
+
+<p><strong>3.</strong> <span class="comp comp-rea">REA</span> Calculer l'espérance mathématique du coût total pour l'Option 1. <span class="bareme">(2 pts)</span></p>
+<span class="answer-line"></span>
+<span class="answer-line"></span>
+
+<p><strong>4.</strong> <span class="comp comp-rea">REA</span> De la même manière, calculer le coût total dans chacun des cas pour l'Option 2, puis son espérance mathématique. <span class="bareme">(3 pts)</span></p>
+<span class="answer-line"></span>
+<span class="answer-line"></span>
+<span class="answer-line"></span>
+
+<p><strong>5.</strong> <span class="comp comp-ana">ANA</span> Quelle option est la plus avantageuse en moyenne ? Justifier. <span class="bareme">(1,5 pt)</span></p>
+<span class="answer-line"></span>
+<span class="answer-line"></span>
+
+<p><strong>6.</strong> <span class="comp comp-val">VAL</span> Le technicien effectue 200 interventions par an. Estimer l'économie annuelle réalisée en choisissant la meilleure option. <span class="bareme">(1,5 pt)</span></p>
+<span class="answer-line"></span>
+<span class="answer-line"></span>
+
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
+<div class="corr" style="display:none">
+<p><strong>1.</strong> Arbre de l'Option 1 :<br>
+— Succès (probabilité 0,6) → coût = 40 €<br>
+— Échec (probabilité 0,4) → coût = 40 + 150 = 190 €</p>
+
+<p><strong>2.</strong> Option 1 :<br>
+— Succès : coût total = 40 €<br>
+— Échec : coût total = 40 + 150 = 190 €</p>
+
+<p><strong>3.</strong> Espérance du coût (Option 1) :
+\(E_1 = 0{,}6 \times 40 + 0{,}4 \times 190 = 24 + 76 = 100\) €.</p>
+
+<p><strong>4.</strong> Option 2 :<br>
+— Succès (probabilité 0,95) : coût total = 100 €<br>
+— Échec (probabilité 0,05) : coût total = 100 + 150 = 250 €</p>
+<p>Espérance du coût (Option 2) :
+\(E_2 = 0{,}95 \times 100 + 0{,}05 \times 250 = 95 + 12{,}5 = 107{,}5\) €.</p>
+
+<p><strong>5.</strong> \(E_1 = 100\) € et \(E_2 = 107{,}5\) €. L'<strong>Option 1</strong> (diagnostic rapide) est en moyenne la plus avantageuse car son espérance de coût est inférieure (100 € contre 107,50 €).</p>
+
+<p><strong>6.</strong> Économie annuelle : \(200 \times (107{,}5 - 100) = 200 \times 7{,}5 = 1\,500\) €.
+En choisissant l'Option 1, le technicien économise environ <strong>1 500 € par an</strong>.</p>
+</div>
+</div>
+
+<script>
+function toggle(btn){
+  const corr=btn.nextElementSibling;
+  if(corr.style.display==='block'){corr.style.display='none';btn.textContent='Voir la correction';}
+  else{corr.style.display='block';btn.textContent='Masquer la correction';}
+}
+</script>
 </div>
 <script src="../../../nav.js"></script>
 </body>

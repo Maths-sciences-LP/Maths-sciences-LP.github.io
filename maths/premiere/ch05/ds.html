@@ -3,25 +3,196 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>DS Ch05 – Fonctions polynômes de degré 2 – 1ère Pro</title>
+<title>DS Ch05 – Fonctions polynômes de degré 2 – 1ère Bac Pro</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <link rel="stylesheet" href="../../../styles.css">
 <link rel="stylesheet" href="../../../print.css" media="print">
-<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}</style>
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
+.dh{display:flex;flex-wrap:wrap;gap:10px;background:#eef2f7;padding:14px 18px;border-radius:8px;margin-bottom:28px;font-size:.9em}
+.dh-item{display:flex;align-items:center;gap:6px}
+.dh-item strong{color:var(--p)}
+.partie{border:1px solid #e2e8f0;border-radius:10px;padding:20px;margin:24px 0}
+.partie-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid var(--p)}
+.partie-title{font-weight:700;font-size:1.1em;color:var(--p)}
+.pts{background:var(--p);color:#fff;font-weight:700;font-size:.85em;padding:3px 10px;border-radius:12px}
+.answer-line{border-bottom:1px solid #aaa;margin:6px 0;height:28px;display:block}
+.bareme{font-style:italic;color:#718096;font-size:.85em}
+.comp{font-size:.72em;padding:2px 7px;border-radius:4px;font-weight:700;white-space:nowrap}
+.comp-app{background:#dbeafe;color:#1d4ed8}
+.comp-ana{background:#fef3c7;color:#b45309}
+.comp-rea{background:#d1fae5;color:#065f46}
+.comp-val{background:#ede9fe;color:#6d28d9}
+.comp-com{background:#cffafe;color:#0e7490}
+.comp-legend{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;font-size:.82em}
+.comp-legend span{padding:3px 9px;border-radius:4px;font-weight:600}
+@media print{.nb,.bc{display:none}}</style>
 </head>
 <body>
 <div class="c">
-<a href="../../../maths-1ere-pro.html" class="nb">← Retour au sommaire</a>
+<a href="../../../maths-1ere-pro.html" class="nb">&larr; RETOUR SOMMAIRE</a>
 <header>
-  <h1>Devoir Surveillé – Chapitre 05 – Fonctions polynômes de degré 2</h1>
-  <p class="sous-titre">1ère Bac Pro | Algèbre – Analyse | Mathématiques</p>
+  <h1>Devoir Surveillé – Chapitre 5</h1>
+  <p class="sous-titre">Fonctions polynômes de degré 2 &nbsp;|&nbsp; 1<sup>ère</sup> Bac Pro</p>
 </header>
-
-<div class="objectifs">
-  <h3>Devoir surveillé</h3>
-  <p>Contenu à venir.</p>
+<div class="dh">
+  <div class="dh-item">&#128337; <strong>Durée :</strong> 1 heure</div>
+  <div class="dh-item">&#129518; <strong>Calculatrice :</strong> autorisée</div>
+  <div class="dh-item">&#9997; <strong>Barème :</strong> 20 points</div>
+  <div class="dh-item">&#128196; <strong>Documents :</strong> non autorisés</div>
+</div>
+<div class="comp-legend">
+  <span class="comp comp-app">APP – S'Approprier</span>
+  <span class="comp comp-ana">ANA – Analyser</span>
+  <span class="comp comp-rea">REA – Réaliser</span>
+  <span class="comp comp-val">VAL – Valider</span>
+  <span class="comp comp-com">COM – Communiquer</span>
 </div>
 
+<!-- ═══════════════ EXERCICE 1 ═══════════════ -->
+<div class="partie">
+<div class="partie-header">
+  <span class="partie-title">Exercice 1 – Étude d'une fonction du second degré</span>
+  <span class="pts">8 points</span>
+</div>
+
+<p>On considère la fonction \(f\) définie sur \(\mathbb{R}\) par :</p>
+<p style="text-align:center;font-weight:600;font-size:1.1em;margin:12px 0">\(f(x) = 2x^2 - 8x + 6\)</p>
+
+<p><strong>1.</strong> <span class="comp comp-app">APP</span> Identifier les coefficients \(a\), \(b\) et \(c\). La parabole est-elle ouverte vers le haut ou vers le bas ? <span class="bareme">(1 pt)</span></p>
+<span class="answer-line"></span>
+
+<p><strong>2.</strong> <span class="comp comp-rea">REA</span> Calculer les coordonnées du sommet \(S\) de la parabole. <span class="bareme">(2 pts)</span></p>
+<span class="answer-line"></span>
+<span class="answer-line"></span>
+
+<p><strong>3.</strong> <span class="comp comp-com">COM</span> Donner l'équation de l'axe de symétrie de la parabole. <span class="bareme">(1 pt)</span></p>
+<span class="answer-line"></span>
+
+<p><strong>4.</strong> <span class="comp comp-rea">REA</span> Calculer le discriminant \(\Delta\) et en déduire les racines de \(f(x) = 0\). <span class="bareme">(2,5 pts)</span></p>
+<span class="answer-line"></span>
+<span class="answer-line"></span>
+<span class="answer-line"></span>
+
+<p><strong>5.</strong> <span class="comp comp-val">VAL</span> Vérifier que \(f(x) = 2(x - 1)(x - 3)\) en développant cette expression. <span class="bareme">(1,5 pt)</span></p>
+<span class="answer-line"></span>
+<span class="answer-line"></span>
+
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
+<div class="corr" style="display:none">
+<p><strong>1.</strong> \(a = 2\), \(b = -8\), \(c = 6\). Comme \(a = 2 > 0\), la parabole est <strong>ouverte vers le haut</strong>.</p>
+
+<p><strong>2.</strong> \(x_S = \dfrac{-b}{2a} = \dfrac{-(-8)}{2 \times 2} = \dfrac{8}{4} = 2\).</p>
+<p>\(f(2) = 2(4) - 8(2) + 6 = 8 - 16 + 6 = -2\).</p>
+<p>Le sommet est \(S(2\;;\;-2)\).</p>
+
+<p><strong>3.</strong> L'axe de symétrie a pour équation \(x = 2\).</p>
+
+<p><strong>4.</strong> \(\Delta = b^2 - 4ac = (-8)^2 - 4 \times 2 \times 6 = 64 - 48 = 16\).</p>
+<p>\(\Delta > 0\) donc l'équation admet deux solutions réelles distinctes :</p>
+<p>\(x_1 = \dfrac{-b - \sqrt{\Delta}}{2a} = \dfrac{8 - 4}{4} = 1\) et \(x_2 = \dfrac{-b + \sqrt{\Delta}}{2a} = \dfrac{8 + 4}{4} = 3\).</p>
+<p>Les racines sont \(x = 1\) et \(x = 3\).</p>
+
+<p><strong>5.</strong> \(2(x-1)(x-3) = 2[x^2 - 3x - x + 3] = 2[x^2 - 4x + 3] = 2x^2 - 8x + 6 = f(x)\). Vérifié.</p>
+</div>
+</div>
+
+<!-- ═══════════════ EXERCICE 2 ═══════════════ -->
+<div class="partie">
+<div class="partie-header">
+  <span class="partie-title">Exercice 2 – Tableau de signes</span>
+  <span class="pts">7 points</span>
+</div>
+
+<p>On reprend la fonction \(f(x) = 2x^2 - 8x + 6 = 2(x-1)(x-3)\) de l'exercice 1.</p>
+
+<p><strong>1.</strong> <span class="comp comp-ana">ANA</span> Dresser le tableau de variations de \(f\) sur \(\mathbb{R}\). <span class="bareme">(2 pts)</span></p>
+<span class="answer-line"></span>
+<span class="answer-line"></span>
+<span class="answer-line"></span>
+
+<p><strong>2.</strong> <span class="comp comp-rea">REA</span> Compléter le tableau de signes de \(f(x)\) sur \(\mathbb{R}\). <span class="bareme">(2 pts)</span></p>
+
+<table class="styled-table" style="margin:16px auto;text-align:center">
+<thead><tr><th>\(x\)</th><th>\(-\infty\)</th><th></th><th>\(\ldots\)</th><th></th><th>\(\ldots\)</th><th></th><th>\(+\infty\)</th></tr></thead>
+<tbody><tr><td>Signe de \(f(x)\)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody>
+</table>
+<span class="answer-line"></span>
+
+<p><strong>3.</strong> <span class="comp comp-ana">ANA</span> Résoudre l'inéquation \(f(x) \geq 0\). <span class="bareme">(1,5 pt)</span></p>
+<span class="answer-line"></span>
+
+<p><strong>4.</strong> <span class="comp comp-val">VAL</span> Vérifier le résultat en calculant \(f(0)\), \(f(2)\) et \(f(4)\). <span class="bareme">(1,5 pt)</span></p>
+<span class="answer-line"></span>
+<span class="answer-line"></span>
+
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
+<div class="corr" style="display:none">
+<p><strong>1.</strong> \(a = 2 > 0\) : la fonction est décroissante sur \(]-\infty\;;\;2]\) puis croissante sur \([2\;;\;+\infty[\).
+Minimum : \(f(2) = -2\) atteint en \(x = 2\).</p>
+
+<p><strong>2.</strong> Tableau de signes :</p>
+<table class="styled-table" style="margin:8px auto;text-align:center;font-size:.9em">
+<thead><tr><th>\(x\)</th><th>\(-\infty\)</th><th></th><th>\(1\)</th><th></th><th>\(3\)</th><th></th><th>\(+\infty\)</th></tr></thead>
+<tbody><tr><td>Signe de \(f(x)\)</td><td></td><td>\(+\)</td><td>\(0\)</td><td>\(-\)</td><td>\(0\)</td><td>\(+\)</td><td></td></tr></tbody>
+</table>
+<p>Comme \(a > 0\), \(f(x)\) est du signe de \(a\) à l'extérieur des racines et du signe opposé entre les racines.</p>
+
+<p><strong>3.</strong> \(f(x) \geq 0\) pour \(x \in\;]-\infty\;;\;1] \cup [3\;;\;+\infty[\).</p>
+
+<p><strong>4.</strong> Vérification :
+\(f(0) = 0 - 0 + 6 = 6 > 0\) (cohérent : \(0 < 1\), donc \(f(x) \geq 0\)).
+\(f(2) = 8 - 16 + 6 = -2 < 0\) (cohérent : \(1 < 2 < 3\), donc \(f(x) < 0\)).
+\(f(4) = 32 - 32 + 6 = 6 > 0\) (cohérent : \(4 > 3\), donc \(f(x) \geq 0\)). Tous les résultats concordent.</p>
+</div>
+</div>
+
+<!-- ═══════════════ EXERCICE 3 ═══════════════ -->
+<div class="partie">
+<div class="partie-header">
+  <span class="partie-title">Exercice 3 – Arche parabolique</span>
+  <span class="pts">5 points</span>
+</div>
+
+<p>Un charpentier conçoit une arche en bois pour l'entrée d'un jardin. La forme de l'arche est modélisée par la fonction \(h\) définie sur \([0\;;\;4]\) par :</p>
+<p style="text-align:center;font-weight:600;font-size:1.1em;margin:12px 0">\(h(x) = -x^2 + 4x\)</p>
+<p>où \(x\) est la distance horizontale (en mètres) depuis le pied gauche de l'arche et \(h(x)\) la hauteur (en mètres).</p>
+
+<p><strong>1.</strong> <span class="comp comp-app">APP</span> Vérifier que \(h(0) = 0\) et \(h(4) = 0\). Interpréter ces résultats. <span class="bareme">(1 pt)</span></p>
+<span class="answer-line"></span>
+
+<p><strong>2.</strong> <span class="comp comp-rea">REA</span> Calculer la hauteur maximale de l'arche. Pour quelle distance horizontale est-elle atteinte ? <span class="bareme">(2 pts)</span></p>
+<span class="answer-line"></span>
+<span class="answer-line"></span>
+
+<p><strong>3.</strong> <span class="comp comp-ana">ANA</span> Un camion de livraison mesure 2,5 m de haut et 2 m de large (centré sous l'arche). Le camion peut-il passer sous l'arche ? Justifier par un calcul. <span class="bareme">(2 pts)</span></p>
+<span class="answer-line"></span>
+<span class="answer-line"></span>
+<span class="answer-line"></span>
+
+<button class="bc" onclick="toggle(this)">Voir la correction</button>
+<div class="corr" style="display:none">
+<p><strong>1.</strong> \(h(0) = -0 + 0 = 0\) et \(h(4) = -16 + 16 = 0\).
+Les pieds de l'arche sont au sol : l'arche touche le sol à \(x = 0\) m (pied gauche) et \(x = 4\) m (pied droit). La portée de l'arche est de 4 m.</p>
+
+<p><strong>2.</strong> \(a = -1 < 0\), donc la parabole admet un maximum.
+\(x_S = \dfrac{-b}{2a} = \dfrac{-4}{-2} = 2\) m.</p>
+<p>\(h(2) = -(4) + 4(2) = -4 + 8 = 4\) m.</p>
+<p>La hauteur maximale de l'arche est de <strong>4 mètres</strong>, atteinte au milieu (\(x = 2\) m).</p>
+
+<p><strong>3.</strong> Le camion de 2 m de large est centré sous l'arche (milieu en \(x = 2\)). Il occupe l'espace entre \(x = 1\) et \(x = 3\).
+Il faut que la hauteur de l'arche soit au moins 2,5 m aux bords du camion :</p>
+<p>\(h(1) = -1 + 4 = 3\) m et \(h(3) = -9 + 12 = 3\) m.</p>
+<p>Comme \(3 > 2{,}5\), la hauteur de l'arche aux bords du camion (3 m) est supérieure à la hauteur du camion (2,5 m). Le camion <strong>peut passer</strong> sous l'arche.</p>
+</div>
+</div>
+
+<script>
+function toggle(btn){
+  const corr=btn.nextElementSibling;
+  if(corr.style.display==='block'){corr.style.display='none';btn.textContent='Voir la correction';}
+  else{corr.style.display='block';btn.textContent='Masquer la correction';}
+}
+</script>
 </div>
 <script src="../../../nav.js"></script>
 </body>
