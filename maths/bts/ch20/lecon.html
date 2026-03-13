@@ -3,612 +3,869 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ch20 – Plans d'expérience – BTS</title>
+<title>Ch20 &ndash; Plans d&rsquo;expérience &ndash; BTS</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <link rel="stylesheet" href="../../../styles.css">
-<link rel="stylesheet" href="../../../print.css" media="print">
-<style>:root{--p:#1e3a5f;--p-bg:#eef2f7;--p-border:#93a5c0}</style>
+<style>
+:root{--p:#1e3a5f;--p-bg:#eef2f7;--p-border:#93a5c0}
+table.plan-exp{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.93rem}
+table.plan-exp th,table.plan-exp td{border:1px solid #aab;padding:.45rem .7rem;text-align:center}
+table.plan-exp th{background:var(--p);color:#fff;font-weight:600}
+table.plan-exp tr:nth-child(even) td{background:#f0f4f8}
+.niv-moins{color:#b02a37;font-weight:700}
+.niv-plus{color:#1e7e34;font-weight:700}
+.alias-box{background:#fffbe6;border:1px solid #ffe083;border-radius:6px;padding:.8rem 1rem;margin:.8rem 0;font-size:.93rem}
+</style>
 </head>
 <body>
 <div class="c">
-<a href="../../../maths-bts.html" class="nb">← Retour au sommaire</a>
-
+<a href="../../../maths-bts.html" class="nb">&larr; Retour au sommaire</a>
 <header>
-  <h1>Chapitre 20 – Plans d'expérience</h1>
-  <p class="sous-titre">BTS | Mathématiques | Groupements D1, D2</p>
+  <h1>Chapitre 20 &ndash; Plans d&rsquo;expérience</h1>
+  <p class="sous-titre">BTS &nbsp;|&nbsp; Mathématiques &nbsp;|&nbsp; Groupement C2</p>
+  <p class="maj">Dernière mise à jour&nbsp;: mars 2026</p>
 </header>
 
 <!-- OBJECTIFS -->
 <div class="objectifs">
   <strong>Objectifs du chapitre</strong>
   <ul>
-    <li>Comprendre l'intérêt des plans d'expérience pour optimiser un procédé</li>
-    <li>Construire et analyser un plan factoriel complet \(2^k\)</li>
-    <li>Calculer et interpréter les effets principaux et les interactions</li>
-    <li>Utiliser les plans fractionnaires pour réduire le nombre d'essais</li>
-    <li>Connaître le principe du plan de Plackett-Burman pour le criblage</li>
-    <li>Construire un modèle de surface de réponse et trouver l'optimum</li>
+    <li>Comprendre les notions de facteur, niveau et variable réponse dans un plan d&rsquo;expérience.</li>
+    <li>Construire et analyser un plan factoriel complet \(2^2\) et \(2^3\).</li>
+    <li>Calculer les effets principaux et les interactions à partir de la matrice des essais.</li>
+    <li>Utiliser un plan fractionnaire \(2^{k-p}\) et identifier les alias.</li>
+    <li>Établir le modèle mathématique du premier ordre et valider les résidus.</li>
+    <li>Introduire les surfaces de réponse et les plans composites centraux.</li>
+    <li>Présenter la méthode de Taguchi et la notion de rapport signal/bruit.</li>
+    <li>Conduire une démarche complète d&rsquo;optimisation d&rsquo;un procédé industriel.</li>
   </ul>
 </div>
 
 <!-- SITUATION PROFESSIONNELLE -->
 <div class="situation">
-  <strong>Situation professionnelle — Optimisation d'un procédé de fermentation</strong>
+  <strong>Situation professionnelle</strong>
   <p>
-    Un ingénieur de procédés dans une industrie biochimique cherche à maximiser le rendement
-    en biomasse d'un fermenteur. Trois paramètres de procédé sont susceptibles d'influencer
-    ce rendement : la température \(T\) (entre 28°C et 36°C), le pH (entre 6,5 et 7,5)
-    et la concentration initiale en substrat \(C\) (entre 10 et 30 g/L).
+    Chloé est ingénieure qualité dans une usine de soudage par résistance. La ligne produit des
+    assemblages d&rsquo;acier inoxydable pour l&rsquo;industrie alimentaire. Des contrôles révèlent
+    une résistance mécanique des soudures trop variable selon les équipes et les cycles de production.
   </p>
   <p>
-    Réaliser toutes les combinaisons possibles de ces trois facteurs à plusieurs niveaux
-    serait très coûteux. Les <strong>plans d'expérience</strong> permettent de choisir
-    un ensemble réduit d'essais qui donne le maximum d'information sur les effets de chaque
-    facteur et de leurs interactions, tout en minimisant le nombre de manipulations.
+    On suspecte l&rsquo;influence de trois paramètres&nbsp;: la <strong>température des électrodes</strong>,
+    la <strong>vitesse d&rsquo;avance</strong> et la <strong>pression de serrage</strong>.
+    Chloé doit déterminer, avec un minimum d&rsquo;essais coûteux, quels facteurs ont un impact réel
+    et trouver les réglages optimaux pour maximiser la résistance des soudures.
+  </p>
+  <p>
+    Elle décide d&rsquo;utiliser un <strong>plan d&rsquo;expérience</strong> plutôt que de tester
+    chaque paramètre séparément&nbsp;: cette approche lui permettra d&rsquo;analyser les interactions
+    entre facteurs et de réduire le nombre d&rsquo;essais de plusieurs dizaines à seulement huit.
   </p>
 </div>
 
-<!-- SECTION 1 : INTRODUCTION -->
-<h2>1. Introduction aux plans d'expérience</h2>
+<!-- SECTION 1 — INTRODUCTION -->
+<h2>1. Introduction aux plans d&rsquo;expérience</h2>
 
+<h3>1.1 Pourquoi les plans d&rsquo;expérience&nbsp;?</h3>
+<p>
+  Optimiser un procédé industriel nécessite souvent d&rsquo;étudier plusieurs paramètres simultanément.
+  L&rsquo;approche dite <em>«&nbsp;un facteur à la fois&nbsp;»</em> (OFAT — One Factor At a Time) consiste
+  à faire varier un seul paramètre pendant que tous les autres restent fixes.
+</p>
+<div class="att">
+  <span class="label-att">Attention</span>
+  L&rsquo;approche OFAT est <strong>inefficace et trompeuse</strong>&nbsp;: elle ne détecte pas les
+  <strong>interactions</strong> entre facteurs (situation où l&rsquo;effet d&rsquo;un facteur dépend du
+  niveau d&rsquo;un autre). Elle peut nécessiter un nombre d&rsquo;essais beaucoup plus grand et conduire
+  à des conclusions erronées.
+</div>
+
+<p>Les <strong>plans d&rsquo;expérience</strong> (Design of Experiments, DoE) permettent de&nbsp;:</p>
+<ul>
+  <li>Étudier <em>simultanément</em> plusieurs facteurs.</li>
+  <li>Estimer les interactions entre facteurs.</li>
+  <li>Réduire le nombre d&rsquo;essais tout en conservant la qualité de l&rsquo;information.</li>
+  <li>Construire un modèle mathématique du procédé.</li>
+  <li>Trouver les réglages optimaux (maximisation, minimisation ou cible).</li>
+</ul>
+
+<h3>1.2 Vocabulaire fondamental</h3>
 <div class="def">
-  <span class="label label-def">Définition — Vocabulaire de base</span>
+  <span class="label-def">Définitions</span>
   <ul>
-    <li>
-      <strong>Facteur</strong> : variable d'entrée susceptible d'influencer la réponse.
-      Exemple : température, pression, concentration.
-    </li>
-    <li>
-      <strong>Niveau</strong> : valeur prise par un facteur lors d'un essai.
-      Pour un plan à 2 niveaux : niveau bas \(-1\) et niveau haut \(+1\).
-    </li>
-    <li>
-      <strong>Réponse</strong> (ou variable à expliquer) : grandeur mesurée lors de chaque essai.
-      Exemple : rendement, pureté, résistance.
-    </li>
-    <li>
-      <strong>Espace expérimental</strong> : domaine des facteurs dans lequel on expérimente,
-      défini par les bornes inférieures et supérieures de chaque facteur.
-    </li>
-    <li>
-      <strong>Matrice d'expériences</strong> (ou plan) : tableau indiquant les valeurs des facteurs
-      pour chaque essai.
-    </li>
-    <li>
-      <strong>Effet d'un facteur</strong> : variation de la réponse attribuable à ce facteur.
-    </li>
-    <li>
-      <strong>Interaction</strong> : effet combiné de deux facteurs ou plus, non réductible
-      à la somme de leurs effets individuels.
-    </li>
+    <li><strong>Variable réponse \(Y\)</strong>&nbsp;: grandeur mesurée lors de chaque essai
+        (résistance de soudure en N, rugosité en µm, dureté en HV…).</li>
+    <li><strong>Facteur \(X_i\)</strong>&nbsp;: paramètre du procédé susceptible d&rsquo;influencer
+        \(Y\) (température, vitesse, pression…).</li>
+    <li><strong>Niveau</strong>&nbsp;: valeur prise par un facteur lors d&rsquo;un essai.
+        Pour les plans à deux niveaux, on utilise les valeurs codées \(-1\) (bas) et \(+1\) (haut).</li>
+    <li><strong>Essai (run)</strong>&nbsp;: une combinaison particulière de niveaux de tous les facteurs.</li>
+    <li><strong>Domaine expérimental</strong>&nbsp;: l&rsquo;ensemble des combinaisons possibles de niveaux.</li>
+    <li><strong>Effet principal</strong>&nbsp;: variation de \(Y\) due à la variation d&rsquo;un seul facteur
+        (tous les autres moyennés).</li>
+    <li><strong>Interaction</strong>&nbsp;: l&rsquo;effet d&rsquo;un facteur sur \(Y\) dépend du niveau
+        d&rsquo;un autre facteur.</li>
   </ul>
 </div>
 
-<div class="prop">
-  <span class="label label-prop">Propriété — Codage des niveaux</span>
-  <p>
-    Les niveaux réels \(x_{\text{bas}}\) et \(x_{\text{haut}}\) d'un facteur sont codés
-    en variables centrées réduites \(X \in \{-1, +1\}\) par :
-  </p>
-  <div class="formule-box">
-    \[X = \frac{x - x_0}{\Delta x}, \quad x_0 = \frac{x_{\text{haut}} + x_{\text{bas}}}{2}, \quad \Delta x = \frac{x_{\text{haut}} - x_{\text{bas}}}{2}\]
-  </div>
-  <p>Le niveau central correspond à \(X = 0\), le niveau bas à \(X = -1\), le niveau haut à \(X = +1\).</p>
+<h3>1.3 Codage des facteurs</h3>
+<p>
+  On transforme les niveaux réels en niveaux codés \(-1\) et \(+1\) par la formule&nbsp;:
+</p>
+<div class="formule-box">
+\[
+  x_i = \frac{X_i - \bar{X}_i}{\Delta X_i}
+  \qquad \text{avec } \bar{X}_i = \frac{X_{i,\max}+X_{i,\min}}{2},\quad
+  \Delta X_i = \frac{X_{i,\max}-X_{i,\min}}{2}
+\]
 </div>
-
 <div class="ex">
-  <span class="label label-def">Exemple — Codage de la température</span>
-  <p>
-    Température : \(T_{\text{bas}} = 28\,°\text{C}\), \(T_{\text{haut}} = 36\,°\text{C}\).
-    Valeur centrale : \(T_0 = (28+36)/2 = 32\,°\text{C}\), demi-écart : \(\Delta T = 4\,°\text{C}\).
-  </p>
-  \[X_T = \frac{T - 32}{4}\]
-  <p>
-    Ainsi \(T = 28\,°\text{C} \to X_T = -1\) et \(T = 36\,°\text{C} \to X_T = +1\).
-  </p>
+  <span class="label-def">Exemple</span>
+  La température varie entre \(200\,°\text{C}\) et \(240\,°\text{C}\).
+  \(\bar{X} = 220\,°\text{C}\), \(\Delta X = 20\,°\text{C}\).
+  Niveau bas \(200\,°\text{C} \Rightarrow x = -1\). Niveau haut \(240\,°\text{C} \Rightarrow x = +1\).
 </div>
 
-<!-- SECTION 2 : PLAN FACTORIEL 2^2 -->
+<!-- SECTION 2 — PLAN 2² -->
 <h2>2. Plan factoriel complet \(2^2\)</h2>
 
-<div class="def">
-  <span class="label label-def">Définition — Plan factoriel \(2^k\)</span>
-  <p>
-    Un <strong>plan factoriel complet \(2^k\)</strong> est un plan où l'on étudie
-    \(k\) facteurs, chacun à 2 niveaux (\(-1\) et \(+1\)). Il comprend
-    \(2^k\) essais (toutes les combinaisons de niveaux).
-  </p>
-</div>
+<h3>2.1 Principe</h3>
+<p>
+  Avec \(k=2\) facteurs à \(2\) niveaux, on réalise \(2^2 = 4\) essais couvrant toutes les
+  combinaisons possibles. Ce plan permet d&rsquo;estimer les deux effets principaux et leur interaction.
+</p>
 
-<div class="prop">
-  <span class="label label-prop">Propriété — Matrice du plan \(2^2\) (4 essais)</span>
-  <p>
-    Pour 2 facteurs \(A\) et \(B\), la matrice d'expériences est :
-  </p>
-  <table style="width:auto;border-collapse:collapse;margin:1em auto">
-    <thead>
-      <tr style="background:var(--p);color:#fff">
-        <th style="padding:0.5em 1em;border:1px solid #aaa">Essai</th>
-        <th style="padding:0.5em 1em;border:1px solid #aaa">\(A\)</th>
-        <th style="padding:0.5em 1em;border:1px solid #aaa">\(B\)</th>
-        <th style="padding:0.5em 1em;border:1px solid #aaa">\(AB\)</th>
-        <th style="padding:0.5em 1em;border:1px solid #aaa">Réponse \(y\)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td style="padding:0.5em 1em;border:1px solid #aaa;text-align:center">1</td>
-        <td style="padding:0.5em 1em;border:1px solid #aaa;text-align:center">\(-1\)</td>
-        <td style="padding:0.5em 1em;border:1px solid #aaa;text-align:center">\(-1\)</td>
-        <td style="padding:0.5em 1em;border:1px solid #aaa;text-align:center">\(+1\)</td>
-        <td style="padding:0.5em 1em;border:1px solid #aaa;text-align:center">\(y_1\)</td>
-      </tr>
-      <tr style="background:#f5f7fb">
-        <td style="padding:0.5em 1em;border:1px solid #aaa;text-align:center">2</td>
-        <td style="padding:0.5em 1em;border:1px solid #aaa;text-align:center">\(+1\)</td>
-        <td style="padding:0.5em 1em;border:1px solid #aaa;text-align:center">\(-1\)</td>
-        <td style="padding:0.5em 1em;border:1px solid #aaa;text-align:center">\(-1\)</td>
-        <td style="padding:0.5em 1em;border:1px solid #aaa;text-align:center">\(y_2\)</td>
-      </tr>
-      <tr>
-        <td style="padding:0.5em 1em;border:1px solid #aaa;text-align:center">3</td>
-        <td style="padding:0.5em 1em;border:1px solid #aaa;text-align:center">\(-1\)</td>
-        <td style="padding:0.5em 1em;border:1px solid #aaa;text-align:center">\(+1\)</td>
-        <td style="padding:0.5em 1em;border:1px solid #aaa;text-align:center">\(-1\)</td>
-        <td style="padding:0.5em 1em;border:1px solid #aaa;text-align:center">\(y_3\)</td>
-      </tr>
-      <tr style="background:#f5f7fb">
-        <td style="padding:0.5em 1em;border:1px solid #aaa;text-align:center">4</td>
-        <td style="padding:0.5em 1em;border:1px solid #aaa;text-align:center">\(+1\)</td>
-        <td style="padding:0.5em 1em;border:1px solid #aaa;text-align:center">\(+1\)</td>
-        <td style="padding:0.5em 1em;border:1px solid #aaa;text-align:center">\(+1\)</td>
-        <td style="padding:0.5em 1em;border:1px solid #aaa;text-align:center">\(y_4\)</td>
-      </tr>
-    </tbody>
-  </table>
-  <p>La colonne \(AB\) est le produit terme à terme des colonnes \(A\) et \(B\).</p>
-</div>
+<h3>2.2 Matrice des essais — exemple soudage</h3>
+<p>
+  <strong>Facteur A</strong>&nbsp;: Température des électrodes
+  (\(200\,°\text{C} = -1\)&nbsp;; \(240\,°\text{C} = +1\)).<br>
+  <strong>Facteur B</strong>&nbsp;: Vitesse d&rsquo;avance
+  (\(1.5\,\text{m/min} = -1\)&nbsp;; \(2.5\,\text{m/min} = +1\)).<br>
+  <strong>Réponse Y</strong>&nbsp;: Résistance à la traction (N).
+</p>
 
+<table class="plan-exp">
+  <thead>
+    <tr>
+      <th>Essai</th><th>\(x_A\)</th><th>\(x_B\)</th><th>\(x_A x_B\)</th><th>\(Y\) (N)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td class="niv-moins">&minus;1</td><td class="niv-moins">&minus;1</td><td class="niv-plus">+1</td><td>1 820</td></tr>
+    <tr><td>2</td><td class="niv-plus">+1</td><td class="niv-moins">&minus;1</td><td class="niv-moins">&minus;1</td><td>2 150</td></tr>
+    <tr><td>3</td><td class="niv-moins">&minus;1</td><td class="niv-plus">+1</td><td class="niv-moins">&minus;1</td><td>1 680</td></tr>
+    <tr><td>4</td><td class="niv-plus">+1</td><td class="niv-plus">+1</td><td class="niv-plus">+1</td><td>2 430</td></tr>
+  </tbody>
+</table>
+
+<h3>2.3 Calcul des effets</h3>
 <div class="prop">
-  <span class="label label-prop">Propriété — Calcul des effets pour un plan \(2^2\)</span>
-  <p>L'effet principal de \(A\) est la demi-différence entre la moyenne des réponses à \(A=+1\) et à \(A=-1\) :</p>
-  <div class="formule-box">
-    \[e_A = \frac{(y_2 + y_4) - (y_1 + y_3)}{2}, \quad e_B = \frac{(y_3 + y_4) - (y_1 + y_2)}{2}\]
-    \[e_{AB} = \frac{(y_1 + y_4) - (y_2 + y_3)}{2}\]
-  </div>
-  <p>
-    La <strong>moyenne générale</strong> est :
-    \[\bar{y} = \frac{y_1 + y_2 + y_3 + y_4}{4}\]
-  </p>
-  <p>Le modèle linéaire du plan \(2^2\) s'écrit :</p>
-  <div class="formule-box">
-    \[\hat{y} = \bar{y} + e_A\,A + e_B\,B + e_{AB}\,AB\]
-  </div>
+  <span class="label-prop">Formules</span>
+  Pour un plan \(2^k\) avec \(N = 2^k\) essais&nbsp;:
+  \[
+    E_i = \frac{2}{N}\sum_{j=1}^{N} (x_{ij} \cdot Y_j)
+  \]
+  La <strong>moyenne générale</strong> (intercept) est&nbsp;:
+  \[
+    \hat{Y}_0 = \frac{1}{N}\sum_{j=1}^{N} Y_j
+  \]
 </div>
 
 <div class="ex">
-  <span class="label label-def">Exemple — Plan \(2^2\) : optimisation de rendement</span>
+  <span class="label-def">Application numérique</span>
+  <p>Avec les données du tableau (\(N=4\))&nbsp;:</p>
+  \[
+    \hat{Y}_0 = \frac{1820 + 2150 + 1680 + 2430}{4} = \frac{8080}{4} = 2020\,\text{N}
+  \]
+  \[
+    E_A = \frac{1}{2}\bigl[(-1)(1820) + (+1)(2150) + (-1)(1680) + (+1)(2430)\bigr]
+        = \frac{1080}{2} = 540\,\text{N}
+  \]
+  \[
+    E_B = \frac{1}{2}\bigl[(-1)(1820) + (-1)(2150) + (+1)(1680) + (+1)(2430)\bigr]
+        = \frac{140}{2} = 70\,\text{N}
+  \]
+  \[
+    E_{AB} = \frac{1}{2}\bigl[(+1)(1820) + (-1)(2150) + (-1)(1680) + (+1)(2430)\bigr]
+           = \frac{420}{2} = 210\,\text{N}
+  \]
   <p>
-    Un ingénieur biotechnologie étudie l'effet de la température (\(A\)) et du pH (\(B\))
-    sur le rendement de fermentation (en %). Les résultats sont :
-  </p>
-  <table style="width:auto;border-collapse:collapse;margin:1em auto">
-    <thead>
-      <tr style="background:var(--p);color:#fff">
-        <th style="padding:0.5em 1em;border:1px solid #aaa">Essai</th>
-        <th style="padding:0.5em 1em;border:1px solid #aaa">\(A\)</th>
-        <th style="padding:0.5em 1em;border:1px solid #aaa">\(B\)</th>
-        <th style="padding:0.5em 1em;border:1px solid #aaa">Rendement (%)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td style="padding:0.5em 1em;border:1px solid #aaa;text-align:center">1</td><td style="padding:0.5em 1em;border:1px solid #aaa;text-align:center">\(-1\)</td><td style="padding:0.5em 1em;border:1px solid #aaa;text-align:center">\(-1\)</td><td style="padding:0.5em 1em;border:1px solid #aaa;text-align:center">72</td></tr>
-      <tr style="background:#f5f7fb"><td style="padding:0.5em 1em;border:1px solid #aaa;text-align:center">2</td><td style="padding:0.5em 1em;border:1px solid #aaa;text-align:center">\(+1\)</td><td style="padding:0.5em 1em;border:1px solid #aaa;text-align:center">\(-1\)</td><td style="padding:0.5em 1em;border:1px solid #aaa;text-align:center">78</td></tr>
-      <tr><td style="padding:0.5em 1em;border:1px solid #aaa;text-align:center">3</td><td style="padding:0.5em 1em;border:1px solid #aaa;text-align:center">\(-1\)</td><td style="padding:0.5em 1em;border:1px solid #aaa;text-align:center">\(+1\)</td><td style="padding:0.5em 1em;border:1px solid #aaa;text-align:center">81</td></tr>
-      <tr style="background:#f5f7fb"><td style="padding:0.5em 1em;border:1px solid #aaa;text-align:center">4</td><td style="padding:0.5em 1em;border:1px solid #aaa;text-align:center">\(+1\)</td><td style="padding:0.5em 1em;border:1px solid #aaa;text-align:center">\(+1\)</td><td style="padding:0.5em 1em;border:1px solid #aaa;text-align:center">85</td></tr>
-    </tbody>
-  </table>
-  <p><strong>Calcul des effets :</strong></p>
-  \[e_A = \frac{(78+85)-(72+81)}{2} = \frac{163-153}{2} = 5\]
-  \[e_B = \frac{(81+85)-(72+78)}{2} = \frac{166-150}{2} = 8\]
-  \[e_{AB} = \frac{(72+85)-(78+81)}{2} = \frac{157-159}{2} = -1\]
-  \[\bar{y} = (72+78+81+85)/4 = 316/4 = 79\]
-  <p><strong>Interprétation :</strong></p>
-  <ul>
-    <li>Le pH (\(B\)) est le facteur le plus influent (\(e_B = 8\)) : augmenter le pH améliore le rendement</li>
-    <li>La température (\(A\)) a aussi un effet positif (\(e_A = 5\))</li>
-    <li>L'interaction \(AB\) est faible (\(e_{AB} = -1\)) : les effets sont quasi-indépendants</li>
-  </ul>
-  <p><strong>Modèle :</strong> \(\hat{y} = 79 + 5A + 8B - AB\)</p>
-</div>
-
-<!-- SECTION 3 : PLAN FACTORIEL 2^3 -->
-<h2>3. Plan factoriel complet \(2^3\)</h2>
-
-<div class="prop">
-  <span class="label label-prop">Propriété — Matrice du plan \(2^3\) (8 essais)</span>
-  <p>
-    Pour 3 facteurs \(A\), \(B\), \(C\), la matrice d'expériences comprend 8 essais,
-    couvrant toutes les combinaisons. La colonne d'une interaction est le produit
-    terme à terme des colonnes des facteurs correspondants.
-  </p>
-  <table style="width:100%;border-collapse:collapse;margin:1em 0;font-size:0.93em">
-    <thead>
-      <tr style="background:var(--p);color:#fff">
-        <th style="padding:0.4em 0.6em;border:1px solid #aaa">Essai</th>
-        <th style="padding:0.4em 0.6em;border:1px solid #aaa">\(A\)</th>
-        <th style="padding:0.4em 0.6em;border:1px solid #aaa">\(B\)</th>
-        <th style="padding:0.4em 0.6em;border:1px solid #aaa">\(C\)</th>
-        <th style="padding:0.4em 0.6em;border:1px solid #aaa">\(AB\)</th>
-        <th style="padding:0.4em 0.6em;border:1px solid #aaa">\(AC\)</th>
-        <th style="padding:0.4em 0.6em;border:1px solid #aaa">\(BC\)</th>
-        <th style="padding:0.4em 0.6em;border:1px solid #aaa">\(ABC\)</th>
-        <th style="padding:0.4em 0.6em;border:1px solid #aaa">Réponse</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td style="padding:0.3em 0.6em;border:1px solid #aaa;text-align:center">1</td><td style="text-align:center;border:1px solid #aaa">−</td><td style="text-align:center;border:1px solid #aaa">−</td><td style="text-align:center;border:1px solid #aaa">−</td><td style="text-align:center;border:1px solid #aaa">+</td><td style="text-align:center;border:1px solid #aaa">+</td><td style="text-align:center;border:1px solid #aaa">+</td><td style="text-align:center;border:1px solid #aaa">−</td><td style="border:1px solid #aaa;padding:0.3em 0.6em">\(y_1\)</td></tr>
-      <tr style="background:#f5f7fb"><td style="padding:0.3em 0.6em;border:1px solid #aaa;text-align:center">2</td><td style="text-align:center;border:1px solid #aaa">+</td><td style="text-align:center;border:1px solid #aaa">−</td><td style="text-align:center;border:1px solid #aaa">−</td><td style="text-align:center;border:1px solid #aaa">−</td><td style="text-align:center;border:1px solid #aaa">−</td><td style="text-align:center;border:1px solid #aaa">+</td><td style="text-align:center;border:1px solid #aaa">+</td><td style="border:1px solid #aaa;padding:0.3em 0.6em">\(y_2\)</td></tr>
-      <tr><td style="padding:0.3em 0.6em;border:1px solid #aaa;text-align:center">3</td><td style="text-align:center;border:1px solid #aaa">−</td><td style="text-align:center;border:1px solid #aaa">+</td><td style="text-align:center;border:1px solid #aaa">−</td><td style="text-align:center;border:1px solid #aaa">−</td><td style="text-align:center;border:1px solid #aaa">+</td><td style="text-align:center;border:1px solid #aaa">−</td><td style="text-align:center;border:1px solid #aaa">+</td><td style="border:1px solid #aaa;padding:0.3em 0.6em">\(y_3\)</td></tr>
-      <tr style="background:#f5f7fb"><td style="padding:0.3em 0.6em;border:1px solid #aaa;text-align:center">4</td><td style="text-align:center;border:1px solid #aaa">+</td><td style="text-align:center;border:1px solid #aaa">+</td><td style="text-align:center;border:1px solid #aaa">−</td><td style="text-align:center;border:1px solid #aaa">+</td><td style="text-align:center;border:1px solid #aaa">−</td><td style="text-align:center;border:1px solid #aaa">−</td><td style="text-align:center;border:1px solid #aaa">−</td><td style="border:1px solid #aaa;padding:0.3em 0.6em">\(y_4\)</td></tr>
-      <tr><td style="padding:0.3em 0.6em;border:1px solid #aaa;text-align:center">5</td><td style="text-align:center;border:1px solid #aaa">−</td><td style="text-align:center;border:1px solid #aaa">−</td><td style="text-align:center;border:1px solid #aaa">+</td><td style="text-align:center;border:1px solid #aaa">+</td><td style="text-align:center;border:1px solid #aaa">−</td><td style="text-align:center;border:1px solid #aaa">−</td><td style="text-align:center;border:1px solid #aaa">+</td><td style="border:1px solid #aaa;padding:0.3em 0.6em">\(y_5\)</td></tr>
-      <tr style="background:#f5f7fb"><td style="padding:0.3em 0.6em;border:1px solid #aaa;text-align:center">6</td><td style="text-align:center;border:1px solid #aaa">+</td><td style="text-align:center;border:1px solid #aaa">−</td><td style="text-align:center;border:1px solid #aaa">+</td><td style="text-align:center;border:1px solid #aaa">−</td><td style="text-align:center;border:1px solid #aaa">+</td><td style="text-align:center;border:1px solid #aaa">−</td><td style="text-align:center;border:1px solid #aaa">−</td><td style="border:1px solid #aaa;padding:0.3em 0.6em">\(y_6\)</td></tr>
-      <tr><td style="padding:0.3em 0.6em;border:1px solid #aaa;text-align:center">7</td><td style="text-align:center;border:1px solid #aaa">−</td><td style="text-align:center;border:1px solid #aaa">+</td><td style="text-align:center;border:1px solid #aaa">+</td><td style="text-align:center;border:1px solid #aaa">−</td><td style="text-align:center;border:1px solid #aaa">−</td><td style="text-align:center;border:1px solid #aaa">+</td><td style="text-align:center;border:1px solid #aaa">−</td><td style="border:1px solid #aaa;padding:0.3em 0.6em">\(y_7\)</td></tr>
-      <tr style="background:#f5f7fb"><td style="padding:0.3em 0.6em;border:1px solid #aaa;text-align:center">8</td><td style="text-align:center;border:1px solid #aaa">+</td><td style="text-align:center;border:1px solid #aaa">+</td><td style="text-align:center;border:1px solid #aaa">+</td><td style="text-align:center;border:1px solid #aaa">+</td><td style="text-align:center;border:1px solid #aaa">+</td><td style="text-align:center;border:1px solid #aaa">+</td><td style="text-align:center;border:1px solid #aaa">+</td><td style="border:1px solid #aaa;padding:0.3em 0.6em">\(y_8\)</td></tr>
-    </tbody>
-  </table>
-</div>
-
-<div class="prop">
-  <span class="label label-prop">Propriété — Calcul des effets pour un plan \(2^3\)</span>
-  <p>
-    Chaque effet est la moyenne pondérée des réponses, les signes étant donnés par la colonne
-    correspondante de la matrice :
-  </p>
-  <div class="formule-box">
-    \[e_A = \frac{1}{4}\sum_{i=1}^{8} s_i^A\, y_i\]
-  </div>
-  <p>
-    où \(s_i^A \in \{-1, +1\}\) est le signe de \(A\) à l'essai \(i\). De même pour \(e_B\),
-    \(e_C\), \(e_{AB}\), \(e_{AC}\), \(e_{BC}\), \(e_{ABC}\).
-  </p>
-  <p>
-    Le modèle complet d'un plan \(2^3\) comporte \(2^3 = 8\) coefficients :
-    \[\hat{y} = b_0 + b_A A + b_B B + b_C C + b_{AB} AB + b_{AC} AC + b_{BC} BC + b_{ABC} ABC\]
-    avec \(b_0 = \bar{y}\) et \(b_A = e_A/2\), etc.
+    <strong>Interprétation</strong>&nbsp;: la température (\(E_A = 540\,\text{N}\)) est le facteur dominant.
+    L&rsquo;interaction \(E_{AB} = 210\,\text{N}\) est significative&nbsp;: l&rsquo;effet de la température
+    dépend de la vitesse d&rsquo;avance.
   </p>
 </div>
 
-<!-- SECTION 4 : PLANS FRACTIONNAIRES -->
-<h2>4. Plans fractionnaires \(2^{k-p}\)</h2>
-
-<div class="def">
-  <span class="label label-def">Définition — Plan fractionnaire</span>
-  <p>
-    Un <strong>plan fractionnaire \(2^{k-p}\)</strong> ne réalise qu'une fraction \(1/2^p\)
-    des \(2^k\) essais du plan complet. Il permet d'estimer les effets principaux (et certaines
-    interactions) avec \(2^{k-p}\) essais au lieu de \(2^k\).
-  </p>
-  <p>
-    Le principe repose sur le fait que les <strong>interactions d'ordre élevé</strong> sont
-    souvent négligeables : on les "confond" avec certains effets principaux ou interactions
-    d'ordre inférieur pour réduire le nombre d'essais.
-  </p>
-</div>
-
-<div class="def">
-  <span class="label label-def">Définition — Résolution d'un plan</span>
-  <p>
-    La <strong>résolution</strong> d'un plan fractionnaire caractérise la qualité des estimations :
-  </p>
-  <ul>
-    <li>
-      <strong>Résolution III</strong> : les effets principaux ne sont pas confondus entre eux,
-      mais sont confondus avec des interactions d'ordre 2.
-    </li>
-    <li>
-      <strong>Résolution IV</strong> : les effets principaux ne sont pas confondus avec
-      les interactions d'ordre 2, mais des interactions d'ordre 2 peuvent être confondues
-      entre elles.
-    </li>
-    <li>
-      <strong>Résolution V</strong> : les effets principaux et les interactions d'ordre 2
-      ne sont pas confondus avec des interactions d'ordre \(\leq 2\).
-    </li>
-  </ul>
-</div>
-
-<div class="prop">
-  <span class="label label-prop">Propriété — Plan \(2^{3-1}\) (4 essais, résolution III)</span>
-  <p>
-    Pour étudier 3 facteurs \(A\), \(B\), \(C\) en seulement 4 essais, on pose
-    \(C = AB\) (le facteur \(C\) est défini par l'interaction \(AB\)).
-  </p>
-  <p>La matrice résultante est :</p>
-  <table style="width:auto;border-collapse:collapse;margin:1em auto">
-    <thead>
-      <tr style="background:var(--p);color:#fff">
-        <th style="padding:0.5em 1em;border:1px solid #aaa">Essai</th>
-        <th style="padding:0.5em 1em;border:1px solid #aaa">\(A\)</th>
-        <th style="padding:0.5em 1em;border:1px solid #aaa">\(B\)</th>
-        <th style="padding:0.5em 1em;border:1px solid #aaa">\(C = AB\)</th>
-        <th style="padding:0.5em 1em;border:1px solid #aaa">Réponse</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td style="padding:0.5em 1em;border:1px solid #aaa;text-align:center">1</td><td style="text-align:center;border:1px solid #aaa">−</td><td style="text-align:center;border:1px solid #aaa">−</td><td style="text-align:center;border:1px solid #aaa">+</td><td style="border:1px solid #aaa;padding:0.5em 1em">\(y_1\)</td></tr>
-      <tr style="background:#f5f7fb"><td style="padding:0.5em 1em;border:1px solid #aaa;text-align:center">2</td><td style="text-align:center;border:1px solid #aaa">+</td><td style="text-align:center;border:1px solid #aaa">−</td><td style="text-align:center;border:1px solid #aaa">−</td><td style="border:1px solid #aaa;padding:0.5em 1em">\(y_2\)</td></tr>
-      <tr><td style="padding:0.5em 1em;border:1px solid #aaa;text-align:center">3</td><td style="text-align:center;border:1px solid #aaa">−</td><td style="text-align:center;border:1px solid #aaa">+</td><td style="text-align:center;border:1px solid #aaa">−</td><td style="border:1px solid #aaa;padding:0.5em 1em">\(y_3\)</td></tr>
-      <tr style="background:#f5f7fb"><td style="padding:0.5em 1em;border:1px solid #aaa;text-align:center">4</td><td style="text-align:center;border:1px solid #aaa">+</td><td style="text-align:center;border:1px solid #aaa">+</td><td style="text-align:center;border:1px solid #aaa">+</td><td style="border:1px solid #aaa;padding:0.5em 1em">\(y_4\)</td></tr>
-    </tbody>
-  </table>
-  <p>
-    <strong>Confondus :</strong> \(e_A\) est confondu avec \(e_{BC}\), \(e_B\) avec \(e_{AC}\),
-    \(e_C\) avec \(e_{AB}\). On ne peut pas les séparer sans essais supplémentaires.
-  </p>
+<h3>2.4 Modèle du premier ordre (\(2^2\))</h3>
+<div class="formule-box">
+\[
+  \hat{Y} = \hat{Y}_0 + \frac{E_A}{2}\,x_A + \frac{E_B}{2}\,x_B + \frac{E_{AB}}{2}\,x_A x_B
+\]
+\[
+  \hat{Y} = 2020 + 270\,x_A + 35\,x_B + 105\,x_A x_B
+\]
 </div>
 
 <div class="att">
-  <span class="label label-att">Attention — Limite des plans fractionnaires</span>
+  <span class="label-att">Attention</span>
+  Dans le modèle de régression, les <strong>coefficients</strong> \(\hat{\beta}_i\) sont égaux à la
+  <strong>moitié</strong> des effets estimés&nbsp;: \(\hat{\beta}_i = E_i / 2\).
+</div>
+
+<!-- SECTION 3 — PLAN 2³ -->
+<h2>3. Plan factoriel complet \(2^3\)</h2>
+
+<h3>3.1 Principe et tableau de Yates</h3>
+<p>
+  Avec \(k=3\) facteurs à 2 niveaux, on effectue \(2^3 = 8\) essais. On peut estimer&nbsp;:
+  3 effets principaux, 3 interactions d&rsquo;ordre&nbsp;2 et 1 interaction d&rsquo;ordre&nbsp;3.
+  L&rsquo;ordre des essais suit la <strong>notation de Yates</strong>&nbsp;: le premier facteur alterne
+  \(-1/+1\) à chaque essai, le deuxième tous les 2, le troisième tous les 4.
+</p>
+
+<table class="plan-exp">
+  <thead>
+    <tr>
+      <th>Essai</th><th>\(x_A\)</th><th>\(x_B\)</th><th>\(x_C\)</th>
+      <th>\(x_Ax_B\)</th><th>\(x_Ax_C\)</th><th>\(x_Bx_C\)</th><th>\(x_Ax_Bx_C\)</th><th>\(Y\)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td class="niv-moins">&minus;1</td><td class="niv-moins">&minus;1</td><td class="niv-moins">&minus;1</td><td class="niv-plus">+1</td><td class="niv-plus">+1</td><td class="niv-plus">+1</td><td class="niv-moins">&minus;1</td><td>\(y_1\)</td></tr>
+    <tr><td>2</td><td class="niv-plus">+1</td><td class="niv-moins">&minus;1</td><td class="niv-moins">&minus;1</td><td class="niv-moins">&minus;1</td><td class="niv-moins">&minus;1</td><td class="niv-plus">+1</td><td class="niv-plus">+1</td><td>\(y_2\)</td></tr>
+    <tr><td>3</td><td class="niv-moins">&minus;1</td><td class="niv-plus">+1</td><td class="niv-moins">&minus;1</td><td class="niv-moins">&minus;1</td><td class="niv-plus">+1</td><td class="niv-moins">&minus;1</td><td class="niv-plus">+1</td><td>\(y_3\)</td></tr>
+    <tr><td>4</td><td class="niv-plus">+1</td><td class="niv-plus">+1</td><td class="niv-moins">&minus;1</td><td class="niv-plus">+1</td><td class="niv-moins">&minus;1</td><td class="niv-moins">&minus;1</td><td class="niv-moins">&minus;1</td><td>\(y_4\)</td></tr>
+    <tr><td>5</td><td class="niv-moins">&minus;1</td><td class="niv-moins">&minus;1</td><td class="niv-plus">+1</td><td class="niv-plus">+1</td><td class="niv-moins">&minus;1</td><td class="niv-moins">&minus;1</td><td class="niv-plus">+1</td><td>\(y_5\)</td></tr>
+    <tr><td>6</td><td class="niv-plus">+1</td><td class="niv-moins">&minus;1</td><td class="niv-plus">+1</td><td class="niv-moins">&minus;1</td><td class="niv-plus">+1</td><td class="niv-moins">&minus;1</td><td class="niv-moins">&minus;1</td><td>\(y_6\)</td></tr>
+    <tr><td>7</td><td class="niv-moins">&minus;1</td><td class="niv-plus">+1</td><td class="niv-plus">+1</td><td class="niv-moins">&minus;1</td><td class="niv-moins">&minus;1</td><td class="niv-plus">+1</td><td class="niv-moins">&minus;1</td><td>\(y_7\)</td></tr>
+    <tr><td>8</td><td class="niv-plus">+1</td><td class="niv-plus">+1</td><td class="niv-plus">+1</td><td class="niv-plus">+1</td><td class="niv-plus">+1</td><td class="niv-plus">+1</td><td class="niv-plus">+1</td><td>\(y_8\)</td></tr>
+  </tbody>
+</table>
+
+<div class="prop">
+  <span class="label-prop">Formule générale</span>
+  Pour un plan \(2^3\), l&rsquo;effet de chaque contraste (colonne \(c\)) est&nbsp;:
+  \[
+    E_c = \frac{1}{4}\sum_{j=1}^{8} (x_{cj} \cdot Y_j)
+  \]
+</div>
+
+<h3>3.2 Représentation géométrique (cube)</h3>
+<div class="svg-wrap">
+<svg width="320" height="260" viewBox="0 0 320 260" aria-label="Plan factoriel 2 cube">
+  <!-- aretes arriere -->
+  <line x1="50" y1="190" x2="50" y2="90" stroke="#aaa" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="50" y1="190" x2="150" y2="190" stroke="#aaa" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="50" y1="90" x2="110" y2="40" stroke="#aaa" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="150" y1="90" x2="110" y2="40" stroke="#aaa" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="110" y1="40" x2="210" y2="40" stroke="#aaa" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="150" y1="190" x2="110" y2="140" stroke="#aaa" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="110" y1="140" x2="110" y2="40" stroke="#aaa" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="110" y1="140" x2="210" y2="140" stroke="#aaa" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <!-- aretes avant -->
+  <line x1="150" y1="190" x2="250" y2="190" stroke="#1e3a5f" stroke-width="2"/>
+  <line x1="250" y1="190" x2="250" y2="90" stroke="#1e3a5f" stroke-width="2"/>
+  <line x1="150" y1="90" x2="250" y2="90" stroke="#1e3a5f" stroke-width="2"/>
+  <line x1="150" y1="190" x2="150" y2="90" stroke="#1e3a5f" stroke-width="2"/>
+  <line x1="150" y1="90" x2="210" y2="40" stroke="#1e3a5f" stroke-width="2"/>
+  <line x1="250" y1="90" x2="210" y2="40" stroke="#1e3a5f" stroke-width="2"/>
+  <line x1="250" y1="190" x2="210" y2="140" stroke="#1e3a5f" stroke-width="2"/>
+  <line x1="210" y1="140" x2="210" y2="40" stroke="#1e3a5f" stroke-width="2"/>
+  <!-- sommets -->
+  <circle cx="150" cy="190" r="5" fill="#b02a37"/>
+  <circle cx="250" cy="190" r="5" fill="#b02a37"/>
+  <circle cx="150" cy="90" r="5" fill="#b02a37"/>
+  <circle cx="250" cy="90" r="5" fill="#b02a37"/>
+  <circle cx="210" cy="140" r="5" fill="#1a7a34"/>
+  <circle cx="210" cy="40" r="5" fill="#1a7a34"/>
+  <circle cx="110" cy="140" r="4" fill="#aaa"/>
+  <circle cx="110" cy="40" r="4" fill="#aaa"/>
+  <circle cx="50" cy="190" r="4" fill="#aaa"/>
+  <circle cx="50" cy="90" r="4" fill="#aaa"/>
+  <!-- labels sommets -->
+  <text x="108" y="208" font-size="10" fill="#b02a37">(&#8722;,&#8722;,&#8722;)</text>
+  <text x="252" y="208" font-size="10" fill="#b02a37">(+,&#8722;,&#8722;)</text>
+  <text x="108" y="84" font-size="10" fill="#b02a37">(&#8722;,+,&#8722;)</text>
+  <text x="252" y="84" font-size="10" fill="#b02a37">(+,+,&#8722;)</text>
+  <text x="213" y="158" font-size="10" fill="#1a7a34">(+,&#8722;,+)</text>
+  <text x="213" y="36" font-size="10" fill="#1a7a34">(+,+,+)</text>
+  <!-- axes -->
+  <text x="190" y="240" font-size="12" fill="#1e3a5f" font-weight="bold">A</text>
+  <text x="20" y="150" font-size="12" fill="#1e3a5f" font-weight="bold">B</text>
+  <text x="268" y="130" font-size="12" fill="#1e3a5f" font-weight="bold">C</text>
+</svg>
+</div>
+<p style="text-align:center;font-size:.88rem;color:#555">
+  Représentation des 8 essais du plan \(2^3\) aux sommets d&rsquo;un cube en variables codées.
+</p>
+
+<h3>3.3 Application numérique — soudage \(2^3\)</h3>
+<p>
+  <strong>Facteur A</strong>&nbsp;: Température (\(200/240\,°\text{C}\)).
+  <strong>Facteur B</strong>&nbsp;: Vitesse (\(1.5/2.5\,\text{m/min}\)).
+  <strong>Facteur C</strong>&nbsp;: Pression (\(3/5\,\text{bar}\)).
+  Réponse \(Y\)&nbsp;: résistance (N).
+</p>
+
+<table class="plan-exp">
+  <thead>
+    <tr><th>Essai</th><th>\(x_A\)</th><th>\(x_B\)</th><th>\(x_C\)</th><th>\(Y\) (N)</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td class="niv-moins">&minus;1</td><td class="niv-moins">&minus;1</td><td class="niv-moins">&minus;1</td><td>1 780</td></tr>
+    <tr><td>2</td><td class="niv-plus">+1</td><td class="niv-moins">&minus;1</td><td class="niv-moins">&minus;1</td><td>2 100</td></tr>
+    <tr><td>3</td><td class="niv-moins">&minus;1</td><td class="niv-plus">+1</td><td class="niv-moins">&minus;1</td><td>1 650</td></tr>
+    <tr><td>4</td><td class="niv-plus">+1</td><td class="niv-plus">+1</td><td class="niv-moins">&minus;1</td><td>2 380</td></tr>
+    <tr><td>5</td><td class="niv-moins">&minus;1</td><td class="niv-moins">&minus;1</td><td class="niv-plus">+1</td><td>1 920</td></tr>
+    <tr><td>6</td><td class="niv-plus">+1</td><td class="niv-moins">&minus;1</td><td class="niv-plus">+1</td><td>2 280</td></tr>
+    <tr><td>7</td><td class="niv-moins">&minus;1</td><td class="niv-plus">+1</td><td class="niv-plus">+1</td><td>1 760</td></tr>
+    <tr><td>8</td><td class="niv-plus">+1</td><td class="niv-plus">+1</td><td class="niv-plus">+1</td><td>2 510</td></tr>
+  </tbody>
+</table>
+
+<button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir le calcul des effets</button>
+<div class="corr">
+  <p>Moyenne&nbsp;: \(\hat{Y}_0 = 16380/8 = 2047.5\,\text{N}\)</p>
+  \[E_A = \frac{1}{4}(-1780+2100-1650+2380-1920+2280-1760+2510) = \frac{4160}{4} = 540\,\text{N}\]
+  \[E_B = \frac{1}{4}(-1780-2100+1650+2380-1920-2280+1760+2510) = \frac{220}{4} = 55\,\text{N}\]
+  \[E_C = \frac{1}{4}(-1780-2100-1650-2380+1920+2280+1760+2510) = \frac{560}{4} = 140\,\text{N}\]
+  \[E_{AB} = \frac{1}{4}(+1780-2100-1650+2380+1920-2280-1760+2510) = \frac{800}{4} = 200\,\text{N}\]
   <p>
-    Dans un plan fractionnaire de résolution III, l'effet estimé pour un facteur principal
-    inclut la contribution de l'interaction d'ordre 2 avec laquelle il est confondu.
-    Si cette interaction est significative, l'estimation de l'effet principal est biaisée.
-    On parle d'<strong>aliasing</strong> ou de confondre.
+    <strong>Facteur A (température)</strong> domine avec \(540\,\text{N}\), suivi de l&rsquo;interaction
+    AB (\(200\,\text{N}\)) et du facteur C pression (\(140\,\text{N}\)).
   </p>
 </div>
 
-<!-- SECTION 5 : PLACKETT-BURMAN -->
-<h2>5. Plan de Plackett-Burman (criblage)</h2>
+<!-- SECTION 4 — PLANS FRACTIONNAIRES -->
+<h2>4. Plans factoriels fractionnaires \(2^{k-p}\)</h2>
 
+<h3>4.1 Principe</h3>
+<p>
+  Lorsque le nombre de facteurs \(k\) est grand, le plan complet \(2^k\) nécessite trop d&rsquo;essais.
+  Un plan <strong>fractionnaire</strong> \(2^{k-p}\) ne réalise qu&rsquo;une fraction \(1/2^p\) du plan complet.
+</p>
 <div class="def">
-  <span class="label label-def">Définition — Plan de Plackett-Burman</span>
-  <p>
-    Les <strong>plans de Plackett-Burman</strong> sont des plans à 2 niveaux permettant d'étudier
-    jusqu'à \(N-1\) facteurs en \(N\) essais, où \(N\) est un multiple de 4 (\(N = 8, 12, 16, 20, 24, \ldots\)).
-    Ils sont particulièrement utiles pour le <strong>criblage</strong> : identifier les facteurs
-    les plus influents parmi un grand nombre de candidats.
-  </p>
-  <p>
-    Ils sont de résolution III : les effets principaux sont estimables mais confondus
-    avec des interactions d'ordre 2.
-  </p>
+  <span class="label-def">Définition — Alias (confusion)</span>
+  Dans un plan fractionnaire, certains effets sont <strong>confondus</strong> (aliasés)&nbsp;:
+  il est impossible de les distinguer l&rsquo;un de l&rsquo;autre.
+  Le <strong>générateur de confusion</strong> définit quels effets sont aliasés.
+</div>
+
+<h3>4.2 Plan \(2^{3-1}\) — 4 essais pour 3 facteurs</h3>
+<p>
+  On choisit le générateur \(I = ABC\), soit \(x_C = x_A x_B\).
+  Le plan est la demi-fraction du plan \(2^3\) dont les essais vérifient \(x_A x_B x_C = +1\).
+</p>
+
+<table class="plan-exp">
+  <thead>
+    <tr><th>Essai</th><th>\(x_A\)</th><th>\(x_B\)</th><th>\(x_C = x_Ax_B\)</th><th>\(Y\)</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td class="niv-moins">&minus;1</td><td class="niv-moins">&minus;1</td><td class="niv-plus">+1</td><td>\(y_1\)</td></tr>
+    <tr><td>2</td><td class="niv-plus">+1</td><td class="niv-moins">&minus;1</td><td class="niv-moins">&minus;1</td><td>\(y_2\)</td></tr>
+    <tr><td>3</td><td class="niv-moins">&minus;1</td><td class="niv-plus">+1</td><td class="niv-moins">&minus;1</td><td>\(y_3\)</td></tr>
+    <tr><td>4</td><td class="niv-plus">+1</td><td class="niv-plus">+1</td><td class="niv-plus">+1</td><td>\(y_4\)</td></tr>
+  </tbody>
+</table>
+
+<div class="alias-box">
+  <strong>Structure des alias (plan de résolution III)&nbsp;:</strong><br>
+  \[I = ABC\]
+  \[A \leftrightarrow BC,\quad B \leftrightarrow AC,\quad C \leftrightarrow AB\]
+  Chaque effet principal est confondu avec une interaction d&rsquo;ordre&nbsp;2.
 </div>
 
 <div class="prop">
-  <span class="label label-prop">Propriété — Plan de Plackett-Burman à 12 essais</span>
-  <p>
-    Le plan PB-12 permet d'étudier jusqu'à 11 facteurs en seulement 12 essais.
-    La première ligne est : \(+ + - + + + - - - + -\).
-    Les lignes suivantes sont obtenues par décalage circulaire ; la dernière ligne est
-    entièrement composée de \(-\).
-  </p>
-  <p>
-    Ce plan est très efficace pour identifier les 2 ou 3 facteurs les plus influents
-    sur une réponse avant de procéder à une étude plus approfondie.
-  </p>
-</div>
-
-<!-- SECTION 6 : SURFACES DE RÉPONSE -->
-<h2>6. Surfaces de réponse et optimisation</h2>
-
-<div class="def">
-  <span class="label label-def">Définition — Modèle de surface de réponse</span>
-  <p>
-    Un <strong>modèle de surface de réponse</strong> est un modèle polynomial (généralement
-    du second degré) qui approxime la relation entre les facteurs et la réponse dans
-    un domaine expérimental :
-  </p>
-  <div class="formule-box">
-    \[\hat{y} = b_0 + \sum_{i=1}^{k} b_i X_i + \sum_{i=1}^{k} b_{ii} X_i^2 + \sum_{i < j} b_{ij} X_i X_j\]
-  </div>
-  <p>
-    Ce modèle nécessite des essais à au moins 3 niveaux pour estimer les termes quadratiques \(b_{ii}\).
-  </p>
-</div>
-
-<div class="def">
-  <span class="label label-def">Définition — Plan central composite (CCC)</span>
-  <p>
-    Le <strong>plan central composite</strong> (PCC ou CCC) combine :
-  </p>
+  <span class="label-prop">Résolution d&rsquo;un plan</span>
+  La <strong>résolution</strong> (notée en chiffres romains) indique le rang minimal des effets confondus&nbsp;:
   <ul>
-    <li>Un plan factoriel complet \(2^k\) (les \(2^k\) sommets du cube)</li>
-    <li>Des points axiaux à distance \(\alpha\) du centre : \((\pm\alpha, 0, \ldots, 0)\), etc.</li>
-    <li>Des répétitions au point central \((0, 0, \ldots, 0)\)</li>
+    <li><strong>Résolution III</strong>&nbsp;: effets principaux aliasés avec des interactions d&rsquo;ordre 2.</li>
+    <li><strong>Résolution IV</strong>&nbsp;: effets principaux non aliasés entre eux ; interactions d&rsquo;ordre 2 aliasées entre elles.</li>
+    <li><strong>Résolution V</strong>&nbsp;: effets principaux et interactions d&rsquo;ordre 2 tous estimables sans confusion.</li>
   </ul>
-  <p>
-    Pour \(k = 2\), le plan comporte \(4 + 4 + n_c\) essais (\(n_c\) répétitions au centre, en général 3 à 5).
-    Pour \(k = 3\) : \(8 + 6 + n_c\) essais.
-  </p>
-  <p>
-    La valeur \(\alpha = 2^{k/4}\) donne un plan <strong>rotatif</strong> (variance d'estimation uniforme
-    à distance égale du centre).
-  </p>
 </div>
 
+<h3>4.3 Plan \(2^{4-1}\) de résolution IV</h3>
+<p>Générateur&nbsp;: \(I = ABCD\) (\(x_D = x_Ax_Bx_C\)). Permet d&rsquo;estimer les 4 effets principaux sans confusion.</p>
+
+<table class="plan-exp">
+  <thead>
+    <tr><th>Essai</th><th>\(x_A\)</th><th>\(x_B\)</th><th>\(x_C\)</th><th>\(x_D=x_Ax_Bx_C\)</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td class="niv-moins">&minus;1</td><td class="niv-moins">&minus;1</td><td class="niv-moins">&minus;1</td><td class="niv-moins">&minus;1</td></tr>
+    <tr><td>2</td><td class="niv-plus">+1</td><td class="niv-moins">&minus;1</td><td class="niv-moins">&minus;1</td><td class="niv-plus">+1</td></tr>
+    <tr><td>3</td><td class="niv-moins">&minus;1</td><td class="niv-plus">+1</td><td class="niv-moins">&minus;1</td><td class="niv-plus">+1</td></tr>
+    <tr><td>4</td><td class="niv-plus">+1</td><td class="niv-plus">+1</td><td class="niv-moins">&minus;1</td><td class="niv-moins">&minus;1</td></tr>
+    <tr><td>5</td><td class="niv-moins">&minus;1</td><td class="niv-moins">&minus;1</td><td class="niv-plus">+1</td><td class="niv-plus">+1</td></tr>
+    <tr><td>6</td><td class="niv-plus">+1</td><td class="niv-moins">&minus;1</td><td class="niv-plus">+1</td><td class="niv-moins">&minus;1</td></tr>
+    <tr><td>7</td><td class="niv-moins">&minus;1</td><td class="niv-plus">+1</td><td class="niv-plus">+1</td><td class="niv-moins">&minus;1</td></tr>
+    <tr><td>8</td><td class="niv-plus">+1</td><td class="niv-plus">+1</td><td class="niv-plus">+1</td><td class="niv-plus">+1</td></tr>
+  </tbody>
+</table>
+
+<!-- SECTION 5 — ANALYSE DES RÉSULTATS -->
+<h2>5. Analyse des résultats</h2>
+
+<h3>5.1 Diagramme des effets</h3>
+<p>
+  Les effets estimés sont représentés graphiquement. Les effets <strong>significatifs</strong>
+  se détachent nettement des effets de bruit.
+</p>
+
+<div class="chart-wrap" style="max-width:600px;margin:auto">
+  <canvas id="chartEffets" height="250"></canvas>
+</div>
+
+<h3>5.2 Droite de Henry — test de normalité</h3>
+<p>
+  Pour identifier les effets significatifs de façon rigoureuse, on utilise la <strong>droite de Henry</strong>
+  (diagramme quantile-quantile normal). Les effets non significatifs sont de simples fluctuations
+  aléatoires&nbsp;: ils s&rsquo;alignent sur la droite. Les points qui s&rsquo;écartent notablement
+  correspondent aux effets <strong>réellement significatifs</strong>.
+</p>
+<ol>
+  <li>Trier les effets estimés par ordre croissant&nbsp;: \(E_{(1)} \le \cdots \le E_{(m)}\).</li>
+  <li>Calculer les quantiles théoriques&nbsp;: \(z_i = \Phi^{-1}\!\left(\dfrac{i-0.5}{m}\right)\).</li>
+  <li>Porter les points \((z_i, E_{(i)})\) sur un graphique.</li>
+  <li>Tracer la droite passant par les quartiles.</li>
+  <li>Les points éloignés de la droite sont significatifs.</li>
+</ol>
+
+<h3>5.3 Critère de Lenth</h3>
+<p>
+  En l&rsquo;absence de répétitions, la méthode de <strong>Lenth</strong> fournit une estimation
+  de l&rsquo;erreur expérimentale&nbsp;:
+</p>
+<div class="formule-box">
+\[
+  s_0 = 1.5 \cdot \mathrm{médiane}(|E_i|), \qquad
+  \mathrm{PSE} = 1.5 \cdot \mathrm{médiane}\bigl(|E_i| \mid |E_i| < 2.5\,s_0\bigr)
+\]
+Un effet est déclaré significatif si \(|E_i| > 2.0 \cdot \mathrm{PSE}\).
+</div>
+
+<!-- SECTION 6 — MODÈLE MATHÉMATIQUE -->
+<h2>6. Modèle mathématique du premier ordre</h2>
+
+<h3>6.1 Équation du modèle</h3>
 <div class="def">
-  <span class="label label-def">Définition — Plan de Box-Behnken</span>
-  <p>
-    Le <strong>plan de Box-Behnken</strong> est une alternative au plan central composite.
-    Il utilise uniquement les milieux des arêtes du cube (pas de points aux sommets ni aux pôles).
-    Pour \(k = 3\) : 12 essais de bord + répétitions au centre.
-  </p>
-  <p>
-    Avantage : évite les combinaisons extrêmes de facteurs (coins du cube), plus faciles à réaliser
-    expérimentalement.
-  </p>
+  <span class="label-def">Modèle de régression</span>
+  \[
+    \hat{Y} = \beta_0 + \sum_{i=1}^{k}\beta_i x_i + \sum_{i < j}\beta_{ij}x_i x_j + \varepsilon
+    \qquad \varepsilon \sim \mathcal{N}(0,\sigma^2)
+  \]
+  avec \(\beta_i = E_i/2\).
+</div>
+<p>En notation matricielle (\(\mathbf{X}\) = matrice des essais, \(\mathbf{y}\) = vecteur des réponses)&nbsp;:</p>
+<div class="formule-box">
+\[
+  \hat{\boldsymbol{\beta}} = (\mathbf{X}^\top \mathbf{X})^{-1}\mathbf{X}^\top \mathbf{y}
+\]
+Pour un plan orthogonal&nbsp;: \(\mathbf{X}^\top\mathbf{X} = N\,\mathbf{I}\) donc
+\(\hat{\beta}_i = \frac{1}{N}\sum_j x_{ij} Y_j\).
+</div>
+
+<h3>6.2 Application — modèle du soudage \(2^3\)</h3>
+<p>À partir des effets calculés en section 3.3&nbsp;:</p>
+<div class="formule-box">
+\[
+  \hat{Y} = 2047.5 + 270\,x_A + 27.5\,x_B + 70\,x_C + 100\,x_Ax_B
+\]
+</div>
+
+<h3>6.3 Validation du modèle — résidus</h3>
+<p>Les <strong>résidus</strong> \(e_j = Y_j - \hat{Y}_j\) doivent vérifier&nbsp;:</p>
+<ul>
+  <li><strong>Normalité</strong>&nbsp;: tracé de Henry des résidus aligné sur la droite.</li>
+  <li><strong>Homoscédasticité</strong>&nbsp;: variance des résidus constante (graphe résidus vs \(\hat{Y}\)).</li>
+  <li><strong>Indépendance</strong>&nbsp;: pas d&rsquo;autocorrélation.</li>
+</ul>
+<div class="formule-box">
+\[
+  R^2 = 1 - \frac{\sum_j e_j^2}{\sum_j (Y_j - \bar{Y})^2}, \qquad
+  R^2_{\text{adj}} = 1 - \frac{(1-R^2)(N-1)}{N-p-1}
+\]
+</div>
+<p>Un bon modèle a généralement \(R^2_{\text{adj}} > 0.90\).</p>
+
+<!-- SECTION 7 — SURFACES DE RÉPONSE -->
+<h2>7. Surfaces de réponse (RSM)</h2>
+
+<h3>7.1 Motivation</h3>
+<p>
+  Le modèle du premier ordre ne peut pas localiser un optimum (il décrit des plans inclinés).
+  Pour trouver les conditions optimales, on utilise des <strong>plans composites centraux (PCC)</strong>
+  permettant d&rsquo;estimer les termes du second ordre.
+</p>
+
+<h3>7.2 Modèle du second ordre</h3>
+<div class="formule-box">
+\[
+  \hat{Y} = \beta_0 + \sum_{i=1}^k \beta_i x_i + \sum_{i=1}^k \beta_{ii} x_i^2
+            + \sum_{i < j} \beta_{ij} x_i x_j
+\]
+</div>
+<p>
+  Ce modèle comporte \(\tfrac{(k+1)(k+2)}{2}\) paramètres
+  (ex.&nbsp;: 6 pour \(k=2\), 10 pour \(k=3\)).
+</p>
+
+<h3>7.3 Plans composites centraux (PCC)</h3>
+<p>Un PCC est formé de trois parties&nbsp;:</p>
+<div class="grid2">
+  <div>
+    <p><strong>1. Noyau factoriel \(2^k\)</strong>&nbsp;: sommets du cube (\(\pm1\)).</p>
+    <p><strong>2. Points axiaux (étoile)</strong>&nbsp;: les points \((\pm\alpha, 0, \ldots, 0)\)
+    avec \(\alpha = 2^{k/4}\) (CCC) ou \(\alpha = 1\) (CCF).</p>
+  </div>
+  <div>
+    <p><strong>3. Point central</strong>&nbsp;: au moins 3 répétitions en \((0, 0, \ldots, 0)\)
+    pour estimer l&rsquo;erreur pure.</p>
+    <p>Nombre total d&rsquo;essais&nbsp;: \(N = 2^k + 2k + n_0\) (\(n_0\geq 3\)).</p>
+  </div>
 </div>
 
 <div class="prop">
-  <span class="label label-prop">Propriété — Estimation des coefficients du modèle quadratique</span>
-  <p>
-    Les coefficients du modèle quadratique sont estimés par la méthode des moindres carrés :
-  </p>
-  <div class="formule-box">
-    \[\mathbf{b} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y}\]
-  </div>
-  <p>
-    où \(\mathbf{X}\) est la matrice du plan (incluant les colonnes des termes quadratiques
-    et d'interaction), \(\mathbf{y}\) est le vecteur des réponses et \(\mathbf{b}\) est le vecteur
-    des coefficients estimés.
-  </p>
+  <span class="label-prop">Types de PCC</span>
+  <ul>
+    <li><strong>CCC (Circumscribed)</strong>&nbsp;: \(\alpha > 1\), points hors du cube, domaine sphérique.</li>
+    <li><strong>CCI (Inscribed)</strong>&nbsp;: \(\alpha < 1\), plan inscrit dans le carré initial.</li>
+    <li><strong>CCF (Face-centered)</strong>&nbsp;: \(\alpha = 1\), points au centre des faces.</li>
+  </ul>
 </div>
 
-<div class="meth">
-  <span class="label label-meth">Méthode — Recherche de l'optimum d'une surface de réponse</span>
-  <ol>
-    <li>
-      Estimer le modèle quadratique \(\hat{y} = b_0 + \sum b_i X_i + \sum b_{ii} X_i^2 + \sum_{i \neq j} b_{ij} X_i X_j\)
-    </li>
-    <li>
-      Calculer le gradient et l'annuler :
-      \(\dfrac{\partial \hat{y}}{\partial X_i} = 0\) pour tout \(i\)
-    </li>
-    <li>
-      Résoudre le système linéaire pour trouver le <strong>point stationnaire</strong> \(\mathbf{X}^*\)
-    </li>
-    <li>
-      Analyser la nature du point stationnaire (maximum, minimum ou selle) par la
-      <strong>matrice hessienne</strong> \(\mathbf{H}\) (dérivées secondes) :
-      \(\mathbf{H}_{ij} = \dfrac{\partial^2 \hat{y}}{\partial X_i \partial X_j}\)
-    </li>
-    <li>
-      Si les valeurs propres de \(\mathbf{H}\) sont toutes négatives : maximum (optimum si on maximise).
-      Si toutes positives : minimum. Si de signes mixtes : point col (selle).
-    </li>
-    <li>
-      Reconvertir les coordonnées codées en valeurs réelles de facteurs à l'aide de
-      \(x_i = x_{0,i} + \Delta x_i \cdot X_i^*\)
-    </li>
-  </ol>
+<h3>7.4 Optimisation — point stationnaire</h3>
+<p>Le point stationnaire du modèle quadratique est&nbsp;:</p>
+<div class="formule-box">
+\[
+  \mathbf{x}_s = -\tfrac{1}{2}\mathbf{B}^{-1}\mathbf{b}
+\]
 </div>
+<p>
+  où \(\mathbf{B}\) est la matrice symétrique des termes du second ordre
+  (\(\beta_{ii}\) sur la diagonale, \(\beta_{ij}/2\) hors diagonale)
+  et \(\mathbf{b}\) le vecteur des termes linéaires.
+</p>
+<p>Nature du point stationnaire selon les valeurs propres de \(\mathbf{B}\)&nbsp;:</p>
+<ul>
+  <li>Toutes négatives &rarr; <strong>maximum</strong>.</li>
+  <li>Toutes positives &rarr; <strong>minimum</strong>.</li>
+  <li>De signes opposés &rarr; <strong>point de selle</strong>.</li>
+</ul>
 
 <div class="ex">
-  <span class="label label-def">Exemple — Surface de réponse pour 2 facteurs</span>
-  <p>
-    Après un plan central composite à 2 facteurs, on obtient le modèle :
-    \[\hat{y} = 82 + 5{,}2 X_1 + 7{,}8 X_2 - 3{,}1 X_1^2 - 4{,}5 X_2^2 + 1{,}2 X_1 X_2\]
-  </p>
-  <p><strong>Recherche du point stationnaire :</strong></p>
-  \[\frac{\partial \hat{y}}{\partial X_1} = 5{,}2 - 6{,}2 X_1 + 1{,}2 X_2 = 0\]
-  \[\frac{\partial \hat{y}}{\partial X_2} = 7{,}8 - 9{,}0 X_2 + 1{,}2 X_1 = 0\]
-  <p>On résout le système :</p>
-  \[\begin{pmatrix} -6{,}2 & 1{,}2 \\ 1{,}2 & -9{,}0 \end{pmatrix} \begin{pmatrix} X_1^* \\ X_2^* \end{pmatrix} = \begin{pmatrix} -5{,}2 \\ -7{,}8 \end{pmatrix}\]
-  <p>
-    Déterminant : \(\Delta = (-6{,}2)(-9{,}0) - (1{,}2)^2 = 55{,}8 - 1{,}44 = 54{,}36\)
-  </p>
-  \[X_1^* = \frac{(-5{,}2)(-9{,}0) - (-7{,}8)(1{,}2)}{54{,}36} = \frac{46{,}8 + 9{,}36}{54{,}36} \approx 1{,}03\]
-  \[X_2^* = \frac{(-6{,}2)(-7{,}8) - (1{,}2)(-5{,}2)}{54{,}36} = \frac{48{,}36 + 6{,}24}{54{,}36} \approx 1{,}01\]
-  <p>
-    Matrice hessienne : valeurs propres \(-6{,}2\) et \(-9{,}0\) (approx., diagonal dominant)
-    → toutes négatives → <strong>maximum</strong>.
-  </p>
-  <p>Valeur maximale prédite : \(\hat{y}_{\max} \approx 82 + 5{,}2(1{,}03) + 7{,}8(1{,}01) - 3{,}1(1{,}03)^2 - 4{,}5(1{,}01)^2 + 1{,}2(1{,}03)(1{,}01) \approx 87{,}5\)</p>
+  <span class="label-def">Exemple</span>
+  Pour \(k=2\), le modèle ajusté est&nbsp;:
+  \[\hat{Y} = 25.0 + 4.2\,x_A - 1.8\,x_B - 3.5\,x_A^2 - 2.0\,x_B^2 + 0.5\,x_Ax_B\]
+  \(\mathbf{B} = \begin{pmatrix}-3.5 & 0.25 \\ 0.25 & -2.0\end{pmatrix}\),
+  \(\mathbf{b} = \begin{pmatrix}4.2 \\ -1.8\end{pmatrix}\).<br>
+  Les deux valeurs propres de \(\mathbf{B}\) sont négatives &rarr; la surface a un <strong>maximum</strong>.
 </div>
 
-<div class="retenir">
-  <strong>À retenir — Comparaison des plans</strong>
-  <table style="width:100%;border-collapse:collapse;margin:0.5em 0">
-    <thead>
-      <tr style="background:var(--p);color:#fff">
-        <th style="padding:0.4em 0.7em;border:1px solid #aaa">Plan</th>
-        <th style="padding:0.4em 0.7em;border:1px solid #aaa">Nombre d'essais</th>
-        <th style="padding:0.4em 0.7em;border:1px solid #aaa">Objectif</th>
-        <th style="padding:0.4em 0.7em;border:1px solid #aaa">Modèle estimable</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td style="padding:0.4em 0.7em;border:1px solid #aaa">\(2^k\) complet</td>
-        <td style="padding:0.4em 0.7em;border:1px solid #aaa">\(2^k\)</td>
-        <td style="padding:0.4em 0.7em;border:1px solid #aaa">Tous effets et interactions</td>
-        <td style="padding:0.4em 0.7em;border:1px solid #aaa">Linéaire + interactions</td>
-      </tr>
-      <tr style="background:#f5f7fb">
-        <td style="padding:0.4em 0.7em;border:1px solid #aaa">\(2^{k-p}\) fractionnaire</td>
-        <td style="padding:0.4em 0.7em;border:1px solid #aaa">\(2^{k-p}\)</td>
-        <td style="padding:0.4em 0.7em;border:1px solid #aaa">Effets principaux (aliasing)</td>
-        <td style="padding:0.4em 0.7em;border:1px solid #aaa">Linéaire partiel</td>
-      </tr>
-      <tr>
-        <td style="padding:0.4em 0.7em;border:1px solid #aaa">Plackett-Burman</td>
-        <td style="padding:0.4em 0.7em;border:1px solid #aaa">\(N\) (multiple de 4)</td>
-        <td style="padding:0.4em 0.7em;border:1px solid #aaa">Criblage (many factors)</td>
-        <td style="padding:0.4em 0.7em;border:1px solid #aaa">Effets principaux seulement</td>
-      </tr>
-      <tr style="background:#f5f7fb">
-        <td style="padding:0.4em 0.7em;border:1px solid #aaa">Central composite</td>
-        <td style="padding:0.4em 0.7em;border:1px solid #aaa">\(2^k + 2k + n_c\)</td>
-        <td style="padding:0.4em 0.7em;border:1px solid #aaa">Optimisation (surface de réponse)</td>
-        <td style="padding:0.4em 0.7em;border:1px solid #aaa">Quadratique complet</td>
-      </tr>
-      <tr>
-        <td style="padding:0.4em 0.7em;border:1px solid #aaa">Box-Behnken</td>
-        <td style="padding:0.4em 0.7em;border:1px solid #aaa">\(2k(k-1) + n_c\)</td>
-        <td style="padding:0.4em 0.7em;border:1px solid #aaa">Optimisation (évite les coins)</td>
-        <td style="padding:0.4em 0.7em;border:1px solid #aaa">Quadratique complet</td>
-      </tr>
-    </tbody>
+<!-- SECTION 8 — TAGUCHI -->
+<h2>8. Introduction à la méthode de Taguchi</h2>
+
+<h3>8.1 Philosophie</h3>
+<p>
+  Genichi Taguchi (1924–2012) propose d&rsquo;optimiser les procédés en réduisant simultanément
+  la valeur moyenne et la <strong>variabilité</strong>. Il distingue&nbsp;:
+</p>
+<div class="grid2">
+  <div>
+    <p><strong>Facteurs de contrôle</strong>&nbsp;: paramètres que l&rsquo;ingénieur peut fixer
+    (température, vitesse…).</p>
+  </div>
+  <div>
+    <p><strong>Facteurs de bruit</strong>&nbsp;: facteurs incontrôlables en production
+    (variations matière, humidité, usure…).</p>
+  </div>
+</div>
+
+<h3>8.2 Rapport signal/bruit (S/N)</h3>
+<div class="formule-box">
+  <table style="width:100%;border-collapse:collapse">
+    <tr>
+      <td style="padding:.4rem 1rem;font-weight:bold;border-bottom:1px solid #ddd">Maximiser \(Y\)</td>
+      <td style="padding:.4rem 1rem;border-bottom:1px solid #ddd">
+        \(\displaystyle \frac{S}{N} = -10\log_{10}\!\left(\frac{1}{n}\sum_{i=1}^n \frac{1}{y_i^2}\right)\)</td>
+    </tr>
+    <tr>
+      <td style="padding:.4rem 1rem;font-weight:bold;border-bottom:1px solid #ddd">Minimiser \(Y\)</td>
+      <td style="padding:.4rem 1rem;border-bottom:1px solid #ddd">
+        \(\displaystyle \frac{S}{N} = -10\log_{10}\!\left(\frac{1}{n}\sum_{i=1}^n y_i^2\right)\)</td>
+    </tr>
+    <tr>
+      <td style="padding:.4rem 1rem;font-weight:bold">Valeur cible</td>
+      <td style="padding:.4rem 1rem">
+        \(\displaystyle \frac{S}{N} = 10\log_{10}\!\left(\frac{\bar{y}^2}{s^2}\right)\)</td>
+    </tr>
   </table>
 </div>
+<p>
+  On choisit le réglage qui <strong>maximise</strong> le rapport S/N&nbsp;: on réduit ainsi
+  l&rsquo;effet des facteurs de bruit tout en maintenant la performance.
+</p>
 
-<!-- SECTION 7 : EXERCICES -->
-<h2>7. Exercices d'application</h2>
+<h3>8.3 Tableaux orthogonaux</h3>
+<p>
+  Taguchi a pré-calculé des tables spécialisées&nbsp;: L4, L8, L9, L16, L18, L27…
+  Le tableau <strong>L8</strong> permet d&rsquo;étudier jusqu&rsquo;à 7 facteurs à 2 niveaux avec 8 essais.
+</p>
+<div class="att">
+  <span class="label-att">Attention</span>
+  Les tableaux de Taguchi confondent systématiquement certaines interactions,
+  ce qui peut conduire à des erreurs si des interactions importantes existent.
+  Les plans factoriels classiques restent plus rigoureux pour détecter les interactions.
+</div>
 
-<div class="exo">
-  <span class="label label-def">Exercice 1 — Plan \(2^2\) : réaction chimique</span>
+<!-- SECTION 9 — APPLICATION INDUSTRIELLE -->
+<h2>9. Application industrielle complète — traitement de surface</h2>
+
+<div class="situation">
+  <strong>Problème posé</strong>
   <p>
-    Un chimiste étudie le rendement d'une réaction en fonction de la température (\(A\) : 60°C / 80°C)
-    et de la concentration en catalyseur (\(B\) : 1 g/L / 3 g/L). Résultats (%) :
-    \(y_1 = 68\) (\(--\)), \(y_2 = 74\) (\(+-\)), \(y_3 = 76\) (\(-+\)), \(y_4 = 79\) (\(++\)).
+    Un technicien spécialisé en traitement de surface dans une entreprise d&rsquo;aéronautique
+    cherche à optimiser un bain de placage électrolytique pour des pièces en aluminium.
+    Trois facteurs sont étudiés&nbsp;:
   </p>
+  <ul>
+    <li><strong>A</strong>&nbsp;: Densité de courant (\(2\,\text{A/dm}^2 \to -1\)&nbsp;; \(6\,\text{A/dm}^2 \to +1\))</li>
+    <li><strong>B</strong>&nbsp;: Température du bain (\(20\,°\text{C} \to -1\)&nbsp;; \(40\,°\text{C} \to +1\))</li>
+    <li><strong>C</strong>&nbsp;: Concentration en sel (\(100\,\text{g/L} \to -1\)&nbsp;; \(200\,\text{g/L} \to +1\))</li>
+  </ul>
+  <p>Réponse \(Y\)&nbsp;: épaisseur du dépôt (µm). Objectif&nbsp;: atteindre \(25\,\mu\text{m}\).</p>
+</div>
+
+<h3>9.1 Résultats du plan \(2^3\) avec répliques</h3>
+
+<table class="plan-exp">
+  <thead>
+    <tr><th>Essai</th><th>A</th><th>B</th><th>C</th><th>\(Y_1\)</th><th>\(Y_2\)</th><th>\(\bar{Y}\)</th><th>\(s\)</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td class="niv-moins">&minus;1</td><td class="niv-moins">&minus;1</td><td class="niv-moins">&minus;1</td><td>15.2</td><td>14.8</td><td>15.0</td><td>0.28</td></tr>
+    <tr><td>2</td><td class="niv-plus">+1</td><td class="niv-moins">&minus;1</td><td class="niv-moins">&minus;1</td><td>22.1</td><td>21.9</td><td>22.0</td><td>0.14</td></tr>
+    <tr><td>3</td><td class="niv-moins">&minus;1</td><td class="niv-plus">+1</td><td class="niv-moins">&minus;1</td><td>18.3</td><td>18.7</td><td>18.5</td><td>0.28</td></tr>
+    <tr><td>4</td><td class="niv-plus">+1</td><td class="niv-plus">+1</td><td class="niv-moins">&minus;1</td><td>26.8</td><td>27.2</td><td>27.0</td><td>0.28</td></tr>
+    <tr><td>5</td><td class="niv-moins">&minus;1</td><td class="niv-moins">&minus;1</td><td class="niv-plus">+1</td><td>16.9</td><td>17.1</td><td>17.0</td><td>0.14</td></tr>
+    <tr><td>6</td><td class="niv-plus">+1</td><td class="niv-moins">&minus;1</td><td class="niv-plus">+1</td><td>24.4</td><td>24.6</td><td>24.5</td><td>0.14</td></tr>
+    <tr><td>7</td><td class="niv-moins">&minus;1</td><td class="niv-plus">+1</td><td class="niv-plus">+1</td><td>20.6</td><td>21.4</td><td>21.0</td><td>0.57</td></tr>
+    <tr><td>8</td><td class="niv-plus">+1</td><td class="niv-plus">+1</td><td class="niv-plus">+1</td><td>29.8</td><td>30.2</td><td>30.0</td><td>0.28</td></tr>
+  </tbody>
+</table>
+
+<h3>9.2 Calcul et analyse des effets</h3>
+
+<button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir l&rsquo;analyse complète</button>
+<div class="corr">
+  <p><strong>Effets principaux (sur \(\bar{Y}\))&nbsp;:</strong></p>
+  \[E_A = \frac{1}{4}(-15+22-18.5+27-17+24.5-21+30) = \frac{32}{4} = 8.0\,\mu\text{m}\]
+  \[E_B = \frac{1}{4}(-15-22+18.5+27-17-24.5+21+30) = \frac{18}{4} = 4.5\,\mu\text{m}\]
+  \[E_C = \frac{1}{4}(-15-22-18.5-27+17+24.5+21+30) = \frac{10}{4} = 2.5\,\mu\text{m}\]
+  \[E_{AB} = \frac{1}{4}(+15-22-18.5+27+17-24.5-21+30) = \frac{3}{4} = 0.75\,\mu\text{m}\]
+  <p><strong>Modèle ajusté (termes significatifs A, B, C)&nbsp;:</strong></p>
+  \[\hat{Y} = 19.375 + 4.0\,x_A + 2.25\,x_B + 1.25\,x_C\]
+  <p>
+    Pour atteindre \(\hat{Y} = 25\,\mu\text{m}\) avec \(x_B = +1\) et \(x_C = 0\)&nbsp;:<br>
+    \(25 = 19.375 + 4.0\,x_A + 2.25\)
+    \(\Rightarrow x_A = (25 - 21.625)/4.0 = 0.84\)
+    \(\Rightarrow A = 4 + 0.84 \times 2 = 5.68\,\text{A/dm}^2\).
+  </p>
+  <p>Valider par un essai de confirmation à ces réglages.</p>
+</div>
+
+<!-- MÉTHODE -->
+<div class="meth">
+  <span class="label-meth">Méthode</span> — Démarche d&rsquo;un plan d&rsquo;expérience
   <ol>
-    <li>Calculer les effets principaux \(e_A\), \(e_B\) et l'interaction \(e_{AB}\).</li>
-    <li>Interpréter : quel facteur est le plus influent ? Y a-t-il une interaction significative ?</li>
-    <li>Écrire le modèle \(\hat{y}(A,B)\) et prédire le rendement à \(A = +0{,}5\), \(B = +0{,}5\).</li>
+    <li><strong>Définir l&rsquo;objectif</strong>&nbsp;: maximiser, minimiser ou atteindre une cible&nbsp;?</li>
+    <li><strong>Choisir la variable réponse \(Y\)</strong>&nbsp;: précise, mesurable, reproductible.</li>
+    <li><strong>Identifier les facteurs</strong>&nbsp;: contrôlables vs non contrôlables.</li>
+    <li><strong>Fixer les niveaux</strong>&nbsp;: coder en \(-1/+1\).</li>
+    <li><strong>Choisir le plan</strong>&nbsp;: complet, fractionnaire ou composite selon les contraintes.</li>
+    <li><strong>Réaliser les essais</strong>&nbsp;: en ordre aléatoire (randomisation).</li>
+    <li><strong>Calculer les effets</strong>&nbsp;: utiliser la matrice des contrastes.</li>
+    <li><strong>Identifier les effets significatifs</strong>&nbsp;: droite de Henry ou critère de Lenth.</li>
+    <li><strong>Construire et valider le modèle</strong>&nbsp;: vérifier les résidus.</li>
+    <li><strong>Optimiser</strong>&nbsp;: trouver les conditions optimales à partir du modèle.</li>
+    <li><strong>Confirmer</strong>&nbsp;: essais de confirmation aux réglages optimaux.</li>
   </ol>
 </div>
 
+<!-- À RETENIR -->
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li>Un plan factoriel \(2^k\) comprend \(2^k\) essais et estime \(2^k - 1\) effets.</li>
+    <li>Formule des effets&nbsp;: \(E_c = \dfrac{1}{N/2}\displaystyle\sum_j x_{cj} Y_j\).</li>
+    <li>Coefficients du modèle&nbsp;: \(\hat{\beta}_i = E_i/2\).</li>
+    <li>Plan fractionnaire \(2^{k-p}\)&nbsp;: réduit les essais au prix d&rsquo;alias entre effets.</li>
+    <li>La résolution mesure la gravité des alias (III &lt; IV &lt; V).</li>
+    <li>Les plans composites centraux permettent d&rsquo;estimer les termes quadratiques
+        et de localiser un optimum (surface de réponse).</li>
+    <li>La méthode de Taguchi vise la robustesse en maximisant le rapport signal/bruit.</li>
+    <li>Toujours valider le modèle par analyse des résidus avant d&rsquo;utiliser les prédictions.</li>
+  </ul>
+</div>
+
+<!-- EXERCICES -->
+<h2>Exercices</h2>
+
 <div class="exo">
-  <span class="label label-def">Exercice 2 — Plan \(2^3\) : formulation d'un revêtement</span>
+  <strong>Exercice 1 — Codage et décodage</strong>
   <p>
-    On étudie la résistance à l'abrasion d'un revêtement selon 3 facteurs.
-    Les 8 résultats sont (en MPa) :
-    \(y_1 = 12\), \(y_2 = 15\), \(y_3 = 13\), \(y_4 = 17\),
-    \(y_5 = 14\), \(y_6 = 18\), \(y_7 = 16\), \(y_8 = 21\).
+    Un paramètre d&rsquo;injection plastique, la pression, varie entre \(80\,\text{bar}\) (niveau bas)
+    et \(120\,\text{bar}\) (niveau haut).
   </p>
   <ol>
-    <li>Calculer la moyenne générale \(\bar{y}\).</li>
-    <li>Calculer les effets principaux \(e_A\), \(e_B\), \(e_C\) et l'interaction \(e_{AB}\).</li>
-    <li>Quel facteur ou quelle combinaison de facteurs maximise la résistance ?</li>
+    <li>Calculer \(\bar{X}\) et \(\Delta X\).</li>
+    <li>Coder les valeurs \(80\,\text{bar}\), \(100\,\text{bar}\) et \(120\,\text{bar}\).</li>
+    <li>Décoder le niveau codé \(x = +0.5\).</li>
   </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>\(\bar{X} = (80+120)/2 = 100\,\text{bar}\)&nbsp;; \(\Delta X = (120-80)/2 = 20\,\text{bar}\).</li>
+      <li>\(x(80) = (80-100)/20 = -1\)&nbsp;; \(x(100) = 0\)&nbsp;; \(x(120) = +1\).</li>
+      <li>\(X = 100 + 0.5 \times 20 = 110\,\text{bar}\).</li>
+    </ol>
+  </div>
 </div>
 
 <div class="exo">
-  <span class="label label-def">Exercice 3 — Plan central composite et optimisation</span>
+  <strong>Exercice 2 — Plan \(2^2\) et effets</strong>
   <p>
-    Après un plan CCC à 2 facteurs (température et temps de réaction),
-    le modèle ajusté est :
-    \[\hat{y} = 88 + 6X_1 + 4X_2 - 5X_1^2 - 3X_2^2 - 2X_1 X_2\]
+    Un plan \(2^2\) sur la rugosité (µm) d&rsquo;une pièce fraisée donne les résultats suivants&nbsp;:
   </p>
+  <table class="plan-exp" style="max-width:400px">
+    <thead>
+      <tr><th>Essai</th><th>\(x_A\) (vitesse)</th><th>\(x_B\) (avance)</th><th>\(Y\) (µm)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>&minus;1</td><td>&minus;1</td><td>1.8</td></tr>
+      <tr><td>2</td><td>+1</td><td>&minus;1</td><td>1.2</td></tr>
+      <tr><td>3</td><td>&minus;1</td><td>+1</td><td>2.6</td></tr>
+      <tr><td>4</td><td>+1</td><td>+1</td><td>2.0</td></tr>
+    </tbody>
+  </table>
   <ol>
-    <li>Calculer les coordonnées du point stationnaire \((X_1^*, X_2^*)\).</li>
-    <li>Calculer la valeur prédite à l'optimum.</li>
-    <li>
-      Analyser la matrice hessienne :
-      \(\mathbf{H} = \begin{pmatrix} -10 & -2 \\ -2 & -6 \end{pmatrix}\).
-      S'agit-il d'un maximum, d'un minimum ou d'un point selle ?
-    </li>
-    <li>
-      Sachant que \(T_0 = 80\,°\text{C}\), \(\Delta T = 10\,°\text{C}\),
-      \(t_0 = 2\,\text{h}\), \(\Delta t = 0{,}5\,\text{h}\),
-      donner les conditions optimales en valeurs réelles.
-    </li>
+    <li>Calculer \(\hat{Y}_0\), \(E_A\), \(E_B\) et \(E_{AB}\).</li>
+    <li>Écrire le modèle de régression.</li>
+    <li>Quel réglage donne la rugosité minimale&nbsp;?</li>
   </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>
+        \(\hat{Y}_0 = (1.8+1.2+2.6+2.0)/4 = 1.90\,\mu\text{m}\)<br>
+        \(E_A = \frac{1}{2}(-1.8+1.2-2.6+2.0) = -0.60\,\mu\text{m}\)<br>
+        \(E_B = \frac{1}{2}(-1.8-1.2+2.6+2.0) = +0.80\,\mu\text{m}\)<br>
+        \(E_{AB} = \frac{1}{2}(+1.8-1.2-2.6+2.0) = 0\)
+      </li>
+      <li>\(\hat{Y} = 1.90 - 0.30\,x_A + 0.40\,x_B\).</li>
+      <li>Rugosité minimale pour \(x_A = +1\) et \(x_B = -1\)&nbsp;:
+          \(\hat{Y} = 1.90 - 0.30 - 0.40 = 1.20\,\mu\text{m}\) (essai 2).</li>
+    </ol>
+  </div>
 </div>
 
+<div class="exo">
+  <strong>Exercice 3 — Plan fractionnaire \(2^{3-1}\)</strong>
+  <p>
+    On étudie 3 facteurs (A, B, C) sur la dureté Vickers d&rsquo;un acier traité thermiquement
+    avec le plan \(2^{3-1}\) (\(x_C = x_A x_B\)).
+    Résultats&nbsp;: \(y_1 = 280\), \(y_2 = 350\), \(y_3 = 310\), \(y_4 = 420\) HV.
+  </p>
+  <ol>
+    <li>Dresser la matrice des essais.</li>
+    <li>Calculer \(E_A\) et indiquer son alias.</li>
+    <li>Calculer la moyenne générale \(\hat{Y}_0\).</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr">
+    <table class="plan-exp" style="max-width:420px">
+      <thead>
+        <tr><th>Essai</th><th>\(x_A\)</th><th>\(x_B\)</th><th>\(x_C=x_Ax_B\)</th><th>\(Y\)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>&minus;1</td><td>&minus;1</td><td>+1</td><td>280</td></tr>
+        <tr><td>2</td><td>+1</td><td>&minus;1</td><td>&minus;1</td><td>350</td></tr>
+        <tr><td>3</td><td>&minus;1</td><td>+1</td><td>&minus;1</td><td>310</td></tr>
+        <tr><td>4</td><td>+1</td><td>+1</td><td>+1</td><td>420</td></tr>
+      </tbody>
+    </table>
+    <p>\(E_A = \frac{1}{2}(-280+350-310+420) = 90\,\text{HV}\)
+       (estimé aliasé avec BC&nbsp;: on mesure \(E_A + E_{BC}\)).</p>
+    <p>\(\hat{Y}_0 = (280+350+310+420)/4 = 340\,\text{HV}\).</p>
+  </div>
 </div>
+
+<div class="exo">
+  <strong>Exercice 4 — Rapport signal/bruit de Taguchi</strong>
+  <p>
+    Un mécanicien-outilleur mesure la dureté HRC de pièces après traitement thermique.
+    Pour un réglage donné, il obtient 5 mesures&nbsp;: 58, 60, 59, 61, 58 HRC.
+    L&rsquo;objectif est de maximiser la dureté.
+  </p>
+  <ol>
+    <li>Calculer le rapport S/N pour cet objectif.</li>
+    <li>Si un second réglage donne S/N = 35.2 dB, lequel préférer&nbsp;?</li>
+  </ol>
+  <button class="bc" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>
+        \(\frac{1}{n}\sum \frac{1}{y_i^2} = \frac{1}{5}\left(\frac{1}{58^2}+\frac{1}{60^2}+\frac{1}{59^2}+\frac{1}{61^2}+\frac{1}{58^2}\right)\)<br>
+        \(\approx \frac{1}{5}(2.972+2.778+2.873+2.688+2.972)\times 10^{-4}
+         = \frac{14.283}{5}\times 10^{-4} = 2.857\times 10^{-4}\)<br>
+        \(\dfrac{S}{N} = -10\log_{10}(2.857\times 10^{-4}) \approx -10\times(-3.544) = 35.4\,\text{dB}\)
+      </li>
+      <li>Le réglage étudié (\(35.4\,\text{dB}\)) est légèrement meilleur que le second (\(35.2\,\text{dB}\)).
+          On préfère le réglage qui maximise S/N.</li>
+    </ol>
+  </div>
+</div>
+
+</div><!-- fin .c -->
+
+<script>
+// Diagramme à barres des effets — Plan 2³ soudage
+(function(){
+  const ctx = document.getElementById('chartEffets').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['E_A\n(Temp.)', 'E_B\n(Vitesse)', 'E_C\n(Pression)', 'E_AB', 'E_AC', 'E_BC', 'E_ABC'],
+      datasets: [{
+        label: 'Effets estimés (N)',
+        data: [540, 55, 140, 200, 30, 15, 10],
+        backgroundColor: ['#b02a37','#6c757d','#1a7a34','#0d6efd','#6c757d','#6c757d','#6c757d'],
+        borderWidth: 1,
+        borderColor: '#fff'
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {display: false},
+        title: {
+          display: true,
+          text: 'Effets estimés — Plan 2³ soudage (N)',
+          font: {size: 14, weight: 'bold'}
+        }
+      },
+      scales: {
+        y: {title: {display: true, text: 'Effet (N)'}, beginAtZero: true}
+      }
+    }
+  });
+})();
+
+// Masquer les corrections au chargement
+document.querySelectorAll('.corr').forEach(el => { el.style.display = 'none'; });
+</script>
 <script src="../../../nav.js"></script>
 </body>
 </html>
