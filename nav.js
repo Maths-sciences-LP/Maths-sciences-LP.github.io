@@ -364,12 +364,17 @@
   container.appendChild(printBar);
   if (hasCorrections) {
     document.getElementById('sn-print-corr').addEventListener('click', function () {
-      document.body.classList.add('print-corr');
+      /* Forcer l'affichage de chaque correction via style inline !important */
+      var corrs = document.querySelectorAll('.corr, .correction, .qcm-corr, .flash-corr');
+      for (var i = 0; i < corrs.length; i++) {
+        corrs[i].style.setProperty('display', 'block', 'important');
+      }
       window.addEventListener('afterprint', function cleanup() {
-        document.body.classList.remove('print-corr');
+        for (var j = 0; j < corrs.length; j++) {
+          corrs[j].style.removeProperty('display');
+        }
         window.removeEventListener('afterprint', cleanup);
       });
-      /* Délai pour laisser le navigateur appliquer la classe avant l'impression */
       setTimeout(function () { window.print(); }, 100);
     });
   }
