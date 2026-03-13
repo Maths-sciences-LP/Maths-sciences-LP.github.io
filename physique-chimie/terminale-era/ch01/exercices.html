@@ -96,7 +96,80 @@
   <canvas id="chartPertes"></canvas>
 </div>
 
-<!-- ===== EXERCICES DE BASE ===== -->
+<!-- ===== SOCLE ===== -->
+<div class="diff-socle">
+<span class="tag-socle">Socle</span>
+<h2>Exercices guidés pas à pas</h2>
+
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice S1</span>
+    <span class="exo-title">Le réseau électrique – compléter le schéma</span>
+  </div>
+  <p>En vous aidant du schéma du réseau électrique ci-dessus, compléter les phrases :</p>
+  <p class="q"><strong>1.</strong> La centrale de production génère l'énergie électrique. La tension est ensuite __________ (élevée / abaissée) pour le transport longue distance.</p>
+  <p class="q"><strong>2.</strong> La tension de transport HT est d'environ __________ kV.</p>
+  <p class="q"><strong>3.</strong> Le premier transformateur abaisse la tension de __________ kV à __________ kV (distribution régionale).</p>
+  <p class="q"><strong>4.</strong> Le second transformateur abaisse la tension de __________ kV à __________ V pour les usines et logements.</p>
+  <p class="q"><strong>5.</strong> L'appareil qui permet de modifier la tension s'appelle un __________ .</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> La tension est <strong>élevée</strong> pour le transport longue distance.</p>
+    <p><strong>2.</strong> La tension HT est d'environ <strong>400</strong> kV.</p>
+    <p><strong>3.</strong> De <strong>400</strong> kV à <strong>20</strong> kV.</p>
+    <p><strong>4.</strong> De <strong>20</strong> kV à <strong>400</strong> V (ou 230 V en monophasé).</p>
+    <p><strong>5.</strong> Un <strong>transformateur</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice S2</span>
+    <span class="exo-title">Calculer une puissance – pas à pas</span>
+  </div>
+  <p>Une perceuse électrique fonctionne sous \(U = 230\ \text{V}\) et consomme un courant \(I = 5\ \text{A}\). On considère \(\cos\varphi = 1\) (appareil résistif).</p>
+  <p class="q"><strong>Étape 1 :</strong> Recopier la formule de la puissance :<br>
+  \(P = \)__________ \(\times\) __________ \(\times\) __________</p>
+  <p class="q"><strong>Étape 2 :</strong> Remplacer par les valeurs :<br>
+  \(P = \)__________ \(\times\) __________ \(\times\) __________ \(=\) __________ W</p>
+  <p class="q"><strong>Étape 3 :</strong> La perceuse fonctionne pendant 30 minutes = __________ h. Calculer l'énergie :<br>
+  \(E = P \times t = \)__________ \(\times\) __________ \(=\) __________ Wh</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Étape 1 :</strong> \(P = U \times I \times \cos\varphi\)</p>
+    <p><strong>Étape 2 :</strong> \(P = 230 \times 5 \times 1 = \mathbf{1\,150\ W}\)</p>
+    <p><strong>Étape 3 :</strong> 30 min = <strong>0,5</strong> h. \(E = 1\,150 \times 0{,}5 = \mathbf{575\ Wh}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice S3</span>
+    <span class="exo-title">Pertes Joule et transformateur – tableau guidé</span>
+  </div>
+  <p>Un câble de chantier a une résistance \(R = 0{,}5\ \Omega\) et est parcouru par un courant \(I = 10\ \text{A}\).</p>
+  <p class="q"><strong>1.</strong> Formule des pertes Joule : \(P_{\text{pertes}} = \)__________ \(\times\) __________²</p>
+  <p class="q"><strong>2.</strong> Calcul : \(P_{\text{pertes}} = \)__________ \(\times\) __________² \(=\) __________ \(\times\) __________ \(=\) __________ W</p>
+  <p class="q"><strong>3.</strong> Ces pertes se transforment en __________ (chaleur / lumière).</p>
+  <p style="margin-top:16px">Un transformateur a \(U_1 = 20\,000\ \text{V}\), \(N_1 = 1\,000\) spires, \(N_2 = 50\) spires.</p>
+  <p class="q"><strong>4.</strong> Formule : \(\dfrac{U_1}{U_2} = \dfrac{N_1}{N_2}\). Donc \(U_2 = U_1 \times \dfrac{N_2}{N_1}\)</p>
+  <p class="q"><strong>5.</strong> Calcul : \(U_2 = \)__________ \(\times \dfrac{\text{______}}{\text{______}} = \)__________ V</p>
+  <p class="q"><strong>6.</strong> Ce transformateur est __________ (élévateur / abaisseur) car \(U_2\) est __________ (plus grande / plus petite) que \(U_1\).</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \(P_{\text{pertes}} = R \times I^2\)</p>
+    <p><strong>2.</strong> \(P_{\text{pertes}} = 0{,}5 \times 10^2 = 0{,}5 \times 100 = \mathbf{50\ W}\)</p>
+    <p><strong>3.</strong> En <strong>chaleur</strong>.</p>
+    <p><strong>5.</strong> \(U_2 = 20\,000 \times \dfrac{50}{1\,000} = \mathbf{1\,000\ V}\)</p>
+    <p><strong>6.</strong> <strong>Abaisseur</strong> car \(U_2\) est <strong>plus petite</strong> que \(U_1\).</p>
+  </div>
+</div>
+
+</div><!-- fin diff-socle -->
+
+<!-- ===== STANDARD ===== -->
+<div class="diff-standard">
+<span class="tag-standard">Standard</span>
 <h2>Exercices de base</h2>
 
 <div class="exo">
@@ -261,7 +334,11 @@
   </div>
 </div>
 
-<!-- ===== EXERCICES CONTEXTUALISÉS ERA-MA ===== -->
+</div><!-- fin diff-standard -->
+
+<!-- ===== APPROFONDISSEMENT ===== -->
+<div class="diff-appro">
+<span class="tag-appro">Approfondissement</span>
 <h2>Exercices contextualisés ERA-MA</h2>
 
 <div class="exo">
@@ -320,6 +397,8 @@
     <p><strong>5.</strong> \(P_{\text{pertes}} = P_{\text{entrée}} - P_{\text{sortie}} = \dfrac{P}{\eta} - P = P \left(\dfrac{1}{\eta} - 1\right) = 535\,500 \times \left(\dfrac{1}{0{,}98} - 1\right) \approx 535\,500 \times 0{,}0204 \approx \mathbf{10\,920\ W \approx 10{,}9\ kW}\)</p>
   </div>
 </div>
+
+</div><!-- fin diff-appro -->
 
 <!-- ===== À RETENIR ===== -->
 <div class="retenir">
@@ -385,5 +464,6 @@
 })();
 </script>
 <script src="/nav.js"></script>
+<script src="../../../diff.js"></script>
 </body>
 </html>
