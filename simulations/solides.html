@@ -109,7 +109,7 @@ canvas{border:1px solid #e0e0e0;border-radius:8px;background:#fff;max-width:100%
         <div class="value" id="volOrig"></div>
       </div>
       <div class="result-box scaled">
-        <h3>Volume agrandi (× k³)</h3>
+        <h3>Volume agrandi (x k³)</h3>
         <div class="formula" id="scaledFormula"></div>
         <div class="value" id="volScaled"></div>
       </div>
@@ -128,6 +128,7 @@ let solid = 'cube';
 let kVal = 1;
 const cv = document.getElementById('cv');
 const ctx = cv.getContext('2d');
+const CX = 250, CY = 200; // canvas center for 3D
 
 const sliderDefs = {
   cube:     [{id:'a', label:'Côté a', min:1, max:15, def:5}],
@@ -181,114 +182,113 @@ function update() {
     case 'cube': {
       const a = vals.a;
       V = round2(a * a * a);
-      formula = 'V = a³';
-      calc = `V = ${a}³ = ${V} cm³`;
+      formula = 'V = a\u00B3';
+      calc = `V = ${a}\u00B3 = ${V} cm\u00B3`;
       break;
     }
     case 'pave': {
       const L = vals.L, l = vals.l, h = vals.h;
       V = round2(L * l * h);
-      formula = 'V = L × l × h';
-      calc = `V = ${L} × ${l} × ${h} = ${V} cm³`;
+      formula = 'V = L \u00D7 l \u00D7 h';
+      calc = `V = ${L} \u00D7 ${l} \u00D7 ${h} = ${V} cm\u00B3`;
       break;
     }
     case 'cylindre': {
       const r = vals.r, h = vals.h;
       V = round2(pi * r * r * h);
-      formula = 'V = π × r² × h';
-      calc = `V = π × ${r}² × ${h} ≈ ${V} cm³`;
+      formula = 'V = \u03C0 \u00D7 r\u00B2 \u00D7 h';
+      calc = `V = \u03C0 \u00D7 ${r}\u00B2 \u00D7 ${h} \u2248 ${V} cm\u00B3`;
       break;
     }
     case 'cone': {
       const r = vals.r, h = vals.h;
       V = round2(pi * r * r * h / 3);
-      formula = 'V = π × r² × h ÷ 3';
-      calc = `V = π × ${r}² × ${h} ÷ 3 ≈ ${V} cm³`;
+      formula = 'V = \u03C0 \u00D7 r\u00B2 \u00D7 h \u00F7 3';
+      calc = `V = \u03C0 \u00D7 ${r}\u00B2 \u00D7 ${h} \u00F7 3 \u2248 ${V} cm\u00B3`;
       break;
     }
     case 'pyramide': {
       const a = vals.a, h = vals.h;
       V = round2(a * a * h / 3);
-      formula = 'V = a² × h ÷ 3';
-      calc = `V = ${a}² × ${h} ÷ 3 ≈ ${V} cm³`;
+      formula = 'V = a\u00B2 \u00D7 h \u00F7 3';
+      calc = `V = ${a}\u00B2 \u00D7 ${h} \u00F7 3 \u2248 ${V} cm\u00B3`;
       break;
     }
     case 'sphere': {
       const r = vals.r;
       V = round2(4 / 3 * pi * r * r * r);
-      formula = 'V = 4/3 × π × r³';
-      calc = `V = 4/3 × π × ${r}³ ≈ ${V} cm³`;
+      formula = 'V = 4/3 \u00D7 \u03C0 \u00D7 r\u00B3';
+      calc = `V = 4/3 \u00D7 \u03C0 \u00D7 ${r}\u00B3 \u2248 ${V} cm\u00B3`;
       break;
     }
   }
 
   document.getElementById('volFormula').textContent = formula;
   document.getElementById('volCalc').textContent = calc;
-  document.getElementById('volValue').textContent = V + ' cm³';
+  document.getElementById('volValue').textContent = V + ' cm\u00B3';
 
-  // Scale
   const k3 = round2(kVal * kVal * kVal);
   const Vs = round2(V * k3);
-  document.getElementById('volOrig').textContent = V + ' cm³';
-  document.getElementById('scaledFormula').textContent = `V' = V × k³ = ${V} × ${kVal}³ = ${V} × ${k3}`;
-  document.getElementById('volScaled').textContent = Vs + ' cm³';
+  document.getElementById('volOrig').textContent = V + ' cm\u00B3';
+  document.getElementById('scaledFormula').textContent =
+    `V' = V \u00D7 k\u00B3 = ${V} \u00D7 ${kVal}\u00B3 = ${V} \u00D7 ${k3}`;
+  document.getElementById('volScaled').textContent = Vs + ' cm\u00B3';
 
-  let info = `k = ${kVal} → k³ = ${k3}`;
-  if (kVal > 1) info += ` — <strong>Agrandissement</strong> : le volume est multiplié par ${k3}`;
-  else if (kVal < 1) info += ` — <strong>Réduction</strong> : le volume est divisé par ${round2(1/k3)}`;
-  else info += ' — Taille originale';
+  let info = `k = ${kVal}  \u2192  k\u00B3 = ${k3}`;
+  if (kVal > 1) info += ` \u2014 <strong>Agrandissement</strong> : le volume est multipli\u00E9 par ${k3}`;
+  else if (kVal < 1) info += ` \u2014 <strong>R\u00E9duction</strong> : le volume est divis\u00E9 par ${round2(1/k3)}`;
+  else info += ' \u2014 Taille originale';
   document.getElementById('scaleInfo').innerHTML = info;
 }
 
-/* ===== 3D Isometric Drawing ===== */
+/* ===== Isometric 3D Engine ===== */
 
-// Simple isometric projection
-function iso(x, y, z) {
-  // Rotate around Y then X for a nice 3D view
-  const ax = -0.46, ay = 0.62;
-  const cosA = Math.cos(ay), sinA = Math.sin(ay);
-  const cosB = Math.cos(ax), sinB = Math.sin(ax);
-  const x1 = x * cosA - z * sinA;
-  const z1 = x * sinA + z * cosA;
-  const y1 = y * cosB - z1 * sinB;
-  return [250 + x1, 210 + y1];
+// All 3D coordinates are in "units" (e.g. cm). The scale factor converts to pixels.
+const SC = 14; // pixels per unit
+
+// Isometric projection: 3D (x,y,z) in units -> 2D canvas pixels
+// y axis points UP in 3D, but DOWN on canvas, so we negate y.
+// We apply a rotation for a pleasant 3/4 view.
+const AX = -0.46, AY = 0.62;
+const cosA = Math.cos(AY), sinA = Math.sin(AY);
+const cosB = Math.cos(AX), sinB = Math.sin(AX);
+
+function project(x, y, z, ox, oy) {
+  // x,y,z in units; ox,oy are 2D pixel offsets for canvas center
+  const px = x * SC, py = -y * SC, pz = z * SC;
+  const x1 = px * cosA - pz * sinA;
+  const z1 = px * sinA + pz * cosA;
+  const y1 = py * cosB - z1 * sinB;
+  return [(ox || CX) + x1, (oy || CY) + y1];
 }
 
-function drawLine3D(p1, p2, color, width, dash) {
+function line2D(a, b, color, width, dash) {
   ctx.save();
   ctx.strokeStyle = color || '#1976d2';
   ctx.lineWidth = width || 2;
   ctx.setLineDash(dash || []);
-  ctx.beginPath();
-  ctx.moveTo(p1[0], p1[1]);
-  ctx.lineTo(p2[0], p2[1]);
-  ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(b[0], b[1]); ctx.stroke();
   ctx.restore();
 }
 
-function drawPoly3D(points, fillColor, strokeColor) {
+function poly2D(pts, fill, stroke) {
   ctx.save();
   ctx.beginPath();
-  ctx.moveTo(points[0][0], points[0][1]);
-  for (let i = 1; i < points.length; i++) ctx.lineTo(points[i][0], points[i][1]);
+  ctx.moveTo(pts[0][0], pts[0][1]);
+  for (let i = 1; i < pts.length; i++) ctx.lineTo(pts[i][0], pts[i][1]);
   ctx.closePath();
-  if (fillColor) { ctx.fillStyle = fillColor; ctx.fill(); }
-  ctx.strokeStyle = strokeColor || '#1976d2';
-  ctx.lineWidth = 2;
-  ctx.setLineDash([]);
-  ctx.stroke();
+  if (fill) { ctx.fillStyle = fill; ctx.fill(); }
+  ctx.strokeStyle = stroke || '#1976d2';
+  ctx.lineWidth = 2; ctx.setLineDash([]); ctx.stroke();
   ctx.restore();
 }
 
-function drawEllipse3D(cx3d, cy3d, cz3d, rx, rz, color, fill) {
-  // Draw an ellipse in the xz-plane at height cy3d
+function ellipse3D(cx3, cy3, cz3, r, color, fill, ox, oy) {
+  const n = 64;
   const pts = [];
-  const n = 60;
   for (let i = 0; i <= n; i++) {
-    const t = (2 * Math.PI * i) / n;
-    const px = cx3d + rx * Math.cos(t);
-    const pz = cz3d + rz * Math.sin(t);
-    pts.push(iso(px, cy3d, pz));
+    const t = 2 * Math.PI * i / n;
+    pts.push(project(cx3 + r * Math.cos(t), cy3, cz3 + r * Math.sin(t), ox, oy));
   }
   ctx.save();
   ctx.beginPath();
@@ -296,347 +296,298 @@ function drawEllipse3D(cx3d, cy3d, cz3d, rx, rz, color, fill) {
   for (let i = 1; i < pts.length; i++) ctx.lineTo(pts[i][0], pts[i][1]);
   if (fill) { ctx.fillStyle = fill; ctx.fill(); }
   ctx.strokeStyle = color || '#1976d2';
-  ctx.lineWidth = 2;
-  ctx.setLineDash([]);
-  ctx.stroke();
+  ctx.lineWidth = 2; ctx.setLineDash([]); ctx.stroke();
   ctx.restore();
   return pts;
 }
 
-function label3D(text, x3d, y3d, z3d, color, offx, offy) {
-  const p = iso(x3d, y3d, z3d);
+// Find silhouette indices (leftmost & rightmost screen-x) on an ellipse
+function silhouette(cx3, cy3, cz3, r, ox, oy) {
+  const n = 64;
+  let minX = Infinity, maxX = -Infinity, iL = 0, iR = 0;
+  for (let i = 0; i <= n; i++) {
+    const t = 2 * Math.PI * i / n;
+    const p = project(cx3 + r * Math.cos(t), cy3, cz3 + r * Math.sin(t), ox, oy);
+    if (p[0] < minX) { minX = p[0]; iL = i; }
+    if (p[0] > maxX) { maxX = p[0]; iR = i; }
+  }
+  const tL = 2 * Math.PI * iL / n, tR = 2 * Math.PI * iR / n;
+  return {
+    left: project(cx3 + r * Math.cos(tL), cy3, cz3 + r * Math.sin(tL), ox, oy),
+    right: project(cx3 + r * Math.cos(tR), cy3, cz3 + r * Math.sin(tR), ox, oy),
+    tL, tR, iL, iR
+  };
+}
+
+function label2D(text, px, py, color) {
   ctx.save();
   ctx.font = 'bold 13px Segoe UI, system-ui, sans-serif';
-  ctx.textAlign = 'center';
-  ctx.textBaseline = 'middle';
-  const px = p[0] + (offx || 0), py = p[1] + (offy || 0);
+  ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
   const m = ctx.measureText(text);
-  ctx.fillStyle = '#fff';
-  ctx.fillRect(px - m.width/2 - 3, py - 9, m.width + 6, 18);
+  ctx.fillStyle = 'rgba(255,255,255,0.85)';
+  ctx.fillRect(px - m.width/2 - 4, py - 10, m.width + 8, 20);
   ctx.fillStyle = color || '#d32f2f';
   ctx.fillText(text, px, py);
   ctx.restore();
 }
 
+function label3D(text, x, y, z, color, dx, dy, ox, oy) {
+  const p = project(x, y, z, ox, oy);
+  label2D(text, p[0] + (dx||0), p[1] + (dy||0), color);
+}
+
+/* ===== Drawing routines ===== */
+// Each drawXxx takes an optional (ox, oy) for canvas offset and optional alpha for ghost rendering.
+
+function drawBox(Lx, Ly, Lz, ox, oy, ghost) {
+  // Lx, Ly, Lz are half-dimensions in units
+  const p = (x,y,z) => project(x,y,z,ox,oy);
+  const v = [
+    p(-Lx,0,-Lz), p(Lx,0,-Lz), p(Lx,0,Lz), p(-Lx,0,Lz),   // bottom
+    p(-Lx,2*Ly,-Lz), p(Lx,2*Ly,-Lz), p(Lx,2*Ly,Lz), p(-Lx,2*Ly,Lz) // top
+  ];
+  const col = ghost || '#1976d2';
+  const a1 = ghost ? 'rgba(194,24,91,0.04)' : 'rgba(25,118,210,0.06)';
+  const a2 = ghost ? 'rgba(194,24,91,0.08)' : 'rgba(25,118,210,0.10)';
+  const a3 = ghost ? 'rgba(194,24,91,0.03)' : 'rgba(25,118,210,0.04)';
+  const a4 = ghost ? 'rgba(194,24,91,0.10)' : 'rgba(25,118,210,0.14)';
+
+  // Hidden edges
+  line2D(v[0], v[4], '#bbb', 1, [4,3]);
+  line2D(v[0], v[1], '#bbb', 1, [4,3]);
+  line2D(v[0], v[3], '#bbb', 1, [4,3]);
+  // Visible faces
+  poly2D([v[3],v[2],v[6],v[7]], a2, col); // front
+  poly2D([v[2],v[1],v[5],v[6]], a3, col); // right
+  poly2D([v[4],v[5],v[6],v[7]], a4, col); // top
+  // Bottom visible edges
+  line2D(v[1],v[2], col, 2);
+  line2D(v[2],v[3], col, 2);
+}
+
+function drawCube(ox, oy, ghost) {
+  const a = vals.a;
+  drawBox(a/2, a/2, a/2, ox, oy, ghost);
+  if (!ghost) {
+    label3D('a = ' + a, 0, 0, a/2, '#1976d2', 0, 18, ox, oy);
+  }
+}
+
+function drawPave(ox, oy, ghost) {
+  const L = vals.L, l = vals.l, h = vals.h;
+  drawBox(L/2, h/2, l/2, ox, oy, ghost);
+  if (!ghost) {
+    label3D('L = ' + L, 0, 0, l/2, '#1976d2', 0, 18, ox, oy);
+    const pR = project(L/2, 0, 0, ox, oy);
+    label2D('l = ' + l, pR[0] + 16, pR[1] + 8, '#e65100');
+    const pH = project(L/2, h/2, l/2, ox, oy);
+    label2D('h = ' + h, pH[0] + 18, pH[1], '#2e7d32');
+  }
+}
+
+function drawCylindre(ox, oy, ghost) {
+  const r = vals.r, h = vals.h;
+  const col = ghost || '#1976d2';
+  const fillBot = ghost ? 'rgba(194,24,91,0.04)' : 'rgba(25,118,210,0.06)';
+  const fillTop = ghost ? 'rgba(194,24,91,0.10)' : 'rgba(25,118,210,0.12)';
+  const colFade = ghost ? '#e48aab' : '#90caf9';
+
+  // Bottom ellipse
+  ellipse3D(0, 0, 0, r, colFade, fillBot, ox, oy);
+  const sBot = silhouette(0, 0, 0, r, ox, oy);
+  const sTop = silhouette(0, h, 0, r, ox, oy);
+  // Side lines
+  const bL = sBot.left, bR = sBot.right;
+  const tL = project(r * Math.cos(sBot.tL), h, r * Math.sin(sBot.tL), ox, oy);
+  const tR = project(r * Math.cos(sBot.tR), h, r * Math.sin(sBot.tR), ox, oy);
+  line2D(bL, tL, col, 2);
+  line2D(bR, tR, col, 2);
+  // Top ellipse
+  ellipse3D(0, h, 0, r, col, fillTop, ox, oy);
+
+  if (!ghost) {
+    // Height dimension line
+    const h1 = project(r + 1.5, 0, 0, ox, oy);
+    const h2 = project(r + 1.5, h, 0, ox, oy);
+    line2D(h1, h2, '#e65100', 1.5, [5,3]);
+    label3D('h = ' + h, r + 2, h/2, 0, '#e65100', 18, 0, ox, oy);
+    // Radius on top
+    line2D(project(0, h, 0, ox, oy), project(r, h, 0, ox, oy), '#d32f2f', 1.5);
+    label3D('r = ' + r, r/2, h, 0, '#d32f2f', 0, -14, ox, oy);
+  }
+}
+
+function drawCone(ox, oy, ghost) {
+  const r = vals.r, h = vals.h;
+  const col = ghost || '#1976d2';
+  const fillBase = ghost ? 'rgba(194,24,91,0.04)' : 'rgba(25,118,210,0.06)';
+  const fillSurf = ghost ? 'rgba(194,24,91,0.05)' : 'rgba(25,118,210,0.06)';
+
+  // Base ellipse
+  ellipse3D(0, 0, 0, r, col, fillBase, ox, oy);
+  const apex = project(0, h, 0, ox, oy);
+  const s = silhouette(0, 0, 0, r, ox, oy);
+  line2D(s.left, apex, col, 2);
+  line2D(s.right, apex, col, 2);
+
+  // Fill visible surface
+  const n = 64;
+  ctx.save();
+  ctx.beginPath();
+  ctx.moveTo(apex[0], apex[1]);
+  for (let i = s.iL; i <= s.iR; i++) {
+    const t = 2 * Math.PI * i / n;
+    const p = project(r * Math.cos(t), 0, r * Math.sin(t), ox, oy);
+    ctx.lineTo(p[0], p[1]);
+  }
+  ctx.closePath();
+  ctx.fillStyle = fillSurf; ctx.fill();
+  ctx.restore();
+
+  if (!ghost) {
+    // Height dashed
+    line2D(project(0, 0, 0, ox, oy), apex, '#888', 1.5, [5,3]);
+    // Center dot
+    const cb = project(0, 0, 0, ox, oy);
+    ctx.beginPath(); ctx.arc(cb[0], cb[1], 3, 0, 2*Math.PI);
+    ctx.fillStyle = '#888'; ctx.fill();
+
+    label3D('h = ' + h, 0.8, h/2, 0, '#e65100', 18, 0, ox, oy);
+    line2D(project(0, 0, 0, ox, oy), project(r, 0, 0, ox, oy), '#d32f2f', 1.5);
+    label3D('r = ' + r, r/2, 0, 0, '#d32f2f', 0, 16, ox, oy);
+  }
+}
+
+function drawPyramide(ox, oy, ghost) {
+  const a = vals.a, h = vals.h;
+  const col = ghost || '#1976d2';
+  const a1 = ghost ? 'rgba(194,24,91,0.04)' : 'rgba(25,118,210,0.06)';
+  const a2 = ghost ? 'rgba(194,24,91,0.06)' : 'rgba(25,118,210,0.08)';
+  const a3 = ghost ? 'rgba(194,24,91,0.03)' : 'rgba(25,118,210,0.04)';
+
+  const p = (x,y,z) => project(x,y,z,ox,oy);
+  const b = [p(-a/2,0,-a/2), p(a/2,0,-a/2), p(a/2,0,a/2), p(-a/2,0,a/2)];
+  const apex = p(0, h, 0);
+
+  // Base
+  poly2D([b[0],b[1],b[2],b[3]], a1, col);
+  // Hidden edges
+  line2D(b[0], apex, '#bbb', 1, [4,3]);
+  line2D(b[1], apex, '#bbb', 1, [4,3]);
+  // Visible edges
+  line2D(b[2], apex, col, 2);
+  line2D(b[3], apex, col, 2);
+  // Front face
+  poly2D([b[2], b[3], apex], a2, col);
+  // Right face
+  poly2D([b[1], b[2], apex], a3, col);
+
+  if (!ghost) {
+    // Height dashed
+    line2D(p(0,0,0), apex, '#888', 1.5, [5,3]);
+    label3D('a = ' + a, 0, 0, a/2, '#1976d2', 0, 18, ox, oy);
+    label3D('h = ' + h, 0.8, h/2, 0, '#e65100', 18, 0, ox, oy);
+  }
+}
+
+function drawSphere(ox, oy, ghost) {
+  const r = vals.r;
+  ox = ox || CX; oy = oy || CY;
+  const rp = r * SC;
+  const col = ghost || '#1976d2';
+  const fillC = ghost ? 'rgba(194,24,91,0.05)' : 'rgba(25,118,210,0.06)';
+  const colFade = ghost ? '#e48aab' : '#90caf9';
+
+  // Main circle
+  ctx.save();
+  ctx.beginPath(); ctx.arc(ox, oy, rp, 0, 2*Math.PI);
+  ctx.fillStyle = fillC; ctx.fill();
+  ctx.strokeStyle = col; ctx.lineWidth = 2.5; ctx.setLineDash([]); ctx.stroke();
+  ctx.restore();
+
+  // Equator ellipse
+  ctx.save();
+  ctx.beginPath(); ctx.ellipse(ox, oy, rp, rp*0.35, 0, 0, 2*Math.PI);
+  ctx.strokeStyle = col; ctx.lineWidth = 1.5; ctx.setLineDash([]); ctx.stroke();
+  ctx.restore();
+
+  // Meridian — back half dashed
+  ctx.save();
+  ctx.beginPath(); ctx.ellipse(ox, oy, rp*0.35, rp, 0, 0, Math.PI);
+  ctx.strokeStyle = colFade; ctx.lineWidth = 1.5; ctx.setLineDash([5,4]); ctx.stroke();
+  ctx.restore();
+  ctx.save();
+  ctx.beginPath(); ctx.ellipse(ox, oy, rp*0.35, rp, 0, Math.PI, 2*Math.PI);
+  ctx.strokeStyle = col; ctx.lineWidth = 1.5; ctx.setLineDash([]); ctx.stroke();
+  ctx.restore();
+
+  if (!ghost) {
+    // Radius line
+    ctx.save();
+    ctx.beginPath(); ctx.moveTo(ox, oy); ctx.lineTo(ox + rp, oy);
+    ctx.strokeStyle = '#d32f2f'; ctx.lineWidth = 2; ctx.stroke();
+    ctx.restore();
+    // Center dot
+    ctx.beginPath(); ctx.arc(ox, oy, 3, 0, 2*Math.PI);
+    ctx.fillStyle = col; ctx.fill();
+    label2D('r = ' + r, ox + rp/2, oy - 14, '#d32f2f');
+  }
+}
+
+/* ===== Main draw ===== */
 function draw() {
   const W = cv.width, H = cv.height;
   ctx.clearRect(0, 0, W, H);
 
-  // Light grid
-  ctx.strokeStyle = '#f0f0f0';
-  ctx.lineWidth = 1;
-  for (let x = 0; x < W; x += 20) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke(); }
-  for (let y = 0; y < H; y += 20) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke(); }
+  // Grid
+  ctx.save();
+  ctx.strokeStyle = '#f0f0f0'; ctx.lineWidth = 1;
+  for (let x = 0; x < W; x += 20) { ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,H); ctx.stroke(); }
+  for (let y = 0; y < H; y += 20) { ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(W,y); ctx.stroke(); }
+  ctx.restore();
 
-  const sc = 14; // scale factor
+  const hasGhost = Math.abs(kVal - 1) > 0.05;
 
+  if (hasGhost) {
+    // Draw original on the left, scaled on the right
+    const origOx = 160, ghostOx = 360;
+    const origOy = CY, ghostOy = CY;
+
+    // Save original vals, draw ghost with scaled vals
+    const saved = {...vals};
+
+    // Draw original (left)
+    drawSolid(origOx, origOy, false);
+
+    // Draw ghost (right) with scaled dimensions
+    Object.keys(vals).forEach(k => vals[k] = round2(saved[k] * kVal));
+    drawSolid(ghostOx, ghostOy, '#c2185b');
+    Object.keys(saved).forEach(k => vals[k] = saved[k]);
+
+    // Labels
+    ctx.save();
+    ctx.font = 'bold 12px Segoe UI, system-ui, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillStyle = '#1976d2';
+    ctx.fillText('Original', origOx, 380);
+    ctx.fillStyle = '#c2185b';
+    const kLabel = kVal > 1 ? `Agrandi (k = ${kVal})` : `R\u00E9duit (k = ${kVal})`;
+    ctx.fillText(kLabel, ghostOx, 380);
+    ctx.restore();
+  } else {
+    drawSolid(CX, CY, false);
+  }
+}
+
+function drawSolid(ox, oy, ghost) {
   switch (solid) {
-    case 'cube': drawCube(sc); break;
-    case 'pave': drawPave(sc); break;
-    case 'cylindre': drawCylindre(sc); break;
-    case 'cone': drawCone(sc); break;
-    case 'pyramide': drawPyramide(sc); break;
-    case 'sphere': drawSphere(sc); break;
+    case 'cube': drawCube(ox, oy, ghost); break;
+    case 'pave': drawPave(ox, oy, ghost); break;
+    case 'cylindre': drawCylindre(ox, oy, ghost); break;
+    case 'cone': drawCone(ox, oy, ghost); break;
+    case 'pyramide': drawPyramide(ox, oy, ghost); break;
+    case 'sphere': drawSphere(ox, oy, ghost); break;
   }
-
-  // Draw scaled version if k != 1
-  if (Math.abs(kVal - 1) > 0.01) {
-    drawScaledGhost(sc);
-  }
-}
-
-function drawCube(sc) {
-  const a = vals.a * sc;
-  const h = -a; // y goes up
-  // 8 vertices: bottom face then top face
-  const v = [
-    iso(-a/2, 0, -a/2), iso(a/2, 0, -a/2), iso(a/2, 0, a/2), iso(-a/2, 0, a/2),
-    iso(-a/2, h, -a/2), iso(a/2, h, -a/2), iso(a/2, h, a/2), iso(-a/2, h, a/2)
-  ];
-  // Bottom face
-  drawPoly3D([v[0], v[1], v[2], v[3]], 'rgba(25,118,210,0.06)', '#1976d2');
-  // Front face
-  drawPoly3D([v[3], v[2], v[6], v[7]], 'rgba(25,118,210,0.10)', '#1976d2');
-  // Right face
-  drawPoly3D([v[2], v[1], v[5], v[6]], 'rgba(25,118,210,0.04)', '#1976d2');
-  // Top face
-  drawPoly3D([v[4], v[5], v[6], v[7]], 'rgba(25,118,210,0.14)', '#1976d2');
-  // Hidden edges (dashed)
-  drawLine3D(v[0], v[4], '#aaa', 1, [4, 3]);
-  drawLine3D(v[0], v[1], '#aaa', 1, [4, 3]);
-  drawLine3D(v[0], v[3], '#aaa', 1, [4, 3]);
-
-  label3D('a=' + vals.a, 0, 0, vals.a*sc/2/sc, '#1976d2', 0, 18);
-}
-
-function drawPave(sc) {
-  const L = vals.L * sc, l = vals.l * sc, h = vals.h * sc;
-  const v = [
-    iso(-L/2, 0, -l/2), iso(L/2, 0, -l/2), iso(L/2, 0, l/2), iso(-L/2, 0, l/2),
-    iso(-L/2, -h, -l/2), iso(L/2, -h, -l/2), iso(L/2, -h, l/2), iso(-L/2, -h, l/2)
-  ];
-  drawPoly3D([v[0], v[1], v[2], v[3]], 'rgba(25,118,210,0.06)', '#1976d2');
-  drawPoly3D([v[3], v[2], v[6], v[7]], 'rgba(25,118,210,0.10)', '#1976d2');
-  drawPoly3D([v[2], v[1], v[5], v[6]], 'rgba(25,118,210,0.04)', '#1976d2');
-  drawPoly3D([v[4], v[5], v[6], v[7]], 'rgba(25,118,210,0.14)', '#1976d2');
-  drawLine3D(v[0], v[4], '#aaa', 1, [4, 3]);
-  drawLine3D(v[0], v[1], '#aaa', 1, [4, 3]);
-  drawLine3D(v[0], v[3], '#aaa', 1, [4, 3]);
-
-  label3D('L=' + vals.L, 0, 0, vals.l*sc/2/sc, '#1976d2', 0, 18);
-  label3D('l=' + vals.l, vals.L*sc/2/sc, 0, 0, '#e65100', 16, 8);
-  label3D('h=' + vals.h, vals.L*sc/2/sc, -h/2/sc*sc/sc, vals.l*sc/2/sc, '#2e7d32', 18, 0);
-}
-
-function drawCylindre(sc) {
-  const r = vals.r * sc, h = vals.h * sc;
-  // Bottom ellipse
-  drawEllipse3D(0, 0, 0, r/sc, r/sc, '#90caf9', 'rgba(25,118,210,0.06)');
-  // Side lines
-  // Find leftmost and rightmost points of ellipse
-  const ptsL = [], ptsR = [];
-  const n = 60;
-  let minX = Infinity, maxX = -Infinity, minIdx = 0, maxIdx = 0;
-  for (let i = 0; i <= n; i++) {
-    const t = (2 * Math.PI * i) / n;
-    const px = r/sc * Math.cos(t);
-    const pz = r/sc * Math.sin(t);
-    const p = iso(px, 0, pz);
-    if (p[0] < minX) { minX = p[0]; minIdx = i; }
-    if (p[0] > maxX) { maxX = p[0]; maxIdx = i; }
-  }
-  const tL = (2 * Math.PI * minIdx) / n;
-  const tR = (2 * Math.PI * maxIdx) / n;
-  const bL = iso(r/sc * Math.cos(tL), 0, r/sc * Math.sin(tL));
-  const bR = iso(r/sc * Math.cos(tR), 0, r/sc * Math.sin(tR));
-  const tpL = iso(r/sc * Math.cos(tL), -h/sc, r/sc * Math.sin(tL));
-  const tpR = iso(r/sc * Math.cos(tR), -h/sc, r/sc * Math.sin(tR));
-  drawLine3D(bL, tpL, '#1976d2', 2);
-  drawLine3D(bR, tpR, '#1976d2', 2);
-  // Top ellipse
-  drawEllipse3D(0, -h/sc, 0, r/sc, r/sc, '#1976d2', 'rgba(25,118,210,0.12)');
-
-  // Height dimension
-  const hPt1 = iso(r/sc + 1.5, 0, 0);
-  const hPt2 = iso(r/sc + 1.5, -h/sc, 0);
-  drawLine3D(hPt1, hPt2, '#e65100', 1.5, [5, 3]);
-  label3D('h=' + vals.h, r/sc + 2, -h/sc/2/sc, 0, '#e65100', 18, 0);
-  // Radius
-  drawLine3D(iso(0, -h/sc, 0), iso(r/sc, -h/sc, 0), '#d32f2f', 1.5);
-  label3D('r=' + vals.r, r/sc/2/sc, -h/sc/sc, 0, '#d32f2f', 0, -14);
-}
-
-function drawCone(sc) {
-  const r = vals.r * sc, h = vals.h * sc;
-  // Base ellipse
-  drawEllipse3D(0, 0, 0, r/sc, r/sc, '#1976d2', 'rgba(25,118,210,0.06)');
-  // Apex
-  const apex = iso(0, -h/sc, 0);
-  // Side lines to leftmost/rightmost of ellipse
-  const n = 60;
-  let minX = Infinity, maxX = -Infinity, minIdx = 0, maxIdx = 0;
-  for (let i = 0; i <= n; i++) {
-    const t = (2 * Math.PI * i) / n;
-    const p = iso(r/sc * Math.cos(t), 0, r/sc * Math.sin(t));
-    if (p[0] < minX) { minX = p[0]; minIdx = i; }
-    if (p[0] > maxX) { maxX = p[0]; maxIdx = i; }
-  }
-  const tL = (2 * Math.PI * minIdx) / n;
-  const tR = (2 * Math.PI * maxIdx) / n;
-  const bL = iso(r/sc * Math.cos(tL), 0, r/sc * Math.sin(tL));
-  const bR = iso(r/sc * Math.cos(tR), 0, r/sc * Math.sin(tR));
-  drawLine3D(bL, apex, '#1976d2', 2);
-  drawLine3D(bR, apex, '#1976d2', 2);
-
-  // Fill cone surface lightly
-  ctx.save();
-  ctx.beginPath();
-  ctx.moveTo(apex[0], apex[1]);
-  // Draw arc from bL to bR via front of ellipse
-  for (let i = minIdx; i <= maxIdx; i++) {
-    const t = (2 * Math.PI * i) / n;
-    const p = iso(r/sc * Math.cos(t), 0, r/sc * Math.sin(t));
-    ctx.lineTo(p[0], p[1]);
-  }
-  ctx.closePath();
-  ctx.fillStyle = 'rgba(25,118,210,0.06)';
-  ctx.fill();
-  ctx.restore();
-
-  // Height dashed line
-  drawLine3D(iso(0, 0, 0), apex, '#888', 1.5, [5, 3]);
-  // Center dot on base
-  const cBase = iso(0, 0, 0);
-  ctx.beginPath(); ctx.arc(cBase[0], cBase[1], 3, 0, 2*Math.PI);
-  ctx.fillStyle = '#888'; ctx.fill();
-
-  label3D('h=' + vals.h, 0.8, -h/sc/2/sc, 0, '#e65100', 18, 0);
-  drawLine3D(iso(0, 0, 0), iso(r/sc, 0, 0), '#d32f2f', 1.5);
-  label3D('r=' + vals.r, r/sc/2/sc, 0, 0, '#d32f2f', 0, 16);
-}
-
-function drawPyramide(sc) {
-  const a = vals.a * sc, h = vals.h * sc;
-  // Square base
-  const b = [
-    iso(-a/2, 0, -a/2), iso(a/2, 0, -a/2),
-    iso(a/2, 0, a/2), iso(-a/2, 0, a/2)
-  ];
-  const apex = iso(0, -h/sc, 0);
-
-  // Base
-  drawPoly3D([b[0], b[1], b[2], b[3]], 'rgba(25,118,210,0.06)', '#1976d2');
-
-  // Hidden edges from apex
-  drawLine3D(b[0], apex, '#aaa', 1, [4, 3]);
-  drawLine3D(b[1], apex, '#aaa', 1, [4, 3]);
-  // Visible edges
-  drawLine3D(b[2], apex, '#1976d2', 2);
-  drawLine3D(b[3], apex, '#1976d2', 2);
-
-  // Front face fill
-  ctx.save();
-  ctx.beginPath();
-  ctx.moveTo(b[2][0], b[2][1]); ctx.lineTo(b[3][0], b[3][1]);
-  ctx.lineTo(apex[0], apex[1]); ctx.closePath();
-  ctx.fillStyle = 'rgba(25,118,210,0.08)'; ctx.fill();
-  ctx.restore();
-
-  // Side face fill
-  ctx.save();
-  ctx.beginPath();
-  ctx.moveTo(b[1][0], b[1][1]); ctx.lineTo(b[2][0], b[2][1]);
-  ctx.lineTo(apex[0], apex[1]); ctx.closePath();
-  ctx.fillStyle = 'rgba(25,118,210,0.04)'; ctx.fill();
-  ctx.restore();
-
-  // Height dashed
-  drawLine3D(iso(0, 0, 0), apex, '#888', 1.5, [5, 3]);
-
-  label3D('a=' + vals.a, 0, 0, vals.a*sc/2/sc, '#1976d2', 0, 18);
-  label3D('h=' + vals.h, 0.8, -h/sc/2/sc, 0, '#e65100', 18, 0);
-}
-
-function drawSphere(sc) {
-  const r = vals.r * sc;
-
-  // Main circle
-  ctx.save();
-  ctx.beginPath();
-  ctx.arc(250, 210, r, 0, 2 * Math.PI);
-  ctx.fillStyle = 'rgba(25,118,210,0.06)';
-  ctx.fill();
-  ctx.strokeStyle = '#1976d2';
-  ctx.lineWidth = 2.5;
-  ctx.setLineDash([]);
-  ctx.stroke();
-  ctx.restore();
-
-  // Horizontal ellipse (equator)
-  ctx.save();
-  ctx.beginPath();
-  ctx.ellipse(250, 210, r, r * 0.35, 0, 0, 2 * Math.PI);
-  ctx.strokeStyle = '#1976d2';
-  ctx.lineWidth = 1.5;
-  ctx.setLineDash([]);
-  ctx.stroke();
-  ctx.restore();
-
-  // Vertical ellipse (meridian) - dashed for back half
-  ctx.save();
-  ctx.beginPath();
-  ctx.ellipse(250, 210, r * 0.35, r, 0, 0, Math.PI);
-  ctx.strokeStyle = '#90caf9';
-  ctx.lineWidth = 1.5;
-  ctx.setLineDash([5, 4]);
-  ctx.stroke();
-  ctx.restore();
-
-  ctx.save();
-  ctx.beginPath();
-  ctx.ellipse(250, 210, r * 0.35, r, 0, Math.PI, 2 * Math.PI);
-  ctx.strokeStyle = '#1976d2';
-  ctx.lineWidth = 1.5;
-  ctx.setLineDash([]);
-  ctx.stroke();
-  ctx.restore();
-
-  // Radius
-  ctx.save();
-  ctx.beginPath();
-  ctx.moveTo(250, 210);
-  ctx.lineTo(250 + r, 210);
-  ctx.strokeStyle = '#d32f2f';
-  ctx.lineWidth = 2;
-  ctx.stroke();
-  ctx.restore();
-
-  // Center dot
-  ctx.beginPath();
-  ctx.arc(250, 210, 3, 0, 2 * Math.PI);
-  ctx.fillStyle = '#1976d2';
-  ctx.fill();
-
-  // Label
-  ctx.save();
-  ctx.font = 'bold 13px Segoe UI, system-ui, sans-serif';
-  ctx.textAlign = 'center';
-  ctx.fillStyle = '#d32f2f';
-  ctx.fillText('r = ' + vals.r, 250 + r/2, 200);
-  ctx.restore();
-}
-
-function drawScaledGhost(sc) {
-  // Draw a smaller/larger ghost outline of the same solid
-  // We offset to the right and draw with pink/transparent
-  ctx.save();
-  ctx.globalAlpha = 0.35;
-
-  const ksc = sc * kVal;
-  // We temporarily shift the iso projection center
-  const origIso = iso;
-
-  // Override iso for ghost drawing — shift right
-  const shiftX = kVal > 1 ? -60 : 60;
-  const savedVals = {...vals};
-
-  // Scale all values
-  Object.keys(vals).forEach(k => vals[k] = savedVals[k] * kVal);
-
-  // Change stroke color for ghost
-  const ghostColor = '#c2185b';
-
-  ctx.globalAlpha = 0.3;
-
-  // Draw a simple outline - we reuse the draw functions but we'll just trace
-  // For simplicity, let's just draw a scaled circle/outline indicator
-  const cx2 = 250 + shiftX;
-  const cy2 = 210;
-
-  // Draw bounding indication
-  let maxDim;
-  switch (solid) {
-    case 'cube': maxDim = savedVals.a * kVal * sc; break;
-    case 'pave': maxDim = Math.max(savedVals.L, savedVals.l, savedVals.h) * kVal * sc; break;
-    case 'cylindre': maxDim = Math.max(savedVals.r * 2, savedVals.h) * kVal * sc; break;
-    case 'cone': maxDim = Math.max(savedVals.r * 2, savedVals.h) * kVal * sc; break;
-    case 'pyramide': maxDim = Math.max(savedVals.a, savedVals.h) * kVal * sc; break;
-    case 'sphere': maxDim = savedVals.r * 2 * kVal * sc; break;
-  }
-
-  // Restore vals
-  Object.keys(savedVals).forEach(k => vals[k] = savedVals[k]);
-
-  ctx.restore();
-
-  // Draw a more informative comparison: just text annotation
-  ctx.save();
-  ctx.font = 'bold 12px Segoe UI, system-ui, sans-serif';
-  ctx.textAlign = 'center';
-  ctx.fillStyle = '#c2185b';
-  const kLabel = kVal > 1 ? 'Agrandi ×' + kVal : 'Réduit ×' + kVal;
-  ctx.fillText(kLabel, 250, 385);
-  ctx.restore();
 }
 
 // Init
