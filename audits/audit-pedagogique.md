@@ -232,7 +232,7 @@ Les modules communs (combustion, transferts thermiques, moments, pression, solut
 
 ### Priorite critique
 - [x] Rediger `maths/premiere/ch05/lecon.html` (Polynomes degre 2) (2026-03-16)
-- [ ] Rediger `maths/premiere/ch09/lecon.html` (Trigonometrie)
+- [x] Rediger `maths/premiere/ch09/lecon.html` (Trigonometrie) (2026-03-16)
 
 ### Priorite haute
 - [x] Ajouter diff.js et differenciation dans `maths/premiere` (18 fichiers exercices + ds) (2026-03-16)
