@@ -13,13 +13,324 @@
 <div class="c">
 <a href="../../../maths-1ere-pro.html" class="nb">← Retour au sommaire</a>
 <header>
-  <h1>Chapitre 09 – Trigonométrie</h1>
+  <h1>Chapitre 9 – Trigonométrie</h1>
   <p class="sous-titre">1ère Bac Pro | Géométrie | Mathématiques</p>
 </header>
 
+<!-- ══════════════════════════════════════════════════════ -->
 <div class="objectifs">
   <h3>Objectifs du chapitre</h3>
-  <p>Contenu à venir.</p>
+  <ul class="styled">
+    <li>Convertir des angles entre degrés et radians</li>
+    <li>Connaître les valeurs exactes de sinus et cosinus pour les angles remarquables</li>
+    <li>Utiliser le cercle trigonométrique</li>
+    <li>Appliquer les relations trigonométriques dans un triangle rectangle (SOH-CAH-TOA)</li>
+    <li>Résoudre des problèmes de construction et de mesure en contexte professionnel</li>
+  </ul>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>1. Introduction — La trigonométrie dans les métiers</h2>
+
+<div class="situation">
+  <h3>Situation professionnelle — Charpentier</h3>
+  <p>
+    <strong>Contexte :</strong> Un charpentier doit calculer la hauteur d'un pignon de toiture. Il connaît l'angle d'inclinaison du versant (35°) et la demi-portée horizontale (4,50 m). Comment trouver la hauteur sans grimper sur le toit ?
+  </p>
+  <p>
+    La <strong>trigonométrie</strong> permet de calculer des longueurs et des angles dans les triangles rectangles. C'est un outil indispensable en construction, en topographie et dans de nombreux métiers.
+  </p>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>2. Conversion degrés / radians</h2>
+
+<div class="def">
+  <strong>Définition — Le radian :</strong><br>
+  Le <strong>radian</strong> est une unité de mesure des angles. Un angle d'un radian correspond à un arc de cercle dont la longueur est égale au rayon du cercle.<br><br>
+  Un tour complet vaut \(360° = 2\pi\) rad.
+</div>
+
+<div class="formule-box">
+  <div class="fb-label">Formules de conversion</div>
+  <div class="fb-formula">
+    \[\text{Degrés → Radians : } \alpha_{\text{rad}} = \alpha° \times \dfrac{\pi}{180}\]
+    \[\text{Radians → Degrés : } \alpha° = \alpha_{\text{rad}} \times \dfrac{180}{\pi}\]
+  </div>
+</div>
+
+<div class="ex">
+  <div class="ex-titre">Exemples de conversions</div>
+  <table class="full" style="text-align:center">
+    <tr><th>Degrés</th><td>0°</td><td>30°</td><td>45°</td><td>60°</td><td>90°</td><td>120°</td><td>180°</td><td>360°</td></tr>
+    <tr><th>Radians</th><td>\(0\)</td><td>\(\dfrac{\pi}{6}\)</td><td>\(\dfrac{\pi}{4}\)</td><td>\(\dfrac{\pi}{3}\)</td><td>\(\dfrac{\pi}{2}\)</td><td>\(\dfrac{2\pi}{3}\)</td><td>\(\pi\)</td><td>\(2\pi\)</td></tr>
+  </table>
+  <p>\(60° = 60 \times \dfrac{\pi}{180} = \dfrac{\pi}{3}\) rad. &nbsp;&nbsp; \(\dfrac{3\pi}{4}\) rad \(= \dfrac{3\pi}{4} \times \dfrac{180}{\pi} = 135°\).</p>
+</div>
+
+<div class="att">
+  <strong>Attention :</strong>
+  <ul class="styled">
+    <li>Ne pas confondre degrés et radians dans la calculatrice : vérifier le mode (DEG ou RAD) avant chaque calcul.</li>
+    <li>Les valeurs en radians s'expriment toujours en fonction de \(\pi\) (valeurs exactes).</li>
+  </ul>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>3. Le cercle trigonométrique</h2>
+
+<div class="def">
+  <strong>Définition — Cercle trigonométrique :</strong><br>
+  Le <strong>cercle trigonométrique</strong> est un cercle de centre \(O\) et de rayon 1, muni d'un repère orthonormé. Le sens positif est le sens inverse des aiguilles d'une montre (sens trigonométrique).
+</div>
+
+<div class="svg-wrap">
+<svg viewBox="-160 -160 320 320" xmlns="http://www.w3.org/2000/svg" style="max-width:360px;background:#fafbfc;border:1px solid #e2e8f0;border-radius:10px">
+  <!-- Axes -->
+  <line x1="-140" y1="0" x2="140" y2="0" stroke="#333" stroke-width="1"/>
+  <line x1="0" y1="140" x2="0" y2="-140" stroke="#333" stroke-width="1"/>
+  <text x="145" y="5" font-size="11" fill="#333">x</text>
+  <text x="5" y="-140" font-size="11" fill="#333">y</text>
+  <!-- Cercle -->
+  <circle cx="0" cy="0" r="100" fill="none" stroke="#0969da" stroke-width="2"/>
+  <!-- Graduations -->
+  <text x="105" y="15" font-size="10" fill="#555">1</text>
+  <text x="-115" y="15" font-size="10" fill="#555">−1</text>
+  <text x="5" y="-105" font-size="10" fill="#555">1</text>
+  <text x="5" y="115" font-size="10" fill="#555">−1</text>
+  <!-- Angles remarquables -->
+  <!-- π/6 (30°) -->
+  <line x1="0" y1="0" x2="86.6" y2="-50" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <circle cx="86.6" cy="-50" r="4" fill="#16a34a"/>
+  <text x="92" y="-52" font-size="9" fill="#16a34a">π/6</text>
+  <!-- π/4 (45°) -->
+  <line x1="0" y1="0" x2="70.7" y2="-70.7" stroke="#d97706" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <circle cx="70.7" cy="-70.7" r="4" fill="#d97706"/>
+  <text x="76" y="-73" font-size="9" fill="#d97706">π/4</text>
+  <!-- π/3 (60°) -->
+  <line x1="0" y1="0" x2="50" y2="-86.6" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <circle cx="50" cy="-86.6" r="4" fill="#dc2626"/>
+  <text x="55" y="-89" font-size="9" fill="#dc2626">π/3</text>
+  <!-- π/2 (90°) -->
+  <circle cx="0" cy="-100" r="4" fill="#7c3aed"/>
+  <text x="8" y="-100" font-size="9" fill="#7c3aed">π/2</text>
+  <!-- Points cardinaux -->
+  <circle cx="100" cy="0" r="3" fill="#333"/><text x="106" y="-5" font-size="9" fill="#333">0</text>
+  <circle cx="-100" cy="0" r="3" fill="#333"/><text x="-120" y="-5" font-size="9" fill="#333">π</text>
+  <circle cx="0" cy="100" r="3" fill="#333"/><text x="8" y="110" font-size="9" fill="#333">3π/2</text>
+  <!-- Légende -->
+  <text x="-90" y="-130" font-size="10" fill="#0969da" font-weight="bold">cos = abscisse, sin = ordonnée</text>
+</svg>
+</div>
+
+<div class="prop">
+  <strong>Propriété — Cosinus et sinus sur le cercle :</strong><br>
+  Pour un angle \(\alpha\), le point \(M\) sur le cercle trigonométrique a pour coordonnées :
+  \[M(\cos\alpha\;;\;\sin\alpha)\]
+  <ul class="styled">
+    <li>Le <strong>cosinus</strong> se lit sur l'axe horizontal (abscisse).</li>
+    <li>Le <strong>sinus</strong> se lit sur l'axe vertical (ordonnée).</li>
+  </ul>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>4. Valeurs exactes des angles remarquables</h2>
+
+<div class="retenir">
+  <h3>Tableau des valeurs exactes</h3>
+  <table class="full" style="text-align:center">
+    <tr style="background:var(--p-bg)">
+      <th>Angle</th>
+      <th>\(0°\)<br>\(0\)</th>
+      <th>\(30°\)<br>\(\dfrac{\pi}{6}\)</th>
+      <th>\(45°\)<br>\(\dfrac{\pi}{4}\)</th>
+      <th>\(60°\)<br>\(\dfrac{\pi}{3}\)</th>
+      <th>\(90°\)<br>\(\dfrac{\pi}{2}\)</th>
+    </tr>
+    <tr>
+      <th>\(\cos\)</th>
+      <td>\(1\)</td>
+      <td>\(\dfrac{\sqrt{3}}{2}\)</td>
+      <td>\(\dfrac{\sqrt{2}}{2}\)</td>
+      <td>\(\dfrac{1}{2}\)</td>
+      <td>\(0\)</td>
+    </tr>
+    <tr>
+      <th>\(\sin\)</th>
+      <td>\(0\)</td>
+      <td>\(\dfrac{1}{2}\)</td>
+      <td>\(\dfrac{\sqrt{2}}{2}\)</td>
+      <td>\(\dfrac{\sqrt{3}}{2}\)</td>
+      <td>\(1\)</td>
+    </tr>
+  </table>
+</div>
+
+<div class="meth">
+  <strong>Méthode — Retenir les valeurs exactes :</strong>
+  <div class="etape">
+    <div class="nc">1</div>
+    <div>Les cosinus décroissent de 1 à 0 quand l'angle augmente de 0° à 90°.</div>
+  </div>
+  <div class="etape">
+    <div class="nc">2</div>
+    <div>Les sinus croissent de 0 à 1 quand l'angle augmente de 0° à 90°.</div>
+  </div>
+  <div class="etape">
+    <div class="nc">3</div>
+    <div>Astuce : \(\cos(\alpha) = \sin(90° - \alpha)\). Par exemple \(\cos(30°) = \sin(60°) = \dfrac{\sqrt{3}}{2}\).</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>5. Trigonométrie dans le triangle rectangle</h2>
+
+<div class="def">
+  <strong>Définition — Relations trigonométriques (SOH-CAH-TOA) :</strong><br>
+  Dans un triangle rectangle, pour un angle aigu \(\alpha\) :
+  <ul class="styled">
+    <li>\(\sin(\alpha) = \dfrac{\text{côté opposé}}{\text{hypoténuse}}\) &nbsp; (<strong>S</strong>inus = <strong>O</strong>pposé / <strong>H</strong>ypoténuse)</li>
+    <li>\(\cos(\alpha) = \dfrac{\text{côté adjacent}}{\text{hypoténuse}}\) &nbsp; (<strong>C</strong>osinus = <strong>A</strong>djacent / <strong>H</strong>ypoténuse)</li>
+    <li>\(\tan(\alpha) = \dfrac{\text{côté opposé}}{\text{côté adjacent}}\) &nbsp; (<strong>T</strong>angente = <strong>O</strong>pposé / <strong>A</strong>djacent)</li>
+  </ul>
+</div>
+
+<div class="svg-wrap">
+<svg viewBox="0 0 360 220" xmlns="http://www.w3.org/2000/svg" style="max-width:360px;background:#fafbfc;border:1px solid #e2e8f0;border-radius:10px">
+  <!-- Triangle -->
+  <polygon points="40,180 300,180 300,40" fill="#dbeafe" fill-opacity="0.3" stroke="#0969da" stroke-width="2"/>
+  <!-- Angle droit -->
+  <rect x="280" y="160" width="20" height="20" fill="none" stroke="#333" stroke-width="1"/>
+  <!-- Angle α -->
+  <path d="M70,180 A30,30 0 0,0 58,160" fill="none" stroke="#e53e3e" stroke-width="2"/>
+  <text x="75" y="168" font-size="14" fill="#e53e3e" font-style="italic">α</text>
+  <!-- Labels côtés -->
+  <text x="150" y="200" font-size="13" fill="#0969da" font-weight="bold" text-anchor="middle">adjacent</text>
+  <text x="320" y="115" font-size="13" fill="#16a34a" font-weight="bold">opposé</text>
+  <text x="145" y="100" font-size="13" fill="#d97706" font-weight="bold" transform="rotate(-28,145,100)">hypoténuse</text>
+</svg>
+</div>
+
+<div class="meth">
+  <strong>Méthode — Choisir la bonne relation trigonométrique :</strong>
+  <div class="etape">
+    <div class="nc">1</div>
+    <div>Identifier le triangle rectangle et l'angle considéré.</div>
+  </div>
+  <div class="etape">
+    <div class="nc">2</div>
+    <div>Repérer les côtés connus et le côté cherché (opposé, adjacent, hypoténuse).</div>
+  </div>
+  <div class="etape">
+    <div class="nc">3</div>
+    <div>Choisir sin, cos ou tan selon les côtés impliqués :
+      <br>— Opposé et hypoténuse → <strong>sinus</strong>
+      <br>— Adjacent et hypoténuse → <strong>cosinus</strong>
+      <br>— Opposé et adjacent → <strong>tangente</strong>
+    </div>
+  </div>
+  <div class="etape">
+    <div class="nc">4</div>
+    <div>Poser l'équation et résoudre.</div>
+  </div>
+</div>
+
+<div class="att">
+  <strong>Attention :</strong>
+  <ul class="styled">
+    <li>L'hypoténuse est <strong>toujours</strong> le côté le plus long (face à l'angle droit).</li>
+    <li>Les côtés « opposé » et « adjacent » dépendent de l'angle choisi.</li>
+    <li>La tangente n'est pas définie pour 90° (\(\tan(90°)\) n'existe pas).</li>
+  </ul>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>6. Trouver un angle à partir d'un rapport</h2>
+
+<div class="prop">
+  <strong>Propriété — Fonctions réciproques :</strong><br>
+  Si l'on connaît le rapport trigonométrique et que l'on cherche l'angle :
+  <ul class="styled">
+    <li>Si \(\sin(\alpha) = k\), alors \(\alpha = \arcsin(k)\) (touche sin⁻¹ sur la calculatrice).</li>
+    <li>Si \(\cos(\alpha) = k\), alors \(\alpha = \arccos(k)\).</li>
+    <li>Si \(\tan(\alpha) = k\), alors \(\alpha = \arctan(k)\).</li>
+  </ul>
+</div>
+
+<div class="ex">
+  <div class="ex-titre">Exemple — Trouver un angle</div>
+  <p>Dans un triangle rectangle, le côté opposé mesure 3 m et l'hypoténuse 5 m.</p>
+  <p>\(\sin(\alpha) = \dfrac{3}{5} = 0{,}6\), donc \(\alpha = \arcsin(0{,}6) \approx 36{,}9°\).</p>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>7. Applications concrètes</h2>
+
+<div class="ex">
+  <div class="ex-titre">Exemple 1 — Hauteur d'un pignon (charpentier)</div>
+  <p>Reprenons la situation d'introduction. Angle = 35°, demi-portée = 4,50 m.</p>
+  <p>On connaît l'angle et le côté adjacent, on cherche le côté opposé (la hauteur \(h\)).</p>
+  <p>\(\tan(35°) = \dfrac{h}{4{,}50}\), donc \(h = 4{,}50 \times \tan(35°) = 4{,}50 \times 0{,}700 \approx 3{,}15\) m.</p>
+  <p>La hauteur du pignon est d'environ <strong>3,15 m</strong>.</p>
+</div>
+
+<div class="ex">
+  <div class="ex-titre">Exemple 2 — Longueur du rampant (charpentier)</div>
+  <p>Avec le même angle de 35° et la demi-portée de 4,50 m, on cherche la longueur du rampant \(L\) (hypoténuse).</p>
+  <p>\(\cos(35°) = \dfrac{4{,}50}{L}\), donc \(L = \dfrac{4{,}50}{\cos(35°)} = \dfrac{4{,}50}{0{,}819} \approx 5{,}49\) m.</p>
+  <p>Le rampant mesure environ <strong>5,49 m</strong>.</p>
+</div>
+
+<div class="ex">
+  <div class="ex-titre">Exemple 3 — Rampe d'accessibilité</div>
+  <p>Une rampe mesure 6 m au sol pour une hauteur de 58 cm (= 0,58 m). Quel est l'angle de pente ?</p>
+  <p>\(\tan(\alpha) = \dfrac{0{,}58}{6} \approx 0{,}0967\), donc \(\alpha = \arctan(0{,}0967) \approx 5{,}5°\).</p>
+  <p>La norme impose une pente maximale de 5°. Comme \(5{,}5° > 5°\), la rampe <strong>n'est pas conforme</strong>.</p>
+  <p>Longueur minimale pour être conforme : \(L_{\min} = \dfrac{0{,}58}{\tan(5°)} = \dfrac{0{,}58}{0{,}0875} \approx 6{,}6\) m.</p>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>8. Relation fondamentale</h2>
+
+<div class="prop">
+  <strong>Propriété — Relation fondamentale de la trigonométrie :</strong><br>
+  Pour tout angle \(\alpha\) :
+  \[\cos^2(\alpha) + \sin^2(\alpha) = 1\]
+</div>
+
+<div class="ex">
+  <div class="ex-titre">Exemple — Vérification</div>
+  <p>Pour \(\alpha = 30°\) : \(\cos^2(30°) + \sin^2(30°) = \left(\dfrac{\sqrt{3}}{2}\right)^2 + \left(\dfrac{1}{2}\right)^2 = \dfrac{3}{4} + \dfrac{1}{4} = 1\). Vérifié.</p>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>9. Synthèse</h2>
+
+<div class="retenir">
+  <h3>À retenir</h3>
+  <div class="card-grid">
+    <div class="formule-box">
+      <div class="fb-label">Conversion</div>
+      <div class="fb-formula">\(180° = \pi\) rad<br><small>\(\alpha_{\text{rad}} = \alpha° \times \frac{\pi}{180}\)</small></div>
+    </div>
+    <div class="formule-box green">
+      <div class="fb-label">Sinus</div>
+      <div class="fb-formula">\(\sin = \dfrac{\text{opposé}}{\text{hypoténuse}}\)</div>
+    </div>
+    <div class="formule-box orange">
+      <div class="fb-label">Cosinus</div>
+      <div class="fb-formula">\(\cos = \dfrac{\text{adjacent}}{\text{hypoténuse}}\)</div>
+    </div>
+    <div class="formule-box red">
+      <div class="fb-label">Tangente</div>
+      <div class="fb-formula">\(\tan = \dfrac{\text{opposé}}{\text{adjacent}}\)</div>
+    </div>
+  </div>
+</div>
+
+<div class="nav-footer">
+  <a href="exercices.html" class="nav-btn">Exercices du chapitre 9 →</a>
+  <a href="ds.html" class="nav-btn">DS du chapitre 9 →</a>
 </div>
 
 </div>

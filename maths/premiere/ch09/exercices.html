@@ -17,12 +17,230 @@
   <p class="sous-titre">1ère Bac Pro | Géométrie | Mathématiques</p>
 </header>
 
-<div class="objectifs">
-  <h3>Exercices</h3>
-  <p>Contenu à venir.</p>
+<!-- ══════════════════════════════════════════ RAPPELS ══════════════════════════════════════════ -->
+
+<div class="retenir">
+  <h3>Rappels essentiels</h3>
+  <ul>
+    <li><strong>Conversion :</strong> \(\alpha_{\text{rad}} = \alpha° \times \dfrac{\pi}{180}\) &nbsp; et &nbsp; \(\alpha° = \alpha_{\text{rad}} \times \dfrac{180}{\pi}\)</li>
+    <li><strong>SOH :</strong> \(\sin(\alpha) = \dfrac{\text{opposé}}{\text{hypoténuse}}\)</li>
+    <li><strong>CAH :</strong> \(\cos(\alpha) = \dfrac{\text{adjacent}}{\text{hypoténuse}}\)</li>
+    <li><strong>TOA :</strong> \(\tan(\alpha) = \dfrac{\text{opposé}}{\text{adjacent}}\)</li>
+    <li><strong>Relation fondamentale :</strong> \(\cos^2(\alpha) + \sin^2(\alpha) = 1\)</li>
+  </ul>
+</div>
+
+<!-- ══════════════════════════════════════════ NIVEAU 1 ══════════════════════════════════════════ -->
+
+<div class="niveau-header niv1"><span class="badge-green">Niveau 1</span><h2>Application directe</h2></div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 1</div>
+  <div class="exo-titre">Conversions degrés / radians</div>
+  <ol>
+    <li>Convertir en radians (valeur exacte) : 30°, 45°, 90°, 150°, 210°.</li>
+    <li>Convertir en degrés : \(\dfrac{\pi}{6}\), \(\dfrac{\pi}{3}\), \(\dfrac{3\pi}{4}\), \(\dfrac{5\pi}{3}\), \(2\pi\).</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>
+        \(30° = \dfrac{\pi}{6}\), \(45° = \dfrac{\pi}{4}\), \(90° = \dfrac{\pi}{2}\), \(150° = \dfrac{5\pi}{6}\), \(210° = \dfrac{7\pi}{6}\).
+      </li>
+      <li>
+        \(\dfrac{\pi}{6} = 30°\), \(\dfrac{\pi}{3} = 60°\), \(\dfrac{3\pi}{4} = 135°\), \(\dfrac{5\pi}{3} = 300°\), \(2\pi = 360°\).
+      </li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 2</div>
+  <div class="exo-titre">Valeurs exactes</div>
+  <p>Sans calculatrice, donner la valeur exacte de :</p>
+  <ol>
+    <li>\(\cos\left(\dfrac{\pi}{3}\right)\)</li>
+    <li>\(\sin\left(\dfrac{\pi}{4}\right)\)</li>
+    <li>\(\sin\left(\dfrac{\pi}{6}\right)\)</li>
+    <li>\(\cos\left(\dfrac{\pi}{2}\right)\)</li>
+    <li>\(\tan\left(\dfrac{\pi}{4}\right)\)</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>\(\cos\left(\dfrac{\pi}{3}\right) = \cos(60°) = \dfrac{1}{2}\)</li>
+      <li>\(\sin\left(\dfrac{\pi}{4}\right) = \sin(45°) = \dfrac{\sqrt{2}}{2}\)</li>
+      <li>\(\sin\left(\dfrac{\pi}{6}\right) = \sin(30°) = \dfrac{1}{2}\)</li>
+      <li>\(\cos\left(\dfrac{\pi}{2}\right) = \cos(90°) = 0\)</li>
+      <li>\(\tan\left(\dfrac{\pi}{4}\right) = \tan(45°) = \dfrac{\sin(45°)}{\cos(45°)} = 1\)</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 3</div>
+  <div class="exo-titre">Calculs dans un triangle rectangle</div>
+  <p>Un triangle \(ABC\) est rectangle en \(C\) avec \(\widehat{A} = 40°\) et \(AB = 10\) cm (hypoténuse).</p>
+  <ol>
+    <li>Calculer \(BC\) (côté opposé à l'angle \(A\)). Arrondir au dixième.</li>
+    <li>Calculer \(AC\) (côté adjacent à l'angle \(A\)). Arrondir au dixième.</li>
+    <li>Vérifier avec le théorème de Pythagore que \(AC^2 + BC^2 \approx AB^2\).</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>\(\sin(40°) = \dfrac{BC}{10}\), donc \(BC = 10 \times \sin(40°) = 10 \times 0{,}643 \approx 6{,}4\) cm.</li>
+      <li>\(\cos(40°) = \dfrac{AC}{10}\), donc \(AC = 10 \times \cos(40°) = 10 \times 0{,}766 \approx 7{,}7\) cm.</li>
+      <li>\(AC^2 + BC^2 \approx 7{,}7^2 + 6{,}4^2 = 59{,}29 + 40{,}96 = 100{,}25 \approx 100 = AB^2\). Vérifié (l'écart vient des arrondis).</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ NIVEAU 2 ══════════════════════════════════════════ -->
+
+<div class="niveau-header niv2"><span class="badge-blue">Niveau 2</span><h2>Entraînement</h2></div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 4</div>
+  <div class="exo-titre">Hauteur d'un bâtiment</div>
+  <p>Un topographe se place à 30 m du pied d'un immeuble. Il mesure un angle d'élévation de 52° vers le sommet de l'immeuble. L'appareil de mesure est à 1,60 m du sol.</p>
+  <ol>
+    <li>Faire un schéma de la situation et identifier le triangle rectangle.</li>
+    <li>Quelle relation trigonométrique permet de trouver la hauteur du bâtiment au-dessus de l'appareil ?</li>
+    <li>Calculer cette hauteur. Arrondir au dixième.</li>
+    <li>En déduire la hauteur totale de l'immeuble.</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>Le triangle rectangle est formé par : le topographe (pied), la base de l'immeuble (angle droit), et le sommet de l'immeuble. La distance au sol (30 m) est le côté adjacent et la hauteur cherchée est le côté opposé.</li>
+      <li>On connaît l'adjacent (30 m) et on cherche l'opposé → on utilise la <strong>tangente</strong>.</li>
+      <li>\(\tan(52°) = \dfrac{h}{30}\), donc \(h = 30 \times \tan(52°) = 30 \times 1{,}280 \approx 38{,}4\) m.</li>
+      <li>Hauteur totale = \(38{,}4 + 1{,}60 = 40{,}0\) m. L'immeuble mesure environ <strong>40 m</strong>.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 5</div>
+  <div class="exo-titre">Pente de toiture — Charpentier</div>
+  <p>Un charpentier doit réaliser un versant de toiture. La hauteur du pignon est de 2,80 m et la demi-portée horizontale est de 4 m.</p>
+  <ol>
+    <li>Calculer l'angle d'inclinaison du versant par rapport à l'horizontale.</li>
+    <li>Calculer la longueur du rampant (le versant incliné).</li>
+    <li>L'artisan a besoin de 15 % de marge pour les découpes. Quelle longueur de panneaux doit-il commander ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>\(\tan(\alpha) = \dfrac{2{,}80}{4} = 0{,}7\), donc \(\alpha = \arctan(0{,}7) \approx 35{,}0°\).</li>
+      <li>Avec le cosinus : \(\cos(35°) = \dfrac{4}{L}\), donc \(L = \dfrac{4}{\cos(35°)} = \dfrac{4}{0{,}819} \approx 4{,}88\) m.
+        <br>(Ou par Pythagore : \(L = \sqrt{4^2 + 2{,}80^2} = \sqrt{16 + 7{,}84} = \sqrt{23{,}84} \approx 4{,}88\) m.)</li>
+      <li>Avec la marge de 15 % : \(4{,}88 \times 1{,}15 \approx 5{,}61\) m. Il doit commander des panneaux d'au moins <strong>5,61 m</strong>.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 6</div>
+  <div class="exo-titre">Trouver un angle inconnu</div>
+  <p>Un triangle \(RST\) est rectangle en \(T\) avec \(RS = 13\) cm et \(RT = 12\) cm.</p>
+  <ol>
+    <li>Calculer \(ST\) à l'aide du théorème de Pythagore.</li>
+    <li>Calculer l'angle \(\widehat{R}\) en utilisant le cosinus.</li>
+    <li>En déduire l'angle \(\widehat{S}\).</li>
+    <li>Vérifier en calculant \(\sin(\widehat{R})\) et en comparant avec \(\dfrac{ST}{RS}\).</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>\(ST^2 = RS^2 - RT^2 = 169 - 144 = 25\), donc \(ST = 5\) cm.</li>
+      <li>\(\cos(\widehat{R}) = \dfrac{RT}{RS} = \dfrac{12}{13} \approx 0{,}923\), donc \(\widehat{R} = \arccos(0{,}923) \approx 22{,}6°\).</li>
+      <li>\(\widehat{S} = 90° - 22{,}6° = 67{,}4°\).</li>
+      <li>\(\sin(22{,}6°) \approx 0{,}384\) et \(\dfrac{ST}{RS} = \dfrac{5}{13} \approx 0{,}385\). Les valeurs concordent (écart dû aux arrondis).</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ NIVEAU 3 ══════════════════════════════════════════ -->
+
+<div class="niveau-header niv3"><span class="badge-yellow">Niveau 3</span><h2>Approfondissement</h2></div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 7</div>
+  <div class="exo-titre">Rampe d'accessibilité — Conformité aux normes</div>
+  <p>Un artisan menuisier doit installer une rampe d'accès pour personnes à mobilité réduite dans un bâtiment public. La porte d'entrée est surélevée de 45 cm par rapport au trottoir. La norme impose :</p>
+  <ul>
+    <li>Pente maximale : 5° pour les rampes de plus de 2 m</li>
+    <li>Largeur minimale : 1,20 m</li>
+  </ul>
+  <ol>
+    <li>Calculer la longueur minimale de la rampe au sol pour respecter la norme de pente.</li>
+    <li>Calculer la longueur réelle de la rampe (le long de la pente).</li>
+    <li>L'artisan dispose d'un espace de 5 m devant la porte. La rampe droite est-elle réalisable ?</li>
+    <li>Si l'espace est insuffisant, calculer l'angle de la rampe avec 5 m au sol. Est-ce conforme ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>Hauteur : 0,45 m. \(\tan(5°) = \dfrac{0{,}45}{L_{\text{sol}}}\), donc \(L_{\text{sol}} = \dfrac{0{,}45}{\tan(5°)} = \dfrac{0{,}45}{0{,}0875} \approx 5{,}14\) m.</li>
+      <li>\(\cos(5°) = \dfrac{L_{\text{sol}}}{L_{\text{rampe}}}\), donc \(L_{\text{rampe}} = \dfrac{5{,}14}{\cos(5°)} = \dfrac{5{,}14}{0{,}9962} \approx 5{,}16\) m.</li>
+      <li>L'espace disponible (5 m) est inférieur à la longueur minimale (5,14 m). La rampe droite <strong>n'est pas réalisable</strong> dans cet espace.</li>
+      <li>Avec 5 m au sol : \(\tan(\alpha) = \dfrac{0{,}45}{5} = 0{,}09\), donc \(\alpha = \arctan(0{,}09) \approx 5{,}14°\). C'est supérieur à 5° : <strong>non conforme</strong>.
+        <br>L'artisan devra envisager une rampe en coude ou un élévateur.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 8</div>
+  <div class="exo-titre">Câble de haubanage — Technicien de maintenance</div>
+  <p>Un technicien de maintenance doit installer un câble de haubanage pour stabiliser une antenne de 12 m de haut. Le câble part du sommet de l'antenne et est ancré au sol. L'angle entre le câble et le sol doit être compris entre 55° et 65° pour une stabilité optimale.</p>
+  <ol>
+    <li>Calculer la distance d'ancrage au sol si l'angle est de 60°.</li>
+    <li>Calculer la longueur du câble nécessaire dans ce cas.</li>
+    <li>Le technicien est contraint de placer l'ancrage à exactement 7 m du pied de l'antenne. Quel sera l'angle ? Est-ce dans la plage acceptable ?</li>
+    <li>Quelle longueur de câble faut-il dans ce cas ? (Ajouter 2 m pour les fixations.)</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>\(\tan(60°) = \dfrac{12}{d}\), donc \(d = \dfrac{12}{\tan(60°)} = \dfrac{12}{\sqrt{3}} = \dfrac{12\sqrt{3}}{3} = 4\sqrt{3} \approx 6{,}93\) m.</li>
+      <li>\(\sin(60°) = \dfrac{12}{L}\), donc \(L = \dfrac{12}{\sin(60°)} = \dfrac{12}{\frac{\sqrt{3}}{2}} = \dfrac{24}{\sqrt{3}} = 8\sqrt{3} \approx 13{,}86\) m.</li>
+      <li>\(\tan(\alpha) = \dfrac{12}{7} \approx 1{,}714\), donc \(\alpha = \arctan(1{,}714) \approx 59{,}7°\).
+        <br>L'angle est compris entre 55° et 65° : <strong>c'est acceptable</strong>.</li>
+      <li>\(L = \sqrt{12^2 + 7^2} = \sqrt{144 + 49} = \sqrt{193} \approx 13{,}89\) m.
+        <br>Avec les fixations : \(13{,}89 + 2 = 15{,}89\) m. Commander <strong>16 m de câble</strong>.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <div class="exo-num">Exercice 9</div>
+  <div class="exo-titre">Problème de synthèse — Toiture et isolation</div>
+  <p>Un installateur thermique doit isoler la toiture d'un bâtiment. Le versant de la toiture a les caractéristiques suivantes : angle d'inclinaison 38°, largeur du bâtiment = 10 m (donc demi-portée = 5 m). La toiture est symétrique.</p>
+  <ol>
+    <li>Calculer la hauteur du pignon.</li>
+    <li>Calculer la longueur d'un rampant.</li>
+    <li>Calculer la surface totale des deux versants si le bâtiment mesure 15 m de long.</li>
+    <li>L'isolant coûte 18 €/m² posé. Calculer le coût total de l'isolation de la toiture.</li>
+    <li>L'installateur prévoit 10 % de pertes à la découpe. Quel budget total prévoir ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol>
+      <li>\(\tan(38°) = \dfrac{h}{5}\), donc \(h = 5 \times \tan(38°) = 5 \times 0{,}781 \approx 3{,}91\) m.</li>
+      <li>\(\cos(38°) = \dfrac{5}{L}\), donc \(L = \dfrac{5}{\cos(38°)} = \dfrac{5}{0{,}788} \approx 6{,}35\) m.</li>
+      <li>Surface d'un versant : \(6{,}35 \times 15 = 95{,}25\) m². Surface totale (2 versants) : \(95{,}25 \times 2 = 190{,}5\) m².</li>
+      <li>Coût : \(190{,}5 \times 18 = 3\,429\) €.</li>
+      <li>Avec 10 % de pertes : \(3\,429 \times 1{,}10 \approx 3\,772\) €. Budget à prévoir : <strong>3 772 €</strong>.</li>
+    </ol>
+  </div>
 </div>
 
 </div>
+
+<script>function toggle(btn){const c=btn.nextElementSibling;if(c.style.display==='block'){c.style.display='none';btn.textContent='Voir la correction';}else{c.style.display='block';btn.textContent='Masquer la correction';}}</script>
 <script src="../../../nav.js"></script>
 </body>
 </html>

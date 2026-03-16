@@ -13,13 +13,335 @@
 <div class="c">
 <a href="../../../maths-1ere-pro.html" class="nb">← Retour au sommaire</a>
 <header>
-  <h1>Chapitre 05 – Fonctions polynômes de degré 2</h1>
+  <h1>Chapitre 5 – Fonctions polynômes de degré 2</h1>
   <p class="sous-titre">1ère Bac Pro | Algèbre – Analyse | Mathématiques</p>
 </header>
 
+<!-- ══════════════════════════════════════════════════════ -->
 <div class="objectifs">
   <h3>Objectifs du chapitre</h3>
-  <p>Contenu à venir.</p>
+  <ul class="styled">
+    <li>Reconnaître une fonction polynôme de degré 2 et identifier ses coefficients</li>
+    <li>Déterminer le sommet et l'axe de symétrie de la parabole</li>
+    <li>Calculer le discriminant et les racines éventuelles</li>
+    <li>Dresser le tableau de signes et de variations</li>
+    <li>Résoudre des problèmes concrets modélisés par une fonction du second degré</li>
+  </ul>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>1. Introduction — Les paraboles dans la vie courante</h2>
+
+<div class="situation">
+  <h3>Situation professionnelle — Charpentier</h3>
+  <p>
+    <strong>Contexte :</strong> Un charpentier conçoit une arche en bois pour l'entrée d'un jardin. La forme de l'arche suit une courbe parabolique. Pour garantir le passage d'un véhicule, il doit calculer la <strong>hauteur maximale</strong> de l'arche et vérifier que la largeur est suffisante à une certaine hauteur.
+  </p>
+  <p>
+    La hauteur de l'arche est modélisée par \(h(x) = -x^2 + 4x\), où \(x\) est la distance horizontale en mètres.
+    Ce type de fonction s'appelle une <strong>fonction polynôme de degré 2</strong>.
+  </p>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>2. Forme générale et reconnaissance</h2>
+
+<div class="def">
+  <strong>Définition — Fonction polynôme de degré 2 :</strong><br>
+  Une <strong>fonction polynôme de degré 2</strong> est une fonction \(f\) définie sur \(\mathbb{R}\) par :
+  \[f(x) = ax^2 + bx + c\]
+  où \(a\), \(b\) et \(c\) sont des nombres réels avec \(a \neq 0\).
+  <ul class="styled">
+    <li>\(a\) est le <strong>coefficient dominant</strong> (il détermine l'ouverture de la parabole)</li>
+    <li>\(b\) est le coefficient du terme en \(x\)</li>
+    <li>\(c\) est le <strong>terme constant</strong> (c'est l'ordonnée à l'origine : \(f(0) = c\))</li>
+  </ul>
+</div>
+
+<div class="ex">
+  <div class="ex-titre">Exemple — Identifier les coefficients</div>
+  <table class="full">
+    <tr><th>Fonction</th><th>\(a\)</th><th>\(b\)</th><th>\(c\)</th></tr>
+    <tr><td>\(f(x) = 2x^2 - 8x + 6\)</td><td>2</td><td>−8</td><td>6</td></tr>
+    <tr><td>\(g(x) = -x^2 + 4x\)</td><td>−1</td><td>4</td><td>0</td></tr>
+    <tr><td>\(h(x) = 3x^2 + 5\)</td><td>3</td><td>0</td><td>5</td></tr>
+  </table>
+</div>
+
+<div class="prop">
+  <strong>Propriété — Forme de la parabole :</strong><br>
+  La courbe représentative d'une fonction du second degré est une <strong>parabole</strong>.
+  <ul class="styled">
+    <li>Si \(a > 0\) : la parabole est ouverte <strong>vers le haut</strong> (forme en U) — elle admet un <strong>minimum</strong>.</li>
+    <li>Si \(a < 0\) : la parabole est ouverte <strong>vers le bas</strong> (forme en ∩) — elle admet un <strong>maximum</strong>.</li>
+  </ul>
+</div>
+
+<div class="svg-wrap">
+<svg viewBox="0 0 500 220" xmlns="http://www.w3.org/2000/svg" style="max-width:500px;background:#fafbfc;border:1px solid #e2e8f0;border-radius:10px">
+  <!-- Parabole a > 0 -->
+  <text x="125" y="20" text-anchor="middle" font-size="13" fill="#0969da" font-weight="bold">a &gt; 0</text>
+  <line x1="30" y1="180" x2="220" y2="180" stroke="#333" stroke-width="1"/>
+  <line x1="125" y1="190" x2="125" y2="30" stroke="#333" stroke-width="1"/>
+  <path d="M40,50 Q125,195 210,50" fill="none" stroke="#0969da" stroke-width="2.5"/>
+  <circle cx="125" cy="175" r="4" fill="#e53e3e"/>
+  <text x="135" y="195" font-size="11" fill="#e53e3e">minimum</text>
+  <!-- Parabole a < 0 -->
+  <text x="375" y="20" text-anchor="middle" font-size="13" fill="#d97706" font-weight="bold">a &lt; 0</text>
+  <line x1="280" y1="180" x2="470" y2="180" stroke="#333" stroke-width="1"/>
+  <line x1="375" y1="190" x2="375" y2="30" stroke="#333" stroke-width="1"/>
+  <path d="M290,170 Q375,20 460,170" fill="none" stroke="#d97706" stroke-width="2.5"/>
+  <circle cx="375" cy="40" r="4" fill="#e53e3e"/>
+  <text x="385" y="38" font-size="11" fill="#e53e3e">maximum</text>
+</svg>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>3. Sommet et axe de symétrie</h2>
+
+<div class="def">
+  <strong>Définition — Sommet de la parabole :</strong><br>
+  Le <strong>sommet</strong> \(S\) de la parabole est le point le plus bas (si \(a > 0\)) ou le plus haut (si \(a < 0\)) de la courbe. C'est le point où la fonction atteint son extremum.
+</div>
+
+<div class="formule-box">
+  <div class="fb-label">Coordonnées du sommet</div>
+  <div class="fb-formula">
+    \[x_S = \dfrac{-b}{2a} \qquad\text{et}\qquad y_S = f(x_S)\]
+  </div>
+</div>
+
+<div class="prop">
+  <strong>Propriété — Axe de symétrie :</strong><br>
+  La parabole admet un <strong>axe de symétrie</strong> : c'est la droite verticale d'équation \(x = x_S = \dfrac{-b}{2a}\).
+</div>
+
+<div class="meth">
+  <strong>Méthode — Calculer le sommet :</strong>
+  <div class="etape">
+    <div class="nc">1</div>
+    <div>Identifier \(a\), \(b\), \(c\).</div>
+  </div>
+  <div class="etape">
+    <div class="nc">2</div>
+    <div>Calculer \(x_S = \dfrac{-b}{2a}\).</div>
+  </div>
+  <div class="etape">
+    <div class="nc">3</div>
+    <div>Calculer \(y_S = f(x_S)\) en remplaçant \(x\) par \(x_S\) dans l'expression de \(f\).</div>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="ex-titre">Exemple — Sommet de \(f(x) = 2x^2 - 8x + 6\)</div>
+  <p>\(a = 2\), \(b = -8\), \(c = 6\).</p>
+  <p>\(x_S = \dfrac{-(-8)}{2 \times 2} = \dfrac{8}{4} = 2\).</p>
+  <p>\(y_S = f(2) = 2(4) - 8(2) + 6 = 8 - 16 + 6 = -2\).</p>
+  <p>Le sommet est \(S(2\;;\;-2)\). Comme \(a = 2 > 0\), c'est un <strong>minimum</strong>.</p>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>4. Discriminant et racines</h2>
+
+<div class="def">
+  <strong>Définition — Discriminant :</strong><br>
+  Le <strong>discriminant</strong> de l'équation \(ax^2 + bx + c = 0\) est le nombre :
+  \[\Delta = b^2 - 4ac\]
+</div>
+
+<div class="prop">
+  <strong>Propriété — Nombre de solutions selon \(\Delta\) :</strong>
+  <ul class="styled">
+    <li>Si \(\Delta > 0\) : l'équation admet <strong>deux solutions distinctes</strong> :
+      \[x_1 = \dfrac{-b - \sqrt{\Delta}}{2a} \qquad\text{et}\qquad x_2 = \dfrac{-b + \sqrt{\Delta}}{2a}\]
+    </li>
+    <li>Si \(\Delta = 0\) : l'équation admet <strong>une solution double</strong> :
+      \[x_0 = \dfrac{-b}{2a}\]
+    </li>
+    <li>Si \(\Delta < 0\) : l'équation n'admet <strong>aucune solution réelle</strong>.</li>
+  </ul>
+</div>
+
+<div class="svg-wrap">
+<svg viewBox="0 0 540 180" xmlns="http://www.w3.org/2000/svg" style="max-width:540px;background:#fafbfc;border:1px solid #e2e8f0;border-radius:10px">
+  <!-- Cas Δ > 0 -->
+  <text x="90" y="18" text-anchor="middle" font-size="12" fill="#16a34a" font-weight="bold">Δ &gt; 0 : 2 racines</text>
+  <line x1="10" y1="130" x2="170" y2="130" stroke="#333" stroke-width="1"/>
+  <path d="M20,40 Q90,170 160,40" fill="none" stroke="#0969da" stroke-width="2"/>
+  <circle cx="48" cy="130" r="4" fill="#e53e3e"/><circle cx="132" cy="130" r="4" fill="#e53e3e"/>
+  <text x="40" y="150" font-size="10" fill="#e53e3e">x₁</text>
+  <text x="124" y="150" font-size="10" fill="#e53e3e">x₂</text>
+  <!-- Cas Δ = 0 -->
+  <text x="270" y="18" text-anchor="middle" font-size="12" fill="#d97706" font-weight="bold">Δ = 0 : 1 racine</text>
+  <line x1="190" y1="130" x2="350" y2="130" stroke="#333" stroke-width="1"/>
+  <path d="M200,40 Q270,140 340,40" fill="none" stroke="#0969da" stroke-width="2"/>
+  <circle cx="270" cy="130" r="4" fill="#e53e3e"/>
+  <text x="262" y="150" font-size="10" fill="#e53e3e">x₀</text>
+  <!-- Cas Δ < 0 -->
+  <text x="450" y="18" text-anchor="middle" font-size="12" fill="#dc2626" font-weight="bold">Δ &lt; 0 : 0 racine</text>
+  <line x1="370" y1="130" x2="530" y2="130" stroke="#333" stroke-width="1"/>
+  <path d="M380,40 Q450,110 520,40" fill="none" stroke="#0969da" stroke-width="2"/>
+</svg>
+</div>
+
+<div class="meth">
+  <strong>Méthode — Résoudre \(ax^2 + bx + c = 0\) :</strong>
+  <div class="etape">
+    <div class="nc">1</div>
+    <div>Identifier \(a\), \(b\), \(c\).</div>
+  </div>
+  <div class="etape">
+    <div class="nc">2</div>
+    <div>Calculer \(\Delta = b^2 - 4ac\).</div>
+  </div>
+  <div class="etape">
+    <div class="nc">3</div>
+    <div>Selon le signe de \(\Delta\) : appliquer la formule des racines ou conclure « pas de solution ».</div>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="ex-titre">Exemple — Résoudre \(2x^2 - 8x + 6 = 0\)</div>
+  <p>\(a = 2\), \(b = -8\), \(c = 6\).</p>
+  <p>\(\Delta = (-8)^2 - 4 \times 2 \times 6 = 64 - 48 = 16 > 0\) : deux solutions.</p>
+  <p>\(\sqrt{\Delta} = 4\).</p>
+  <p>\(x_1 = \dfrac{8 - 4}{4} = 1\) et \(x_2 = \dfrac{8 + 4}{4} = 3\).</p>
+</div>
+
+<div class="att">
+  <strong>Attention — Erreurs fréquentes :</strong>
+  <ul class="styled">
+    <li>Ne pas oublier le signe de \(b\) dans \(-b\) : si \(b = -8\), alors \(-b = 8\).</li>
+    <li>Le discriminant peut être nul ou négatif : toujours vérifier le signe de \(\Delta\) avant de calculer les racines.</li>
+    <li>La formule des racines nécessite \(\sqrt{\Delta}\) : vérifier que \(\Delta \geq 0\).</li>
+  </ul>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>5. Forme factorisée</h2>
+
+<div class="prop">
+  <strong>Propriété — Forme factorisée :</strong><br>
+  Si \(\Delta > 0\), la fonction \(f(x) = ax^2 + bx + c\) peut s'écrire sous forme factorisée :
+  \[f(x) = a(x - x_1)(x - x_2)\]
+  où \(x_1\) et \(x_2\) sont les racines.
+</div>
+
+<div class="ex">
+  <div class="ex-titre">Exemple — Vérification par développement</div>
+  <p>On a trouvé que \(f(x) = 2x^2 - 8x + 6\) a pour racines \(x_1 = 1\) et \(x_2 = 3\).</p>
+  <p>Forme factorisée : \(f(x) = 2(x-1)(x-3)\).</p>
+  <p><strong>Vérification :</strong> \(2(x-1)(x-3) = 2(x^2 - 4x + 3) = 2x^2 - 8x + 6\). C'est bien \(f(x)\).</p>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>6. Tableau de signes</h2>
+
+<div class="prop">
+  <strong>Propriété — Signe de \(f(x) = ax^2 + bx + c\) :</strong><br>
+  Le signe de \(f(x)\) dépend du signe de \(a\) et du discriminant \(\Delta\) :
+  <ul class="styled">
+    <li>Si \(\Delta > 0\) : \(f(x)\) est <strong>du signe de \(a\)</strong> à l'extérieur des racines et <strong>du signe opposé</strong> entre les racines.</li>
+    <li>Si \(\Delta = 0\) : \(f(x)\) est <strong>du signe de \(a\)</strong> pour tout \(x\) (et \(f(x) = 0\) uniquement en \(x_0\)).</li>
+    <li>Si \(\Delta < 0\) : \(f(x)\) est <strong>du signe de \(a\)</strong> pour tout \(x\) (jamais nul).</li>
+  </ul>
+</div>
+
+<div class="meth">
+  <strong>Méthode — Dresser le tableau de signes (cas \(\Delta > 0\)) :</strong>
+  <div class="etape">
+    <div class="nc">1</div>
+    <div>Calculer les racines \(x_1\) et \(x_2\) (avec \(x_1 < x_2\)).</div>
+  </div>
+  <div class="etape">
+    <div class="nc">2</div>
+    <div>Placer \(x_1\) et \(x_2\) dans le tableau, avec \(0\) en-dessous.</div>
+  </div>
+  <div class="etape">
+    <div class="nc">3</div>
+    <div>À l'extérieur des racines : signe de \(a\). Entre les racines : signe opposé de \(a\).</div>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="ex-titre">Exemple — Tableau de signes de \(f(x) = 2x^2 - 8x + 6\)</div>
+  <p>\(a = 2 > 0\), racines : \(x_1 = 1\) et \(x_2 = 3\).</p>
+  <table class="full" style="text-align:center">
+    <tr><th>\(x\)</th><td>\(-\infty\)</td><td></td><td>\(1\)</td><td></td><td>\(3\)</td><td></td><td>\(+\infty\)</td></tr>
+    <tr><th>Signe de \(f(x)\)</th><td></td><td>\(+\)</td><td>\(0\)</td><td>\(-\)</td><td>\(0\)</td><td>\(+\)</td><td></td></tr>
+  </table>
+  <p>Donc \(f(x) \geq 0\) pour \(x \in\;]-\infty\;;\;1] \cup [3\;;\;+\infty[\).</p>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>7. Tableau de variations</h2>
+
+<div class="prop">
+  <strong>Propriété — Variations d'une fonction du second degré :</strong>
+  <ul class="styled">
+    <li>Si \(a > 0\) : \(f\) est <strong>décroissante</strong> sur \(]-\infty\;;\;x_S]\) puis <strong>croissante</strong> sur \([x_S\;;\;+\infty[\). Le minimum est \(f(x_S)\).</li>
+    <li>Si \(a < 0\) : \(f\) est <strong>croissante</strong> sur \(]-\infty\;;\;x_S]\) puis <strong>décroissante</strong> sur \([x_S\;;\;+\infty[\). Le maximum est \(f(x_S)\).</li>
+  </ul>
+</div>
+
+<div class="ex">
+  <div class="ex-titre">Exemple — Variations de \(f(x) = 2x^2 - 8x + 6\)</div>
+  <p>\(a = 2 > 0\), sommet \(S(2\;;\;-2)\).</p>
+  <p>\(f\) est décroissante sur \(]-\infty\;;\;2]\) et croissante sur \([2\;;\;+\infty[\).</p>
+  <p>Le minimum de \(f\) est \(-2\), atteint en \(x = 2\).</p>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>8. Applications concrètes</h2>
+
+<div class="ex">
+  <div class="ex-titre">Exemple 1 — Arche parabolique (charpentier)</div>
+  <p>L'arche de l'introduction est modélisée par \(h(x) = -x^2 + 4x\) sur \([0\;;\;4]\).</p>
+  <p><strong>a) Pieds de l'arche :</strong> \(h(x) = 0 \iff -x^2 + 4x = 0 \iff x(-x + 4) = 0\), soit \(x = 0\) ou \(x = 4\). L'arche mesure 4 m de largeur au sol.</p>
+  <p><strong>b) Hauteur maximale :</strong> \(x_S = \dfrac{-4}{2 \times (-1)} = 2\). \(h(2) = -4 + 8 = 4\) m. L'arche culmine à <strong>4 mètres</strong>.</p>
+  <p><strong>c) Passage d'un camion de 2,5 m de haut :</strong> On vérifie que \(h(x) \geq 2{,}5\) aux bords du camion (centré en \(x = 2\), largeur 2 m, donc bords en \(x = 1\) et \(x = 3\)).
+  <br>\(h(1) = -1 + 4 = 3 \geq 2{,}5\) et \(h(3) = -9 + 12 = 3 \geq 2{,}5\). Le camion passe.</p>
+</div>
+
+<div class="ex">
+  <div class="ex-titre">Exemple 2 — Seuil de rentabilité (menuisier agenceur)</div>
+  <p>Le bénéfice d'un artisan pour la fabrication de \(x\) meubles est \(B(x) = -2x^2 + 40x - 150\).</p>
+  <p><strong>a) Seuils de rentabilité :</strong> \(B(x) = 0 \iff -2x^2 + 40x - 150 = 0 \iff x^2 - 20x + 75 = 0\).</p>
+  <p>\(\Delta = 400 - 300 = 100\), \(\sqrt{\Delta} = 10\).</p>
+  <p>\(x_1 = \dfrac{20 - 10}{2} = 5\) et \(x_2 = \dfrac{20 + 10}{2} = 15\).</p>
+  <p>L'artisan est rentable entre 5 et 15 meubles fabriqués.</p>
+  <p><strong>b) Bénéfice maximal :</strong> \(x_S = \dfrac{-40}{2 \times (-2)} = 10\). \(B(10) = -200 + 400 - 150 = 50\) €.</p>
+  <p>Le bénéfice maximal est de <strong>50 €</strong>, atteint pour 10 meubles.</p>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<h2>9. Synthèse</h2>
+
+<div class="retenir">
+  <h3>À retenir</h3>
+  <div class="card-grid">
+    <div class="formule-box">
+      <div class="fb-label">Forme générale</div>
+      <div class="fb-formula">\(f(x) = ax^2 + bx + c\)<br><small>\(a \neq 0\)</small></div>
+    </div>
+    <div class="formule-box green">
+      <div class="fb-label">Sommet</div>
+      <div class="fb-formula">\(x_S = \dfrac{-b}{2a}\)<br><small>min si \(a > 0\), max si \(a < 0\)</small></div>
+    </div>
+    <div class="formule-box orange">
+      <div class="fb-label">Discriminant</div>
+      <div class="fb-formula">\(\Delta = b^2 - 4ac\)<br><small>\(\Delta > 0\) : 2 racines, \(\Delta = 0\) : 1, \(\Delta < 0\) : 0</small></div>
+    </div>
+    <div class="formule-box red">
+      <div class="fb-label">Racines</div>
+      <div class="fb-formula">\(x = \dfrac{-b \pm \sqrt{\Delta}}{2a}\)<br><small>si \(\Delta \geq 0\)</small></div>
+    </div>
+  </div>
+</div>
+
+<div class="nav-footer">
+  <a href="exercices.html" class="nav-btn">Exercices du chapitre 5 →</a>
+  <a href="ds.html" class="nav-btn">DS du chapitre 5 →</a>
 </div>
 
 </div>
