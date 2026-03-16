@@ -9,9 +9,9 @@
 
 ## Resume executif
 
-Le site presente une bonne coherence globale dans sa structure HTML et son usage des classes CSS. Les variables de couleur par matiere/niveau sont correctement appliquees sur l'ensemble du site. Cependant, **trois problemes critiques** ont ete identifies, principalement lies aux **chemins absolus** qui empechent le bon fonctionnement sur GitHub Pages. On note aussi des **incoherences dans la differenciation pedagogique** (diff.js present en Seconde alors que CLAUDE.md le reserve a Premiere/Terminale) et des **simulations non autonomes** (26 sur 63 incluent nav.js contrairement a la convention).
+Le site presente une bonne coherence globale dans sa structure HTML et son usage des classes CSS. Les variables de couleur par matiere/niveau sont correctement appliquees sur l'ensemble du site. Les **trois problemes critiques de chemins absolus** (nav.js, nav.css, diff.js) ont ete **corriges le 2026-03-16** (104 fichiers). Il reste des problemes de **liens casses** (5 sommaires + 1 lien interne), des **simulations non autonomes** (26/63 incluent nav.js) et la **differenciation absente en maths/premiere** (18 fichiers).
 
-**Score de conformite** : 78/100
+**Score de conformite** : 85/100
 
 | Dimension | Etat |
 |---|---|
@@ -19,9 +19,9 @@ Le site presente une bonne coherence globale dans sa structure HTML et son usage
 | Variables CSS par matiere/niveau | Conforme |
 | Redefinitions CSS inline interdites | Conforme |
 | Chemins vers styles.css | Conforme (relatifs) |
-| Chemins vers nav.js | NON CONFORME (61 absolus) |
-| Chemins vers nav.css | NON CONFORME (37 absolus) |
-| Chemins vers diff.js | NON CONFORME (6 absolus) |
+| Chemins vers nav.js | Conforme (corrige 2026-03-16) |
+| Chemins vers nav.css | Conforme (corrige 2026-03-16) |
+| Chemins vers diff.js | Conforme (corrige 2026-03-16) |
 | Simulations autonomes | NON CONFORME (26/63 avec nav.js) |
 | diff.js uniquement exercices/ds | NON CONFORME (present en Seconde) |
 | Liens de retour sommaire | PARTIELLEMENT CONFORME |
@@ -89,38 +89,23 @@ Aucune redefinition inline des classes `.def`, `.prop`, `.att`, `.meth`, `.reten
 
 ## 3. Liens et chemins
 
-### 3.1 Chemins absolus vers nav.js — CRITIQUE (61 fichiers)
+### 3.1 Chemins absolus vers nav.js — CORRIGE
 
-**Gravite : CRITIQUE**
+~~**Gravite : CRITIQUE** — 61 fichiers utilisaient `src="/nav.js"` au lieu du chemin relatif.~~
 
-61 fichiers utilisent `<script src="/nav.js"></script>` au lieu du chemin relatif. Sur GitHub Pages, ces chemins ne resolvent pas correctement si le site est heberge dans un sous-repertoire.
+**Corrige le 2026-03-16** : 61 fichiers corriges → `src="../../../nav.js"`. 0 chemin absolu restant.
 
-**Sections touchees** :
-- `maths/terminale/ch01-ch11/` : lecon.html, exercices.html, ds.html (33 fichiers)
-- `physique-chimie/terminale-era/ch01-ch08/` : lecon.html, exercices.html, ds.html (24 fichiers)
-- `physique-chimie/terminale-iccer/ch01-ch08/` : lecon.html (4 fichiers)
+### 3.2 Chemins absolus vers nav.css — CORRIGE
 
-### 3.2 Chemins absolus vers nav.css — CRITIQUE (37 fichiers)
+~~**Gravite : CRITIQUE** — 37 fichiers utilisaient `href="/nav.css"` au lieu du chemin relatif.~~
 
-**Gravite : CRITIQUE**
+**Corrige le 2026-03-16** : 37 fichiers corriges → `href="../../../nav.css"`. 0 chemin absolu restant.
 
-37 fichiers utilisent `<link rel="stylesheet" href="/nav.css">` au lieu de `href="../../../nav.css"`.
+### 3.3 Chemins absolus vers diff.js — CORRIGE
 
-**Sections touchees** :
-- `maths/terminale/` : 29 fichiers
-- `maths/bts/` : 8 fichiers
+~~**Gravite : HAUTE** — 6 fichiers utilisaient `src="/diff.js"` au lieu du chemin relatif.~~
 
-### 3.3 Chemins absolus vers diff.js — HAUTE (6 fichiers)
-
-**Gravite : HAUTE**
-
-6 fichiers utilisent `<script src="/diff.js"></script>` au lieu du chemin relatif :
-- `maths/terminale/ch04/ds.html`
-- `maths/terminale/ch04/exercices.html`
-- `maths/terminale/ch06/ds.html`
-- `maths/terminale/ch06/exercices.html`
-- `maths/terminale/ch11/ds.html`
-- `maths/terminale/ch11/exercices.html`
+**Corrige le 2026-03-16** : 6 fichiers corriges → `src="../../../diff.js"`. 0 chemin absolu restant.
 
 ### 3.4 Liens vers sommaire.html inexistant — HAUTE (5 fichiers)
 
@@ -173,17 +158,15 @@ archimede.html, circuit-electrique.html, combustion.html, complexes.html, concen
 
 ## 5. Scripts et performances
 
-### 5.1 diff.js — NON CONFORME (present en Seconde)
+### 5.1 diff.js — PARTIELLEMENT CONFORME
 
 **Gravite : MOYENNE**
 
-Selon CLAUDE.md, la differenciation pedagogique s'applique **uniquement en Premiere et Terminale**. Or :
+Depuis la mise a jour du 2026-03-16, CLAUDE.md precise que la differenciation s'applique aux **trois niveaux** (Seconde, Premiere, Terminale). Etat actuel :
 
-- **28 fichiers en `maths/seconde/`** contiennent `diff.js` et des classes `diff-socle/standard/appro` (tous les exercices.html et ds.html)
-- **28 fichiers en `physique-chimie/seconde/`** contiennent `diff.js` et des classes `diff-socle/standard/appro`
-- **0 fichier en `maths/premiere/`** contient diff.js (alors qu'il devrait en avoir)
-
-Cela represente une incoherence par rapport a la philosophie de differenciation decrite dans CLAUDE.md.
+- **28 fichiers en `maths/seconde/`** contiennent `diff.js` — conforme
+- **28 fichiers en `physique-chimie/seconde/`** contiennent `diff.js` — conforme
+- **0 fichier en `maths/premiere/`** contient diff.js — **NON CONFORME** (18 fichiers a traiter)
 
 **Note** : aucun fichier `lecon.html` ne contient diff.js ou des classes de differenciation — conforme.
 
@@ -224,12 +207,12 @@ Le site repose sur des liens `<a>` et boutons `<button>` standards, naturellemen
 
 | # | Probleme | Gravite | Fichiers | Impact |
 |---|---|---|---|---|
-| 1 | Chemins absolus `/nav.js` | CRITIQUE | 61 | Navigation cassee sur GitHub Pages |
-| 2 | Chemins absolus `/nav.css` | CRITIQUE | 37 | Styles de navigation absents |
-| 3 | Chemins absolus `/diff.js` | HAUTE | 6 | Differenciation cassee |
+| ~~1~~ | ~~Chemins absolus `/nav.js`~~ | ~~CRITIQUE~~ | ~~61~~ | **CORRIGE 2026-03-16** |
+| ~~2~~ | ~~Chemins absolus `/nav.css`~~ | ~~CRITIQUE~~ | ~~37~~ | **CORRIGE 2026-03-16** |
+| ~~3~~ | ~~Chemins absolus `/diff.js`~~ | ~~HAUTE~~ | ~~6~~ | **CORRIGE 2026-03-16** |
 | 4 | Liens vers `sommaire.html` inexistant | HAUTE | 5 | Lien de retour casse |
 | 5 | Lien `ch01_exos.html` inexistant | HAUTE | 1 | Lien interne casse |
-| 6 | diff.js en Seconde (hors perimetre) | MOYENNE | 56 | Incoherence pedagogique |
+| 6 | ~~diff.js en Seconde (hors perimetre)~~ | ~~MOYENNE~~ | ~~56~~ | **RESOLU** — CLAUDE.md mis a jour, Seconde incluse |
 | 7 | diff.js absent en Premiere maths | MOYENNE | ~18 | Differenciation manquante |
 | 8 | Simulations non autonomes (nav.js) | MOYENNE | 26 | Non-conformite CLAUDE.md |
 | 9 | Tableaux sans `scope`/`caption` | BASSE | Generalise | Accessibilite reduite |
@@ -239,23 +222,25 @@ Le site repose sur des liens `<a>` et boutons `<button>` standards, naturellemen
 
 ## Corrections realisees
 
-- Aucune a ce stade.
+- **2026-03-16** : Corrige les 61 chemins absolus `src="/nav.js"` → `src="../../../nav.js"` dans maths/terminale (33), physique-chimie/terminale-era (24), physique-chimie/terminale-iccer (4)
+- **2026-03-16** : Corrige les 37 chemins absolus `href="/nav.css"` → `href="../../../nav.css"` dans maths/terminale (29), maths/bts (8)
+- **2026-03-16** : Corrige les 6 chemins absolus `src="/diff.js"` → `src="../../../diff.js"` dans maths/terminale/ch04, ch06, ch11
 
 ---
 
 ## Ameliorations restantes
 
 ### Priorite CRITIQUE
-- [ ] Remplacer `src="/nav.js"` par le chemin relatif correct dans 61 fichiers
-- [ ] Remplacer `href="/nav.css"` par le chemin relatif correct dans 37 fichiers
+- [x] Remplacer `src="/nav.js"` par le chemin relatif correct dans 61 fichiers (2026-03-16)
+- [x] Remplacer `href="/nav.css"` par le chemin relatif correct dans 37 fichiers (2026-03-16)
 
 ### Priorite HAUTE
-- [ ] Remplacer `src="/diff.js"` par le chemin relatif correct dans 6 fichiers
+- [x] Remplacer `src="/diff.js"` par le chemin relatif correct dans 6 fichiers (2026-03-16)
 - [ ] Corriger les 5 liens vers `../../sommaire.html` dans `maths/terminale/` (pointer vers le bon sommaire)
 - [ ] Corriger le lien `ch01_exos.html` → `exercices.html` dans `maths/seconde/ch01/lecon.html` (ligne 859)
 
 ### Priorite MOYENNE
-- [ ] Decider si la differenciation en Seconde est intentionnelle ou doit etre retiree (56 fichiers)
+- [x] Decider si la differenciation en Seconde est intentionnelle — OUI, CLAUDE.md mis a jour (2026-03-16)
 - [ ] Ajouter diff.js dans les exercices.html et ds.html de `maths/premiere/` si la differenciation est souhaitee
 - [ ] Retirer nav.js des 26 simulations pour les rendre autonomes conformement a CLAUDE.md
 
