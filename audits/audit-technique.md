@@ -11,7 +11,7 @@
 
 Le site presente une bonne coherence globale dans sa structure HTML et son usage des classes CSS. Les variables de couleur par matiere/niveau sont correctement appliquees sur l'ensemble du site. Les **trois problemes critiques de chemins absolus** (nav.js, nav.css, diff.js) ont ete **corriges le 2026-03-16** (104 fichiers). Il reste des problemes de **liens casses** (5 sommaires + 1 lien interne), des **simulations non autonomes** (26/63 incluent nav.js) et la **differenciation absente en maths/premiere** (18 fichiers).
 
-**Score de conformite** : 85/100
+**Score de conformite** : 90/100
 
 | Dimension | Etat |
 |---|---|
@@ -24,7 +24,7 @@ Le site presente une bonne coherence globale dans sa structure HTML et son usage
 | Chemins vers diff.js | Conforme (corrige 2026-03-16) |
 | Simulations autonomes | NON CONFORME (26/63 avec nav.js) |
 | diff.js uniquement exercices/ds | NON CONFORME (present en Seconde) |
-| Liens de retour sommaire | PARTIELLEMENT CONFORME |
+| Liens de retour sommaire | Conforme (corrige 2026-03-16) |
 | Accessibilite images | Non applicable (aucune balise img detectee) |
 
 ---
@@ -107,24 +107,17 @@ Aucune redefinition inline des classes `.def`, `.prop`, `.att`, `.meth`, `.reten
 
 **Corrige le 2026-03-16** : 6 fichiers corriges → `src="../../../diff.js"`. 0 chemin absolu restant.
 
-### 3.4 Liens vers sommaire.html inexistant — HAUTE (5 fichiers)
+### 3.4 Liens vers sommaire.html inexistant — CORRIGE
 
-**Gravite : HAUTE**
+~~**Gravite : HAUTE** — 5 fichiers pointaient vers `../../sommaire.html` inexistant.~~
 
-5 fichiers en `maths/terminale/` pointent vers `../../sommaire.html` qui n'existe pas :
-- `maths/terminale/ch07/ds.html`
-- `maths/terminale/ch08/ds.html`
-- `maths/terminale/ch10/ds.html`
-- `maths/terminale/ch11/ds.html`
-- `maths/terminale/ch11/exercices.html`
+**Corrige le 2026-03-16** : 5 liens corriges → `../../../maths-term-iccer.html`. 0 lien casse restant.
 
-Le lien correct devrait etre `../../../maths-term-iccer.html` ou `../../../maths-term-erama.html` selon le groupement.
+### 3.5 Lien interne casse — CORRIGE
 
-### 3.5 Lien interne casse — HAUTE (1 fichier)
+~~**Gravite : HAUTE** — `maths/seconde/ch01/lecon.html` : `ch01_exos.html` inexistant.~~
 
-**Gravite : HAUTE**
-
-`maths/seconde/ch01/lecon.html` ligne 859 : `<a href="ch01_exos.html">` pointe vers un fichier inexistant. Le fichier correct est `exercices.html`.
+**Corrige le 2026-03-16** : lien corrige → `exercices.html`.
 
 ### 3.6 Chemins vers styles.css — CONFORME
 
@@ -210,8 +203,8 @@ Le site repose sur des liens `<a>` et boutons `<button>` standards, naturellemen
 | ~~1~~ | ~~Chemins absolus `/nav.js`~~ | ~~CRITIQUE~~ | ~~61~~ | **CORRIGE 2026-03-16** |
 | ~~2~~ | ~~Chemins absolus `/nav.css`~~ | ~~CRITIQUE~~ | ~~37~~ | **CORRIGE 2026-03-16** |
 | ~~3~~ | ~~Chemins absolus `/diff.js`~~ | ~~HAUTE~~ | ~~6~~ | **CORRIGE 2026-03-16** |
-| 4 | Liens vers `sommaire.html` inexistant | HAUTE | 5 | Lien de retour casse |
-| 5 | Lien `ch01_exos.html` inexistant | HAUTE | 1 | Lien interne casse |
+| ~~4~~ | ~~Liens vers `sommaire.html` inexistant~~ | ~~HAUTE~~ | ~~5~~ | **CORRIGE 2026-03-16** |
+| ~~5~~ | ~~Lien `ch01_exos.html` inexistant~~ | ~~HAUTE~~ | ~~1~~ | **CORRIGE 2026-03-16** |
 | 6 | ~~diff.js en Seconde (hors perimetre)~~ | ~~MOYENNE~~ | ~~56~~ | **RESOLU** — CLAUDE.md mis a jour, Seconde incluse |
 | 7 | diff.js absent en Premiere maths | MOYENNE | ~18 | Differenciation manquante |
 | 8 | Simulations non autonomes (nav.js) | MOYENNE | 26 | Non-conformite CLAUDE.md |
@@ -225,6 +218,8 @@ Le site repose sur des liens `<a>` et boutons `<button>` standards, naturellemen
 - **2026-03-16** : Corrige les 61 chemins absolus `src="/nav.js"` → `src="../../../nav.js"` dans maths/terminale (33), physique-chimie/terminale-era (24), physique-chimie/terminale-iccer (4)
 - **2026-03-16** : Corrige les 37 chemins absolus `href="/nav.css"` → `href="../../../nav.css"` dans maths/terminale (29), maths/bts (8)
 - **2026-03-16** : Corrige les 6 chemins absolus `src="/diff.js"` → `src="../../../diff.js"` dans maths/terminale/ch04, ch06, ch11
+- **2026-03-16** : Corrige les 5 liens casses `../../sommaire.html` → `../../../maths-term-iccer.html` dans maths/terminale/ch07, ch08, ch10, ch11
+- **2026-03-16** : Corrige le lien `ch01_exos.html` → `exercices.html` dans maths/seconde/ch01/lecon.html
 
 ---
 
@@ -236,8 +231,8 @@ Le site repose sur des liens `<a>` et boutons `<button>` standards, naturellemen
 
 ### Priorite HAUTE
 - [x] Remplacer `src="/diff.js"` par le chemin relatif correct dans 6 fichiers (2026-03-16)
-- [ ] Corriger les 5 liens vers `../../sommaire.html` dans `maths/terminale/` (pointer vers le bon sommaire)
-- [ ] Corriger le lien `ch01_exos.html` → `exercices.html` dans `maths/seconde/ch01/lecon.html` (ligne 859)
+- [x] Corriger les 5 liens vers `../../sommaire.html` dans `maths/terminale/` (2026-03-16)
+- [x] Corriger le lien `ch01_exos.html` → `exercices.html` dans `maths/seconde/ch01/lecon.html` (2026-03-16)
 
 ### Priorite MOYENNE
 - [x] Decider si la differenciation en Seconde est intentionnelle — OUI, CLAUDE.md mis a jour (2026-03-16)

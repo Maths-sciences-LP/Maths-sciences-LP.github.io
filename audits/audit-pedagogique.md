@@ -217,7 +217,10 @@ Les modules communs (combustion, transferts thermiques, moments, pression, solut
 
 ## Corrections realisees
 
-- Aucune a ce stade (audit initial).
+- **2026-03-16** : Remplace `class="appli"` par `class="situation"` dans les 8 fichiers `physique-chimie/terminale-era` (28 occurrences)
+- **2026-03-16** : Remplace `class="situation-pro"` par `class="situation"` dans les 7 fichiers `physique-chimie/premiere-iccer`
+- **2026-03-16** : Uniformise `label-def/prop/att/meth` en `label label-def/prop/att/meth` dans 17 fichiers `physique-chimie/premiere-iccer` (119 occurrences)
+- **2026-03-16** : Corrige le lien retour de `physique-chimie/seconde/ch12/lecon.html` et `fiche.html` (index.html → pc-2nde-pro.html)
 
 ---
 
@@ -231,14 +234,14 @@ Les modules communs (combustion, transferts thermiques, moments, pression, solut
 - [ ] Ajouter diff.js et differenciation dans `maths/premiere` (18 fichiers exercices + ds)
 - [ ] Harmoniser CSS de `maths/seconde/ch02-ch05` (def-box → def, exemple → ex, etc.)
 - [ ] Supprimer redefinitions CSS inline dans les 14 fichiers `physique-chimie/seconde`
-- [ ] Uniformiser labels en `label label-def` dans les 10 fichiers `premiere-iccer`
-- [ ] Remplacer `class="appli"` par `class="situation"` dans les 8 fichiers `terminale-era`
+- [x] Uniformiser labels en `label label-def` dans les 17 fichiers `premiere-iccer` (2026-03-16)
+- [x] Remplacer `class="appli"` par `class="situation"` dans les 8 fichiers `terminale-era` (2026-03-16)
 
 ### Priorite moyenne
 - [ ] Ajouter des blocs `.meth` dans les chapitres `terminale-era` (objectif : 2+ par chapitre)
 - [ ] Ajouter visualisations interactives en `maths/premiere` (Chart.js pour ch03 suites, ch04 graphique, ch06 tangente)
-- [ ] Remplacer `class="situation-pro"` par `class="situation"` dans les 7 fichiers `premiere-iccer`
-- [ ] Corriger lien retour de `physique-chimie/seconde/ch12/lecon.html`
+- [x] Remplacer `class="situation-pro"` par `class="situation"` dans les 7 fichiers `premiere-iccer` (2026-03-16)
+- [x] Corriger lien retour de `physique-chimie/seconde/ch12/lecon.html` (2026-03-16)
 - [ ] Corriger placement des labels dans `seconde/ch04` et `seconde/ch05`
 - [ ] Uniformiser les labels dans les 5 fichiers `premiere-era` concernes
 
