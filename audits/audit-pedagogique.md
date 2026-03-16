@@ -207,7 +207,7 @@ Les modules communs (combustion, transferts thermiques, moments, pression, solut
 
 14. **Maths seconde** : badges de niveaux heterogenes (`badge-niv badge-1` vs `badge badge-green`).
 
-15. **Maths terminale** : entites HTML (`&ndash;`, `&eacute;`) au lieu de caracteres UTF-8 dans certains titres.
+15. ~~**Maths terminale** : entites HTML (`&ndash;`, `&eacute;`) au lieu de caracteres UTF-8 dans certains titres.~~ — **CORRIGE 2026-03-16** (44 fichiers, 6 041 entites)
 
 16. **PC seconde** : pas de classe `.situation` (0 occurrences) — contextes pro non balises.
 
@@ -221,6 +221,7 @@ Les modules communs (combustion, transferts thermiques, moments, pression, solut
 - **2026-03-16** : Remplace `class="situation-pro"` par `class="situation"` dans les 7 fichiers `physique-chimie/premiere-iccer`
 - **2026-03-16** : Uniformise `label-def/prop/att/meth` en `label label-def/prop/att/meth` dans 17 fichiers `physique-chimie/premiere-iccer` (119 occurrences)
 - **2026-03-16** : Corrige le lien retour de `physique-chimie/seconde/ch12/lecon.html` et `fiche.html` (index.html → pc-2nde-pro.html)
+- **2026-03-16** : Converti 6 041 entites HTML en UTF-8 dans les 44 fichiers de maths/terminale
 - **2026-03-16** : Harmonise CSS maths/seconde/ch02-ch05 (def-box→def, exemple→ex, container→c, methode→meth)
 - **2026-03-16** : Supprime redefinitions CSS inline dans 28 fichiers physique-chimie/seconde (centralise dans styles.css)
 - **2026-03-16** : Ajoute diff.js dans 18 fichiers maths/premiere (exercices.html + ds.html)
@@ -256,7 +257,7 @@ Les modules communs (combustion, transferts thermiques, moments, pression, solut
 ### Priorite basse
 - [ ] Uniformiser le format des `<title>` dans toutes les sections
 - [ ] Harmoniser badges de niveaux dans mini-exercices `maths/seconde`
-- [ ] Convertir entites HTML en UTF-8 (maths terminale ch04, ch05, ch08)
+- [x] Convertir entites HTML en UTF-8 dans maths/terminale (44 fichiers, 6 041 entites) (2026-03-16)
 - [ ] Ajouter `.situation` aux contextes pro existants en `physique-chimie/seconde`
 - [ ] Ajouter mini-exercices dans les lecons de `premiere-iccer`
 - [ ] Enrichir situations pro de `terminale-era` (personnages, scenarios)
