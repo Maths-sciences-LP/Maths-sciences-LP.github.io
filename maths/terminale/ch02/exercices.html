@@ -789,6 +789,70 @@ td.total,th.total{background:#e8f4fd;font-weight:700;color:var(--p)}
   </details>
 </div>
 
+<!-- EX 13 -->
+<div class="exo">
+  <div class="exo-titre"><span class="num">13</span>Efficacité d'un vaccin contre la grippe <span class="ticcer-badge">ICCER</span> <span class="erama-badge">ERA-MA</span></div>
+  <div class="situation">
+    <strong>Contexte professionnel :</strong> Un médecin du travail suit une entreprise de 500 salariés du bâtiment. À l'automne, il propose une campagne de vaccination contre la grippe. Au printemps suivant, il dresse le bilan.
+  </div>
+  <p>Sur les 500 salariés :</p>
+  <ul>
+    <li>300 ont été vaccinés, 200 ne l'ont pas été.</li>
+    <li>Parmi les vaccinés, 18 ont contracté la grippe.</li>
+    <li>Parmi les non-vaccinés, 50 ont contracté la grippe.</li>
+  </ul>
+  <p>On note V : « salarié vacciné » et G : « salarié ayant contracté la grippe ».</p>
+  <div class="consigne">
+    <strong>1.</strong> Construire et compléter le tableau croisé.<br>
+    <strong>2.</strong> On choisit un salarié au hasard. Calculer \(P(\text{V})\), \(P(\text{G})\) et \(P(\text{V} \cap \text{G})\).<br>
+    <strong>3.</strong> Calculer \(P_{\text{V}}(\text{G})\) et \(P_{\bar{\text{V}}}(\text{G})\). Interpréter chacun dans le contexte.<br>
+    <strong>4.</strong> Construire l'arbre de probabilités à deux niveaux (vaccination puis grippe).<br>
+    <strong>5.</strong> Vérifier la valeur de \(P(\text{G})\) à l'aide de la formule des probabilités totales.<br>
+    <strong>6.</strong> Vérifier si V et G sont indépendants. Conclure sur l'effet du vaccin.<br>
+    <strong>7.</strong> La grippe entraîne en moyenne 5 jours d'arrêt à 200 €/jour. La vaccination coûte 15 € par salarié. La campagne était-elle économiquement justifiée ?
+  </div>
+  <div class="reponse-box" style="min-height:160px">Tableau, arbre et réponses : ………………</div>
+  <details>
+    <summary>Voir la correction complète</summary>
+    <div class="corr">
+      <p><strong>1. Tableau croisé :</strong></p>
+      <table>
+        <tr><th></th><th>Grippe (G)</th><th>Pas de grippe (Ḡ)</th><th class="total">Total</th></tr>
+        <tr><td><strong>Vacciné (V)</strong></td><td>18</td><td>282</td><td class="total">300</td></tr>
+        <tr><td><strong>Non vacciné (V̄)</strong></td><td>50</td><td>150</td><td class="total">200</td></tr>
+        <tr><td class="total"><strong>Total</strong></td><td class="total">68</td><td class="total">432</td><td class="total">500</td></tr>
+      </table>
+      <p><strong>2.</strong> \(P(\text{V}) = \dfrac{300}{500} =\) <span class="reponse">\(0{,}6\)</span> &emsp; \(P(\text{G}) = \dfrac{68}{500} =\) <span class="reponse">\(0{,}136\)</span> &emsp; \(P(\text{V} \cap \text{G}) = \dfrac{18}{500} =\) <span class="reponse">\(0{,}036\)</span></p>
+      <p><strong>3.</strong> \(P_{\text{V}}(\text{G}) = \dfrac{18}{300} =\) <span class="reponse">\(0{,}06\)</span> — 6 % des vaccinés ont contracté la grippe.<br>
+      \(P_{\bar{\text{V}}}(\text{G}) = \dfrac{50}{200} =\) <span class="reponse">\(0{,}25\)</span> — 25 % des non-vaccinés ont contracté la grippe.<br>
+      Le vaccin réduit le risque d'environ 4 fois.</p>
+      <p><strong>4. Arbre de probabilités :</strong></p>
+      <table>
+        <tr><th>Chemin</th><th>Calcul</th><th>Probabilité</th></tr>
+        <tr><td>V → G</td><td>0,6 × 0,06</td><td><strong>0,036</strong></td></tr>
+        <tr><td>V → Ḡ</td><td>0,6 × 0,94</td><td>0,564</td></tr>
+        <tr><td>V̄ → G</td><td>0,4 × 0,25</td><td><strong>0,100</strong></td></tr>
+        <tr><td>V̄ → Ḡ</td><td>0,4 × 0,75</td><td>0,300</td></tr>
+        <tr><td colspan="2" style="text-align:right">Total</td><td class="total">1,000 ✓</td></tr>
+      </table>
+      <p><strong>5.</strong> Formule des probabilités totales :<br>
+      \(P(\text{G}) = P(\text{V}) \times P_{\text{V}}(\text{G}) + P(\bar{\text{V}}) \times P_{\bar{\text{V}}}(\text{G}) = 0{,}036 + 0{,}100 =\) <span class="reponse">\(0{,}136\)</span> ✓</p>
+      <p><strong>6.</strong> Test d'indépendance :<br>
+      \(P(\text{V}) \times P(\text{G}) = 0{,}6 \times 0{,}136 = 0{,}0816\)<br>
+      Or \(P(\text{V} \cap \text{G}) = 0{,}036 \neq 0{,}0816\)<br>
+      <span class="reponse">V et G ne sont pas indépendants</span> : le vaccin a un effet protecteur réel.</p>
+      <p><strong>7.</strong> Analyse économique :</p>
+      <ul>
+        <li>Coût de la campagne de vaccination : \(500 \times 15 = \mathbf{7\,500\,\text{€}}\)</li>
+        <li>Sans vaccination (taux 25 %) : \(500 \times 0{,}25 = 125\) malades attendus</li>
+        <li>Coût d'un arrêt grippe : \(5 \times 200 = 1\,000\,\text{€}\)</li>
+        <li>Économie estimée : \((125 - 68) \times 1\,000 = \mathbf{57\,000\,\text{€}}\)</li>
+      </ul>
+      <p>\(57\,000 \gg 7\,500\) — <span class="reponse">la campagne était largement justifiée économiquement.</span></p>
+    </div>
+  </details>
+</div>
+
 <!-- ============================================================ -->
 <!--                    NAVIGATION                                -->
 <!-- ============================================================ -->
