@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ch02 – Exercices – Probabilités</title>
+<title>Ch02 – Exercices – Probabilités – Terminale Bac Pro</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <link rel="stylesheet" href="../../../styles.css">
 <link rel="stylesheet" href="../../../print.css" media="print">
@@ -284,8 +284,8 @@ td.total,th.total{background:#e8f4fd;font-weight:700;color:var(--p)}
     │    ├── Conforme (0,95)<br>
     │    └── Défectueuse (0,05)<br>
     └── Fournisseur F2 (0,3)<br>
-        ├── Conforme (0,90)<br>
-        └── Défectueuse (0,10)
+    &emsp;&emsp;&emsp;├── Conforme (0,90)<br>
+    &emsp;&emsp;&emsp;└── Défectueuse (0,10)
   </div>
 
   <div class="consigne"><strong>1.</strong> Quelle proportion des vannes vient du fournisseur F1 ?</div>
@@ -549,8 +549,8 @@ td.total,th.total{background:#e8f4fd;font-weight:700;color:var(--p)}
   </ul>
   <div class="consigne">
     <strong>1.</strong> Calculer \(P(\text{G4} \cap \text{E})\) et \(P(\text{F7} \cap \text{E})\).<br>
-    <strong>2.</strong> Calculer \(P(\text{E})\) (probabilité qu’un filtre pris au hasard soit encrassés).<br>
-    <strong>3.</strong> On sait qu’un filtre est encrassés. Calculer la probabilité qu’il soit de type F7 : \(P_{\text{E}}(\text{F7})\).<br>
+    <strong>2.</strong> Calculer \(P(\text{E})\) (probabilité qu’un filtre pris au hasard soit encrassé).<br>
+    <strong>3.</strong> On sait qu’un filtre est encrassé. Calculer la probabilité qu’il soit de type F7 : \(P_{\text{E}}(\text{F7})\).<br>
     <strong>4.</strong> Interpréter ce résultat pour le technicien.
   </div>
   <div class="formule">
@@ -772,19 +772,173 @@ td.total,th.total{background:#e8f4fd;font-weight:700;color:var(--p)}
       <p><strong>1.</strong> Ch et Po sont indépendants :<br>
       \(P(\text{Ch} \cap \text{Po}) = 0{,}05 \times 0{,}08 =\) <span class="reponse">\(0{,}004\)</span></p>
       <p><strong>2.</strong> Aucune panne — tous les contraires se réalisent :<br>
-      \(P(\bar{\text{Ch}} \cap \bar{\text{Po}} \cap \bar{\text{Va}}) = 0{,}95 \times 0{,}92 \times 0{,}97 =\) <span class="reponse">\(0{,}8473\)</span></p>
-      <p>84,73 % de chances qu’aucun appareil ne tombe en panne.</p>
+      \(P(\bar{\text{Ch}} \cap \bar{\text{Po}} \cap \bar{\text{Va}}) = 0{,}95 \times 0{,}92 \times 0{,}97 =\) <span class="reponse">\(0{,}84778\)</span></p>
+      <p>Environ 84,8 % de chances qu’aucun appareil ne tombe en panne.</p>
       <p><strong>3.</strong> « Au moins une panne » = contraire de « aucune panne » :<br>
-      \(P(\text{au moins une panne}) = 1 - 0{,}8473 =\) <span class="reponse">\(0{,}1527\)</span></p>
-      <p>Environ 15,27 % de chances qu’au moins un appareil tombe en panne.</p>
+      \(P(\text{au moins une panne}) = 1 - 0{,}84778 =\) <span class="reponse">\(0{,}15222\)</span></p>
+      <p>Environ 15,2 % de chances qu’au moins un appareil tombe en panne.</p>
       <p><strong>4.</strong> Analyse économique sur 1 000 installations :</p>
       <ul>
         <li>Coût de la révision préventive : \(1000 \times 150 = \mathbf{150\,000\,\text{€}}\)</li>
-        <li>Nombre moyen de pannes sans révision : \(1000 \times 0{,}1527 \approx 153\) pannes</li>
-        <li>Coût moyen des pannes : \(153 \times 600 = \mathbf{91\,800\,\text{€}}\)</li>
+        <li>Nombre moyen de pannes sans révision : \(1000 \times 0{,}15222 \approx 152\) pannes</li>
+        <li>Coût moyen des pannes : \(152 \times 600 = \mathbf{91\,200\,\text{€}}\)</li>
       </ul>
-      <p>La révision coûte 150 000 €, les pannes attendues ne coûtent que 91 800 €. <span class="reponse">La révision systématique n’est pas rentable ici.</span></p>
-      <div class="att">Si le coût d’une panne était de 1 200 € (pannes plus graves) : \(153 \times 1200 = 183\,600 > 150\,000\) → la révision deviendrait rentable. Le seuil dépend du coût de la panne.</div>
+      <p>La révision coûte 150 000 €, les pannes attendues ne coûtent que 91 200 €. <span class="reponse">La révision systématique n’est pas rentable ici.</span></p>
+      <div class="att">Si le coût d’une panne était de 1 200 € (pannes plus graves) : \(152 \times 1200 = 182\,400 > 150\,000\) → la révision deviendrait rentable. Le seuil dépend du coût de la panne.</div>
+    </div>
+  </details>
+</div>
+
+<!-- EX 13 -->
+<div class="exo">
+  <div class="exo-titre"><span class="num">13</span>Efficacité d'un vaccin contre la grippe <span class="ticcer-badge">ICCER</span> <span class="erama-badge">ERA-MA</span></div>
+  <div class="situation">
+    <strong>Contexte professionnel :</strong> Un médecin du travail suit une entreprise de 500 salariés du bâtiment. À l'automne, il propose une campagne de vaccination contre la grippe. Au printemps suivant, il dresse le bilan.
+  </div>
+  <p>Sur les 500 salariés :</p>
+  <ul>
+    <li>300 ont été vaccinés, 200 ne l'ont pas été.</li>
+    <li>Parmi les vaccinés, 18 ont contracté la grippe.</li>
+    <li>Parmi les non-vaccinés, 50 ont contracté la grippe.</li>
+  </ul>
+  <p>On note V : « salarié vacciné » et G : « salarié ayant contracté la grippe ».</p>
+  <div class="consigne">
+    <strong>1.</strong> Construire et compléter le tableau croisé.<br>
+    <strong>2.</strong> On choisit un salarié au hasard. Calculer \(P(\text{V})\), \(P(\text{G})\) et \(P(\text{V} \cap \text{G})\).<br>
+    <strong>3.</strong> Calculer \(P_{\text{V}}(\text{G})\) et \(P_{\bar{\text{V}}}(\text{G})\). Interpréter chacun dans le contexte.<br>
+    <strong>4.</strong> Construire l'arbre de probabilités à deux niveaux (vaccination puis grippe).<br>
+    <strong>5.</strong> Vérifier la valeur de \(P(\text{G})\) à l'aide de la formule des probabilités totales.<br>
+    <strong>6.</strong> Vérifier si V et G sont indépendants. Conclure sur l'effet du vaccin.<br>
+    <strong>7.</strong> La grippe entraîne en moyenne 5 jours d'arrêt à 200 €/jour. La vaccination coûte 15 € par salarié. La campagne était-elle économiquement justifiée ?
+  </div>
+  <div class="reponse-box" style="min-height:160px">Tableau, arbre et réponses : ………………</div>
+  <details>
+    <summary>Voir la correction complète</summary>
+    <div class="corr">
+      <p><strong>1. Tableau croisé :</strong></p>
+      <table>
+        <tr><th></th><th>Grippe (G)</th><th>Pas de grippe (Ḡ)</th><th class="total">Total</th></tr>
+        <tr><td><strong>Vacciné (V)</strong></td><td>18</td><td>282</td><td class="total">300</td></tr>
+        <tr><td><strong>Non vacciné (V̄)</strong></td><td>50</td><td>150</td><td class="total">200</td></tr>
+        <tr><td class="total"><strong>Total</strong></td><td class="total">68</td><td class="total">432</td><td class="total">500</td></tr>
+      </table>
+      <p><strong>2.</strong> \(P(\text{V}) = \dfrac{300}{500} =\) <span class="reponse">\(0{,}6\)</span> &emsp; \(P(\text{G}) = \dfrac{68}{500} =\) <span class="reponse">\(0{,}136\)</span> &emsp; \(P(\text{V} \cap \text{G}) = \dfrac{18}{500} =\) <span class="reponse">\(0{,}036\)</span></p>
+      <p><strong>3.</strong> \(P_{\text{V}}(\text{G}) = \dfrac{18}{300} =\) <span class="reponse">\(0{,}06\)</span> — 6 % des vaccinés ont contracté la grippe.<br>
+      \(P_{\bar{\text{V}}}(\text{G}) = \dfrac{50}{200} =\) <span class="reponse">\(0{,}25\)</span> — 25 % des non-vaccinés ont contracté la grippe.<br>
+      Le vaccin réduit le risque d'environ 4 fois.</p>
+      <p><strong>4. Arbre de probabilités :</strong></p>
+      <table>
+        <tr><th>Chemin</th><th>Calcul</th><th>Probabilité</th></tr>
+        <tr><td>V → G</td><td>0,6 × 0,06</td><td><strong>0,036</strong></td></tr>
+        <tr><td>V → Ḡ</td><td>0,6 × 0,94</td><td>0,564</td></tr>
+        <tr><td>V̄ → G</td><td>0,4 × 0,25</td><td><strong>0,100</strong></td></tr>
+        <tr><td>V̄ → Ḡ</td><td>0,4 × 0,75</td><td>0,300</td></tr>
+        <tr><td colspan="2" style="text-align:right">Total</td><td class="total">1,000 ✓</td></tr>
+      </table>
+      <p><strong>5.</strong> Formule des probabilités totales :<br>
+      \(P(\text{G}) = P(\text{V}) \times P_{\text{V}}(\text{G}) + P(\bar{\text{V}}) \times P_{\bar{\text{V}}}(\text{G}) = 0{,}036 + 0{,}100 =\) <span class="reponse">\(0{,}136\)</span> ✓</p>
+      <p><strong>6.</strong> Test d'indépendance :<br>
+      \(P(\text{V}) \times P(\text{G}) = 0{,}6 \times 0{,}136 = 0{,}0816\)<br>
+      Or \(P(\text{V} \cap \text{G}) = 0{,}036 \neq 0{,}0816\)<br>
+      <span class="reponse">V et G ne sont pas indépendants</span> : le vaccin a un effet protecteur réel.</p>
+      <p><strong>7.</strong> Analyse économique :</p>
+      <ul>
+        <li>Coût de la campagne de vaccination : \(500 \times 15 = \mathbf{7\,500\,\text{€}}\)</li>
+        <li>Sans vaccination (taux 25 %) : \(500 \times 0{,}25 = 125\) malades attendus</li>
+        <li>Coût d'un arrêt grippe : \(5 \times 200 = 1\,000\,\text{€}\)</li>
+        <li>Économie estimée : \((125 - 68) \times 1\,000 = \mathbf{57\,000\,\text{€}}\)</li>
+      </ul>
+      <p>\(57\,000 \gg 7\,500\) — <span class="reponse">la campagne était largement justifiée économiquement.</span></p>
+    </div>
+  </details>
+</div>
+
+<!-- EX 14 -->
+<div class="exo">
+  <div class="exo-titre"><span class="num">14</span>Exposition à l'amiante et cancer en milieu professionnel <span class="ticcer-badge">ICCER</span> <span class="erama-badge">ERA-MA</span></div>
+  <div class="situation">
+    <strong>Contexte professionnel :</strong> Un médecin du travail suit 800 salariés du bâtiment dans le cadre d'une surveillance médicale réglementaire liée au risque amiante. Certains salariés ont été exposés à l'amiante avant l'interdiction de 1997 (rénovation de bâtiments anciens, démolition). Il recueille les données suivantes sur 25 ans de suivi :
+    <ul>
+      <li>300 salariés ont été exposés à l'amiante, 500 ne l'ont pas été.</li>
+      <li>Parmi les exposés, 45 ont développé un cancer lié à l'amiante (mésothéliome ou cancer broncho-pulmonaire).</li>
+      <li>Parmi les non-exposés, 5 ont développé ce type de cancer.</li>
+    </ul>
+  </div>
+  <p>On note E : « salarié exposé à l'amiante » et C : « salarié ayant développé un cancer lié à l'amiante ».</p>
+
+  <div class="consigne"><strong>1.</strong> Compléter le tableau croisé suivant :</div>
+  <table>
+    <thead><tr><th></th><th>Cancer (C)</th><th>Pas de cancer (C̄)</th><th class="total">Total</th></tr></thead>
+    <tbody>
+      <tr><th>Exposé (E)</th><td>45 ✓</td><td class="vide">← 300 − 45 = ?</td><td class="total">300</td></tr>
+      <tr><th>Non-exposé (Ē)</th><td>5 ✓</td><td class="vide">?</td><td class="total">500</td></tr>
+      <tr><th class="total">Total</th><td class="vide">← 45 + 5 = ?</td><td class="vide">?</td><td class="total">800</td></tr>
+    </tbody>
+  </table>
+
+  <div class="consigne"><strong>2.</strong> On choisit un salarié au hasard. Calculer :</div>
+  <p style="font-size:.93em">\(P(\text{E}) = \dfrac{\boxed{\phantom{300}}}{\boxed{\phantom{800}}} = \boxed{\phantom{0,375}}\) &emsp; \(P(\text{C}) = \dfrac{\boxed{\phantom{50}}}{\boxed{\phantom{800}}} = \boxed{\phantom{0,0625}}\) &emsp; \(P(\text{E} \cap \text{C}) = \dfrac{\boxed{\phantom{45}}}{\boxed{\phantom{800}}} = \boxed{\phantom{0,05625}}\)</p>
+
+  <div class="consigne"><strong>3.</strong> Calculer les probabilités conditionnelles et interpréter :</div>
+  <div class="reponse-box">\(P_{\text{E}}(\text{C}) = \dfrac{\phantom{45}}{\phantom{300}} = \) ……… → Interprétation : ………………</div>
+  <div class="reponse-box">\(P_{\bar{\text{E}}}(\text{C}) = \dfrac{\phantom{5}}{\phantom{500}} = \) ……… → Interprétation : ………………</div>
+
+  <div class="consigne"><strong>4.</strong> Compléter l'arbre de probabilités à deux niveaux :</div>
+  <div class="chemin">
+    <strong>Arbre :</strong><br>
+    ├── Exposé E (\(\boxed{\phantom{0,375}}\))<br>
+    │    ├── Cancer C (\(\boxed{\phantom{0,15}}\)) → \(P(\text{E} \cap \text{C}) = \boxed{\phantom{0,375}} \times \boxed{\phantom{0,15}} = \boxed{\phantom{0,05625}}\)<br>
+    │    └── Pas de cancer C̄ (\(\boxed{\phantom{0,85}}\)) → \(P(\text{E} \cap \bar{\text{C}}) = \) ………<br>
+    └── Non-exposé Ē (\(\boxed{\phantom{0,625}}\))<br>
+    &emsp;&emsp;&emsp;├── Cancer C (\(\boxed{\phantom{0,01}}\)) → \(P(\bar{\text{E}} \cap \text{C}) = \) ………<br>
+    &emsp;&emsp;&emsp;└── Pas de cancer C̄ (\(\boxed{\phantom{0,99}}\)) → \(P(\bar{\text{E}} \cap \bar{\text{C}}) = \) ………
+  </div>
+
+  <div class="consigne"><strong>5.</strong> Vérifier \(P(\text{C})\) à l'aide de la formule des probabilités totales :</div>
+  <p style="font-size:.93em">\(P(\text{C}) = P(\text{E} \cap \text{C}) + P(\bar{\text{E}} \cap \text{C}) = \boxed{\phantom{0,05625}} + \boxed{\phantom{0,00625}} = \boxed{\phantom{0,0625}}\)</p>
+
+  <div class="consigne"><strong>6.</strong> Tester l'indépendance de E et C. Comparer \(P(\text{E}) \times P(\text{C})\) et \(P(\text{E} \cap \text{C})\) :</div>
+  <div class="reponse-box" style="min-height:60px">\(P(\text{E}) \times P(\text{C}) = \) ……… &emsp; \(P(\text{E} \cap \text{C}) = \) ……… &emsp; Conclusion : ………………</div>
+
+  <div class="consigne"><strong>7.</strong> La prise en charge d'un cancer lié à l'amiante entraîne en moyenne 400 jours d'arrêt de travail à 200 €/jour. Une formation obligatoire « Risque amiante » coûte 300 € par salarié exposé et permet, selon les études, de réduire le taux de cancer des exposés au niveau des non-exposés. Sur les 300 salariés exposés, cette formation était-elle économiquement justifiée ?</div>
+  <div class="reponse-box" style="min-height:80px">Calculs et conclusion : ………………</div>
+  <details>
+    <summary>Voir la correction complète</summary>
+    <div class="corr">
+      <p><strong>1. Tableau croisé :</strong></p>
+      <table>
+        <tr><th></th><th>Cancer (C)</th><th>Pas de cancer (C̄)</th><th class="total">Total</th></tr>
+        <tr><td><strong>Exposé (E)</strong></td><td>45</td><td>255</td><td class="total">300</td></tr>
+        <tr><td><strong>Non-exposé (Ē)</strong></td><td>5</td><td>495</td><td class="total">500</td></tr>
+        <tr><td class="total"><strong>Total</strong></td><td class="total">50</td><td class="total">750</td><td class="total">800</td></tr>
+      </table>
+      <p><strong>2.</strong> \(P(\text{E}) = \dfrac{300}{800} =\) <span class="reponse">\(0{,}375\)</span> &emsp; \(P(\text{C}) = \dfrac{50}{800} =\) <span class="reponse">\(0{,}0625\)</span> &emsp; \(P(\text{E} \cap \text{C}) = \dfrac{45}{800} =\) <span class="reponse">\(0{,}05625\)</span></p>
+      <p><strong>3.</strong> \(P_{\text{E}}(\text{C}) = \dfrac{45}{300} =\) <span class="reponse">\(0{,}15\)</span> — 15 % des exposés ont développé un cancer.<br>
+      \(P_{\bar{\text{E}}}(\text{C}) = \dfrac{5}{500} =\) <span class="reponse">\(0{,}01\)</span> — 1 % des non-exposés ont développé un cancer.<br>
+      Le risque est 15 fois plus élevé chez les salariés exposés à l'amiante.</p>
+      <p><strong>4. Arbre de probabilités :</strong></p>
+      <table>
+        <tr><th>Chemin</th><th>Calcul</th><th>Probabilité</th></tr>
+        <tr><td>E → C</td><td>0,375 × 0,15</td><td><strong>0,05625</strong></td></tr>
+        <tr><td>E → C̄</td><td>0,375 × 0,85</td><td>0,31875</td></tr>
+        <tr><td>Ē → C</td><td>0,625 × 0,01</td><td><strong>0,00625</strong></td></tr>
+        <tr><td>Ē → C̄</td><td>0,625 × 0,99</td><td>0,61875</td></tr>
+        <tr><td colspan="2" style="text-align:right">Total</td><td class="total">1,000 ✓</td></tr>
+      </table>
+      <p><strong>5.</strong> Formule des probabilités totales :<br>
+      \(P(\text{C}) = P(\text{E}) \times P_{\text{E}}(\text{C}) + P(\bar{\text{E}}) \times P_{\bar{\text{E}}}(\text{C}) = 0{,}05625 + 0{,}00625 =\) <span class="reponse">\(0{,}0625\)</span> ✓</p>
+      <p><strong>6.</strong> Test d'indépendance :<br>
+      \(P(\text{E}) \times P(\text{C}) = 0{,}375 \times 0{,}0625 = 0{,}02344\)<br>
+      Or \(P(\text{E} \cap \text{C}) = 0{,}05625 \neq 0{,}02344\)<br>
+      <span class="reponse">E et C ne sont pas indépendants</span> : l'exposition à l'amiante est fortement associée au développement d'un cancer dans cette cohorte.</p>
+      <p><strong>7.</strong> Analyse économique :</p>
+      <ul>
+        <li>Coût de la formation : \(300 \times 300 = \mathbf{90\,000\,\text{€}}\)</li>
+        <li>Sans formation : 45 cas → coût \(45 \times 400 \times 200 = \mathbf{3\,600\,000\,\text{€}}\)</li>
+        <li>Avec formation (taux ramené à 1 %) : \(300 \times 0{,}01 = 3\) cas attendus → coût \(3 \times 400 \times 200 = \mathbf{240\,000\,\text{€}}\)</li>
+        <li>Économie estimée : \(3\,600\,000 - 240\,000 = \mathbf{3\,360\,000\,\text{€}}\)</li>
+      </ul>
+      <p>\(3\,360\,000 \gg 90\,000\) — <span class="reponse">la formation était économiquement très largement justifiée, sans même parler de l'obligation légale et de l'enjeu humain.</span></p>
     </div>
   </details>
 </div>
