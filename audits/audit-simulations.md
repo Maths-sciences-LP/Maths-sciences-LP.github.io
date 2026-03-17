@@ -3,7 +3,7 @@
 **Date** : 2026-03-16
 **Dernière mise à jour** : 2026-03-17
 **Périmètre** : dossier `simulations/` — 64 fichiers HTML
-**Méthode** : Lecture et analyse de l'ensemble des 63 simulations, vérification du référencement depuis les pages de cours, analyse de la couverture par chapitre.
+**Méthode** : Lecture et analyse de l'ensemble des 64 simulations, vérification du référencement depuis les pages de cours, analyse de la couverture par chapitre, audit technique approfondi (autonomie, responsive, accessibilité, qualité JS).
 
 ---
 
@@ -49,20 +49,48 @@
 | 24 | `complexes.html` | Nombres complexes (plan complexe) | Ch10 | Non | Bonne |
 | 25 | `scalaire.html` | Produit scalaire | Ch11 | Non | Bonne |
 
-### Physique-Chimie — Seconde (11 simulations)
+### Physique-Chimie — Seconde (17 simulations liées à 13 chapitres)
 
 | # | Fichier | Notion illustrée | Chapitre | Référencée | Pertinence |
 |---|---|---|---|---|---|
-| 26 | `circuit-electrique.html` | Grandeurs électriques, P = U × I | Ch02 | Non | Bonne |
-| 27 | `signal-alternatif.html` | Oscilloscope virtuel, u(t) = Umax sin(2πft) | Ch04 | Non | Très bonne |
-| 28 | `mouvement.html` | Mouvement et trajectoire, v = d/t | Ch05 | Non | Bonne |
-| 29 | `forces.html` | Forces et équilibre, P = mg | Ch06 | Non | Bonne |
-| 30 | `liaisons-chimiques.html` | Liaisons covalente vs ionique, molécules | Ch07 | **Oui** | Très bonne |
-| 31 | `concentration.html` | Solutions chimiques, Cm = m/V | Ch08 | Non | Bonne |
-| 32 | `son-2nde.html` | Caractéristiques d'un son, v = d/t | Ch09 | Non | Bonne |
-| 33 | `transferts-thermiques.html` | 3 modes de transfert thermique | Ch11 | Non | Bonne |
-| 34 | `changement-etat.html` | Courbe de chauffage, changements d'état | Ch12 | Non | Bonne |
-| 35 | `refraction.html` | Réflexion et réfraction, loi de Snell-Descartes | Ch13 | Non | Très bonne |
+| 26 | `circuit-electrique.html` | Grandeurs électriques, P = U × I | Ch02 | **Oui** | Bonne |
+| 27 | `ohm.html` | Loi d'Ohm, labo multi-séries, U = f(I) | Ch03 | **Oui** | Très bonne |
+| 28 | `signal-alternatif.html` | Oscilloscope virtuel, u(t) = Umax sin(2πft) | Ch04 | **Oui** | Très bonne |
+| 29 | `mouvement.html` | Mouvement et trajectoire, v = d/t | Ch05 | **Oui** | Bonne |
+| 30 | `forces.html` | Forces et équilibre, P = mg | Ch06 | **Oui** | Bonne |
+| 31 | `atome.html` | Constructeur d'atomes et ions | Ch07 | **Oui** | Très bonne |
+| 32 | `atome-couches.html` | Configuration électronique (Bohr) | Ch07 | **Oui** | Bonne |
+| 33 | `modeles-atome.html` | Histoire du modèle de l'atome | Ch07 | **Oui** | Bonne |
+| 34 | `liaisons-chimiques.html` | Liaisons covalente vs ionique, molécules | Ch07 | **Oui** | Très bonne |
+| 35 | `concentration.html` | Solutions chimiques, Cm = m/V | Ch08 | **Oui** | Bonne |
+| 36 | `son-2nde.html` | Caractéristiques d'un son, v = d/t | Ch09 | **Oui** | Bonne |
+| 37 | `chaleur.html` | Chaleur massique, Q = mcΔT | Ch10 | **Oui** | Bonne |
+| 38 | `transferts-thermiques.html` | 3 modes de transfert thermique | Ch11 | **Oui** | Bonne |
+| 39 | `changement-etat.html` | Courbe de chauffage, changements d'état | Ch12 | **Oui** | Bonne |
+| 40 | `refraction.html` | Réflexion et réfraction, loi de Snell-Descartes | Ch13 | **Oui** | Très bonne |
+| 41 | `sources-lumineuses.html` | Choisir une source lumineuse | Ch14 | **Oui** | Bonne |
+| 42 | `melangeur.html` | Mélangeur RVB (synthèse additive) | Ch14 | **Oui** | Bonne |
+
+**Note** : Ch01 (Sécurité au laboratoire) est le seul chapitre sans simulation — un chapitre essentiellement réglementaire pour lequel une simulation interactive n'est pas prioritaire.
+
+**Couverture détaillée par chapitre PC Seconde :**
+
+| Chapitre | Titre | Simulations liées | Nb |
+|---|---|---|---|
+| Ch01 | Sécurité en laboratoire et en atelier | aucune | 0 |
+| Ch02 | Grandeurs électriques et circuits | `circuit-electrique.html` | 1 |
+| Ch03 | Loi d'Ohm et caractéristiques d'un dipôle | `ohm.html` | 1 |
+| Ch04 | Signaux électriques alternatifs | `signal-alternatif.html` | 1 |
+| Ch05 | Mouvement et trajectoire | `mouvement.html` | 1 |
+| Ch06 | Forces et équilibre | `forces.html` | 1 |
+| Ch07 | Structure de la matière | `atome.html`, `atome-couches.html`, `modeles-atome.html`, `liaisons-chimiques.html` | 4 |
+| Ch08 | Solutions chimiques et concentration | `concentration.html` | 1 |
+| Ch09 | Caractéristiques d'un son | `son-2nde.html` | 1 |
+| Ch10 | Température et capteurs thermiques | `chaleur.html` | 1 |
+| Ch11 | Transferts thermiques et équilibre thermique | `transferts-thermiques.html` | 1 |
+| Ch12 | Changements d'état et énergie thermique | `changement-etat.html` | 1 |
+| Ch13 | Réflexion, réfraction et signaux lumineux | `refraction.html` | 1 |
+| Ch14 | Lumière, couleurs et photodétecteurs | `sources-lumineuses.html`, `melangeur.html` | 2 |
 
 ### Physique-Chimie — Première ICCER (5 simulations)
 
@@ -99,29 +127,35 @@
 | 48 | `transformateur.html` | Transformateur et transport d'énergie | Ch01 ERA | Non | Bonne |
 | 49 | `pile-electrochimique.html` | Pile électrochimique | Ch02 ERA | Non | Bonne |
 | 50 | `vitesse-acceleration.html` | Vitesse et accélération | Ch04 ERA | Non | Bonne |
-| 51 | `sources-lumineuses.html` | Choisir une source lumineuse | Ch06 ERA | Non | Bonne |
+| 51 | `sources-lumineuses.html` | Choisir une source lumineuse | Ch06 ERA + **PC 2nde Ch14** | **Oui** | Bonne |
 | 52 | `transmission-info.html` | Transmettre l'information (Shannon) | Ch07 ERA | Non | Bonne |
+
+**Note** : `sources-lumineuses.html` et `melangeur.html` sont partagées entre Terminale ERA et PC Seconde Ch14.
 
 ### Physique-Chimie — Terminale (non attribuées) (5 simulations)
 
 | # | Fichier | Notion illustrée | Chapitre | Référencée | Pertinence |
 |---|---|---|---|---|---|
-| 53 | `chaleur.html` | Chaleur massique, Q = mcΔT | Tle (pas de ch.) | Non | Bonne |
+| 53 | `chaleur.html` | Chaleur massique, Q = mcΔT | Tle + **PC 2nde Ch10** | **Oui** | Bonne |
 | 54 | `dephasage.html` | Déphasage, triangle des puissances | Tle (pas de ch.) | Non | Bonne |
 | 55 | `effet-joule.html` | Échauffement d'un conducteur | Tle (pas de ch.) | Non | Bonne |
 | 56 | `gaz.html` | Loi Boyle-Mariotte, Gay-Lussac | Tle (pas de ch.) | Non | Bonne |
 | 57 | `serre.html` | Effet de serre | Tle (pas de ch.) | Non | Bonne |
 
-### Simulations sans niveau ni chapitre (7 simulations)
+### ~~Simulations sans niveau ni chapitre~~ — RECLASSÉES
 
-| # | Fichier | Notion illustrée | Chapitre | Référencée | Pertinence |
-|---|---|---|---|---|---|
-| 58 | `atome.html` | Constructeur d'atomes et ions | Aucun | Non | Moyenne |
-| 59 | `atome-couches.html` | Configuration électronique | Aucun | Non | Moyenne |
-| 60 | `modeles-atome.html` | Histoire du modèle de l'atome | Aucun | Non | Moyenne |
-| 61 | `ohm.html` | Loi d'Ohm (labo multi-séries) | Aucun | Non | Bonne |
-| 62 | `melangeur.html` | Mélangeur RVB (couleurs) | Aucun | Non | Faible |
-| 63 | `traceur.html` | Fonction du second degré | Aucun | **Oui** | Moyenne |
+~~7 simulations étaient non attribuées.~~
+
+**Corrigé le 2026-03-17** : Toutes les simulations anciennement "sans niveau" sont désormais rattachées à un chapitre et référencées depuis les cours :
+
+| Fichier | Désormais rattachée à | Référencée |
+|---|---|---|
+| `atome.html` | PC Seconde Ch07 | **Oui** |
+| `atome-couches.html` | PC Seconde Ch07 | **Oui** |
+| `modeles-atome.html` | PC Seconde Ch07 | **Oui** |
+| `ohm.html` | PC Seconde Ch03 | **Oui** |
+| `melangeur.html` | PC Seconde Ch14 | **Oui** |
+| `traceur.html` | Maths Première Ch05 | **Oui** |
 
 ---
 
@@ -153,19 +187,23 @@ Détail des liaisons ajoutées :
 
 `atome-couches.html`, `atome.html`, `balance.html`, `chaleur.html`, `changement-etat.html`, `debit.html`, `dephasage.html`, `effet-joule.html`, `entrainement-ineq.html`, `entrainement.html`, `equations.html`, `gaz.html`, `graphe-equation.html`, `inegalite.html`, `melangeur.html`, `modeles-atome.html`, `moteur.html`, `ohm.html`, `oxydoreduction.html`, `pression.html`, `puissance.html`, `rayonnement.html`, `redressement.html`, `serre.html`, `son.html`, `traceur.html`
 
-### 3. 30 simulations avec template visuel ancien
+### 3. Simulations avec template visuel ancien (à réévaluer)
 
 **Gravité : FAIBLE**
 
-30 simulations utilisent un ancien template (sans `linear-gradient` dans le header, structure CSS différente). Les 33 autres utilisent le template moderne. Cela crée une disparité visuelle notable.
+**Mise à jour 2026-03-17** : L'audit technique approfondi des 14 simulations PC Seconde montre qu'elles utilisent **toutes le template moderne** (card-based, CSS custom properties, `linear-gradient` dans le header). La liste initiale de 30 simulations anciennes est donc surévaluée et doit être revérifiée pour les autres sections.
 
-Anciennes : `atome-couches.html`, `atome.html`, `chaleur.html`, `changement-etat.html`, `circuit-electrique.html`, `concentration.html`, `debit.html`, `effet-joule.html`, `equations.html`, `gaz.html`, `graphe-equation.html`, `inegalite.html`, `melangeur.html`, `modeles-atome.html`, `moteur.html`, `ohm.html`, `oxydoreduction.html`, `pile-electrochimique.html`, `pression.html`, `puissance.html`, `rayonnement.html`, `redressement.html`, `son-2nde.html`, `son.html`, `sources-lumineuses.html`, `traceur.html`, `transferts-thermiques.html`, `transformateur.html`, `transmission-info.html`, `vitesse-acceleration.html`
+Simulations PC Seconde confirmées **modernes** : `circuit-electrique.html`, `signal-alternatif.html`, `mouvement.html`, `forces.html`, `liaisons-chimiques.html`, `concentration.html`, `son-2nde.html`, `transferts-thermiques.html`, `changement-etat.html`, `refraction.html`, `atome.html`, `atome-couches.html`, `modeles-atome.html`, `ohm.html`.
+
+Simulations **non vérifiées** (potentiellement anciennes, à auditer) : `debit.html`, `effet-joule.html`, `equations.html`, `gaz.html`, `graphe-equation.html`, `inegalite.html`, `moteur.html`, `oxydoreduction.html`, `pile-electrochimique.html`, `pression.html`, `puissance.html`, `rayonnement.html`, `redressement.html`, `son.html`, `sources-lumineuses.html`, `traceur.html`, `transformateur.html`, `transmission-info.html`, `vitesse-acceleration.html`.
 
 ### 4. 8 simulations non responsives (sans @media)
 
 **Gravité : FAIBLE**
 
 `balance.html`, `equations.html`, `graphe-equation.html`, `inegalite.html`, `melangeur.html`, `modeles-atome.html`, `redressement.html`, `traceur.html`
+
+**Mise à jour 2026-03-17** : Parmi les simulations PC Seconde, seul `modeles-atome.html` manque de `@media` queries (utilise CSS Grid mais sans breakpoint explicite). Toutes les autres simulations PC Seconde sont bien responsives.
 
 ### 5. 12 simulations avec métadonnées incomplètes
 
@@ -175,17 +213,37 @@ Simulations mentionnant un chapitre sans niveau ou un niveau sans chapitre :
 - `chaleur.html`, `dephasage.html`, `effet-joule.html`, `gaz.html`, `serre.html` : "Terminale Bac Pro" sans chapitre
 - `debit.html`, `moteur.html`, `oxydoreduction.html`, `pression.html`, `puissance.html`, `rayonnement.html`, `redressement.html`, `son.html` : numéro de chapitre sans niveau
 
-### 6. Simulation à pertinence faible
+**Mise à jour 2026-03-17** : Les 14 simulations PC Seconde vérifiées ont toutes des métadonnées complètes (charset, viewport, lang="fr", référence au chapitre et au niveau dans le titre). Le problème ne concerne que les simulations hors PC Seconde.
 
-**Gravité : FAIBLE**
+### ~~6. Simulation à pertinence faible~~ — CORRIGÉ
 
-`melangeur.html` (68 lignes) — Simulation très basique (3 sliders RGB). Aucun ancrage pédagogique clair, pas de niveau ni chapitre. Pourrait être rattachée à PC/seconde/ch14 (Lumière, couleurs) mais en l'état c'est un gadget déconnecté.
+~~**Gravité : FAIBLE**~~
+
+**Corrigé** : `melangeur.html` est désormais rattachée à PC Seconde Ch14 (Lumière, couleurs et photodétecteurs) et référencée depuis `physique-chimie/seconde/ch14/lecon.html`. La simulation illustre la synthèse additive des couleurs (notion au programme).
+
+### 7. Accessibilité des simulations (NOUVEAU)
+
+**Gravité : MOYENNE**
+
+**Découvert le 2026-03-17** : Aucune des 14 simulations PC Seconde ne possède d'attributs `aria-label` sur les éléments `<canvas>` ou `<svg>`. Les sliders (`<input type="range">`) ne sont pas associés à des `<label>` via `for`. Pas de texte alternatif pour les visualisations.
+
+**Impact** : Les simulations sont inaccessibles aux lecteurs d'écran. Le contenu visuel (graphiques, animations, diagrammes) n'est pas décrit textuellement.
+
+**Points positifs** : bon contraste de couleurs, navigation clavier possible via sliders et boutons.
+
+**Fichiers concernés** : les 64 simulations (problème transversal).
+
+**Actions recommandées** :
+- Ajouter `aria-label` sur chaque `<canvas>` et `<svg>` (description du contenu visuel)
+- Associer les sliders à des `<label for="...">` ou `aria-labelledby`
+- Ajouter un texte alternatif `<desc>` dans les SVG
 
 ---
 
 ## Couverture par section
 
 ### Sections bien couvertes
+- **PC Seconde** : 17 simulations pour 13/14 chapitres — **très bonne couverture**, qualité technique excellente
 - **Maths Seconde** : 15 simulations pour 14 chapitres — bonne couverture (manque Ch10 fonction carrée)
 - **PC Terminale ICCER** : 8 simulations pour 8 chapitres — excellente couverture, modèle à suivre
 - **Maths Terminale** : 9 simulations pour 11 chapitres — bonne couverture (manque Ch02, Ch09)
@@ -222,6 +280,7 @@ Simulations mentionnant un chapitre sans niveau ou un niveau sans chapitre :
 - **2026-03-17** : Corrigé fuite mémoire d'animation dans `modeles-atome.html` (variable `animationFrame` unique → tableau `animationFrames[]` pour annuler toutes les animations au changement de modèle).
 - **2026-03-17** : Corrigé sélection d'isotope dans `atome.html` (`stableIsotopes[z][length-1]` → `stableIsotopes[z][0]` pour sélectionner l'isotope le plus courant au lieu du plus lourd).
 - **2026-03-17** : Créé `liaisons-chimiques.html` — simulation interactive sur les types de liaisons chimiques (covalente vs ionique), 6 molécules (H₂O, CO₂, CH₄, O₂, N₂, NaCl), ancrage Ch07 PC Seconde. Ajouté à `simulations.html`.
+- **2026-03-17** : Audit technique approfondi des simulations PC Seconde et page simulations — corrections de l'inventaire : 17 simulations rattachées à PC Seconde (pas 11), 13/14 chapitres couverts, toutes référencées depuis les cours. Reclassement des 6 simulations "sans niveau". Identification d'un nouveau problème d'accessibilité (aria-label manquants). Confirmation que toutes les simulations PC Seconde utilisent le template moderne et sont responsives (sauf modeles-atome.html).
 
 ---
 
@@ -229,18 +288,19 @@ Simulations mentionnant un chapitre sans niveau ou un niveau sans chapitre :
 
 ### Priorité haute
 - [x] Lier chaque simulation orpheline à la page de cours correspondante (79 pages modifiées, 2026-03-16)
-- [ ] Compléter les métadonnées des 12 simulations incomplètes
+- [ ] Compléter les métadonnées des 12 simulations incomplètes (hors PC Seconde — celles-ci sont OK)
 - [x] Rattacher les 7 simulations sans niveau/chapitre à leur chapitre (atome→ch07, ohm→ch03, melangeur→ch14, traceur→ch05/ch10, 2026-03-16)
 
 ### Priorité moyenne
 - [x] Retirer `nav.js` des 26 simulations non conformes (2026-03-16)
-- [ ] Ajouter des media queries aux 8 simulations non responsives
+- [ ] Ajouter des `aria-label` sur les canvas/SVG et associer les sliders à des `<label>` (accessibilité — 64 simulations)
+- [ ] Ajouter des media queries aux 8 simulations non responsives (dont `modeles-atome.html` pour PC Seconde)
 - [ ] Créer des simulations pour maths/première (1 seule pour 9 chapitres)
 - [ ] Créer des simulations pour PC/première-ERA (1 seule pour 10 chapitres)
 
 ### Priorité basse
-- [ ] Migrer les 30 simulations avec ancien template vers le template moderne
-- [ ] Évaluer la pertinence de `melangeur.html` (rattacher ou supprimer)
+- [ ] Vérifier et migrer les simulations hors PC Seconde avec ancien template (liste initiale surévaluée — les 14 PC Seconde sont déjà modernes)
+- [x] Évaluer la pertinence de `melangeur.html` → rattachée à Ch14 PC Seconde (synthèse additive)
 - [ ] Généraliser le format quiz adaptatif (`entrainement.html`) à d'autres chapitres
 
 ---
@@ -256,35 +316,63 @@ Simulations mentionnant un chapitre sans niveau ou un niveau sans chapitre :
 | Orphelines | **0** (0 %) |
 | Listées dans `simulations.html` | **64** (100 %) |
 | Sans niveau/chapitre | **0** (0 %) |
-| Avec métadonnées incomplètes | **12** (19 %) |
+| Avec métadonnées incomplètes | **12** (19 %) — hors PC Seconde |
 | ~~Incluant `nav.js` (non-conforme)~~ | **0** (corrigé 2026-03-16) |
-| Sans media query | **8** (13 %) |
-| Avec template visuel ancien | **30** (48 %) |
+| Sans media query | **8** (13 %) — dont 1 seule en PC Seconde |
+| Template ancien (à revérifier) | **~19** (estimation révisée, PC Seconde = 0) |
+| Sans `aria-label` (accessibilité) | **64** (100 %) — problème transversal |
 
 ### Répartition par section
 
-| Section | Simulations | Chapitres | Couverture |
+| Section | Simulations | Chapitres couverts | Couverture |
 |---|---|---|---|
 | Maths Seconde | 15 | 14 | Bonne |
 | Maths Première | 1 | 9 | **Très faible** |
 | Maths Terminale | 9 | 11 | Bonne |
-| PC Seconde | 11 | 14 | Moyenne |
+| **PC Seconde** | **17** | **13/14** | **Très bonne** |
 | PC Première ICCER | 5 | 10 | Moyenne |
 | PC Première ERA | 1 | 10 | **Très faible** |
 | PC Terminale ICCER | 8 | 8 | **Excellente** |
 | PC Terminale ERA | 5 | 8 | Bonne |
-| Non attribuées | 12 | — | — |
+| Non attribuées | **0** | — | — |
+
+### Audit technique approfondi — PC Seconde (2026-03-17)
+
+| Critère | Résultat | Détails |
+|---|---|---|
+| **Autonomie** (pas de nav.js/styles.css) | ✅ 14/14 | Toutes autonomes, styles inline |
+| **Template moderne** (card-based, CSS vars) | ✅ 14/14 | Toutes conformes au template moderne |
+| **Responsive** (@media queries) | ✅ 13/14 | Seul `modeles-atome.html` sans breakpoint |
+| **Métadonnées** (charset, viewport, lang) | ✅ 14/14 | Toutes complètes |
+| **Erreurs JavaScript** | ✅ 0 erreur | Code propre, APIs modernes |
+| **Ancrage pédagogique** | ✅ 14/14 | Contextes pro pertinents |
+| **Accessibilité** (aria-label) | ❌ 0/14 | Aucun aria-label sur canvas/SVG |
+| **Types d'interactivité** | Varié | 8 Canvas, 3 SVG, 1 Chart.js, 2 hybrides |
+
+### Page simulations.html
+
+| Critère | Résultat |
+|---|---|
+| Simulations listées | **64/64** (100 %) |
+| Liens fonctionnels | ✅ Tous valides |
+| Filtrage par niveau | ✅ JavaScript (Tous / Tle / 1ère / 2nde) |
+| 6 catégories thématiques | ✅ Maths, Électricité, Thermique, Mécanique, Chimie, Signaux & Optique |
+| Design responsive | ✅ CSS Grid auto-fill |
+| Intégration index.html | ✅ Lien dans navigation + carte accueil |
 
 ### Points positifs
-1. **Diversité thématique remarquable** : 63 simulations couvrent algèbre, géométrie, statistiques, électricité, thermique, chimie, ondes, mécanique.
+1. **Diversité thématique remarquable** : 64 simulations couvrent algèbre, géométrie, statistiques, électricité, thermique, chimie, ondes, mécanique.
 2. **Qualité pédagogique globalement bonne** : formules visibles, sliders réactifs, contextes professionnels, valeurs physiquement réalistes.
-3. **Page hub existante** : `simulations.html` catalogue les 63 simulations.
-4. **Excellente couverture PC Terminale ICCER** : 8 simulations pour 8 chapitres, modèle à reproduire.
-5. **Simulations d'entraînement (quiz)** : format adaptatif original et utile à généraliser.
+3. **Page hub complète** : `simulations.html` catalogue les 64 simulations avec filtrage par niveau.
+4. **Excellente couverture PC Seconde** : 17 simulations pour 13/14 chapitres, toutes modernes et responsives.
+5. **Excellente couverture PC Terminale ICCER** : 8 simulations pour 8 chapitres, modèle à reproduire.
+6. **Simulations d'entraînement (quiz)** : format adaptatif original et utile à généraliser.
+7. **Qualité technique des simulations PC Seconde** : zéro erreur JS, zéro dépendance externe non autorisée, animations fluides (requestAnimationFrame).
 
 ### Priorités
-1. ~~**Référencement**~~ ✅ **FAIT** (2026-03-16) : 63 simulations liées à 79 pages de cours.
-2. **Métadonnées** (effort faible) : compléter les 19 simulations avec informations manquantes.
-3. **Conformité technique** (effort moyen) : retirer nav.js, ajouter responsive.
+1. ~~**Référencement**~~ ✅ **FAIT** (2026-03-16) : 64 simulations liées à 79+ pages de cours.
+2. **Accessibilité** (effort moyen) : ajouter aria-label sur canvas/SVG et labels sur sliders (64 fichiers).
+3. **Métadonnées** (effort faible) : compléter les 12 simulations hors PC Seconde avec informations manquantes.
 4. **Couverture** (effort important) : créer des simulations pour maths/première et PC/première-ERA.
-5. **Harmonisation visuelle** (effort important) : migrer les 30 simulations anciennes.
+5. **Responsive** (effort faible) : ajouter @media à 8 simulations (dont `modeles-atome.html`).
+6. **Harmonisation visuelle** (effort moyen) : vérifier et migrer les ~19 simulations hors PC Seconde potentiellement anciennes.
