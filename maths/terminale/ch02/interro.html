@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch02 – Probabilités – Interrogation – Terminale Bac Pro</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
+.pts{font-size:.82em;color:#718096;font-weight:normal}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
+
+<header>
+  <h1>Chapitre 2 – Interrogation écrite</h1>
+  <p class="sous-titre">Probabilités — Terminale Bac Pro</p>
+</header>
+
+<div class="dh">
+  <p><strong>Durée :</strong> 10-15 min | <strong>Calculatrice autorisée</strong></p>
+</div>
+
+<!-- ========================= SOCLE ========================= -->
+<div class="diff-socle">
+<span class="tag-socle">Socle</span>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(3 points)</span></h2>
+  <p>Compléter avec le mot correct : <em>événement contraire</em>, <em>probabilité conditionnelle</em>, <em>indépendance</em>.</p>
+  <p>a) \(P(\bar{A}) = 1 - P(A)\) est la formule de l' ...................</p>
+  <p>b) \(P_B(A) = \dfrac{P(A \cap B)}{P(B)}\) est la formule de la ...................</p>
+  <p>c) Quand \(P(A \cap B) = P(A) \times P(B)\), on parle d' ...................</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) événement contraire</p>
+    <p>b) probabilité conditionnelle</p>
+    <p>c) indépendance</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> \(P(\bar{A}) = 1 - P(A)\)</div>
+  <p>La probabilité qu'un panneau de bois soit défectueux est \(P(D) = 0{,}06\).</p>
+  <p>a) Calculer la probabilité qu'un panneau soit conforme.</p>
+  <p>b) Sur 500 panneaux, combien s'attend-on à trouver de panneaux défectueux ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(P(\text{Conforme}) = 1 - 0{,}06 = \mathbf{0{,}94}\)</p>
+    <p>b) \(0{,}06 \times 500 = \mathbf{30}\) panneaux défectueux.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(5 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Probabilité = effectif de la case ÷ effectif total</div>
+  <p>On contrôle 200 chauffe-eaux produits par deux ateliers :</p>
+  <table>
+    <thead>
+      <tr><th></th><th>Défectueux (D)</th><th>Conforme (C)</th><th>Total</th></tr>
+    </thead>
+    <tbody>
+      <tr><th>Atelier A</th><td>6</td><td>114</td><td>120</td></tr>
+      <tr><th>Atelier B</th><td>10</td><td>70</td><td>80</td></tr>
+      <tr><th>Total</th><td>16</td><td>184</td><td>200</td></tr>
+    </tbody>
+  </table>
+  <p>On prend un chauffe-eau au hasard. Calculer :</p>
+  <p>a) \(P(A) = \dfrac{...}{...} = ...\)</p>
+  <p>b) \(P(D) = \dfrac{...}{...} = ...\)</p>
+  <p>c) \(P(A \cap D) = \dfrac{...}{...} = ...\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(P(A) = \dfrac{120}{200} = \mathbf{0{,}60}\)</p>
+    <p>b) \(P(D) = \dfrac{16}{200} = \mathbf{0{,}08}\)</p>
+    <p>c) \(P(A \cap D) = \dfrac{6}{200} = \mathbf{0{,}03}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Sur un nœud, la somme des branches vaut 1. On multiplie le long d'un chemin.</div>
+  <p>Compléter l'arbre de probabilités :</p>
+  <p>Branche A : \(P(A) = 0{,}60\) → branche D : \(P_A(D) = 0{,}05\) → branche C : \(P_A(C) = ...\)</p>
+  <p>Branche B : \(P(B) = ...\) → branche D : \(P_B(D) = 0{,}125\) → branche C : \(P_B(C) = ...\)</p>
+  <p>Calculer \(P(A \cap D) = P(A) \times P_A(D) = ... \times ... = ...\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>\(P_A(C) = 1 - 0{,}05 = \mathbf{0{,}95}\)</p>
+    <p>\(P(B) = 1 - 0{,}60 = \mathbf{0{,}40}\)</p>
+    <p>\(P_B(C) = 1 - 0{,}125 = \mathbf{0{,}875}\)</p>
+    <p>\(P(A \cap D) = 0{,}60 \times 0{,}05 = \mathbf{0{,}030}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Événements indépendants → \(P(A \cap B) = P(A) \times P(B)\)</div>
+  <p>Un technicien vérifie deux circuits indépendants. La probabilité de panne est 0,04 pour le circuit 1 et 0,07 pour le circuit 2.</p>
+  <p>a) Calculer la probabilité que les deux soient en panne : \(P(P_1 \cap P_2) = ... \times ... = ...\)</p>
+  <p>b) Calculer la probabilité qu'aucun ne soit en panne : \(P(\bar{P_1} \cap \bar{P_2}) = ... \times ... = ...\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(P(P_1 \cap P_2) = 0{,}04 \times 0{,}07 = \mathbf{0{,}0028}\)</p>
+    <p>b) \(P(\bar{P_1} \cap \bar{P_2}) = 0{,}96 \times 0{,}93 = \mathbf{0{,}8928}\)</p>
+  </div>
+</div>
+
+</div>
+
+<!-- ========================= STANDARD ========================= -->
+<div class="diff-standard">
+<span class="tag-standard">Standard</span>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(3 points)</span></h2>
+  <p>Rappeler les formules suivantes :</p>
+  <p>a) Probabilité de l'événement contraire de A.</p>
+  <p>b) Probabilité conditionnelle de A sachant B.</p>
+  <p>c) Formule des probabilités totales (avec B et \(\bar{B}\)).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(P(\bar{A}) = 1 - P(A)\)</p>
+    <p>b) \(P_B(A) = \dfrac{P(A \cap B)}{P(B)}\)</p>
+    <p>c) \(P(A) = P(B) \times P_B(A) + P(\bar{B}) \times P_{\bar{B}}(A)\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(5 points)</span></h2>
+  <p>On contrôle 500 panneaux de bois venant de deux fournisseurs :</p>
+  <table>
+    <thead>
+      <tr><th></th><th>Défectueux</th><th>Conforme</th><th>Total</th></tr>
+    </thead>
+    <tbody>
+      <tr><th>Fournisseur F1</th><td>15</td><td>285</td><td>300</td></tr>
+      <tr><th>Fournisseur F2</th><td>25</td><td>175</td><td>200</td></tr>
+      <tr><th>Total</th><td>40</td><td>460</td><td>500</td></tr>
+    </tbody>
+  </table>
+  <p>On prend un panneau au hasard.</p>
+  <p>a) Calculer \(P(F1)\), \(P(D)\) et \(P(F1 \cap D)\).</p>
+  <p>b) Calculer \(P_{F1}(D)\). Interpréter le résultat.</p>
+  <p>c) Calculer \(P_{F2}(D)\). Quel fournisseur a le plus grand taux de défaut ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(P(F1) = \frac{300}{500} = 0{,}60\) ; \(P(D) = \frac{40}{500} = 0{,}08\) ; \(P(F1 \cap D) = \frac{15}{500} = 0{,}03\)</p>
+    <p>b) \(P_{F1}(D) = \frac{P(F1 \cap D)}{P(F1)} = \frac{0{,}03}{0{,}60} = \mathbf{0{,}05}\). Parmi les panneaux de F1, 5 % sont défectueux.</p>
+    <p>c) \(P_{F2}(D) = \frac{25}{200} = \mathbf{0{,}125}\). F2 a le plus grand taux de défaut (12,5 % contre 5 %).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(5 points)</span></h2>
+  <p>Un installateur thermique contrôle des climatiseurs provenant de deux marques : M1 (80 % de la production, taux de panne 2 %) et M2 (20 %, taux de panne 6 %).</p>
+  <p>a) Construire un arbre de probabilités à deux niveaux.</p>
+  <p>b) Calculer la probabilité qu'un climatiseur pris au hasard soit en panne.</p>
+  <p>c) Calculer la probabilité qu'il soit en bon état.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Branche M1 (0,80) → P (0,02) / NP (0,98). Branche M2 (0,20) → P (0,06) / NP (0,94).</p>
+    <p>b) \(P(\text{Panne}) = 0{,}80 \times 0{,}02 + 0{,}20 \times 0{,}06 = 0{,}016 + 0{,}012 = \mathbf{0{,}028}\)</p>
+    <p>c) \(P(\text{Bon état}) = 1 - 0{,}028 = \mathbf{0{,}972}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>Deux machines fonctionnent de manière indépendante. La probabilité de panne est 0,05 pour la machine A et 0,03 pour la machine B.</p>
+  <p>a) Calculer la probabilité que les deux machines tombent en panne.</p>
+  <p>b) Calculer la probabilité qu'au moins une machine tombe en panne.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(P(A \cap B) = 0{,}05 \times 0{,}03 = \mathbf{0{,}0015}\)</p>
+    <p>b) \(P(\text{au moins une}) = 1 - P(\text{aucune}) = 1 - (1-0{,}05)(1-0{,}03) = 1 - 0{,}95 \times 0{,}97 = 1 - 0{,}9215 = \mathbf{0{,}0785}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(3 points)</span></h2>
+  <p>On sait que \(P(A) = 0{,}5\), \(P(B) = 0{,}4\), \(P(A \cap B) = 0{,}2\). A et B sont-ils indépendants ? Justifier.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>\(P(A) \times P(B) = 0{,}5 \times 0{,}4 = 0{,}20\)</p>
+    <p>Or \(P(A \cap B) = 0{,}20\).</p>
+    <p>Comme \(P(A) \times P(B) = P(A \cap B)\), <strong>A et B sont indépendants</strong>.</p>
+  </div>
+</div>
+
+</div>
+
+<!-- ========================= APPROFONDISSEMENT ========================= -->
+<div class="diff-appro">
+<span class="tag-appro">Approfondissement</span>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(3 points)</span></h2>
+  <p>Énoncer la formule des probabilités totales pour un événement A qui peut arriver via B ou \(\bar{B}\). Donner une interprétation en termes d'arbre de probabilités.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>\(P(A) = P(B) \times P_B(A) + P(\bar{B}) \times P_{\bar{B}}(A)\)</p>
+    <p>Sur l'arbre : on identifie tous les chemins qui aboutissent à A, on calcule la probabilité de chaque chemin (produit des branches), puis on additionne.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(5 points)</span></h2>
+  <p>Un menuisier agenceur commande des panneaux chez trois scieries :</p>
+  <ul>
+    <li>S1 : 50 % de la commande, taux de défaut 2 %</li>
+    <li>S2 : 30 % de la commande, taux de défaut 5 %</li>
+    <li>S3 : 20 % de la commande, taux de défaut 8 %</li>
+  </ul>
+  <p>a) Construire un arbre de probabilités à deux niveaux.</p>
+  <p>b) Calculer la probabilité qu'un panneau pris au hasard soit défectueux.</p>
+  <p>c) Sachant qu'un panneau est défectueux, calculer la probabilité qu'il vienne de S3.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) S1 (0,50) → D (0,02)/C (0,98) ; S2 (0,30) → D (0,05)/C (0,95) ; S3 (0,20) → D (0,08)/C (0,92)</p>
+    <p>b) \(P(D) = 0{,}50 \times 0{,}02 + 0{,}30 \times 0{,}05 + 0{,}20 \times 0{,}08 = 0{,}010 + 0{,}015 + 0{,}016 = \mathbf{0{,}041}\)</p>
+    <p>c) \(P_D(S3) = \dfrac{P(S3 \cap D)}{P(D)} = \dfrac{0{,}016}{0{,}041} \approx \mathbf{0{,}390}\). Environ 39 % des panneaux défectueux viennent de S3.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Un technicien de maintenance contrôle 3 machines indépendantes. Les probabilités de panne sont : \(p_1 = 0{,}10\), \(p_2 = 0{,}05\), \(p_3 = 0{,}02\).</p>
+  <p>a) Calculer la probabilité qu'aucune machine ne tombe en panne.</p>
+  <p>b) En déduire la probabilité qu'au moins une machine tombe en panne.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(P(\text{aucune}) = (1-0{,}10)(1-0{,}05)(1-0{,}02) = 0{,}90 \times 0{,}95 \times 0{,}98 = \mathbf{0{,}8379}\)</p>
+    <p>b) \(P(\text{au moins une}) = 1 - 0{,}8379 = \mathbf{0{,}1621}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>On sait que \(P(A) = 0{,}3\), \(P(B) = 0{,}5\) et \(P(A \cap B) = 0{,}2\).</p>
+  <p>a) A et B sont-ils indépendants ? Justifier par le calcul.</p>
+  <p>b) Calculer \(P_B(A)\) et \(P_A(B)\). Sont-elles égales ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(P(A) \times P(B) = 0{,}3 \times 0{,}5 = 0{,}15\). Or \(P(A \cap B) = 0{,}20 \neq 0{,}15\). Donc <strong>A et B ne sont pas indépendants</strong>.</p>
+    <p>b) \(P_B(A) = \dfrac{P(A \cap B)}{P(B)} = \dfrac{0{,}20}{0{,}50} = 0{,}40\)</p>
+    <p>\(P_A(B) = \dfrac{P(A \cap B)}{P(A)} = \dfrac{0{,}20}{0{,}30} \approx 0{,}667\)</p>
+    <p>Non, \(P_B(A) \neq P_A(B)\). La probabilité conditionnelle n'est pas symétrique.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <p>Un électricien contrôle 1 000 logements. 60 % sont câblés par l'équipe A (taux de non-conformité 3 %), 40 % par l'équipe B (taux de non-conformité 8 %).</p>
+  <p>a) Calculer le nombre de logements non conformes attendu pour chaque équipe et au total.</p>
+  <p>b) Sachant qu'un logement est non conforme, quelle est la probabilité qu'il ait été câblé par l'équipe B ? Interpréter.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Équipe A : \(0{,}60 \times 0{,}03 \times 1000 = \mathbf{18}\). Équipe B : \(0{,}40 \times 0{,}08 \times 1000 = \mathbf{32}\). Total : \(18 + 32 = \mathbf{50}\).</p>
+    <p>b) \(P(\text{NC}) = 0{,}050\). \(P_{\text{NC}}(B) = \dfrac{P(B \cap \text{NC})}{P(\text{NC})} = \dfrac{0{,}032}{0{,}050} = \mathbf{0{,}64}\)</p>
+    <p>Parmi les logements non conformes, 64 % ont été câblés par l'équipe B, alors que B ne représente que 40 % de la production. L'équipe B contribue de manière disproportionnée aux non-conformités.</p>
+  </div>
+</div>
+
+</div>
+
+</div><!-- fin .c -->
+<script src="../../../nav.js"></script>
+<script src="../../../diff.js"></script>
+</body>
+</html>
