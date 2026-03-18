@@ -1,213 +1,160 @@
-# Audit Doublons de pages
+# Audit Doublons & Uniformisation des ressources
 
 **Date** : 2026-03-18
-**Derniere mise a jour** : 2026-03-18 (corrections appliquees)
-**Perimetre** : Pages en doublon ou hors schema standard (automatismes, QCM, interrogations)
+**Derniere mise a jour** : 2026-03-18
+**Perimetre** : Uniformisation du schema de pages par chapitre (automatismes, QCM, interrogations, fiches)
 
 ---
 
 ## Resume executif
 
-Deux pages servent de point d'entree aux automatismes mathematiques :
-- `/automatismes.html` (racine, 46 Ko, 738 lignes)
-- `/automatismes/index.html` (23 Ko, 518 lignes)
+Le site compte **84 chapitres Bac Pro** (hors BTS). Chaque chapitre doit proposer un ensemble uniforme de ressources. L'audit a revele des incoherences : un doublon d'automatismes (corrige), des pages QCM et interro existantes mais isolees, et une couverture incomplete des types de ressources.
 
-Ces pages couvrent les memes themes (Seconde, Premiere, Terminale) mais avec des approches differentes. Les liens depuis le reste du site sont **incoherents** : certaines pages pointent vers l'une, d'autres vers l'autre, et deux pages pointent vers les deux.
+**Decision prise :** chaque chapitre doit a terme proposer **6 types de pages** :
+
+| Page | Role | Existe |
+|---|---|---|
+| `lecon.html` | Cours (identique pour tous) | 84/84 |
+| `exercices.html` | Exercices differencies (socle/standard/appro) | 77/84 |
+| `ds.html` | Devoir surveille differencie (1h, 20 pts) | 77/84 |
+| `qcm.html` | QCM interactif auto-corrige (15 questions, 15-20 min) | **1/84** |
+| `interro.html` | Interrogation ecrite courte & diagnostique (10-15 min, 5-8 questions) | **1/84** |
+| `fiche.html` | Fiche de revision / synthese | 57/84 |
 
 ---
 
-## Problemes identifies
+## Problemes identifies (et corriges)
 
-### 1. Doublon fonctionnel entre les deux pages (gravite : HAUTE)
+### 1. [CORRIGE] Doublon automatismes.html vs automatismes/index.html (gravite : HAUTE)
 
-| Dimension | `automatismes.html` (racine) | `automatismes/index.html` |
+Deux pages servaient de point d'entree aux automatismes avec des approches differentes et des liens incoherents depuis le site.
+
+**Correction :** `automatismes.html` (racine) supprime. Tous les liens unifies vers `automatismes/index.html`. Voir details dans la section "Corrections realisees".
+
+### 2. [CORRIGE] Liens incoherents vers les automatismes (gravite : CRITIQUE)
+
+`maths-term-erama.html` et `maths-term-iccer.html` pointaient vers les deux pages simultanement.
+
+**Correction :** liens fusionnes en un seul vers `automatismes/index.html`.
+
+---
+
+## Problemes identifies (en cours)
+
+### 3. `physique-chimie/seconde/ch07/qcm.html` — page orpheline (gravite : HAUTE)
+
+Page QCM interactive de qualite (15 questions, auto-correction JS, feedback, score) mais **introuvable** par navigation. Le sommaire `pc-2nde-pro.html` ne liste que lecon/exercices/ds pour le ch07.
+
+**Action :** ajouter le lien dans le sommaire + utiliser comme modele pour les 83 autres chapitres.
+
+### 4. `maths/terminale/ch04/interro.html` — page non reliee au schema standard (gravite : MOYENNE)
+
+Interrogation ecrite sur les polynomes de degre 3. Page de qualite, liee depuis les sommaires Terminale. Format a conserver et deployer sur les autres chapitres.
+
+**Clarification :** cette page n'est **pas** consideree comme un doublon de ds.html. L'interro et le DS ont des roles complementaires :
+- **Interro** = evaluation diagnostique courte (10-15 min), verification rapide des acquis de base
+- **DS** = evaluation sommative complete (1h), differenciation socle/standard/appro
+
+### 5. Couverture incomplete des types de ressources (gravite : HAUTE)
+
+| Ressource | Maths 2nde (14) | Maths 1ere (9) | Maths Term (11) | PC 2nde (14) | PC 1ere-ICCER (10) | PC 1ere-ERA (10) | PC Term-ICCER (8) | PC Term-ERA (8) | Total |
+|---|---|---|---|---|---|---|---|---|---|
+| `lecon.html` | 14 | 9 | 11 | 14 | 10 | 10 | 8 | 8 | **84/84** |
+| `exercices.html` | 14 | 9 | 11 | 14 | 10 | 10 | 5 | 4 | **77/84** |
+| `ds.html` | 14 | 9 | 11 | 14 | 10 | 10 | 5 | 4 | **77/84** |
+| `fiche.html` | 14 | 2 | 11 | 14 | 0 | 0 | 8 | 8 | **57/84** |
+| `qcm.html` | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | **1/84** |
+| `interro.html` | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | **1/84** |
+
+**Pages manquantes a creer :**
+
+| Type | Nombre a creer | Priorite |
 |---|---|---|
-| **Role** | Mega-page avec exercices flash inline | Hub moderne avec cards vers 22 pages thematiques |
-| **Taille** | 46 Ko, 738 lignes | 23 Ko, 518 lignes |
-| **Design** | Ancien (tabs basiques, inline styles + styles.css) | Moderne (cards, gradients, hover, 100% inline) |
-| **Exercices** | Inline avec corrections cachees (bouton voir/cacher) | Deportes dans 22 pages thematiques individuelles |
-| **Impression** | Optimise (print.css + @media print) | Pas d'optimisation print |
-| **MathJax** | tex-mml-chtml.js | tex-svg.js |
-| **Navigation** | Tabs Seconde/Premiere/Terminale | Tabs + grid de cards cliquables |
-| **Lien nav.js** | Oui | Non (page autonome) |
+| `qcm.html` | 83 | Haute |
+| `interro.html` | 83 | Haute |
+| `fiche.html` | 27 | Moyenne |
+| `exercices.html` | 7 | Haute |
+| `ds.html` | 7 | Haute |
 
-**Contenu de `automatismes.html` (racine) :**
-- 6 domaines Seconde avec exercices flash complets et corrections
-- 7 domaines Premiere avec exercices flash complets et corrections
-- 8 domaines Terminale avec exercices flash complets et corrections
-- Explication pedagogique detaillee (principe de cumul)
-- Aucun lien vers les pages thematiques individuelles
+### 6. CSS des QCM a centraliser (gravite : MOYENNE)
 
-**Contenu de `automatismes/index.html` :**
-- 6 cards Seconde → liens vers pages thematiques
-- 7 cards Premiere → liens vers pages thematiques
-- 8 cards Terminale → liens vers pages thematiques
-- Section "Pourquoi les automatismes ?"
-- Guide d'utilisation en 4 etapes
-- Aucun exercice inline
+La page `qcm.html` existante contient 25 classes inline (`.qcm-header`, `.q-block`, `.options`, `.q-feedback`, `.score-box`, etc.). Avant de creer 83 autres QCM, ces classes doivent etre centralisees dans `styles.css`.
 
-### 2. Liens incoherents depuis le site (gravite : CRITIQUE)
+---
 
-| Page source | Lien | Cible |
-|---|---|---|
-| `index.html` (accueil) | `automatismes.html` | Racine |
-| `maths-2nde-mama.html` | `automatismes.html` | Racine |
-| `maths-1ere-pro.html` | `automatismes.html` | Racine |
-| `maths-term-erama.html` | `automatismes.html` (Seconde) | Racine |
-| `maths-term-erama.html` | `automatismes/index.html` (Terminale) | Dossier |
-| `maths-term-iccer.html` | `automatismes.html` (Seconde) | Racine |
-| `maths-term-iccer.html` | `automatismes/index.html` (Terminale) | Dossier |
+## Schema standard par chapitre
 
-**Resultat :** les eleves de Terminale arrivent sur une page differente selon le lien clique. Deux experiences utilisateur contradictoires pour le meme contenu.
+### Structure cible
 
-### 3. Les 22 pages thematiques ne sont accessibles que via `automatismes/index.html` (gravite : MOYENNE)
+```
+subject/level/chNN/
+├── lecon.html       Cours commun (pas de differenciation)
+├── exercices.html   Exercices differencies (diff.js, socle/standard/appro)
+├── ds.html          Devoir surveille differencie (1h, 20 pts, socle/standard/appro)
+├── qcm.html         QCM interactif auto-corrige (15 questions, 15-20 min)
+├── interro.html     Interrogation diagnostique (10-15 min, 5-8 questions rapides)
+└── fiche.html       Fiche de revision / synthese
+```
 
-Pages thematiques existantes dans `/automatismes/` :
+### Specifications `qcm.html`
 
-**Seconde (6) :**
-- seconde-calcul-numerique.html
-- seconde-calcul-litteral.html
-- seconde-proportionnalite.html
-- seconde-grandeurs.html
-- seconde-geometrie.html
-- seconde-statistiques.html
-
-**Premiere (7) :**
-- premiere-stats-probas.html
-- premiere-algebre.html
-- premiere-fonctions.html
-- premiere-geometrie.html
-- premiere-calculs-commerciaux.html
-- premiere-suites.html
-- premiere-derivation.html
-
-**Terminale (8) :**
-- probabilites.html
-- suites.html
-- polynomes.html
-- derivation.html
-- vecteurs.html
-- terminale-exp-log.html
-- terminale-trigonometrie.html
-- terminale-integration.html
-
-**Aucune** de ces pages n'est liee depuis `automatismes.html` (racine). Les eleves qui arrivent sur la page racine n'ont jamais acces a ces 22 pages detaillees.
-
-### 4. CSS non conforme dans `automatismes.html` (gravite : BASSE)
-
-La page racine contient environ 200 lignes de CSS inline qui definissent des classes specifiques (`.level-tab`, `.auto-domain`, `.flash-series`, `.flash-corr`, etc.) non presentes dans `styles.css`. Certaines de ces classes pourraient etre utiles si elles etaient centralisees.
-
-### 5. `physique-chimie/seconde/ch07/qcm.html` — page orpheline (gravite : HAUTE)
-
-Page QCM interactive sur "Structure de la matiere" (15 questions, auto-correction JS).
-
-| Dimension | Detail |
+| Dimension | Specification |
 |---|---|
-| **Format** | QCM interactif avec feedback instantane et score |
-| **Contenu** | 15 questions : atomes, Z, neutrons, couches electroniques, ions, molecules, etats |
-| **Duree** | 15-20 min, sans calculatrice |
-| **Doublon avec `exercices.html` ?** | **Non** — format different (QCM interactif vs exercices rediges) |
-| **Liee depuis le sommaire ?** | **Non** — page orpheline, introuvable par navigation |
-| **CSS** | 25 classes inline (`.qcm-header`, `.q-block`, `.options`, `.q-feedback`, `.score-box`, etc.) |
-| **nav.js** | Oui |
-| **print.css** | Oui |
+| **Format** | QCM interactif avec auto-correction JS |
+| **Nombre de questions** | 10-15 |
+| **Duree** | 15-20 min |
+| **Feedback** | Immediat (correct/incorrect + explication) |
+| **Score** | Calcule et affiche automatiquement |
+| **Differenciation** | Non (meme QCM pour tous) |
+| **Impression** | Supportee (print.css) |
+| **Modele existant** | `physique-chimie/seconde/ch07/qcm.html` |
 
-**Probleme :** la page existe mais aucun lien ne permet d'y acceder. Le sommaire `pc-2nde-pro.html` ne liste que lecon.html, exercices.html, ds.html pour le ch07.
+### Specifications `interro.html`
 
-**Actions possibles :**
-- A. Ajouter un lien vers qcm.html dans le sommaire du ch07 (conserver la page)
-- B. Fusionner le contenu QCM dans exercices.html (supprimer la page)
-- C. Centraliser les classes CSS QCM dans styles.css si d'autres QCM sont prevus
+| Dimension | Specification |
+|---|---|
+| **Format** | Interrogation ecrite courte, imprimable |
+| **Nombre de questions** | 5-8 |
+| **Duree** | 10-15 min |
+| **Objectif** | Diagnostic rapide des acquis de base |
+| **Differenciation** | Non (evaluation commune, pas de niveaux) |
+| **Corrections** | Oui (bouton "Voir la correction") |
+| **Bareme** | 10-20 pts selon le chapitre |
+| **Modele existant** | `maths/terminale/ch04/interro.html` |
 
-### 6. `maths/terminale/ch04/interro.html` — doublon avec `ds.html` (gravite : HAUTE)
-
-Interrogation ecrite sur "Polynomes de degre 3" (40 min, 20 pts, differenciation socle/standard/appro).
-
-| Dimension | `interro.html` | `ds.html` |
-|---|---|---|
-| **Titre** | Interrogation ecrite (40 min) | Devoir Surveille (1h) |
-| **Format** | Differencie socle/standard/appro | Differencie socle/standard/appro |
-| **Bareme** | 20 points (4 exos par niveau) | 20 points (4 exos par niveau) |
-| **Contenu** | Reconnaissance, coefficients, images, derivees | Reconnaissance, coefficients, images, derivees |
-| **Chevauchement** | ~85% identique a ds.html | ~85% identique a interro.html |
-| **Corrections** | Oui (bouton "Voir la correction") | Oui (bouton "Voir la correction") |
-| **Liee ?** | Oui — depuis `maths-term-iccer.html` et `maths-term-erama.html` | Oui — depuis les memes sommaires |
-| **print.css** | Non | Oui |
-| **diff.js** | Oui | Oui |
-
-**Probleme :** les deux pages evaluent exactement les memes competences avec la meme structure differenciation. La seule difference est la duree (40 min vs 1h) et quelques variations mineures de formulation. Un eleve qui fait les deux n'apprend rien de nouveau.
-
-**Actions possibles :**
-- A. Supprimer interro.html et ne garder que ds.html (recommande — evite la maintenance double)
-- B. Differencier reellement le contenu : interro = evaluation rapide/diagnostique, ds = evaluation sommative complete
-- C. Fusionner les exercices uniques de interro.html dans ds.html avant suppression
-
----
-
-## Analyse et recommandation
-
-### Option A : Conserver `automatismes/index.html` comme page unique (RECOMMANDE)
-
-**Avantages :**
-- Architecture modulaire (hub + 22 pages individuelles)
-- Design moderne et maintenable
-- Ajout de contenu = un fichier, pas une mega-page a modifier
-- Meilleur SEO (une page par theme)
-- Coherent avec l'architecture du reste du site
-
-**Actions :**
-1. Mettre a jour tous les liens vers `automatismes/index.html`
-2. Migrer le contenu "exercices flash" de la page racine vers les pages thematiques si absent
-3. Supprimer ou archiver `automatismes.html` (racine)
-
-### Option B : Fusionner les deux (exercices flash dans le hub)
-
-**Avantages :**
-- Conserve l'acces immediat aux exercices flash
-- Un seul point d'entree
-
-**Inconvenients :**
-- Page plus lourde
-- Doublon avec les pages thematiques
-
-### Option C : Garder les deux avec roles distincts
-
-- `automatismes.html` → "Edition enseignant" (impression)
-- `automatismes/index.html` → "Edition eleve" (navigation)
-
-**Inconvenient :** maintenance double, confusion de liens
+**Difference cle avec `ds.html` :**
+- L'interro est **courte et non differenciee** : tous les eleves font le meme sujet
+- Le DS est **long et differencie** : 3 sujets (socle/standard/appro) avec diff.js
 
 ---
 
 ## Corrections realisees
 
-- **2026-03-18** : Option A retenue — `automatismes/index.html` conserve comme page unique
-- **2026-03-18** : Liens mis a jour dans 5 fichiers (`index.html`, `maths-2nde-mama.html`, `maths-1ere-pro.html`, `maths-term-erama.html`, `maths-term-iccer.html`) pour pointer vers `automatismes/index.html`
-- **2026-03-18** : Fusion des 2 liens distincts (Automatismes 2nde + Automatismes Terminale) en un seul dans `maths-term-erama.html` et `maths-term-iccer.html`
-- **2026-03-18** : Verification du contenu — les 22 pages thematiques sont plus completes que la page racine (QCM, 3 niveaux, feedbacks vs simples reponses flash). Aucune migration necessaire.
-- **2026-03-18** : Suppression de `automatismes.html` (racine) — doublon elimine
+- **2026-03-18** : Doublon automatismes corrige — `automatismes.html` (racine) supprime
+- **2026-03-18** : Liens unifies dans 5 fichiers vers `automatismes/index.html`
+- **2026-03-18** : Liens fusionnes (2→1) dans `maths-term-erama.html` et `maths-term-iccer.html`
+- **2026-03-18** : Verification contenu — pages thematiques plus completes, aucune migration necessaire
 
 ---
 
 ## Ameliorations restantes
 
 ### Priorite critique
-- [x] Unifier les liens : toutes les pages du site doivent pointer vers la meme page d'automatismes
-- [x] Corriger `maths-term-erama.html` et `maths-term-iccer.html` qui pointent vers les deux pages
+- [x] Unifier les liens automatismes (corrige 2026-03-18)
+- [x] Supprimer le doublon `automatismes.html` (corrige 2026-03-18)
 
-### Priorite haute
-- [x] Choisir la page a conserver (recommandation : `automatismes/index.html`)
-- [x] Verifier que les 22 pages thematiques contiennent bien les exercices flash (sinon migrer depuis la racine)
-- [x] Supprimer ou archiver la page non retenue
-
-### Priorite haute (nouvelles pages)
-- [ ] `physique-chimie/seconde/ch07/qcm.html` : ajouter un lien dans le sommaire OU fusionner dans exercices.html (page orpheline)
-- [ ] `maths/terminale/ch04/interro.html` : supprimer OU differencier reellement de ds.html (~85% doublon)
-- [ ] Centraliser les 25 classes CSS inline de qcm.html dans `styles.css` si d'autres QCM sont prevus
+### Priorite haute — Uniformisation des ressources
+- [ ] Centraliser les classes CSS QCM dans `styles.css` (prerequis avant creation en masse)
+- [ ] Ajouter le lien `qcm.html` du ch07 PC dans le sommaire `pc-2nde-pro.html`
+- [ ] Creer `qcm.html` pour les 83 chapitres manquants
+- [ ] Creer `interro.html` pour les 83 chapitres manquants
+- [ ] Creer les 7 `exercices.html` manquants (PC terminale-iccer ch04-08, terminale-era ch05-08)
+- [ ] Creer les 7 `ds.html` manquants (memes chapitres)
+- [ ] Mettre a jour les sommaires pour lister qcm.html et interro.html pour chaque chapitre
 
 ### Priorite moyenne
-- [ ] Ajouter l'optimisation impression aux pages thematiques automatismes si necessaire
-- [ ] Centraliser les classes CSS utiles (`.flash-series`, etc.) dans `styles.css` si reutilisees
+- [ ] Creer les 27 `fiche.html` manquantes (maths/premiere 7, PC/premiere-iccer 10, PC/premiere-era 10)
+- [ ] Ajouter l'optimisation impression aux pages thematiques automatismes
 
 ### Priorite basse
-- [ ] Harmoniser le rendu MathJax (tex-mml-chtml vs tex-svg) sur toutes les pages automatismes
+- [ ] Harmoniser le rendu MathJax (tex-mml-chtml vs tex-svg) sur toutes les pages
