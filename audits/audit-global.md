@@ -42,8 +42,8 @@ Chaque chapitre doit proposer **6 types de pages** : lecon, exercices, ds, qcm, 
 | `exercices.html` | 77 | 84 | 92 % |
 | `ds.html` | 77 | 84 | 92 % |
 | `fiche.html` | 57 | 84 | 68 % |
-| `qcm.html` | 1 | 84 | 1 % |
-| `interro.html` | 1 | 84 | 1 % |
+| `qcm.html` | 2 | 84 | 2 % |
+| `interro.html` | 2 | 84 | 2 % |
 
 **Référence specs :** `prompts/prompt-qcm-interro.md` — philosophie, différenciation et templates.
 

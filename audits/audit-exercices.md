@@ -248,6 +248,8 @@ L'inventaire complet (2026-03-16) révèle un taux de couverture global de **41.
 - **2026-03-17** : Corrige les fautes d'accord « encrassés » → « encrassé » dans maths/terminale/ch02/exercices.html Ex 8
 - **2026-03-17** : Ajoute les tags de différenciation (tag-socle/tag-standard/tag-appro) dans maths/terminale/ch02/ds.html
 - **2026-03-17** : Harmonise l'indentation des arbres de probabilités (NBSP → &emsp;) dans exercices.html et ds.html de ch02
+- **2026-03-18** : Créé `maths/terminale/ch02/qcm.html` — QCM différencié (3×15 questions socle/standard/appro, auto-corrigé, feedback)
+- **2026-03-18** : Créé `maths/terminale/ch02/interro.html` — Interro différenciée (3×5 questions socle/standard/appro, barème, corrections)
 
 ---
 
@@ -260,8 +262,8 @@ L'inventaire complet (2026-03-16) révèle un taux de couverture global de **41.
 - [x] Réaliser un inventaire complet : nombre de `.exo` vs `.corr` sur chaque page (2026-03-16 — 41.2% couverture)
 
 ### Priorité haute (uniformisation 2026-03-18)
-- [ ] Créer les 83 `qcm.html` différenciés (3×15 questions socle/standard/appro par chapitre)
-- [ ] Créer les 83 `interro.html` différenciés (3×5-8 questions socle/standard/appro par chapitre)
+- [ ] Créer les 82 `qcm.html` restants (3×15 questions socle/standard/appro par chapitre)
+- [ ] Créer les 82 `interro.html` restants (3×5-8 questions socle/standard/appro par chapitre)
 - [ ] Créer les 7 `exercices.html` manquants (PC terminale)
 - [ ] Créer les 7 `ds.html` manquants (PC terminale)
 

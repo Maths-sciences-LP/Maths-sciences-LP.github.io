@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch02 – Probabilités – QCM – Terminale Bac Pro</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
+
+.qcm-header{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:24px}
+.qcm-header .dh-item{display:flex;align-items:center;gap:6px}
+.qcm-header strong{color:var(--p)}
+.q-block{border:1px solid #e2e8f0;border-radius:10px;padding:18px 20px;margin:16px 0;background:#fff}
+.q-block h3{margin:0 0 10px;font-size:1em;color:var(--p)}
+.q-block .theme{font-size:.78em;color:#718096;margin-bottom:8px;font-style:italic}
+.options label{display:block;padding:8px 12px;margin:4px 0;border-radius:6px;cursor:pointer;border:1.5px solid #e2e8f0;transition:background .15s,border-color .15s;font-size:.95em}
+.options label:hover{background:var(--p-bg);border-color:var(--p-border)}
+.options input[type="radio"]{margin-right:8px;accent-color:var(--p)}
+.options label.correct{background:#d1fae5;border-color:#34d399}
+.options label.incorrect{background:#fee2e2;border-color:#f87171}
+.q-feedback{margin-top:8px;padding:8px 12px;border-radius:6px;font-size:.88em;display:none}
+.q-feedback.ok{background:#d1fae5;color:#065f46;display:block}
+.q-feedback.ko{background:#fee2e2;color:#991b1b;display:block}
+.btn-valider{background:var(--p);color:#fff;border:none;padding:10px 28px;border-radius:8px;font-size:1em;font-weight:700;cursor:pointer;margin-top:20px;display:block}
+.btn-valider:hover{opacity:.85}
+.btn-reset{background:#e2e8f0;color:#374151;border:none;padding:8px 20px;border-radius:8px;font-size:.9em;cursor:pointer;margin-top:8px}
+.btn-reset:hover{background:#cbd5e1}
+.score-box{margin-top:24px;padding:18px 24px;border-radius:10px;text-align:center;font-size:1.15em;font-weight:700;display:none}
+.score-box.show{display:block}
+.score-good{background:#d1fae5;color:#065f46;border:2px solid #34d399}
+.score-avg{background:#fef3c7;color:#92400e;border:2px solid #fcd34d}
+.score-low{background:#fee2e2;color:#991b1b;border:2px solid #f87171}
+@media print{.nb,.btn-valider,.btn-reset,.diff-toggle-wrap{display:none}.options label{border:1px solid #ccc}}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
+
+<header>
+  <h1>QCM – Probabilités</h1>
+  <p class="sous-titre">Chapitre 2 | Terminale Bac Pro | Mathématiques</p>
+</header>
+
+<div class="qcm-header">
+  <div class="dh-item">⏱ <strong>Durée :</strong> 15–20 min</div>
+  <div class="dh-item">📄 <strong>15 questions</strong></div>
+  <div class="dh-item">🧮 <strong>Calculatrice autorisée</strong></div>
+</div>
+
+<p style="font-size:.9em;color:#4a5568">Pour chaque question, cochez la <strong>seule bonne réponse</strong> puis cliquez sur « Valider le QCM » en bas de page.</p>
+
+<!-- ========================= SOCLE ========================= -->
+<div class="diff-socle">
+<span class="tag-socle">Socle</span>
+
+<form id="qcm-socle">
+
+<div class="q-block" data-correct="c">
+  <h3>Question 1</h3>
+  <p class="theme">Rappels – Probabilité d'un événement</p>
+  <p>La probabilité d'un événement est toujours un nombre :</p>
+  <div class="options">
+    <label><input type="radio" name="s1" value="a"> supérieur à 1</label>
+    <label><input type="radio" name="s1" value="b"> négatif</label>
+    <label><input type="radio" name="s1" value="c"> compris entre 0 et 1</label>
+    <label><input type="radio" name="s1" value="d"> compris entre 0 et 100</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 2</h3>
+  <p class="theme">Rappels – Événement contraire</p>
+  <p>Si \(P(A) = 0{,}3\), alors \(P(\bar{A})\) vaut :</p>
+  <div class="options">
+    <label><input type="radio" name="s2" value="a"> 0,3</label>
+    <label><input type="radio" name="s2" value="b"> 0,7</label>
+    <label><input type="radio" name="s2" value="c"> 0,03</label>
+    <label><input type="radio" name="s2" value="d"> 1,3</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 3</h3>
+  <p class="theme">Tableau croisé – Lecture</p>
+  <p>Dans un tableau croisé, on contrôle 400 pièces. 280 viennent de l'atelier A. Quelle est la probabilité qu'une pièce vienne de A ?</p>
+  <div class="options">
+    <label><input type="radio" name="s3" value="a"> 0,70</label>
+    <label><input type="radio" name="s3" value="b"> 0,28</label>
+    <label><input type="radio" name="s3" value="c"> 280</label>
+    <label><input type="radio" name="s3" value="d"> 0,30</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 4</h3>
+  <p class="theme">Tableau croisé – Lecture</p>
+  <p>On contrôle 500 panneaux. 20 sont défectueux. Quelle est \(P(D)\) ?</p>
+  <div class="options">
+    <label><input type="radio" name="s4" value="a"> 0,20</label>
+    <label><input type="radio" name="s4" value="b"> 0,02</label>
+    <label><input type="radio" name="s4" value="c"> 20</label>
+    <label><input type="radio" name="s4" value="d"> 0,04</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 5</h3>
+  <p class="theme">Arbre – Règle fondamentale</p>
+  <p>Sur un nœud d'un arbre de probabilités, la somme des probabilités des branches qui en partent vaut :</p>
+  <div class="options">
+    <label><input type="radio" name="s5" value="a"> 0</label>
+    <label><input type="radio" name="s5" value="b"> 1</label>
+    <label><input type="radio" name="s5" value="c"> 0,5</label>
+    <label><input type="radio" name="s5" value="d"> 2</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 6</h3>
+  <p class="theme">Arbre – Compléter une branche</p>
+  <p>Sur un nœud, une branche vaut 0,65. L'autre branche vaut :</p>
+  <div class="options">
+    <label><input type="radio" name="s6" value="a"> 0,65</label>
+    <label><input type="radio" name="s6" value="b"> 0,45</label>
+    <label><input type="radio" name="s6" value="c"> 0,35</label>
+    <label><input type="radio" name="s6" value="d"> 1,65</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 7</h3>
+  <p class="theme">Arbre – Probabilité d'un chemin</p>
+  <p>Pour calculer la probabilité d'un chemin, on :</p>
+  <div class="options">
+    <label><input type="radio" name="s7" value="a"> multiplie les probabilités le long du chemin</label>
+    <label><input type="radio" name="s7" value="b"> additionne les probabilités le long du chemin</label>
+    <label><input type="radio" name="s7" value="c"> divise la première par la dernière</label>
+    <label><input type="radio" name="s7" value="d"> soustrait les probabilités</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 8</h3>
+  <p class="theme">Arbre – Calcul simple</p>
+  <p>Un chemin passe par deux branches : 0,60 puis 0,05. La probabilité de ce chemin est :</p>
+  <div class="options">
+    <label><input type="radio" name="s8" value="a"> 0,65</label>
+    <label><input type="radio" name="s8" value="b"> 0,55</label>
+    <label><input type="radio" name="s8" value="c"> 12</label>
+    <label><input type="radio" name="s8" value="d"> 0,03</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 9</h3>
+  <p class="theme">Probabilité conditionnelle – Vocabulaire</p>
+  <p>\(P_B(A)\) se lit :</p>
+  <div class="options">
+    <label><input type="radio" name="s9" value="a"> probabilité de B sachant A</label>
+    <label><input type="radio" name="s9" value="b"> probabilité de A sachant B</label>
+    <label><input type="radio" name="s9" value="c"> probabilité de A et B</label>
+    <label><input type="radio" name="s9" value="d"> probabilité de A ou B</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 10</h3>
+  <p class="theme">Probabilité conditionnelle – Lecture sur l'arbre</p>
+  <p>Sur un arbre, la probabilité écrite sur la deuxième branche (après le nœud A) est :</p>
+  <div class="options">
+    <label><input type="radio" name="s10" value="a"> \(P(A)\)</label>
+    <label><input type="radio" name="s10" value="b"> \(P(D)\)</label>
+    <label><input type="radio" name="s10" value="c"> \(P_A(D)\)</label>
+    <label><input type="radio" name="s10" value="d"> \(P(A \cap D)\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 11</h3>
+  <p class="theme">Probabilités totales – Identification</p>
+  <p>Pour calculer \(P(D)\) quand D peut arriver par deux chemins (via A ou via B), on :</p>
+  <div class="options">
+    <label><input type="radio" name="s11" value="a"> additionne les probabilités des deux chemins</label>
+    <label><input type="radio" name="s11" value="b"> multiplie les probabilités des deux chemins</label>
+    <label><input type="radio" name="s11" value="c"> soustrait l'une de l'autre</label>
+    <label><input type="radio" name="s11" value="d"> divise l'une par l'autre</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 12</h3>
+  <p class="theme">Probabilités totales – Calcul</p>
+  <p>Un chemin donne \(P(A \cap D) = 0{,}03\), un autre \(P(B \cap D) = 0{,}05\). Donc \(P(D) =\) :</p>
+  <div class="options">
+    <label><input type="radio" name="s12" value="a"> 0,0015</label>
+    <label><input type="radio" name="s12" value="b"> 0,08</label>
+    <label><input type="radio" name="s12" value="c"> 0,02</label>
+    <label><input type="radio" name="s12" value="d"> 0,03</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 13</h3>
+  <p class="theme">Indépendance – Reconnaître</p>
+  <p>Deux événements A et B sont indépendants si :</p>
+  <div class="options">
+    <label><input type="radio" name="s13" value="a"> \(P(A \cap B) = 0\)</label>
+    <label><input type="radio" name="s13" value="b"> \(P(A \cap B) = P(A) + P(B)\)</label>
+    <label><input type="radio" name="s13" value="c"> \(P(A) = P(B)\)</label>
+    <label><input type="radio" name="s13" value="d"> \(P(A \cap B) = P(A) \times P(B)\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 14</h3>
+  <p class="theme">Indépendance – Calcul simple</p>
+  <p>Deux machines indépendantes ont \(P(M_1) = 0{,}10\) et \(P(M_2) = 0{,}05\). \(P(M_1 \cap M_2) =\) :</p>
+  <div class="options">
+    <label><input type="radio" name="s14" value="a"> 0,005</label>
+    <label><input type="radio" name="s14" value="b"> 0,15</label>
+    <label><input type="radio" name="s14" value="c"> 0,50</label>
+    <label><input type="radio" name="s14" value="d"> 0,05</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 15</h3>
+  <p class="theme">Événement contraire – Application</p>
+  <p>La probabilité qu'une installation soit défectueuse est 0,08. Quelle est la probabilité qu'elle soit conforme ?</p>
+  <div class="options">
+    <label><input type="radio" name="s15" value="a"> 0,08</label>
+    <label><input type="radio" name="s15" value="b"> 8</label>
+    <label><input type="radio" name="s15" value="c"> 0,92</label>
+    <label><input type="radio" name="s15" value="d"> 0,80</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<button type="button" class="btn-valider" onclick="corriger('qcm-socle','score-socle')">Valider le QCM</button>
+<button type="button" class="btn-reset" onclick="reinitialiser('qcm-socle','score-socle')">Recommencer</button>
+<div class="score-box" id="score-socle"></div>
+</form>
+</div>
+
+<!-- ========================= STANDARD ========================= -->
+<div class="diff-standard">
+<span class="tag-standard">Standard</span>
+
+<form id="qcm-standard">
+
+<div class="q-block" data-correct="b">
+  <h3>Question 1</h3>
+  <p class="theme">Tableau croisé – Probabilité d'une intersection</p>
+  <p>On contrôle 200 chauffe-eaux. 120 viennent de l'atelier A, dont 6 sont défectueux. \(P(A \cap D) =\) :</p>
+  <div class="options">
+    <label><input type="radio" name="n1" value="a"> 0,05</label>
+    <label><input type="radio" name="n1" value="b"> 0,03</label>
+    <label><input type="radio" name="n1" value="c"> 0,60</label>
+    <label><input type="radio" name="n1" value="d"> 6</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 2</h3>
+  <p class="theme">Probabilité conditionnelle – Formule</p>
+  <p>La formule de la probabilité conditionnelle est :</p>
+  <div class="options">
+    <label><input type="radio" name="n2" value="a"> \(P_B(A) = P(A) \times P(B)\)</label>
+    <label><input type="radio" name="n2" value="b"> \(P_B(A) = P(A) + P(B)\)</label>
+    <label><input type="radio" name="n2" value="c"> \(P_B(A) = \dfrac{P(A \cap B)}{P(B)}\)</label>
+    <label><input type="radio" name="n2" value="d"> \(P_B(A) = \dfrac{P(B)}{P(A)}\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 3</h3>
+  <p class="theme">Probabilité conditionnelle – Calcul</p>
+  <p>On sait que \(P(A \cap D) = 0{,}03\) et \(P(A) = 0{,}60\). Alors \(P_A(D) =\) :</p>
+  <div class="options">
+    <label><input type="radio" name="n3" value="a"> 0,05</label>
+    <label><input type="radio" name="n3" value="b"> 0,50</label>
+    <label><input type="radio" name="n3" value="c"> 0,018</label>
+    <label><input type="radio" name="n3" value="d"> 20</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 4</h3>
+  <p class="theme">Arbre – Construire un chemin</p>
+  <p>70 % des panneaux viennent de F1. Chez F1, 4 % sont défectueux. \(P(F1 \cap D) =\) :</p>
+  <div class="options">
+    <label><input type="radio" name="n4" value="a"> 0,74</label>
+    <label><input type="radio" name="n4" value="b"> 0,04</label>
+    <label><input type="radio" name="n4" value="c"> 0,70</label>
+    <label><input type="radio" name="n4" value="d"> 0,028</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 5</h3>
+  <p class="theme">Probabilités totales</p>
+  <p>Avec \(P(F1 \cap D) = 0{,}028\) et \(P(F2 \cap D) = 0{,}030\), on obtient \(P(D) =\) :</p>
+  <div class="options">
+    <label><input type="radio" name="n5" value="a"> 0,00084</label>
+    <label><input type="radio" name="n5" value="b"> 0,058</label>
+    <label><input type="radio" name="n5" value="c"> 0,028</label>
+    <label><input type="radio" name="n5" value="d"> 0,942</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 6</h3>
+  <p class="theme">Probabilités totales – Formule</p>
+  <p>La formule des probabilités totales s'écrit :</p>
+  <div class="options">
+    <label><input type="radio" name="n6" value="a"> \(P(A) = P(B) + P_B(A)\)</label>
+    <label><input type="radio" name="n6" value="b"> \(P(A) = P(B) \times P(A \cap B)\)</label>
+    <label><input type="radio" name="n6" value="c"> \(P(A) = P(B) \times P_B(A) + P(\bar{B}) \times P_{\bar{B}}(A)\)</label>
+    <label><input type="radio" name="n6" value="d"> \(P(A) = P(A \cap B) \times P(A \cap \bar{B})\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 7</h3>
+  <p class="theme">Probabilité conditionnelle – Attention</p>
+  <p>\(P_B(A)\) et \(P_A(B)\) sont :</p>
+  <div class="options">
+    <label><input type="radio" name="n7" value="a"> généralement différentes</label>
+    <label><input type="radio" name="n7" value="b"> toujours égales</label>
+    <label><input type="radio" name="n7" value="c"> toujours complémentaires</label>
+    <label><input type="radio" name="n7" value="d"> toujours nulles</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 8</h3>
+  <p class="theme">Arbre – Compléter</p>
+  <p>60 % des logements sont câblés par l'équipe A. Parmi ceux de A, 3 % sont non conformes. \(P(A \cap \text{NC}) =\) :</p>
+  <div class="options">
+    <label><input type="radio" name="n8" value="a"> 0,63</label>
+    <label><input type="radio" name="n8" value="b"> 0,03</label>
+    <label><input type="radio" name="n8" value="c"> 0,57</label>
+    <label><input type="radio" name="n8" value="d"> 0,018</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 9</h3>
+  <p class="theme">Indépendance – Vérification</p>
+  <p>\(P(A) = 0{,}4\), \(P(B) = 0{,}3\), \(P(A \cap B) = 0{,}12\). A et B sont-ils indépendants ?</p>
+  <div class="options">
+    <label><input type="radio" name="n9" value="a"> Non, car \(0{,}4 \times 0{,}3 = 0{,}07\)</label>
+    <label><input type="radio" name="n9" value="b"> Oui, car \(0{,}4 \times 0{,}3 = 0{,}12\)</label>
+    <label><input type="radio" name="n9" value="c"> Non, car \(0{,}4 + 0{,}3 \neq 0{,}12\)</label>
+    <label><input type="radio" name="n9" value="d"> Oui, car \(P(A) \neq P(B)\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 10</h3>
+  <p class="theme">Indépendance – Application</p>
+  <p>Deux circuits indépendants : \(P(\text{panne}_1) = 0{,}04\), \(P(\text{panne}_2) = 0{,}07\). Probabilité qu'aucun ne soit en panne :</p>
+  <div class="options">
+    <label><input type="radio" name="n10" value="a"> 0,89</label>
+    <label><input type="radio" name="n10" value="b"> 0,11</label>
+    <label><input type="radio" name="n10" value="c"> 0,8928</label>
+    <label><input type="radio" name="n10" value="d"> 0,0028</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 11</h3>
+  <p class="theme">Événement contraire – Probabilités totales</p>
+  <p>Si \(P(D) = 0{,}058\), alors \(P(\text{Conforme}) =\) :</p>
+  <div class="options">
+    <label><input type="radio" name="n11" value="a"> 0,942</label>
+    <label><input type="radio" name="n11" value="b"> 0,058</label>
+    <label><input type="radio" name="n11" value="c"> 0,42</label>
+    <label><input type="radio" name="n11" value="d"> 1,058</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 12</h3>
+  <p class="theme">Arbre – Vérification</p>
+  <p>Les probabilités des 4 feuilles d'un arbre à deux niveaux sont : 0,028 ; 0,672 ; 0,030 ; 0,270. Leur somme vaut :</p>
+  <div class="options">
+    <label><input type="radio" name="n12" value="a"> 0</label>
+    <label><input type="radio" name="n12" value="b"> 0,5</label>
+    <label><input type="radio" name="n12" value="c"> 4</label>
+    <label><input type="radio" name="n12" value="d"> 1</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 13</h3>
+  <p class="theme">Incompatible vs indépendant</p>
+  <p>Deux événements incompatibles vérifient :</p>
+  <div class="options">
+    <label><input type="radio" name="n13" value="a"> \(P(A \cap B) = P(A) \times P(B)\)</label>
+    <label><input type="radio" name="n13" value="b"> \(P(A \cap B) = 0\)</label>
+    <label><input type="radio" name="n13" value="c"> \(P(A) + P(B) = 0\)</label>
+    <label><input type="radio" name="n13" value="d"> \(P(A) = P(B)\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 14</h3>
+  <p class="theme">Probabilité conditionnelle – Contexte pro</p>
+  <p>Un installateur thermique contrôle 300 vannes. 210 viennent du fournisseur V1 et 12 de ces 210 sont défectueuses. \(P_{V1}(D) =\) :</p>
+  <div class="options">
+    <label><input type="radio" name="n14" value="a"> \(\dfrac{12}{300}\)</label>
+    <label><input type="radio" name="n14" value="b"> \(\dfrac{210}{300}\)</label>
+    <label><input type="radio" name="n14" value="c"> \(\dfrac{12}{210}\)</label>
+    <label><input type="radio" name="n14" value="d"> \(\dfrac{210}{12}\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 15</h3>
+  <p class="theme">Probabilités composées</p>
+  <p>La formule \(P(A \cap B) = P(B) \times P_B(A)\) s'appelle :</p>
+  <div class="options">
+    <label><input type="radio" name="n15" value="a"> formule des probabilités composées</label>
+    <label><input type="radio" name="n15" value="b"> formule des probabilités totales</label>
+    <label><input type="radio" name="n15" value="c"> formule d'indépendance</label>
+    <label><input type="radio" name="n15" value="d"> formule de l'événement contraire</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<button type="button" class="btn-valider" onclick="corriger('qcm-standard','score-standard')">Valider le QCM</button>
+<button type="button" class="btn-reset" onclick="reinitialiser('qcm-standard','score-standard')">Recommencer</button>
+<div class="score-box" id="score-standard"></div>
+</form>
+</div>
+
+<!-- ========================= APPROFONDISSEMENT ========================= -->
+<div class="diff-appro">
+<span class="tag-appro">Approfondissement</span>
+
+<form id="qcm-appro">
+
+<div class="q-block" data-correct="c">
+  <h3>Question 1</h3>
+  <p class="theme">Probabilité conditionnelle – Calcul inverse</p>
+  <p>On sait que \(P(D) = 0{,}08\) et \(P(A \cap D) = 0{,}03\). Alors \(P_D(A) =\) :</p>
+  <div class="options">
+    <label><input type="radio" name="a1" value="a"> 0,05</label>
+    <label><input type="radio" name="a1" value="b"> 0,24</label>
+    <label><input type="radio" name="a1" value="c"> 0,375</label>
+    <label><input type="radio" name="a1" value="d"> 2,67</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 2</h3>
+  <p class="theme">Probabilités totales – Résolution</p>
+  <p>Une usine a deux chaînes : C1 produit 55 % des pièces (taux défaut 6 %), C2 produit 45 % (taux défaut 3 %). \(P(D) =\) :</p>
+  <div class="options">
+    <label><input type="radio" name="a2" value="a"> 0,09</label>
+    <label><input type="radio" name="a2" value="b"> 0,0465</label>
+    <label><input type="radio" name="a2" value="c"> 0,045</label>
+    <label><input type="radio" name="a2" value="d"> 0,033</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 3</h3>
+  <p class="theme">Indépendance – Trois événements</p>
+  <p>Trois machines indépendantes tombent en panne avec \(p_1 = 0{,}10\), \(p_2 = 0{,}05\), \(p_3 = 0{,}02\). Probabilité qu'aucune ne tombe en panne :</p>
+  <div class="options">
+    <label><input type="radio" name="a3" value="a"> 0,83</label>
+    <label><input type="radio" name="a3" value="b"> 0,17</label>
+    <label><input type="radio" name="a3" value="c"> 0,8370</label>
+    <label><input type="radio" name="a3" value="d"> 0,8379</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 4</h3>
+  <p class="theme">Probabilité conditionnelle – Interprétation</p>
+  <p>\(P_A(D) = 0{,}05\) signifie :</p>
+  <div class="options">
+    <label><input type="radio" name="a4" value="a"> parmi les appareils de A, 5 % sont défectueux</label>
+    <label><input type="radio" name="a4" value="b"> parmi les appareils défectueux, 5 % viennent de A</label>
+    <label><input type="radio" name="a4" value="c"> 5 % de tous les appareils viennent de A et sont défectueux</label>
+    <label><input type="radio" name="a4" value="d"> la probabilité d'être dans A est 0,05</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 5</h3>
+  <p class="theme">Indépendance – Au moins un</p>
+  <p>Deux systèmes indépendants : \(P(S_1) = 0{,}10\), \(P(S_2) = 0{,}15\). Probabilité qu'au moins un fonctionne en panne :</p>
+  <div class="options">
+    <label><input type="radio" name="a5" value="a"> 0,25</label>
+    <label><input type="radio" name="a5" value="b"> 0,015</label>
+    <label><input type="radio" name="a5" value="c"> 0,235</label>
+    <label><input type="radio" name="a5" value="d"> 0,765</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 6</h3>
+  <p class="theme">Arbre – Trois branches</p>
+  <p>Un entrepôt reçoit des panneaux de 3 fournisseurs : F1 (50 %), F2 (30 %), F3 (20 %). Le taux de défaut est 2 %, 5 % et 8 %. \(P(D) =\) :</p>
+  <div class="options">
+    <label><input type="radio" name="a6" value="a"> 0,15</label>
+    <label><input type="radio" name="a6" value="b"> 0,041</label>
+    <label><input type="radio" name="a6" value="c"> 0,05</label>
+    <label><input type="radio" name="a6" value="d"> 0,030</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 7</h3>
+  <p class="theme">Probabilité conditionnelle inverse</p>
+  <p>Avec les données de la Q6, sachant qu'un panneau est défectueux, quelle est la probabilité qu'il vienne de F3 ?</p>
+  <div class="options">
+    <label><input type="radio" name="a7" value="a"> 0,20</label>
+    <label><input type="radio" name="a7" value="b"> 0,08</label>
+    <label><input type="radio" name="a7" value="c"> 0,016</label>
+    <label><input type="radio" name="a7" value="d"> 0,390</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 8</h3>
+  <p class="theme">Indépendance – Conséquence</p>
+  <p>Si A et B sont indépendants, alors \(P_B(A) =\) :</p>
+  <div class="options">
+    <label><input type="radio" name="a8" value="a"> \(P(A)\)</label>
+    <label><input type="radio" name="a8" value="b"> \(P(B)\)</label>
+    <label><input type="radio" name="a8" value="c"> \(P(A) \times P(B)\)</label>
+    <label><input type="radio" name="a8" value="d"> \(1 - P(A)\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 9</h3>
+  <p class="theme">Indépendance – Test numérique</p>
+  <p>\(P(A) = 0{,}3\), \(P(B) = 0{,}5\), \(P(A \cap B) = 0{,}2\). A et B sont :</p>
+  <div class="options">
+    <label><input type="radio" name="a9" value="a"> indépendants car \(0{,}3 \times 0{,}5 = 0{,}15 \neq 0{,}2\) mais c'est proche</label>
+    <label><input type="radio" name="a9" value="b"> indépendants car \(P(A) + P(B) = 0{,}8\)</label>
+    <label><input type="radio" name="a9" value="c"> non indépendants car \(P(A) \times P(B) = 0{,}15 \neq 0{,}2\)</label>
+    <label><input type="radio" name="a9" value="d"> incompatibles car \(P(A \cap B) \neq 0\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 10</h3>
+  <p class="theme">Probabilité conditionnelle – Formule inversée</p>
+  <p>On peut écrire \(P(A \cap B) =\) :</p>
+  <div class="options">
+    <label><input type="radio" name="a10" value="a"> \(P(A) + P_A(B)\)</label>
+    <label><input type="radio" name="a10" value="b"> \(P(A) \times P_A(B)\)</label>
+    <label><input type="radio" name="a10" value="c"> \(P(A) \div P_A(B)\)</label>
+    <label><input type="radio" name="a10" value="d"> \(P(A) - P_A(B)\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 11</h3>
+  <p class="theme">Arbre – Contexte professionnel</p>
+  <p>Un menuisier agenceur commande du bois chez deux scieries. S1 fournit 65 % (défaut 3 %), S2 fournit 35 % (défaut 9 %). \(P(\text{Conforme}) =\) :</p>
+  <div class="options">
+    <label><input type="radio" name="a11" value="a"> 0,9490</label>
+    <label><input type="radio" name="a11" value="b"> 0,9700</label>
+    <label><input type="radio" name="a11" value="c"> 0,88</label>
+    <label><input type="radio" name="a11" value="d"> 0,94</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 12</h3>
+  <p class="theme">Indépendance – Contraire</p>
+  <p>Si A et B sont indépendants, alors \(\bar{A}\) et \(\bar{B}\) sont :</p>
+  <div class="options">
+    <label><input type="radio" name="a12" value="a"> incompatibles</label>
+    <label><input type="radio" name="a12" value="b"> dépendants</label>
+    <label><input type="radio" name="a12" value="c"> complémentaires</label>
+    <label><input type="radio" name="a12" value="d"> indépendants</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 13</h3>
+  <p class="theme">Probabilités totales – Trois scénarios</p>
+  <p>Quand un événement D peut arriver par trois chemins (via F1, F2 ou F3), la formule des probabilités totales donne :</p>
+  <div class="options">
+    <label><input type="radio" name="a13" value="a"> \(P(D) = P(F1) \times P(F2) \times P(F3)\)</label>
+    <label><input type="radio" name="a13" value="b"> \(P(D) = P_{F1}(D) + P_{F2}(D) + P_{F3}(D)\)</label>
+    <label><input type="radio" name="a13" value="c"> \(P(D) = P(F1) \times P_{F1}(D) + P(F2) \times P_{F2}(D) + P(F3) \times P_{F3}(D)\)</label>
+    <label><input type="radio" name="a13" value="d"> \(P(D) = P(F1 \cap F2 \cap F3)\)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 14</h3>
+  <p class="theme">Contexte pro – Raisonnement complet</p>
+  <p>Un technicien CVC contrôle 1 000 installations. 60 % par l'équipe A (taux NC : 3 %), 40 % par B (taux NC : 8 %). Combien de tableaux non conformes s'attend-il à trouver ?</p>
+  <div class="options">
+    <label><input type="radio" name="a14" value="a"> 110</label>
+    <label><input type="radio" name="a14" value="b"> 50</label>
+    <label><input type="radio" name="a14" value="c"> 32</label>
+    <label><input type="radio" name="a14" value="d"> 80</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 15</h3>
+  <p class="theme">Raisonnement – Cohérence d'un arbre</p>
+  <p>Un élève construit un arbre et trouve ces probabilités de feuilles : 0,12 ; 0,48 ; 0,08 ; 0,30. Son arbre est-il correct ?</p>
+  <div class="options">
+    <label><input type="radio" name="a15" value="a"> Non, car la somme vaut 0,98 ≠ 1</label>
+    <label><input type="radio" name="a15" value="b"> Oui, car les valeurs sont toutes entre 0 et 1</label>
+    <label><input type="radio" name="a15" value="c"> Non, car il faudrait 3 feuilles et non 4</label>
+    <label><input type="radio" name="a15" value="d"> Oui, car 0,12 + 0,48 + 0,08 + 0,30 ≈ 1</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<button type="button" class="btn-valider" onclick="corriger('qcm-appro','score-appro')">Valider le QCM</button>
+<button type="button" class="btn-reset" onclick="reinitialiser('qcm-appro','score-appro')">Recommencer</button>
+<div class="score-box" id="score-appro"></div>
+</form>
+</div>
+
+</div><!-- fin .c -->
+
+<script>
+var explications = {
+  /* === SOCLE === */
+  "s1": "Une probabilité est toujours comprise entre 0 (impossible) et 1 (certain).",
+  "s2": "P(Ā) = 1 − P(A) = 1 − 0,3 = 0,7.",
+  "s3": "P(A) = 280/400 = 0,70. On divise l'effectif de A par l'effectif total.",
+  "s4": "P(D) = 20/500 = 0,04. On divise le nombre de défectueux par le total.",
+  "s5": "C'est la règle fondamentale : la somme des branches d'un nœud vaut toujours 1.",
+  "s6": "1 − 0,65 = 0,35. Les deux branches d'un nœud doivent sommer à 1.",
+  "s7": "On multiplie les probabilités le long d'un chemin (règle du produit).",
+  "s8": "0,60 × 0,05 = 0,03. C'est le produit des branches du chemin.",
+  "s9": "P_B(A) se lit « probabilité de A sachant B » : on sait que B s'est réalisé.",
+  "s10": "La branche après le nœud A porte la probabilité conditionnelle sachant A.",
+  "s11": "Quand D arrive par deux chemins, on additionne leurs probabilités (règle de l'addition).",
+  "s12": "P(D) = P(A ∩ D) + P(B ∩ D) = 0,03 + 0,05 = 0,08.",
+  "s13": "L'indépendance se vérifie par P(A ∩ B) = P(A) × P(B).",
+  "s14": "0,10 × 0,05 = 0,005. On multiplie car les machines sont indépendantes.",
+  "s15": "P(Conforme) = 1 − P(Défectueux) = 1 − 0,08 = 0,92.",
+  /* === STANDARD === */
+  "n1": "P(A ∩ D) = 6/200 = 0,03. C'est l'effectif de la case divisé par le total.",
+  "n2": "P_B(A) = P(A ∩ B) / P(B). C'est la définition de la probabilité conditionnelle.",
+  "n3": "P_A(D) = P(A ∩ D) / P(A) = 0,03/0,60 = 0,05.",
+  "n4": "P(F1 ∩ D) = P(F1) × P_{F1}(D) = 0,70 × 0,04 = 0,028.",
+  "n5": "P(D) = P(F1 ∩ D) + P(F2 ∩ D) = 0,028 + 0,030 = 0,058.",
+  "n6": "C'est la formule des probabilités totales : on somme les produits de chaque chemin.",
+  "n7": "P_B(A) ≠ P_A(B) en général. Exemple : « être malade sachant qu'on a de la fièvre » ≠ « avoir de la fièvre sachant qu'on est malade ».",
+  "n8": "P(A ∩ NC) = 0,60 × 0,03 = 0,018.",
+  "n9": "P(A) × P(B) = 0,4 × 0,3 = 0,12 = P(A ∩ B), donc A et B sont indépendants.",
+  "n10": "P(aucune panne) = (1−0,04) × (1−0,07) = 0,96 × 0,93 = 0,8928.",
+  "n11": "P(Conforme) = 1 − P(D) = 1 − 0,058 = 0,942.",
+  "n12": "La somme des feuilles d'un arbre complet vaut toujours 1.",
+  "n13": "Incompatibles : A et B ne peuvent pas arriver ensemble, donc P(A ∩ B) = 0.",
+  "n14": "P_{V1}(D) = 12/210. On divise les défectueux de V1 par le total de V1.",
+  "n15": "P(A ∩ B) = P(B) × P_B(A) s'appelle la formule des probabilités composées.",
+  /* === APPROFONDISSEMENT === */
+  "a1": "P_D(A) = P(A ∩ D) / P(D) = 0,03/0,08 = 0,375. Attention : ce n'est pas P_A(D).",
+  "a2": "P(D) = 0,55 × 0,06 + 0,45 × 0,03 = 0,033 + 0,0135 = 0,0465.",
+  "a3": "P(aucune) = 0,90 × 0,95 × 0,98 = 0,8379.",
+  "a4": "P_A(D) = 0,05 signifie que parmi les appareils de A, 5 % sont défectueux. C'est une probabilité conditionnelle sachant A.",
+  "a5": "P(au moins un) = 1 − P(aucun) = 1 − (1−0,10)(1−0,15) = 1 − 0,765 = 0,235.",
+  "a6": "P(D) = 0,50×0,02 + 0,30×0,05 + 0,20×0,08 = 0,010 + 0,015 + 0,016 = 0,041.",
+  "a7": "P_D(F3) = P(F3 ∩ D)/P(D) = (0,20×0,08)/0,041 = 0,016/0,041 ≈ 0,390.",
+  "a8": "Si A et B sont indépendants, P_B(A) = P(A). Connaître B ne change rien pour A.",
+  "a9": "P(A)×P(B) = 0,3×0,5 = 0,15 ≠ 0,20 = P(A∩B), donc A et B ne sont pas indépendants.",
+  "a10": "P(A ∩ B) = P(A) × P_A(B). C'est la formule des probabilités composées.",
+  "a11": "P(D) = 0,65×0,03 + 0,35×0,09 = 0,0195 + 0,0315 = 0,0510. P(C) = 1 − 0,0510 = 0,9490.",
+  "a12": "Si A et B sont indépendants, alors Ā et B̄ le sont aussi. C'est une propriété classique.",
+  "a13": "On étend la formule des probabilités totales à 3 scénarios en sommant les 3 produits.",
+  "a14": "P(NC) = 0,60×0,03 + 0,40×0,08 = 0,018 + 0,032 = 0,050. Sur 1000 : 0,050 × 1000 = 50.",
+  "a15": "0,12 + 0,48 + 0,08 + 0,30 = 0,98 ≠ 1. L'arbre contient une erreur."
+};
+
+function corriger(formId, scoreId) {
+  var form = document.getElementById(formId);
+  var blocks = form.querySelectorAll('.q-block');
+  var score = 0;
+  var total = blocks.length;
+
+  blocks.forEach(function(block, i) {
+    var radios = block.querySelectorAll('input[type="radio"]');
+    var qName = radios.length > 0 ? radios[0].name : '';
+    var correct = block.getAttribute('data-correct');
+    var selected = block.querySelector('input[type="radio"]:checked');
+    var feedback = block.querySelector('.q-feedback');
+    var labels = block.querySelectorAll('.options label');
+
+    labels.forEach(function(l) { l.classList.remove('correct', 'incorrect'); });
+
+    labels.forEach(function(l) {
+      var input = l.querySelector('input');
+      if (input.value === correct) l.classList.add('correct');
+    });
+
+    if (selected) {
+      if (selected.value === correct) {
+        score++;
+        feedback.className = 'q-feedback ok';
+        feedback.textContent = '✅ Bonne réponse ! ' + (explications[qName] || '');
+      } else {
+        selected.parentElement.classList.add('incorrect');
+        feedback.className = 'q-feedback ko';
+        feedback.textContent = '❌ Mauvaise réponse. ' + (explications[qName] || '');
+      }
+    } else {
+      feedback.className = 'q-feedback ko';
+      feedback.textContent = '⚠️ Pas de réponse. ' + (explications[qName] || '');
+    }
+  });
+
+  var scoreBox = document.getElementById(scoreId);
+  var pct = Math.round(score / total * 100);
+  scoreBox.textContent = 'Score : ' + score + ' / ' + total + ' (' + pct + ' %)';
+  scoreBox.className = 'score-box show ' + (pct >= 70 ? 'score-good' : pct >= 40 ? 'score-avg' : 'score-low');
+  scoreBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function reinitialiser(formId, scoreId) {
+  var form = document.getElementById(formId);
+  form.querySelectorAll('.q-block').forEach(function(block) {
+    block.querySelectorAll('.options label').forEach(function(l) { l.classList.remove('correct', 'incorrect'); });
+    block.querySelectorAll('input[type="radio"]').forEach(function(r) { r.checked = false; });
+    var feedback = block.querySelector('.q-feedback');
+    feedback.className = 'q-feedback';
+    feedback.textContent = '';
+  });
+  var scoreBox = document.getElementById(scoreId);
+  scoreBox.className = 'score-box';
+  scoreBox.textContent = '';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+<script src="../../../nav.js"></script>
+<script src="../../../diff.js"></script>
+</body>
+</html>
