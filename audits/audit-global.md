@@ -32,7 +32,7 @@
 | physique-chimie/terminale-iccer | 11 (CLAUDE.md) | 8 | 73 % |
 | physique-chimie/terminale-era | 8 | 8 | 100 % |
 
-Chaque chapitre doit proposer **6 types de pages** : lecon, exercices, ds, qcm, interro, fiche (voir `audits/audit-automatismes-doublons.md` pour les specs).
+Chaque chapitre doit proposer **6 types de pages** : lecon, exercices, ds, qcm, interro, fiche (voir `audits/audit-uniformisation.md` pour les specs).
 
 ### Couverture par type de page
 
