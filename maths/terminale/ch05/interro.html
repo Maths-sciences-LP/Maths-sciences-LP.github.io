@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch05 – Fonctions exponentielles et logarithme décimal – Interrogation – Tle Bac Pro</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
+.pts{font-size:.82em;color:#718096;font-weight:normal}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
+
+<header>
+  <h1>Chapitre 5 – Interrogation écrite</h1>
+  <p class="sous-titre">Fonctions exponentielles et logarithme décimal — Terminale Bac Pro</p>
+</header>
+
+<div class="dh">
+  <p><strong>Durée :</strong> 10-15 min | <strong>Calculatrice autorisée</strong></p>
+</div>
+
+<!-- ========================= SOCLE ========================= -->
+<div class="diff-socle">
+<span class="tag-socle">Socle</span>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> \(\log(10^n) = n\). Le logarithme décimal transforme les puissances de 10 en leur exposant.</div>
+  <p>Calculer sans calculatrice :</p>
+  <p>a) \(\log(1\,000) = \log(10^{...}) = ...\)</p>
+  <p>b) \(\log(0{,}01) = \log(10^{...}) = ...\)</p>
+  <p>c) \(\log(1) = ...\)</p>
+  <p>d) \(\log(10) = ...\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\log(1\,000) = \log(10^3) = \mathbf{3}\)</p>
+    <p>b) \(\log(0{,}01) = \log(10^{-2}) = \mathbf{-2}\)</p>
+    <p>c) \(\log(1) = \log(10^0) = \mathbf{0}\)</p>
+    <p>d) \(\log(10) = \mathbf{1}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Propriétés du logarithme : \(\log(a \times b) = \log(a) + \log(b)\) et \(\log(a^n) = n \times \log(a)\).</div>
+  <p>On donne \(\log(2) \approx 0{,}301\). Calculer :</p>
+  <p>a) \(\log(200) = \log(2 \times 100) = \log(2) + \log(100) = 0{,}301 + ... = ...\)</p>
+  <p>b) \(\log(8) = \log(2^3) = 3 \times \log(2) = 3 \times 0{,}301 = ...\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\log(200) = \log(2) + \log(100) = 0{,}301 + 2 = \mathbf{2{,}301}\)</p>
+    <p>b) \(\log(8) = 3 \times 0{,}301 = \mathbf{0{,}903}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Si \(a > 1\), la fonction \(f(x) = a^x\) est croissante. Si \(0 < a < 1\), elle est décroissante. La courbe passe toujours par \((0\,;\,1)\).</div>
+  <p>Compléter le tableau de valeurs de \(f(x) = 2^x\) :</p>
+  <table>
+    <tr><th>\(x\)</th><td>−2</td><td>−1</td><td>0</td><td>1</td><td>2</td><td>3</td></tr>
+    <tr><th>\(2^x\)</th><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+  </table>
+  <p>La fonction \(f(x) = 2^x\) est-elle croissante ou décroissante ? Justifier.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <table>
+      <tr><th>\(x\)</th><td>−2</td><td>−1</td><td>0</td><td>1</td><td>2</td><td>3</td></tr>
+      <tr><th>\(2^x\)</th><td>\(\mathbf{0{,}25}\)</td><td>\(\mathbf{0{,}5}\)</td><td>\(\mathbf{1}\)</td><td>\(\mathbf{2}\)</td><td>\(\mathbf{4}\)</td><td>\(\mathbf{8}\)</td></tr>
+    </table>
+    <p>La base est \(a = 2 > 1\), donc \(f(x) = 2^x\) est <strong>strictement croissante</strong> : quand \(x\) augmente, \(2^x\) augmente.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Résoudre \(a^x = b\) → \(x = \dfrac{\log(b)}{\log(a)}\). Résoudre \(\log(x) = k\) → \(x = 10^k\).</div>
+  <p>Résoudre :</p>
+  <p>a) \(\log(x) = 2 \implies x = 10^{...} = ...\)</p>
+  <p>b) \(2^x = 16\). On remarque que \(16 = 2^{...}\), donc \(x = ...\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\log(x) = 2 \implies x = 10^2 = \mathbf{100}\)</p>
+    <p>b) \(16 = 2^4\), donc \(2^x = 2^4\), d'où \(x = \mathbf{4}\).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Modèle de dépréciation : \(V(n) = V_0 \times q^n\) avec \(q = 1 - \dfrac{t}{100}\).</div>
+  <p>Un outil industriel coûte 6 000 € à l'achat. Sa valeur diminue de 20 % chaque année.</p>
+  <p>a) Donner la raison \(q\) : \(q = 1 - \dfrac{20}{100} = ...\)</p>
+  <p>b) Écrire \(V(n) = ... \times ...^n\)</p>
+  <p>c) Calculer la valeur après 3 ans : \(V(3) = 6\,000 \times ...^3 = ...\) €</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(q = 1 - 0{,}20 = \mathbf{0{,}80}\)</p>
+    <p>b) \(V(n) = 6\,000 \times 0{,}80^n\)</p>
+    <p>c) \(V(3) = 6\,000 \times 0{,}80^3 = 6\,000 \times 0{,}512 = \mathbf{3\,072\,€}\)</p>
+  </div>
+</div>
+
+</div>
+
+<!-- ========================= STANDARD ========================= -->
+<div class="diff-standard">
+<span class="tag-standard">Standard</span>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Calculer (on donne \(\log(2) \approx 0{,}301\)) :</p>
+  <p>a) \(\log(400)\)</p>
+  <p>b) \(\log(5)\)</p>
+  <p>c) \(\log(0{,}002)\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\log(400) = \log(4 \times 100) = \log(2^2) + \log(100) = 2 \times 0{,}301 + 2 = \mathbf{2{,}602}\)</p>
+    <p>b) \(\log(5) = \log\!\left(\dfrac{10}{2}\right) = \log(10) - \log(2) = 1 - 0{,}301 = \mathbf{0{,}699}\)</p>
+    <p>c) \(\log(0{,}002) = \log(2 \times 10^{-3}) = \log(2) + \log(10^{-3}) = 0{,}301 + (-3) = \mathbf{-2{,}699}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(5 points)</span></h2>
+  <p>Résoudre dans \(\mathbb{R}\) :</p>
+  <p>a) \(5^x = 200\)</p>
+  <p>b) \(\log(x) = 2{,}5\)</p>
+  <p>c) \(3^x = 81\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(x \cdot \log(5) = \log(200)\), donc \(x = \dfrac{\log(200)}{\log(5)} = \dfrac{2{,}301}{0{,}699} \approx \mathbf{3{,}29}\)</p>
+    <p>b) \(\log(x) = 2{,}5 \implies x = 10^{2{,}5} \approx \mathbf{316}\)</p>
+    <p>c) \(81 = 3^4\), donc \(3^x = 3^4\), d'où \(x = \mathbf{4}\).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Un véhicule utilitaire est acheté 28 000 € par un artisan menuisier. Sa valeur diminue de 12 % chaque année.</p>
+  <p>a) Écrire la formule de \(V(n)\).</p>
+  <p>b) Calculer la valeur après 4 ans.</p>
+  <p>c) Au bout de combien d'années la valeur passe-t-elle sous 10 000 € ? (Utiliser le logarithme.)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(V(n) = 28\,000 \times 0{,}88^n\)</p>
+    <p>b) \(V(4) = 28\,000 \times 0{,}88^4 = 28\,000 \times 0{,}5997 \approx \mathbf{16\,791\,€}\)</p>
+    <p>c) On résout \(0{,}88^n < \dfrac{10\,000}{28\,000} \approx 0{,}3571\).</p>
+    <p>\(n \cdot \log(0{,}88) < \log(0{,}3571)\). Comme \(\log(0{,}88) \approx -0{,}0555 < 0\), le sens s'inverse :</p>
+    <p>\(n > \dfrac{\log(0{,}3571)}{\log(0{,}88)} = \dfrac{-0{,}4472}{-0{,}0555} \approx 8{,}06\)</p>
+    <p>La valeur passe sous 10 000 € à partir de \(\mathbf{n = 9}\) ans.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>Résoudre les inéquations suivantes :</p>
+  <p>a) \(\log(x) \geq 1{,}5\)</p>
+  <p>b) \(0{,}85^n < 0{,}5\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\log\) est croissante, donc \(\log(x) \geq 1{,}5 \iff x \geq 10^{1{,}5} \approx \mathbf{31{,}6}\). Solution : \(x \geq 31{,}6\).</p>
+    <p>b) \(n \cdot \log(0{,}85) < \log(0{,}5)\). Comme \(\log(0{,}85) \approx -0{,}0706 < 0\), le sens s'inverse :</p>
+    <p>\(n > \dfrac{\log(0{,}5)}{\log(0{,}85)} = \dfrac{-0{,}301}{-0{,}0706} \approx 4{,}26\)</p>
+    <p>Pour \(n\) entier : \(\mathbf{n \geq 5}\).</p>
+    <p><em>Vérification : \(0{,}85^4 \approx 0{,}522 > 0{,}5\) ; \(0{,}85^5 \approx 0{,}444 < 0{,}5\) ✓</em></p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(3 points)</span></h2>
+  <p>Un élève écrit : « \(\log(30 + 70) = \log(30) + \log(70)\) ». A-t-il raison ? Justifier par le calcul.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>L'élève a <strong>tort</strong>.</p>
+    <p>Membre de gauche : \(\log(30 + 70) = \log(100) = 2\).</p>
+    <p>Membre de droite : \(\log(30) + \log(70) \approx 1{,}477 + 1{,}845 = 3{,}322\).</p>
+    <p>\(2 \neq 3{,}322\). La propriété correcte est \(\log(a \times b) = \log(a) + \log(b)\), pas \(\log(a + b)\).</p>
+    <p>Le logarithme d'une <strong>somme</strong> ne se simplifie pas.</p>
+  </div>
+</div>
+
+</div>
+
+<!-- ========================= APPROFONDISSEMENT ========================= -->
+<div class="diff-appro">
+<span class="tag-appro">Approfondissement</span>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(5 points)</span></h2>
+  <p>Un outil industriel coûte 12 000 € et perd 15 % de sa valeur chaque année.</p>
+  <p>a) Écrire \(V(n)\) et calculer la valeur après 5 ans.</p>
+  <p>b) Résoudre algébriquement (avec le logarithme) : à partir de quelle année la valeur passe-t-elle sous 2 000 € ?</p>
+  <p>c) Vérifier le résultat en calculant \(V(n)\) pour les deux années encadrant la solution.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(V(n) = 12\,000 \times 0{,}85^n\). Après 5 ans : \(V(5) = 12\,000 \times 0{,}85^5 \approx 12\,000 \times 0{,}4437 \approx \mathbf{5\,324\,€}\).</p>
+    <p>b) On résout \(12\,000 \times 0{,}85^n < 2\,000\) :</p>
+    <p>\(0{,}85^n < \dfrac{2\,000}{12\,000} = \dfrac{1}{6} \approx 0{,}1\overline{6}\)</p>
+    <p>\(n \cdot \log(0{,}85) < \log\!\left(\dfrac{1}{6}\right)\). Comme \(\log(0{,}85) \approx -0{,}0706 < 0\), le sens s'inverse :</p>
+    <p>\(n > \dfrac{\log(1/6)}{\log(0{,}85)} = \dfrac{-0{,}7782}{-0{,}0706} \approx 11{,}02\)</p>
+    <p>Donc \(\mathbf{n = 12}\) ans.</p>
+    <p>c) \(V(11) = 12\,000 \times 0{,}85^{11} \approx 2\,161 > 2\,000\) et \(V(12) = 12\,000 \times 0{,}85^{12} \approx 1\,837 < 2\,000\) ✓</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <p>Dans un atelier, on mesure un niveau sonore de 95 dB près d'une machine.</p>
+  <p>On rappelle : \(L = 10 \times \log\!\left(\dfrac{I}{I_0}\right)\) avec \(I_0 = 10^{-12}\) W/m².</p>
+  <p>a) Calculer l'intensité sonore \(I\) correspondant à 95 dB.</p>
+  <p>b) Après l'installation d'un capot d'insonorisation, le niveau tombe à 80 dB. Par quel facteur l'intensité a-t-elle été divisée ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(95 = 10 \times \log\!\left(\dfrac{I}{10^{-12}}\right)\) → \(\log\!\left(\dfrac{I}{10^{-12}}\right) = 9{,}5\) → \(\dfrac{I}{10^{-12}} = 10^{9{,}5}\)</p>
+    <p>\(I = 10^{9{,}5} \times 10^{-12} = 10^{-2{,}5} \approx \mathbf{3{,}16 \times 10^{-3}\,\text{W/m}^2}\)</p>
+    <p>b) Pour 80 dB : \(I' = 10^{8-12} = 10^{-4}\) W/m².</p>
+    <p>Rapport : \(\dfrac{I}{I'} = \dfrac{10^{-2{,}5}}{10^{-4}} = 10^{-2{,}5+4} = 10^{1{,}5} \approx \mathbf{31{,}6}\)</p>
+    <p>L'intensité a été divisée par environ <strong>31,6</strong> (une différence de 15 dB correspond toujours au facteur \(10^{1{,}5}\)).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(5 points)</span></h2>
+  <p>Un capital de 8 000 € est placé à intérêts composés au taux annuel de 4 %.</p>
+  <p>a) Écrire \(C(n)\) le capital après \(n\) années.</p>
+  <p>b) Résoudre \(C(n) \geq 12\,000\) pour déterminer à partir de quelle année le capital dépasse 12 000 €.</p>
+  <p>c) Déterminer au bout de combien d'années le capital double (résoudre \(1{,}04^n \geq 2\)).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(C(n) = 8\,000 \times 1{,}04^n\)</p>
+    <p>b) \(8\,000 \times 1{,}04^n \geq 12\,000\) → \(1{,}04^n \geq 1{,}5\) → \(n \cdot \log(1{,}04) \geq \log(1{,}5)\)</p>
+    <p>\(\log(1{,}04) \approx 0{,}0170 > 0\), donc sens conservé :</p>
+    <p>\(n \geq \dfrac{\log(1{,}5)}{\log(1{,}04)} = \dfrac{0{,}1761}{0{,}0170} \approx 10{,}35\)</p>
+    <p>Le capital dépasse 12 000 € à partir de \(\mathbf{n = 11}\) ans.</p>
+    <p>c) \(1{,}04^n \geq 2\) → \(n \geq \dfrac{\log(2)}{\log(1{,}04)} = \dfrac{0{,}301}{0{,}0170} \approx 17{,}7\)</p>
+    <p>Le capital double au bout de \(\mathbf{n = 18}\) ans.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(3 points)</span></h2>
+  <p>Résoudre les inéquations :</p>
+  <p>a) \(3^x \leq 100\)</p>
+  <p>b) \((0{,}7)^n < 0{,}1\) — donner la plus petite valeur entière de \(n\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(x \cdot \log(3) \leq \log(100)\). Comme \(\log(3) \approx 0{,}477 > 0\), sens conservé :</p>
+    <p>\(x \leq \dfrac{2}{0{,}477} \approx \mathbf{4{,}19}\). Solution : \(x \leq 4{,}19\).</p>
+    <p>b) \(n \cdot \log(0{,}7) < \log(0{,}1) = -1\). Comme \(\log(0{,}7) \approx -0{,}155 < 0\), sens inversé :</p>
+    <p>\(n > \dfrac{-1}{-0{,}155} \approx 6{,}45\)</p>
+    <p>Plus petite valeur entière : \(\mathbf{n = 7}\).</p>
+    <p><em>Vérification : \(0{,}7^6 \approx 0{,}118 > 0{,}1\) ; \(0{,}7^7 \approx 0{,}082 < 0{,}1\) ✓</em></p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(3 points)</span></h2>
+  <p>Un élève résout \(0{,}5^x < 0{,}25\) et écrit :</p>
+  <p>« \(x \cdot \log(0{,}5) < \log(0{,}25)\), donc \(x < \dfrac{\log(0{,}25)}{\log(0{,}5)} = 2\). »</p>
+  <p>a) Identifier l'erreur commise par l'élève.</p>
+  <p>b) Donner la résolution correcte.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) L'erreur est que l'élève divise par \(\log(0{,}5)\) qui est <strong>négatif</strong> (\(\log(0{,}5) \approx -0{,}301\)) sans <strong>inverser le sens de l'inégalité</strong>.</p>
+    <p>b) Résolution correcte : \(x \cdot \log(0{,}5) < \log(0{,}25)\). Comme \(\log(0{,}5) < 0\), le sens s'inverse :</p>
+    <p>\(x > \dfrac{\log(0{,}25)}{\log(0{,}5)} = \dfrac{-0{,}602}{-0{,}301} = 2\)</p>
+    <p>Solution : \(\mathbf{x > 2}\).</p>
+    <p><em>Vérification : \(0{,}5^3 = 0{,}125 < 0{,}25\) ✓ et \(0{,}5^2 = 0{,}25\), pas strictement inférieur.</em></p>
+  </div>
+</div>
+
+</div>
+
+</div><!-- fin .c -->
+<script src="../../../nav.js"></script>
+<script src="../../../diff.js"></script>
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch05 – Minimiser les transferts thermiques – Interrogation – 1ère ERA-MA</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac}
+.pts{font-size:.82em;color:#718096;font-weight:normal}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-1ere-erama.html" class="nb">← RETOUR SOMMAIRE ERA-MA (Grpt 3)</a>
+
+<header>
+  <h1>Chapitre 5 – Interrogation écrite</h1>
+  <p class="sous-titre">Minimiser les transferts thermiques — Première Bac Pro ERA-MA</p>
+</header>
+
+<div class="dh">
+  <p><strong>Durée :</strong> 10-15 min | <strong>Calculatrice autorisée</strong></p>
+</div>
+
+<!-- ========================= SOCLE ========================= -->
+<div class="diff-socle">
+<span class="tag-socle">Socle</span>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> La conductance thermique se calcule par \(G = \dfrac{\lambda \cdot S}{e}\) avec G en W/K, \(\lambda\) en W/(m·K), S en m² et e en m.</div>
+  <p>Calculer la conductance thermique d'un mur en béton : \(\lambda = 1{,}7\) W/(m·K), S = 10 m², e = 20 cm.</p>
+  <p>a) Convertir l'épaisseur en mètres : e = 20 cm = ... m</p>
+  <p>b) Appliquer la formule : \(G = \dfrac{1{,}7 \times 10}{...} = \dfrac{...}{...} = ...\) W/K</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(e = 20\) cm \(= \mathbf{0{,}20}\) m</p>
+    <p>b) \(G = \dfrac{1{,}7 \times 10}{0{,}20} = \dfrac{17}{0{,}20} = \mathbf{85}\) W/K</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Le flux thermique (puissance perdue) se calcule par \(\Phi = G \times (T_1 - T_2)\), avec \(\Phi\) en W.</div>
+  <p>Le mur de la question 1 a une conductance G = 85 W/K. L'intérieur est à 20 °C, l'extérieur à 5 °C.</p>
+  <p>a) Calculer la différence de température : \(T_1 - T_2 = 20 - 5 = ...\) °C</p>
+  <p>b) Calculer le flux : \(\Phi = 85 \times ... = ...\) W</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(T_1 - T_2 = 20 - 5 = \mathbf{15}\) °C (= 15 K)</p>
+    <p>b) \(\Phi = 85 \times 15 = \mathbf{1\,275}\) W</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Plus \(\lambda\) est faible, meilleur est l'isolant. Plus G est petit, moins la chaleur passe.</div>
+  <p>Parmi les matériaux suivants, lequel est le meilleur isolant ?</p>
+  <table>
+    <tr><th>Matériau</th><th>\(\lambda\) (W/m·K)</th></tr>
+    <tr><td>Béton</td><td>1,7</td></tr>
+    <tr><td>Bois résineux</td><td>0,12</td></tr>
+    <tr><td>Laine de verre</td><td>0,032</td></tr>
+    <tr><td>Mousse polyuréthane</td><td>0,022</td></tr>
+  </table>
+  <p>Le meilleur isolant est : .................. car sa conductivité est la plus ..................</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>Le meilleur isolant est la <strong>mousse polyuréthane</strong> car sa conductivité est la plus <strong>faible</strong> (0,022 W/m·K).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Pour réduire les pertes : choisir un \(\lambda\) faible et augmenter l'épaisseur e.</div>
+  <p>Compléter les phrases :</p>
+  <p>a) Si on augmente l'épaisseur de l'isolant, la conductance G .................. (augmente / diminue).</p>
+  <p>b) Si on utilise un matériau de \(\lambda\) plus faible, la conductance G .................. (augmente / diminue).</p>
+  <p>c) Si la conductance G diminue, le flux thermique \(\Phi\) .................. (augmente / diminue).</p>
+  <p>d) Le flux thermique \(\Phi\) est exprimé en .................. (J / W / kWh).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) G <strong>diminue</strong>.</p>
+    <p>b) G <strong>diminue</strong>.</p>
+    <p>c) \(\Phi\) <strong>diminue</strong>.</p>
+    <p>d) \(\Phi\) est en <strong>watts (W)</strong> — c'est une puissance.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Ne pas oublier de convertir l'épaisseur en mètres !</div>
+  <p>Calculer la conductance d'une plaque de polystyrène : \(\lambda = 0{,}035\) W/(m·K), S = 10 m², e = 10 cm.</p>
+  <p>a) Convertir : e = ... m</p>
+  <p>b) Calculer : \(G = \dfrac{0{,}035 \times 10}{...} = ...\) W/K</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(e = 10\) cm \(= \mathbf{0{,}10}\) m</p>
+    <p>b) \(G = \dfrac{0{,}035 \times 10}{0{,}10} = \dfrac{0{,}35}{0{,}10} = \mathbf{3{,}5}\) W/K</p>
+  </div>
+</div>
+
+</div>
+
+<!-- ========================= STANDARD ========================= -->
+<div class="diff-standard">
+<span class="tag-standard">Standard</span>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Un menuisier agenceur doit isoler une cloison de 8 m² séparant un salon (20 °C) d'un garage (5 °C). Il utilise de la laine de verre (\(\lambda = 0{,}032\) W/m·K) d'épaisseur 10 cm.</p>
+  <p>a) Calculer la conductance G de l'isolant.</p>
+  <p>b) Calculer le flux thermique \(\Phi\) à travers l'isolant.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(G = \dfrac{0{,}032 \times 8}{0{,}10} = \dfrac{0{,}256}{0{,}10} = \mathbf{2{,}56}\) W/K</p>
+    <p>b) \(\Phi = 2{,}56 \times (20 - 5) = 2{,}56 \times 15 = \mathbf{38{,}4}\) W</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <p>Un mur en brique (\(\lambda = 0{,}84\) W/m·K) a une surface de 15 m² et une épaisseur de 20 cm. La pièce est à 19 °C et l'extérieur à 4 °C.</p>
+  <p>a) Calculer la conductance G du mur.</p>
+  <p>b) Calculer le flux thermique \(\Phi\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(G = \dfrac{0{,}84 \times 15}{0{,}20} = \dfrac{12{,}6}{0{,}20} = \mathbf{63}\) W/K</p>
+    <p>b) \(\Phi = 63 \times (19 - 4) = 63 \times 15 = \mathbf{945}\) W</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Un ébéniste compare trois épaisseurs de polystyrène (\(\lambda = 0{,}035\) W/m·K) pour isoler un mur de 10 m² :</p>
+  <p>a) Calculer G pour e = 5 cm, e = 10 cm et e = 20 cm.</p>
+  <p>b) Que se passe-t-il quand on double l'épaisseur ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) e = 5 cm : \(G = \dfrac{0{,}035 \times 10}{0{,}05} = \mathbf{7{,}0}\) W/K</p>
+    <p>e = 10 cm : \(G = \dfrac{0{,}035 \times 10}{0{,}10} = \mathbf{3{,}5}\) W/K</p>
+    <p>e = 20 cm : \(G = \dfrac{0{,}035 \times 10}{0{,}20} = \mathbf{1{,}75}\) W/K</p>
+    <p>b) Quand on double l'épaisseur, la conductance est <strong>divisée par 2</strong>. L'isolation s'améliore proportionnellement à l'épaisseur.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>Calculer la conductance thermique d'une vitre de fenêtre : S = 1,5 m², e = 4 mm, \(\lambda = 1{,}0\) W/m·K.</p>
+  <p>a) Calculer G.</p>
+  <p>b) La vitre laisse-t-elle facilement passer la chaleur ? Justifier par la valeur de G.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(e = 4\) mm \(= 0{,}004\) m. \(G = \dfrac{1{,}0 \times 1{,}5}{0{,}004} = \mathbf{375}\) W/K</p>
+    <p>b) <strong>Oui</strong>, G = 375 W/K est une valeur très élevée. La vitre seule laisse passer facilement la chaleur (mauvais isolant). C'est pourquoi on utilise du double vitrage.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <p>Un mur non isolé laisse passer un flux \(\Phi = 200\) W. Calculer l'énergie perdue en 10 heures et le coût correspondant (tarif 0,18 €/kWh).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>Puissance : \(\Phi = 200\) W = 0,200 kW</p>
+    <p>Énergie : \(E = 0{,}200 \times 10 = \mathbf{2}\) kWh</p>
+    <p>Coût : \(2 \times 0{,}18 = \mathbf{0{,}36}\) €</p>
+  </div>
+</div>
+
+</div>
+
+<!-- ========================= APPROFONDISSEMENT ========================= -->
+<div class="diff-appro">
+<span class="tag-appro">Approfondissement</span>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Un technicien d'agencement compare trois isolants pour une cloison de 8 m², \(\Delta T = 15\) K :</p>
+  <table>
+    <tr><th>Isolant</th><th>\(\lambda\) (W/m·K)</th><th>Épaisseur (cm)</th><th>Prix (€/m²)</th></tr>
+    <tr><td>Laine de verre</td><td>0,032</td><td>10</td><td>8</td></tr>
+    <tr><td>Polystyrène</td><td>0,035</td><td>10</td><td>12</td></tr>
+    <tr><td>Laine de bois</td><td>0,038</td><td>10</td><td>18</td></tr>
+  </table>
+  <p>a) Calculer G et \(\Phi\) pour chaque isolant.</p>
+  <p>b) Quel isolant offre le meilleur rapport performance/prix ? Justifier.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Laine de verre : \(G = \dfrac{0{,}032 \times 8}{0{,}10} = 2{,}56\) W/K → \(\Phi = 2{,}56 \times 15 = \mathbf{38{,}4}\) W</p>
+    <p>Polystyrène : \(G = \dfrac{0{,}035 \times 8}{0{,}10} = 2{,}80\) W/K → \(\Phi = 2{,}80 \times 15 = \mathbf{42{,}0}\) W</p>
+    <p>Laine de bois : \(G = \dfrac{0{,}038 \times 8}{0{,}10} = 3{,}04\) W/K → \(\Phi = 3{,}04 \times 15 = \mathbf{45{,}6}\) W</p>
+    <p>b) La <strong>laine de verre</strong> offre le meilleur rapport performance/prix : meilleure isolation (\(\Phi\) le plus faible) et prix le plus bas (8 €/m²).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <p>Un mur composite est constitué de trois couches :</p>
+  <ul>
+    <li>Béton : e = 20 cm, \(\lambda = 1{,}7\) W/(m·K)</li>
+    <li>Polystyrène : e = 10 cm, \(\lambda = 0{,}035\) W/(m·K)</li>
+    <li>Placo : e = 1,3 cm, \(\lambda = 0{,}25\) W/(m·K)</li>
+  </ul>
+  <p>Surface S = 10 m². \(\Delta T = 15\) K.</p>
+  <p>a) Calculer la résistance thermique de chaque couche (\(R = e / (\lambda \cdot S)\)).</p>
+  <p>b) Calculer la résistance totale et le flux thermique.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(R_{\text{béton}} = \dfrac{0{,}20}{1{,}7 \times 10} = \mathbf{0{,}0118}\) K/W</p>
+    <p>\(R_{\text{polystyrène}} = \dfrac{0{,}10}{0{,}035 \times 10} = \mathbf{0{,}286}\) K/W</p>
+    <p>\(R_{\text{placo}} = \dfrac{0{,}013}{0{,}25 \times 10} = \mathbf{0{,}0052}\) K/W</p>
+    <p>b) \(R_{\text{total}} = 0{,}0118 + 0{,}286 + 0{,}0052 = \mathbf{0{,}303}\) K/W</p>
+    <p>\(\Phi = \dfrac{15}{0{,}303} = \mathbf{49{,}5}\) W</p>
+    <p>L'isolant représente 94 % de la résistance totale : c'est lui qui assure l'essentiel de l'isolation.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Un menuisier agenceur rénove un pavillon. Le mur extérieur non isolé (béton, S = 12 m², e = 20 cm, \(\lambda = 1{,}7\)) laisse échapper de la chaleur. L'intérieur est à 20 °C, l'extérieur à 5 °C.</p>
+  <p>a) Calculer le flux thermique sans isolation.</p>
+  <p>b) On ajoute 10 cm de laine de verre (\(\lambda = 0{,}032\)). Calculer la conductance et le flux de l'isolant seul.</p>
+  <p>c) Par combien les pertes sont-elles divisées ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(G = \dfrac{1{,}7 \times 12}{0{,}20} = 102\) W/K → \(\Phi = 102 \times 15 = \mathbf{1\,530}\) W</p>
+    <p>b) \(G_{\text{isolant}} = \dfrac{0{,}032 \times 12}{0{,}10} = 3{,}84\) W/K → \(\Phi = 3{,}84 \times 15 = \mathbf{57{,}6}\) W</p>
+    <p>c) Division : \(1\,530 / 57{,}6 \approx \mathbf{26{,}6}\). Les pertes sont divisées par environ <strong>26</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>Un artisan menuisier chauffe son atelier avec un radiateur de 2 kW. Le mur non isolé perd \(\Phi = 1\,530\) W. Après isolation, les pertes tombent à 58 W.</p>
+  <p>a) Sans isolation, quelle fraction de la puissance du radiateur est perdue par ce seul mur ?</p>
+  <p>b) Calculer l'énergie perdue par ce mur en un mois (8 h/jour, 20 jours) dans chaque cas.</p>
+  <p>c) Calculer l'économie mensuelle réalisée grâce à l'isolation (tarif 0,18 €/kWh).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Fraction perdue : \(\dfrac{1\,530}{2\,000} = 0{,}765 = \mathbf{76{,}5\,\%}\) de la puissance du radiateur.</p>
+    <p>b) Durée mensuelle : \(8 \times 20 = 160\) h.</p>
+    <p>Sans isolation : \(E = 1{,}530 \times 160 = 244{,}8\) kWh.</p>
+    <p>Avec isolation : \(E = 0{,}058 \times 160 = 9{,}3\) kWh.</p>
+    <p>c) Économie : \((244{,}8 - 9{,}3) \times 0{,}18 = 235{,}5 \times 0{,}18 = \mathbf{42{,}39}\) €/mois.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <p>Expliquer pourquoi les premiers centimètres d'isolant sont les plus efficaces et pourquoi, au-delà d'une certaine épaisseur, le gain supplémentaire devient faible.</p>
+  <p>Illustrer avec un calcul : pour un mur de 10 m² en laine de verre (\(\lambda = 0{,}032\)), calculer \(\Phi\) pour e = 2 cm, e = 10 cm et e = 20 cm (\(\Delta T = 15\) K).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>e = 2 cm : \(G = \dfrac{0{,}032 \times 10}{0{,}02} = 16\) W/K → \(\Phi = 16 \times 15 = \mathbf{240}\) W</p>
+    <p>e = 10 cm : \(G = \dfrac{0{,}032 \times 10}{0{,}10} = 3{,}2\) W/K → \(\Phi = 3{,}2 \times 15 = \mathbf{48}\) W</p>
+    <p>e = 20 cm : \(G = \dfrac{0{,}032 \times 10}{0{,}20} = 1{,}6\) W/K → \(\Phi = 1{,}6 \times 15 = \mathbf{24}\) W</p>
+    <p><strong>Analyse :</strong> De 2 cm à 10 cm, on gagne \(240 - 48 = 192\) W (gain de 80 %). De 10 cm à 20 cm, on gagne seulement \(48 - 24 = 24\) W (gain supplémentaire de 10 %). La relation \(\Phi = k/e\) est une hyperbole : les premières épaisseurs réduisent fortement les pertes, mais le gain marginal décroît. C'est pourquoi au-delà de 12-14 cm, le surcoût de matériau n'est plus justifié par l'économie d'énergie.</p>
+  </div>
+</div>
+
+</div>
+
+</div><!-- fin .c -->
+<script src="../../../nav.js"></script>
+<script src="../../../diff.js"></script>
+</body>
+</html>

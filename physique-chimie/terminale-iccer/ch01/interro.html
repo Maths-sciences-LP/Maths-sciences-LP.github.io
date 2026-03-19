@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch01 – Puissance consommée – Interrogation – Tle ICCER</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
+.pts{font-size:.82em;color:#718096;font-weight:normal}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
+
+<header>
+  <h1>Chapitre 1 – Interrogation écrite</h1>
+  <p class="sous-titre">Évaluer la puissance consommée — Terminale Bac Pro ICCER</p>
+</header>
+
+<div class="dh">
+  <p><strong>Durée :</strong> 10-15 min | <strong>Calculatrice autorisée</strong></p>
+</div>
+
+<!-- ========================= SOCLE ========================= -->
+<div class="diff-socle">
+<span class="tag-socle">Socle</span>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> La puissance apparente est \(S = U \times I\). Elle s'exprime en voltampères (VA).</div>
+  <p>Un climatiseur est alimenté sous U = 230 V et absorbe un courant I = 10 A.</p>
+  <p>a) Calculer la puissance apparente : \(S = 230 \times 10 = ...\) VA</p>
+  <p>b) Quelle est l'unité de S ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(S = 230 \times 10 = \mathbf{2\,300}\) VA</p>
+    <p>b) L'unité de la puissance apparente est le <strong>voltampère (VA)</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> La puissance active est \(P = U \times I \times \cos\varphi\). Elle s'exprime en watts (W).</div>
+  <p>Pour le climatiseur précédent, le facteur de puissance est cos φ = 0,80.</p>
+  <p>a) Calculer la puissance active : \(P = 230 \times 10 \times 0{,}80 = ...\) W</p>
+  <p>b) La puissance active est-elle plus grande ou plus petite que la puissance apparente ? Pourquoi ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(P = 230 \times 10 \times 0{,}80 = \mathbf{1\,840}\) W</p>
+    <p>b) La puissance active est <strong>plus petite</strong> que la puissance apparente car cos φ < 1. Une partie de la puissance « oscille » sans être convertie en travail utile.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Le facteur de puissance est \(\cos\varphi = \dfrac{P}{S}\).</div>
+  <p>Une pompe à chaleur a une puissance active P = 2 100 W et une puissance apparente S = 2 800 VA.</p>
+  <p>a) Calculer le facteur de puissance : \(\cos\varphi = \dfrac{2\,100}{2\,800} = ...\)</p>
+  <p>b) Ce facteur de puissance est-il bon ou mauvais ? (On considère qu'un bon cos φ est supérieur à 0,85.)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\cos\varphi = \dfrac{2\,100}{2\,800} = \mathbf{0{,}75}\)</p>
+    <p>b) cos φ = 0,75 < 0,85 → le facteur de puissance est <strong>mauvais</strong>. L'installation consomme beaucoup de courant pour peu de travail utile.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Le triangle des puissances : \(S^2 = P^2 + Q^2\). La puissance réactive Q s'exprime en VAR.</div>
+  <p>On donne S = 3 000 VA et P = 2 400 W.</p>
+  <p>a) Calculer \(Q = \sqrt{S^2 - P^2} = \sqrt{3\,000^2 - 2\,400^2} = \sqrt{... - ...} = ...\) VAR</p>
+  <p>b) Quelle est l'unité de Q ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(Q = \sqrt{9\,000\,000 - 5\,760\,000} = \sqrt{3\,240\,000} = \mathbf{1\,800}\) VAR</p>
+    <p>b) L'unité de la puissance réactive est le <strong>voltampère réactif (VAR)</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Énergie consommée : \(W = P \times t\) (P en kW, t en h → W en kWh).</div>
+  <p>Un radiateur électrique de puissance P = 1 500 W fonctionne pendant 6 heures.</p>
+  <p>a) Convertir P en kW : \(P = \dfrac{1\,500}{1\,000} = ...\) kW</p>
+  <p>b) Calculer l'énergie consommée : \(W = ... \times 6 = ...\) kWh</p>
+  <p>c) Au tarif de 0,22 €/kWh, calculer le coût : \(... \times 0{,}22 = ...\) €</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(P = \dfrac{1\,500}{1\,000} = \mathbf{1{,}5}\) kW</p>
+    <p>b) \(W = 1{,}5 \times 6 = \mathbf{9}\) kWh</p>
+    <p>c) Coût = \(9 \times 0{,}22 = \mathbf{1{,}98}\) €</p>
+  </div>
+</div>
+
+</div>
+
+<!-- ========================= STANDARD ========================= -->
+<div class="diff-standard">
+<span class="tag-standard">Standard</span>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Un installateur thermique mesure sur un compresseur de climatisation : U = 230 V, I = 15 A, cos φ = 0,78.</p>
+  <p>a) Calculer la puissance apparente S.</p>
+  <p>b) Calculer la puissance active P.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(S = U \times I = 230 \times 15 = \mathbf{3\,450}\) VA</p>
+    <p>b) \(P = S \times \cos\varphi = 3\,450 \times 0{,}78 = \mathbf{2\,691}\) W</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <p>Un technicien chauffagiste lit sur la plaque signalétique d'une pompe à chaleur : P = 2 200 W, I = 13 A, U = 230 V.</p>
+  <p>a) Calculer la puissance apparente S.</p>
+  <p>b) En déduire le facteur de puissance cos φ.</p>
+  <p>c) Le fabricant annonce cos φ = 0,74. Votre résultat est-il cohérent ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(S = 230 \times 13 = \mathbf{2\,990}\) VA</p>
+    <p>b) \(\cos\varphi = \dfrac{P}{S} = \dfrac{2\,200}{2\,990} \approx \mathbf{0{,}74}\)</p>
+    <p>c) Oui, le résultat est cohérent avec la valeur annoncée par le fabricant.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Un ventilateur de CTA absorbe une puissance active P = 1 200 W avec cos φ = 0,85, sous U = 230 V.</p>
+  <p>a) Calculer la puissance apparente S.</p>
+  <p>b) En déduire le courant I absorbé.</p>
+  <p>c) Quel calibre de disjoncteur choisir parmi : 10, 16, 20, 25 A ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(S = \dfrac{P}{\cos\varphi} = \dfrac{1\,200}{0{,}85} \approx \mathbf{1\,412}\) VA</p>
+    <p>b) \(I = \dfrac{S}{U} = \dfrac{1\,412}{230} \approx \mathbf{6{,}1}\) A</p>
+    <p>c) I = 6,1 A → on choisit un disjoncteur <strong>10 A</strong> (calibre normalisé supérieur).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>Un climatiseur fonctionne 8 heures par jour, 22 jours par mois. Sa puissance active est P = 2 500 W. Le tarif EDF est 0,22 €/kWh.</p>
+  <p>a) Calculer l'énergie consommée par mois en kWh.</p>
+  <p>b) Calculer le coût mensuel.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Durée mensuelle : \(8 \times 22 = 176\) h. Énergie : \(W = 2{,}5 \times 176 = \mathbf{440}\) kWh</p>
+    <p>b) Coût = \(440 \times 0{,}22 = \mathbf{96{,}80}\) €/mois</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <p>À l'oscilloscope, on observe les courbes u(t) et i(t) d'un compresseur et on mesure T = 20 ms et Δt = 3 ms.</p>
+  <p>a) Calculer le déphasage φ en radians.</p>
+  <p>b) En déduire cos φ.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\varphi = \dfrac{\Delta t}{T} \times 2\pi = \dfrac{3}{20} \times 2\pi = 0{,}15 \times 6{,}283 \approx \mathbf{0{,}942}\) rad</p>
+    <p>b) \(\cos(0{,}942) \approx \mathbf{0{,}59}\). Ce facteur de puissance est très mauvais.</p>
+  </div>
+</div>
+
+</div>
+
+<!-- ========================= APPROFONDISSEMENT ========================= -->
+<div class="diff-appro">
+<span class="tag-appro">Approfondissement</span>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Un compresseur de pompe à chaleur a les caractéristiques suivantes : P = 3 500 W, cos φ = 0,70, U = 230 V.</p>
+  <p>a) Calculer S, I et Q.</p>
+  <p>b) Vérifier la relation \(S^2 = P^2 + Q^2\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(S = \dfrac{P}{\cos\varphi} = \dfrac{3\,500}{0{,}70} = \mathbf{5\,000}\) VA</p>
+    <p>\(I = \dfrac{S}{U} = \dfrac{5\,000}{230} \approx \mathbf{21{,}7}\) A</p>
+    <p>\(\sin\varphi = \sqrt{1 - 0{,}70^2} \approx 0{,}714\)</p>
+    <p>\(Q = S \times \sin\varphi = 5\,000 \times 0{,}714 \approx \mathbf{3\,571}\) VAR</p>
+    <p>b) Vérification : \(P^2 + Q^2 = 3\,500^2 + 3\,571^2 = 12\,250\,000 + 12\,752\,041 \approx 25\,002\,041\)</p>
+    <p>\(S^2 = 5\,000^2 = 25\,000\,000\). Cohérent (écart dû aux arrondis).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <p>Un installateur thermique souhaite relever le facteur de puissance d'un compresseur de cos φ₁ = 0,70 à cos φ₂ = 0,95. La puissance active est P = 3 500 W.</p>
+  <p>a) Calculer le courant avant compensation (I₁).</p>
+  <p>b) Calculer le courant après compensation (I₂).</p>
+  <p>c) En déduire le pourcentage de réduction du courant.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(S_1 = \dfrac{3\,500}{0{,}70} = 5\,000\) VA → \(I_1 = \dfrac{5\,000}{230} \approx \mathbf{21{,}7}\) A</p>
+    <p>b) \(S_2 = \dfrac{3\,500}{0{,}95} \approx 3\,684\) VA → \(I_2 = \dfrac{3\,684}{230} \approx \mathbf{16{,}0}\) A</p>
+    <p>c) Réduction : \(\dfrac{21{,}7 - 16{,}0}{21{,}7} \times 100 \approx \mathbf{26\,\%}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Un local commercial possède un climatiseur (P₁ = 2 200 W, cos φ₁ = 0,75) et un chauffe-eau électrique (P₂ = 1 800 W, cos φ₂ = 1,00), tous sous U = 230 V.</p>
+  <p>a) Calculer le courant absorbé par chaque appareil.</p>
+  <p>b) Calculer le courant total approximatif (somme des courants).</p>
+  <p>c) Quel disjoncteur général choisir (calibres : 16, 20, 25, 32 A) ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Climatiseur : \(S_1 = \dfrac{2\,200}{0{,}75} \approx 2\,933\) VA → \(I_1 = \dfrac{2\,933}{230} \approx \mathbf{12{,}8}\) A</p>
+    <p>Chauffe-eau : \(S_2 = \dfrac{1\,800}{1{,}00} = 1\,800\) VA → \(I_2 = \dfrac{1\,800}{230} \approx \mathbf{7{,}8}\) A</p>
+    <p>b) \(I_{total} \approx 12{,}8 + 7{,}8 = \mathbf{20{,}6}\) A</p>
+    <p>c) I ≈ 20,6 A → on choisit un disjoncteur <strong>25 A</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>À l'oscilloscope, on mesure T = 20 ms et Δt = 4 ms pour un moteur de ventilateur alimenté sous U = 230 V, I = 3,5 A.</p>
+  <p>a) Calculer le déphasage φ en radians, puis en degrés.</p>
+  <p>b) Calculer cos φ, puis P, S et Q.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\varphi = \dfrac{4}{20} \times 2\pi = 0{,}2 \times 6{,}283 \approx \mathbf{1{,}257}\) rad \(\approx 72°\)</p>
+    <p>b) \(\cos(72°) \approx \mathbf{0{,}309}\)</p>
+    <p>\(S = 230 \times 3{,}5 = \mathbf{805}\) VA</p>
+    <p>\(P = 805 \times 0{,}309 \approx \mathbf{249}\) W</p>
+    <p>\(Q = 805 \times \sin(72°) = 805 \times 0{,}951 \approx \mathbf{766}\) VAR</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <p>Un technicien chauffagiste doit choisir le câble et le disjoncteur pour une PAC air/eau : P = 4 500 W, cos φ = 0,72, U = 230 V.</p>
+  <p>a) Calculer le courant I absorbé.</p>
+  <p>b) Choisir le disjoncteur (calibres normalisés : 10, 16, 20, 25, 32, 40 A).</p>
+  <p>c) Choisir la section du câble (I ≤ 16 A → 2,5 mm² ; I ≤ 25 A → 4 mm² ; I ≤ 32 A → 6 mm²).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(S = \dfrac{P}{\cos\varphi} = \dfrac{4\,500}{0{,}72} = 6\,250\) VA → \(I = \dfrac{6\,250}{230} \approx \mathbf{27{,}2}\) A</p>
+    <p>b) I = 27,2 A → disjoncteur <strong>32 A</strong>.</p>
+    <p>c) I = 27,2 A > 25 A → câble de section <strong>6 mm²</strong>.</p>
+  </div>
+</div>
+
+</div>
+
+</div><!-- fin .c -->
+<script src="../../../nav.js"></script>
+<script src="../../../diff.js"></script>
+</body>
+</html>

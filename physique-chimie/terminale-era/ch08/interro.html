@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch08 – Atténuer une onde sonore – Interrogation – Tle ERA-MA</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac}
+.pts{font-size:.82em;color:#718096;font-weight:normal}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-term-erama.html" class="nb">← RETOUR SOMMAIRE ERA-MA (Grpt 3)</a>
+
+<header>
+  <h1>Chapitre 8 – Interrogation écrite</h1>
+  <p class="sous-titre">Atténuer une onde sonore par transmission — Terminale Bac Pro ERA-MA</p>
+</header>
+
+<div class="dh">
+  <p><strong>Durée :</strong> 10-15 min | <strong>Calculatrice autorisée</strong></p>
+</div>
+
+<!-- ========================= SOCLE ========================= -->
+<div class="diff-socle">
+<span class="tag-socle">Socle</span>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Le niveau sonore se mesure en décibels (dB). L'échelle est logarithmique : +10 dB = intensité × 10.</div>
+  <p>Compléter le tableau :</p>
+  <table>
+    <tr><th>Situation</th><th>Niveau sonore (dB)</th></tr>
+    <tr><td>Seuil d'audition</td><td>... dB</td></tr>
+    <tr><td>Conversation normale</td><td>~... dB</td></tr>
+    <tr><td>Seuil de douleur</td><td>~... dB</td></tr>
+  </table>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>Seuil d'audition → <strong>0 dB</strong></p>
+    <p>Conversation normale → <strong>~60 dB</strong></p>
+    <p>Seuil de douleur → <strong>~130 dB</strong></p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> L'indice d'affaiblissement R se calcule avec \(R = L_i - L_t\) (en dB). Plus R est grand, meilleure est l'isolation.</div>
+  <p>Un mur reçoit un son de 70 dB côté source. On mesure 35 dB de l'autre côté.</p>
+  <p>a) Écrire la formule de R.</p>
+  <p>b) Calculer : \(R = 70 - 35 = ...\) dB</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(R = L_i - L_t\)</p>
+    <p>b) \(R = 70 - 35 = \mathbf{35}\) dB</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> La loi de masse : plus une paroi est lourde (kg/m²), meilleure est son isolation acoustique.</div>
+  <p>Classer ces parois de la moins isolante à la plus isolante :</p>
+  <ul>
+    <li>Vitrage simple 4 mm (R ≈ 25 dB)</li>
+    <li>Béton 15 cm (R ≈ 52 dB)</li>
+    <li>Cloison placo 72 mm (R ≈ 38 dB)</li>
+  </ul>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>Du moins au plus isolant : <strong>Vitrage simple (25 dB) &lt; Cloison placo (38 dB) &lt; Béton 15 cm (52 dB)</strong></p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Dans l'échelle des décibels : +10 dB = intensité × 10, +20 dB = intensité × 100.</div>
+  <p>Un son passe de 60 dB à 80 dB.</p>
+  <p>a) De combien de dB a-t-il augmenté ?</p>
+  <p>b) Par combien l'intensité sonore a-t-elle été multipliée ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Augmentation de <strong>20 dB</strong>.</p>
+    <p>b) +20 dB = intensité multipliée par <strong>100</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> En doublant la masse surfacique d'une paroi, on gagne environ +6 dB sur R.</div>
+  <p>Vrai ou Faux ? Justifier si faux.</p>
+  <p>a) Un mur plus lourd isole mieux du bruit.</p>
+  <p>b) 80 dB est deux fois plus fort que 40 dB.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) <strong>VRAI</strong>. C'est la loi de masse : plus la masse surfacique est élevée, meilleure est l'isolation acoustique.</p>
+    <p>b) <strong>FAUX</strong>. L'échelle des dB est logarithmique. 80 dB est <strong>10 000 fois</strong> plus intense que 40 dB (pas deux fois).</p>
+  </div>
+</div>
+
+</div>
+
+<!-- ========================= STANDARD ========================= -->
+<div class="diff-standard">
+<span class="tag-standard">Standard</span>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Un menuisier agenceur remplace les fenêtres d'un appartement donnant sur une avenue passante. Il hésite entre un simple vitrage (R = 25 dB) et un double vitrage (R = 32 dB). Le niveau sonore extérieur est de 75 dB.</p>
+  <p>a) Calculer le niveau sonore intérieur avec chaque vitrage.</p>
+  <p>b) Quel est le gain en dB apporté par le double vitrage ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Simple vitrage : \(L_t = 75 - 25 = \mathbf{50}\) dB. Double vitrage : \(L_t = 75 - 32 = \mathbf{43}\) dB.</p>
+    <p>b) Gain : \(32 - 25 = \mathbf{7}\) dB.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <p>Un ébéniste installe une cloison séparative entre son atelier (bruyant) et un bureau adjacent. Le niveau sonore dans l'atelier est de 85 dB. La norme impose un isolement de 53 dB minimum entre les deux espaces.</p>
+  <p>a) Quel doit être le niveau sonore maximal dans le bureau ?</p>
+  <p>b) Quel indice R minimum la cloison doit-elle avoir ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(L_t = 85 - 53 = \mathbf{32}\) dB</p>
+    <p>b) La cloison doit avoir <strong>R ≥ 53 dB</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Calculer l'indice d'affaiblissement R d'une cloison dont le coefficient d'atténuation est τ = 0,02.</p>
+  <p>Formule : \(R = -20 \times \log(\tau)\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>\(R = -20 \times \log(0{,}02) = -20 \times (-1{,}699) = \mathbf{34}\) dB</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>Expliquer la « loi de masse » en acoustique. Donner un exemple chiffré avec deux matériaux du cours.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>La <strong>loi de masse</strong> stipule que plus une paroi est lourde (masse surfacique élevée en kg/m²), meilleure est son isolation acoustique. En doublant la masse surfacique, on gagne environ +6 dB.</p>
+    <p><strong>Exemple :</strong> Un vitrage simple 4 mm (~10 kg/m²) → R ≈ 25 dB. Un double vitrage (~20 kg/m²) → R ≈ 32 dB. La masse a doublé et on gagne ~7 dB.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <p>Pourquoi les sons graves (basses fréquences) sont-ils plus difficiles à bloquer que les sons aigus (hautes fréquences) ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>L'indice d'affaiblissement R <strong>augmente avec la fréquence</strong> : les matériaux atténuent davantage les hautes fréquences que les basses fréquences. Les sons graves ont des longueurs d'onde plus grandes et traversent plus facilement les parois. C'est pourquoi les basses d'une sono de voisin traversent les murs alors que les aigus sont mieux bloqués.</p>
+  </div>
+</div>
+
+</div>
+
+<!-- ========================= APPROFONDISSEMENT ========================= -->
+<div class="diff-appro">
+<span class="tag-appro">Approfondissement</span>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Un mur de béton de 15 cm a une masse surfacique de 360 kg/m² et R ≈ 52 dB. Un mur de béton de 20 cm a une masse surfacique de 480 kg/m² et R ≈ 57 dB.</p>
+  <p>a) Calculer le rapport des masses surfaciques.</p>
+  <p>b) Vérifier que le gain en dB est cohérent avec la loi de masse (doubler la masse → +6 dB).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\dfrac{480}{360} \approx \mathbf{1{,}33}\) (la masse est multipliée par 1,33, pas par 2).</p>
+    <p>b) Gain : \(57 - 52 = 5\) dB. Pour un doublement complet, on attendrait +6 dB. Ici la masse n'a augmenté que de 33 %, donc un gain de 5 dB est <strong>cohérent</strong> avec la loi de masse (proportionnellement moins que +6 dB).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <p>Une cloison a un coefficient d'atténuation τ = 0,001.</p>
+  <p>a) Calculer R.</p>
+  <p>b) Si le niveau incident est de 90 dB, calculer le niveau transmis.</p>
+  <p>c) Cette cloison convient-elle pour séparer deux logements (norme : R ≥ 53 dB) ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(R = -20 \times \log(0{,}001) = -20 \times (-3) = \mathbf{60}\) dB</p>
+    <p>b) \(L_t = 90 - 60 = \mathbf{30}\) dB</p>
+    <p>c) Oui, R = 60 dB &gt; 53 dB → la cloison <strong>respecte la norme</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Un architecte d'intérieur doit isoler un studio de musique. Le niveau sonore maximal à l'intérieur est de 100 dB. La norme impose que le voisinage ne reçoive pas plus de 35 dB.</p>
+  <p>a) Calculer le R minimum nécessaire.</p>
+  <p>b) Parmi les solutions suivantes, laquelle convient ?</p>
+  <ul>
+    <li>Cloison placo simple (R = 38 dB)</li>
+    <li>Double cloison placo + laine (R = 55 dB)</li>
+    <li>Mur béton 20 cm + doublage acoustique (R = 68 dB)</li>
+  </ul>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(R = 100 - 35 = \mathbf{65}\) dB</p>
+    <p>b) Seul le <strong>mur béton 20 cm + doublage acoustique (R = 68 dB)</strong> convient car 68 ≥ 65 dB. Les deux autres solutions sont insuffisantes.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>Montrer que si τ = 0,1, alors R = 20 dB, et que si τ = 0,01, alors R = 40 dB. Que peut-on dire du lien entre τ et R ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>\(\tau = 0{,}1\) : \(R = -20 \times \log(0{,}1) = -20 \times (-1) = \mathbf{20}\) dB</p>
+    <p>\(\tau = 0{,}01\) : \(R = -20 \times \log(0{,}01) = -20 \times (-2) = \mathbf{40}\) dB</p>
+    <p>Quand τ est <strong>divisé par 10</strong>, R augmente de <strong>20 dB</strong>. Le lien est logarithmique : diviser τ par 10 revient à ajouter 20 dB à l'affaiblissement.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <p>Un conducteur de travaux constate qu'une cloison neuve entre deux logements, bien que conforme sur le papier (R = 55 dB), ne satisfait pas les habitants. Les bruits de voisinage restent audibles.</p>
+  <p>a) Citer deux causes possibles de cet échec malgré un R théorique suffisant.</p>
+  <p>b) Que signifie l'expression « le maillon le plus faible » en isolation acoustique ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Causes possibles : <strong>fuites acoustiques</strong> au niveau des prises électriques traversantes, des passages de canalisations, des joints de périphérie mal traités, d'une porte communicante mal isolée, ou de <strong>transmissions latérales</strong> par les planchers ou les murs adjacents.</p>
+    <p>b) L'isolation globale est limitée par l'élément le moins isolant. Une cloison R = 55 dB ne sert à rien si une porte R = 25 dB est présente : c'est la porte qui laisse passer le bruit. Il faut traiter <strong>tous les points faibles</strong> pour que l'isolation soit efficace.</p>
+  </div>
+</div>
+
+</div>
+
+</div><!-- fin .c -->
+<script src="../../../nav.js"></script>
+<script src="../../../diff.js"></script>
+</body>
+</html>
