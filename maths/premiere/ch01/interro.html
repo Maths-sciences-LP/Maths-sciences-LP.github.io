@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch01 – Statistique &agrave; deux variables – Interrogation – 1&egrave;re Bac Pro</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
+.pts{font-size:.82em;color:#718096;font-weight:normal}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-1ere-pro.html" class="nb">&larr; RETOUR SOMMAIRE</a>
+
+<header>
+  <h1>Chapitre 1 – Interrogation &eacute;crite</h1>
+  <p class="sous-titre">Statistique &agrave; deux variables &mdash; 1&egrave;re Bac Pro</p>
+</header>
+
+<div class="dh">
+  <p><strong>Dur&eacute;e :</strong> 10-15 min | <strong>Calculatrice autoris&eacute;e</strong></p>
+</div>
+
+<!-- ========================= SOCLE ========================= -->
+<div class="diff-socle">
+<span class="tag-socle">Socle</span>
+<p><strong>Bar&egrave;me :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Le point moyen \(G\) a pour coordonn&eacute;es \(G(\bar{x}\,;\,\bar{y})\) avec \(\bar{x} = \dfrac{\text{somme des } x_i}{n}\) et \(\bar{y} = \dfrac{\text{somme des } y_i}{n}\).</div>
+  <p>Un technicien chauffagiste rel&egrave;ve la temp&eacute;rature ext&eacute;rieure \(x\) (en &deg;C) et la consommation de chauffage \(y\) (en MWh) sur 4 mois :</p>
+  <table>
+    <tr><th>Temp&eacute;rature \(x\) (&deg;C)</th><td>4</td><td>6</td><td>8</td><td>10</td></tr>
+    <tr><th>Consommation \(y\) (MWh)</th><td>30</td><td>24</td><td>20</td><td>14</td></tr>
+  </table>
+  <p>a) Calculer \(\bar{x} = \dfrac{4 + 6 + 8 + 10}{4} = \dfrac{...}{4} = ...\)</p>
+  <p>b) Calculer \(\bar{y} = \dfrac{30 + 24 + 20 + 14}{4} = \dfrac{...}{4} = ...\)</p>
+  <p>c) En d&eacute;duire les coordonn&eacute;es du point moyen \(G(...\,;\,...)\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\bar{x} = \dfrac{4+6+8+10}{4} = \dfrac{28}{4} = \mathbf{7}\)</p>
+    <p>b) \(\bar{y} = \dfrac{30+24+20+14}{4} = \dfrac{88}{4} = \mathbf{22}\)</p>
+    <p>c) Le point moyen est \(G(\mathbf{7}\,;\,\mathbf{22})\).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Pour utiliser la droite de r&eacute;gression \(y = ax + b\), on remplace \(x\) par la valeur donn&eacute;e et on calcule \(y\).</div>
+  <p>La droite de r&eacute;gression obtenue &agrave; la calculatrice est : \(y = -2x + 36\).</p>
+  <p>a) V&eacute;rifier que la droite passe par le point moyen \(G(7\,;\,22)\) : calculer \(-2 \times 7 + 36 = ...\)</p>
+  <p>b) Estimer la consommation pour une temp&eacute;rature de 5 &deg;C : \(y = -2 \times 5 + 36 = ...\)</p>
+  <p>c) Cette estimation est-elle une interpolation ou une extrapolation ? Justifier.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(-2 \times 7 + 36 = -14 + 36 = \mathbf{22}\). On retrouve bien \(\bar{y} = 22\), la droite passe par \(G\).</p>
+    <p>b) \(y = -2 \times 5 + 36 = -10 + 36 = \mathbf{26}\) MWh.</p>
+    <p>c) C'est une <strong>interpolation</strong> car 5 &deg;C est &agrave; l'int&eacute;rieur de la plage de donn&eacute;es [4 ; 10].</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> \(R^2\) proche de 1 = bon ajustement ; \(R^2\) proche de 0 = mauvais ajustement.</div>
+  <p>La calculatrice affiche \(R^2 = 0{,}98\).</p>
+  <p>a) L'ajustement affine est-il de bonne qualit&eacute; ? Justifier.</p>
+  <p>b) Que signifie \(R^2 = 0{,}98\) en termes de pourcentage ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Oui, l'ajustement est de <strong>bonne qualit&eacute;</strong> car \(R^2 = 0{,}98\) est tr&egrave;s proche de 1 (\(R^2 \geqslant 0{,}90\)).</p>
+    <p>b) Cela signifie que <strong>98 %</strong> de la variation de \(y\) est expliqu&eacute;e par la relation lin&eacute;aire avec \(x\).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> L'extrapolation est risqu&eacute;e car le mod&egrave;le peut ne plus &ecirc;tre valable en dehors des donn&eacute;es.</div>
+  <p>Toujours avec la droite \(y = -2x + 36\) :</p>
+  <p>a) Estimer la consommation pour \(x = 20\) &deg;C : \(y = -2 \times 20 + 36 = ...\)</p>
+  <p>b) Ce r&eacute;sultat est-il r&eacute;aliste ? Pourquoi ?</p>
+  <p>c) S'agit-il d'une interpolation ou d'une extrapolation ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(y = -2 \times 20 + 36 = -40 + 36 = \mathbf{-4}\) MWh.</p>
+    <p>b) Ce r&eacute;sultat n'est <strong>pas r&eacute;aliste</strong> : une consommation n&eacute;gative n'a pas de sens. En &eacute;t&eacute;, le chauffage est simplement &eacute;teint.</p>
+    <p>c) C'est une <strong>extrapolation</strong> car 20 &deg;C est en dehors de la plage [4 ; 10].</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <p>Indiquer si les affirmations suivantes sont vraies ou fausses. Justifier chaque r&eacute;ponse.</p>
+  <p>a) &laquo; Si deux variables sont corr&eacute;l&eacute;es, alors l'une est la cause de l'autre. &raquo;</p>
+  <p>b) &laquo; La droite de r&eacute;gression passe toujours par le point moyen \(G\). &raquo;</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) <strong>FAUX.</strong> Corr&eacute;lation ne signifie pas causalit&eacute;. Il peut exister un facteur cach&eacute; qui explique les deux variables (exemple : ventes de glaces et noyades augmentent en &eacute;t&eacute; &agrave; cause de la chaleur).</p>
+    <p>b) <strong>VRAI.</strong> La droite de r&eacute;gression (moindres carr&eacute;s) passe toujours par le point moyen \(G(\bar{x}\,;\,\bar{y})\).</p>
+  </div>
+</div>
+
+</div>
+
+<!-- ========================= STANDARD ========================= -->
+<div class="diff-standard">
+<span class="tag-standard">Standard</span>
+<p><strong>Bar&egrave;me :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Un menuisier agenceur rel&egrave;ve le nombre de meubles produits par semaine \(x\) et le co&ucirc;t total \(y\) (en &euro;) :</p>
+  <table>
+    <tr><th>Meubles \(x\)</th><td>5</td><td>10</td><td>15</td><td>20</td><td>25</td></tr>
+    <tr><th>Co&ucirc;t \(y\) (&euro;)</th><td>1 400</td><td>2 600</td><td>3 900</td><td>5 100</td><td>6 400</td></tr>
+  </table>
+  <p>a) Calculer les coordonn&eacute;es du point moyen \(G(\bar{x}\,;\,\bar{y})\).</p>
+  <p>b) Placer le point moyen dans un rep&egrave;re adapt&eacute;.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\bar{x} = \dfrac{5+10+15+20+25}{5} = \dfrac{75}{5} = \mathbf{15}\)</p>
+    <p>\(\bar{y} = \dfrac{1400+2600+3900+5100+6400}{5} = \dfrac{19\,400}{5} = \mathbf{3\,880}\)</p>
+    <p>Le point moyen est \(G(15\,;\,3\,880)\).</p>
+    <p>b) On place le point \(G\) aux coordonn&eacute;es \((15\,;\,3\,880)\) dans le rep&egrave;re.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(5 points)</span></h2>
+  <p>La calculatrice donne la droite de r&eacute;gression : \(y = 250x + 130\), avec \(R^2 = 0{,}998\).</p>
+  <p>a) La qualit&eacute; de l'ajustement est-elle satisfaisante ? Justifier.</p>
+  <p>b) V&eacute;rifier que la droite passe par le point moyen \(G\).</p>
+  <p>c) Interpr&eacute;ter le coefficient \(a = 250\) dans le contexte de la situation.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Oui, \(R^2 = 0{,}998\) est tr&egrave;s proche de 1 (\(\geqslant 0{,}90\)), l'ajustement est <strong>excellent</strong>.</p>
+    <p>b) \(y = 250 \times 15 + 130 = 3\,750 + 130 = 3\,880\). On retrouve bien \(\bar{y} = 3\,880\), la droite passe par \(G\). &#10003;</p>
+    <p>c) Le coefficient \(a = 250\) signifie que <strong>chaque meuble suppl&eacute;mentaire co&ucirc;te environ 250 &euro;</strong> de plus en production.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>a) Estimer le co&ucirc;t de production de 18 meubles.</p>
+  <p>b) Estimer le co&ucirc;t de production de 50 meubles.</p>
+  <p>c) Pour chaque estimation, pr&eacute;ciser s'il s'agit d'une interpolation ou d'une extrapolation, et indiquer sa fiabilit&eacute;.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(y = 250 \times 18 + 130 = 4\,500 + 130 = \mathbf{4\,630}\) &euro;.</p>
+    <p>b) \(y = 250 \times 50 + 130 = 12\,500 + 130 = \mathbf{12\,630}\) &euro;.</p>
+    <p>c) Pour 18 meubles : <strong>interpolation</strong> (18 est dans [5 ; 25]) &rarr; estimation <strong>fiable</strong>.</p>
+    <p>Pour 50 meubles : <strong>extrapolation</strong> (50 est hors [5 ; 25]) &rarr; estimation <strong>risqu&eacute;e</strong> (des &eacute;conomies d'&eacute;chelle ou des co&ucirc;ts suppl&eacute;mentaires peuvent modifier la relation).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(3 points)</span></h2>
+  <p>On observe une corr&eacute;lation entre la consommation de chocolat par pays et le nombre de prix Nobel obtenus.</p>
+  <p>a) Peut-on en conclure que le chocolat rend plus intelligent ? Justifier.</p>
+  <p>b) Proposer un facteur cach&eacute; qui pourrait expliquer cette corr&eacute;lation.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) <strong>Non.</strong> Corr&eacute;lation ne signifie pas causalit&eacute;. Ce n'est pas parce que deux variables &eacute;voluent ensemble que l'une cause l'autre.</p>
+    <p>b) Le <strong>niveau de d&eacute;veloppement &eacute;conomique</strong> est un facteur cach&eacute; : les pays riches consomment plus de chocolat et investissent davantage dans la recherche.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <p>Un installateur thermique rel&egrave;ve la temp&eacute;rature ext&eacute;rieure \(x\) et la consommation de gaz \(y\) sur 5 mois. Il obtient \(r = -0{,}96\).</p>
+  <p>a) Calculer \(R^2\).</p>
+  <p>b) Que signifie le signe n&eacute;gatif de \(r\) ?</p>
+  <p>c) L'ajustement lin&eacute;aire est-il adapt&eacute; ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(R^2 = (-0{,}96)^2 = \mathbf{0{,}9216}\).</p>
+    <p>b) Le signe n&eacute;gatif de \(r\) indique une <strong>corr&eacute;lation n&eacute;gative</strong> : quand la temp&eacute;rature augmente, la consommation diminue.</p>
+    <p>c) Oui, \(R^2 = 0{,}92 \geqslant 0{,}90\), l'ajustement est <strong>bon</strong>.</p>
+  </div>
+</div>
+
+</div>
+
+<!-- ========================= APPROFONDISSEMENT ========================= -->
+<div class="diff-appro">
+<span class="tag-appro">Approfondissement</span>
+<p><strong>Bar&egrave;me :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(5 points)</span></h2>
+  <p>Un technicien de maintenance &eacute;nerg&eacute;tique &eacute;tudie la relation entre l'&acirc;ge \(x\) (en ann&eacute;es) d'une chaudi&egrave;re et ses co&ucirc;ts d'entretien annuels \(y\) (en &euro;) :</p>
+  <table>
+    <tr><th>&Acirc;ge \(x\) (ann&eacute;es)</th><td>1</td><td>3</td><td>5</td><td>7</td><td>9</td><td>11</td></tr>
+    <tr><th>Co&ucirc;t \(y\) (&euro;)</th><td>120</td><td>200</td><td>310</td><td>380</td><td>470</td><td>560</td></tr>
+  </table>
+  <p>a) Calculer les coordonn&eacute;es du point moyen \(G\).</p>
+  <p>b) La calculatrice donne \(y = 44x + 78\) avec \(R^2 = 0{,}996\). V&eacute;rifier que la droite passe par \(G\).</p>
+  <p>c) Estimer le co&ucirc;t d'entretien pour une chaudi&egrave;re de 15 ans. Commenter la fiabilit&eacute; de cette estimation.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\bar{x} = \dfrac{1+3+5+7+9+11}{6} = \dfrac{36}{6} = 6\)</p>
+    <p>\(\bar{y} = \dfrac{120+200+310+380+470+560}{6} = \dfrac{2\,040}{6} = 340\)</p>
+    <p>Le point moyen est \(G(6\,;\,340)\).</p>
+    <p>b) \(y = 44 \times 6 + 78 = 264 + 78 = 342\). On obtient 342 au lieu de 340, l'&eacute;cart est d&ucirc; aux arrondis des coefficients. La droite passe &laquo; au mieux &raquo; par \(G\).</p>
+    <p>c) \(y = 44 \times 15 + 78 = 660 + 78 = \mathbf{738}\) &euro;. C'est une <strong>extrapolation</strong> (15 est hors de [1 ; 11]). Elle est <strong>risqu&eacute;e</strong> : au-del&agrave; d'un certain &acirc;ge, les co&ucirc;ts pourraient augmenter plus vite (pannes graves) ou la chaudi&egrave;re &ecirc;tre remplac&eacute;e.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(5 points)</span></h2>
+  <p>Une &eacute;tude compare le temps de s&eacute;chage \(x\) (en heures) et la r&eacute;sistance \(y\) (en MPa) d'un vernis utilis&eacute; en menuiserie :</p>
+  <table>
+    <tr><th>Temps \(x\) (h)</th><td>2</td><td>4</td><td>6</td><td>8</td><td>10</td></tr>
+    <tr><th>R&eacute;sistance \(y\) (MPa)</th><td>5</td><td>12</td><td>18</td><td>23</td><td>29</td></tr>
+  </table>
+  <p>a) Calculer le point moyen \(G\).</p>
+  <p>b) On obtient \(y = 2{,}95x - 0{,}7\) et \(r = 0{,}999\). Interpr&eacute;ter le coefficient directeur dans le contexte.</p>
+  <p>c) &Agrave; partir de combien d'heures la r&eacute;sistance d&eacute;passe-t-elle 15 MPa ? R&eacute;soudre l'in&eacute;quation.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\bar{x} = \dfrac{2+4+6+8+10}{5} = \dfrac{30}{5} = 6\)</p>
+    <p>\(\bar{y} = \dfrac{5+12+18+23+29}{5} = \dfrac{87}{5} = 17{,}4\)</p>
+    <p>Point moyen : \(G(6\,;\,17{,}4)\).</p>
+    <p>b) Le coefficient \(a = 2{,}95\) signifie que <strong>chaque heure de s&eacute;chage suppl&eacute;mentaire augmente la r&eacute;sistance d'environ 2,95 MPa</strong>.</p>
+    <p>c) On r&eacute;sout \(2{,}95x - 0{,}7 \geqslant 15\) :</p>
+    <p>\(2{,}95x \geqslant 15{,}7\)</p>
+    <p>\(x \geqslant \dfrac{15{,}7}{2{,}95} \approx 5{,}3\) heures.</p>
+    <p>La r&eacute;sistance d&eacute;passe 15 MPa &agrave; partir d'environ <strong>5,3 heures</strong> de s&eacute;chage.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Dans une &eacute;tude, on observe que le nombre de caf&eacute;s vendus augmente les jours o&ugrave; le nombre de retards au travail augmente aussi. Un journaliste &eacute;crit : &laquo; Le caf&eacute; provoque les retards. &raquo;</p>
+  <p>a) Cette conclusion est-elle justifi&eacute;e ? Argumenter pr&eacute;cis&eacute;ment.</p>
+  <p>b) Proposer deux facteurs cach&eacute;s possibles qui expliqueraient cette corr&eacute;lation.</p>
+  <p>c) Formuler une conclusion correcte &agrave; partir de ces donn&eacute;es.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) <strong>Non</strong>, cette conclusion n'est pas justifi&eacute;e. Le journaliste confond <strong>corr&eacute;lation et causalit&eacute;</strong>. Ce n'est pas parce que deux ph&eacute;nom&egrave;nes &eacute;voluent ensemble que l'un cause l'autre.</p>
+    <p>b) Facteurs cach&eacute;s possibles :</p>
+    <ul>
+      <li>Le <strong>mauvais temps</strong> : il provoque des retards (embouteillages) et incite les gens &agrave; boire du caf&eacute; pour se r&eacute;chauffer.</li>
+      <li>Les <strong>lundis ou lendemains de week-end</strong> : les gens sont fatigu&eacute;s, arrivent en retard et consomment plus de caf&eacute;.</li>
+    </ul>
+    <p>c) Conclusion correcte : &laquo; On observe une corr&eacute;lation positive entre les ventes de caf&eacute; et les retards, mais <strong>cela ne prouve pas</strong> que le caf&eacute; est la cause des retards. Un facteur commun pourrait expliquer les deux ph&eacute;nom&egrave;nes. &raquo;</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(6 points)</span></h2>
+  <p>Un artisan ach&egrave;te des panneaux de bois. Il dispose de deux mod&egrave;les de r&eacute;gression pour pr&eacute;voir le co&ucirc;t \(y\) (en &euro;) en fonction de la surface \(x\) (en m&sup2;) :</p>
+  <ul>
+    <li><strong>Mod&egrave;le A :</strong> \(y = 18x + 50\) avec \(R^2 = 0{,}91\)</li>
+    <li><strong>Mod&egrave;le B :</strong> \(y = 15x + 85\) avec \(R^2 = 0{,}97\)</li>
+  </ul>
+  <p>a) Quel mod&egrave;le est le mieux ajust&eacute; aux donn&eacute;es ? Justifier.</p>
+  <p>b) Avec le mod&egrave;le B, estimer le co&ucirc;t pour 12 m&sup2; de panneaux.</p>
+  <p>c) Avec le mod&egrave;le B, &agrave; partir de quelle surface le co&ucirc;t d&eacute;passe-t-il 400 &euro; ?</p>
+  <p>d) Pour quelle surface les deux mod&egrave;les donnent-ils le m&ecirc;me co&ucirc;t ? R&eacute;soudre \(18x + 50 = 15x + 85\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Le <strong>mod&egrave;le B</strong> est le mieux ajust&eacute; car \(R^2 = 0{,}97 > 0{,}91\). Plus \(R^2\) est proche de 1, meilleur est l'ajustement.</p>
+    <p>b) \(y = 15 \times 12 + 85 = 180 + 85 = \mathbf{265}\) &euro;.</p>
+    <p>c) On r&eacute;sout \(15x + 85 > 400\) :</p>
+    <p>\(15x > 315\) soit \(x > 21\). Le co&ucirc;t d&eacute;passe 400 &euro; &agrave; partir de <strong>21 m&sup2;</strong>.</p>
+    <p>d) \(18x + 50 = 15x + 85\) &rArr; \(3x = 35\) &rArr; \(x = \dfrac{35}{3} \approx \mathbf{11{,}7}\) m&sup2;.</p>
+    <p>Les deux mod&egrave;les donnent le m&ecirc;me co&ucirc;t pour environ 11,7 m&sup2;.</p>
+  </div>
+</div>
+
+</div>
+
+</div><!-- fin .c -->
+<script src="../../../nav.js"></script>
+<script src="../../../diff.js"></script>
+</body>
+</html>

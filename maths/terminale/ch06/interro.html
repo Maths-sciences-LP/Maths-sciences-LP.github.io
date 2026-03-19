@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch06 – Vecteurs – Interrogation – Tle Bac Pro</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
+.pts{font-size:.82em;color:#718096;font-weight:normal}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
+
+<header>
+  <h1>Chapitre 6 – Interrogation écrite</h1>
+  <p class="sous-titre">Vecteurs — Terminale Bac Pro</p>
+</header>
+
+<div class="dh">
+  <p><strong>Durée :</strong> 10-15 min | <strong>Calculatrice autorisée</strong></p>
+</div>
+
+<!-- ========================= SOCLE ========================= -->
+<div class="diff-socle">
+<span class="tag-socle">Socle</span>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(3 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Les coordonnées de \(\overrightarrow{AB}\) se calculent par : \(\begin{pmatrix}x_B - x_A \\ y_B - y_A\end{pmatrix}\)</div>
+  <p>On donne \(A(1\,;\,3)\) et \(B(5\,;\,7)\).</p>
+  <p>a) Calculer les coordonnées de \(\overrightarrow{AB}\) : \(\begin{pmatrix}5 - ... \\ 7 - ...\end{pmatrix} = \begin{pmatrix}... \\ ...\end{pmatrix}\)</p>
+  <p>b) En déduire les coordonnées de \(\overrightarrow{BA}\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\overrightarrow{AB} = \begin{pmatrix}5 - 1 \\ 7 - 3\end{pmatrix} = \mathbf{\begin{pmatrix}4 \\ 4\end{pmatrix}}\)</p>
+    <p>b) \(\overrightarrow{BA} = -\overrightarrow{AB} = \mathbf{\begin{pmatrix}-4 \\ -4\end{pmatrix}}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> La norme de \(\overrightarrow{AB}\) est \(\|\overrightarrow{AB}\| = \sqrt{(x_B-x_A)^2 + (y_B-y_A)^2}\)</div>
+  <p>Avec \(A(1\,;\,3)\) et \(B(5\,;\,7)\) (question 1) :</p>
+  <p>a) Calculer la norme : \(\|\overrightarrow{AB}\| = \sqrt{...^2 + ...^2} = \sqrt{... + ...} = \sqrt{...}\)</p>
+  <p>b) Arrondir au dixième.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\|\overrightarrow{AB}\| = \sqrt{4^2 + 4^2} = \sqrt{16 + 16} = \sqrt{32}\)</p>
+    <p>b) \(\sqrt{32} \approx \mathbf{5{,}7}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Milieu \(I\) de \([AB]\) : \(I\!\left(\dfrac{x_A+x_B}{2}\,;\,\dfrac{y_A+y_B}{2}\right)\)</div>
+  <p>On donne \(C(2\,;\,1)\) et \(D(8\,;\,5)\).</p>
+  <p>Calculer le milieu \(I\) de \([CD]\) :</p>
+  <p>\(I = \left(\dfrac{2 + ...}{2}\,;\,\dfrac{1 + ...}{2}\right) = \left(\dfrac{...}{2}\,;\,\dfrac{...}{2}\right) = (...\,;\,...)\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>\(I = \left(\dfrac{2 + 8}{2}\,;\,\dfrac{1 + 5}{2}\right) = \left(\dfrac{10}{2}\,;\,\dfrac{6}{2}\right) = \mathbf{(5\,;\,3)}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(5 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Deux vecteurs sont colinéaires si \(\det(\vec{u},\vec{v}) = ad - bc = 0\).</div>
+  <p>On donne \(\vec{u} = \begin{pmatrix}3\\6\end{pmatrix}\) et \(\vec{v} = \begin{pmatrix}2\\4\end{pmatrix}\).</p>
+  <p>a) Calculer le déterminant : \(\det = 3 \times ... - 6 \times ... = ... - ... = ...\)</p>
+  <p>b) Les vecteurs sont-ils colinéaires ? Justifier.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\det(\vec{u},\vec{v}) = 3 \times 4 - 6 \times 2 = 12 - 12 = \mathbf{0}\)</p>
+    <p>b) Le déterminant est nul, donc \(\vec{u}\) et \(\vec{v}\) sont <strong>colinéaires</strong> (les droites sont parallèles).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Addition de vecteurs : \(\vec{u} + \vec{v} = \begin{pmatrix}a+c\\b+d\end{pmatrix}\)</div>
+  <p>On donne \(\vec{u} = \begin{pmatrix}2\\-1\end{pmatrix}\) et \(\vec{v} = \begin{pmatrix}-3\\5\end{pmatrix}\).</p>
+  <p>a) Calculer \(\vec{u} + \vec{v} = \begin{pmatrix}2 + ... \\ -1 + ...\end{pmatrix} = \begin{pmatrix}... \\ ...\end{pmatrix}\)</p>
+  <p>b) Calculer \(2\vec{u} = \begin{pmatrix}2 \times ... \\ 2 \times ...\end{pmatrix} = \begin{pmatrix}... \\ ...\end{pmatrix}\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\vec{u} + \vec{v} = \begin{pmatrix}2 + (-3) \\ -1 + 5\end{pmatrix} = \mathbf{\begin{pmatrix}-1 \\ 4\end{pmatrix}}\)</p>
+    <p>b) \(2\vec{u} = \begin{pmatrix}2 \times 2 \\ 2 \times (-1)\end{pmatrix} = \mathbf{\begin{pmatrix}4 \\ -2\end{pmatrix}}\)</p>
+  </div>
+</div>
+
+</div>
+
+<!-- ========================= STANDARD ========================= -->
+<div class="diff-standard">
+<span class="tag-standard">Standard</span>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Un menuisier agenceur travaille sur un plan d'aménagement. Les positions des meubles sont repérées dans un repère orthonormé (en mètres) : \(A(1\,;\,2)\) (bureau), \(B(5\,;\,5)\) (armoire).</p>
+  <p>a) Calculer les coordonnées de \(\overrightarrow{AB}\).</p>
+  <p>b) Calculer la distance \(AB\) (arrondir au centième).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\overrightarrow{AB} = \begin{pmatrix}5-1\\5-2\end{pmatrix} = \mathbf{\begin{pmatrix}4\\3\end{pmatrix}}\)</p>
+    <p>b) \(AB = \sqrt{4^2 + 3^2} = \sqrt{16+9} = \sqrt{25} = \mathbf{5{,}00}\) m</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <p>On place un luminaire au milieu \(I\) du segment \([AC]\) avec \(A(1\,;\,2)\) et \(C(7\,;\,6)\).</p>
+  <p>a) Calculer les coordonnées du point \(I\).</p>
+  <p>b) Calculer la distance \(AI\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(I = \left(\dfrac{1+7}{2}\,;\,\dfrac{2+6}{2}\right) = \mathbf{(4\,;\,4)}\)</p>
+    <p>b) \(AI = \sqrt{(4-1)^2+(4-2)^2} = \sqrt{9+4} = \sqrt{13} \approx \mathbf{3{,}61}\) m</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Deux parois d'un local sont représentées par les vecteurs directeurs \(\vec{u} = \begin{pmatrix}3\\-2\end{pmatrix}\) et \(\vec{v} = \begin{pmatrix}-6\\4\end{pmatrix}\).</p>
+  <p>a) Calculer le déterminant de \((\vec{u},\vec{v})\).</p>
+  <p>b) Les deux parois sont-elles parallèles ? Justifier.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\det(\vec{u},\vec{v}) = 3 \times 4 - (-2) \times (-6) = 12 - 12 = \mathbf{0}\)</p>
+    <p>b) Le déterminant est nul, donc les vecteurs sont colinéaires. Les deux parois sont <strong>parallèles</strong>. (On remarque que \(\vec{v} = -2\vec{u}\).)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(5 points)</span></h2>
+  <p>Une canalisation suit la droite passant par \(P_1(0\,;\,2)\) et \(P_2(4\,;\,0)\).</p>
+  <p>a) Calculer les coordonnées de \(\overrightarrow{P_1P_2}\).</p>
+  <p>b) Déterminer l'équation cartésienne de cette droite.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\overrightarrow{P_1P_2} = \begin{pmatrix}4\\-2\end{pmatrix}\)</p>
+    <p>b) Vecteur normal : \(\vec{n} = \begin{pmatrix}-2\\-4\end{pmatrix}\), soit (en divisant par \(-2\)) \(\begin{pmatrix}1\\2\end{pmatrix}\).</p>
+    <p>Équation : \(1(x - 0) + 2(y - 2) = 0 \Rightarrow \mathbf{x + 2y - 4 = 0}\)</p>
+    <p>Vérification : \(P_1\) : \(0 + 4 - 4 = 0\) ✓ ; \(P_2\) : \(4 + 0 - 4 = 0\) ✓</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(3 points)</span></h2>
+  <p>Vérifier par le calcul que les points \(A(1\,;\,1)\), \(B(3\,;\,5)\) et \(C(4\,;\,7)\) sont alignés.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>\(\overrightarrow{AB} = \begin{pmatrix}2\\4\end{pmatrix}\), \(\overrightarrow{AC} = \begin{pmatrix}3\\6\end{pmatrix}\)</p>
+    <p>\(\det(\overrightarrow{AB},\overrightarrow{AC}) = 2 \times 6 - 4 \times 3 = 12 - 12 = 0\)</p>
+    <p>Le déterminant est nul, donc \(\overrightarrow{AB}\) et \(\overrightarrow{AC}\) sont colinéaires : les points A, B, C sont <strong>alignés</strong>.</p>
+  </div>
+</div>
+
+</div>
+
+<!-- ========================= APPROFONDISSEMENT ========================= -->
+<div class="diff-appro">
+<span class="tag-appro">Approfondissement</span>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Un aménageur d'intérieur place des meubles aux positions suivantes (en mètres) : \(A(1\,;\,1)\), \(B(5\,;\,1)\), \(C(5\,;\,4)\), \(D(1\,;\,4)\).</p>
+  <p>a) Montrer que \(\overrightarrow{AB} = \overrightarrow{DC}\).</p>
+  <p>b) En déduire la nature du quadrilatère \(ABCD\).</p>
+  <p>c) Calculer la longueur de la diagonale \(AC\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\overrightarrow{AB} = \begin{pmatrix}4\\0\end{pmatrix}\), \(\overrightarrow{DC} = \begin{pmatrix}5-1\\4-4\end{pmatrix} = \begin{pmatrix}4\\0\end{pmatrix}\). Donc \(\overrightarrow{AB} = \overrightarrow{DC}\). ✓</p>
+    <p>b) Comme \(\overrightarrow{AB} = \overrightarrow{DC}\), les côtés \([AB]\) et \([DC]\) sont parallèles et de même longueur. \(ABCD\) est un <strong>parallélogramme</strong>. De plus \(\overrightarrow{AB} \cdot \overrightarrow{AD} = 4 \times 0 + 0 \times 3 = 0\), donc c'est un <strong>rectangle</strong>.</p>
+    <p>c) \(AC = \sqrt{4^2+3^2} = \sqrt{25} = \mathbf{5}\) m</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(5 points)</span></h2>
+  <p>Un plombier chauffagiste trace un réseau de canalisations. Un tuyau suit la droite \(\Delta : 3x + 4y - 12 = 0\). Un robinet est placé en \(R(2\,;\,5)\).</p>
+  <p>a) Donner un vecteur directeur et un vecteur normal de la droite \(\Delta\).</p>
+  <p>b) Calculer la distance du robinet \(R\) à la canalisation \(\Delta\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Vecteur normal : \(\vec{n} = \begin{pmatrix}3\\4\end{pmatrix}\). Vecteur directeur : \(\vec{d} = \begin{pmatrix}-4\\3\end{pmatrix}\).</p>
+    <p>b) \(d(R,\Delta) = \dfrac{|3 \times 2 + 4 \times 5 - 12|}{\sqrt{3^2+4^2}} = \dfrac{|6+20-12|}{\sqrt{25}} = \dfrac{14}{5} = \mathbf{2{,}8}\) m</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Dans l'espace, une canalisation relie le point \(S(1\,;\,0\,;\,2)\) (sous-sol) au point \(T(5\,;\,3\,;\,6)\) (étage).</p>
+  <p>a) Calculer les coordonnées de \(\overrightarrow{ST}\).</p>
+  <p>b) Calculer la longueur de la canalisation (arrondir au dixième).</p>
+  <p>c) Calculer les coordonnées du milieu \(M\) de \([ST]\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\overrightarrow{ST} = \begin{pmatrix}4\\3\\4\end{pmatrix}\)</p>
+    <p>b) \(\|\overrightarrow{ST}\| = \sqrt{16+9+16} = \sqrt{41} \approx \mathbf{6{,}4}\) dm</p>
+    <p>c) \(M = \left(\dfrac{1+5}{2}\,;\,\dfrac{0+3}{2}\,;\,\dfrac{2+6}{2}\right) = \mathbf{(3\,;\,1{,}5\,;\,4)}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>On considère les droites \(d_1 : 2x - y + 3 = 0\) et \(d_2 : 4x - 2y - 1 = 0\).</p>
+  <p>a) Les droites \(d_1\) et \(d_2\) sont-elles parallèles ? Justifier par le calcul.</p>
+  <p>b) Sont-elles confondues ? Justifier.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Vecteurs normaux : \(\vec{n_1} = \begin{pmatrix}2\\-1\end{pmatrix}\), \(\vec{n_2} = \begin{pmatrix}4\\-2\end{pmatrix}\). \(\det = 2 \times (-2) - (-1) \times 4 = -4 + 4 = 0\). Les vecteurs normaux sont colinéaires, donc les droites sont <strong>parallèles</strong>.</p>
+    <p>b) Pour \(d_2\), divisons par 2 : \(2x - y - 0{,}5 = 0\). Or \(d_1 : 2x - y + 3 = 0\). Les constantes diffèrent (\(+3 \neq -0{,}5\)), donc les droites sont parallèles mais <strong>non confondues</strong> (strictement parallèles).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(3 points)</span></h2>
+  <p>Soit \(\vec{u} = \begin{pmatrix}2\\-1\end{pmatrix}\) et \(\vec{v} = \begin{pmatrix}3\\5\end{pmatrix}\). On pose \(\vec{w} = 2\vec{u} - 3\vec{v}\).</p>
+  <p>a) Calculer les coordonnées de \(\vec{w}\).</p>
+  <p>b) Calculer la norme de \(\vec{w}\) (arrondir au dixième).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\vec{w} = 2\begin{pmatrix}2\\-1\end{pmatrix} - 3\begin{pmatrix}3\\5\end{pmatrix} = \begin{pmatrix}4\\-2\end{pmatrix} - \begin{pmatrix}9\\15\end{pmatrix} = \mathbf{\begin{pmatrix}-5\\-17\end{pmatrix}}\)</p>
+    <p>b) \(\|\vec{w}\| = \sqrt{25+289} = \sqrt{314} \approx \mathbf{17{,}7}\)</p>
+  </div>
+</div>
+
+</div>
+
+</div><!-- fin .c -->
+<script src="../../../nav.js"></script>
+<script src="../../../diff.js"></script>
+</body>
+</html>

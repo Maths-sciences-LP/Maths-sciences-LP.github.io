@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch06 – Transport par un fluide – Interrogation – Tle ICCER</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
+.pts{font-size:.82em;color:#718096;font-weight:normal}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
+
+<header>
+  <h1>Chapitre 6 – Interrogation écrite</h1>
+  <p class="sous-titre">Transport de masse et de volume par un fluide — Terminale Bac Pro ICCER</p>
+</header>
+
+<div class="dh">
+  <p><strong>Durée :</strong> 10-15 min | <strong>Calculatrice autorisée</strong></p>
+</div>
+
+<!-- ========================= SOCLE ========================= -->
+<div class="diff-socle">
+<span class="tag-socle">Socle</span>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> \(Q_v = \dfrac{V}{t}\) avec Q<sub>v</sub> en m³/s, V en m³, t en s.</div>
+  <p>Un plombier chauffagiste recueille V = 60 L d'eau en t = 2 minutes.</p>
+  <p>a) Convertir V en m³ : V = 60/1 000 = ... m³</p>
+  <p>b) Convertir t en secondes : t = 2 × 60 = ... s</p>
+  <p>c) Calculer Q<sub>v</sub> : \(Q_v = \dfrac{...}{...} = ...\) m³/s</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) V = <strong>0,060</strong> m³</p>
+    <p>b) t = <strong>120</strong> s</p>
+    <p>c) \(Q_v = \dfrac{0{,}060}{120} = \mathbf{5{,}0 \times 10^{-4}}\) m³/s = 0,50 L/s</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> \(Q_v = S \times v\). Section circulaire : \(S = \pi \times r^2\).</div>
+  <p>Un tuyau a un diamètre intérieur d = 20 mm = 0,020 m. L'eau y circule à v = 1,0 m/s.</p>
+  <p>a) Calculer le rayon : r = 0,010 m</p>
+  <p>b) Calculer S : \(S = \pi \times (0{,}010)^2 = ...\) m²</p>
+  <p>c) Calculer Q<sub>v</sub> : \(Q_v = ... \times 1{,}0 = ...\) m³/s</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>b) \(S = \pi \times (0{,}010)^2 \approx \mathbf{3{,}14 \times 10^{-4}}\) m²</p>
+    <p>c) \(Q_v = 3{,}14 \times 10^{-4} \times 1{,}0 = \mathbf{3{,}14 \times 10^{-4}}\) m³/s ≈ 0,31 L/s</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> \(Q_m = \rho \times Q_v\) avec Q<sub>m</sub> en kg/s.</div>
+  <p>Une canalisation transporte de l'eau (ρ = 1 000 kg/m³) avec Q<sub>v</sub> = 2,0 × 10⁻³ m³/s.</p>
+  <p>a) Calculer Q<sub>m</sub> : \(Q_m = 1\,000 \times 2{,}0 \times 10^{-3} = ...\) kg/s</p>
+  <p>b) Quelle masse d'eau est transportée en 1 heure ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(Q_m = \mathbf{2{,}0}\) kg/s</p>
+    <p>b) \(m = 2{,}0 \times 3\,600 = \mathbf{7\,200}\) kg = 7,2 tonnes</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Équation de continuité : \(S_1 \times v_1 = S_2 \times v_2\). Si S diminue, v augmente.</div>
+  <p>L'eau circule à v₁ = 0,5 m/s dans un tuyau de section S₁ = 4 × 10⁻³ m². Le tuyau se rétrécit à S₂ = 1 × 10⁻³ m².</p>
+  <p>a) La vitesse va-t-elle augmenter ou diminuer dans la partie étroite ?</p>
+  <p>b) Calculer v₂ : \(v_2 = \dfrac{S_1 \times v_1}{S_2} = \dfrac{4 \times 10^{-3} \times 0{,}5}{1 \times 10^{-3}} = ...\) m/s</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) La vitesse va <strong>augmenter</strong> (section plus petite → vitesse plus grande).</p>
+    <p>b) \(v_2 = \dfrac{4 \times 10^{-3} \times 0{,}5}{1 \times 10^{-3}} = \mathbf{2{,}0}\) m/s</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Vitesse recommandée pour l'eau ECS : 0,5 à 1,5 m/s.</div>
+  <p>On calcule une vitesse d'eau de 2,5 m/s dans un réseau ECS.</p>
+  <p>a) Cette vitesse est-elle dans la plage recommandée ?</p>
+  <p>b) Citer un risque lié à une vitesse trop élevée dans une canalisation.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) <strong>Non</strong>, 2,5 m/s > 1,5 m/s → vitesse trop élevée.</p>
+    <p>b) Risque de <strong>bruit d'écoulement</strong> et d'<strong>érosion</strong> des parois de la canalisation.</p>
+  </div>
+</div>
+
+</div>
+
+<!-- ========================= STANDARD ========================= -->
+<div class="diff-standard">
+<span class="tag-standard">Standard</span>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Un installateur thermique mesure un débit de 1,8 m³/h sur un réseau ECS. La canalisation principale a un diamètre intérieur DN40 (d = 40 mm).</p>
+  <p>a) Convertir Q<sub>v</sub> en m³/s.</p>
+  <p>b) Calculer la vitesse de l'eau dans cette canalisation.</p>
+  <p>c) Cette vitesse est-elle acceptable (0,5–1,5 m/s) ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(Q_v = \dfrac{1{,}8}{3\,600} = \mathbf{5{,}0 \times 10^{-4}}\) m³/s</p>
+    <p>b) \(S = \pi \times (0{,}020)^2 = 1{,}257 \times 10^{-3}\) m². \(v = \dfrac{5{,}0 \times 10^{-4}}{1{,}257 \times 10^{-3}} \approx \mathbf{0{,}40}\) m/s</p>
+    <p>c) 0,40 m/s < 0,5 m/s → <strong>vitesse trop faible</strong>, risque de dépôts et de légionelles.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <p>Le circuit primaire d'une pompe à chaleur géothermique contient de l'eau glycolée (ρ = 1 040 kg/m³) avec Q<sub>v</sub> = 1,8 m³/h.</p>
+  <p>a) Convertir Q<sub>v</sub> en m³/s.</p>
+  <p>b) Calculer le débit massique Q<sub>m</sub>.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(Q_v = \dfrac{1{,}8}{3\,600} = 5{,}0 \times 10^{-4}\) m³/s</p>
+    <p>b) \(Q_m = 1\,040 \times 5{,}0 \times 10^{-4} = \mathbf{0{,}52}\) kg/s</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Dans un circuit hydraulique, l'huile passe d'un tuyau DN40 (d₁ = 40 mm, v₁ = 1,2 m/s) à un tuyau DN20 (d₂ = 20 mm).</p>
+  <p>a) Calculer S₁ et S₂.</p>
+  <p>b) Calculer la vitesse v₂ dans le tuyau DN20.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(S_1 = \pi (0{,}020)^2 = 1{,}257 \times 10^{-3}\) m² ; \(S_2 = \pi (0{,}010)^2 = 3{,}14 \times 10^{-4}\) m²</p>
+    <p>b) \(v_2 = \dfrac{S_1 \times v_1}{S_2} = \dfrac{1{,}257 \times 10^{-3} \times 1{,}2}{3{,}14 \times 10^{-4}} = \mathbf{4{,}8}\) m/s</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>Une CTA distribue de l'air avec Q<sub>v</sub> = 3 600 m³/h dans une gaine rectangulaire de 600 mm × 400 mm.</p>
+  <p>a) Calculer S en m².</p>
+  <p>b) Convertir Q<sub>v</sub> en m³/s.</p>
+  <p>c) Calculer la vitesse de l'air. Est-elle dans la plage recommandée (4–8 m/s) ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) S = 0,600 × 0,400 = <strong>0,24</strong> m²</p>
+    <p>b) Q<sub>v</sub> = 3 600 / 3 600 = <strong>1,0</strong> m³/s</p>
+    <p>c) \(v = \dfrac{1{,}0}{0{,}24} \approx \mathbf{4{,}2}\) m/s → dans [4 ; 8] → <strong>conforme</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <p>Un technicien chauffagiste doit dimensionner un tuyau pour que l'eau circule à v = 1,0 m/s avec un débit Q<sub>v</sub> = 8 × 10⁻⁴ m³/s.</p>
+  <p>a) Calculer la section nécessaire S.</p>
+  <p>b) En déduire le diamètre d (rappel : \(d = 2\sqrt{S/\pi}\)).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(S = \dfrac{Q_v}{v} = \dfrac{8 \times 10^{-4}}{1{,}0} = \mathbf{8 \times 10^{-4}}\) m²</p>
+    <p>b) \(d = 2\sqrt{\dfrac{8 \times 10^{-4}}{\pi}} = 2\sqrt{2{,}55 \times 10^{-4}} \approx 2 \times 0{,}016 = \mathbf{0{,}032}\) m = 32 mm → choisir DN32.</p>
+  </div>
+</div>
+
+</div>
+
+<!-- ========================= APPROFONDISSEMENT ========================= -->
+<div class="diff-appro">
+<span class="tag-appro">Approfondissement</span>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Le circuit primaire d'une PAC géothermique transporte de l'eau glycolée (ρ = 1 040 kg/m³, c<sub>p</sub> = 3,9 kJ/(kg·K)). Le débit volumique est Q<sub>v</sub> = 1,8 m³/h et la température passe de −3 °C à +3 °C.</p>
+  <p>a) Calculer Q<sub>m</sub>.</p>
+  <p>b) Calculer la puissance thermique prélevée au sol : \(P = Q_m \times c_p \times \Delta T\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Q<sub>v</sub> = 5,0 × 10⁻⁴ m³/s → \(Q_m = 1\,040 \times 5{,}0 \times 10^{-4} = \mathbf{0{,}52}\) kg/s</p>
+    <p>b) ΔT = 3 − (−3) = 6 K. \(P = 0{,}52 \times 3\,900 \times 6 = \mathbf{12\,168}\) W ≈ 12,2 kW</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <p>Une canalisation ECS DN40 (d₁ = 40 mm) alimente une dérivation DN20 (d₂ = 20 mm). L'eau circule à v₁ = 0,8 m/s dans la canalisation principale.</p>
+  <p>a) Calculer le débit volumique Q<sub>v</sub>.</p>
+  <p>b) Calculer v₂ dans la dérivation.</p>
+  <p>c) v₂ est-elle acceptable pour un réseau ECS ? Que préconisez-vous ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(Q_v = \pi (0{,}020)^2 \times 0{,}8 = 1{,}257 \times 10^{-3} \times 0{,}8 \approx \mathbf{1{,}005 \times 10^{-3}}\) m³/s</p>
+    <p>b) \(v_2 = \dfrac{Q_v}{\pi (0{,}010)^2} = \dfrac{1{,}005 \times 10^{-3}}{3{,}14 \times 10^{-4}} \approx \mathbf{3{,}2}\) m/s</p>
+    <p>c) 3,2 m/s > 1,5 m/s → <strong>trop élevée</strong>. Utiliser un DN25 ou DN32.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Une pompe hydraulique impose un débit Q<sub>v</sub> = 5,0 × 10⁻⁴ m³/s dans un vérin de diamètre d = 60 mm.</p>
+  <p>a) Calculer la vitesse de sortie du piston du vérin.</p>
+  <p>b) Si le vérin doit exercer une force de 50 kN, quelle pression faut-il dans le circuit ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(S = \pi (0{,}030)^2 \approx 2{,}83 \times 10^{-3}\) m². \(v = \dfrac{5{,}0 \times 10^{-4}}{2{,}83 \times 10^{-3}} \approx \mathbf{0{,}18}\) m/s</p>
+    <p>b) \(P = \dfrac{F}{S} = \dfrac{50\,000}{2{,}83 \times 10^{-3}} \approx 1{,}77 \times 10^7\) Pa \(\approx \mathbf{177}\) bar</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>Un réseau ECS se divise en deux branches après un collecteur. Le débit total est Q<sub>v</sub> = 1,5 L/s. La branche A (DN32) a une vitesse v<sub>A</sub> = 1,2 m/s.</p>
+  <p>a) Calculer le débit de la branche A.</p>
+  <p>b) En déduire le débit de la branche B (conservation du débit total).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(S_A = \pi (0{,}016)^2 \approx 8{,}04 \times 10^{-4}\) m². \(Q_{v,A} = 8{,}04 \times 10^{-4} \times 1{,}2 \approx \mathbf{9{,}65 \times 10^{-4}}\) m³/s ≈ 0,97 L/s</p>
+    <p>b) \(Q_{v,B} = Q_{v,total} - Q_{v,A} = 1{,}5 \times 10^{-3} - 9{,}65 \times 10^{-4} \approx \mathbf{5{,}35 \times 10^{-4}}\) m³/s ≈ 0,54 L/s</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <p>Expliquer pourquoi lorsqu'on pince un tuyau d'arrosage, le jet devient plus rapide et plus fin. Utiliser l'équation de continuité dans votre explication.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>D'après l'équation de continuité \(S_1 v_1 = S_2 v_2\), le débit volumique est <strong>conservé</strong>. Lorsqu'on pince le tuyau, la section S₂ diminue. Pour que le produit S × v reste constant, la vitesse v₂ doit <strong>augmenter</strong>. Le jet est donc plus rapide et plus fin (même quantité d'eau dans un espace plus étroit).</p>
+  </div>
+</div>
+
+</div>
+
+</div><!-- fin .c -->
+<script src="../../../nav.js"></script>
+<script src="../../../diff.js"></script>
+</body>
+</html>

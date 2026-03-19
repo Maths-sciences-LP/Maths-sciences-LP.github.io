@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch05 – Fonctions polyn&ocirc;mes de degr&eacute; 2 – Interrogation – 1&egrave;re Bac Pro</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
+.pts{font-size:.82em;color:#718096;font-weight:normal}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-1ere-pro.html" class="nb">&larr; RETOUR SOMMAIRE</a>
+
+<header>
+  <h1>Chapitre 5 – Interrogation &eacute;crite</h1>
+  <p class="sous-titre">Fonctions polyn&ocirc;mes de degr&eacute; 2 &mdash; 1&egrave;re Bac Pro</p>
+</header>
+
+<div class="dh">
+  <p><strong>Dur&eacute;e :</strong> 10-15 min | <strong>Calculatrice autoris&eacute;e</strong></p>
+</div>
+
+<!-- ========================= SOCLE ========================= -->
+<div class="diff-socle">
+<span class="tag-socle">Socle</span>
+<p><strong>Bar&egrave;me :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Un polyn&ocirc;me de degr&eacute; 2 s'&eacute;crit \(f(x) = ax^2 + bx + c\) avec \(a \neq 0\). Le coefficient \(a\) est le coefficient de \(x^2\), \(b\) celui de \(x\), et \(c\) est le terme constant.</div>
+  <p>Pour chaque fonction, identifier les coefficients \(a\), \(b\) et \(c\) :</p>
+  <p>a) \(f(x) = 3x^2 - 5x + 2\) &rarr; \(a = ...\), \(b = ...\), \(c = ...\)</p>
+  <p>b) \(g(x) = -x^2 + 4\) &rarr; \(a = ...\), \(b = ...\), \(c = ...\)</p>
+  <p>c) La fonction \(h(x) = 2x + 7\) est-elle un polyn&ocirc;me de degr&eacute; 2 ? Justifier.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(a = \mathbf{3}\), \(b = \mathbf{-5}\), \(c = \mathbf{2}\)</p>
+    <p>b) \(a = \mathbf{-1}\), \(b = \mathbf{0}\), \(c = \mathbf{4}\)</p>
+    <p>c) <strong>Non.</strong> Il n'y a pas de terme en \(x^2\) (\(a = 0\)). C'est un polyn&ocirc;me de degr&eacute; 1 (fonction affine).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Si \(a > 0\), la parabole s'ouvre vers le haut (minimum). Si \(a < 0\), elle s'ouvre vers le bas (maximum).</div>
+  <p>Pour chaque fonction, indiquer le sens d'ouverture de la parabole et si le sommet est un minimum ou un maximum :</p>
+  <p>a) \(f(x) = 2x^2 - 3x + 1\) &rarr; \(a = 2\), donc la parabole s'ouvre vers le ... et le sommet est un ...</p>
+  <p>b) \(g(x) = -4x^2 + x\) &rarr; \(a = ...\), donc la parabole s'ouvre vers le ... et le sommet est un ...</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(a = 2 > 0\), la parabole s'ouvre vers le <strong>haut</strong> et le sommet est un <strong>minimum</strong>.</p>
+    <p>b) \(a = -4 < 0\), la parabole s'ouvre vers le <strong>bas</strong> et le sommet est un <strong>maximum</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Le sommet a pour abscisse \(x_S = -\dfrac{b}{2a}\). L'ordonn&eacute;e est \(y_S = f(x_S)\).</div>
+  <p>Soit \(f(x) = x^2 - 6x + 5\). Ici \(a = 1\), \(b = -6\), \(c = 5\).</p>
+  <p>a) Calculer \(x_S = -\dfrac{-6}{2 \times 1} = \dfrac{...}{...} = ...\)</p>
+  <p>b) Calculer \(f(x_S) = (...)^2 - 6 \times (...) + 5 = ...\)</p>
+  <p>c) Donner les coordonn&eacute;es du sommet \(S(...\,;\,...)\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(x_S = -\dfrac{-6}{2} = \dfrac{6}{2} = \mathbf{3}\)</p>
+    <p>b) \(f(3) = 9 - 18 + 5 = \mathbf{-4}\)</p>
+    <p>c) Le sommet est \(S(\mathbf{3}\,;\,\mathbf{-4})\). Comme \(a = 1 > 0\), c'est un <strong>minimum</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Tester si un nombre est racine : calculer \(f(x_0)\). Si \(f(x_0) = 0\), c'est une racine.</div>
+  <p>Soit \(f(x) = x^2 - 5x + 6\).</p>
+  <p>a) Calculer \(f(2) = (2)^2 - 5 \times 2 + 6 = ...\). Le nombre 2 est-il racine ?</p>
+  <p>b) Calculer \(f(3) = (3)^2 - 5 \times 3 + 6 = ...\). Le nombre 3 est-il racine ?</p>
+  <p>c) Calculer \(f(0) = ...\). Le nombre 0 est-il racine ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(f(2) = 4 - 10 + 6 = \mathbf{0}\). Oui, \(x = 2\) est une <strong>racine</strong>.</p>
+    <p>b) \(f(3) = 9 - 15 + 6 = \mathbf{0}\). Oui, \(x = 3\) est une <strong>racine</strong>.</p>
+    <p>c) \(f(0) = 0 - 0 + 6 = \mathbf{6} \neq 0\). Non, \(x = 0\) n'est <strong>pas</strong> une racine.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Forme factoris&eacute;e : \(f(x) = a(x - x_1)(x - x_2)\) o&ugrave; \(x_1\) et \(x_2\) sont les racines.</div>
+  <p>On a trouv&eacute; que \(f(x) = x^2 - 5x + 6\) a pour racines \(x_1 = 2\) et \(x_2 = 3\), avec \(a = 1\).</p>
+  <p>a) &Eacute;crire la forme factoris&eacute;e : \(f(x) = 1 \times (x - ...)(x - ...) = ...\)</p>
+  <p>b) V&eacute;rifier en d&eacute;veloppant : \((x - 2)(x - 3) = x^2 - 3x - 2x + 6 = ...\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(f(x) = (x - 2)(x - 3)\)</p>
+    <p>b) \((x-2)(x-3) = x^2 - 3x - 2x + 6 = x^2 - 5x + 6\) &#10003;</p>
+  </div>
+</div>
+
+</div>
+
+<!-- ========================= STANDARD ========================= -->
+<div class="diff-standard">
+<span class="tag-standard">Standard</span>
+<p><strong>Bar&egrave;me :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Soit \(f(x) = -2x^2 + 8x - 6\).</p>
+  <p>a) Identifier \(a\), \(b\), \(c\) et le sens d'ouverture de la parabole.</p>
+  <p>b) Calculer les coordonn&eacute;es du sommet.</p>
+  <p>c) Pr&eacute;ciser si le sommet est un minimum ou un maximum.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(a = -2\), \(b = 8\), \(c = -6\). Comme \(a = -2 < 0\), la parabole s'ouvre vers le <strong>bas</strong>.</p>
+    <p>b) \(x_S = -\dfrac{8}{2 \times (-2)} = -\dfrac{8}{-4} = \mathbf{2}\)</p>
+    <p>\(f(2) = -2 \times 4 + 8 \times 2 - 6 = -8 + 16 - 6 = \mathbf{2}\)</p>
+    <p>Le sommet est \(S(2\,;\,2)\).</p>
+    <p>c) Comme \(a < 0\), le sommet est un <strong>maximum</strong>. La valeur maximale de \(f\) est 2.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(5 points)</span></h2>
+  <p>Soit \(f(x) = x^2 - 2x - 8\).</p>
+  <p>a) V&eacute;rifier que \(x_1 = 4\) est une racine de \(f\).</p>
+  <p>b) Trouver la seconde racine \(x_2\) en utilisant la relation : \(x_1 + x_2 = -\dfrac{b}{a}\).</p>
+  <p>c) &Eacute;crire la forme factoris&eacute;e de \(f(x)\).</p>
+  <p>d) V&eacute;rifier par d&eacute;veloppement.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(f(4) = 16 - 8 - 8 = \mathbf{0}\) &#10003;. Oui, \(x_1 = 4\) est bien une racine.</p>
+    <p>b) \(x_1 + x_2 = -\dfrac{-2}{1} = 2\). Donc \(x_2 = 2 - 4 = \mathbf{-2}\).</p>
+    <p>V&eacute;rification : \(f(-2) = 4 + 4 - 8 = 0\) &#10003;</p>
+    <p>c) \(f(x) = (x - 4)(x + 2)\)</p>
+    <p>d) \((x-4)(x+2) = x^2 + 2x - 4x - 8 = x^2 - 2x - 8\) &#10003;</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(5 points)</span></h2>
+  <p>Soit \(f(x) = 2(x - 1)(x - 5)\).</p>
+  <p>a) Quelles sont les racines de \(f\) ?</p>
+  <p>b) Dresser le tableau de signes de \(f(x)\).</p>
+  <p>c) R&eacute;soudre \(f(x) \leqslant 0\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Les racines sont \(x_1 = \mathbf{1}\) et \(x_2 = \mathbf{5}\).</p>
+    <p>b) Comme \(a = 2 > 0\), le signe est celui de \(a\) en dehors des racines :</p>
+    <table>
+      <tr><th>\(x\)</th><td>\(-\infty\)</td><td></td><td>1</td><td></td><td>5</td><td></td><td>\(+\infty\)</td></tr>
+      <tr><th>\(f(x)\)</th><td colspan="2" style="text-align:center;color:#16a34a;font-weight:bold">+</td><td>0</td><td colspan="2" style="text-align:center;color:#dc2626;font-weight:bold">&minus;</td><td>0</td><td style="text-align:center;color:#16a34a;font-weight:bold">+</td></tr>
+    </table>
+    <p>c) \(f(x) \leqslant 0\) pour \(x \in [\mathbf{1}\,;\,\mathbf{5}]\).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(3 points)</span></h2>
+  <p>La hauteur (en m&egrave;tres) d'un ballon lanc&eacute; est mod&eacute;lis&eacute;e par \(h(x) = -0{,}5x^2 + 4x\), o&ugrave; \(x\) est la distance horizontale (en m).</p>
+  <p>a) Calculer les coordonn&eacute;es du sommet.</p>
+  <p>b) Interpr&eacute;ter : quelle est la hauteur maximale et &agrave; quelle distance ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(x_S = -\dfrac{4}{2 \times (-0{,}5)} = -\dfrac{4}{-1} = \mathbf{4}\) m</p>
+    <p>\(h(4) = -0{,}5 \times 16 + 4 \times 4 = -8 + 16 = \mathbf{8}\) m</p>
+    <p>Le sommet est \(S(4\,;\,8)\).</p>
+    <p>b) Le ballon atteint sa hauteur maximale de <strong>8 m</strong> &agrave; une distance horizontale de <strong>4 m</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(3 points)</span></h2>
+  <p>On cherche une racine de \(f(x) = x^2 - 3\) par balayage. On sait que \(f(1) = -2 < 0\) et \(f(2) = 1 > 0\).</p>
+  <p>a) Pourquoi y a-t-il une racine entre 1 et 2 ?</p>
+  <p>b) On teste \(f(1{,}7) = -0{,}11\) et \(f(1{,}8) = 0{,}24\). Encadrer la racine au dixi&egrave;me pr&egrave;s.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(f(1) < 0\) et \(f(2) > 0\) : il y a un <strong>changement de signe</strong>, donc il existe une racine dans \(]1\,;\,2[\).</p>
+    <p>b) \(f(1{,}7) < 0\) et \(f(1{,}8) > 0\) : la racine est dans \([\mathbf{1{,}7}\,;\,\mathbf{1{,}8}]\). On a \(\sqrt{3} \approx 1{,}73\).</p>
+  </div>
+</div>
+
+</div>
+
+<!-- ========================= APPROFONDISSEMENT ========================= -->
+<div class="diff-appro">
+<span class="tag-appro">Approfondissement</span>
+<p><strong>Bar&egrave;me :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(5 points)</span></h2>
+  <p>Un menuisier agenceur mod&eacute;lise le co&ucirc;t de d&eacute;coupe (en &euro;) d'une bande de bois de longueur \(x\) m&egrave;tres par \(C(x) = 2x^2 - 12x + 16\).</p>
+  <p>a) V&eacute;rifier que \(x_1 = 2\) est une racine.</p>
+  <p>b) Trouver la seconde racine par la m&eacute;thode de la somme des racines.</p>
+  <p>c) &Eacute;crire la forme factoris&eacute;e.</p>
+  <p>d) Pour quelles longueurs le co&ucirc;t de d&eacute;coupe est-il n&eacute;gatif (ce qui n'a pas de sens) ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(C(2) = 2 \times 4 - 12 \times 2 + 16 = 8 - 24 + 16 = \mathbf{0}\) &#10003;</p>
+    <p>b) \(x_1 + x_2 = -\dfrac{b}{a} = -\dfrac{-12}{2} = 6\). Donc \(x_2 = 6 - 2 = \mathbf{4}\).</p>
+    <p>V&eacute;rification : \(C(4) = 2 \times 16 - 48 + 16 = 0\) &#10003;</p>
+    <p>c) \(C(x) = 2(x - 2)(x - 4)\)</p>
+    <p>d) Comme \(a = 2 > 0\), \(C(x) < 0\) entre les racines, soit pour \(x \in ]2\,;\,4[\). Le mod&egrave;le n'est pas valide pour ces longueurs.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(5 points)</span></h2>
+  <p>On consid&egrave;re \(f(x) = -3(x + 1)(x - 3)\).</p>
+  <p>a) Donner les racines de \(f\) et le signe de \(a\).</p>
+  <p>b) Dresser le tableau de signes complet de \(f(x)\).</p>
+  <p>c) R&eacute;soudre \(f(x) \geqslant 0\).</p>
+  <p>d) Calculer les coordonn&eacute;es du sommet. D&eacute;velopper d'abord \(f(x)\) pour identifier \(b\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Racines : \(x_1 = -1\) et \(x_2 = 3\). Coefficient : \(a = -3 < 0\).</p>
+    <p>b) Quand \(a < 0\), le signe est positif entre les racines :</p>
+    <table>
+      <tr><th>\(x\)</th><td>\(-\infty\)</td><td></td><td>&minus;1</td><td></td><td>3</td><td></td><td>\(+\infty\)</td></tr>
+      <tr><th>\(f(x)\)</th><td colspan="2" style="text-align:center;color:#dc2626;font-weight:bold">&minus;</td><td>0</td><td colspan="2" style="text-align:center;color:#16a34a;font-weight:bold">+</td><td>0</td><td style="text-align:center;color:#dc2626;font-weight:bold">&minus;</td></tr>
+    </table>
+    <p>c) \(f(x) \geqslant 0\) pour \(x \in [\mathbf{-1}\,;\,\mathbf{3}]\).</p>
+    <p>d) D&eacute;veloppement : \(f(x) = -3(x^2 - 2x - 3) = -3x^2 + 6x + 9\). Donc \(a = -3\), \(b = 6\).</p>
+    <p>\(x_S = -\dfrac{6}{2 \times (-3)} = -\dfrac{6}{-6} = \mathbf{1}\)</p>
+    <p>\(f(1) = -3(1+1)(1-3) = -3 \times 2 \times (-2) = \mathbf{12}\)</p>
+    <p>Le sommet est \(S(1\,;\,12)\). C'est un <strong>maximum</strong> car \(a < 0\).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(5 points)</span></h2>
+  <p>Un m&eacute;treur mod&eacute;lise l'aire \(A(x)\) (en m&sup2;) d'un panneau rectangulaire dont la largeur est \((x + 3)\) et la hauteur est \((x - 2)\), avec \(x > 2\).</p>
+  <p>a) D&eacute;velopper \(A(x) = (x+3)(x-2)\) sous la forme \(ax^2 + bx + c\).</p>
+  <p>b) Pour quelle valeur de \(x\) l'aire est-elle nulle ? (racine positive uniquement, car \(x > 2\))</p>
+  <p>c) Calculer les coordonn&eacute;es du sommet de la parabole.</p>
+  <p>d) L'aire peut-elle valoir 10 m&sup2; ? R&eacute;soudre \(A(x) = 10\) par balayage entre \(x = 3\) et \(x = 5\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(A(x) = x^2 - 2x + 3x - 6 = \mathbf{x^2 + x - 6}\). Donc \(a = 1\), \(b = 1\), \(c = -6\).</p>
+    <p>b) Les racines sont celles de \((x+3)(x-2) = 0\), soit \(x = -3\) ou \(x = 2\). Comme \(x > 2\), l'aire est nulle pour \(x = \mathbf{2}\) (et la racine \(x = -3\) n'a pas de sens physique).</p>
+    <p>c) \(x_S = -\dfrac{1}{2 \times 1} = -0{,}5\)</p>
+    <p>\(A(-0{,}5) = 0{,}25 - 0{,}5 - 6 = -6{,}25\)</p>
+    <p>Sommet : \(S(-0{,}5\,;\,-6{,}25)\). Mais ce sommet est hors du domaine \(x > 2\).</p>
+    <p>d) On r&eacute;sout \(x^2 + x - 6 = 10\), soit \(x^2 + x - 16 = 0\). Posons \(h(x) = x^2 + x - 16\).</p>
+    <ul>
+      <li>\(h(3) = 9 + 3 - 16 = -4 < 0\)</li>
+      <li>\(h(4) = 16 + 4 - 16 = 4 > 0\)</li>
+    </ul>
+    <p>Changement de signe entre 3 et 4. Balayage :</p>
+    <ul>
+      <li>\(h(3{,}5) = 12{,}25 + 3{,}5 - 16 = -0{,}25 < 0\)</li>
+      <li>\(h(3{,}6) = 12{,}96 + 3{,}6 - 16 = 0{,}56 > 0\)</li>
+    </ul>
+    <p>La solution est dans \([3{,}5\,;\,3{,}6]\), soit \(x \approx \mathbf{3{,}5}\) m&egrave;tres.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(5 points)</span></h2>
+  <p>La trajectoire d'un objet lanc&eacute; est mod&eacute;lis&eacute;e par \(h(t) = -5t^2 + 15t + 2\) o&ugrave; \(h\) est la hauteur en m&egrave;tres et \(t\) le temps en secondes.</p>
+  <p>a) Calculer les coordonn&eacute;es du sommet. Interpr&eacute;ter physiquement.</p>
+  <p>b) V&eacute;rifier que \(h(0) = 2\). Que repr&eacute;sente cette valeur ?</p>
+  <p>c) Quand l'objet retouche-t-il le sol ? Utiliser le balayage entre \(t = 3\) et \(t = 4\) pour encadrer la solution au dixi&egrave;me.</p>
+  <p>d) Pendant combien de temps (environ) l'objet est-il au-dessus de 10 m ? Tester \(h(t) = 10\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(t_S = -\dfrac{15}{2 \times (-5)} = -\dfrac{15}{-10} = \mathbf{1{,}5}\) s</p>
+    <p>\(h(1{,}5) = -5 \times 2{,}25 + 15 \times 1{,}5 + 2 = -11{,}25 + 22{,}5 + 2 = \mathbf{13{,}25}\) m</p>
+    <p>L'objet atteint sa <strong>hauteur maximale de 13,25 m</strong> apr&egrave;s <strong>1,5 seconde</strong>.</p>
+    <p>b) \(h(0) = 0 + 0 + 2 = \mathbf{2}\) m. C'est la <strong>hauteur initiale</strong> de l'objet au moment du lancer.</p>
+    <p>c) On cherche \(t > 0\) tel que \(h(t) = 0\) :</p>
+    <ul>
+      <li>\(h(3) = -45 + 45 + 2 = 2 > 0\)</li>
+      <li>\(h(3{,}1) = -48{,}05 + 46{,}5 + 2 = 0{,}45 > 0\)</li>
+      <li>\(h(3{,}2) = -51{,}2 + 48 + 2 = -1{,}2 < 0\)</li>
+    </ul>
+    <p>L'objet touche le sol entre \(t = 3{,}1\) et \(t = 3{,}2\) s, soit environ \(t \approx \mathbf{3{,}1}\) s.</p>
+    <p>d) On r&eacute;sout \(-5t^2 + 15t + 2 = 10\), soit \(-5t^2 + 15t - 8 = 0\).</p>
+    <ul>
+      <li>\(h(0{,}7) = -2{,}45 + 10{,}5 + 2 = 10{,}05 \approx 10\) &#10003;</li>
+      <li>\(h(2{,}3) = -26{,}45 + 34{,}5 + 2 = 10{,}05 \approx 10\) &#10003;</li>
+    </ul>
+    <p>L'objet est au-dessus de 10 m entre \(t \approx 0{,}7\) s et \(t \approx 2{,}3\) s, soit pendant environ <strong>1,6 seconde</strong>.</p>
+  </div>
+</div>
+
+</div>
+
+</div><!-- fin .c -->
+<script src="../../../nav.js"></script>
+<script src="../../../diff.js"></script>
+</body>
+</html>

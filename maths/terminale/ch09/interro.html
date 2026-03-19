@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch09 – Fonctions ln et exponentielle – Interrogation – Tle Bac Pro</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
+.pts{font-size:.82em;color:#718096;font-weight:normal}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
+
+<header>
+  <h1>Chapitre 9 – Interrogation écrite</h1>
+  <p class="sous-titre">Fonctions ln et exponentielle — Terminale Bac Pro</p>
+</header>
+
+<div class="dh">
+  <p><strong>Durée :</strong> 10-15 min | <strong>Calculatrice autorisée</strong></p>
+</div>
+
+<!-- ========================= SOCLE ========================= -->
+<div class="diff-socle">
+<span class="tag-socle">Socle</span>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(3 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> \(\text{e}^0 = 1\), \(\text{e}^1 = \text{e} \approx 2{,}718\), \(\ln(1) = 0\), \(\ln(\text{e}) = 1\).</div>
+  <p>Compléter :</p>
+  <p>a) \(\text{e}^0 = ...\)</p>
+  <p>b) \(\ln(1) = ...\)</p>
+  <p>c) \(\ln(\text{e}) = ...\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\text{e}^0 = \mathbf{1}\)</p>
+    <p>b) \(\ln(1) = \mathbf{0}\)</p>
+    <p>c) \(\ln(\text{e}) = \mathbf{1}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> \(\ln(\text{e}^x) = x\) et \(\text{e}^{\ln(x)} = x\). Ces fonctions « s'annulent » mutuellement.</div>
+  <p>Simplifier :</p>
+  <p>a) \(\ln(\text{e}^5) = ...\)</p>
+  <p>b) \(\text{e}^{\ln(7)} = ...\)</p>
+  <p>c) \(\ln(\text{e}^3 \times \text{e}^2) = \ln(\text{e}^{...}) = ...\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\ln(\text{e}^5) = \mathbf{5}\)</p>
+    <p>b) \(\text{e}^{\ln(7)} = \mathbf{7}\)</p>
+    <p>c) \(\ln(\text{e}^3 \times \text{e}^2) = \ln(\text{e}^5) = \mathbf{5}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Résoudre \(\text{e}^x = a\) : si \(a > 0\), alors \(x = \ln(a)\).</div>
+  <p>Résoudre les équations suivantes :</p>
+  <p>a) \(\text{e}^x = 5\) → \(x = \ln(...) = ...\) (valeur à la calculatrice)</p>
+  <p>b) \(\ln(x) = 3\) → \(x = \text{e}^{...} = ...\) (valeur à la calculatrice)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(x = \ln(5) \approx \mathbf{1{,}609}\)</p>
+    <p>b) \(x = \text{e}^3 \approx \mathbf{20{,}09}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(5 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> \(\text{e}^{a+b} = \text{e}^a \times \text{e}^b\) et \(\text{e}^{-a} = \dfrac{1}{\text{e}^a}\).</div>
+  <p>Calculer à la calculatrice (arrondir au centième) :</p>
+  <p>a) \(\text{e}^2 = ...\)</p>
+  <p>b) \(\text{e}^{-1} = ...\)</p>
+  <p>c) Vérifier que \(\text{e}^2 \times \text{e}^{-1} = \text{e}^{2+(-1)} = \text{e}^{...} = ...\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\text{e}^2 \approx \mathbf{7{,}39}\)</p>
+    <p>b) \(\text{e}^{-1} \approx \mathbf{0{,}37}\)</p>
+    <p>c) \(\text{e}^2 \times \text{e}^{-1} = \text{e}^1 = \text{e} \approx \mathbf{2{,}72}\). Vérification : \(7{,}39 \times 0{,}37 \approx 2{,}73\) ✓</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Modèle de refroidissement : \(T(t) = T_{\text{amb}} + (T_0 - T_{\text{amb}}) \times \text{e}^{-kt}\).</div>
+  <p>Une pièce métallique sort d'un four à 80°C. La température ambiante est 20°C. Le modèle est \(T(t) = 20 + 60 \times \text{e}^{-0{,}1t}\).</p>
+  <p>Calculer la température après 10 min :</p>
+  <p>\(T(10) = 20 + 60 \times \text{e}^{-0{,}1 \times 10} = 20 + 60 \times \text{e}^{...} = 20 + 60 \times ... = ...\) °C</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>\(T(10) = 20 + 60 \times \text{e}^{-1} = 20 + 60 \times 0{,}368 = 20 + 22{,}07 \approx \mathbf{42{,}1}\) °C</p>
+  </div>
+</div>
+
+</div>
+
+<!-- ========================= STANDARD ========================= -->
+<div class="diff-standard">
+<span class="tag-standard">Standard</span>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(3 points)</span></h2>
+  <p>Simplifier sans calculatrice :</p>
+  <p>a) \(\ln(\text{e}^4)\)</p>
+  <p>b) \(\text{e}^{\ln(3)}\)</p>
+  <p>c) \(\ln\!\left(\dfrac{\text{e}^5}{\text{e}^2}\right)\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\ln(\text{e}^4) = \mathbf{4}\)</p>
+    <p>b) \(\text{e}^{\ln(3)} = \mathbf{3}\)</p>
+    <p>c) \(\ln\!\left(\dfrac{\text{e}^5}{\text{e}^2}\right) = \ln(\text{e}^{5-2}) = \ln(\text{e}^3) = \mathbf{3}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(5 points)</span></h2>
+  <p>Résoudre les équations :</p>
+  <p>a) \(2\text{e}^{3x} - 8 = 0\)</p>
+  <p>b) \(\ln(2x - 1) = 0\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(2\text{e}^{3x} = 8 \Rightarrow \text{e}^{3x} = 4 \Rightarrow 3x = \ln(4) \Rightarrow x = \dfrac{\ln(4)}{3} \approx \mathbf{0{,}462}\)</p>
+    <p>b) \(\ln(2x-1) = 0 \Rightarrow 2x - 1 = \text{e}^0 = 1 \Rightarrow 2x = 2 \Rightarrow \mathbf{x = 1}\)</p>
+    <p>Vérification : \(2 \times 1 - 1 = 1 > 0\) ✓</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Calculer la dérivée de chaque fonction :</p>
+  <p>a) \(f(x) = \text{e}^{3x}\)</p>
+  <p>b) \(g(x) = \ln(2x + 5)\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(f'(x) = 3\text{e}^{3x}\) (dérivée de \(\text{e}^{ax}\) est \(a\text{e}^{ax}\))</p>
+    <p>b) \(g'(x) = \dfrac{2}{2x+5}\) (dérivée de \(\ln(u)\) est \(\dfrac{u'}{u}\))</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(5 points)</span></h2>
+  <p>Une planche de bois sèche naturellement selon le modèle \(H(t) = 25\,\text{e}^{-0{,}08t}\) (humidité en %, \(t\) en heures). La norme pour la menuiserie exige \(H < 12\,\%\).</p>
+  <p>Au bout de combien d'heures le bois sera-t-il conforme ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>On résout \(25\,\text{e}^{-0{,}08t} = 12\) :</p>
+    <p>\(\text{e}^{-0{,}08t} = \dfrac{12}{25} = 0{,}48\)</p>
+    <p>\(-0{,}08t = \ln(0{,}48) \approx -0{,}734\)</p>
+    <p>\(t = \dfrac{0{,}734}{0{,}08} \approx \mathbf{9{,}2}\) heures</p>
+    <p>Il faut attendre environ <strong>9 heures</strong> pour que le bois soit conforme.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(3 points)</span></h2>
+  <p>En utilisant les propriétés du logarithme, simplifier \(\ln(6)\) en fonction de \(\ln(2)\) et \(\ln(3)\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>\(\ln(6) = \ln(2 \times 3) = \mathbf{\ln(2) + \ln(3)}\)</p>
+    <p>Vérification : \(\ln(2) + \ln(3) \approx 0{,}693 + 1{,}099 = 1{,}792 \approx \ln(6)\) ✓</p>
+  </div>
+</div>
+
+</div>
+
+<!-- ========================= APPROFONDISSEMENT ========================= -->
+<div class="diff-appro">
+<span class="tag-appro">Approfondissement</span>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Simplifier les expressions suivantes sans calculatrice :</p>
+  <p>a) \(\ln(8)\) en fonction de \(\ln(2)\)</p>
+  <p>b) \(\ln\!\left(\dfrac{1}{\text{e}^3}\right)\)</p>
+  <p>c) \(\ln(\text{e} \times \text{e}^4) - \ln(\text{e}^2)\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\ln(8) = \ln(2^3) = \mathbf{3\ln(2)}\)</p>
+    <p>b) \(\ln\!\left(\dfrac{1}{\text{e}^3}\right) = \ln(\text{e}^{-3}) = \mathbf{-3}\)</p>
+    <p>c) \(\ln(\text{e} \times \text{e}^4) - \ln(\text{e}^2) = \ln(\text{e}^5) - \ln(\text{e}^2) = 5 - 2 = \mathbf{3}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(5 points)</span></h2>
+  <p>Un local technique est à 60°C. L'extérieur est à 10°C. La constante de refroidissement est \(k = 0{,}05\) min\(^{-1}\). Le modèle est \(T(t) = 10 + 50\,\text{e}^{-0{,}05t}\).</p>
+  <p>a) Calculer \(T(20)\).</p>
+  <p>b) Au bout de combien de minutes la température passe-t-elle sous 25°C ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(T(20) = 10 + 50\,\text{e}^{-0{,}05 \times 20} = 10 + 50\,\text{e}^{-1} = 10 + 50 \times 0{,}368 \approx \mathbf{28{,}4}\) °C</p>
+    <p>b) On résout \(10 + 50\,\text{e}^{-0{,}05t} = 25\) :</p>
+    <p>\(50\,\text{e}^{-0{,}05t} = 15 \Rightarrow \text{e}^{-0{,}05t} = 0{,}3\)</p>
+    <p>\(-0{,}05t = \ln(0{,}3) \approx -1{,}204\)</p>
+    <p>\(t = \dfrac{1{,}204}{0{,}05} \approx \mathbf{24{,}1}\) min</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Calculer la dérivée de chaque fonction :</p>
+  <p>a) \(f(x) = \text{e}^{4x-1}\)</p>
+  <p>b) \(g(x) = \ln(x^2 + 3)\)</p>
+  <p>c) \(h(x) = 3\text{e}^{-2x} + \ln(5x)\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(f'(x) = \mathbf{4\,\text{e}^{4x-1}}\)</p>
+    <p>b) \(g'(x) = \mathbf{\dfrac{2x}{x^2+3}}\)</p>
+    <p>c) Pour \(3\text{e}^{-2x}\) : dérivée \(= -6\text{e}^{-2x}\). Pour \(\ln(5x)\) : dérivée \(= \dfrac{5}{5x} = \dfrac{1}{x}\).</p>
+    <p>Donc \(h'(x) = \mathbf{-6\,\text{e}^{-2x} + \dfrac{1}{x}}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>On considère la fonction \(f(x) = \text{e}^{-x}(x + 1)\) définie sur \(\mathbb{R}\).</p>
+  <p>a) Montrer que \(f'(x) = -x\,\text{e}^{-x}\).</p>
+  <p>b) En déduire le signe de \(f'(x)\) et les variations de \(f\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(f(x) = \text{e}^{-x}(x+1)\). Par la règle du produit :</p>
+    <p>\(f'(x) = -\text{e}^{-x}(x+1) + \text{e}^{-x} \times 1 = \text{e}^{-x}\bigl(-(x+1)+1\bigr) = \text{e}^{-x}(-x) = \mathbf{-x\,\text{e}^{-x}}\) ✓</p>
+    <p>b) Comme \(\text{e}^{-x} > 0\) toujours, le signe de \(f'(x)\) est celui de \(-x\) :</p>
+    <p>\(f'(x) > 0\) si \(x < 0\) (croissante) ; \(f'(x) < 0\) si \(x > 0\) (décroissante). Maximum en \(x = 0\) : \(f(0) = 1\).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(3 points)</span></h2>
+  <p>Résoudre l'équation \(\ln(x+3) = 1 + \ln(2)\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>\(\ln(x+3) = 1 + \ln(2) = \ln(\text{e}) + \ln(2) = \ln(2\text{e})\)</p>
+    <p>Donc \(x + 3 = 2\text{e}\), soit \(x = 2\text{e} - 3 \approx 2 \times 2{,}718 - 3 \approx \mathbf{2{,}44}\)</p>
+    <p>Vérification : \(x + 3 = 2\text{e} > 0\) ✓</p>
+  </div>
+</div>
+
+</div>
+
+</div><!-- fin .c -->
+<script src="../../../nav.js"></script>
+<script src="../../../diff.js"></script>
+</body>
+</html>

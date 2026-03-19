@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch06 &ndash; Choisir une source lumineuse &ndash; QCM &ndash; Tle Bac Pro ERA-MA</title>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac}
+
+.qcm-header{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:24px}
+.qcm-header .dh-item{display:flex;align-items:center;gap:6px}
+.qcm-header strong{color:var(--p)}
+.q-block{border:1px solid #e2e8f0;border-radius:10px;padding:18px 20px;margin:16px 0;background:#fff}
+.q-block h3{margin:0 0 10px;font-size:1em;color:var(--p)}
+.q-block .theme{font-size:.78em;color:#718096;margin-bottom:8px;font-style:italic}
+.options label{display:block;padding:8px 12px;margin:4px 0;border-radius:6px;cursor:pointer;border:1.5px solid #e2e8f0;transition:background .15s,border-color .15s;font-size:.95em}
+.options label:hover{background:var(--p-bg);border-color:var(--p-border)}
+.options input[type="radio"]{margin-right:8px;accent-color:var(--p)}
+.options label.correct{background:#d1fae5;border-color:#34d399}
+.options label.incorrect{background:#fee2e2;border-color:#f87171}
+.q-feedback{margin-top:8px;padding:8px 12px;border-radius:6px;font-size:.88em;display:none}
+.q-feedback.ok{background:#d1fae5;color:#065f46;display:block}
+.q-feedback.ko{background:#fee2e2;color:#991b1b;display:block}
+.btn-valider{background:var(--p);color:#fff;border:none;padding:10px 28px;border-radius:8px;font-size:1em;font-weight:700;cursor:pointer;margin-top:20px;display:block}
+.btn-valider:hover{opacity:.85}
+.btn-reset{background:#e2e8f0;color:#374151;border:none;padding:8px 20px;border-radius:8px;font-size:.9em;cursor:pointer;margin-top:8px}
+.btn-reset:hover{background:#cbd5e1}
+.score-box{margin-top:24px;padding:18px 24px;border-radius:10px;text-align:center;font-size:1.15em;font-weight:700;display:none}
+.score-box.show{display:block}
+.score-good{background:#d1fae5;color:#065f46;border:2px solid #34d399}
+.score-avg{background:#fef3c7;color:#92400e;border:2px solid #fcd34d}
+.score-low{background:#fee2e2;color:#991b1b;border:2px solid #f87171}
+@media print{.nb,.btn-valider,.btn-reset,.diff-toggle-wrap{display:none}.options label{border:1px solid #ccc}}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-term-erama.html" class="nb">&larr; RETOUR SOMMAIRE ERA-MA (Grpt 3)</a>
+
+<header>
+  <h1>QCM &ndash; Choisir une source lumineuse</h1>
+  <p class="sous-titre">Chapitre 6 | Tle Bac Pro ERA-MA | Physique-Chimie</p>
+</header>
+
+<div class="qcm-header">
+  <div class="dh-item">&#9201; <strong>Dur&eacute;e :</strong> 10&ndash;15 min</div>
+  <div class="dh-item">&#128196; <strong>15 questions</strong></div>
+  <div class="dh-item">&#128221; <strong>Calculatrice autoris&eacute;e</strong></div>
+</div>
+
+<p style="font-size:.9em;color:#4a5568">Pour chaque question, cochez la <strong>seule bonne r&eacute;ponse</strong> puis cliquez sur &laquo;&nbsp;Valider le QCM&nbsp;&raquo; en bas de chaque section.</p>
+
+<!-- ========================= SOCLE ========================= -->
+<div class="diff-socle">
+<span class="tag-socle">Socle</span>
+
+<form id="qcm-socle">
+
+<div class="q-block" data-correct="c">
+  <h3>Question 1</h3>
+  <p class="theme">Spectre visible &ndash; Limites</p>
+  <p>Le spectre visible s'&eacute;tend entre les longueurs d'onde :</p>
+  <div class="options">
+    <label><input type="radio" name="s1" value="a"> 100 nm et 400 nm</label>
+    <label><input type="radio" name="s1" value="b"> 200 nm et 600 nm</label>
+    <label><input type="radio" name="s1" value="c"> 380 nm et 780 nm</label>
+    <label><input type="radio" name="s1" value="d"> 500 nm et 1&nbsp;000 nm</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 2</h3>
+  <p class="theme">Efficacit&eacute; lumineuse &ndash; D&eacute;finition</p>
+  <p>L'efficacit&eacute; lumineuse d'une source se mesure en :</p>
+  <div class="options">
+    <label><input type="radio" name="s2" value="a"> watts (W)</label>
+    <label><input type="radio" name="s2" value="b"> lumens par watt (lm/W)</label>
+    <label><input type="radio" name="s2" value="c"> kelvins (K)</label>
+    <label><input type="radio" name="s2" value="d"> hertz (Hz)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 3</h3>
+  <p class="theme">Temp&eacute;rature de couleur &ndash; Atelier</p>
+  <p>Pour &eacute;clairer un atelier de menuiserie, on recommande une lumi&egrave;re :</p>
+  <div class="options">
+    <label><input type="radio" name="s3" value="a"> blanc neutre &agrave; blanc froid (4&nbsp;000 &agrave; 6&nbsp;500 K)</label>
+    <label><input type="radio" name="s3" value="b"> blanc chaud (2&nbsp;700 K)</label>
+    <label><input type="radio" name="s3" value="c"> rouge (650 nm)</label>
+    <label><input type="radio" name="s3" value="d"> ultraviolette</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 4</h3>
+  <p class="theme">Laser &ndash; Propri&eacute;t&eacute;s</p>
+  <p>La lumi&egrave;re &eacute;mise par un laser est :</p>
+  <div class="options">
+    <label><input type="radio" name="s4" value="a"> polychromatique et divergente</label>
+    <label><input type="radio" name="s4" value="b"> continue et blanche</label>
+    <label><input type="radio" name="s4" value="c"> invisible</label>
+    <label><input type="radio" name="s4" value="d"> monochromatique et directionnelle</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 5</h3>
+  <p class="theme">Sources lumineuses &ndash; Comparaison</p>
+  <p>Parmi ces sources, laquelle a la meilleure efficacit&eacute; lumineuse ?</p>
+  <div class="options">
+    <label><input type="radio" name="s5" value="a"> une ampoule &agrave; incandescence (~15 lm/W)</label>
+    <label><input type="radio" name="s5" value="b"> une ampoule halog&egrave;ne (~25 lm/W)</label>
+    <label><input type="radio" name="s5" value="c"> une LED (~100&ndash;150 lm/W)</label>
+    <label><input type="radio" name="s5" value="d"> un tube fluorescent (~80 lm/W)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<button type="button" class="btn-valider" onclick="corriger('qcm-socle','score-socle')">Valider le QCM</button>
+<button type="button" class="btn-reset" onclick="reinitialiser('qcm-socle','score-socle')">Recommencer</button>
+<div class="score-box" id="score-socle"></div>
+</form>
+</div>
+
+<!-- ========================= STANDARD ========================= -->
+<div class="diff-standard">
+<span class="tag-standard">Standard</span>
+
+<form id="qcm-standard">
+
+<div class="q-block" data-correct="b">
+  <h3>Question 1</h3>
+  <p class="theme">Efficacit&eacute; lumineuse &ndash; Calcul en contexte professionnel</p>
+  <p>Un menuisier agenceur installe un panneau LED de 36&nbsp;W qui produit un flux lumineux de 3&nbsp;600&nbsp;lm. Quelle est l'efficacit&eacute; lumineuse de ce panneau ?</p>
+  <div class="options">
+    <label><input type="radio" name="t1" value="a"> 36 lm/W</label>
+    <label><input type="radio" name="t1" value="b"> 100 lm/W</label>
+    <label><input type="radio" name="t1" value="c"> 3&nbsp;600 lm/W</label>
+    <label><input type="radio" name="t1" value="d"> 130 lm/W</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 2</h3>
+  <p class="theme">Spectre d'&eacute;mission &ndash; Types</p>
+  <p>Le spectre d'&eacute;mission du soleil est :</p>
+  <div class="options">
+    <label><input type="radio" name="t2" value="a"> un spectre de raies</label>
+    <label><input type="radio" name="t2" value="b"> un spectre monochromatique</label>
+    <label><input type="radio" name="t2" value="c"> un spectre discret &agrave; pic unique</label>
+    <label><input type="radio" name="t2" value="d"> un spectre continu</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 3</h3>
+  <p class="theme">IRC &ndash; Application professionnelle</p>
+  <p>Un technicien d'agencement doit contr&ocirc;ler la teinte d'un vernis sur un meuble. L'IRC minimum recommand&eacute; pour cette t&acirc;che est :</p>
+  <div class="options">
+    <label><input type="radio" name="t3" value="a"> IRC &ge; 80</label>
+    <label><input type="radio" name="t3" value="b"> IRC &ge; 25</label>
+    <label><input type="radio" name="t3" value="c"> IRC &ge; 50</label>
+    <label><input type="radio" name="t3" value="d"> IRC = 0</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 4</h3>
+  <p class="theme">Laser &ndash; Applications sur chantier</p>
+  <p>Sur un chantier de pose de cloisons, un menuisier agenceur utilise un niveau laser pour :</p>
+  <div class="options">
+    <label><input type="radio" name="t4" value="a"> mesurer la temp&eacute;rature de couleur de l'&eacute;clairage</label>
+    <label><input type="radio" name="t4" value="b"> d&eacute;couper des panneaux de bois</label>
+    <label><input type="radio" name="t4" value="c"> tracer des niveaux horizontaux et verticaux pr&eacute;cis</label>
+    <label><input type="radio" name="t4" value="d"> &eacute;clairer la zone de travail</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 5</h3>
+  <p class="theme">Temp&eacute;rature de couleur &ndash; Interpr&eacute;tation</p>
+  <p>Une lampe de temp&eacute;rature de couleur 2&nbsp;700&nbsp;K produit une lumi&egrave;re :</p>
+  <div class="options">
+    <label><input type="radio" name="t5" value="a"> blanche froide (&agrave; dominante bleut&eacute;e)</label>
+    <label><input type="radio" name="t5" value="b"> blanche chaude (&agrave; dominante jaun&acirc;tre)</label>
+    <label><input type="radio" name="t5" value="c"> rouge vif</label>
+    <label><input type="radio" name="t5" value="d"> violette</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<button type="button" class="btn-valider" onclick="corriger('qcm-standard','score-standard')">Valider le QCM</button>
+<button type="button" class="btn-reset" onclick="reinitialiser('qcm-standard','score-standard')">Recommencer</button>
+<div class="score-box" id="score-standard"></div>
+</form>
+</div>
+
+<!-- ========================= APPROFONDISSEMENT ========================= -->
+<div class="diff-appro">
+<span class="tag-appro">Approfondissement</span>
+
+<form id="qcm-appro">
+
+<div class="q-block" data-correct="c">
+  <h3>Question 1</h3>
+  <p class="theme">Relation c = &lambda; &times; &nu; &ndash; Calcul</p>
+  <p>Un laser rouge &eacute;met une lumi&egrave;re de longueur d'onde &lambda; = 650&nbsp;nm. Sachant que c = 3 &times; 10&#8312;&nbsp;m/s, sa fr&eacute;quence vaut environ :</p>
+  <div class="options">
+    <label><input type="radio" name="a1" value="a"> 2,0 &times; 10&#8313;&nbsp;Hz</label>
+    <label><input type="radio" name="a1" value="b"> 6,5 &times; 10&#8313;&#8308;&nbsp;Hz</label>
+    <label><input type="radio" name="a1" value="c"> 4,6 &times; 10&#8313;&#8308;&nbsp;Hz</label>
+    <label><input type="radio" name="a1" value="d"> 1,9 &times; 10&#8313;&#8313;&nbsp;Hz</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="a">
+  <h3>Question 2</h3>
+  <p class="theme">Efficacit&eacute; lumineuse &ndash; &Eacute;conomie d'&eacute;nergie</p>
+  <p>Un atelier de 500&nbsp;m&sup2; est &eacute;quip&eacute; de tubes fluorescents (80&nbsp;lm/W) pour un flux total n&eacute;cessaire de 200&nbsp;000&nbsp;lm. La puissance totale consomm&eacute;e est de 2&nbsp;500&nbsp;W. En passant aux LED (125&nbsp;lm/W), la puissance n&eacute;cessaire serait :</p>
+  <div class="options">
+    <label><input type="radio" name="a2" value="a"> 1&nbsp;600 W</label>
+    <label><input type="radio" name="a2" value="b"> 2&nbsp;500 W</label>
+    <label><input type="radio" name="a2" value="c"> 3&nbsp;200 W</label>
+    <label><input type="radio" name="a2" value="d"> 800 W</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="d">
+  <h3>Question 3</h3>
+  <p class="theme">IRC &ndash; Limites d'une source</p>
+  <p>Une lampe &agrave; sodium haute pression a une efficacit&eacute; &eacute;lev&eacute;e (~130&nbsp;lm/W) mais un IRC de 25. On ne peut pas l'utiliser dans un atelier d'agencement car :</p>
+  <div class="options">
+    <label><input type="radio" name="a3" value="a"> elle produit trop de lumi&egrave;re</label>
+    <label><input type="radio" name="a3" value="b"> sa dur&eacute;e de vie est trop courte</label>
+    <label><input type="radio" name="a3" value="c"> elle &eacute;met des ultraviolets dangereux</label>
+    <label><input type="radio" name="a3" value="d"> elle restitue mal les couleurs, emp&ecirc;chant le contr&ocirc;le qualit&eacute; des finitions</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="b">
+  <h3>Question 4</h3>
+  <p class="theme">Laser &ndash; Coh&eacute;rence et s&eacute;curit&eacute;</p>
+  <p>Les niveaux et t&eacute;l&eacute;m&egrave;tres laser de chantier sont class&eacute;s en classe&nbsp;2. Cela signifie que :</p>
+  <div class="options">
+    <label><input type="radio" name="a4" value="a"> ils sont totalement inoffensifs en toutes circonstances</label>
+    <label><input type="radio" name="a4" value="b"> le r&eacute;flexe de fermeture de l'&oelig;il prot&egrave;ge normalement, mais il ne faut jamais regarder directement dans le faisceau</label>
+    <label><input type="radio" name="a4" value="c"> des lunettes de protection sp&eacute;cifiques sont obligatoires pour toute utilisation</label>
+    <label><input type="radio" name="a4" value="d"> ils peuvent d&eacute;couper des mat&eacute;riaux</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<div class="q-block" data-correct="c">
+  <h3>Question 5</h3>
+  <p class="theme">Synth&egrave;se &ndash; Choix d'&eacute;clairage professionnel</p>
+  <p>Un chef d'atelier doit choisir l'&eacute;clairage d'une zone de contr&ocirc;le qualit&eacute; pour l'inspection de finitions bois. La source la plus adapt&eacute;e est :</p>
+  <div class="options">
+    <label><input type="radio" name="a5" value="a"> une lampe &agrave; sodium HP (130&nbsp;lm/W, IRC&nbsp;=&nbsp;25, 2&nbsp;000&nbsp;K)</label>
+    <label><input type="radio" name="a5" value="b"> une ampoule halog&egrave;ne (25&nbsp;lm/W, IRC&nbsp;=&nbsp;100, 3&nbsp;000&nbsp;K)</label>
+    <label><input type="radio" name="a5" value="c"> une LED (120&nbsp;lm/W, IRC&nbsp;=&nbsp;90, 5&nbsp;000&nbsp;K)</label>
+    <label><input type="radio" name="a5" value="d"> une ampoule &agrave; incandescence (15&nbsp;lm/W, IRC&nbsp;=&nbsp;100, 2&nbsp;700&nbsp;K)</label>
+  </div>
+  <div class="q-feedback"></div>
+</div>
+
+<button type="button" class="btn-valider" onclick="corriger('qcm-appro','score-appro')">Valider le QCM</button>
+<button type="button" class="btn-reset" onclick="reinitialiser('qcm-appro','score-appro')">Recommencer</button>
+<div class="score-box" id="score-appro"></div>
+</form>
+</div>
+
+</div><!-- fin .c -->
+
+<script>
+var explications = {
+  /* === SOCLE === */
+  "s1": "Le spectre visible s\u2019\u00e9tend de 380 nm (violet) \u00e0 780 nm (rouge). En dessous de 380 nm, ce sont les ultraviolets ; au-dessus de 780 nm, les infrarouges.",
+  "s2": "L\u2019efficacit\u00e9 lumineuse \u03b7 se mesure en lumens par watt (lm/W). Elle indique combien de lumi\u00e8re utile est produite pour chaque watt consomm\u00e9.",
+  "s3": "Un atelier n\u00e9cessite un blanc neutre \u00e0 blanc froid (4 000\u20136 500 K) pour bien percevoir les couleurs et les contrastes lors du travail de pr\u00e9cision.",
+  "s4": "Le laser \u00e9met une lumi\u00e8re monochromatique (une seule longueur d\u2019onde) et directionnelle (faisceau parall\u00e8le tr\u00e8s \u00e9troit).",
+  "s5": "La LED a la meilleure efficacit\u00e9 lumineuse (100\u2013150 lm/W), loin devant l\u2019incandescence (15 lm/W) et l\u2019halog\u00e8ne (25 lm/W).",
+  /* === STANDARD === */
+  "t1": "\u03b7 = \u03a6 / P = 3 600 / 36 = 100 lm/W. Le panneau LED produit 100 lumens pour chaque watt consomm\u00e9.",
+  "t2": "Le soleil \u00e9met un spectre continu : toutes les longueurs d\u2019onde du visible sont pr\u00e9sentes. C\u2019est la r\u00e9f\u00e9rence pour l\u2019IRC (IRC = 100).",
+  "t3": "Pour contr\u00f4ler la teinte d\u2019un vernis ou d\u2019une finition bois, un IRC \u2265 80 est recommand\u00e9 afin de percevoir fid\u00e8lement les couleurs.",
+  "t4": "Le niveau laser projette des lignes horizontales et verticales tr\u00e8s pr\u00e9cises gr\u00e2ce \u00e0 la directivit\u00e9 du faisceau laser. Il sert au tra\u00e7age, pas \u00e0 la d\u00e9coupe.",
+  "t5": "Une temp\u00e9rature de couleur basse (2 700 K) donne une lumi\u00e8re blanc chaud \u00e0 dominante jaun\u00e2tre, typique des \u00e9clairages domestiques.",
+  /* === APPROFONDISSEMENT === */
+  "a1": "\u03bd = c / \u03bb = (3 \u00d7 10\u2078) / (650 \u00d7 10\u207b\u2079) = 4,6 \u00d7 10\u00b9\u2074 Hz. On convertit d\u2019abord 650 nm en m\u00e8tres (650 \u00d7 10\u207b\u2079 m).",
+  "a2": "P = \u03a6 / \u03b7 = 200 000 / 125 = 1 600 W. Le passage aux LED permet d\u2019\u00e9conomiser 2 500 \u2212 1 600 = 900 W, soit une r\u00e9duction de 36 %.",
+  "a3": "Avec un IRC de 25, la lampe sodium restitue tr\u00e8s mal les couleurs : les teintes du bois et des finitions apparaissent fauss\u00e9es. Impossible de contr\u00f4ler la qualit\u00e9.",
+  "a4": "Les lasers de classe 2 (\u03bb = 635 nm, rouge) sont prot\u00e9g\u00e9s par le r\u00e9flexe palp\u00e9bral (fermeture de l\u2019\u0153il), mais il ne faut jamais fixer le faisceau volontairement.",
+  "a5": "La LED (120 lm/W, IRC 90, 5 000 K) combine haute efficacit\u00e9, bon rendu des couleurs et temp\u00e9rature de couleur adapt\u00e9e au contr\u00f4le qualit\u00e9. L\u2019halog\u00e8ne a un bon IRC mais une efficacit\u00e9 trop faible ; la sodium HP a un IRC trop bas."
+};
+
+function corriger(formId, scoreId) {
+  var form = document.getElementById(formId);
+  var blocks = form.querySelectorAll('.q-block');
+  var score = 0;
+  var total = blocks.length;
+
+  blocks.forEach(function(block, i) {
+    var radios = block.querySelectorAll('input[type="radio"]');
+    var qName = radios.length > 0 ? radios[0].name : '';
+    var correct = block.getAttribute('data-correct');
+    var selected = block.querySelector('input[type="radio"]:checked');
+    var feedback = block.querySelector('.q-feedback');
+    var labels = block.querySelectorAll('.options label');
+
+    labels.forEach(function(l) { l.classList.remove('correct', 'incorrect'); });
+
+    labels.forEach(function(l) {
+      var input = l.querySelector('input');
+      if (input.value === correct) l.classList.add('correct');
+    });
+
+    if (selected) {
+      if (selected.value === correct) {
+        score++;
+        feedback.className = 'q-feedback ok';
+        feedback.textContent = '\u2705 Bonne r\u00e9ponse ! ' + (explications[qName] || '');
+      } else {
+        selected.parentElement.classList.add('incorrect');
+        feedback.className = 'q-feedback ko';
+        feedback.textContent = '\u274c Mauvaise r\u00e9ponse. ' + (explications[qName] || '');
+      }
+    } else {
+      feedback.className = 'q-feedback ko';
+      feedback.textContent = '\u26a0\ufe0f Pas de r\u00e9ponse. ' + (explications[qName] || '');
+    }
+  });
+
+  var scoreBox = document.getElementById(scoreId);
+  var pct = Math.round(score / total * 100);
+  scoreBox.textContent = 'Score : ' + score + ' / ' + total + ' (' + pct + ' %)';
+  scoreBox.className = 'score-box show ' + (pct >= 70 ? 'score-good' : pct >= 40 ? 'score-avg' : 'score-low');
+  scoreBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function reinitialiser(formId, scoreId) {
+  var form = document.getElementById(formId);
+  form.querySelectorAll('.q-block').forEach(function(block) {
+    block.querySelectorAll('.options label').forEach(function(l) { l.classList.remove('correct', 'incorrect'); });
+    block.querySelectorAll('input[type="radio"]').forEach(function(r) { r.checked = false; });
+    var feedback = block.querySelector('.q-feedback');
+    feedback.className = 'q-feedback';
+    feedback.textContent = '';
+  });
+  var scoreBox = document.getElementById(scoreId);
+  scoreBox.className = 'score-box';
+  scoreBox.textContent = '';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+<script src="../../../nav.js"></script>
+<script src="../../../diff.js"></script>
+</body>
+</html>
