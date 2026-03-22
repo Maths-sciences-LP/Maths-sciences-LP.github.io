@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac}
 .pts{font-size:.82em;color:#718096;font-weight:normal}
+.sujet-header{background:var(--p);color:#fff;padding:.5em 1em;border-radius:6px;margin:1.5em 0 1em;font-size:1.15em}
 </style>
 </head>
 <body>
@@ -27,6 +28,7 @@
 <!-- ========================= SOCLE ========================= -->
 <div class="diff-socle">
 <span class="tag-socle">Socle</span>
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -95,11 +97,84 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Le spectre visible va de 380 nm (violet) à 780 nm (rouge). 1 nm = 10⁻⁹ m.</div>
+  <p>Compléter les phrases :</p>
+  <p>a) L'unité de longueur d'onde utilisée pour la lumière est le ... (symbole : ...).</p>
+  <p>b) La couleur rouge correspond aux longueurs d'onde proches de ... nm.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Le <strong>nanomètre</strong> (symbole : <strong>nm</strong>).</p>
+    <p>b) La couleur rouge correspond aux longueurs d'onde proches de <strong>780 nm</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> L'efficacité lumineuse se calcule avec \(\eta = \dfrac{\Phi}{P}\) en lm/W.</div>
+  <p>Un spot halogène consomme P = 50 W et produit un flux lumineux Φ = 700 lm.</p>
+  <p>a) Écrire la formule de l'efficacité lumineuse.</p>
+  <p>b) Calculer : \(\eta = \dfrac{700}{50} = ...\) lm/W</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\eta = \dfrac{\Phi}{P}\)</p>
+    <p>b) \(\eta = \dfrac{700}{50} = \mathbf{14}\) lm/W</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Un laser est monochromatique (une seule longueur d'onde), cohérent et très directionnel.</div>
+  <p>Vrai ou Faux ? Justifier si faux.</p>
+  <p>a) Un laser émet de la lumière blanche.</p>
+  <p>b) Un laser émet un faisceau très étroit et directionnel.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) <strong>FAUX</strong>. Un laser est <strong>monochromatique</strong> : il émet une seule longueur d'onde (une seule couleur).</p>
+    <p>b) <strong>VRAI</strong>. Le laser est très <strong>directionnel</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> La température de couleur s'exprime en Kelvin (K). Blanc chaud ≈ 2 700 K, blanc froid ≈ 6 500 K.</div>
+  <p>Un poseur de cuisines doit choisir l'éclairage sous les meubles hauts.</p>
+  <table>
+    <tr><th>Source</th><th>Température de couleur</th></tr>
+    <tr><td>LED blanc chaud</td><td>2 700 K</td></tr>
+    <tr><td>LED blanc neutre</td><td>4 000 K</td></tr>
+  </table>
+  <p>a) Laquelle donne une ambiance chaleureuse ?</p>
+  <p>b) Laquelle est plus adaptée pour travailler en cuisine ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) La <strong>LED blanc chaud (2 700 K)</strong> donne une ambiance chaleureuse (lumière jaunâtre).</p>
+    <p>b) La <strong>LED blanc neutre (4 000 K)</strong> est plus adaptée pour travailler car elle offre un éclairage plus neutre et précis.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> L'IRC (Indice de Rendu des Couleurs) va de 0 à 100. IRC ≥ 80 est recommandé pour les ateliers.</div>
+  <p>a) Un IRC de 60 est-il suffisant pour un atelier de peinture ? Justifier.</p>
+  <p>b) Quel type de source a généralement un IRC proche de 100 ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) <strong>Non</strong>, un IRC de 60 est insuffisant. Pour un atelier de peinture, il faut un IRC <strong>≥ 90</strong> pour percevoir fidèlement les couleurs des teintes.</p>
+    <p>b) La <strong>lumière naturelle</strong> (soleil) a un IRC de 100. Les lampes à incandescence et halogènes ont aussi un IRC proche de 100.</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= STANDARD ========================= -->
 <div class="diff-standard">
 <span class="tag-standard">Standard</span>
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">

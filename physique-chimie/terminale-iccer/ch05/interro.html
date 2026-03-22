@@ -376,6 +376,78 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Un système hydraulique de serrage est équipé de 3 vérins. Chaque vérin a un piston de d = 8 cm et est alimenté à P = 120 bar.</p>
+  <p>a) Calculer la force développée par un vérin.</p>
+  <p>b) Calculer la force totale que peut exercer ce système (g = 9,81 m/s²).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) S = π × (0,04)² ≈ 5,03 × 10⁻³ m². P = 1,2 × 10⁷ Pa.</p>
+    <p>\(F = 1{,}2 \times 10^7 \times 5{,}03 \times 10^{-3} \approx \mathbf{60\,318}\) N par vérin.</p>
+    <p>b) F<sub>tot</sub> = 3 × 60 318 = <strong>180 955</strong> N ≈ 181 kN.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <p>Un réseau ECS d'un hôtel : P₀ = 3,0 bar (relatif) au sous-sol. Hauteur du dernier étage : h = 24 m. Eau à 55 °C (ρ = 986 kg/m³).</p>
+  <p>a) Calculer ΔP dû à la colonne d'eau.</p>
+  <p>b) Calculer la pression relative au dernier étage.</p>
+  <p>c) Un réducteur de pression est réglé à 0,5 bar relatif minimum. La pression au dernier étage est-elle suffisante ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\Delta P = 986 \times 9{,}81 \times 24 \approx 232\,108\) Pa \(\approx \mathbf{2{,}32}\) bar</p>
+    <p>b) P<sub>haut</sub> = 3,0 − 2,32 = <strong>0,68 bar</strong> relatif.</p>
+    <p>c) 0,68 bar > 0,5 bar → la pression est <strong>suffisante</strong>, mais juste.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>On veut soulever une charge de 8 000 kg avec 2 vérins de d = 10 cm.</p>
+  <p>a) Calculer le poids de la charge.</p>
+  <p>b) Calculer la force par vérin.</p>
+  <p>c) Calculer la pression nécessaire.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(W = 8\,000 \times 9{,}81 = \mathbf{78\,480}\) N</p>
+    <p>b) \(F_v = \dfrac{78\,480}{2} = \mathbf{39\,240}\) N</p>
+    <p>c) \(S = \pi \times (0{,}05)^2 \approx 7{,}85 \times 10^{-3}\) m². \(P = \dfrac{39\,240}{7{,}85 \times 10^{-3}} \approx 5{,}0 \times 10^6\) Pa \(\approx \mathbf{50}\) bar.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>Dans une presse hydraulique, le grand piston (d₂ = 15 cm) doit monter de 8 mm. Le petit piston a d₁ = 3 cm.</p>
+  <p>a) Calculer le rapport S₂/S₁.</p>
+  <p>b) De combien le petit piston doit-il descendre ? (Conservation du volume : déplacement₁ × S₁ = déplacement₂ × S₂)</p>
+  <p>c) Commenter ce résultat.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\dfrac{S_2}{S_1} = \left(\dfrac{15}{3}\right)^2 = \mathbf{25}\)</p>
+    <p>b) \(d_1 = 8 \times 25 = \mathbf{200}\) mm = 20 cm</p>
+    <p>c) Le petit piston doit descendre de 20 cm pour que le grand monte de seulement 8 mm. L'amplification de force (×25) se fait au détriment du déplacement (÷25).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <p>Un réservoir d'eau glycolée (ρ = 1 040 kg/m³) est pressurisé à P₀ = 2,0 bar en surface. Un capteur est situé à 6 m de profondeur.</p>
+  <p>a) Calculer ΔP dû à la colonne d'eau glycolée.</p>
+  <p>b) Calculer la pression totale au capteur.</p>
+  <p>c) Comparer avec la même profondeur dans l'eau pure (ρ = 1 000 kg/m³). Quel fluide exerce la plus grande pression ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\Delta P = 1\,040 \times 9{,}81 \times 6 \approx \mathbf{61\,214}\) Pa ≈ 0,61 bar</p>
+    <p>b) \(P = 2{,}0 + 0{,}61 = \mathbf{2{,}61}\) bar</p>
+    <p>c) Eau pure : \(\Delta P = 1\,000 \times 9{,}81 \times 6 = 58\,860\) Pa ≈ 0,59 bar. L'<strong>eau glycolée</strong> exerce une pression plus forte car elle est plus dense (ρ<sub>glycol</sub> > ρ<sub>eau</sub>).</p>
+  </div>
+</div>
+
 </div>
 
 </div><!-- fin .c -->
