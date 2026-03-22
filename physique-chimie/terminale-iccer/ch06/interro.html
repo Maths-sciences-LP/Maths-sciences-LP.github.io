@@ -376,6 +376,70 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Le circuit secondaire d'une PAC air-eau transporte de l'eau à 50 °C (ρ = 988 kg/m³, c<sub>p</sub> = 4,18 kJ/(kg·K)). Le débit volumique est Q<sub>v</sub> = 2,0 m³/h et la température passe de 40 °C à 50 °C.</p>
+  <p>a) Calculer Q<sub>m</sub>.</p>
+  <p>b) Calculer la puissance thermique fournie : \(P = Q_m \times c_p \times \Delta T\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Q<sub>v</sub> = 5,56 × 10⁻⁴ m³/s → \(Q_m = 988 \times 5{,}56 \times 10^{-4} = \mathbf{0{,}549}\) kg/s</p>
+    <p>b) ΔT = 50 − 40 = 10 K. \(P = 0{,}549 \times 4\,180 \times 10 = \mathbf{22\,949}\) W ≈ 23,0 kW</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <p>Une canalisation de chauffage DN25 (d₁ = 25 mm) alimente un radiateur via un tuyau DN16 (d₂ = 16 mm). L'eau circule à v₁ = 0,6 m/s dans la canalisation principale.</p>
+  <p>a) Calculer le débit volumique Q<sub>v</sub>.</p>
+  <p>b) Calculer v₂ dans le tuyau DN16.</p>
+  <p>c) v₂ est-elle acceptable pour un réseau de chauffage ? Que préconisez-vous ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(Q_v = \pi (0{,}0125)^2 \times 0{,}6 = 4{,}91 \times 10^{-4} \times 0{,}6 \approx \mathbf{2{,}95 \times 10^{-4}}\) m³/s</p>
+    <p>b) \(v_2 = \dfrac{Q_v}{\pi (0{,}008)^2} = \dfrac{2{,}95 \times 10^{-4}}{2{,}01 \times 10^{-4}} \approx \mathbf{1{,}47}\) m/s</p>
+    <p>c) 1,47 m/s ∈ [0,5 ; 1,5] m/s → <strong>acceptable</strong> mais à la limite haute. Risque de bruit.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Un circulateur impose un débit Q<sub>v</sub> = 3,0 × 10⁻⁴ m³/s dans un échangeur à plaques dont le passage a une section S = 6 × 10⁻⁴ m².</p>
+  <p>a) Calculer la vitesse de l'eau dans l'échangeur.</p>
+  <p>b) Si l'échangeur comporte 10 canaux en parallèle de même section, quelle est la vitesse dans chaque canal ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(v = \dfrac{3{,}0 \times 10^{-4}}{6 \times 10^{-4}} = \mathbf{0{,}50}\) m/s</p>
+    <p>b) Chaque canal reçoit Q<sub>v</sub>/10 = 3,0 × 10⁻⁵ m³/s. \(v = \dfrac{3{,}0 \times 10^{-5}}{6 \times 10^{-4}} = \mathbf{0{,}05}\) m/s</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>Un réseau de chauffage se divise en trois branches après un collecteur. Le débit total est Q<sub>v</sub> = 1,0 L/s. La branche A (DN25) a une vitesse v<sub>A</sub> = 0,8 m/s et la branche B (DN20) a une vitesse v<sub>B</sub> = 1,0 m/s.</p>
+  <p>a) Calculer le débit de la branche A.</p>
+  <p>b) Calculer le débit de la branche B.</p>
+  <p>c) En déduire le débit de la branche C (conservation du débit total).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(S_A = \pi (0{,}0125)^2 \approx 4{,}91 \times 10^{-4}\) m². \(Q_{v,A} = 4{,}91 \times 10^{-4} \times 0{,}8 \approx \mathbf{3{,}93 \times 10^{-4}}\) m³/s ≈ 0,39 L/s</p>
+    <p>b) \(S_B = \pi (0{,}010)^2 \approx 3{,}14 \times 10^{-4}\) m². \(Q_{v,B} = 3{,}14 \times 10^{-4} \times 1{,}0 \approx \mathbf{3{,}14 \times 10^{-4}}\) m³/s ≈ 0,31 L/s</p>
+    <p>c) \(Q_{v,C} = 1{,}0 \times 10^{-3} - 3{,}93 \times 10^{-4} - 3{,}14 \times 10^{-4} \approx \mathbf{2{,}93 \times 10^{-4}}\) m³/s ≈ 0,29 L/s</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <p>Expliquer pourquoi un robinet thermostatique qui se ferme partiellement fait augmenter la vitesse de l'eau au point de passage rétréci. Utiliser l'équation de continuité dans votre explication.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>D'après l'équation de continuité \(S_1 v_1 = S_2 v_2\), le débit volumique doit se conserver. Lorsque le robinet thermostatique se ferme partiellement, la section de passage S₂ <strong>diminue</strong>. Pour que le produit S × v reste constant, la vitesse v₂ doit <strong>augmenter</strong> au point rétréci. Cependant, en pratique, les pertes de charge augmentent et le débit global diminue aussi (le circulateur ajuste son point de fonctionnement).</p>
+  </div>
+</div>
+
 </div>
 
 </div><!-- fin .c -->

@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac}
 .pts{font-size:.82em;color:#718096;font-weight:normal}
+.sujet-header{background:var(--p);color:#fff;padding:.5em 1em;border-radius:6px;margin:1.5em 0 1em;font-size:1.15em}
 </style>
 </head>
 <body>
@@ -28,6 +29,7 @@
 <div class="diff-socle">
 <span class="tag-socle">Socle</span>
 <p><strong>Barème :</strong> 20 points</p>
+<h3 class="sujet-header">Sujet A</h3>
 
 <div class="exo">
   <h2>Question 1 <span class="pts">(4 points)</span></h2>
@@ -111,12 +113,97 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Les ondes EM se propagent dans le vide à la vitesse \(c = 3 \times 10^8\) m/s.</div>
+  <p>Compléter les phrases suivantes :</p>
+  <p>a) Les ondes électromagnétiques n'ont pas besoin de ... pour se propager.</p>
+  <p>b) La vitesse de la lumière dans le vide est \(c = ...\) m/s.</p>
+  <p>c) La relation entre vitesse, fréquence et longueur d'onde est : \(c = ... \times ...\)</p>
+  <p>d) L'unité de la fréquence est le ...</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) De <strong>matière</strong> (ou de support matériel).</p>
+    <p>b) \(c = \mathbf{3 \times 10^8}\) m/s</p>
+    <p>c) \(c = \lambda \times f\)</p>
+    <p>d) Le <strong>hertz (Hz)</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> \(\lambda = \dfrac{c}{f}\). Plus la fréquence est grande, plus la longueur d'onde est petite.</div>
+  <p>Le Bluetooth fonctionne à une fréquence de \(f = 2{,}45 \times 10^9\) Hz.</p>
+  <p>a) Écrire la formule de la longueur d'onde : \(\lambda = \dfrac{...}{...}\)</p>
+  <p>b) Calculer : \(\lambda = \dfrac{3 \times 10^8}{2{,}45 \times 10^9} = ...\) m</p>
+  <p>c) Convertir en cm : \(\lambda = ...\) cm</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\lambda = \dfrac{c}{f}\)</p>
+    <p>b) \(\lambda = \dfrac{3 \times 10^8}{2{,}45 \times 10^9} = \mathbf{0{,}122}\) m</p>
+    <p>c) \(\lambda = \mathbf{12{,}2}\) cm</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Le domaine visible va de 400 nm (violet) à 800 nm (rouge). 1 nm = \(10^{-9}\) m.</div>
+  <p>Parmi les longueurs d'onde suivantes, lesquelles sont visibles par l'oeil humain ?</p>
+  <p>a) 450 nm : visible / pas visible ?</p>
+  <p>b) 700 nm : visible / pas visible ?</p>
+  <p>c) 1 200 nm : visible / pas visible ?</p>
+  <p>d) 250 nm : visible / pas visible ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) 450 nm : <strong>visible</strong> (bleu)</p>
+    <p>b) 700 nm : <strong>visible</strong> (rouge)</p>
+    <p>c) 1 200 nm : <strong>pas visible</strong> (infrarouge, car &gt; 800 nm)</p>
+    <p>d) 250 nm : <strong>pas visible</strong> (ultraviolet, car &lt; 400 nm)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Le spectre EM va des rayons gamma (courte λ) aux ondes radio (grande λ).</div>
+  <p>Relier chaque onde à son domaine :</p>
+  <table>
+    <tr><th>Onde</th><th>Domaine</th></tr>
+    <tr><td>Radiographie chez le médecin</td><td>...</td></tr>
+    <tr><td>Signal de la télécommande TV</td><td>...</td></tr>
+    <tr><td>Antenne de radio FM</td><td>...</td></tr>
+    <tr><td>Éclairage LED d'un atelier</td><td>...</td></tr>
+  </table>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>Radiographie → <strong>Rayons X</strong></p>
+    <p>Télécommande TV → <strong>Infrarouge</strong></p>
+    <p>Antenne radio FM → <strong>Ondes radio</strong></p>
+    <p>Éclairage LED → <strong>Visible</strong></p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Période \(T = \dfrac{1}{f}\) et fréquence \(f = \dfrac{1}{T}\).</div>
+  <p>Une onde a une période de \(T = 2 \times 10^{-15}\) s.</p>
+  <p>a) Calculer sa fréquence : \(f = \dfrac{1}{T} = ...\) Hz</p>
+  <p>b) Cette onde est-elle visible par l'oeil humain ? Justifier.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(f = \dfrac{1}{2 \times 10^{-15}} = \mathbf{5 \times 10^{14}}\) Hz</p>
+    <p>b) <strong>Oui</strong>, cette fréquence (\(5 \times 10^{14}\) Hz) est dans le domaine du visible. \(\lambda = \dfrac{3 \times 10^8}{5 \times 10^{14}} = 600\) nm (orange).</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= STANDARD ========================= -->
 <div class="diff-standard">
 <span class="tag-standard">Standard</span>
 <p><strong>Barème :</strong> 20 points</p>
+<h3 class="sujet-header">Sujet A</h3>
 
 <div class="exo">
   <h2>Question 1 <span class="pts">(4 points)</span></h2>
