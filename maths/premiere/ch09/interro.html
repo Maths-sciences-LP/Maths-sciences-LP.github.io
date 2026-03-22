@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
 .pts{font-size:.82em;color:#718096;font-weight:normal}
+.sujet-header{background:var(--p);color:#fff;padding:.5em 1em;border-radius:6px;margin:1.5em 0 1em;font-size:1.15em}
 </style>
 </head>
 <body>
@@ -27,6 +28,7 @@
 <!-- ========================= SOCLE ========================= -->
 <div class="diff-socle">
 <span class="tag-socle">Socle</span>
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Bar&egrave;me :</strong> 20 points</p>
 
 <div class="exo">
@@ -108,11 +110,94 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Bar&egrave;me :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> SOH-CAH-TOA. \(\cos \alpha = \dfrac{\text{adjacent}}{\text{hypot&eacute;nuse}}\), \(\sin \alpha = \dfrac{\text{oppos&eacute;}}{\text{hypot&eacute;nuse}}\), \(\tan \alpha = \dfrac{\text{oppos&eacute;}}{\text{adjacent}}\).</div>
+  <p>Dans un triangle rectangle DEF, rectangle en F, on donne : \(DE = 8\) cm (hypot&eacute;nuse) et l'angle \(\widehat{E} = 55°\).</p>
+  <p>a) Quel est le c&ocirc;t&eacute; adjacent &agrave; l'angle \(\widehat{E}\) ? ...</p>
+  <p>b) Quel est le c&ocirc;t&eacute; oppos&eacute; &agrave; l'angle \(\widehat{E}\) ? ...</p>
+  <p>c) Calculer \(EF\) : \(\cos(55°) = \dfrac{EF}{8}\), donc \(EF = 8 \times \cos(55°) = 8 \times ... = ...\) cm</p>
+  <p>d) Calculer \(DF\) : \(\sin(55°) = \dfrac{DF}{8}\), donc \(DF = 8 \times \sin(55°) = 8 \times ... = ...\) cm</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Le c&ocirc;t&eacute; adjacent &agrave; \(\widehat{E}\) est <strong>EF</strong>.</p>
+    <p>b) Le c&ocirc;t&eacute; oppos&eacute; &agrave; \(\widehat{E}\) est <strong>DF</strong>.</p>
+    <p>c) \(EF = 8 \times \cos(55°) = 8 \times 0{,}5736 \approx \mathbf{4{,}59}\) cm.</p>
+    <p>d) \(DF = 8 \times \sin(55°) = 8 \times 0{,}8192 \approx \mathbf{6{,}55}\) cm.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Pour trouver un angle, on calcule le rapport puis on utilise la touche inverse : \(\cos^{-1}\), \(\sin^{-1}\) ou \(\tan^{-1}\).</div>
+  <p>Un triangle rectangle a un c&ocirc;t&eacute; adjacent de 8 cm et une hypot&eacute;nuse de 17 cm.</p>
+  <p>a) Quel rapport utiliser pour trouver l'angle ? ...</p>
+  <p>b) Calculer : \(\cos \alpha = \dfrac{8}{17} = ...\)</p>
+  <p>c) D&eacute;terminer l'angle : \(\alpha = \cos^{-1}(...) = ...\)°</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) On conna&icirc;t le c&ocirc;t&eacute; adjacent et l'hypot&eacute;nuse, on utilise le <strong>cosinus</strong>.</p>
+    <p>b) \(\cos \alpha = \dfrac{8}{17} \approx 0{,}4706\)</p>
+    <p>c) \(\alpha = \cos^{-1}(0{,}4706) \approx \mathbf{61{,}9°}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Conversion degr&eacute;s/radians : \(180° = \pi\) rad. Degr&eacute;s &rarr; radians : multiplier par \(\dfrac{\pi}{180}\).</div>
+  <p>Convertir les angles suivants :</p>
+  <p>a) \(120° = ... \times \dfrac{\pi}{180} = ...\) rad</p>
+  <p>b) \(45° = ... \times \dfrac{\pi}{180} = ...\) rad</p>
+  <p>c) \(\dfrac{\pi}{6}\) rad \(= \dfrac{\pi}{6} \times \dfrac{180}{\pi} = ...\)°</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(120° = 120 \times \dfrac{\pi}{180} = \mathbf{\dfrac{2\pi}{3}}\) rad</p>
+    <p>b) \(45° = 45 \times \dfrac{\pi}{180} = \mathbf{\dfrac{\pi}{4}}\) rad</p>
+    <p>c) \(\dfrac{\pi}{6} \times \dfrac{180}{\pi} = \mathbf{30°}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Valeurs remarquables : \(\cos(60°) = \dfrac{1}{2}\), \(\sin(60°) = \dfrac{\sqrt{3}}{2}\), \(\cos(45°) = \sin(45°) = \dfrac{\sqrt{2}}{2}\).</div>
+  <p>Compl&eacute;ter sans calculatrice :</p>
+  <p>a) \(\sin(60°) = ...\)</p>
+  <p>b) \(\cos(30°) = ...\)</p>
+  <p>c) \(\sin(45°) = ...\)</p>
+  <p>d) \(\cos(0°) = ...\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\sin(60°) = \mathbf{\dfrac{\sqrt{3}}{2}}\)</p>
+    <p>b) \(\cos(30°) = \mathbf{\dfrac{\sqrt{3}}{2}}\)</p>
+    <p>c) \(\sin(45°) = \mathbf{\dfrac{\sqrt{2}}{2}}\)</p>
+    <p>d) \(\cos(0°) = \mathbf{1}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Relation fondamentale : \(\cos^2 \alpha + \sin^2 \alpha = 1\).</div>
+  <p>V&eacute;rifier la relation fondamentale pour \(\alpha = 45°\) :</p>
+  <p>a) \(\cos(45°) = \dfrac{\sqrt{2}}{2}\), donc \(\cos^2(45°) = ...\)</p>
+  <p>b) \(\sin(45°) = \dfrac{\sqrt{2}}{2}\), donc \(\sin^2(45°) = ...\)</p>
+  <p>c) V&eacute;rifier : \(\cos^2(45°) + \sin^2(45°) = ... + ... = ...\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\cos^2(45°) = \left(\dfrac{\sqrt{2}}{2}\right)^2 = \mathbf{\dfrac{2}{4} = \dfrac{1}{2}}\)</p>
+    <p>b) \(\sin^2(45°) = \left(\dfrac{\sqrt{2}}{2}\right)^2 = \mathbf{\dfrac{2}{4} = \dfrac{1}{2}}\)</p>
+    <p>c) \(\dfrac{1}{2} + \dfrac{1}{2} = \mathbf{1}\). La relation est v&eacute;rifi&eacute;e.</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= STANDARD ========================= -->
 <div class="diff-standard">
 <span class="tag-standard">Standard</span>
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Bar&egrave;me :</strong> 20 points</p>
 
 <div class="exo">

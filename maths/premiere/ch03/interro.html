@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
 .pts{font-size:.82em;color:#718096;font-weight:normal}
+.sujet-header{background:var(--p);color:#fff;padding:.5em 1em;border-radius:6px;margin:1.5em 0 1em;font-size:1.15em}
 </style>
 </head>
 <body>
@@ -28,6 +29,8 @@
 <div class="diff-socle">
 <span class="tag-socle">Socle</span>
 <p><strong>Bar&egrave;me :</strong> 20 points</p>
+
+<h3 class="sujet-header">Sujet A</h3>
 
 <div class="exo">
   <h2>Question 1 <span class="pts">(4 points)</span></h2>
@@ -111,12 +114,98 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Suite arithm&eacute;tique : \(u_{n+1} = u_n + r\). On passe d'un terme au suivant en <strong>ajoutant</strong> la raison \(r\).</div>
+  <p>Un &eacute;b&eacute;niste d&eacute;bute avec un salaire de 1 500 &euro;. Son employeur lui accorde une augmentation de 40 &euro; par an.</p>
+  <p>a) Quel est le premier terme ? \(u_0 = ...\)</p>
+  <p>b) Quelle est la raison ? \(r = ...\)</p>
+  <p>c) Calculer les termes suivants :</p>
+  <p>\(u_1 = u_0 + r = 1\,500 + 40 = ...\)</p>
+  <p>\(u_2 = u_1 + r = ... + 40 = ...\)</p>
+  <p>\(u_3 = u_2 + r = ... + 40 = ...\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(u_0 = \mathbf{1\,500}\) &euro;</p>
+    <p>b) \(r = \mathbf{40}\) &euro;</p>
+    <p>c) \(u_1 = 1\,500 + 40 = \mathbf{1\,540}\) &euro;</p>
+    <p>\(u_2 = 1\,540 + 40 = \mathbf{1\,580}\) &euro;</p>
+    <p>\(u_3 = 1\,580 + 40 = \mathbf{1\,620}\) &euro;</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Terme g&eacute;n&eacute;ral d'une suite arithm&eacute;tique : \(u_n = u_0 + n \times r\).</div>
+  <p>Toujours avec \(u_0 = 1\,500\) et \(r = 40\).</p>
+  <p>a) &Eacute;crire la formule du terme g&eacute;n&eacute;ral : \(u_n = 1\,500 + n \times ... = ...\)</p>
+  <p>b) Calculer le salaire apr&egrave;s 5 ans : \(u_5 = 1\,500 + 5 \times 40 = ...\)</p>
+  <p>c) Calculer le salaire apr&egrave;s 10 ans : \(u_{10} = 1\,500 + 10 \times 40 = ...\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(u_n = 1\,500 + 40n\)</p>
+    <p>b) \(u_5 = 1\,500 + 5 \times 40 = 1\,500 + 200 = \mathbf{1\,700}\) &euro;</p>
+    <p>c) \(u_{10} = 1\,500 + 10 \times 40 = 1\,500 + 400 = \mathbf{1\,900}\) &euro;</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Suite g&eacute;om&eacute;trique : \(u_{n+1} = u_n \times q\). On passe d'un terme au suivant en <strong>multipliant</strong> par la raison \(q\).</div>
+  <p>Un artisan place 5 000 &euro; sur un livret &agrave; 3 % d'int&eacute;r&ecirc;ts par an. Chaque ann&eacute;e, le capital est multipli&eacute; par \(1{,}03\).</p>
+  <p>a) Quel est le premier terme ? \(u_0 = ...\)</p>
+  <p>b) Quelle est la raison ? \(q = ...\)</p>
+  <p>c) Calculer \(u_1 = u_0 \times q = 5\,000 \times 1{,}03 = ...\)</p>
+  <p>d) Calculer \(u_2 = u_1 \times q = ... \times 1{,}03 = ...\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(u_0 = \mathbf{5\,000}\) &euro;</p>
+    <p>b) \(q = \mathbf{1{,}03}\)</p>
+    <p>c) \(u_1 = 5\,000 \times 1{,}03 = \mathbf{5\,150}\) &euro;</p>
+    <p>d) \(u_2 = 5\,150 \times 1{,}03 = \mathbf{5\,304{,}50}\) &euro;</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Pour reconna&icirc;tre le type de suite : calculer la diff&eacute;rence \(u_{n+1} - u_n\) (arithm&eacute;tique si constante) ou le quotient \(\dfrac{u_{n+1}}{u_n}\) (g&eacute;om&eacute;trique si constant).</div>
+  <p>Voici les premiers termes de deux suites. Identifier le type de chaque suite et donner la raison.</p>
+  <p>a) Suite \((u_n)\) : 7 ; 11 ; 15 ; 19 ; 23</p>
+  <p>\(u_1 - u_0 = 11 - 7 = ...\) et \(u_2 - u_1 = 15 - 11 = ...\) &rarr; Suite ... de raison ...</p>
+  <p>b) Suite \((v_n)\) : 2 ; 10 ; 50 ; 250 ; 1 250</p>
+  <p>\(\dfrac{v_1}{v_0} = \dfrac{10}{2} = ...\) et \(\dfrac{v_2}{v_1} = \dfrac{50}{10} = ...\) &rarr; Suite ... de raison ...</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(u_1 - u_0 = 4\), \(u_2 - u_1 = 4\). La diff&eacute;rence est constante : suite <strong>arithm&eacute;tique</strong> de raison \(r = \mathbf{4}\).</p>
+    <p>b) \(\dfrac{v_1}{v_0} = 5\), \(\dfrac{v_2}{v_1} = 5\). Le quotient est constant : suite <strong>g&eacute;om&eacute;trique</strong> de raison \(q = \mathbf{5}\).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Somme des termes d'une suite arithm&eacute;tique : \(S = \dfrac{\text{nombre de termes} \times (\text{premier} + \text{dernier})}{2}\).</div>
+  <p>Calculer la somme \(S = 3 + 6 + 9 + 12 + 15\).</p>
+  <p>a) Combien y a-t-il de termes ? ...</p>
+  <p>b) Quel est le premier terme ? ... Le dernier ? ...</p>
+  <p>c) Appliquer la formule : \(S = \dfrac{... \times (... + ...)}{2} = ...\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Il y a <strong>5 termes</strong>.</p>
+    <p>b) Premier terme : 3. Dernier terme : 15.</p>
+    <p>c) \(S = \dfrac{5 \times (3 + 15)}{2} = \dfrac{5 \times 18}{2} = \dfrac{90}{2} = \mathbf{45}\)</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= STANDARD ========================= -->
 <div class="diff-standard">
 <span class="tag-standard">Standard</span>
 <p><strong>Bar&egrave;me :</strong> 20 points</p>
+
+<h3 class="sujet-header">Sujet A</h3>
 
 <div class="exo">
   <h2>Question 1 <span class="pts">(4 points)</span></h2>

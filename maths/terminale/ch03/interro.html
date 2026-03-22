@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
 .pts{font-size:.82em;color:#718096;font-weight:normal}
+.sujet-header{background:var(--p);color:#fff;padding:.5em 1em;border-radius:6px;margin:1.5em 0 1em;font-size:1.15em}
 </style>
 </head>
 <body>
@@ -27,6 +28,7 @@
 <!-- ========================= SOCLE ========================= -->
 <div class="diff-socle">
 <span class="tag-socle">Socle</span>
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -106,11 +108,92 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Une suite est géométrique si on passe d'un terme au suivant en <strong>multipliant toujours par le même nombre</strong> \(q\) (la raison). On vérifie en calculant \(\dfrac{u_1}{u_0}\), \(\dfrac{u_2}{u_1}\), etc.</div>
+  <p>Voici les valeurs successives d'un four professionnel (en €) : 6 000 → 5 400 → 4 860 → 4 374</p>
+  <p>a) Calculer \(\dfrac{5\,400}{6\,000} = ...\)</p>
+  <p>b) Calculer \(\dfrac{4\,860}{5\,400} = ...\)</p>
+  <p>c) Les quotients sont-ils égaux ? La suite est-elle géométrique ? Donner la raison \(q\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\dfrac{5\,400}{6\,000} = \mathbf{0{,}90}\)</p>
+    <p>b) \(\dfrac{4\,860}{5\,400} = \mathbf{0{,}90}\)</p>
+    <p>c) Les quotients sont tous égaux à 0,90. La suite est <strong>géométrique</strong> de raison \(q = \mathbf{0{,}90}\).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Diminution de \(t\,\%\) → raison \(q = 1 - \dfrac{t}{100}\). Augmentation de \(t\,\%\) → raison \(q = 1 + \dfrac{t}{100}\).</div>
+  <p>Compléter le tableau :</p>
+  <table>
+    <tr><th>Situation</th><th>Raison \(q\)</th></tr>
+    <tr><td>Perte de 10 % par an</td><td>\(q = 1 - \dfrac{10}{100} = 1 - 0{,}10 = ...\)</td></tr>
+    <tr><td>Hausse de 8 % par an</td><td>\(q = 1 + \dfrac{...}{100} = ...\)</td></tr>
+    <tr><td>Perte de 25 % par an</td><td>\(q = ...\)</td></tr>
+  </table>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <table>
+      <tr><th>Situation</th><th>Raison \(q\)</th></tr>
+      <tr><td>Perte de 10 % par an</td><td>\(q = 1 - 0{,}10 = \mathbf{0{,}90}\)</td></tr>
+      <tr><td>Hausse de 8 % par an</td><td>\(q = 1 + 0{,}08 = \mathbf{1{,}08}\)</td></tr>
+      <tr><td>Perte de 25 % par an</td><td>\(q = 1 - 0{,}25 = \mathbf{0{,}75}\)</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Le terme de rang \(n\) se calcule avec \(u_n = u_0 \times q^n\). Pour calculer \(q^n\) à la calculatrice : touche <kbd>^</kbd> ou <kbd>x<sup>y</sup></kbd>.</div>
+  <p>Une scie à panneaux neuve vaut 5 000 €. Elle perd 12 % de sa valeur chaque année. Donc \(u_0 = 5\,000\) et \(q = 0{,}88\).</p>
+  <p>a) Écrire la formule du terme général : \(u_n = ... \times ...^n\)</p>
+  <p>b) Calculer la valeur après 3 ans : \(u_3 = 5\,000 \times 0{,}88^3 = 5\,000 \times ... = ...\) €</p>
+  <p>c) Calculer la valeur après 5 ans : \(u_5 = 5\,000 \times 0{,}88^5 = ...\) €</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(u_n = \mathbf{5\,000 \times 0{,}88^n}\)</p>
+    <p>b) \(u_3 = 5\,000 \times 0{,}88^3 = 5\,000 \times 0{,}6815 \approx \mathbf{3\,408\,€}\)</p>
+    <p>c) \(u_5 = 5\,000 \times 0{,}88^5 = 5\,000 \times 0{,}5277 \approx \mathbf{2\,639\,€}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Si \(q > 1\) : suite croissante. Si \(0 < q < 1\) : suite décroissante.</div>
+  <p>Pour chaque suite, indiquer si elle est croissante ou décroissante :</p>
+  <p>a) \(u_n = 3\,000 \times 1{,}07^n\) → \(q = ...\) donc la suite est ...</p>
+  <p>b) \(u_n = 9\,000 \times 0{,}92^n\) → \(q = ...\) donc la suite est ...</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(q = 1{,}07 > 1\) donc la suite est <strong>croissante</strong> (valorisation, les termes augmentent).</p>
+    <p>b) \(q = 0{,}92\), on a \(0 < 0{,}92 < 1\) donc la suite est <strong>décroissante</strong> (dépréciation, les termes diminuent).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> La somme des termes \(u_0 + u_1 + \cdots + u_n\) se calcule avec \(S_n = u_0 \times \dfrac{1 - q^{n+1}}{1 - q}\).</div>
+  <p>Un installateur thermique épargne 1 500 € par an avec un taux de 4 %. La suite des capitaux est \(u_n = 1\,500 \times 1{,}04^n\).</p>
+  <p>Calculer la somme des 4 premiers termes (\(u_0 + u_1 + u_2 + u_3\)), soit \(n = 3\) et 4 termes :</p>
+  <p>\(S_3 = 1\,500 \times \dfrac{1 - 1{,}04^4}{1 - 1{,}04} = 1\,500 \times \dfrac{1 - ...}{-0{,}04} = ...\) €</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>\(1{,}04^4 = 1{,}1699\)</p>
+    <p>\(S_3 = 1\,500 \times \dfrac{1 - 1{,}1699}{1 - 1{,}04} = 1\,500 \times \dfrac{-0{,}1699}{-0{,}04} = 1\,500 \times 4{,}246 = \mathbf{6\,370\,€}\)</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= STANDARD ========================= -->
 <div class="diff-standard">
 <span class="tag-standard">Standard</span>
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">

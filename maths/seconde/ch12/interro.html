@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0056b3;--p-bg:#ebf5ff;--p-border:#bee3f8}
 .pts{font-size:.82em;color:#718096;font-weight:normal}
+.sujet-header{background:var(--p);color:#fff;padding:.5em 1em;border-radius:6px;margin:1.5em 0 1em;font-size:1.15em}
 </style>
 </head>
 <body>
@@ -27,6 +28,8 @@
 <!-- ========================= SOCLE ========================= -->
 <div class="diff-socle">
 <span class="tag-socle">Socle</span>
+
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -109,11 +112,96 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(3 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Dans un triangle rectangle, l'hypoténuse est le côté <strong>opposé à l'angle droit</strong>. C'est le <strong>plus grand côté</strong>.</div>
+  <p>Dans un triangle rectangle en C, les côtés sont AC, BC et AB.</p>
+  <p>a) Quel est le nom du côté opposé à l'angle droit ? ............</p>
+  <p>b) Ce côté est-il le plus grand ou le plus petit du triangle ?</p>
+  <p>c) Écrire la formule du théorème de Pythagore : \(AB^2 = \ldots + \ldots\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) C'est l'<strong>hypoténuse</strong>, ici le côté AB.</p>
+    <p>b) C'est le <strong>plus grand</strong> côté du triangle.</p>
+    <p>c) \(AB^2 = AC^2 + BC^2\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(5 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Pour calculer l'hypoténuse : \(AB = \sqrt{AC^2 + BC^2}\).</div>
+  <p>Un triangle est rectangle en C avec AC = 9 cm et BC = 12 cm.</p>
+  <p>a) Identifier l'hypoténuse.</p>
+  <p>b) Calculer : \(AC^2 = 9^2 = \ldots\)</p>
+  <p>c) Calculer : \(BC^2 = 12^2 = \ldots\)</p>
+  <p>d) \(AB^2 = AC^2 + BC^2 = \ldots + \ldots = \ldots\)</p>
+  <p>e) \(AB = \sqrt{\ldots} = \ldots\) cm</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) L'hypoténuse est <strong>AB</strong> (opposée à l'angle droit en C).</p>
+    <p>b) \(AC^2 = 81\)</p>
+    <p>c) \(BC^2 = 144\)</p>
+    <p>d) \(AB^2 = 81 + 144 = 225\)</p>
+    <p>e) \(AB = \sqrt{225} = \mathbf{15\,\text{cm}}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Pour calculer un côté de l'angle droit : \(AC = \sqrt{AB^2 - BC^2}\).</div>
+  <p>Un triangle est rectangle en C avec AB = 15 cm (hypoténuse) et BC = 9 cm.</p>
+  <p>a) \(AB^2 = 15^2 = \ldots\)</p>
+  <p>b) \(BC^2 = 9^2 = \ldots\)</p>
+  <p>c) \(AC^2 = AB^2 - BC^2 = \ldots - \ldots = \ldots\)</p>
+  <p>d) \(AC = \sqrt{\ldots} = \ldots\) cm</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(AB^2 = 225\)</p>
+    <p>b) \(BC^2 = 81\)</p>
+    <p>c) \(AC^2 = 225 - 81 = 144\)</p>
+    <p>d) \(AC = \sqrt{144} = \mathbf{12\,\text{cm}}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Pour vérifier si un triangle est rectangle : comparer le carré du plus grand côté avec la somme des carrés des deux autres.</div>
+  <p>Un triangle a des côtés de 8 cm, 15 cm et 17 cm. Est-il rectangle ?</p>
+  <p>a) Le plus grand côté est : \(\ldots\) cm. Son carré : \(\ldots^2 = \ldots\)</p>
+  <p>b) Somme des carrés des deux autres : \(\ldots^2 + \ldots^2 = \ldots + \ldots = \ldots\)</p>
+  <p>c) Comparer et conclure.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Le plus grand côté est 17 cm. \(17^2 = 289\)</p>
+    <p>b) \(8^2 + 15^2 = 64 + 225 = 289\)</p>
+    <p>c) \(289 = 289\) : les deux résultats sont égaux. Le triangle est <strong>rectangle</strong> (angle droit opposé au côté de 17 cm).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Sur chantier, on utilise la règle des 3-4-5 pour vérifier un angle droit.</div>
+  <p>Un artisan vérifie l'équerrage d'une porte. Il mesure 60 cm sur un montant et 80 cm sur le seuil.</p>
+  <p>a) Quelle devrait être la longueur de la diagonale si l'angle est droit ?</p>
+  <p>b) Il mesure 98 cm. L'angle est-il droit ? Justifier.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(d = \sqrt{60^2 + 80^2} = \sqrt{3\,600 + 6\,400} = \sqrt{10\,000} = \mathbf{100\,\text{cm}}\)</p>
+    <p>(C'est le triplet 3-4-5 multiplié par 20.)</p>
+    <p>b) La diagonale mesurée (98 cm) est différente de la diagonale théorique (100 cm). L'angle n'est <strong>pas droit</strong>, la porte n'est pas d'équerre.</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= STANDARD ========================= -->
 <div class="diff-standard">
 <span class="tag-standard">Standard</span>
+
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
