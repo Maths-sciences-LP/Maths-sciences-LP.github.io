@@ -433,6 +433,86 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Un ébéniste travaille avec une défonceuse (105 dB à 1 m). Il utilise des bouchons d'oreille qui atténuent de 25 dB.</p>
+  <p>a) Quel est le niveau sonore perçu avec les bouchons ?</p>
+  <p>b) L'échelle des décibels est logarithmique : +10 dB correspond à une intensité multipliée par 10. Par combien l'intensité sonore est-elle divisée grâce aux bouchons (atténuation de 25 dB) ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(105 - 25 = \mathbf{80}\) dB</p>
+    <p>b) 25 dB = 2,5 × 10 dB. Le facteur est \(10^{2{,}5} = 10^2 \times 10^{0{,}5} = 100 \times \sqrt{10} \approx 100 \times 3{,}16 \approx \mathbf{316}\). Les bouchons divisent l'intensité sonore par environ <strong>316</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <p>À 1 m d'une scie à ruban, le niveau sonore est de 90 dB. On rappelle que doubler la distance fait perdre 6 dB.</p>
+  <p>a) Compléter le tableau :</p>
+  <table>
+    <tr><th>Distance (m)</th><td>1</td><td>2</td><td>4</td><td>8</td><td>16</td></tr>
+    <tr><th>Niveau (dB)</th><td>90</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+  </table>
+  <p>b) À quelle distance minimale faut-il se trouver pour être sous le seuil de danger (85 dB) sans protection ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <table>
+      <tr><th>Distance (m)</th><td>1</td><td>2</td><td>4</td><td>8</td><td>16</td></tr>
+      <tr><th>Niveau (dB)</th><td>90</td><td><strong>84</strong></td><td><strong>78</strong></td><td><strong>72</strong></td><td><strong>66</strong></td></tr>
+    </table>
+    <p>b) À 2 m, le niveau est de 84 dB &lt; 85 dB. Il faut se trouver à au moins <strong>2 m</strong> de la scie à ruban.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Un son se propage dans une planche de hêtre (\(v_{\text{bois}} = 3\,300\) m/s) et dans l'air (\(v_{\text{air}} = 340\) m/s). La fréquence du son est de 1 000 Hz.</p>
+  <p>a) Calculer la longueur d'onde du son dans l'air.</p>
+  <p>b) Calculer la longueur d'onde du son dans le bois.</p>
+  <p>c) La fréquence change-t-elle quand le son passe de l'air au bois ? Et la longueur d'onde ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\lambda_{\text{air}} = \dfrac{340}{1\,000} = \mathbf{0{,}34}\) m = 34 cm</p>
+    <p>b) \(\lambda_{\text{bois}} = \dfrac{3\,300}{1\,000} = \mathbf{3{,}3}\) m</p>
+    <p>c) La <strong>fréquence ne change pas</strong> (elle dépend de la source). La <strong>longueur d'onde change</strong> : elle est environ 10 fois plus grande dans le bois car le son y est plus rapide.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>Un menuisier agenceur veut isoler phoniquement un showroom de cuisines. Il mesure un niveau sonore de 80 dB dans la rue et souhaite que le showroom ne dépasse pas 40 dB.</p>
+  <p>a) Quel affaiblissement acoustique la facade doit-elle fournir ?</p>
+  <p>b) Parmi les solutions suivantes, laquelle est la plus adaptée ?</p>
+  <ul>
+    <li>Simple vitrage : 25 dB</li>
+    <li>Double vitrage standard : 35 dB</li>
+    <li>Double vitrage acoustique renforcé : 42 dB</li>
+  </ul>
+  <p>c) Si la porte d'entrée n'atténue que de 30 dB, le bruit passera-t-il principalement par les fenêtres ou par la porte ? Expliquer.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Affaiblissement nécessaire : \(80 - 40 = \mathbf{40}\) dB</p>
+    <p>b) Le <strong>double vitrage acoustique renforcé</strong> (42 dB) est le seul qui atteint l'affaiblissement requis de 40 dB.</p>
+    <p>c) Le bruit passera principalement par la <strong>porte</strong> (30 dB seulement). Le maillon le plus faible de l'isolation détermine la performance globale. À travers la porte, le niveau serait de \(80 - 30 = 50\) dB, bien au-dessus de l'objectif de 40 dB.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <p>Un technicien d'agencement mesure un niveau sonore \(L = 70\) dB. On donne \(L = 10 \times \log\left(\dfrac{I}{I_0}\right)\) avec \(I_0 = 10^{-12}\) W/m².</p>
+  <p>a) Calculer l'intensité sonore \(I\) correspondante.</p>
+  <p>b) Si trois machines identiques fonctionnent en même temps, l'intensité triple. Quel est alors le nouveau niveau sonore ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(70 = 10 \times \log\left(\dfrac{I}{10^{-12}}\right)\) → \(\log\left(\dfrac{I}{10^{-12}}\right) = 7\) → \(\dfrac{I}{10^{-12}} = 10^7\) → \(I = \mathbf{10^{-5}}\) W/m²</p>
+    <p>b) Intensité triplée : \(I' = 3 \times 10^{-5}\) W/m².</p>
+    <p>\(L' = 10 \times \log\left(\dfrac{3 \times 10^{-5}}{10^{-12}}\right) = 10 \times \log(3 \times 10^7) = 10 \times (\log 3 + 7) = 10 \times (0{,}477 + 7) = \mathbf{74{,}8}\) dB ≈ 75 dB</p>
+    <p>Tripler l'intensité ajoute environ <strong>4,8 dB</strong>.</p>
+  </div>
+</div>
+
 </div>
 
 </div><!-- fin .c -->
