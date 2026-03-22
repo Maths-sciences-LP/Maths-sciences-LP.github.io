@@ -387,6 +387,75 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Une fibre optique multimode a un indice de cœur n₁ = 1,50 et un indice de gaine n₂ = 1,47.</p>
+  <p>a) Vérifier que la condition de réflexion totale est remplie.</p>
+  <p>b) Calculer l'angle critique : \(\theta_c = \arcsin\!\left(\dfrac{n_2}{n_1}\right)\).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) n₁ = 1,50 &gt; n₂ = 1,47 → <strong>condition remplie</strong>.</p>
+    <p>b) \(\theta_c = \arcsin\!\left(\dfrac{1{,}47}{1{,}50}\right) = \arcsin(0{,}98) \approx \mathbf{78{,}5°}\)</p>
+    <p>Tout rayon arrivant avec un angle supérieur à 78,5° sera totalement réfléchi.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <p>Un signal électrique se propage dans un câble cuivre à environ v = 2 × 10⁸ m/s. Un signal parcourt un câble Ethernet de 80 m.</p>
+  <p>a) Calculer le temps de propagation du signal.</p>
+  <p>b) Comparer avec le temps que mettrait un signal sonore (340 m/s) pour parcourir la même distance.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(t = \dfrac{d}{v} = \dfrac{80}{2 \times 10^8} = 4 \times 10^{-7}\) s = <strong>0,4 µs</strong></p>
+    <p>b) \(t_{\text{son}} = \dfrac{80}{340} \approx 0{,}235\) s ≈ <strong>235 ms</strong></p>
+    <p>Le signal électrique est environ 588 000 fois plus rapide que le son.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Un menuisier agenceur doit transférer les fichiers de conception 3D d'un meuble (500 Mo = 4 000 Mbit) à l'atelier de fabrication via le réseau.</p>
+  <p>a) Calculer le temps de transfert avec une connexion WiFi à 50 Mbit/s.</p>
+  <p>b) Calculer le temps de transfert avec une connexion Ethernet filaire à 1 000 Mbit/s.</p>
+  <p>c) Conclure.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(t = \dfrac{4\,000}{50} = \mathbf{80}\) s ≈ 1 min 20 s</p>
+    <p>b) \(t = \dfrac{4\,000}{1\,000} = \mathbf{4}\) s</p>
+    <p>c) Le réseau filaire permet un transfert en 4 s contre 80 s en WiFi, soit <strong>20 fois plus rapide</strong>. Pour des fichiers volumineux de conception, le câble Ethernet est nettement plus efficace.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>Expliquer pourquoi le câble cuivre est sensible aux perturbations électromagnétiques et comment les câbles blindés (STP) réduisent ce problème.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>Le câble cuivre transporte des <strong>signaux électriques</strong> (courants). Les champs électromagnétiques parasites (moteurs, néons, câbles électriques voisins) peuvent induire des <strong>courants parasites</strong> dans le câble, ce qui perturbe le signal transmis (erreurs de données, ralentissements).</p>
+    <p>Les câbles blindés (STP = Shielded Twisted Pair) possèdent un <strong>écran métallique</strong> (feuille d'aluminium ou tresse de cuivre) autour des paires torsadées. Cet écran <strong>bloque les champs parasites</strong> extérieurs et protège le signal.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <p>Un architecte d'intérieur dimensionne le réseau de communication d'un magasin de meubles de 3 niveaux. Proposer un choix de technologie pour chaque usage et justifier :</p>
+  <ul>
+    <li>a) Liaison entre les 3 niveaux (backbone vertical)</li>
+    <li>b) Caisses enregistreuses et terminaux de paiement</li>
+    <li>c) Enceintes diffusant la musique d'ambiance</li>
+  </ul>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) <strong>Fibre optique</strong> : très haut débit, insensible aux parasites dans la gaine technique, longue distance entre étages.</p>
+    <p>b) <strong>Câble Ethernet (RJ45)</strong> : fiable et stable pour les transactions financières, pas de risque de coupure WiFi pendant un paiement.</p>
+    <p>c) <strong>Sans fil (Bluetooth ou WiFi)</strong> : pas besoin de câblage dédié, facile à déplacer selon l'aménagement du magasin, débit suffisant pour de l'audio.</p>
+  </div>
+</div>
+
 </div>
 
 </div><!-- fin .c -->

@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac}
 .pts{font-size:.82em;color:#718096;font-weight:normal}
+.sujet-header{background:var(--p);color:#fff;padding:.5em 1em;border-radius:6px;margin:1.5em 0 1em;font-size:1.15em}
 </style>
 </head>
 <body>
@@ -28,6 +29,7 @@
 <div class="diff-socle">
 <span class="tag-socle">Socle</span>
 <p><strong>Barème :</strong> 20 points</p>
+<h3 class="sujet-header">Sujet A</h3>
 
 <div class="exo">
   <h2>Question 1 <span class="pts">(4 points)</span></h2>
@@ -104,12 +106,90 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Le son est une onde mécanique. Il a besoin d'un milieu matériel (air, eau, solide) pour se propager. Il ne se propage pas dans le vide.</div>
+  <p>Compléter les phrases suivantes :</p>
+  <p>a) Contrairement à la lumière, le son ne se propage pas dans le ...</p>
+  <p>b) Le son se propage plus vite dans les ... que dans les gaz.</p>
+  <p>c) Dans l'air, la vitesse du son est d'environ ... m/s.</p>
+  <p>d) Les sons de fréquence supérieure à 20 000 Hz sont appelés des ...</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Le son ne se propage pas dans le <strong>vide</strong>.</p>
+    <p>b) Plus vite dans les <strong>solides</strong> que dans les gaz.</p>
+    <p>c) Environ <strong>340</strong> m/s.</p>
+    <p>d) Ce sont des <strong>ultrasons</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> \(d = v \times t\), donc \(t = \dfrac{d}{v}\) avec \(v_{\text{son}} = 340\) m/s.</div>
+  <p>Un ébéniste travaille à 680 m d'un chantier où une explosion retentit. Il voit le flash puis entend le bruit.</p>
+  <p>a) Écrire la formule : \(t = \dfrac{d}{v}\)</p>
+  <p>b) Calculer le temps : \(t = \dfrac{680}{340} = ...\) s</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(t = \dfrac{d}{v}\)</p>
+    <p>b) \(t = \dfrac{680}{340} = \mathbf{2}\) s</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Le seuil de danger est à 85 dB. Le seuil de douleur est à 120 dB.</div>
+  <p>Indiquer si les situations suivantes sont au-dessus ou en dessous du seuil de danger (85 dB) :</p>
+  <p>a) Ponceuse orbitale (80 dB) : au-dessus / en dessous ?</p>
+  <p>b) Tronçonneuse (110 dB) : au-dessus / en dessous ?</p>
+  <p>c) Perceuse (90 dB) : au-dessus / en dessous ?</p>
+  <p>d) Au-delà de ... dB, on atteint le seuil de douleur.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) 80 dB : <strong>en dessous</strong> du seuil de danger.</p>
+    <p>b) 110 dB : <strong>au-dessus</strong> du seuil de danger.</p>
+    <p>c) 90 dB : <strong>au-dessus</strong> du seuil de danger.</p>
+    <p>d) Au-delà de <strong>120</strong> dB, on atteint le seuil de douleur.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Un son de basse fréquence est grave. Un son de haute fréquence est aigu.</div>
+  <p>a) Un son de fréquence 50 Hz est-il grave ou aigu ?</p>
+  <p>b) Un son de fréquence 12 000 Hz est-il grave ou aigu ?</p>
+  <p>c) Un son de fréquence 15 Hz est-il audible par l'oreille humaine ? Comment appelle-t-on ce type de son ?</p>
+  <p>d) Un son de fréquence 25 000 Hz est-il audible ? Comment l'appelle-t-on ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) 50 Hz : son <strong>grave</strong>.</p>
+    <p>b) 12 000 Hz : son <strong>aigu</strong>.</p>
+    <p>c) 15 Hz : <strong>non audible</strong>. C'est un <strong>infrason</strong> (f &lt; 20 Hz).</p>
+    <p>d) 25 000 Hz : <strong>non audible</strong>. C'est un <strong>ultrason</strong> (f &gt; 20 000 Hz).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Le son se propage plus vite dans les solides que dans les liquides, et plus vite dans les liquides que dans les gaz.</div>
+  <p>Classer les milieux suivants du plus rapide au plus lent pour la propagation du son :</p>
+  <p>Eau — Acier — Vide — Air</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>Du plus rapide au plus lent :</p>
+    <p><strong>Acier</strong> (~5 000 m/s) → <strong>Eau</strong> (~1 500 m/s) → <strong>Air</strong> (~340 m/s) → <strong>Vide</strong> (0 m/s, le son ne se propage pas).</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= STANDARD ========================= -->
 <div class="diff-standard">
 <span class="tag-standard">Standard</span>
 <p><strong>Barème :</strong> 20 points</p>
+<h3 class="sujet-header">Sujet A</h3>
 
 <div class="exo">
   <h2>Question 1 <span class="pts">(4 points)</span></h2>
@@ -188,12 +268,92 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Un ébéniste travaille à 4 m d'une raboteuse dont le niveau sonore est de 95 dB à 1 m.</p>
+  <p>a) Rappeler de combien diminue le niveau sonore quand on double la distance.</p>
+  <p>b) Quel est le niveau sonore à 2 m ? Puis à 4 m ?</p>
+  <p>c) Est-ce encore au-dessus du seuil de danger ? Le port de protections est-il obligatoire ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Quand on double la distance, le niveau sonore diminue de <strong>6 dB</strong>.</p>
+    <p>b) À 2 m : \(95 - 6 = \mathbf{89}\) dB. À 4 m : \(89 - 6 = \mathbf{83}\) dB.</p>
+    <p>c) À 4 m, 83 dB &lt; 85 dB : c'est <strong>en dessous</strong> du seuil de danger. Le port de protections n'est pas obligatoire mais reste recommandé en cas d'exposition prolongée.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <p>Le son d'une ponceuse a une fréquence de 2 500 Hz. La vitesse du son dans l'air est de 340 m/s.</p>
+  <p>a) Calculer la longueur d'onde de ce son dans l'air.</p>
+  <p>b) Calculer la période de ce son.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\lambda = \dfrac{v}{f} = \dfrac{340}{2\,500} = \mathbf{0{,}136}\) m = 13,6 cm</p>
+    <p>b) \(T = \dfrac{1}{f} = \dfrac{1}{2\,500} = \mathbf{4 \times 10^{-4}}\) s = 0,4 ms</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Un menuisier agenceur se trouve à 100 m d'un chantier de démolition. Il voit une masse tomber puis entend le bruit 0,3 seconde plus tard.</p>
+  <p>a) Pourquoi voit-on l'impact avant d'entendre le bruit ?</p>
+  <p>b) Vérifier la distance du chantier par le calcul (vitesse du son = 340 m/s).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) La lumière se propage à \(3 \times 10^8\) m/s (quasi instantané), tandis que le son ne se propage qu'à 340 m/s. On voit l'impact <strong>presque instantanément</strong>, mais le son met du temps à nous parvenir.</p>
+    <p>b) \(d = v \times t = 340 \times 0{,}3 = \mathbf{102}\) m ≈ <strong>100 m</strong> (cohérent avec la distance estimée).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>Un technicien d'agencement compare deux types de portes pour isoler un bureau d'un atelier :</p>
+  <ul>
+    <li>Porte A : porte légère en contreplaqué → affaiblissement de 25 dB</li>
+    <li>Porte B : porte pleine en bois massif + joints → affaiblissement de 40 dB</li>
+  </ul>
+  <p>L'atelier a un niveau sonore de 85 dB.</p>
+  <p>a) Quel sera le niveau sonore dans le bureau avec la porte A ?</p>
+  <p>b) Quel sera le niveau sonore avec la porte B ?</p>
+  <p>c) Quelle porte recommander pour un confort de travail (niveau &lt; 50 dB) ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Avec porte A : \(85 - 25 = \mathbf{60}\) dB</p>
+    <p>b) Avec porte B : \(85 - 40 = \mathbf{45}\) dB</p>
+    <p>c) La <strong>porte B</strong> (bois massif + joints) est recommandée car elle permet d'atteindre 45 dB, inférieur au seuil de confort de 50 dB.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <p>Compléter le tableau comparatif entre le son et la lumière :</p>
+  <table>
+    <tr><th>Critère</th><th>Son</th><th>Lumière</th></tr>
+    <tr><td>Nature de l'onde</td><td>...</td><td>...</td></tr>
+    <tr><td>Besoin d'un milieu matériel</td><td>...</td><td>...</td></tr>
+    <tr><td>Vitesse dans l'air</td><td>...</td><td>...</td></tr>
+  </table>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <table>
+      <tr><th>Critère</th><th>Son</th><th>Lumière</th></tr>
+      <tr><td>Nature de l'onde</td><td><strong>Mécanique</strong></td><td><strong>Électromagnétique</strong></td></tr>
+      <tr><td>Besoin d'un milieu matériel</td><td><strong>Oui</strong></td><td><strong>Non</strong></td></tr>
+      <tr><td>Vitesse dans l'air</td><td><strong>~340 m/s</strong></td><td><strong>~3 x 10⁸ m/s</strong></td></tr>
+    </table>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= APPROFONDISSEMENT ========================= -->
 <div class="diff-appro">
 <span class="tag-appro">Approfondissement</span>
 <p><strong>Barème :</strong> 20 points</p>
+<h3 class="sujet-header">Sujet A</h3>
 
 <div class="exo">
   <h2>Question 1 <span class="pts">(4 points)</span></h2>
