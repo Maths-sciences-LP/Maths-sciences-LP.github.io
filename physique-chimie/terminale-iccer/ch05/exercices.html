@@ -650,6 +650,107 @@
   </div>
 </div>
 
+<!-- ───── Appro – Exercice 27 ───── -->
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 27</span>
+    <span class="exo-title">Pression dans un réseau de distribution d'eau sanitaire</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
+  <p>Un plombier chauffagiste raccorde un immeuble de 5 étages au réseau d'eau potable. La pression de distribution au pied de l'immeuble est \(P_0 = 4\ \text{bar}\). Chaque étage a une hauteur de 3 m. L'appartement le plus haut se situe à \(z = 15\ \text{m}\) au-dessus du point de raccordement. On donne \(\rho_{\text{eau}} = 1\,000\ \text{kg/m}^3\), \(g = 9{,}81\ \text{m/s}^2\).</p>
+  <p class="q"><strong>1.</strong> Calculer la pression disponible à chaque étage (du 1er au 5e). Présenter les résultats dans un tableau.</p>
+  <p class="q"><strong>2.</strong> La pression minimale pour un bon fonctionnement des robinets est \(P_{\text{min}} = 1\ \text{bar}\). À partir de quel étage la pression est-elle insuffisante ?</p>
+  <p class="q"><strong>3.</strong> On installe un surpresseur qui porte la pression au pied à \(6\ \text{bar}\). Recalculer la pression au 5e étage. La condition est-elle satisfaite ?</p>
+  <p class="q"><strong>4.</strong> La pression au rez-de-chaussée ne doit pas dépasser \(5\ \text{bar}\) (norme NF). Proposer une solution technique pour respecter simultanément les deux contraintes.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \(\Delta P\) par étage = \(\rho g h = 1\,000 \times 9{,}81 \times 3 = 29\,430\ \text{Pa} \approx 0{,}294\ \text{bar}\)</p>
+    <table class="styled-table">
+      <thead><tr><th>Étage</th><th>Hauteur (m)</th><th>Pression (bar)</th></tr></thead>
+      <tbody>
+        <tr><td>RDC</td><td>0</td><td>\(4{,}000\)</td></tr>
+        <tr><td>1er</td><td>3</td><td>\(3{,}706\)</td></tr>
+        <tr><td>2e</td><td>6</td><td>\(3{,}411\)</td></tr>
+        <tr><td>3e</td><td>9</td><td>\(3{,}117\)</td></tr>
+        <tr><td>4e</td><td>12</td><td>\(2{,}823\)</td></tr>
+        <tr><td>5e</td><td>15</td><td>\(2{,}529\)</td></tr>
+      </tbody>
+    </table>
+    <p><strong>2.</strong> La pression est toujours supérieure à 1 bar : <strong>aucun étage n'est insuffisant</strong> avec 4 bar au pied.</p>
+    <p><strong>3.</strong> \(P_{5\text{e}} = 6 - \dfrac{1\,000 \times 9{,}81 \times 15}{10^5} = 6 - 1{,}472 = \mathbf{4{,}528\ \text{bar}}\). La condition \(P > 1\ \text{bar}\) est largement satisfaite.</p>
+    <p><strong>4.</strong> Installer un <strong>réducteur de pression</strong> au rez-de-chaussée réglé à 5 bar, et un surpresseur en amont. Autre solution : installer des réducteurs individuels par palier.</p>
+  </div>
+</div>
+
+<!-- ───── Appro – Exercice 28 ───── -->
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 28</span>
+    <span class="exo-title">Choix d'un vase d'expansion pour circuit solaire</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
+  <p>Un installateur en énergies renouvelables dimensionne un vase d'expansion pour un circuit solaire thermique. Le circuit contient \(V_{\text{fluide}} = 25\ \text{L}\) d'un mélange eau-glycol (\(\beta = 5{,}2 \times 10^{-4}\ \text{K}^{-1}\)). En stagnation solaire, le fluide peut atteindre 150 °C (température de remplissage : 20 °C). La pression de gonflage du vase est \(P_1 = 2{,}5\ \text{bar}\) et la soupape est tarée à \(P_2 = 6\ \text{bar}\).</p>
+  <p class="q"><strong>1.</strong> Calculer \(\Delta T\) et le volume d'expansion \(\Delta V = V_{\text{fluide}} \times \beta \times \Delta T\).</p>
+  <p class="q"><strong>2.</strong> En utilisant la formule \(V_{\text{vase}} = \Delta V \times \dfrac{P_2}{P_2 - P_1}\), calculer le volume minimal du vase.</p>
+  <p class="q"><strong>3.</strong> En stagnation, le fluide peut se vaporiser et le volume de vapeur est environ 3 fois le volume liquide évaporé. Si 10 % du fluide se vaporise, quel volume supplémentaire faut-il prévoir ?</p>
+  <p class="q"><strong>4.</strong> Proposer un volume commercial (8 L, 12 L, 18 L, 25 L, 35 L) en majorant de 30 % le volume total nécessaire.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \(\Delta T = 150 - 20 = 130\ \text{K}\)
+    <br>\(\Delta V = 25 \times 5{,}2 \times 10^{-4} \times 130 = \mathbf{1{,}69\ \text{L}}\)</p>
+    <p><strong>2.</strong> \(V_{\text{vase}} = 1{,}69 \times \dfrac{6}{6 - 2{,}5} = 1{,}69 \times 1{,}714 = \mathbf{2{,}90\ \text{L}}\)</p>
+    <p><strong>3.</strong> Volume évaporé : \(0{,}10 \times 25 = 2{,}5\ \text{L}\). Volume de vapeur : \(3 \times 2{,}5 = 7{,}5\ \text{L}\). Volume supplémentaire : \(7{,}5 - 2{,}5 = \mathbf{5{,}0\ \text{L}}\).</p>
+    <p><strong>4.</strong> Volume total : \(2{,}90 + 5{,}0 = 7{,}90\ \text{L}\). Avec majoration : \(7{,}90 \times 1{,}3 = 10{,}3\ \text{L}\). On choisit <strong>12 L</strong>.</p>
+  </div>
+</div>
+
+<!-- ───── Appro – Exercice 29 ───── -->
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 29</span>
+    <span class="exo-title">Manomètre différentiel et perte de charge</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
+  <p>Un technicien de maintenance énergétique mesure la perte de charge d'un échangeur thermique à l'aide d'un manomètre différentiel en U rempli de mercure (\(\rho_{\text{Hg}} = 13\,600\ \text{kg/m}^3\)). Le fluide du circuit est de l'eau (\(\rho_{\text{eau}} = 1\,000\ \text{kg/m}^3\)). La dénivellation du mercure dans le tube en U est \(\Delta h = 12\ \text{cm}\). On prend \(g = 9{,}81\ \text{m/s}^2\).</p>
+  <p class="q"><strong>1.</strong> En écrivant l'équilibre des pressions au niveau du mercure dans les deux branches du tube, montrer que la différence de pression est :
+  <br>\(\Delta P = (\rho_{\text{Hg}} - \rho_{\text{eau}}) \times g \times \Delta h\)</p>
+  <p class="q"><strong>2.</strong> Calculer \(\Delta P\) en Pa puis en mbar.</p>
+  <p class="q"><strong>3.</strong> La perte de charge maximale admissible est 200 mbar. L'échangeur est-il dans les normes ?</p>
+  <p class="q"><strong>4.</strong> Si l'échangeur est encrassé, la perte de charge augmente. Quelle dénivellation \(\Delta h\) correspondrait à la limite de 200 mbar ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> Dans la branche gauche (entrée) : \(P_1 + \rho_{\text{eau}} \cdot g \cdot h_1 = P_2 + \rho_{\text{eau}} \cdot g \cdot h_2 + \rho_{\text{Hg}} \cdot g \cdot \Delta h\). En simplifiant (même hauteur d'eau) : \(\Delta P = P_1 - P_2 = (\rho_{\text{Hg}} - \rho_{\text{eau}}) \cdot g \cdot \Delta h\).</p>
+    <p><strong>2.</strong> \(\Delta P = (13\,600 - 1\,000) \times 9{,}81 \times 0{,}12 = 12\,600 \times 9{,}81 \times 0{,}12 = \mathbf{14\,833\ \text{Pa}} \approx \mathbf{148{,}3\ \text{mbar}}\)</p>
+    <p><strong>3.</strong> \(148{,}3\ \text{mbar} < 200\ \text{mbar}\) : l'échangeur est <strong>dans les normes</strong>.</p>
+    <p><strong>4.</strong> \(\Delta h = \dfrac{\Delta P}{(\rho_{\text{Hg}} - \rho_{\text{eau}}) \times g} = \dfrac{20\,000}{12\,600 \times 9{,}81} = \dfrac{20\,000}{123\,606} \approx \mathbf{0{,}162\ \text{m}} = 16{,}2\ \text{cm}\)</p>
+  </div>
+</div>
+
+<!-- ───── Appro – Exercice 30 ───── -->
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 30</span>
+    <span class="exo-title">Pompe à chaleur géothermique — pression dans le forage</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
+  <p>Un ingénieur thermicien dimensionne un circuit de captage vertical pour une pompe à chaleur géothermique. Le forage descend à \(h = 100\ \text{m}\) de profondeur. Le circuit est rempli d'un mélange eau-glycol (\(\rho = 1\,050\ \text{kg/m}^3\)). La pression de remplissage en surface est \(P_0 = 2{,}5\ \text{bar}\). On prend \(g = 9{,}81\ \text{m/s}^2\).</p>
+  <p class="q"><strong>1.</strong> Calculer la pression absolue au fond du forage en Pa et en bar.</p>
+  <p class="q"><strong>2.</strong> Le tube en PEHD (polyéthylène haute densité) supporte une pression de service de 16 bar. Vérifier que le tube résiste à la pression au fond.</p>
+  <p class="q"><strong>3.</strong> On envisage un forage plus profond à \(h = 200\ \text{m}\). Calculer la pression au fond. Le même tube convient-il encore ?</p>
+  <p class="q"><strong>4.</strong> Le vase d'expansion en surface est gonflé à \(P_1 = 2{,}5\ \text{bar}\) avec un volume de gaz \(V_1 = 18\ \text{L}\). En fonctionnement, la température du fluide passe de 5 °C à 35 °C et le volume du fluide augmente de \(\Delta V = 4{,}2\ \text{L}\). Calculer la nouvelle pression dans le vase et vérifier qu'elle reste sous la pression de tarage de la soupape (\(P_{\text{sécu}} = 6\ \text{bar}\)).</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \(P = P_0 + \rho g h = 2{,}5 \times 10^5 + 1\,050 \times 9{,}81 \times 100\)
+    <br>\(= 250\,000 + 1\,030\,050 = \mathbf{1\,280\,050\ \text{Pa}} \approx \mathbf{12{,}8\ \text{bar}}\)</p>
+    <p><strong>2.</strong> \(12{,}8\ \text{bar} < 16\ \text{bar}\) : le tube PEHD <strong>résiste</strong>. Marge : \(16 - 12{,}8 = 3{,}2\ \text{bar}\).</p>
+    <p><strong>3.</strong> \(P = 2{,}5 \times 10^5 + 1\,050 \times 9{,}81 \times 200 = 250\,000 + 2\,060\,100 = \mathbf{2\,310\,100\ \text{Pa}} \approx \mathbf{23{,}1\ \text{bar}}\).
+    <br>\(23{,}1 > 16\) : le tube PEHD <strong>ne convient plus</strong>. Il faut un tube PN25 ou un tube en acier.</p>
+    <p><strong>4.</strong> Volume de gaz après expansion : \(V_2 = V_1 - \Delta V = 18 - 4{,}2 = 13{,}8\ \text{L}\).
+    <br>\(P_2 = \dfrac{P_1 \times V_1}{V_2} = \dfrac{2{,}5 \times 18}{13{,}8} \approx \mathbf{3{,}26\ \text{bar}}\).
+    <br>\(3{,}26 < 6\) : la pression reste <strong>sous le tarage de la soupape</strong>.</p>
+  </div>
+</div>
+
 <!-- ===== À RETENIR ===== -->
 <div class="retenir">
   <strong>À retenir – Pression dans un fluide immobile</strong>
