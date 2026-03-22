@@ -756,10 +756,10 @@
 <div class="diff-appro">
 <span class="tag-appro">Approfondissement</span>
 
-<!-- EXERCICE 7 -->
+<!-- EXERCICE 13 -->
 <div class="exo">
   <div class="exo-header">
-    <span class="exo-num">Exercice 7</span>
+    <span class="exo-num">Exercice 13</span>
     <span class="exo-title">Efficacité des EPI auditifs en atelier bois</span>
     <span class="diff diff-3">Niveau 3</span>
   </div>
@@ -932,6 +932,221 @@
     <p><strong>3.</strong> Sans la ponceuse : \(10\log(10^{9{,}8} + 10^{8{,}5} + 10^{9{,}2}) = 10\log(8{,}211 \times 10^9) \approx \mathbf{99{,}1\ dB}\). Gain : seulement 0,5 dB. Arrêter la ponceuse ne change presque rien car la scie (98 dB) domine largement.</p>
     <p><strong>4.</strong> La <strong>source la plus intense</strong> (scie à 98 dB) détermine presque entièrement le niveau global. Pour réduire efficacement le niveau, il faut prioritairement agir sur la source dominante (capot d'insonorisation, découplage vibratoire, remplacement par un modèle moins bruyant).</p>
     <p><strong>5.</strong> \(t_{\max} = 8 \times 10^{(85-99)/10} = 8 \times 10^{-1{,}4} \approx 8 \times 0{,}0398 \approx \mathbf{0{,}32\ h \approx 19\ \text{min}}\). Au-delà de 19 minutes sans protection, la dose journalière réglementaire est dépassée.</p>
+  </div>
+</div>
+
+<!-- EXERCICE 12 (Appro) -->
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 12</span>
+    <span class="exo-title">Durée maximale d'exposition – Calcul réglementaire</span>
+    <span class="diff diff-3">Niveau 3</span>
+  </div>
+  <p>La réglementation (Code du travail) fixe la valeur limite d'exposition quotidienne à 85 dB(A) sur 8 heures. Pour un niveau supérieur, la durée d'exposition autorisée diminue selon :
+    \[t_{\max} = 8 \times 10^{(85 - L)/10} \text{ heures}\]
+  </p>
+  <p>Un technicien d'agencement travaille successivement sur trois postes dans la journée :</p>
+  <table>
+    <tr><th>Poste</th><th>Niveau (dB)</th><th>Durée</th></tr>
+    <tr><td>Débit de panneaux (scie à format)</td><td>92</td><td>3 h</td></tr>
+    <tr><td>Assemblage (cloueuse, visseuse)</td><td>82</td><td>3 h</td></tr>
+    <tr><td>Finition (ponçage manuel)</td><td>78</td><td>2 h</td></tr>
+  </table>
+  <p class="q"><strong>1.</strong> Calculer \(t_{\max}\) pour chaque poste.</p>
+  <p class="q"><strong>2.</strong> Pour chaque poste, calculer la fraction de dose journalière utilisée : \(d_i = \dfrac{t_i}{t_{\max,i}}\).</p>
+  <p class="q"><strong>3.</strong> Calculer la dose totale \(D = d_1 + d_2 + d_3\). La réglementation est respectée si \(D \leq 1\). Est-ce le cas ?</p>
+  <p class="q"><strong>4.</strong> L'entreprise installe un capot acoustique sur la scie (gain : −5 dB). Recalculer la dose totale avec cette amélioration.</p>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> Calcul de \(t_{\max}\) :
+      <br>• Scie : \(t_{\max} = 8 \times 10^{(85-92)/10} = 8 \times 10^{-0{,}7} = 8 \times 0{,}200 = \mathbf{1{,}60 \text{ h}}\)
+      <br>• Assemblage : \(t_{\max} = 8 \times 10^{(85-82)/10} = 8 \times 10^{0{,}3} = 8 \times 2{,}0 = \mathbf{16{,}0 \text{ h}}\)
+      <br>• Finition : \(t_{\max} = 8 \times 10^{(85-78)/10} = 8 \times 10^{0{,}7} = 8 \times 5{,}01 = \mathbf{40{,}1 \text{ h}}\)
+    </p>
+    <p><strong>2.</strong> Fractions de dose :
+      <br>• \(d_1 = \dfrac{3}{1{,}60} = 1{,}875\)
+      <br>• \(d_2 = \dfrac{3}{16{,}0} = 0{,}188\)
+      <br>• \(d_3 = \dfrac{2}{40{,}1} = 0{,}050\)
+    </p>
+    <p><strong>3.</strong> \(D = 1{,}875 + 0{,}188 + 0{,}050 = \mathbf{2{,}11}\). La dose dépasse largement 1 → la réglementation n'est <strong>pas respectée</strong>. Le poste de débit est responsable de 89 % de la dose.</p>
+    <p><strong>4.</strong> Avec capot : scie à 92 − 5 = 87 dB.
+      <br>\(t_{\max} = 8 \times 10^{(85-87)/10} = 8 \times 10^{-0{,}2} = 8 \times 0{,}631 = 5{,}05\) h.
+      <br>\(d_1 = \dfrac{3}{5{,}05} = 0{,}594\).
+      <br>\(D = 0{,}594 + 0{,}188 + 0{,}050 = \mathbf{0{,}83}\). La dose est inférieure à 1 → la réglementation est <strong>respectée</strong> grâce au capot acoustique.
+    </p>
+  </div>
+</div>
+
+<!-- EXERCICE 13 (Appro) -->
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 13</span>
+    <span class="exo-title">Paroi composite – Calcul d'affaiblissement global</span>
+    <span class="diff diff-3">Niveau 3</span>
+  </div>
+  <p>Un aménageur d'intérieur conçoit la paroi d'une salle de réunion adjacente à un atelier de production (\(L_1 = 92 \text{ dB}\)). La paroi a une surface totale \(S = 15 \text{ m}^2\) et comporte :</p>
+  <table>
+    <tr><th>Élément</th><th>Surface (m²)</th><th>R (dB)</th></tr>
+    <tr><td>Mur en béton</td><td>10</td><td>50</td></tr>
+    <tr><td>Fenêtre double vitrage</td><td>3</td><td>35</td></tr>
+    <tr><td>Porte acoustique</td><td>2</td><td>30</td></tr>
+  </table>
+  <p>Formule de l'affaiblissement global :
+    \[R_\text{global} = -10 \cdot \log\!\left(\frac{\sum S_i \cdot 10^{-R_i/10}}{\sum S_i}\right)\]
+  </p>
+  <p class="q"><strong>1.</strong> Calculer \(S_i \cdot 10^{-R_i/10}\) pour chaque élément.</p>
+  <p class="q"><strong>2.</strong> En déduire \(R_\text{global}\).</p>
+  <p class="q"><strong>3.</strong> Calculer le niveau \(L_2\) dans la salle de réunion. L'objectif de 65 dB est-il atteint ?</p>
+  <p class="q"><strong>4.</strong> On remplace la porte acoustique (\(R = 30\) dB) par une porte standard (\(R = 20\) dB). Recalculer \(R_\text{global}\) et commenter l'impact.</p>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> Calcul pour chaque élément :
+      <br>• Béton : \(10 \times 10^{-50/10} = 10 \times 10^{-5} = 1{,}0 \times 10^{-4}\)
+      <br>• Fenêtre : \(3 \times 10^{-35/10} = 3 \times 10^{-3{,}5} = 3 \times 3{,}162 \times 10^{-4} = 9{,}487 \times 10^{-4}\)
+      <br>• Porte : \(2 \times 10^{-30/10} = 2 \times 10^{-3} = 2{,}0 \times 10^{-3}\)
+    </p>
+    <p><strong>2.</strong>
+      \[\sum = 1{,}0 \times 10^{-4} + 9{,}487 \times 10^{-4} + 2{,}0 \times 10^{-3} = 3{,}049 \times 10^{-3}\]
+      \[R_\text{global} = -10 \cdot \log\!\left(\frac{3{,}049 \times 10^{-3}}{15}\right) = -10 \cdot \log(2{,}033 \times 10^{-4}) = -10 \times (-3{,}692) \approx \mathbf{36{,}9 \text{ dB}}\]
+    </p>
+    <p><strong>3.</strong> \(L_2 = 92 - 36{,}9 = 55{,}1\) dB &lt; 65 dB → l'objectif est <strong>atteint</strong>.</p>
+    <p><strong>4.</strong> Avec porte standard (\(R = 20\) dB) :
+      <br>Porte : \(2 \times 10^{-2} = 0{,}02\).
+      <br>\(\sum = 1{,}0 \times 10^{-4} + 9{,}487 \times 10^{-4} + 0{,}02 = 0{,}02105\)
+      <br>\(R_\text{global} = -10 \cdot \log(0{,}02105/15) = -10 \cdot \log(1{,}403 \times 10^{-3}) \approx \mathbf{28{,}5 \text{ dB}}\)
+      <br>\(L_2 = 92 - 28{,}5 = 63{,}5\) dB. L'objectif est encore atteint mais de justesse. La porte standard fait chuter \(R_\text{global}\) de 36,9 à 28,5 dB (−8,4 dB). La <strong>porte est le maillon faible</strong> : bien que ne représentant que 13 % de la surface, elle dégrade fortement l'isolation.
+    </p>
+  </div>
+</div>
+
+<!-- EXERCICE 14 (Appro) -->
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 14</span>
+    <span class="exo-title">De l'intensité au niveau – Sens inverse et puissances de 10</span>
+    <span class="diff diff-3">Niveau 3</span>
+  </div>
+  <p>Un ingénieur acousticien effectue des relevés dans un atelier de menuiserie à différents endroits :</p>
+  <table>
+    <tr><th>Point de mesure</th><th>Intensité sonore (W/m²)</th></tr>
+    <tr><td>A – Près de la dégauchisseuse</td><td>\(2 \times 10^{-3}\)</td></tr>
+    <tr><td>B – Zone d'assemblage</td><td>\(5 \times 10^{-6}\)</td></tr>
+    <tr><td>C – Bureau vitré</td><td>\(8 \times 10^{-8}\)</td></tr>
+    <tr><td>D – Salle de pause</td><td>\(3 \times 10^{-9}\)</td></tr>
+  </table>
+  <p class="q"><strong>1.</strong> Calculer le niveau sonore \(L\) en chaque point.</p>
+  <p class="q"><strong>2.</strong> Classer les zones de la plus bruyante à la plus calme.</p>
+  <p class="q"><strong>3.</strong> Pour quelles zones le port de protections auditives est-il obligatoire ?</p>
+  <p class="q"><strong>4.</strong> Calculer le rapport d'intensité entre le point A et le point D. Combien de fois l'intensité est-elle plus grande près de la machine ?</p>
+  <p class="q"><strong>5.</strong> Si une cloison de \(R = 40\) dB sépare la dégauchisseuse du bureau vitré, vérifier que le niveau au point C est cohérent.</p>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> Niveaux sonores :
+      <br>• A : \(L_A = 10 \cdot \log\!\left(\dfrac{2 \times 10^{-3}}{10^{-12}}\right) = 10 \cdot \log(2 \times 10^{9}) = 10 \times 9{,}301 \approx \mathbf{93 \text{ dB}}\)
+      <br>• B : \(L_B = 10 \cdot \log(5 \times 10^{6}) = 10 \times 6{,}699 \approx \mathbf{67 \text{ dB}}\)
+      <br>• C : \(L_C = 10 \cdot \log(8 \times 10^{4}) = 10 \times 4{,}903 \approx \mathbf{49 \text{ dB}}\)
+      <br>• D : \(L_D = 10 \cdot \log(3 \times 10^{3}) = 10 \times 3{,}477 \approx \mathbf{35 \text{ dB}}\)
+    </p>
+    <p><strong>2.</strong> Classement : A (93 dB) &gt; B (67 dB) &gt; C (49 dB) &gt; D (35 dB).</p>
+    <p><strong>3.</strong> Le port de protections auditives est obligatoire au <strong>point A</strong> (93 dB &gt; 85 dB). Les autres zones sont en dessous du seuil.</p>
+    <p><strong>4.</strong>
+      \[\frac{I_A}{I_D} = \frac{2 \times 10^{-3}}{3 \times 10^{-9}} = \frac{2}{3} \times 10^{6} \approx \mathbf{667\,000}\]
+      L'intensité au point A est environ 667 000 fois plus grande qu'en salle de pause. Pourtant, la différence en dB n'est « que » de 58 dB.
+    </p>
+    <p><strong>5.</strong> Si \(R = 40\) dB entre A et C : \(L_C = L_A - R = 93 - 40 = 53\) dB. La mesure donne 49 dB, soit un écart de 4 dB. Cela peut s'expliquer par la distance (le bureau est éloigné de la machine) et l'absorption par le mobilier du bureau. L'ordre de grandeur est cohérent.</p>
+  </div>
+</div>
+
+<!-- EXERCICE 15 (Appro) -->
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 15</span>
+    <span class="exo-title">Optimisation acoustique d'un atelier – Étude complète</span>
+    <span class="diff diff-3">Niveau 3</span>
+  </div>
+  <p>Un chef d'atelier de menuiserie doit rendre son atelier conforme à la réglementation. L'atelier comporte 3 machines fonctionnant simultanément :</p>
+  <table>
+    <tr><th>Machine</th><th>Niveau individuel (dB)</th></tr>
+    <tr><td>Toupie</td><td>96</td></tr>
+    <tr><td>Scie circulaire</td><td>93</td></tr>
+    <tr><td>Aspiration centralisée</td><td>80</td></tr>
+  </table>
+  <p class="q"><strong>1.</strong> Calculer le niveau sonore total lorsque les 3 machines fonctionnent simultanément.
+    \[L_\text{total} = 10 \cdot \log\!\left(10^{L_1/10} + 10^{L_2/10} + 10^{L_3/10}\right)\]
+  </p>
+  <p class="q"><strong>2.</strong> Le chef d'atelier encoffre la toupie avec un capot de \(R = 15\) dB. Calculer le nouveau niveau de la toupie, puis le nouveau niveau total.</p>
+  <p class="q"><strong>3.</strong> On ajoute des panneaux absorbants au plafond qui réduisent le niveau global de 4 dB supplémentaires. Quel est le niveau final ?</p>
+  <p class="q"><strong>4.</strong> L'objectif est 85 dB. Est-il atteint ? Si non, quelle action supplémentaire proposer ?</p>
+  <p class="q"><strong>5.</strong> Quel est le coût-efficacité de chaque mesure (en dB gagnés) ? Laquelle est la plus « rentable » en termes de réduction acoustique ?</p>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong>
+      \[10^{96/10} = 3{,}981 \times 10^{9} \quad;\quad 10^{93/10} = 1{,}995 \times 10^{9} \quad;\quad 10^{80/10} = 10^{8}\]
+      \[L_\text{total} = 10 \cdot \log(3{,}981 \times 10^{9} + 1{,}995 \times 10^{9} + 10^{8}) = 10 \cdot \log(6{,}076 \times 10^{9})\]
+      \[= 10 \times 9{,}784 \approx \mathbf{97{,}8 \text{ dB}}\]
+    </p>
+    <p><strong>2.</strong> Toupie encoffrée : \(96 - 15 = 81\) dB.
+      \[L_\text{total} = 10 \cdot \log(10^{8{,}1} + 10^{9{,}3} + 10^{8})\]
+      \[= 10 \cdot \log(1{,}259 \times 10^{8} + 1{,}995 \times 10^{9} + 10^{8}) = 10 \cdot \log(2{,}221 \times 10^{9}) \approx \mathbf{93{,}5 \text{ dB}}\]
+      Gain : 97,8 − 93,5 = 4,3 dB.
+    </p>
+    <p><strong>3.</strong> Avec panneaux absorbants : \(93{,}5 - 4 = \mathbf{89{,}5 \text{ dB}}\).</p>
+    <p><strong>4.</strong> 89,5 dB &gt; 85 dB → l'objectif n'est <strong>pas encore atteint</strong>. Il manque 4,5 dB. Actions supplémentaires possibles :
+      <br>• Encoffrer aussi la scie circulaire (source dominante restante à 93 dB).
+      <br>• Installer des silencieux sur l'aspiration.
+      <br>• Remplacer la scie par un modèle moins bruyant.
+    </p>
+    <p><strong>5.</strong> Bilan coût-efficacité :
+      <br>• Encoffrement toupie : −4,3 dB (action la plus efficace car elle cible la source dominante).
+      <br>• Panneaux absorbants : −4 dB (bonne efficacité, agit sur l'ensemble de l'atelier).
+      <br>• Total : −8,3 dB. La mesure la plus rentable est l'encoffrement de la source la plus bruyante. En acoustique, il faut toujours traiter la source dominante en priorité.
+    </p>
+  </div>
+</div>
+
+<!-- EXERCICE 16 (Appro) -->
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 16</span>
+    <span class="exo-title">Comparaison isolation – Loi de masse vs paroi double</span>
+    <span class="diff diff-3">Niveau 3</span>
+  </div>
+  <p>Un architecte d'intérieur compare deux approches pour isoler un showroom (\(L_\text{objectif} \leq 50\) dB) d'un atelier de fabrication de mobilier (\(L_1 = 95\) dB).</p>
+  <p><strong>Approche 1 — Paroi simple lourde :</strong> mur en béton plein. On part de \(R_0 = 36\) dB pour une masse surfacique de \(m_{s0} = 100 \text{ kg/m}^2\). La loi de masse donne +6 dB par doublement de masse.</p>
+  <p><strong>Approche 2 — Paroi double légère :</strong> deux plaques de placo (chacune 13 mm, 11 kg/m²) séparées par 70 mm de laine de roche. Masse surfacique totale : 22 kg/m². Indice mesuré : \(R = 48\) dB.</p>
+
+  <p class="q"><strong>1.</strong> Calculer le \(R_\text{min}\) nécessaire.</p>
+  <p class="q"><strong>2.</strong> Approche 1 : quelle masse surfacique faut-il pour atteindre \(R_\text{min}\) par la loi de masse seule ? Calculer le nombre de doublements nécessaires.</p>
+  <p class="q"><strong>3.</strong> Approche 2 : la paroi double atteint-elle l'objectif ? Calculer le niveau dans le showroom.</p>
+  <p class="q"><strong>4.</strong> Comparer les masses surfaciques des deux solutions. Calculer le rapport \(\dfrac{m_{s,\text{béton}}}{m_{s,\text{double paroi}}}\).</p>
+  <p class="q"><strong>5.</strong> En déduire pourquoi les parois doubles sont systématiquement préférées en acoustique du bâtiment.</p>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \(R_\text{min} = 95 - 50 = \mathbf{45 \text{ dB}}\)</p>
+    <p><strong>2.</strong> Il faut passer de 36 dB à 45 dB, soit \(\Delta R = 9\) dB.
+      <br>Nombre de doublements : \(\dfrac{9}{6} = 1{,}5\).
+      <br>\(m_s = 100 \times 2^{1{,}5} = 100 \times 2{,}83 \approx \mathbf{283 \text{ kg/m}^2}\).
+      <br>Cela correspond à un mur béton de ~12 cm d'épaisseur, très lourd.
+    </p>
+    <p><strong>3.</strong> \(R = 48\) dB &ge; 45 dB → <strong>oui</strong>, l'objectif est atteint.
+      \[L_2 = 95 - 48 = \mathbf{47 \text{ dB}}\]
+      Marge de 3 dB par rapport à l'objectif.
+    </p>
+    <p><strong>4.</strong>
+      \[\frac{m_{s,\text{béton}}}{m_{s,\text{double}}} = \frac{283}{22} \approx \mathbf{12{,}9}\]
+      Le mur en béton est <strong>presque 13 fois plus lourd</strong> pour un résultat acoustique inférieur (45 dB vs 48 dB).
+    </p>
+    <p><strong>5.</strong> Les parois doubles sont préférées car :
+      <br>• Elles offrent une <strong>meilleure isolation par unité de masse</strong> grâce à la discontinuité mécanique (lame d'air, matériau absorbant) qui brise la transmission.
+      <br>• Elles sont <strong>beaucoup plus légères</strong>, réduisant les contraintes sur la structure du bâtiment.
+      <br>• Elles sont <strong>plus rapides et moins coûteuses</strong> à mettre en œuvre.
+      <br>• La loi de masse seule est inefficace : il faudrait des masses irréalistes pour atteindre de hauts niveaux d'isolation.
+    </p>
   </div>
 </div>
 
