@@ -1549,6 +1549,95 @@
   </details>
 </div>
 
+<!-- EX A10 -->
+<div class="exo">
+  <div class="exo-num">Exercice 17 ⭐⭐</div>
+  <div class="exo-titre">Optimisation d'un devis — double contrainte</div>
+  <span class="context-tag">🔨 Menuiserie — Devis</span>
+  <div class="enonce">
+    Un métreur prépare un devis pour la pose de parquet dans un couloir rectangulaire. La longueur du couloir est \(L\) mètres et la largeur est fixée à <strong>1,20 m</strong>. Le client impose deux contraintes :<br>
+    <ul>
+      <li>Le coût total ne doit pas dépasser <strong>960 €</strong>. Le parquet coûte <strong>35 €/m²</strong> et la pose <strong>15 €/m²</strong>.</li>
+      <li>La surface minimale est de <strong>6 m²</strong> (en dessous, le poseur refuse le chantier).</li>
+    </ul>
+    <strong>1.</strong> Exprimer la surface \(S\) et le coût total \(C\) en fonction de \(L\).<br>
+    <strong>2.</strong> Écrire le système de deux inéquations traduisant les contraintes.<br>
+    <strong>3.</strong> Résoudre chaque inéquation séparément.<br>
+    <strong>4.</strong> Déterminer l'ensemble des valeurs de \(L\) satisfaisant les deux contraintes. Écrire la solution sous forme d'intervalle.<br>
+    <strong>5.</strong> Le client souhaite un couloir de 18 m. Est-ce réalisable dans le budget ?
+  </div>
+  <div class="zone-rep">
+    <label>Ma démarche :</label>
+    <textarea placeholder="1. S = 1,2L ; C = (35+15)×1,2L = ...&#10;2. Système : { C ≤ 960 , S ≥ 6 }&#10;3-4. ...&#10;5. ..."></textarea>
+  </div>
+  <details class="corr-wrap">
+    <summary>▶ Voir la correction</summary>
+    <div class="corr-body">
+      <strong>1.</strong> \(S = 1{,}2L\) m² et \(C = (35 + 15) \times 1{,}2L = 60L\) €.
+
+      <strong>2.</strong> Système :
+      \[\begin{cases} 60L \leq 960 \\ 1{,}2L \geq 6 \end{cases}\]
+
+      <strong>3.</strong>
+      <ul style="padding-left:18px;margin:6px 0">
+        <li>Inéq. 1 : \(60L \leq 960 \implies L \leq 16\)</li>
+        <li>Inéq. 2 : \(1{,}2L \geq 6 \implies L \geq 5\)</li>
+      </ul>
+
+      <strong>4.</strong> Intersection de \(]-\infty ; 16]\) et \([5 ; +\infty[\) :
+      <div class="corr-rep">✔ \(L \in [5 ; 16]\). Le couloir doit mesurer entre <strong>5 m et 16 m</strong>.</div>
+
+      <strong>5.</strong> Pour \(L = 18\) : \(C = 60 \times 18 = 1080\) € &gt; 960 €.
+      <div class="corr-rep">✔ Non, un couloir de 18 m dépasse le budget de 120 €. Il faudrait réduire à 16 m maximum.</div>
+      <div class="att-corr">📌 Un système d'inéquations peut donner un intervalle borné : ici, les deux contraintes limitent \(L\) par le haut ET par le bas.</div>
+    </div>
+  </details>
+</div>
+
+<!-- EX A11 -->
+<div class="exo">
+  <div class="exo-num">Exercice 18 ⭐⭐</div>
+  <div class="exo-titre">Bilan énergétique — panneaux solaires vs réseau</div>
+  <span class="context-tag">☀️ Énergie — Développement durable</span>
+  <div class="enonce">
+    Un particulier compare deux solutions pour alimenter son atelier :<br>
+    <ul>
+      <li><strong>Réseau EDF :</strong> 0,25 €/kWh (pas d'investissement initial).</li>
+      <li><strong>Panneaux solaires :</strong> investissement de <strong>4 200 €</strong>, puis un coût de fonctionnement de <strong>0,05 €/kWh</strong>.</li>
+    </ul>
+    On note \(x\) la consommation annuelle en kWh.<br><br>
+    <strong>1.</strong> Exprimer le coût annuel de chaque solution en fonction de \(x\).<br>
+    <strong>2.</strong> Pour quelle consommation annuelle les panneaux solaires deviennent-ils rentables la première année ? Résoudre l'inéquation.<br>
+    <strong>3.</strong> L'investissement est amorti sur 10 ans. Réécrire le coût annuel des panneaux en incluant l'amortissement \(\dfrac{4200}{10}\). Pour quelle consommation annuelle les panneaux sont-ils rentables sur 10 ans ?<br>
+    <strong>4.</strong> L'atelier consomme 2 500 kWh par an. Calculer l'économie annuelle réalisée avec les panneaux (en incluant l'amortissement). Conclure.
+  </div>
+  <div class="zone-rep">
+    <label>Ma démarche :</label>
+    <textarea placeholder="1. EDF(x) = ... ; Solaire(x) = ...&#10;2. Solaire < EDF → ...&#10;3. Amortissement = ... → nouveau coût = ...&#10;4. ..."></textarea>
+  </div>
+  <details class="corr-wrap">
+    <summary>▶ Voir la correction</summary>
+    <div class="corr-body">
+      <strong>1.</strong>
+      <ul style="padding-left:18px;margin:6px 0">
+        <li>EDF : \(C_1(x) = 0{,}25x\)</li>
+        <li>Solaire (1re année) : \(C_2(x) = 0{,}05x + 4200\)</li>
+      </ul>
+
+      <strong>2.</strong> \(0{,}05x + 4200 < 0{,}25x \implies 4200 < 0{,}20x \implies x > \dfrac{4200}{0{,}20} = 21\,000\) kWh.
+      <div class="corr-rep">✔ Les panneaux ne sont <strong>pas rentables dès la première année</strong> pour une consommation réaliste (il faudrait plus de 21 000 kWh).</div>
+
+      <strong>3.</strong> Amortissement annuel : \(\dfrac{4200}{10} = 420\) €. Coût annuel : \(C_3(x) = 0{,}05x + 420\).
+      \[0{,}05x + 420 < 0{,}25x \implies 420 < 0{,}20x \implies x > 2100\]
+      <div class="corr-rep">✔ Sur 10 ans, les panneaux sont rentables dès <strong>2 100 kWh/an</strong>.</div>
+
+      <strong>4.</strong> Pour 2 500 kWh : \(C_1 = 0{,}25 \times 2500 = 625\) € et \(C_3 = 0{,}05 \times 2500 + 420 = 545\) €.
+      <div class="corr-rep">✔ Économie : \(625 - 545 = \mathbf{80}\) € par an. L'installation est rentable car \(2500 > 2100\).</div>
+      <div class="att-corr">📌 L'amortissement transforme un investissement ponctuel en coût annuel constant. Sans amortissement, le solaire semble toujours trop cher la première année.</div>
+    </div>
+  </details>
+</div>
+
 </div><!-- fin diff-appro -->
 
 <!-- BILAN -->
