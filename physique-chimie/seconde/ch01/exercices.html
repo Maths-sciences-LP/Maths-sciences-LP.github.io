@@ -948,6 +948,206 @@ svg-wrap{display:flex;justify-content:center;margin:16px 0}</style>
   </div>
 </div>
 
+<!-- EXO 28 -->
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 28</span>
+    <span class="exo-title">Dimensionnement électrique d'un atelier de menuiserie</span>
+    <span class="diff diff-3">Avancé</span>
+  </div>
+
+  <p>Un artisan menuisier aménage un nouvel atelier. L'installation électrique est alimentée en monophasé 230 V et dispose d'un disjoncteur général de 40 A. Il souhaite installer les machines suivantes :</p>
+
+  <table>
+    <thead><tr><th>Machine</th><th>Puissance nominale</th><th>Circuit dédié</th></tr></thead>
+    <tbody>
+      <tr><td>Scie à format</td><td>3 000 W</td><td>Disjoncteur 20 A</td></tr>
+      <tr><td>Dégauchisseuse-raboteuse</td><td>2 200 W</td><td>Disjoncteur 16 A</td></tr>
+      <tr><td>Aspirateur centralisé</td><td>1 500 W</td><td>Disjoncteur 10 A</td></tr>
+      <tr><td>Éclairage atelier</td><td>600 W</td><td>Disjoncteur 10 A</td></tr>
+      <tr><td>Prises de courant (multiprise)</td><td>Variable</td><td>Disjoncteur 16 A</td></tr>
+    </tbody>
+  </table>
+
+  <p class="q"><strong>1.</strong> Calculez l'intensité nominale de chaque machine. Vérifiez que chaque disjoncteur de circuit est correctement dimensionné.</p>
+  <p class="q"><strong>2.</strong> Si toutes les machines fonctionnent simultanément (sauf les prises), calculez l'intensité totale appelée. Le disjoncteur général de 40 A est-il suffisant ?</p>
+  <p class="q"><strong>3.</strong> Un apprenti branche une défonceuse de 1 800 W sur la multiprise (circuit 16 A) en même temps qu'une ponceuse de 2 000 W. Que se passe-t-il ? Montrez le calcul.</p>
+  <p class="q"><strong>4.</strong> L'installation doit comporter un DDR 30 mA en tête. Expliquez pourquoi c'est obligatoire et décrivez un scénario concret où il interviendrait.</p>
+  <p class="q"><strong>5.</strong> L'artisan envisage de passer en triphasé 400 V pour ses futures machines. Quel avantage cela présente-t-il en termes de puissance disponible ?</p>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong></p>
+    <p>\( I_{scie} = \dfrac{3000}{230} \approx 13{,}0 \text{ A} \) → disjoncteur 20 A : OK (13 &lt; 20).</p>
+    <p>\( I_{raboteuse} = \dfrac{2200}{230} \approx 9{,}6 \text{ A} \) → disjoncteur 16 A : OK (9,6 &lt; 16).</p>
+    <p>\( I_{aspirateur} = \dfrac{1500}{230} \approx 6{,}5 \text{ A} \) → disjoncteur 10 A : OK (6,5 &lt; 10).</p>
+    <p>\( I_{éclairage} = \dfrac{600}{230} \approx 2{,}6 \text{ A} \) → disjoncteur 10 A : OK (2,6 &lt; 10).</p>
+    <p><strong>2.</strong> \( I_{totale} = 13{,}0 + 9{,}6 + 6{,}5 + 2{,}6 = 31{,}7 \text{ A} \). Le disjoncteur général de 40 A est suffisant (31,7 &lt; 40). Il reste une marge de 8,3 A pour les prises.</p>
+    <p><strong>3.</strong> \( I_{défonceuse} = \dfrac{1800}{230} \approx 7{,}8 \text{ A} \) ; \( I_{ponceuse} = \dfrac{2000}{230} \approx 8{,}7 \text{ A} \). Total sur le circuit prises : \( 7{,}8 + 8{,}7 = 16{,}5 \text{ A} \). Cela dépasse le calibre du disjoncteur 16 A → le disjoncteur se déclenche et coupe le circuit. Il ne faut pas brancher ces deux machines sur le même circuit.</p>
+    <p><strong>4.</strong> Le DDR 30 mA est obligatoire dans tout local professionnel. Scénario : un câble d'alimentation de la ponceuse est abîmé (gaine entaillée par un copeau). Le fil sous tension touche le carter métallique de la machine. Quand le menuisier saisit la ponceuse, un courant de fuite passe par son corps vers le sol. Le DDR détecte cette fuite (&gt; 30 mA) et coupe le circuit en moins de 30 ms, avant que le courant ne provoque une fibrillation cardiaque.</p>
+    <p><strong>5.</strong> En triphasé 400 V, la puissance disponible est \( P = U \times I \times \sqrt{3} \). Pour un abonnement de 40 A en triphasé : \( P = 400 \times 40 \times 1{,}73 \approx 27{,}7 \text{ kW} \), contre \( 230 \times 40 = 9{,}2 \text{ kW} \) en monophasé. Le triphasé permet donc environ 3 fois plus de puissance, ce qui est indispensable pour les grosses machines industrielles.</p>
+  </div>
+</div>
+
+<!-- EXO 29 -->
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 29</span>
+    <span class="exo-title">Étude de cas &ndash; Incendie dans un atelier de fabrication de mobilier</span>
+    <span class="diff diff-3">Avancé</span>
+  </div>
+
+  <p>Un incendie se déclare dans l'atelier d'un fabricant de mobilier. L'enquête révèle les faits suivants :</p>
+
+  <div style="background:#fff1f2;border:1px solid #fda4af;border-radius:6px;padding:12px 16px;font-size:.9em;margin:12px 0;line-height:1.7">
+    <strong>Rapport d'enquête (extraits) :</strong><br>
+    &bull; Des chiffons imbibés de teinture pour bois (solvant organique) étaient entassés dans un coin de l'atelier, sur le sol.<br>
+    &bull; Un bidon de white-spirit ouvert se trouvait à 2 mètres d'un radiateur électrique.<br>
+    &bull; L'extincteur le plus proche n'avait pas été vérifié depuis 3 ans (date de contrôle dépassée).<br>
+    &bull; L'issue de secours était encombrée par des panneaux de bois stockés contre la porte.<br>
+    &bull; L'atelier ne disposait pas de détecteur de fumée.
+  </div>
+
+  <p class="q"><strong>1.</strong> Identifiez les cinq manquements aux règles de sécurité décrits dans le rapport.</p>
+  <p class="q"><strong>2.</strong> Pour chaque manquement, expliquez le risque précis et la règle de sécurité qui n'a pas été respectée.</p>
+  <p class="q"><strong>3.</strong> Les chiffons imbibés de solvant peuvent s'enflammer spontanément. Expliquez le phénomène chimique en jeu (auto-inflammation par oxydation).</p>
+  <p class="q"><strong>4.</strong> Rédigez un plan de prévention complet (5 mesures minimum) que l'artisan devra mettre en place après l'incident.</p>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1. et 2.</strong> Les cinq manquements :</p>
+    <p>a) <em>Chiffons imbibés entassés au sol</em> : risque d'auto-inflammation par oxydation exothermique. Règle : stocker les chiffons souillés dans un bidon métallique fermé ou les éliminer immédiatement en DDS.</p>
+    <p>b) <em>Bidon de white-spirit ouvert près d'un radiateur</em> : risque d'inflammation des vapeurs (white-spirit = inflammable, H226). Règle : stocker dans une armoire métallique ventilée, récipient fermé, loin de toute source de chaleur (P210).</p>
+    <p>c) <em>Extincteur non vérifié depuis 3 ans</em> : risque de dysfonctionnement au moment critique. Règle : vérification annuelle obligatoire par un technicien agréé, date de contrôle visible sur l'étiquette.</p>
+    <p>d) <em>Issue de secours encombrée</em> : risque de piégeage des occupants en cas d'incendie. Règle : les issues de secours doivent toujours rester dégagées et accessibles (Code du travail).</p>
+    <p>e) <em>Pas de détecteur de fumée</em> : risque de détection tardive de l'incendie. Règle : les locaux professionnels doivent disposer de détecteurs de fumée et/ou de systèmes d'alarme incendie.</p>
+    <p><strong>3.</strong> L'auto-inflammation : les solvants organiques contenus dans les chiffons réagissent lentement avec l'oxygène de l'air (oxydation). Cette réaction est exothermique (elle dégage de la chaleur). Quand les chiffons sont entassés, la chaleur ne peut pas se dissiper et s'accumule. La température monte progressivement jusqu'à atteindre le point d'auto-inflammation du solvant (environ 200 à 300 °C selon le produit), provoquant la combustion spontanée sans flamme ni étincelle extérieure.</p>
+    <p><strong>4.</strong> Plan de prévention :</p>
+    <p>1. Installer des bacs métalliques à fermeture automatique pour les chiffons souillés dans chaque zone de travail.</p>
+    <p>2. Stocker tous les produits inflammables dans une armoire métallique ventilée, fermée à clé, éloignée des sources de chaleur.</p>
+    <p>3. Faire vérifier les extincteurs annuellement et former le personnel à leur utilisation.</p>
+    <p>4. Maintenir les issues de secours dégagées en permanence et les signaler par des panneaux lumineux.</p>
+    <p>5. Installer des détecteurs de fumée et une alarme incendie reliée à un système d'alerte.</p>
+    <p>6. Afficher le plan d'évacuation et organiser un exercice d'évacuation annuel.</p>
+    <p>7. Désigner un responsable sécurité et tenir un registre de contrôle des équipements.</p>
+  </div>
+</div>
+
+<!-- EXO 30 -->
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 30</span>
+    <span class="exo-title">Exposition professionnelle aux solvants &ndash; valeurs limites</span>
+    <span class="diff diff-3">Avancé</span>
+  </div>
+
+  <div class="def"><strong>VLEP (Valeur Limite d'Exposition Professionnelle) :</strong> concentration maximale d'un polluant dans l'air d'un lieu de travail, à laquelle un travailleur peut être exposé pendant 8 heures par jour sans risque pour sa santé. Elle s'exprime en mg/m³ ou en ppm (parties par million).</div>
+
+  <p>Voici les VLEP de trois solvants couramment utilisés en menuiserie :</p>
+  <table>
+    <thead><tr><th>Solvant</th><th>VLEP (8h)</th><th>Utilisation en atelier</th></tr></thead>
+    <tbody>
+      <tr><td>White-spirit</td><td>300 mg/m³</td><td>Nettoyage des pinceaux, dilution des vernis</td></tr>
+      <tr><td>Toluène</td><td>76 mg/m³</td><td>Présent dans certaines colles et vernis</td></tr>
+      <tr><td>Dichlorométhane</td><td>178 mg/m³</td><td>Décapants pour bois</td></tr>
+    </tbody>
+  </table>
+
+  <p class="q"><strong>1.</strong> Quel solvant a la VLEP la plus basse ? Qu'est-ce que cela signifie en termes de dangerosité ?</p>
+  <p class="q"><strong>2.</strong> Un menuisier agenceur utilise du toluène dans un atelier de 50 m³. La ventilation renouvelle l'air 3 fois par heure. Expliquez qualitativement pourquoi la ventilation est essentielle pour maintenir la concentration sous la VLEP.</p>
+  <p class="q"><strong>3.</strong> Le dichlorométhane est classé CMR (cancérogène). Pourquoi sa VLEP ne garantit-elle pas une sécurité totale ? Quelle est la bonne pratique vis-à-vis d'un produit CMR ?</p>
+  <p class="q"><strong>4.</strong> Un apprenti se plaint de maux de tête et de vertiges après 2 heures de vernissage au white-spirit. Quelles hypothèses pouvez-vous formuler ? Quelles mesures immédiates faut-il prendre ?</p>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> Le toluène a la VLEP la plus basse (76 mg/m³). Cela signifie qu'il est le plus toxique des trois à concentration égale : il faut une concentration beaucoup plus faible pour atteindre le seuil de danger. Le toluène est neurotoxique (atteint le système nerveux) et reprotoxique.</p>
+    <p><strong>2.</strong> Sans ventilation, le solvant qui s'évapore s'accumule dans l'air de l'atelier. La concentration augmente progressivement et peut rapidement dépasser la VLEP. Avec un renouvellement de 3 fois par heure, l'air chargé en vapeurs est évacué et remplacé par de l'air frais, ce qui maintient la concentration à un niveau acceptable. Plus le débit de ventilation est élevé, plus la concentration est diluée.</p>
+    <p><strong>3.</strong> Pour les produits CMR, il n'existe pas de seuil sûr : toute exposition, même en dessous de la VLEP, augmente le risque de cancer. La VLEP est un repère réglementaire mais pas une garantie de sécurité. La bonne pratique est le principe ALARA (As Low As Reasonably Achievable) : réduire l'exposition au minimum possible, idéalement la supprimer en remplaçant le produit CMR par un substitut non cancérogène (substitution). Si la substitution est impossible, utiliser le confinement total (travail en circuit fermé) et les EPI les plus performants.</p>
+    <p><strong>4.</strong> Hypothèses : la concentration en white-spirit dans l'air de l'atelier dépasse probablement la VLEP. La ventilation est insuffisante, ou l'apprenti ne porte pas de masque respiratoire à filtre vapeurs organiques. Les symptômes (maux de tête, vertiges) correspondent exactement à la phrase H336 du white-spirit. Mesures immédiates : arrêter le travail, aérer le local (ouvrir fenêtres et portes), mettre l'apprenti à l'air frais, consulter un médecin si les symptômes persistent. Pour la suite : améliorer la ventilation, fournir un masque à cartouche A2, vérifier l'état de la ventilation de l'atelier.</p>
+  </div>
+</div>
+
+<!-- EXO 31 -->
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 31</span>
+    <span class="exo-title">Comparaison internationale &ndash; systèmes de classification des dangers</span>
+    <span class="diff diff-3">Avancé</span>
+  </div>
+
+  <p>Avant 2009, la France utilisait un système de pictogrammes orange et noir (symboles carrés). Depuis le règlement CLP (2009), le système GHS international avec des losanges rouges est obligatoire en Europe.</p>
+
+  <p class="q"><strong>1.</strong> Pourquoi a-t-on remplacé les anciens pictogrammes par un système international ? Donnez au moins deux raisons liées à la mondialisation.</p>
+  <p class="q"><strong>2.</strong> Un technicien d'agencement reçoit un lot de colle importé du Japon. L'étiquette est en japonais mais comporte les pictogrammes GHS. Peut-il identifier les dangers ? Expliquez l'avantage de ce système normalisé.</p>
+  <p class="q"><strong>3.</strong> Les phrases H sont numérotées de H200 à H410. Que signifient les séries H2xx, H3xx et H4xx ? Recherchez dans vos connaissances du cours.</p>
+  <p class="q"><strong>4.</strong> Un installateur de cuisines travaille en Belgique pour un chantier international. Les produits qu'il utilise viennent de France, d'Allemagne et d'Italie. Expliquez en quoi le système GHS facilite son travail en matière de sécurité.</p>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> Raisons de l'harmonisation internationale :</p>
+    <p>- Les produits chimiques circulent entre les pays (importation/exportation). Un système unique permet à tout travailleur de comprendre les dangers, quelle que soit l'origine du produit.</p>
+    <p>- Les travailleurs sont de plus en plus mobiles (chantiers internationaux, détachements). Un menuisier français qui travaille en Espagne doit pouvoir lire les étiquettes sans connaître l'espagnol.</p>
+    <p>- L'ancien système variait d'un pays à l'autre (Europe, USA, Japon avaient des systèmes différents), ce qui créait de la confusion et des accidents.</p>
+    <p><strong>2.</strong> Oui, il peut identifier les dangers car les pictogrammes GHS sont identiques dans le monde entier : mêmes losanges rouges, mêmes symboles noirs, mêmes codes H et P. Même sans lire le japonais, le technicien reconnaît les pictogrammes et peut en déduire les dangers et les précautions à prendre. C'est l'avantage majeur d'un système visuel normalisé.</p>
+    <p><strong>3.</strong> H2xx = dangers physiques (explosion, inflammation, gaz sous pression, comburant). H3xx = dangers pour la santé (toxicité aiguë, irritation, sensibilisation, CMR, danger par aspiration). H4xx = dangers pour l'environnement (toxicité aquatique, effets à long terme sur les écosystèmes).</p>
+    <p><strong>4.</strong> Grâce au système GHS, tous les produits (français, allemands, italiens) portent les mêmes pictogrammes et les mêmes codes H/P. L'installateur n'a pas besoin de parler allemand ou italien pour comprendre les dangers. Il lui suffit de reconnaître les pictogrammes (visuels) et les codes numériques (H225, P210...) qui sont identiques dans toutes les langues. La FDS doit cependant être disponible dans la langue du pays d'utilisation.</p>
+  </div>
+</div>
+
+<!-- EXO 32 -->
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 32</span>
+    <span class="exo-title">Rédiger une consigne de sécurité pour l'atelier</span>
+    <span class="diff diff-3">Avancé</span>
+  </div>
+
+  <p>Vous êtes chef d'atelier dans une entreprise de menuiserie. Vous devez rédiger une fiche de consignes de sécurité à afficher dans l'atelier pour l'utilisation d'une teinte pour bois en phase solvant.</p>
+
+  <p>Informations sur le produit :</p>
+  <div style="background:#f7f7f7;border:1px solid #ccc;border-radius:6px;padding:12px 16px;font-size:.88em;font-family:monospace;margin:12px 0;line-height:1.8">
+    <strong>Produit :</strong> Teinte bois — phase solvant (base white-spirit)<br>
+    <strong>Pictogrammes :</strong> Inflammable, Nocif/Irritant, Danger pour l'environnement<br>
+    <strong>H226</strong> : Liquide et vapeurs inflammables.<br>
+    <strong>H312+H332</strong> : Nocif par contact cutané et par inhalation.<br>
+    <strong>H411</strong> : Toxique pour les organismes aquatiques, effets à long terme.<br>
+    <strong>Application :</strong> Au pinceau ou au chiffon sur bois brut.
+  </div>
+
+  <p class="q"><strong>1.</strong> Rédigez la section « Dangers » de la fiche en langage clair et accessible (pas de jargon technique).</p>
+  <p class="q"><strong>2.</strong> Rédigez la section « Équipements de protection obligatoires » avec la liste des EPI et leur justification.</p>
+  <p class="q"><strong>3.</strong> Rédigez la section « Conditions d'utilisation » (ventilation, stockage, interdictions).</p>
+  <p class="q"><strong>4.</strong> Rédigez la section « En cas d'accident » avec les protocoles de premiers secours pour : projection cutanée, inhalation de vapeurs, début d'incendie.</p>
+  <p class="q"><strong>5.</strong> Rédigez la section « Élimination des déchets » (chiffons souillés, restes de produit, emballage).</p>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1. Dangers :</strong></p>
+    <p>Ce produit peut prendre feu facilement (liquide et vapeurs inflammables). Il est nocif si vous le respirez ou s'il touche votre peau (risque d'irritation, de maux de tête et de vertiges). Il est dangereux pour la nature et les cours d'eau.</p>
+    <p><strong>2. Équipements de protection obligatoires :</strong></p>
+    <p>- Gants en nitrile : protègent les mains du contact avec le produit (nocif par la peau).</p>
+    <p>- Lunettes de protection : protègent les yeux des éclaboussures.</p>
+    <p>- Masque respiratoire avec filtre vapeurs organiques (type A) : protège les poumons des vapeurs nocives.</p>
+    <p>- Tablier ou vêtement de travail : protège la peau du tronc.</p>
+    <p>- Chaussures de sécurité fermées : obligatoires en atelier.</p>
+    <p><strong>3. Conditions d'utilisation :</strong></p>
+    <p>- Travailler dans un local bien ventilé (fenêtres ouvertes ou ventilation mécanique en marche).</p>
+    <p>- Éteindre toute flamme et toute source d'étincelles dans la zone de travail (H226).</p>
+    <p>- Ne pas fumer à proximité.</p>
+    <p>- Refermer le récipient après chaque utilisation.</p>
+    <p>- Stocker dans l'armoire à produits inflammables, à l'écart des sources de chaleur.</p>
+    <p>- Ne jamais transvaser dans un récipient alimentaire ou non étiqueté.</p>
+    <p><strong>4. En cas d'accident :</strong></p>
+    <p>- <em>Projection cutanée</em> : retirer les vêtements souillés, rincer la peau à l'eau et au savon pendant 15 minutes. Consulter un médecin si irritation persistante.</p>
+    <p>- <em>Inhalation de vapeurs</em> : mettre la personne à l'air frais immédiatement. Si malaise, vertiges ou perte de connaissance : appeler le 15 (SAMU). Placer en position latérale de sécurité si inconsciente.</p>
+    <p>- <em>Début d'incendie</em> : utiliser l'extincteur à poudre ou CO₂ (jamais d'eau sur un feu de solvant). Évacuer si le feu n'est pas maîtrisé en 30 secondes. Appeler le 18 (pompiers).</p>
+    <p><strong>5. Élimination des déchets :</strong></p>
+    <p>- Chiffons souillés : mettre immédiatement dans le bidon métallique à fermeture automatique (risque d'auto-inflammation). Collecte DDS.</p>
+    <p>- Restes de produit : ne jamais verser dans l'évier ni dans les poubelles ordinaires. Collecter dans un bidon étiqueté « DDS – solvants usagés ».</p>
+    <p>- Emballage vide : même s'il paraît vide, il contient des résidus. Le déposer dans le bac DDS pour collecte par le prestataire agréé.</p>
+  </div>
+</div>
+
 </div><!-- fin diff-appro -->
 
 </div><!-- fin .c -->
