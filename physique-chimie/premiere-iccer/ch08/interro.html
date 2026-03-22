@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
 .pts{font-size:.82em;color:#718096;font-weight:normal}
+.sujet-header{background:var(--p);color:#fff;padding:.5em 1em;border-radius:6px;margin:1.5em 0 1em;font-size:1.15em}
 </style>
 </head>
 <body>
@@ -27,6 +28,7 @@
 <!-- ========================= SOCLE ========================= -->
 <div class="diff-socle">
 <span class="tag-socle">Socle</span>
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -102,11 +104,88 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> La force d'Archimède est dirigée verticalement vers le haut. Sa formule est \(F_A = \rho_{\text{fluide}} \times g \times V_{\text{immergé}}\).</div>
+  <p>Répondre par vrai ou faux, puis corriger si nécessaire :</p>
+  <p>a) La force d'Archimède est dirigée vers le bas.</p>
+  <p>b) Dans la formule \(F_A = \rho \times g \times V\), \(\rho\) est la masse volumique de l'objet.</p>
+  <p>c) La force d'Archimède s'exprime en newton (N).</p>
+  <p>d) Le volume \(V\) dans la formule doit être en litres.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) <strong>Faux</strong> — elle est dirigée verticalement vers le <strong>haut</strong>.</p>
+    <p>b) <strong>Faux</strong> — \(\rho\) est la masse volumique du <strong>fluide</strong> (pas de l'objet).</p>
+    <p>c) <strong>Vrai</strong>.</p>
+    <p>d) <strong>Faux</strong> — le volume doit être en <strong>m³</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> \(1 \text{ L} = 10^{-3} \text{ m}^3\) et \(1 \text{ cm}^3 = 10^{-6} \text{ m}^3\).</div>
+  <p>Convertir les volumes suivants en m³ :</p>
+  <p>a) \(500 \text{ cm}^3 = 500 \times 10^{-6} = ... \text{ m}^3\)</p>
+  <p>b) \(3 \text{ L} = 3 \times 10^{-3} = ... \text{ m}^3\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(500 \text{ cm}^3 = 500 \times 10^{-6} = \mathbf{5 \times 10^{-4}} \text{ m}^3\)</p>
+    <p>b) \(3 \text{ L} = 3 \times 10^{-3} = \mathbf{3 \times 10^{-3}} \text{ m}^3\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> \(F_A = \rho_{\text{fluide}} \times g \times V_{\text{immergé}}\). On prendra \(g = 9{,}81 \text{ N/kg}\) et \(\rho_{\text{eau}} = 1\,000 \text{ kg/m}^3\).</div>
+  <p>Un objet de volume \(V = 250 \text{ cm}^3\) est totalement immergé dans l'eau.</p>
+  <p>a) Convertir le volume en m³ : \(V = 250 \times 10^{-6} = ... \text{ m}^3\)</p>
+  <p>b) Calculer la force d'Archimède : \(F_A = 1\,000 \times 9{,}81 \times ... = ... \text{ N}\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(V = 250 \times 10^{-6} = \mathbf{2{,}5 \times 10^{-4}} \text{ m}^3\)</p>
+    <p>b) \(F_A = 1\,000 \times 9{,}81 \times 2{,}5 \times 10^{-4} = \mathbf{2{,}45} \text{ N}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Un objet flotte si \(\rho_{\text{objet}} < \rho_{\text{fluide}}\). Il coule si \(\rho_{\text{objet}} > \rho_{\text{fluide}}\).</div>
+  <p>On donne \(\rho_{\text{eau}} = 1\,000 \text{ kg/m}^3\). Pour chaque matériau, indiquer s'il flotte ou coule dans l'eau :</p>
+  <p>a) Liège : \(\rho = 240 \text{ kg/m}^3\) → flotte / coule ? car \(240 ... 1\,000\)</p>
+  <p>b) Plomb : \(\rho = 11\,300 \text{ kg/m}^3\) → flotte / coule ? car \(11\,300 ... 1\,000\)</p>
+  <p>c) Huile : \(\rho = 900 \text{ kg/m}^3\) → flotte / coule ? car \(900 ... 1\,000\)</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Liège : \(240 < 1\,000\) → <strong>flotte</strong></p>
+    <p>b) Plomb : \(11\,300 > 1\,000\) → <strong>coule</strong></p>
+    <p>c) Huile : \(900 < 1\,000\) → <strong>flotte</strong></p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Fraction immergée : \(\dfrac{V_{\text{imm}}}{V_{\text{total}}} = \dfrac{\rho_{\text{objet}}}{\rho_{\text{fluide}}}\)</div>
+  <p>Un bloc de polystyrène (\(\rho = 30 \text{ kg/m}^3\)) flotte sur l'eau (\(\rho = 1\,000 \text{ kg/m}^3\)).</p>
+  <p>a) Calculer la fraction immergée : \(\dfrac{\rho_{\text{objet}}}{\rho_{\text{fluide}}} = \dfrac{30}{1\,000} = ...\)</p>
+  <p>b) Quel pourcentage du bloc est sous l'eau ? ... %</p>
+  <p>c) Quel pourcentage dépasse hors de l'eau ? ... %</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Fraction immergée : \(\dfrac{30}{1\,000} = \mathbf{0{,}03}\)</p>
+    <p>b) <strong>3 %</strong> du bloc est sous l'eau.</p>
+    <p>c) \(100 - 3 = \mathbf{97\,\%}\) dépasse hors de l'eau.</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= STANDARD ========================= -->
 <div class="diff-standard">
 <span class="tag-standard">Standard</span>
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
