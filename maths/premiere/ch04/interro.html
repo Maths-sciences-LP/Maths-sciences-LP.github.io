@@ -464,6 +464,93 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(5 points)</span></h2>
+  <p>Un installateur thermique compare deux solutions d'isolation. Le co&ucirc;t de chauffage annuel (en &euro;) en fonction de l'&eacute;paisseur d'isolant \(x\) (en cm) est mod&eacute;lis&eacute; par \(C(x) = 0{,}5x^2 - 12x + 90\) (&euro;) et le co&ucirc;t d'installation par \(I(x) = 4x\) (&euro;).</p>
+  <p>a) Compl&eacute;ter le tableau :</p>
+  <table>
+    <tr><th>\(x\)</th><td>0</td><td>2</td><td>4</td><td>6</td><td>8</td><td>10</td><td>12</td><td>14</td></tr>
+    <tr><th>\(C(x)\)</th><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+    <tr><th>\(I(x)\)</th><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+  </table>
+  <p>b) Pour quelles valeurs de \(x\) a-t-on \(C(x) > I(x)\) (le chauffage co&ucirc;te plus que l'isolation) ?</p>
+  <p>c) Interpr&eacute;ter dans le contexte professionnel.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <table>
+      <tr><th>\(x\)</th><td>0</td><td>2</td><td>4</td><td>6</td><td>8</td><td>10</td><td>12</td><td>14</td></tr>
+      <tr><th>\(C(x)\)</th><td>90</td><td>68</td><td>50</td><td>36</td><td>26</td><td>20</td><td>18</td><td>20</td></tr>
+      <tr><th>\(I(x)\)</th><td>0</td><td>8</td><td>16</td><td>24</td><td>32</td><td>40</td><td>48</td><td>56</td></tr>
+    </table>
+    <p>b) \(C(x) > I(x)\) pour \(x = 0, 2, 4, 6\). On observe que \(C(x) \leqslant I(x)\) pour \(x = 8, 10, 12, 14\).</p>
+    <p>Le co&ucirc;t de chauffage d&eacute;passe le co&ucirc;t d'isolation approximativement pour \(x \in [0\,;\,7]\) cm.</p>
+    <p>c) &Agrave; partir d'environ <strong>7 cm d'isolant</strong>, le co&ucirc;t d'installation d&eacute;passe le co&ucirc;t de chauffage annuel. L'isolation est rentable pour des &eacute;paisseurs mod&eacute;r&eacute;es.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(5 points)</span></h2>
+  <p>On cherche une solution de l'&eacute;quation \(x^2 = 3x + 2\) par l'algorithme de balayage.</p>
+  <p>On pose \(h(x) = x^2 - 3x - 2\).</p>
+  <p>a) Calculer \(h(3)\) et \(h(4)\). En d&eacute;duire qu'il existe une solution dans \([3\,;\,4]\).</p>
+  <p>b) Effectuer un balayage avec un pas de 0,1 pour encadrer la solution au dixi&egrave;me pr&egrave;s.</p>
+  <p>c) Donner une valeur approch&eacute;e de la solution &agrave; 0,1 pr&egrave;s.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(h(3) = 9 - 9 - 2 = -2 < 0\) et \(h(4) = 16 - 12 - 2 = 2 > 0\).</p>
+    <p>Changement de signe : il existe une solution dans \([3\,;\,4]\).</p>
+    <p>b) Balayage :</p>
+    <table>
+      <tr><th>\(x\)</th><td>3,0</td><td>3,1</td><td>3,2</td><td>3,3</td><td>3,4</td><td>3,5</td><td>3,6</td></tr>
+      <tr><th>\(h(x)\)</th><td>&minus;2</td><td>&minus;1,69</td><td>&minus;1,36</td><td>&minus;1,01</td><td>&minus;0,64</td><td>&minus;0,25</td><td>+0,16</td></tr>
+    </table>
+    <p>\(h(3{,}5) < 0\) et \(h(3{,}6) > 0\) : la solution est dans \([\mathbf{3{,}5}\,;\,\mathbf{3{,}6}]\).</p>
+    <p>c) La solution est environ \(x \approx \mathbf{3{,}6}\) &agrave; 0,1 pr&egrave;s.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(5 points)</span></h2>
+  <p>On donne les fonctions \(f(x) = -x^2 + 4x\) et \(g(x) = x\) sur l'intervalle \([0\,;\,5]\).</p>
+  <table>
+    <tr><th>\(x\)</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+    <tr><th>\(f(x)\)</th><td>0</td><td>3</td><td>4</td><td>3</td><td>0</td><td>&minus;5</td></tr>
+    <tr><th>\(g(x)\)</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+  </table>
+  <p>a) R&eacute;soudre \(f(x) = g(x)\) &agrave; l'aide du tableau.</p>
+  <p>b) R&eacute;soudre \(f(x) \geqslant g(x)\) en d&eacute;terminant l'intervalle de valeurs de \(x\).</p>
+  <p>c) Le point \((3\,;\,3)\) appartient-il aux deux courbes ? Justifier.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) D'apr&egrave;s le tableau : \(f(0) = 0 = g(0)\) et \(f(3) = 3 = g(3)\).</p>
+    <p>Les solutions de \(f(x) = g(x)\) sont \(x = \mathbf{0}\) et \(x = \mathbf{3}\).</p>
+    <p>b) Entre les points d'intersection, \(f(x) \geqslant g(x)\). Pour \(x = 1\) : \(f(1) = 3 > g(1) = 1\). Pour \(x = 4\) : \(f(4) = 0 < g(4) = 4\).</p>
+    <p>Donc \(f(x) \geqslant g(x)\) pour \(x \in [\mathbf{0}\,;\,\mathbf{3}]\).</p>
+    <p>c) \(f(3) = 3\) et \(g(3) = 3\). Le point \((3\,;\,3)\) appartient bien aux deux courbes : c'est un <strong>point d'intersection</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(5 points)</span></h2>
+  <p>Un technicien de maintenance &eacute;nerg&eacute;tique mod&eacute;lise la consommation &eacute;lectrique \(P(t)\) (en kW) d'un b&acirc;timent au cours de la journ&eacute;e :</p>
+  <table>
+    <tr><th>\(t\) (heures)</th><td>6</td><td>8</td><td>10</td><td>12</td><td>14</td><td>16</td><td>18</td><td>20</td></tr>
+    <tr><th>\(P(t)\) (kW)</th><td>12</td><td>25</td><td>35</td><td>40</td><td>38</td><td>30</td><td>20</td><td>10</td></tr>
+  </table>
+  <p>Le seuil de surcharge est fix&eacute; &agrave; 30 kW.</p>
+  <p>a) R&eacute;soudre \(P(t) = 30\) (quand la consommation atteint exactement 30 kW).</p>
+  <p>b) R&eacute;soudre \(P(t) \geqslant 30\) (pendant combien de temps la consommation d&eacute;passe-t-elle le seuil ?).</p>
+  <p>c) Quelle est la consommation maximale et &agrave; quelle heure ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(P(t) = 30\) pour \(t = \mathbf{16}\) h. Entre 8 h et 10 h, \(P(8) = 25 < 30\) et \(P(10) = 35 > 30\), donc \(P(t) = 30\) aussi entre 8 h et 10 h (environ 9 h).</p>
+    <p>b) \(P(t) \geqslant 30\) pour \(t \in [\approx\mathbf{9}\,;\,\mathbf{16}]\), soit environ <strong>7 heures</strong> de surcharge.</p>
+    <p>c) La consommation maximale est \(\mathbf{40}\) kW, atteinte &agrave; \(t = \mathbf{12}\) h (midi).</p>
+  </div>
+</div>
+
 </div>
 
 </div><!-- fin .c -->

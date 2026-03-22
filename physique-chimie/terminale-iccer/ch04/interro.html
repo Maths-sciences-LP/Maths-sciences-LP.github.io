@@ -362,6 +362,72 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(4 points)</span></h2>
+  <p>Calculer λ<sub>max</sub> pour un plancher chauffant à 30 °C et pour un tuyau de chauffage à 80 °C. Vérifier que ces deux rayonnements sont bien dans la plage de détection d'une caméra thermique (8–14 μm).</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>Plancher : T = 30 + 273 = 303 K → \(\lambda_{max} = \dfrac{2{,}898 \times 10^{-3}}{303} \approx \mathbf{9{,}56}\) μm → dans [8 ; 14] μm.</p>
+    <p>Tuyau : T = 80 + 273 = 353 K → \(\lambda_{max} = \dfrac{2{,}898 \times 10^{-3}}{353} \approx \mathbf{8{,}21}\) μm → dans [8 ; 14] μm.</p>
+    <p>Les deux valeurs sont bien dans la plage de la caméra thermique.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <p>Un film plastique a les propriétés suivantes vis-à-vis de l'IR : ρ = 0,05 et α = 0,15.</p>
+  <p>a) Calculer le coefficient de transmission τ.</p>
+  <p>b) La caméra thermique peut-elle « voir » à travers ce film ? Justifier.</p>
+  <p>c) Citer une application de ce type de matériau.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\tau = 1 - \alpha - \rho = 1 - 0{,}15 - 0{,}05 = \mathbf{0{,}80}\)</p>
+    <p>b) <strong>Oui</strong>, le film transmet 80 % du rayonnement IR → la caméra peut voir à travers.</p>
+    <p>c) Film de protection dans certaines fenêtres IR, hublot de caméra thermique, cellophane pour emballage alimentaire.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <p>Une installation de climatisation utilise 4 kg de R-32 (PRG = 675). On envisage de passer au R-290 propane (PRG = 3) ou au R-744 CO₂ (PRG = 1).</p>
+  <p>a) Calculer la masse équivalente CO₂ pour chaque fluide.</p>
+  <p>b) Calculer le facteur de réduction entre R-32 et R-744.</p>
+  <p>c) Citer un inconvénient majeur du R-744.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) R-32 : \(4 \times 675 = \mathbf{2\,700}\) kg eq CO₂. R-290 : \(4 \times 3 = \mathbf{12}\) kg. R-744 : \(4 \times 1 = \mathbf{4}\) kg.</p>
+    <p>b) Facteur : \(\dfrac{2\,700}{4} = \mathbf{675}\) → le R-744 est 675 fois moins impactant.</p>
+    <p>c) Le R-744 (CO₂) fonctionne à <strong>très haute pression</strong> (80-130 bar) → contraintes mécaniques et coûts d'installation élevés.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(4 points)</span></h2>
+  <p>La concentration en CH₄ (méthane) est passée de 700 ppb avant l'ère industrielle à 1 900 ppb aujourd'hui. Le PRG du CH₄ est 28.</p>
+  <p>a) Calculer le pourcentage d'augmentation de la concentration.</p>
+  <p>b) Citer deux sources anthropiques de méthane.</p>
+  <p>c) Pourquoi le CH₄ est-il particulièrement préoccupant malgré sa faible concentration ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(\dfrac{1\,900 - 700}{700} \times 100 \approx \mathbf{171\,\%}\)</p>
+    <p>b) L'<strong>élevage</strong> (ruminants) et les <strong>rizières</strong>. On peut aussi citer : fuites de gaz naturel, décharges.</p>
+    <p>c) Bien que sa concentration soit faible, son <strong>PRG est 28 fois supérieur</strong> à celui du CO₂ → chaque molécule de CH₄ a un impact bien plus fort.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <p>À quelle température la surface d'un objet devrait-elle être pour que son pic d'émission soit à λ = 1,5 μm = 1,5 × 10⁻⁶ m (proche infrarouge) ? Commenter le résultat.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>\(T = \dfrac{2{,}898 \times 10^{-3}}{1{,}5 \times 10^{-6}} = \mathbf{1\,932}\) K soit environ 1 659 °C.</p>
+    <p>C'est l'ordre de grandeur d'un métal en fusion (acier fondu ≈ 1 500 °C, fer porté au rouge-blanc). À cette température, l'objet émet aussi dans le visible (il brille d'un rouge-orange intense).</p>
+  </div>
+</div>
+
 </div>
 
 </div><!-- fin .c -->
