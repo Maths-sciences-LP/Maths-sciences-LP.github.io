@@ -983,6 +983,140 @@
   </div>
 </div>
 
+<!-- EXO 19 -->
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 19</span>
+    <span class="exo-title">Capteur laser de distance &mdash; Temps de vol</span>
+    <span class="diff diff-3">&#9733;&#9733;&#9733; Avanc&eacute;</span>
+  </div>
+  <p>Un t&eacute;l&eacute;m&egrave;tre laser utilis&eacute; par un m&eacute;treur en b&acirc;timent envoie une impulsion lumineuse sur un mur situ&eacute; &agrave; une distance \(d\) inconnue. Le faisceau voyage dans l&rsquo;air (\(n_{air} \approx 1{,}00\)). Le temps aller-retour mesur&eacute; est \(\Delta t = 66{,}7\) ns.</p>
+  <div class="q"><strong>1.</strong> Calculer la distance totale parcourue par la lumi&egrave;re pendant \(\Delta t\).</div>
+  <div class="q"><strong>2.</strong> En d&eacute;duire la distance \(d\) entre le t&eacute;l&eacute;m&egrave;tre et le mur.</div>
+  <div class="q"><strong>3.</strong> Le m&eacute;treur utilise ensuite le t&eacute;l&eacute;m&egrave;tre &agrave; travers une vitre en verre (\(n = 1{,}50\)) d&rsquo;&eacute;paisseur \(e = 6\) mm. Calculer le temps suppl&eacute;mentaire mis par la lumi&egrave;re pour traverser la vitre (aller-retour, soit 2 travers&eacute;es).</div>
+  <div class="q"><strong>4.</strong> Ce temps suppl&eacute;mentaire introduit-il une erreur de mesure significative ? Justifier.</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \(D = c \times \Delta t = 3{,}00 \times 10^8 \times 66{,}7 \times 10^{-9} = 20{,}0\) m</p>
+    <p><strong>2.</strong> Aller-retour : \(d = D/2 = 20{,}0/2 = 10{,}0\) m</p>
+    <p><strong>3.</strong> Vitesse dans le verre : \(v = c/n = 3{,}00 \times 10^8 / 1{,}50 = 2{,}00 \times 10^8\) m/s.<br>
+    Temps dans le verre (2 travers&eacute;es de 6 mm) : \(t_{verre} = \dfrac{2 \times 0{,}006}{2{,}00 \times 10^8} = 6{,}00 \times 10^{-11}\) s = 0,060 ns.<br>
+    Temps que la lumi&egrave;re aurait mis dans l&rsquo;air pour la m&ecirc;me distance : \(t_{air} = \dfrac{0{,}012}{3{,}00 \times 10^8} = 4{,}00 \times 10^{-11}\) s = 0,040 ns.<br>
+    Temps suppl&eacute;mentaire : \(\Delta t_{sup} = 0{,}060 - 0{,}040 = 0{,}020\) ns.</p>
+    <p><strong>4.</strong> Le temps suppl&eacute;mentaire de 0,020 ns correspond &agrave; une erreur de distance de \(\Delta d = c \times 0{,}020 \times 10^{-9} / 2 \approx 3\) mm. Pour une mesure en b&acirc;timent, cette erreur est n&eacute;gligeable.</p>
+  </div>
+</div>
+
+<!-- EXO 20 -->
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 20</span>
+    <span class="exo-title">R&eacute;fraction multiple &mdash; Lame &agrave; faces parall&egrave;les</span>
+    <span class="diff diff-3">&#9733;&#9733;&#9733; Avanc&eacute;</span>
+  </div>
+  <p>Un rayon lumineux traverse une lame de verre (\(n = 1{,}50\)) &agrave; faces parall&egrave;les d&rsquo;&eacute;paisseur \(e = 10\) mm. L&rsquo;angle d&rsquo;incidence est \(\theta_1 = 50°\).</p>
+  <div class="q"><strong>1.</strong> Calculer l&rsquo;angle r&eacute;fract&eacute; \(\theta_2\) &agrave; l&rsquo;entr&eacute;e dans le verre.</div>
+  <div class="q"><strong>2.</strong> Montrer que le rayon sort de la lame avec un angle \(\theta_3 = \theta_1\).</div>
+  <div class="q"><strong>3.</strong> Calculer le d&eacute;calage lat&eacute;ral \(\delta\) du rayon &agrave; la sortie de la lame. On admet la formule :
+  \[\delta = e \times \dfrac{\sin(\theta_1 - \theta_2)}{\cos\theta_2}\]</div>
+  <div class="q"><strong>4.</strong> Un architecte d&rsquo;int&eacute;rieur con&ccedil;oit une cloison en double vitrage (deux lames de verre de 4 mm s&eacute;par&eacute;es par 12 mm d&rsquo;air). Le d&eacute;calage total sera-t-il le double de celui d&rsquo;une seule lame de 4 mm ? Justifier.</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \(\sin\theta_2 = \dfrac{\sin 50°}{1{,}50} = \dfrac{0{,}766}{1{,}50} = 0{,}511\)<br>
+    \(\theta_2 = \arcsin(0{,}511) \approx 30{,}7°\)</p>
+    <p><strong>2.</strong> &Agrave; la sortie (verre &rarr; air) : \(n_{verre} \sin\theta_2 = n_{air} \sin\theta_3\), soit \(1{,}50 \times \sin 30{,}7° = 1{,}00 \times \sin\theta_3\), donc \(\sin\theta_3 = 1{,}50 \times 0{,}511 = 0{,}766\) et \(\theta_3 = \arcsin(0{,}766) = 50° = \theta_1\). CQFD.</p>
+    <p><strong>3.</strong> \(\delta = 10 \times \dfrac{\sin(50° - 30{,}7°)}{\cos 30{,}7°} = 10 \times \dfrac{\sin 19{,}3°}{0{,}860} = 10 \times \dfrac{0{,}331}{0{,}860} \approx 3{,}8\) mm</p>
+    <p><strong>4.</strong> Oui, le d&eacute;calage total est le double de celui d&rsquo;une seule lame de 4 mm. Le rayon traverse deux lames de verre identiques et dans l&rsquo;air entre les deux vitres il se propage en ligne droite (pas de d&eacute;viation suppl&eacute;mentaire). Chaque lame ajoute le m&ecirc;me d&eacute;calage lat&eacute;ral.</p>
+  </div>
+</div>
+
+<!-- EXO 21 -->
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 21</span>
+    <span class="exo-title">Fibre optique et d&eacute;bit Internet &mdash; Installation domotique</span>
+    <span class="diff diff-3">&#9733;&#9733;&#9733; Avanc&eacute;</span>
+  </div>
+  <p>Un installateur de syst&egrave;mes domotiques tire un c&acirc;ble &agrave; fibre optique de 80 m pour relier un tableau &eacute;lectrique &agrave; un bo&icirc;tier r&eacute;seau. Le c&oelig;ur de la fibre a un indice \(n_c = 1{,}46\) et la gaine un indice \(n_g = 1{,}41\).</p>
+  <div class="q"><strong>1.</strong> Calculer l&rsquo;angle critique \(\theta_c\) &agrave; l&rsquo;interface c&oelig;ur/gaine.</div>
+  <div class="q"><strong>2.</strong> Calculer la vitesse de la lumi&egrave;re dans le c&oelig;ur.</div>
+  <div class="q"><strong>3.</strong> Calculer le temps mis par un signal lumineux pour parcourir les 80 m (en microsecondes).</div>
+  <div class="q"><strong>4.</strong> On compare avec un c&acirc;ble Ethernet en cuivre de m&ecirc;me longueur o&ugrave; le signal se propage &agrave; \(2{,}0 \times 10^8\) m/s. Calculer le temps de parcours.</div>
+  <div class="q"><strong>5.</strong> En pratique, l&rsquo;avantage principal de la fibre sur le cuivre n&rsquo;est pas la vitesse de propagation mais la bande passante. Expliquer bri&egrave;vement la diff&eacute;rence.</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \(\sin\theta_c = \dfrac{1{,}41}{1{,}46} = 0{,}966\) &rarr; \(\theta_c = \arcsin(0{,}966) \approx 75{,}1°\)</p>
+    <p><strong>2.</strong> \(v = \dfrac{3{,}00 \times 10^8}{1{,}46} \approx 2{,}05 \times 10^8\) m/s</p>
+    <p><strong>3.</strong> \(t = \dfrac{80}{2{,}05 \times 10^8} \approx 3{,}90 \times 10^{-7}\) s \(= 0{,}390\) &mu;s</p>
+    <p><strong>4.</strong> \(t_{Cu} = \dfrac{80}{2{,}0 \times 10^8} = 4{,}0 \times 10^{-7}\) s \(= 0{,}400\) &mu;s. Les temps sont tr&egrave;s proches.</p>
+    <p><strong>5.</strong> La <strong>bande passante</strong> d&eacute;signe la quantit&eacute; de donn&eacute;es transmissible par seconde. La fibre optique peut transporter beaucoup plus de donn&eacute;es simultan&eacute;ment (plusieurs Gbit/s) que le cuivre (limit&eacute; &agrave; ~1 Gbit/s en Ethernet classique) gr&acirc;ce &agrave; la fr&eacute;quence &eacute;lev&eacute;e de la lumi&egrave;re. De plus, la fibre est insensible aux interf&eacute;rences &eacute;lectromagn&eacute;tiques.</p>
+  </div>
+</div>
+
+<!-- EXO 22 -->
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 22</span>
+    <span class="exo-title">Arc-en-ciel &mdash; Dispersion dans une goutte d&rsquo;eau</span>
+    <span class="diff diff-3">&#9733;&#9733;&#9733; Avanc&eacute;</span>
+  </div>
+  <p>L&rsquo;arc-en-ciel se forme quand la lumi&egrave;re du soleil p&eacute;n&egrave;tre dans une goutte d&rsquo;eau sph&eacute;rique, subit une r&eacute;flexion totale interne, puis ressort. L&rsquo;indice de l&rsquo;eau d&eacute;pend de la couleur de la lumi&egrave;re :</p>
+  <table>
+    <thead><tr><th>Couleur</th><th>Indice \(n\)</th></tr></thead>
+    <tbody>
+      <tr><td>Rouge</td><td>1,331</td></tr>
+      <tr><td>Jaune</td><td>1,333</td></tr>
+      <tr><td>Bleu</td><td>1,337</td></tr>
+      <tr><td>Violet</td><td>1,342</td></tr>
+    </tbody>
+  </table>
+  <div class="q"><strong>1.</strong> Un rayon de lumi&egrave;re blanche arrive de l&rsquo;air sur la goutte avec un angle d&rsquo;incidence de 60&deg;. Calculer l&rsquo;angle r&eacute;fract&eacute; pour le rouge et pour le violet.</div>
+  <div class="q"><strong>2.</strong> Quelle couleur est la plus d&eacute;vi&eacute;e (angle r&eacute;fract&eacute; le plus petit) ? Pourquoi ?</div>
+  <div class="q"><strong>3.</strong> Calculer l&rsquo;angle critique pour le rouge et pour le violet dans l&rsquo;eau.</div>
+  <div class="q"><strong>4.</strong> Expliquer en 2-3 phrases pourquoi on voit des couleurs s&eacute;par&eacute;es dans un arc-en-ciel.</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> Rouge : \(\sin\theta_2 = \dfrac{\sin 60°}{1{,}331} = \dfrac{0{,}866}{1{,}331} = 0{,}6507\) &rarr; \(\theta_2 \approx 40{,}6°\)<br>
+    Violet : \(\sin\theta_2 = \dfrac{0{,}866}{1{,}342} = 0{,}6453\) &rarr; \(\theta_2 \approx 40{,}2°\)</p>
+    <p><strong>2.</strong> Le violet est le plus d&eacute;vi&eacute; (angle r&eacute;fract&eacute; 40,2° &lt; 40,6°) car son indice est le plus &eacute;lev&eacute;. Plus l&rsquo;indice est grand, plus le rayon se rapproche de la normale.</p>
+    <p><strong>3.</strong> Rouge : \(\sin\theta_c = 1/1{,}331 = 0{,}7513\) &rarr; \(\theta_c \approx 48{,}7°\)<br>
+    Violet : \(\sin\theta_c = 1/1{,}342 = 0{,}7452\) &rarr; \(\theta_c \approx 48{,}2°\)</p>
+    <p><strong>4.</strong> L&rsquo;indice de r&eacute;fraction de l&rsquo;eau varie avec la longueur d&rsquo;onde (couleur) de la lumi&egrave;re. Chaque couleur est r&eacute;fract&eacute;e avec un angle l&eacute;g&egrave;rement diff&eacute;rent en entrant et en sortant de la goutte. Apr&egrave;s la r&eacute;flexion interne et la sortie de la goutte, les couleurs sont suffisamment s&eacute;par&eacute;es pour que l&rsquo;&oelig;il les distingue : c&rsquo;est la <strong>dispersion</strong>.</p>
+  </div>
+</div>
+
+<!-- EXO 23 -->
+<div class="exo">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 23</span>
+    <span class="exo-title">Probl&egrave;me ouvert &mdash; Choisir un mat&eacute;riau pour un guide de lumi&egrave;re</span>
+    <span class="diff diff-3">&#9733;&#9733;&#9733; Avanc&eacute;</span>
+  </div>
+  <p>Un fabricant de mobilier design souhaite int&eacute;grer un guide de lumi&egrave;re dans le chant d&rsquo;une &eacute;tag&egrave;re pour cr&eacute;er un &eacute;clairage d&eacute;coratif. Le guide est une baguette de mat&eacute;riau transparent entour&eacute;e d&rsquo;air (\(n_{air} = 1{,}00\)). Trois mat&eacute;riaux sont disponibles :</p>
+  <table>
+    <thead><tr><th>Mat&eacute;riau</th><th>Indice \(n\)</th><th>Co&ucirc;t relatif</th></tr></thead>
+    <tbody>
+      <tr><td>Polycarbonate</td><td>1,59</td><td>1</td></tr>
+      <tr><td>Plexiglas (PMMA)</td><td>1,49</td><td>0,8</td></tr>
+      <tr><td>R&eacute;sine &eacute;poxy</td><td>1,55</td><td>1,2</td></tr>
+    </tbody>
+  </table>
+  <div class="q"><strong>1.</strong> Calculer l&rsquo;angle critique &agrave; l&rsquo;interface mat&eacute;riau/air pour chacun des trois mat&eacute;riaux.</div>
+  <div class="q"><strong>2.</strong> Quel mat&eacute;riau confine le mieux la lumi&egrave;re ? Lequel la confine le moins bien ?</div>
+  <div class="q"><strong>3.</strong> La LED inject&eacute;e dans le guide &eacute;met un c&ocirc;ne de lumi&egrave;re dont les rayons font des angles allant de 55&deg; &agrave; 85&deg; avec la normale aux parois du guide. Pour quel(s) mat&eacute;riau(x) <strong>tous</strong> ces rayons seront-ils confin&eacute;s ?</div>
+  <div class="q"><strong>4.</strong> En tenant compte du co&ucirc;t et des performances, quel mat&eacute;riau recommanderiez-vous ? Justifier votre choix.</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong><br>
+    Polycarbonate : \(\sin\theta_c = 1/1{,}59 = 0{,}629\) &rarr; \(\theta_c \approx 39{,}0°\)<br>
+    Plexiglas : \(\sin\theta_c = 1/1{,}49 = 0{,}671\) &rarr; \(\theta_c \approx 42{,}2°\)<br>
+    R&eacute;sine &eacute;poxy : \(\sin\theta_c = 1/1{,}55 = 0{,}645\) &rarr; \(\theta_c \approx 40{,}2°\)</p>
+    <p><strong>2.</strong> Le <strong>polycarbonate</strong> confine le mieux (angle critique le plus petit : 39,0°). Le <strong>plexiglas</strong> confine le moins bien (42,2°).</p>
+    <p><strong>3.</strong> Les rayons font des angles de 55° &agrave; 85° avec la normale. Il faut que le rayon le moins inclin&eacute; (55°) d&eacute;passe l&rsquo;angle critique. Les trois mat&eacute;riaux ont un angle critique inf&eacute;rieur &agrave; 55°, donc <strong>les trois mat&eacute;riaux</strong> confinent tous les rayons du c&ocirc;ne.</p>
+    <p><strong>4.</strong> Les trois conviennent techniquement. Le <strong>plexiglas</strong> est le meilleur choix : co&ucirc;t le plus bas (0,8), facile &agrave; usiner en menuiserie, et son angle critique (42,2°) est largement en dessous de 55°, garantissant un confinement complet. Le polycarbonate est plus r&eacute;sistant aux chocs mais plus cher, et la r&eacute;sine est la plus co&ucirc;teuse sans avantage d&eacute;cisif ici.</p>
+  </div>
+</div>
+
 </div><!-- fin diff-appro -->
 
 <!-- ============================================================ CHART.JS -->
