@@ -7,7 +7,7 @@
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <link rel="stylesheet" href="../../../styles.css">
 <link rel="stylesheet" href="../../../print.css" media="print">
-<style>:root{--p:#6f42c1;--p-bg:#f5f0ff;--p-border:#c4b5fd}</style>
+<style>:root{--p:#6f42c1;--p-bg:#f5f0ff;--p-border:#c4b5fd}.sujet-header{background:var(--p);color:#fff;padding:.5em 1em;border-radius:6px;margin:1.5em 0 1em;font-size:1.15em}</style>
 </head>
 <body>
 <div class="c">
@@ -25,6 +25,7 @@
 <!-- ========================= SOCLE ========================= -->
 <div class="diff-socle">
 <span class="tag-socle">Socle</span>
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
@@ -108,11 +109,96 @@
   </div>
 </div>
 
+<h3 class="sujet-header">Sujet B</h3>
+<p><strong>Barème :</strong> 20 points</p>
+
+<div class="exo">
+  <h2>Question 1 <span class="pts">(3 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> La lumière visible a une longueur d'onde comprise entre <strong>380 nm</strong> (violet) et <strong>780 nm</strong> (rouge). 1 nm = 10⁻⁹ m.</div>
+  <p>Compléter les phrases suivantes :</p>
+  <p>a) Les couleurs du spectre visible vont du .......... au .......... dans l'ordre croissant des longueurs d'onde.</p>
+  <p>b) La longueur d'onde de la lumière rouge est d'environ .......... nm.</p>
+  <p>c) Un prisme décompose la lumière blanche en un .......... de couleurs.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Les couleurs vont du <strong>violet</strong> au <strong>rouge</strong> dans l'ordre croissant des longueurs d'onde.</p>
+    <p>b) La longueur d'onde de la lumière rouge est d'environ <strong>700 nm</strong> (entre 620 et 780 nm).</p>
+    <p>c) Un prisme décompose la lumière blanche en un <strong>spectre</strong> de couleurs.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Synthèse additive (lumières) : R + G + B = Blanc. Synthèse soustractive (peintures) : C + M + J = Noir.</div>
+  <p>Compléter les mélanges :</p>
+  <p><strong>Synthèse additive (lumières) :</strong></p>
+  <p>a) Rouge + Bleu = ..........</p>
+  <p>b) Vert + Bleu = ..........</p>
+  <p><strong>Synthèse soustractive (peintures) :</strong></p>
+  <p>c) Magenta + Jaune = ..........</p>
+  <p>d) Magenta + Cyan = ..........</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Rouge + Bleu = <strong>Magenta</strong></p>
+    <p>b) Vert + Bleu = <strong>Cyan</strong></p>
+    <p>c) Magenta + Jaune = <strong>Rouge</strong></p>
+    <p>d) Magenta + Cyan = <strong>Bleu</strong></p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> \(E = \dfrac{\Phi}{S}\) avec \(E\) en lux, \(\Phi\) en lumens (lm), \(S\) en m².</div>
+  <p>Un poste de travail de 4 m² est éclairé par une lampe fournissant un flux de 3 600 lm.</p>
+  <p>a) Calculer l'éclairement : \(E = \dfrac{3\,600}{.........} = ..........\) lux</p>
+  <p>b) La norme recommande 500 lux pour un bureau. L'éclairage est-il suffisant ? → ..........</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) \(E = \dfrac{3\,600}{4} = \mathbf{900\text{ lux}}\)</p>
+    <p>b) Oui, l'éclairage est <strong>suffisant</strong> car 900 lux > 500 lux (norme bureau).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="pts">(5 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> Les photodétecteurs transforment la lumière en signal électrique. LDR : résistance variable. Photodiode : courant proportionnel à la lumière.</div>
+  <p>Relier chaque application à son photodétecteur :</p>
+  <table>
+    <tr><th>Application</th><th>Photodétecteur</th></tr>
+    <tr><td>Allumage automatique des lampadaires</td><td>a) CCD/CMOS</td></tr>
+    <tr><td>Appareil photo numérique</td><td>b) Photodiode</td></tr>
+    <tr><td>Lecteur de code-barres</td><td>c) LDR</td></tr>
+  </table>
+  <p>Application 1 → .......... ; Application 2 → .......... ; Application 3 → ..........</p>
+  <p>Donner un exemple d'utilisation d'une photodiode dans la vie courante.</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>Application 1 → <strong>c) LDR</strong> ; Application 2 → <strong>a) CCD/CMOS</strong> ; Application 3 → <strong>b) Photodiode</strong></p>
+    <p>Exemple de photodiode : la <strong>télécommande infrarouge</strong> d'un téléviseur (la photodiode du récepteur détecte les signaux IR envoyés par la télécommande).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="pts">(4 points)</span></h2>
+  <div class="meth"><strong>Rappel :</strong> La température de couleur se mesure en Kelvin : blanc chaud (2 700 K), blanc neutre (4 000 K), blanc froid (6 500 K).</div>
+  <p>Répondre aux questions :</p>
+  <p>a) Un éclairage à 6 500 K est-il chaud ou froid ? Quelle couleur dominante a-t-il ?</p>
+  <p>b) Pour un salon cosy, recommanderiez-vous un éclairage à 2 700 K ou 6 500 K ? Pourquoi ?</p>
+  <p>c) Pourquoi un artisan menuisier a-t-il besoin d'un éclairage avec un IRC élevé pour la finition du bois ?</p>
+  <button class="bc" onclick="this.nextElementSibling.style.display='block'">Voir la correction</button>
+  <div class="corr">
+    <p>a) Un éclairage à 6 500 K est un <strong>blanc froid</strong>. Il a une dominante <strong>bleutée</strong>.</p>
+    <p>b) On recommande <strong>2 700 K</strong> (blanc chaud) pour un salon cosy : il donne une ambiance douce avec des tons jaune-orangé, plus agréable et relaxante.</p>
+    <p>c) Un IRC élevé (≥ 90) garantit que les couleurs du bois sont restituées fidèlement. Avec un IRC faible, le menuisier pourrait mal percevoir la teinte d'une teinture ou d'un vernis et produire un résultat décevant.</p>
+  </div>
+</div>
+
 </div>
 
 <!-- ========================= STANDARD ========================= -->
 <div class="diff-standard">
 <span class="tag-standard">Standard</span>
+<h3 class="sujet-header">Sujet A</h3>
 <p><strong>Barème :</strong> 20 points</p>
 
 <div class="exo">
