@@ -1115,6 +1115,63 @@ canvas.graf{display:block;margin:12px auto;border-radius:10px;border:2px solid #
   </div></details>
 </div>
 
+<!-- Ex 14 -->
+<div class="exo">
+  <div class="exo-num">Exercice 14</div>
+  <div class="exo-titre">Volume d'eau dans une piscine</div>
+  <div class="enonce">
+    <span class="context-tag">🏊 Sport — Piscine</span><br>
+    On remplit une piscine à débit constant. Le volume d'eau \(V\) (en m³) en fonction du temps \(t\) (en heures) est donné par \(V(t) = 4t + 2\).<br>
+    <ol>
+      <li>Quel est le volume d'eau au départ (\(t = 0\)) ? Interpréter.</li>
+      <li>Calculer \(V(3)\) et \(V(8)\). Interpréter chaque résultat.</li>
+      <li>La piscine a une capacité de <strong>50 m³</strong>. Au bout de combien d'heures sera-t-elle pleine ? (Résoudre \(V(t) = 50\).)</li>
+      <li>Compléter un tableau de valeurs pour \(t = 0, 2, 4, 6, 8, 10, 12\).</li>
+      <li>La fonction \(V\) est-elle croissante ou décroissante sur \([0 ; 12]\) ? Justifier à l'aide du tableau.</li>
+    </ol>
+  </div>
+  <label class="rep-label">Tes calculs :</label>
+  <textarea class="zone-rep" rows="6" placeholder="1. V(0) = ... → Au départ, il y a déjà ... m³&#10;2. V(3) = ... , V(8) = ...&#10;3. 4t + 2 = 50 → t = ...&#10;4. Tableau&#10;5. Croissante / décroissante car ..."></textarea>
+  <details class="corr-wrap"><summary class="corr-btn">Voir la correction</summary>
+  <div class="corr-body">
+    <div class="etape"><div class="nc">1</div><div>\(V(0) = 4 \times 0 + 2 = 2\) m³. Au départ, il y a déjà <span class="corr-rep">2 m³</span> d'eau dans la piscine.</div></div>
+    <div class="etape"><div class="nc">2</div><div>\(V(3) = 14\) m³ : après 3 h, il y a 14 m³. \(V(8) = 34\) m³ : après 8 h, il y a 34 m³.</div></div>
+    <div class="etape"><div class="nc">3</div><div>\(4t + 2 = 50 \Rightarrow 4t = 48 \Rightarrow t = 12\). La piscine est pleine après <span class="corr-rep">12 heures</span>.</div></div>
+    <div class="etape"><div class="nc">4</div>
+      <table style="margin:4px 0;font-size:.9em">
+        <tr><th>\(t\)</th><td>0</td><td>2</td><td>4</td><td>6</td><td>8</td><td>10</td><td>12</td></tr>
+        <tr><th>\(V(t)\)</th><td class="ok">2</td><td class="ok">10</td><td class="ok">18</td><td class="ok">26</td><td class="ok">34</td><td class="ok">42</td><td class="ok">50</td></tr>
+      </table>
+    </div>
+    <div class="etape"><div class="nc">5</div><div>\(V\) est <span class="corr-rep">croissante</span> : quand \(t\) augmente, \(V(t)\) augmente aussi (2, 10, 18, 26…). C'est logique : on ajoute de l'eau en continu.</div></div>
+  </div></details>
+</div>
+
+<!-- Ex 15 -->
+<div class="exo">
+  <div class="exo-num">Exercice 15</div>
+  <div class="exo-titre">Consommation de carburant — lecture graphique</div>
+  <div class="enonce">
+    <span class="context-tag">🚗 Vie quotidienne — Transport</span><br>
+    La consommation de carburant \(C\) (en litres) d'un véhicule en fonction de la distance \(d\) parcourue (en km) est modélisée par \(C(d) = 0{,}07d\).<br>
+    <ol>
+      <li>Calculer \(C(100)\), \(C(250)\) et \(C(500)\). Interpréter.</li>
+      <li>Le réservoir contient <strong>45 litres</strong>. Quelle distance maximale peut-on parcourir ? (Résoudre \(C(d) = 45\).)</li>
+      <li>Le voyant de réserve s'allume quand il reste 7 litres, soit quand on a consommé 38 litres. Après combien de km le voyant s'allume-t-il ?</li>
+      <li>Le carburant coûte 1,80 €/litre. Exprimer le coût du trajet \(P(d)\) en fonction de \(d\). Quel est le coût d'un trajet de 300 km ?</li>
+    </ol>
+  </div>
+  <label class="rep-label">Tes calculs :</label>
+  <textarea class="zone-rep" rows="5" placeholder="1. C(100) = ...  C(250) = ...  C(500) = ...&#10;2. 0,07d = 45 → d = ...&#10;3. 0,07d = 38 → d = ...&#10;4. P(d) = ... ; P(300) = ..."></textarea>
+  <details class="corr-wrap"><summary class="corr-btn">Voir la correction</summary>
+  <div class="corr-body">
+    <div class="etape"><div class="nc">1</div><div>\(C(100) = 7\) L ; \(C(250) = 17{,}5\) L ; \(C(500) = 35\) L. Pour 500 km, on consomme 35 litres.</div></div>
+    <div class="etape"><div class="nc">2</div><div>\(0{,}07d = 45 \Rightarrow d = \dfrac{45}{0{,}07} \approx 642{,}9\). Distance maximale : <span class="corr-rep">environ 642 km</span>.</div></div>
+    <div class="etape"><div class="nc">3</div><div>\(0{,}07d = 38 \Rightarrow d = \dfrac{38}{0{,}07} \approx 542{,}9\). Le voyant s'allume après <span class="corr-rep">environ 543 km</span>.</div></div>
+    <div class="etape"><div class="nc">4</div><div>\(P(d) = 1{,}80 \times C(d) = 1{,}80 \times 0{,}07d = 0{,}126d\). Pour 300 km : \(P(300) = 0{,}126 \times 300 = \) <span class="corr-rep">37,80 €</span>.</div></div>
+  </div></details>
+</div>
+
 </div><!-- fin diff-standard -->
 
 <!-- ================================================================
@@ -1448,6 +1505,35 @@ canvas.graf{display:block;margin:12px auto;border-radius:10px;border:2px solid #
     <div class="etape"><div class="nc">4</div><div>\(\frac{120}{e+2} = 10 \Rightarrow e + 2 = 12 \Rightarrow e = \) <span class="corr-rep">10 cm</span>.</div></div>
     <div class="etape"><div class="nc">5</div><div>\(\frac{120}{e+2} < 15 \Rightarrow e + 2 > 8 \Rightarrow e > 6\). Il faut une épaisseur d'isolant <span class="corr-rep">supérieure à 6 cm</span> (strictement) pour respecter la réglementation.</div></div>
     <div class="etape"><div class="nc">6</div><div>\(D(e) = 0\) impliquerait \(\frac{120}{e+2} = 0\), ce qui est <span class="corr-rep">impossible</span> car un numérateur non nul divisé par un nombre ne donne jamais 0. Physiquement, on ne peut jamais supprimer totalement la déperdition thermique, on ne peut que la réduire.</div></div>
+  </div></details>
+</div>
+
+<!-- Ex 18 -->
+<div class="exo">
+  <div class="exo-num">Exercice 18 ⭐</div>
+  <span class="mama-tag">☀️ Énergie — Panneaux solaires</span>
+  <div class="exo-titre">Production électrique et rentabilité — problème ouvert</div>
+  <p>La puissance électrique \(P\) (en kW) produite par une installation de panneaux solaires varie selon l'heure de la journée. On modélise cette puissance par la fonction \(P\) définie sur \([6 ; 20]\) :</p>
+  <table class="full" style="font-size:.9em">
+    <tr><th>Heure (\(t\))</th><td>6</td><td>8</td><td>10</td><td>12</td><td>14</td><td>16</td><td>18</td><td>20</td></tr>
+    <tr><th>\(P(t)\) (kW)</th><td>0</td><td>1,2</td><td>3,0</td><td>4,0</td><td>3,5</td><td>2,0</td><td>0,8</td><td>0</td></tr>
+  </table>
+  <ol>
+    <li>Donner l'image de 12 par la fonction \(P\). Interpréter dans le contexte.</li>
+    <li>Trouver le(s) antécédent(s) de 2 par la fonction \(P\) (lecture du tableau). Interpréter.</li>
+    <li>Sur quel intervalle la fonction \(P\) est-elle croissante ? Décroissante ? Justifier et interpréter.</li>
+    <li>Le tarif de rachat de l'électricité est de <strong>0,10 €/kWh</strong>. On suppose que la puissance est constante entre deux relevés (paliers de 2 h). Estimer l'énergie produite sur la journée et le revenu correspondant.</li>
+    <li>L'installation a coûté <strong>8 000 €</strong>. En supposant 250 jours de production similaire par an, estimer le nombre d'années pour amortir l'installation.</li>
+  </ol>
+  <label class="rep-label">Tes calculs :</label>
+  <textarea class="zone-rep" rows="8" placeholder="1. P(12) = ... → À midi,...&#10;2. P(t) = 2 → t = ...&#10;3. Croissante sur [...;...], décroissante sur [...]&#10;4. Énergie ≈ ... kWh ; Revenu = ...&#10;5. Revenu annuel = ... ; Amortissement ≈ ... ans"></textarea>
+  <details class="corr-wrap"><summary class="corr-btn">Voir la correction</summary>
+  <div class="corr-body">
+    <div class="etape"><div class="nc">1</div><div>\(P(12) = 4\) kW. À midi, les panneaux produisent <span class="corr-rep">4 kW</span>, c'est le maximum de la journée.</div></div>
+    <div class="etape"><div class="nc">2</div><div>\(P(t) = 2\) pour \(t = 16\) (lecture directe). Il y a possiblement un second antécédent entre 8 et 10 (interpolation : vers \(t \approx 9\)). Les panneaux produisent 2 kW <span class="corr-rep">vers 9 h et à 16 h</span>.</div></div>
+    <div class="etape"><div class="nc">3</div><div>\(P\) est <span class="corr-rep">croissante sur \([6 ; 12]\)</span> (la puissance augmente le matin) et <span class="corr-rep">décroissante sur \([12 ; 20]\)</span> (elle diminue l'après-midi). C'est logique : le soleil monte puis descend.</div></div>
+    <div class="etape"><div class="nc">4</div><div>Énergie ≈ \((0 + 1{,}2 + 3{,}0 + 4{,}0 + 3{,}5 + 2{,}0 + 0{,}8) \times 2 = 14{,}5 \times 2 = 29\) kWh.<br>Revenu : \(29 \times 0{,}10 = \) <span class="corr-rep">2,90 €/jour</span>.</div></div>
+    <div class="etape"><div class="nc">5</div><div>Revenu annuel ≈ \(2{,}90 \times 250 = 725\) €.<br>Amortissement : \(\dfrac{8000}{725} \approx 11\) ans. Il faut environ <span class="corr-rep">11 ans</span> pour rentabiliser l'installation.</div></div>
   </div></details>
 </div>
 
