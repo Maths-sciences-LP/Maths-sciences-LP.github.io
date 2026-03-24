@@ -290,6 +290,137 @@
   </details>
 </div>
 
+
+<!-- SOCLE S4 -->
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 7</span>
+    <span class="exo-title">Calculer l'aire sous une courbe simple (guidé)</span>
+    <span class="tag-socle">Socle</span>
+  </div>
+  <div class="meth">
+    <span class="label-meth">Méthode</span>
+    Si \(f(x) \geq 0\) sur \([a\,;b]\), l'aire sous la courbe = \(\displaystyle\int_a^b f(x)\,dx = [F(x)]_a^b = F(b) - F(a)\).
+  </div>
+  <div class="situation">
+    <strong>Contexte :</strong> Un artisan menuisier découpe un bord arrondi dont le profil suit la courbe \(f(x) = x\) (en cm) pour \(x \in [0\,;\,6]\). Il veut calculer l'aire de la surface découpée.
+  </div>
+  <div class="consigne">
+    <strong>Étape 1 :</strong> La fonction \(f(x) = x\) est-elle positive sur \([0\,;\,6]\) ?<br>
+    Comme \(x \geq 0\) sur \([0\,;\,6]\), la réponse est ☐ oui ☐ non<br><br>
+    <strong>Étape 2 :</strong> Trouver une primitive de \(f(x) = x\).<br>
+    La primitive de \(x\) est \(F(x) = \boxed{\phantom{\dfrac{x^2}{2}}}\)<br><br>
+    <strong>Étape 3 :</strong> Calculer l'intégrale.<br>
+    \(\displaystyle\int_0^6 x\,dx = \left[\dfrac{x^2}{2}\right]_0^6 = \dfrac{6^2}{2} - \dfrac{0^2}{2} = \dfrac{\boxed{\phantom{36}}}{2} - 0 = \boxed{\phantom{18}}\) cm²
+  </div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Étape 1 :</strong> Oui, \(f(x) = x \geq 0\) sur \([0\,;\,6]\).</p>
+    <p><strong>Étape 2 :</strong> <span class="reponse">\(F(x) = \dfrac{x^2}{2}\)</span></p>
+    <p><strong>Étape 3 :</strong> \(\displaystyle\int_0^6 x\,dx = \dfrac{36}{2} - 0 =\) <span class="reponse">\(18\) cm²</span></p>
+    <p>La surface découpée a une aire de <strong>18 cm²</strong>.</p>
+  </div>
+</div>
+
+<!-- SOCLE S5 -->
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 8</span>
+    <span class="exo-title">Intégrale d'une fonction affine (guidé)</span>
+    <span class="tag-socle">Socle</span>
+  </div>
+  <div class="consigne">
+    Calculer chaque intégrale en suivant les étapes :<br><br>
+    <strong>a)</strong> \(\displaystyle\int_0^4 (3x + 1)\,dx\)<br>
+    <p style="font-size:.93em">
+      Primitive : \(F(x) = \dfrac{3x^2}{2} + x = \boxed{\phantom{\dfrac{3x^2}{2} + x}}\)<br>
+      \(F(4) = \dfrac{3 \times 16}{2} + 4 = 24 + 4 = \boxed{\phantom{28}}\)<br>
+      \(F(0) = 0 + 0 = \boxed{\phantom{0}}\)<br>
+      Résultat = \(\boxed{\phantom{28}} - \boxed{\phantom{0}} = \boxed{\phantom{28}}\)
+    </p>
+    <strong>b)</strong> \(\displaystyle\int_1^5 (2x - 3)\,dx\)<br>
+    <p style="font-size:.93em">
+      Primitive : \(F(x) = \boxed{\phantom{x^2 - 3x}}\)<br>
+      \(F(5) = 25 - 15 = \boxed{\phantom{10}}\)<br>
+      \(F(1) = 1 - 3 = \boxed{\phantom{-2}}\)<br>
+      Résultat = \(\boxed{\phantom{10}} - (\boxed{\phantom{-2}}) = \boxed{\phantom{12}}\)
+    </p>
+  </div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a)</strong> \(F(x) = \dfrac{3x^2}{2} + x\). \(F(4) = 28\), \(F(0) = 0\). <span class="reponse">\(\displaystyle\int_0^4 (3x + 1)\,dx = 28\)</span></p>
+    <p><strong>b)</strong> \(F(x) = x^2 - 3x\). \(F(5) = 10\), \(F(1) = -2\). <span class="reponse">\(\displaystyle\int_1^5 (2x - 3)\,dx = 10 - (-2) = 12\)</span></p>
+  </div>
+</div>
+
+<!-- SOCLE S6 -->
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 9</span>
+    <span class="exo-title">Primitives de fonctions usuelles — tableau complet</span>
+    <span class="tag-socle">Socle</span>
+  </div>
+  <div class="consigne">
+    Compléter le tableau en donnant une primitive de chaque fonction :<br>
+  </div>
+  <table>
+    <tr><th>\(f(x)\)</th><th>\(F(x)\) (primitive)</th></tr>
+    <tr><td>\(7\)</td><td></td></tr>
+    <tr><td>\(x^4\)</td><td></td></tr>
+    <tr><td>\(2x^3\)</td><td></td></tr>
+    <tr><td>\(3x^2 + 5x\)</td><td></td></tr>
+    <tr><td>\(e^x\)</td><td></td></tr>
+    <tr><td>\(\dfrac{1}{x}\) (pour \(x > 0\))</td><td></td></tr>
+  </table>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <table>
+      <tr><th>\(f(x)\)</th><th>\(F(x)\)</th></tr>
+      <tr><td>\(7\)</td><td><span class="reponse">\(7x\)</span></td></tr>
+      <tr><td>\(x^4\)</td><td><span class="reponse">\(\dfrac{x^5}{5}\)</span></td></tr>
+      <tr><td>\(2x^3\)</td><td><span class="reponse">\(\dfrac{x^4}{2}\)</span></td></tr>
+      <tr><td>\(3x^2 + 5x\)</td><td><span class="reponse">\(x^3 + \dfrac{5x^2}{2}\)</span></td></tr>
+      <tr><td>\(e^x\)</td><td><span class="reponse">\(e^x\)</span></td></tr>
+      <tr><td>\(\dfrac{1}{x}\)</td><td><span class="reponse">\(\ln x\)</span></td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- SOCLE S7 -->
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 10</span>
+    <span class="exo-title">Calculer une intégrale pour trouver une valeur numérique (guidé)</span>
+    <span class="tag-socle">Socle</span>
+  </div>
+  <div class="situation">
+    <strong>Contexte :</strong> Un technicien chauffagiste mesure que la puissance (en kW) d'une chaudière varie selon \(P(t) = 2t + 1\) pour \(t \in [0\,;\,4]\) heures. L'énergie consommée (en kWh) est l'intégrale de la puissance.
+  </div>
+  <div class="consigne">
+    <strong>Étape 1 :</strong> Trouver une primitive de \(P(t) = 2t + 1\).<br>
+    <p style="font-size:.93em">
+      Primitive de \(2t\) → \(t^2\). Primitive de \(1\) → \(t\). Donc \(F(t) = \boxed{\phantom{t^2 + t}}\)
+    </p>
+    <strong>Étape 2 :</strong> Calculer l'énergie sur \([0\,;\,4]\).<br>
+    <p style="font-size:.93em">
+      \(E = \displaystyle\int_0^4 (2t + 1)\,dt = [t^2 + t]_0^4\)<br>
+      \(F(4) = 4^2 + 4 = \boxed{\phantom{20}}\)<br>
+      \(F(0) = 0^2 + 0 = \boxed{\phantom{0}}\)<br>
+      \(E = \boxed{\phantom{20}} - \boxed{\phantom{0}} = \boxed{\phantom{20}}\) kWh
+    </p>
+    <strong>Étape 3 :</strong> Calculer la puissance moyenne sur ces 4 heures.<br>
+    <p style="font-size:.93em">
+      \(\bar{P} = \dfrac{E}{b - a} = \dfrac{20}{\boxed{\phantom{4}}} = \boxed{\phantom{5}}\) kW
+    </p>
+  </div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Étape 1 :</strong> <span class="reponse">\(F(t) = t^2 + t\)</span></p>
+    <p><strong>Étape 2 :</strong> \(E = 20 - 0 =\) <span class="reponse">\(20\) kWh</span></p>
+    <p><strong>Étape 3 :</strong> Puissance moyenne = <span class="reponse">\(5\) kW</span>. Interprétation : sur ces 4 heures, la chaudière fonctionnerait de façon équivalente à une puissance constante de 5 kW.</p>
+  </div>
+</div>
+
 </div><!-- fin diff-socle -->
 
 <!-- ================================================================

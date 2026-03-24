@@ -315,6 +315,95 @@ td.tv-val{font-weight:700;background:#f0fff4}
   </details>
 </div>
 
+
+<!-- EX 21 -->
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 21</span>
+    <span class="exo-title">Calculer f'(x) et déterminer son signe — cas simple</span>
+    <span class="tag-socle">Socle</span>
+  </div>
+  <p>On considère \(f(x) = x^3 - 3x\).</p>
+  <div class="consigne"><strong>1.</strong> Calculer \(f'(x)\). (Rappel : si \(f(x) = ax^3 + bx^2 + cx + d\), alors \(f'(x) = 3ax^2 + 2bx + c\).)</div>
+  <div class="reponse-box">\(f'(x) = \ldots\)</div>
+  <div class="consigne"><strong>2.</strong> Calculer le discriminant \(\Delta = b^2 - 4ac\) de \(f'(x)\). Calculer ensuite les deux racines \(x_1\) et \(x_2\).</div>
+  <div class="reponse-box">\(\Delta = \ldots\) ; \(x_1 = \ldots\) ; \(x_2 = \ldots\)</div>
+  <div class="consigne"><strong>3.</strong> Compléter le tableau de signes de \(f'(x)\) (le coefficient de \(x^2\) est positif) :</div>
+  <table>
+    <tr><th>\(x\)</th><td>\(-\infty\)</td><td>\(x_1\)</td><td></td><td>\(x_2\)</td><td>\(+\infty\)</td></tr>
+    <tr><th>Signe de \(f'(x)\)</th><td></td><td>0</td><td>…</td><td>0</td><td></td></tr>
+    <tr><th>Variations de \(f\)</th><td></td><td></td><td>…</td><td></td><td></td></tr>
+  </table>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \(f(x) = x^3 - 3x\) → \(f'(x) = 3x^2 - 3\).</p>
+    <p><strong>2.</strong> \(f'(x) = 3x^2 - 3\). On résout \(3x^2 - 3 = 0\) → \(x^2 = 1\) → <span class="reponse">\(x_1 = -1\)</span> et <span class="reponse">\(x_2 = 1\)</span>.</p>
+    <p><strong>3.</strong> Le coefficient de \(x^2\) est 3 (positif), donc \(f'(x) \geq 0\) en dehors des racines :</p>
+    <table>
+      <tr><th>\(x\)</th><td>\(-\infty\)</td><td>−1</td><td></td><td>1</td><td>\(+\infty\)</td></tr>
+      <tr><th>Signe de \(f'\)</th><td>+</td><td>0</td><td>−</td><td>0</td><td>+</td></tr>
+      <tr><th>Variations de \(f\)</th><td>↗</td><td>\(f(-1)=2\)</td><td>↘</td><td>\(f(1)=-2\)</td><td>↗</td></tr>
+    </table>
+    <p>Maximum local en \(x = -1\) : \(f(-1) = (-1)^3 - 3\times(-1) = -1+3 = \)<span class="reponse">2</span>. Minimum local en \(x = 1\) : \(f(1) = 1 - 3 = \)<span class="reponse">−2</span>.</p>
+  </div>
+</div>
+
+<!-- EX 22 -->
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 22</span>
+    <span class="exo-title">Évaluer une fonction et lire un extremum guidé</span>
+    <span class="tag-socle">Socle</span>
+  </div>
+  <p>Un menuisier modélise la consommation électrique de son atelier (en kWh) en fonction de l'heure \(h\) (entre 0 et 8 h) par :</p>
+  <p>\[C(h) = h^3 - 6h^2 + 9h + 2\]</p>
+  <div class="consigne"><strong>1.</strong> Calculer \(C(0)\), \(C(1)\), \(C(3)\) et \(C(8)\). Compléter le tableau :</div>
+  <table>
+    <tr><th>\(h\)</th><td>0</td><td>1</td><td>3</td><td>8</td></tr>
+    <tr><th>\(C(h)\)</th><td></td><td></td><td></td><td></td></tr>
+  </table>
+  <div class="consigne"><strong>2.</strong> La dérivée est \(C'(h) = 3h^2 - 12h + 9\). Calculer \(C'(1)\) et \(C'(3)\).</div>
+  <div class="reponse-box">\(C'(1) = \ldots\) ; \(C'(3) = \ldots\)</div>
+  <div class="consigne"><strong>3.</strong> On sait que \(C'(h) = 0\) pour \(h = 1\) et \(h = 3\). Parmi ces deux heures, laquelle correspond à un maximum ? À un minimum ? (Observer les valeurs du tableau.)</div>
+  <div class="reponse-box">Maximum en \(h = \ldots\) : \(C = \ldots\) kWh. Minimum en \(h = \ldots\) : \(C = \ldots\) kWh.</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong></p>
+    <table>
+      <tr><th>\(h\)</th><td>0</td><td>1</td><td>3</td><td>8</td></tr>
+      <tr><th>\(C(h)\)</th><td><span class="reponse">2</span></td><td><span class="reponse">6</span></td><td><span class="reponse">2</span></td><td><span class="reponse">98</span></td></tr>
+    </table>
+    <p><strong>2.</strong> \(C'(1) = 3(1)^2 - 12(1) + 9 = 3 - 12 + 9 = \)<span class="reponse">0</span>. \(C'(3) = 3(9) - 12(3) + 9 = 27 - 36 + 9 = \)<span class="reponse">0</span>. Les deux sont bien des extremums.</p>
+    <p><strong>3.</strong> \(C(1) = 6 > C(3) = 2\). Donc <span class="reponse">maximum local en \(h = 1\)</span> (consommation de 6 kWh) et <span class="reponse">minimum local en \(h = 3\)</span> (consommation de 2 kWh).</p>
+  </div>
+</div>
+
+<!-- EX 23 -->
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 23</span>
+    <span class="exo-title">Lire une courbe et interpréter les extremums</span>
+    <span class="tag-socle">Socle</span>
+  </div>
+  <p>Le graphique ci-dessous représente la fonction \(f(x) = -x^3 + 3x + 2\) sur \([-2\,;\,2]\).</p>
+  <p>En lisant le graphique, répondre aux questions suivantes :</p>
+  <div class="consigne"><strong>1.</strong> Quel semble être le maximum local de \(f\) ? Pour quelle valeur de \(x\) est-il atteint ?</div>
+  <div class="reponse-box">Maximum ≈ …… atteint en \(x = \ldots\)</div>
+  <div class="consigne"><strong>2.</strong> Quel semble être le minimum local de \(f\) ? Pour quelle valeur de \(x\) est-il atteint ?</div>
+  <div class="reponse-box">Minimum ≈ …… atteint en \(x = \ldots\)</div>
+  <div class="consigne"><strong>3.</strong> Combien de solutions semble avoir l'équation \(f(x) = 2\) d'après le graphique ?</div>
+  <div class="reponse-box">Nombre de solutions : …</div>
+  <div class="consigne"><strong>4.</strong> Calculer \(f(-1)\) et \(f(1)\) pour vérifier vos lectures.</div>
+  <div class="reponse-box">\(f(-1) = \ldots\) ; \(f(1) = \ldots\)</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> En lisant la courbe : <span class="reponse">maximum local ≈ 4, atteint en \(x = 1\)</span>.</p>
+    <p><strong>2.</strong> <span class="reponse">Minimum local ≈ 0, atteint en \(x = -1\)</span>.</p>
+    <p><strong>3.</strong> La droite horizontale \(y = 2\) coupe la courbe en <span class="reponse">3 points</span> → 3 solutions.</p>
+    <p><strong>4.</strong> \(f(-1) = -(-1)^3 + 3(-1) + 2 = 1 - 3 + 2 = \)<span class="reponse">0</span>. \(f(1) = -(1)^3 + 3(1) + 2 = -1 + 3 + 2 = \)<span class="reponse">4</span>. Ces calculs confirment les lectures graphiques.</p>
+  </div>
+</div>
+
 </div><!-- fin diff-socle -->
 
 <!-- ================================================================
@@ -756,6 +845,236 @@ td.tv-val{font-weight:700;background:#f0fff4}
       <p><strong>5.</strong> La puissance maximale est 36 kW \(>\) 30 kW → <span class="reponse">le seuil est dépassé</span>. L’installateur doit régler la CTA pour éviter ce pic de consommation.</p>
   </div>
   </details>
+</div>
+
+<!-- EX S4 -->
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 24</span>
+    <span class="exo-title">Extremums d'une fonction — contexte thermique</span>
+    <span class="tag-standard">Standard</span>
+  </div>
+  <div class="situation">
+    <strong>Contexte :</strong> Un technicien CVC modélise la température (en °C) dans une pièce en fonction du temps \(t\) (en heures, entre 0 et 4 h) après la mise en marche du chauffage par :
+    \[T(t) = -t^3 + 3t^2 + 5\]
+  </div>
+  <div class="consigne"><strong>1.</strong> Calculer \(T'(t)\).</div>
+  <div class="reponse-box">\(T'(t) = \ldots\)</div>
+  <div class="consigne"><strong>2.</strong> Résoudre \(T'(t) = 0\). Quelles sont les valeurs de \(t\) où la température ne varie plus ?</div>
+  <div class="reponse-box">Solutions : ………………</div>
+  <div class="consigne"><strong>3.</strong> Dresser le tableau de variations de \(T\) sur \([0\,;\,4]\).</div>
+  <div class="reponse-box" style="min-height:70px"></div>
+  <div class="consigne"><strong>4.</strong> Quelle est la température maximale atteinte dans la pièce ? À quel moment ?</div>
+  <div class="reponse-box">Température maximale : ………………</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \(T'(t) = -3t^2 + 6t\)</p>
+    <p><strong>2.</strong> \(-3t^2 + 6t = 0\) → \(-3t(t - 2) = 0\) → <span class="reponse">\(t = 0\)</span> ou <span class="reponse">\(t = 2\)</span>.</p>
+    <p><strong>3.</strong></p>
+    <table class="tv-table">
+      <tr><th>\(t\)</th><td>0</td><td></td><td>2</td><td></td><td>4</td></tr>
+      <tr><th>Signe \(T'\)</th><td>0</td><td class="tv-plus">+</td><td>0</td><td class="tv-minus">−</td><td></td></tr>
+      <tr><th>Variations \(T\)</th><td class="tv-val">5</td><td class="tv-up">↗</td><td class="tv-val">9</td><td class="tv-down">↘</td><td class="tv-val">−3</td></tr>
+    </table>
+    <p><strong>4.</strong> \(T(2) = -(2)^3 + 3(2)^2 + 5 = -8 + 12 + 5 = \)<span class="reponse">9 °C</span>, atteint à <span class="reponse">\(t = 2\) h</span> après la mise en marche.</p>
+  </div>
+</div>
+
+<!-- EX S5 -->
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 25</span>
+    <span class="exo-title">Nombre de solutions d'une équation</span>
+    <span class="tag-standard">Standard</span>
+  </div>
+  <p>Soit \(f(x) = x^3 - 6x^2 + 9x\).</p>
+  <p>On admet que \(f'(x) = 3x^2 - 12x + 9 = 3(x-1)(x-3)\). Les extremums sont : maximum local en \(x=1\) et minimum local en \(x=3\).</p>
+  <div class="consigne"><strong>1.</strong> Calculer \(f(1)\) et \(f(3)\).</div>
+  <div class="reponse-box">……………</div>
+  <div class="consigne"><strong>2.</strong> Combien de solutions possède chacune des équations ? Justifier à l'aide du tableau de variations.</div>
+  <div class="consigne"><strong>a)</strong> \(f(x) = 2\) &nbsp;&nbsp; <strong>b)</strong> \(f(x) = 4\) &nbsp;&nbsp; <strong>c)</strong> \(f(x) = -1\)</div>
+  <div class="reponse-box">a) ………… b) ………… c) …………</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \(f(1) = 1 - 6 + 9 = \)<span class="reponse">4</span> (maximum local) ; \(f(3) = 27 - 54 + 27 = \)<span class="reponse">0</span> (minimum local).</p>
+    <p><strong>2.</strong></p>
+    <table class="tv-table">
+      <tr><th>\(x\)</th><td>\(-\infty\)</td><td></td><td>1</td><td></td><td>3</td><td></td><td>\(+\infty\)</td></tr>
+      <tr><th>Variations \(f\)</th><td class="tv-val">\(-\infty\)</td><td class="tv-up">↗</td><td class="tv-val">4</td><td class="tv-down">↘</td><td class="tv-val">0</td><td class="tv-up">↗</td><td class="tv-val">\(+\infty\)</td></tr>
+    </table>
+    <p><strong>a)</strong> \(f(x) = 2\) : 2 est compris entre le minimum (0) et le maximum (4) → <span class="reponse">3 solutions</span>.</p>
+    <p><strong>b)</strong> \(f(x) = 4\) : 4 est le maximum local → <span class="reponse">2 solutions</span> (une pour \(x < 1\) et une en \(x = 1\)).</p>
+    <p><strong>c)</strong> \(f(x) = -1\) : −1 est inférieur au minimum local (0) → <span class="reponse">1 seule solution</span> (pour \(x > 3\)).</p>
+  </div>
+</div>
+
+<!-- EX S6 -->
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 26</span>
+    <span class="exo-title">Étude complète — menuiserie d'agencement</span>
+    <span class="tag-standard">Standard</span>
+  </div>
+  <div class="situation">
+    <strong>Contexte :</strong> Un menuisier agenceur calcule le bénéfice \(B(x)\) (en euros) d'un chantier selon le nombre \(x\) de meubles produits (entre 0 et 6) :
+    \[B(x) = -2x^3 + 18x^2 - 48x + 36\]
+  </div>
+  <div class="consigne"><strong>1.</strong> Calculer \(B'(x)\).</div>
+  <div class="reponse-box">\(B'(x) = \ldots\)</div>
+  <div class="consigne"><strong>2.</strong> On admet que \(B'(x) = -6(x-2)(x-4)\). Résoudre \(B'(x) = 0\).</div>
+  <div class="reponse-box">Solutions : ………………</div>
+  <div class="consigne"><strong>3.</strong> Dresser le tableau de variations de \(B\) sur \([0\,;\,6]\) puis calculer \(B(2)\) et \(B(4)\).</div>
+  <div class="reponse-box" style="min-height:80px"></div>
+  <div class="consigne"><strong>4.</strong> Combien de meubles doit-il produire pour maximiser le bénéfice ? Quel est ce bénéfice ?</div>
+  <div class="reponse-box">……………</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \(B'(x) = -6x^2 + 36x - 48\)</p>
+    <p><strong>2.</strong> \(-6(x-2)(x-4) = 0\) → <span class="reponse">\(x = 2\)</span> ou <span class="reponse">\(x = 4\)</span>.</p>
+    <p><strong>3.</strong> Comme \(a = -6 < 0\), \(B'(x) > 0\) entre les racines :</p>
+    <table class="tv-table">
+      <tr><th>\(x\)</th><td>0</td><td></td><td>2</td><td></td><td>4</td><td></td><td>6</td></tr>
+      <tr><th>Signe \(B'\)</th><td></td><td class="tv-minus">−</td><td>0</td><td class="tv-plus">+</td><td>0</td><td class="tv-minus">−</td><td></td></tr>
+      <tr><th>Variations \(B\)</th><td class="tv-val">36</td><td class="tv-down">↘</td><td class="tv-val">4</td><td class="tv-up">↗</td><td class="tv-val">36</td><td class="tv-down">↘</td><td class="tv-val">36</td></tr>
+    </table>
+    <p>\(B(2) = -2(8) + 18(4) - 48(2) + 36 = -16 + 72 - 96 + 36 = \)<span class="reponse">−4 €</span> (minimum local, perte).</p>
+    <p>\(B(4) = -2(64) + 18(16) - 48(4) + 36 = -128 + 288 - 192 + 36 = \)<span class="reponse">4 €</span> (maximum local).</p>
+    <p><strong>4.</strong> Le bénéfice est maximal pour <span class="reponse">\(x = 4\) meubles</span>, avec un bénéfice de <span class="reponse">4 €</span>.</p>
+  </div>
+</div>
+
+<!-- EX S7 -->
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 27</span>
+    <span class="exo-title">Lecture graphique — extremums et solutions</span>
+    <span class="tag-standard">Standard</span>
+  </div>
+  <p>La courbe ci-dessous représente \(g(x) = x^3 - 3x + 1\). On admet que le maximum local est en \(x = -1\) et le minimum local est en \(x = 1\).</p>
+  <div class="consigne"><strong>1.</strong> Calculer \(g(-1)\) et \(g(1)\).</div>
+  <div class="reponse-box">……………</div>
+  <div class="consigne"><strong>2.</strong> Déterminer le nombre de solutions de \(g(x) = 0\) en justifiant par les extremums.</div>
+  <div class="reponse-box">……………</div>
+  <div class="consigne"><strong>3.</strong> Calculer \(g'(x)\) puis vérifier que \(g'(-1) = 0\) et \(g'(1) = 0\).</div>
+  <div class="reponse-box">……………</div>
+  <div class="consigne"><strong>4.</strong> Dresser le tableau de variations complet de \(g\).</div>
+  <div class="reponse-box" style="min-height:70px"></div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \(g(-1) = -1 + 3 + 1 = \)<span class="reponse">3</span> ; \(g(1) = 1 - 3 + 1 = \)<span class="reponse">−1</span>.</p>
+    <p><strong>2.</strong> \(0\) est compris entre le minimum (−1) et le maximum (3) → <span class="reponse">3 solutions</span>.</p>
+    <p><strong>3.</strong> \(g'(x) = 3x^2 - 3\). \(g'(-1) = 3(1) - 3 = 0\) ✓ ; \(g'(1) = 3(1) - 3 = 0\) ✓</p>
+    <p><strong>4.</strong></p>
+    <table class="tv-table">
+      <tr><th>\(x\)</th><td>\(-\infty\)</td><td></td><td>−1</td><td></td><td>1</td><td></td><td>\(+\infty\)</td></tr>
+      <tr><th>Signe \(g'\)</th><td></td><td class="tv-plus">+</td><td>0</td><td class="tv-minus">−</td><td>0</td><td class="tv-plus">+</td><td></td></tr>
+      <tr><th>Variations \(g\)</th><td class="tv-val">\(-\infty\)</td><td class="tv-up">↗</td><td class="tv-val">3</td><td class="tv-down">↘</td><td class="tv-val">−1</td><td class="tv-up">↗</td><td class="tv-val">\(+\infty\)</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- EX S8 -->
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 28</span>
+    <span class="exo-title">Optimisation — volume d'une boîte</span>
+    <span class="tag-standard">Standard</span>
+  </div>
+  <div class="situation">
+    <strong>Contexte :</strong> Un artisan menuisier découpe des carrés de côté \(x\) (en cm) aux quatre coins d'une plaque carrée de 12 cm de côté pour fabriquer une boîte sans couvercle.
+    Le volume de la boîte est :
+    \[V(x) = x(12 - 2x)^2 = 4x^3 - 48x^2 + 144x \quad (x \in [0\,;\,6])\]
+  </div>
+  <div class="consigne"><strong>1.</strong> Calculer \(V'(x)\).</div>
+  <div class="reponse-box">\(V'(x) = \ldots\)</div>
+  <div class="consigne"><strong>2.</strong> On admet que \(V'(x) = 4(3x^2 - 24x + 36) = 12(x-2)(x-6)\). Résoudre \(V'(x) = 0\) sur \([0\,;\,6]\).</div>
+  <div class="reponse-box">Solutions : ………………</div>
+  <div class="consigne"><strong>3.</strong> Étudier le signe de \(V'(x)\) sur \([0\,;\,6]\) et dresser le tableau de variations.</div>
+  <div class="reponse-box" style="min-height:70px"></div>
+  <div class="consigne"><strong>4.</strong> Quelle valeur de \(x\) maximise le volume ? Calculer ce volume maximal.</div>
+  <div class="reponse-box">……………</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \(V'(x) = 12x^2 - 96x + 144\)</p>
+    <p><strong>2.</strong> \(12(x-2)(x-6) = 0\) → <span class="reponse">\(x = 2\)</span> (sur \([0\,;\,6]\)) ou \(x = 6\) (borne).</p>
+    <p><strong>3.</strong> Sur \([0\,;\,6]\), \(V'(x) > 0\) sur \([0\,;\,2[\) et \(V'(x) < 0\) sur \(]2\,;\,6]\) :</p>
+    <table class="tv-table">
+      <tr><th>\(x\)</th><td>0</td><td></td><td>2</td><td></td><td>6</td></tr>
+      <tr><th>Signe \(V'\)</th><td></td><td class="tv-plus">+</td><td>0</td><td class="tv-minus">−</td><td></td></tr>
+      <tr><th>Variations \(V\)</th><td class="tv-val">0</td><td class="tv-up">↗</td><td class="tv-val">128</td><td class="tv-down">↘</td><td class="tv-val">0</td></tr>
+    </table>
+    <p><strong>4.</strong> \(V(2) = 4(8) - 48(4) + 144(2) = 32 - 192 + 288 = \)<span class="reponse">128 cm³</span>, pour <span class="reponse">\(x = 2\) cm</span>.</p>
+  </div>
+</div>
+
+<!-- EX S9 -->
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 29</span>
+    <span class="exo-title">Puissance consommée — installation électrique</span>
+    <span class="tag-standard">Standard</span>
+  </div>
+  <div class="situation">
+    <strong>Contexte :</strong> Un technicien de maintenance énergétique mesure la puissance \(P\) (en kW) consommée par un bâtiment en fonction de l'heure \(h\) (entre 6 h et 22 h, soit \(h \in [0\,;\,16]\)) :
+    \[P(h) = 0{,}1h^3 - 2{,}4h^2 + 14{,}4h\]
+  </div>
+  <div class="consigne"><strong>1.</strong> Calculer \(P'(h)\).</div>
+  <div class="reponse-box">\(P'(h) = \ldots\)</div>
+  <div class="consigne"><strong>2.</strong> Résoudre \(P'(h) = 0\). On pourra factoriser \(P'(h) = 0{,}3h(h - 8)(h - ?)\) — chercher les racines par calcul.</div>
+  <div class="reponse-box">Solutions : ………………</div>
+  <div class="consigne"><strong>3.</strong> Calculer \(P(6)\) et \(P(12)\). Dresser le tableau de variations sur \([0\,;\,16]\).</div>
+  <div class="reponse-box" style="min-height:70px"></div>
+  <div class="consigne"><strong>4.</strong> À quelle heure (entre 6 h et 22 h) la puissance est-elle maximale ? Quelle est cette puissance ?</div>
+  <div class="reponse-box">……………</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \(P'(h) = 0{,}3h^2 - 4{,}8h + 14{,}4\)</p>
+    <p><strong>2.</strong> \(\Delta = (-4{,}8)^2 - 4 \times 0{,}3 \times 14{,}4 = 23{,}04 - 17{,}28 = 5{,}76\). \(\sqrt{5{,}76} = 2{,}4\).<br>
+    \(h_1 = \dfrac{4{,}8 - 2{,}4}{0{,}6} = \)<span class="reponse">4</span> et \(h_2 = \dfrac{4{,}8 + 2{,}4}{0{,}6} = \)<span class="reponse">12</span>. Seuls \(h = 4\) et \(h = 12\) sont racines sur \([0\,;\,16]\).</p>
+    <p><strong>3.</strong> \(P(4) = 0{,}1(64) - 2{,}4(16) + 14{,}4(4) = 6{,}4 - 38{,}4 + 57{,}6 = \)<span class="reponse">25,6 kW</span>. \(P(12) = 0{,}1(1728) - 2{,}4(144) + 14{,}4(12) = 172{,}8 - 345{,}6 + 172{,}8 = \)<span class="reponse">0 kW</span>.</p>
+    <table class="tv-table">
+      <tr><th>\(h\)</th><td>0</td><td></td><td>4</td><td></td><td>12</td><td></td><td>16</td></tr>
+      <tr><th>Signe \(P'\)</th><td></td><td class="tv-plus">+</td><td>0</td><td class="tv-minus">−</td><td>0</td><td class="tv-plus">+</td><td></td></tr>
+      <tr><th>Variations \(P\)</th><td class="tv-val">0</td><td class="tv-up">↗</td><td class="tv-val">25,6</td><td class="tv-down">↘</td><td class="tv-val">0</td><td class="tv-up">↗</td><td class="tv-val">25,6</td></tr>
+    </table>
+    <p><strong>4.</strong> La puissance maximale est <span class="reponse">25,6 kW</span>, atteinte à <span class="reponse">\(h = 4\) (soit 10 h du matin)</span> et à \(h = 16\) (soit 22 h).</p>
+  </div>
+</div>
+
+<!-- EX S10 -->
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 30</span>
+    <span class="exo-title">Modèle polynôme de degré 3 — débit d'eau</span>
+    <span class="tag-standard">Standard</span>
+  </div>
+  <div class="situation">
+    <strong>Contexte :</strong> Un plombier chauffagiste mesure le débit d'eau (en L/min) dans un réseau de chauffage en fonction du temps \(t\) (en heures, sur \([0\,;\,5]\)) :
+    \[D(t) = t^3 - 6t^2 + 9t + 2\]
+  </div>
+  <div class="consigne"><strong>1.</strong> Calculer \(D'(t)\). Factoriser \(D'(t)\).</div>
+  <div class="reponse-box">……………</div>
+  <div class="consigne"><strong>2.</strong> Résoudre \(D'(t) = 0\). Calculer \(D(1)\) et \(D(3)\).</div>
+  <div class="reponse-box">……………</div>
+  <div class="consigne"><strong>3.</strong> Dresser le tableau de variations de \(D\) sur \([0\,;\,5]\).</div>
+  <div class="reponse-box" style="min-height:70px"></div>
+  <div class="consigne"><strong>4.</strong> Quel est le débit maximal ? Le débit minimum local ? Interpréter dans le contexte.</div>
+  <div class="reponse-box">……………</div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1.</strong> \(D'(t) = 3t^2 - 12t + 9 = 3(t^2 - 4t + 3) = \)<span class="reponse">\(3(t-1)(t-3)\)</span></p>
+    <p><strong>2.</strong> \(D'(t) = 0\) pour <span class="reponse">\(t = 1\)</span> et <span class="reponse">\(t = 3\)</span>.<br>
+    \(D(1) = 1 - 6 + 9 + 2 = \)<span class="reponse">6 L/min</span> (maximum local).<br>
+    \(D(3) = 27 - 54 + 27 + 2 = \)<span class="reponse">2 L/min</span> (minimum local).</p>
+    <p><strong>3.</strong></p>
+    <table class="tv-table">
+      <tr><th>\(t\)</th><td>0</td><td></td><td>1</td><td></td><td>3</td><td></td><td>5</td></tr>
+      <tr><th>Signe \(D'\)</th><td></td><td class="tv-plus">+</td><td>0</td><td class="tv-minus">−</td><td>0</td><td class="tv-plus">+</td><td></td></tr>
+      <tr><th>Variations \(D\)</th><td class="tv-val">2</td><td class="tv-up">↗</td><td class="tv-val">6</td><td class="tv-down">↘</td><td class="tv-val">2</td><td class="tv-up">↗</td><td class="tv-val">22</td></tr>
+    </table>
+    <p><strong>4.</strong> Débit maximal : <span class="reponse">22 L/min</span> à \(t = 5\) h. Minimum local : <span class="reponse">2 L/min</span> à \(t = 3\) h.<br>
+    Le réseau connaît une chute de débit entre 1 h et 3 h d'utilisation, puis repart fortement à la hausse.</p>
+  </div>
 </div>
 
 </div><!-- fin diff-standard -->
