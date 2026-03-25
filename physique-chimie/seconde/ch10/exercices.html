@@ -9,8 +9,6 @@
 <link rel="stylesheet" href="../../../styles.css">
 <link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#6f42c1;--p-bg:#f5f0ff;--p-border:#c4b5fd}
-.methode{background:#fffbeb;border:1px solid #f59e0b;border-radius:8px;padding:14px;margin:16px 0}
-.attention{background:#fff1f2;border:1px solid #fda4af;border-radius:8px;padding:14px;margin:16px 0}
 .section-intro{background:#f8f4ff;border-radius:8px;padding:10px 16px;margin-bottom:18px;font-size:.92em;color:#4a1d96;border:1px solid #ddd6fe}
 .chart-container{max-width:600px;margin:20px auto;padding:10px}
 svg text{font-family:'Segoe UI',sans-serif}
@@ -175,7 +173,7 @@ svg text{font-family:'Segoe UI',sans-serif}
     <span class="tag-socle">Socle</span>
   </div>
   <span class="context-tag">Atelier de menuiserie</span>
-  <div class="methode">
+  <div class="meth">
     <strong>Méthode :</strong><br>
     • Étape 1 : Convertir T en Kelvin : \( T(\text{K}) = T(°\text{C}) + 273 \)<br>
     • Étape 2 : Lire la résistance R dans le tableau à la bonne température.<br>
@@ -260,7 +258,7 @@ svg text{font-family:'Segoe UI',sans-serif}
   <span class="context-tag">Atelier de menuiserie — Diagnostic</span>
   <div class="enonce">
     Un technicien constate que l'étuve d'un atelier de menuiserie chauffe sans arrêt, même quand la température est correcte. La CTN est suspectée.<br><br>
-    <div class="methode">
+    <div class="meth">
       <strong>À retenir :</strong><br>
       • Si CTN débranchée (fil coupé) → le régulateur lit R → <strong>∞</strong> (très grand)<br>
       &nbsp;&nbsp;→ Il croit que T est très <strong>froide</strong> → chauffage reste <strong>ON</strong><br>
@@ -422,15 +420,19 @@ svg text{font-family:'Segoe UI',sans-serif}
       <tr><td>2. Thermocouple</td><td>→</td><td>B. Protection d'un moteur de scie circulaire</td></tr>
       <tr><td>3. CTP</td><td>→</td><td>C. Affichage de température sur un écran Arduino</td></tr>
       <tr><td>4. LM35</td><td>→</td><td>D. Régulation de température dans une étuve à 80 °C</td></tr>
+      <tr><td>5. Pt100</td><td>→</td><td>E. Mesure de la température d'une lame de scie en rotation</td></tr>
+      <tr><td>6. Thermomètre infrarouge</td><td>→</td><td>F. Régulateur de précision pour un four industriel (±0,1 °C)</td></tr>
     </table>
-    <p>Écrire les associations : 1→…, 2→…, 3→…, 4→…</p>
+    <p>Écrire les associations : 1→…, 2→…, 3→…, 4→…, 5→…, 6→…</p>
   </div>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p><strong>1 → D</strong> : La CTN est très sensible dans la plage 0–150 °C, idéale pour réguler une étuve à 80 °C.</p>
-      <p><strong>2 → A</strong> : Le thermocouple est le seul capteur qui supporte des températures de 800 °C.</p>
-      <p><strong>3 → B</strong> : La CTP protège les moteurs : sa résistance explose au-delà d'un seuil et coupe le circuit.</p>
-      <p><strong>4 → C</strong> : Le LM35 fournit une tension proportionnelle à la température, directement lisible par un Arduino.</p>
+    <p><strong>2 → A</strong> : Le thermocouple est le seul capteur qui supporte des températures de 800 °C.</p>
+    <p><strong>3 → B</strong> : La CTP protège les moteurs : sa résistance explose au-delà d'un seuil et coupe le circuit.</p>
+    <p><strong>4 → C</strong> : Le LM35 fournit une tension proportionnelle à la température, directement lisible par un Arduino.</p>
+    <p><strong>5 → F</strong> : La Pt100 (100 Ω à 0 °C, quasi linéaire) est la référence industrielle de précision (±0,1 °C).</p>
+    <p><strong>6 → E</strong> : Le thermomètre infrarouge mesure sans contact, indispensable pour une pièce en rotation.</p>
   </div>
 </div>
 
@@ -600,7 +602,7 @@ svg text{font-family:'Segoe UI',sans-serif}
     <p class="q"><strong>b)</strong> Le régulateur surveille R. L'alarme doit s'allumer quand R &lt; R_alarme ou quand R &gt; R_alarme ? Expliquer.</p>
     <p class="q"><strong>c)</strong> En fonctionnement normal, T = 100 °C. Calculer R. Le voyant est-il allumé ?</p>
     <p class="q"><strong>d)</strong> Lors d'un essai, R tombe à 150 Ω. Quel est l'état du voyant ? Que faire ?</p>
-    <div class="attention"><strong>Attention :</strong> Une surchauffe de l'huile de lubrification peut provoquer une dégradation des roulements et entraîner la casse de la machine. Ne jamais ignorer ce voyant.</div>
+    <div class="att"><strong>Attention :</strong> Une surchauffe de l'huile de lubrification peut provoquer une dégradation des roulements et entraîner la casse de la machine. Ne jamais ignorer ce voyant.</div>
   </div>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
@@ -752,23 +754,27 @@ svg text{font-family:'Segoe UI',sans-serif}
   <div class="mama-tag">Contexte technique</div>
   <div class="enonce">
     <p>Compléter le tableau comparatif des capteurs de température :</p>
+    <div style="overflow-x:auto">
     <table>
-      <tr><th>Critère</th><th>CTN</th><th>CTP</th><th>Thermocouple</th><th>LM35</th></tr>
-      <tr><td>Grandeur de sortie</td><td>……</td><td>……</td><td>……</td><td>……</td></tr>
-      <tr><td>Plage de mesure</td><td>……</td><td>……</td><td>……</td><td>……</td></tr>
-      <tr><td>Relation avec T</td><td>……</td><td>……</td><td>……</td><td>……</td></tr>
-      <tr><td>Application typique</td><td>……</td><td>……</td><td>……</td><td>……</td></tr>
+      <tr><th>Critère</th><th>CTN</th><th>Pt100</th><th>Thermocouple</th><th>CTP</th><th>IR</th><th>Cristaux liquides</th></tr>
+      <tr><td>Grandeur de sortie</td><td>……</td><td>……</td><td>……</td><td>……</td><td>……</td><td>……</td></tr>
+      <tr><td>Plage de mesure</td><td>……</td><td>……</td><td>……</td><td>……</td><td>……</td><td>……</td></tr>
+      <tr><td>Relation avec T</td><td>……</td><td>……</td><td>……</td><td>……</td><td>……</td><td>……</td></tr>
+      <tr><td>Application typique</td><td>……</td><td>……</td><td>……</td><td>……</td><td>……</td><td>……</td></tr>
     </table>
+    </div>
   </div>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
+    <div style="overflow-x:auto">
     <table>
-        <tr><th>Critère</th><th>CTN</th><th>CTP</th><th>Thermocouple</th><th>LM35</th></tr>
-        <tr><td>Grandeur de sortie</td><td><strong>Résistance</strong></td><td><strong>Résistance</strong></td><td><strong>Tension (mV)</strong></td><td><strong>Tension (mV)</strong></td></tr>
-        <tr><td>Plage de mesure</td><td><strong>−50 à +150 °C</strong></td><td><strong>Seuil fixe</strong></td><td><strong>−200 à +1 000 °C</strong></td><td><strong>−55 à +150 °C</strong></td></tr>
-        <tr><td>Relation avec T</td><td><strong>R diminue (non linéaire)</strong></td><td><strong>R explose au seuil</strong></td><td><strong>V proportionnel à ΔT</strong></td><td><strong>V proportionnel à T</strong></td></tr>
-        <tr><td>Application typique</td><td><strong>Régulation d'étuve</strong></td><td><strong>Protection moteur</strong></td><td><strong>Four haute T</strong></td><td><strong>Affichage Arduino</strong></td></tr>
-      </table>
+      <tr><th>Critère</th><th>CTN</th><th>Pt100</th><th>Thermocouple</th><th>CTP</th><th>IR</th><th>Cristaux liquides</th></tr>
+      <tr><td>Grandeur de sortie</td><td><strong>Résistance</strong></td><td><strong>Résistance</strong></td><td><strong>Tension (mV)</strong></td><td><strong>Résistance</strong></td><td><strong>Signal IR</strong></td><td><strong>Couleur</strong></td></tr>
+      <tr><td>Plage de mesure</td><td><strong>−50 à +150 °C</strong></td><td><strong>−200 à +850 °C</strong></td><td><strong>−200 à +1 000 °C</strong></td><td><strong>Seuil fixe</strong></td><td><strong>−50 à +500 °C</strong></td><td><strong>20 à 40 °C env.</strong></td></tr>
+      <tr><td>Relation avec T</td><td><strong>R diminue (non linéaire)</strong></td><td><strong>R augmente (quasi linéaire)</strong></td><td><strong>V proportionnel à ΔT</strong></td><td><strong>R explose au seuil</strong></td><td><strong>Signal ∝ rayonnement</strong></td><td><strong>Changement de couleur</strong></td></tr>
+      <tr><td>Application typique</td><td><strong>Régulation d'étuve</strong></td><td><strong>Régulateur de précision</strong></td><td><strong>Four haute T</strong></td><td><strong>Protection moteur</strong></td><td><strong>Pièce en mouvement</strong></td><td><strong>Affichage décoratif</strong></td></tr>
+    </table>
+    </div>
   </div>
 </div>
 
@@ -841,7 +847,7 @@ svg text{font-family:'Segoe UI',sans-serif}
     <p class="q"><strong>c)</strong> Si la CTN est en <em>court-circuit</em> (fils qui se touchent), quelle résistance lit le régulateur ? (R = 0 Ω) Quelle température cela simule-t-il ? Comment réagit-il ?</p>
     <p class="q"><strong>d)</strong> D'après les symptômes (chauffage toujours ON), quel défaut est le plus probable : court-circuit ou circuit ouvert ? Expliquer.</p>
 
-    <div class="methode">
+    <div class="meth">
       <strong>Pour le diagnostic :</strong><br>
       - R → ∞ : circuit ouvert (fil coupé, connecteur mal enfiché) → T simulée très froide<br>
       - R = 0 Ω : court-circuit → T simulée très chaude<br>
@@ -895,24 +901,32 @@ svg text{font-family:'Segoe UI',sans-serif}
 <div class="exo diff-appro">
   <div class="exo-header">
     <span class="exo-num">Exercice 28</span>
-    <span class="exo-title">Calcul avec la loi de la CTN – Formule exponentielle</span>
+    <span class="exo-title">CTN ou Pt100 ? – Analyse comparative pour un régulateur industriel</span>
     <span class="tag-appro">Approfondissement</span>
   </div>
-  <div class="mama-tag">Contexte technique – Calcul avancé</div>
+  <div class="mama-tag">Contexte professionnel – Choix technique</div>
   <div class="enonce">
-    <p>Une CTN utilisée dans une étuve de séchage a les caractéristiques suivantes : \( R_0 = 10\,\text{kΩ} \) à \( T_0 = 25\,\text{°C} \), constante \( B = 3\,950\,\text{K} \).</p>
-    <p>La loi de la CTN est : \( R = R_0 \cdot \exp\!\left[B\!\left(\dfrac{1}{T} - \dfrac{1}{T_0}\right)\right] \) avec T en Kelvin.</p>
-    <p class="q"><strong>a)</strong> Convertir \( T_0 = 25\,\text{°C} \) et \( T_1 = 60\,\text{°C} \) en Kelvin.</p>
-    <p class="q"><strong>b)</strong> Calculer \( \dfrac{1}{T_1} - \dfrac{1}{T_0} \). Donner le résultat avec 4 décimales significatives.</p>
-    <p class="q"><strong>c)</strong> En déduire la résistance R à 60 °C. Vérifier que R est bien inférieure à \( R_0 \).</p>
-    <p class="q"><strong>d)</strong> Calculer de même R à 100 °C. Comparer avec la valeur à 60 °C et commenter la décroissance.</p>
+    <p>Un fabricant de meubles doit équiper son four de vernissage (régulation à 80 °C ± 1 °C) d'un capteur de température. Il hésite entre une CTN et une sonde Pt100. Voici les données des deux capteurs :</p>
+    <table>
+      <tr><th>T (°C)</th><th>20</th><th>40</th><th>60</th><th>80</th><th>100</th></tr>
+      <tr><th>CTN R (kΩ)</th><td>12,5</td><td>6,8</td><td>3,7</td><td>2,1</td><td>1,2</td></tr>
+      <tr><th>Pt100 R (Ω)</th><td>107,7</td><td>115,4</td><td>123,1</td><td>130,8</td><td>138,5</td></tr>
+    </table>
+    <p class="q"><strong>a)</strong> Pour la CTN, calculer la variation de résistance \( \Delta R_{\text{CTN}} \) entre 79 °C et 81 °C (utiliser une interpolation entre 60 °C et 80 °C, puis entre 80 °C et 100 °C).</p>
+    <p class="q"><strong>b)</strong> Pour la Pt100, la résistance varie de façon quasi linéaire de 7,7 Ω tous les 20 °C. Calculer \( \Delta R_{\text{Pt100}} \) entre 79 °C et 81 °C.</p>
+    <p class="q"><strong>c)</strong> Comparer les deux variations. Quel capteur réagit le plus à un écart de ±1 °C autour de 80 °C ?</p>
+    <p class="q"><strong>d)</strong> Pour une régulation de précision à ±1 °C, quel capteur recommandez-vous ? Justifier en citant deux arguments.</p>
+    <p class="q"><strong>e)</strong> (Question BTS) La Pt100 suit la relation \( R(T) = 100 \times (1 + 0{,}00385 \times T) \). Calculer R à 80 °C. Vérifier la cohérence avec le tableau.</p>
   </div>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p><strong>a)</strong> \( T_0 = 25 + 273 = 298\,\text{K} \) ; \( T_1 = 60 + 273 = 333\,\text{K} \)</p>
-      <p><strong>b)</strong> \( \dfrac{1}{333} - \dfrac{1}{298} = 0{,}003003 - 0{,}003356 = \mathbf{-0{,}000353\,\text{K}^{-1}} \)</p>
-      <p><strong>c)</strong> \( R = 10\,000 \times e^{3\,950 \times (-0{,}000353)} = 10\,000 \times e^{-1{,}394} = 10\,000 \times 0{,}248 \approx \mathbf{2{,}48\,\text{kΩ}} \). Bien inférieur à 10 kΩ : la CTN diminue avec T.</p>
-      <p><strong>d)</strong> À 100 °C : \( T_2 = 373\,\text{K} \). \( \dfrac{1}{373} - \dfrac{1}{298} = -0{,}000677 \). \( R = 10\,000 \times e^{3\,950 \times (-0{,}000677)} = 10\,000 \times e^{-2{,}674} \approx 10\,000 \times 0{,}069 = \mathbf{0{,}69\,\text{kΩ}} \). La décroissance est très rapide : R passe de 2,48 kΩ à 0,69 kΩ entre 60 et 100 °C. La relation est exponentielle (non linéaire).</p>
+    <p><strong>a)</strong> Entre 60 °C (3,7 kΩ) et 80 °C (2,1 kΩ) : variation de 1,6 kΩ en 20 °C → 0,08 kΩ/°C. Pour ±1 °C : \( \Delta R_{\text{CTN}} \approx 2 \times 0{,}08 = \mathbf{0{,}16\,\text{kΩ}} \)</p>
+    <p><strong>b)</strong> Variation Pt100 sur 20 °C : 7,7 Ω → pour 2 °C : \( \Delta R_{\text{Pt100}} = \dfrac{7{,}7}{20} \times 2 = \mathbf{0{,}77\,\text{Ω}} \)</p>
+    <p><strong>c)</strong> CTN : 160 Ω pour ±1 °C &nbsp;|&nbsp; Pt100 : 0,77 Ω pour ±1 °C. La <strong>CTN est plus sensible</strong> (variation ~200 fois plus grande). En revanche, cette forte sensibilité rend la courbe non linéaire, donc plus difficile à exploiter précisément.</p>
+    <p><strong>d)</strong> Pour une régulation de précision à ±1 °C : <strong>Pt100</strong>.<br>
+    Argument 1 : relation quasi linéaire → lecture directe et fiable, pas d'ambiguïté sur la valeur de T.<br>
+    Argument 2 : stabilité dans le temps (le platine ne vieillit pas) → pas de dérive du capteur sur la durée.</p>
+    <p><strong>e)</strong> \( R(80) = 100 \times (1 + 0{,}00385 \times 80) = 100 \times 1{,}308 = \mathbf{130{,}8\,\text{Ω}} \). Valeur identique au tableau ✓.</p>
   </div>
 </div>
 
