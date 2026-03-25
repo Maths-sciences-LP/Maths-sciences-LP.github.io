@@ -1,7 +1,7 @@
 # Audit Technique
 
 **Date** : 2026-03-16
-**Derniere mise a jour** : 2026-03-19 (verification detaillee Seconde)
+**Derniere mise a jour** : 2026-03-25 (diff.js manquant sur 83 interro.html — correction globale)
 **Perimetre** : HTML, CSS, JavaScript, chemins, accessibilite, simulations, performances
 **Nombre total de fichiers HTML audites** : 477 (191 maths, 180 physique-chimie, 63 simulations, 43 autres)
 
@@ -211,6 +211,7 @@ Le site repose sur des liens `<a>` et boutons `<button>` standards, naturellemen
 | ~~5~~ | ~~Lien `ch01_exos.html` inexistant~~ | ~~HAUTE~~ | ~~1~~ | **CORRIGE 2026-03-16** |
 | 6 | ~~diff.js en Seconde (hors perimetre)~~ | ~~MOYENNE~~ | ~~56~~ | **RESOLU** — CLAUDE.md mis a jour, Seconde incluse |
 | ~~7~~ | ~~diff.js absent en Premiere maths~~ | ~~MOYENNE~~ | ~~18~~ | **CORRIGE 2026-03-16** |
+| ~~11~~ | ~~diff.js absent sur 83 interro.html (tous niveaux)~~ | ~~HAUTE~~ | ~~83~~ | **CORRIGE 2026-03-25** |
 | 8 | Simulations non autonomes (nav.js) | MOYENNE | 26 | Non-conformite CLAUDE.md |
 | 9 | Tableaux sans `scope`/`caption` | BASSE | Generalise | Accessibilite reduite |
 | 10 | Boutons interactifs sans ARIA | BASSE | Generalise | Accessibilite reduite |
@@ -238,6 +239,9 @@ Le site repose sur des liens `<a>` et boutons `<button>` standards, naturellemen
 - **2026-03-17** : Ajoute « Terminale Bac Pro » aux balises `<title>` de maths/terminale/ch02/ (lecon.html, exercices.html, ds.html)
 - **2026-03-19** : Bilan technique Seconde — 170 fichiers HTML, 84/84 fichiers exercices/ds/interro avec diff.js, 0 chemin absolu, 0 lien cassé. Conformité technique Seconde : 95/100
 - **2026-03-19** : Verification detaillee CSS maths/seconde/ch02-ch05 (25 fichiers) — aucune classe non-standard residuelle. Correction 2026-03-16 confirmee. Anomalie mineure : `niv1` au lieu de `niveau-1` dans ch03/exercices.html
+- **2026-03-25** : Corrige diff.js manquant sur 83 interro.html (tous niveaux et matieres : maths/seconde, maths/premiere, maths/terminale, physique-chimie/seconde, physique-chimie/premiere-iccer, physique-chimie/premiere-era, physique-chimie/terminale-iccer, physique-chimie/terminale-era). La differenciation pedagogique etait silencieusement cassee sur toutes les interrogations du site.
+- **2026-03-25** : Corrige print.css manquant sur physique-chimie/seconde/ch10/fiche.html
+- **2026-03-25** : Corrige lien retour interro.html ch10 (pc-2nde-mama → pc-2nde-pro)
 
 ---
 
@@ -255,6 +259,7 @@ Le site repose sur des liens `<a>` et boutons `<button>` standards, naturellemen
 ### Priorite MOYENNE
 - [x] Decider si la differenciation en Seconde est intentionnelle — OUI, CLAUDE.md mis a jour (2026-03-16)
 - [x] Ajouter diff.js dans les exercices.html et ds.html de `maths/premiere/` (2026-03-16)
+- [x] Ajouter diff.js dans les 83 interro.html qui en etaient depourvus sur tout le site (2026-03-25)
 - [x] Corriger les liens casses dans maths/seconde/ch05/ (lecon.html, simulation.html, exercices.html) (2026-03-17)
 - [x] Ajouter toggle() dans maths/seconde/ch05/lecon.html (2026-03-17)
 - [x] Supprimer le bloc HTML hors-conteneur dans maths/seconde/ch05/lecon.html (2026-03-17)
