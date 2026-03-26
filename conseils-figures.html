@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conseils graphiques – Figures et mise en page – Maths-Sciences LP</title>
+
+<script>
+MathJax = {
+  tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+  options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
+<style>
+:root {
+  --bleu:        #1a5fa8;
+  --bleu-clair:  #deeaf8;
+  --bleu-pale:   #f0f5fc;
+  --orange:      #c9520a;
+  --orange-cl:   #fde9db;
+  --vert:        #2a7a4b;
+  --vert-cl:     #d9f0e4;
+  --violet:      #5b3fa8;
+  --violet-cl:   #ede8fb;
+  --rouge:       #b33;
+  --gris-bg:     #f5f6f8;
+  --gris-bord:   #dde2ea;
+  --gris-txt:    #2c2f38;
+  --gris-leger:  #6b7280;
+  --sans:        system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:        'Courier New',Courier,monospace;
+  --r:           6px;
+  --ombre:       0 1px 4px rgba(0,0,0,.07);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+
+body{
+  font-family:var(--sans);
+  font-size:15px;
+  line-height:1.65;
+  color:var(--gris-txt);
+  background:var(--gris-bg);
+}
+
+/* ── Navigation ── */
+.site-header{background:var(--bleu);box-shadow:0 2px 6px rgba(0,0,0,.15);}
+.nav-inner{
+  max-width:900px;margin:0 auto;padding:0 1rem;
+  display:flex;align-items:center;gap:1.5rem;height:52px;
+}
+.nav-logo{color:#fff;font-weight:600;font-size:15px;text-decoration:none;white-space:nowrap;}
+.nav-links{display:flex;gap:1rem;list-style:none;}
+.nav-links a{
+  color:rgba(255,255,255,.82);text-decoration:none;font-size:13px;
+  padding:4px 0;border-bottom:2px solid transparent;
+  transition:color .15s,border-color .15s;
+}
+.nav-links a:hover{color:#fff;border-color:rgba(255,255,255,.5);}
+
+/* ── Fil d'Ariane ── */
+.breadcrumb{background:#fff;border-bottom:1px solid var(--gris-bord);padding:8px 0;font-size:12px;color:var(--gris-leger);}
+.bc-inner{max-width:900px;margin:0 auto;padding:0 1rem;display:flex;align-items:center;flex-wrap:wrap;gap:4px;}
+.bc-inner a{color:var(--bleu);text-decoration:none;}
+.bc-inner a:hover{text-decoration:underline;}
+.bc-inner span{color:#aaa;}
+
+/* ── Contenu ── */
+main{max-width:900px;margin:0 auto;padding:1.5rem 1rem 3rem;}
+
+/* Barre impression */
+.print-bar{
+  background:#fff;border:1px solid var(--gris-bord);border-radius:var(--r);
+  padding:.75rem 1.1rem;display:flex;align-items:center;
+  justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  margin-bottom:1.25rem;box-shadow:var(--ombre);
+}
+.print-bar span{font-size:13px;color:var(--gris-leger);}
+.btn-print{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--bleu);color:#fff;border:none;border-radius:var(--r);
+  padding:7px 16px;font-size:13px;font-weight:600;cursor:pointer;
+  transition:background .15s;
+}
+.btn-print:hover{background:#154d8a;}
+
+/* En-tête page */
+.page-header{
+  background:#fff;border:1px solid var(--gris-bord);
+  border-left:5px solid var(--bleu);border-radius:var(--r);
+  padding:1.2rem 1.4rem;margin-bottom:1.5rem;box-shadow:var(--ombre);
+}
+.page-header h1{font-size:clamp(15px,3vw,21px);font-weight:700;color:var(--bleu);line-height:1.25;}
+.page-header .sous-titre{font-size:13px;color:var(--gris-leger);margin-top:4px;}
+
+/* ── Sections ── */
+.section{
+  background:#fff;border:1px solid var(--gris-bord);border-radius:var(--r);
+  overflow:hidden;margin-bottom:1.25rem;box-shadow:var(--ombre);
+  page-break-inside:avoid;
+}
+.sec-header{
+  display:flex;align-items:center;gap:10px;
+  padding:.65rem 1.1rem;font-size:12.5px;font-weight:600;
+  letter-spacing:.03em;text-transform:uppercase;color:#fff;
+}
+.sec-header .num{
+  width:20px;height:20px;border-radius:50%;
+  background:rgba(255,255,255,.25);display:flex;align-items:center;
+  justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;
+}
+.bleu   .sec-header{background:var(--bleu);}
+.orange .sec-header{background:var(--orange);}
+.vert   .sec-header{background:var(--vert);}
+.violet .sec-header{background:var(--violet);}
+.sec-body{padding:1rem 1.1rem;}
+
+/* ── Grille ── */
+.grille{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:.75rem;}
+@media(max-width:560px){.grille{grid-template-columns:1fr;}}
+
+/* ── Cartes règle ── */
+.regle{
+  border:1px solid var(--gris-bord);border-radius:var(--r);
+  padding:.7rem .9rem;background:#fff;page-break-inside:avoid;
+}
+.regle h3{
+  font-size:12.5px;font-weight:600;margin-bottom:.4rem;
+  display:flex;align-items:center;gap:6px;color:var(--gris-txt);
+}
+.regle h3::before{content:'';width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.bleu   .regle h3::before{background:var(--bleu);}
+.orange .regle h3::before{background:var(--orange);}
+.vert   .regle h3::before{background:var(--vert);}
+.violet .regle h3::before{background:var(--violet);}
+.regle ul{padding-left:1rem;margin:0;}
+.regle li{font-size:12.5px;line-height:1.55;margin-bottom:2px;color:#444;}
+.regle li strong{color:var(--gris-txt);}
+.regle code{font-family:var(--mono);font-size:11px;background:#f0f0f0;padding:1px 4px;border-radius:3px;}
+
+.bleu   .regle.accent{background:var(--bleu-pale);  border-color:#aaccee;}
+.orange .regle.accent{background:var(--orange-cl);  border-color:#e8b89a;}
+.vert   .regle.accent{background:var(--vert-cl);    border-color:#96d4b4;}
+.violet .regle.accent{background:var(--violet-cl);  border-color:#b8a8e0;}
+
+/* ── Exemples SVG ── */
+.ex-wrap{
+  border:1px solid var(--gris-bord);border-radius:var(--r);
+  background:var(--gris-bg);padding:.75rem .75rem .4rem;
+  margin-top:.75rem;page-break-inside:avoid;
+}
+.ex-wrap .legende{
+  text-align:center;font-size:11px;font-style:italic;
+  color:var(--gris-leger);margin-top:5px;
+}
+
+/* ── Tableau ── */
+.table-wrap{
+  overflow-x:auto;margin-top:.75rem;
+  border-radius:var(--r);border:1px solid var(--gris-bord);
+  page-break-inside:avoid;
+}
+table{width:100%;border-collapse:collapse;font-size:12px;min-width:460px;}
+thead th{
+  background:var(--gris-bg);font-weight:600;font-size:11px;
+  padding:6px 10px;text-align:left;border-bottom:1px solid var(--gris-bord);
+  color:var(--gris-txt);letter-spacing:.02em;text-transform:uppercase;
+}
+tbody td{padding:5px 10px;border-bottom:1px solid #eef0f4;vertical-align:middle;line-height:1.4;}
+tbody tr:last-child td{border-bottom:none;}
+tbody tr:nth-child(even) td{background:#fafbfc;}
+.tag{display:inline-block;padding:1px 7px;border-radius:3px;font-size:10.5px;font-weight:600;font-family:var(--mono);}
+.tag.bon   {background:var(--vert-cl); color:var(--vert);}
+.tag.eviter{background:#fce8e8;        color:var(--rouge);}
+
+/* ── Note ── */
+.note{
+  display:flex;gap:.6rem;align-items:flex-start;
+  border-left:3px solid var(--orange);background:var(--orange-cl);
+  padding:.65rem .9rem;border-radius:0 var(--r) var(--r) 0;
+  font-size:12.5px;line-height:1.5;margin-top:.75rem;page-break-inside:avoid;
+}
+.note-ico{font-size:14px;flex-shrink:0;margin-top:1px;}
+.note p{margin:0;}
+.note strong{color:var(--orange);font-size:11px;text-transform:uppercase;letter-spacing:.04em;display:block;margin-bottom:2px;}
+
+/* ── Footer ── */
+.site-footer{
+  text-align:center;font-size:12px;color:#999;
+  padding:1.5rem 1rem;border-top:1px solid var(--gris-bord);margin-top:1rem;
+}
+
+/* ── Mobile ── */
+@media(max-width:480px){
+  .nav-links{display:none;}
+  main{padding:1rem .75rem 2.5rem;}
+  .sec-body{padding:.8rem .85rem;}
+  .print-bar{flex-direction:column;align-items:flex-start;}
+}
+
+/* ══════════════════════════════════════════
+   IMPRESSION A4
+══════════════════════════════════════════ */
+@media print{
+  @page{size:A4 portrait;margin:14mm 16mm 16mm;}
+
+  .site-header,.breadcrumb,.print-bar,.site-footer{display:none!important;}
+
+  body{font-size:9pt;background:#fff;color:#000;}
+  main{max-width:none;padding:0;margin:0;}
+
+  .page-header{
+    border:1pt solid #aaa;border-left:4pt solid #1a5fa8;
+    box-shadow:none;margin-bottom:9pt;padding:6pt 9pt;
+  }
+  .page-header h1{font-size:12.5pt;color:#1a5fa8;}
+  .page-header .sous-titre{font-size:8pt;}
+
+  .section{border:1pt solid #bbb;box-shadow:none;margin-bottom:8pt;page-break-inside:avoid;}
+
+  -webkit-print-color-adjust:exact;
+  print-color-adjust:exact;
+
+  .bleu   .sec-header{background:#1a5fa8!important;color:#fff!important;}
+  .orange .sec-header{background:#c9520a!important;color:#fff!important;}
+  .vert   .sec-header{background:#2a7a4b!important;color:#fff!important;}
+  .violet .sec-header{background:#5b3fa8!important;color:#fff!important;}
+
+  .bleu   .regle.accent{background:#f0f5fc!important;}
+  .orange .regle.accent{background:#fde9db!important;}
+  .vert   .regle.accent{background:#d9f0e4!important;}
+  .violet .regle.accent{background:#ede8fb!important;}
+  .note{background:#fde9db!important;}
+
+  .regle,.ex-wrap,.note,table{page-break-inside:avoid;}
+  h1,h2,h3{page-break-after:avoid;}
+  .grille{grid-template-columns:1fr 1fr;gap:5pt;}
+  .regle li,td,th,.note p{font-size:8pt;line-height:1.4;}
+  .regle h3{font-size:8.5pt;}
+  .sec-header{font-size:8pt;padding:3pt 8pt;}
+  svg{max-width:100%;}
+}
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<header class="site-header">
+  <nav class="nav-inner">
+    <a href="https://maths-sciences-lp.github.io/index.html" class="nav-logo">Maths – Sciences LP</a>
+    <ul class="nav-links">
+      <li><a href="https://maths-sciences-lp.github.io/index.html">Accueil</a></li>
+      <li><a href="https://maths-sciences-lp.github.io/maths-2nde-mama.html">Mathématiques</a></li>
+      <li><a href="https://maths-sciences-lp.github.io/pc-2nde-pro.html">Physique-Chimie</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Fil d'Ariane -->
+<div class="breadcrumb">
+  <div class="bc-inner">
+    <a href="https://maths-sciences-lp.github.io/index.html">Accueil</a>
+    <span>›</span>
+    <strong>Conseils graphiques — Figures &amp; exercices</strong>
+  </div>
+</div>
+
+<main>
+
+  <!-- Barre impression -->
+  <div class="print-bar">
+    <span>Consultable sur téléphone · ordinateur · Imprimable A4</span>
+    <button class="btn-print" onclick="window.print()">🖨 Imprimer / Sauvegarder en PDF</button>
+  </div>
+
+  <!-- Titre -->
+  <div class="page-header">
+    <h1>Conseils graphiques — Figures et exercices de maths-sciences</h1>
+    <p class="sous-titre">Document de référence · Bac Pro · M. Azzouz · Lycée Eugène Hénaff · Académie de Créteil</p>
+  </div>
+
+  <!-- ══ SECTION 1 — FIGURES GÉOMÉTRIQUES ══ -->
+  <div class="section bleu">
+    <div class="sec-header"><span class="num">1</span>Figures géométriques</div>
+    <div class="sec-body">
+
+      <div class="grille">
+        <div class="regle accent">
+          <h3>Traits et épaisseurs</h3>
+          <ul>
+            <li><strong>Contour principal</strong> : 1,2–1,5 px, couleur soutenue</li>
+            <li><strong>Lignes auxiliaires</strong> (hauteur, médiane…) : 0,8 px, tiretées</li>
+            <li><strong>Lignes de construction</strong> : 0,5 px, gris clair</li>
+            <li>Ne jamais utiliser la même épaisseur partout</li>
+          </ul>
+        </div>
+        <div class="regle">
+          <h3>Étiquettes de points</h3>
+          <ul>
+            <li>Lettres en <em>italique</em>, police à empattement (Georgia)</li>
+            <li>13–15 px pour les sommets, 11–12 px pour les notes</li>
+            <li>Jamais posé sur un trait — toujours à 4 px minimum</li>
+            <li>Angles : lettre grecque italique (α, β, γ…)</li>
+          </ul>
+        </div>
+        <div class="regle">
+          <h3>Cotations</h3>
+          <ul>
+            <li>Lignes d'extension courtes : 5–10 px de débord</li>
+            <li>Double flèche fine entre les lignes d'extension</li>
+            <li>Label centré, en italique (\(a\), \(b\), \(h\)…)</li>
+            <li>Ne coter que ce qui est utile à l'exercice</li>
+          </ul>
+        </div>
+        <div class="regle">
+          <h3>Couleurs dans une figure</h3>
+          <ul>
+            <li>Maximum 2 couleurs par figure</li>
+            <li>Fond très pâle (#EFF4FB) pour distinguer du blanc</li>
+            <li>1 couleur vive pour l'élément clé (point, angle…)</li>
+            <li>Éviter jaune et rouge vif : mauvais rendu impression</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="ex-wrap">
+        <svg width="100%" viewBox="0 0 580 190" style="display:block;">
+          <defs>
+            <marker id="fl" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+              <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </marker>
+          </defs>
+          <!-- BON -->
+          <polygon points="60,158 300,158 168,36" fill="#EFF4FB" stroke="#1a5fa8" stroke-width="1.3" stroke-linejoin="round"/>
+          <line x1="168" y1="36" x2="168" y2="158" stroke="#888" stroke-width="0.8" stroke-dasharray="5 4"/>
+          <polyline points="160,149 160,158 168,158" fill="none" stroke="#888" stroke-width="0.8"/>
+          <line x1="60" y1="173" x2="300" y2="173" stroke="#555" stroke-width="0.8" marker-start="url(#fl)" marker-end="url(#fl)"/>
+          <line x1="60" y1="160" x2="60" y2="177" stroke="#555" stroke-width="0.7"/>
+          <line x1="300" y1="160" x2="300" y2="177" stroke="#555" stroke-width="0.7"/>
+          <line x1="326" y1="36" x2="326" y2="158" stroke="#555" stroke-width="0.8" marker-start="url(#fl)" marker-end="url(#fl)"/>
+          <line x1="299" y1="36" x2="330" y2="36" stroke="#555" stroke-width="0.7"/>
+          <line x1="299" y1="158" x2="330" y2="158" stroke="#555" stroke-width="0.7"/>
+          <text font-family="Georgia,serif" font-style="italic" font-size="14" fill="#1a5fa8" x="46" y="172">A</text>
+          <text font-family="Georgia,serif" font-style="italic" font-size="14" fill="#1a5fa8" x="302" y="172">C</text>
+          <text font-family="Georgia,serif" font-style="italic" font-size="14" fill="#1a5fa8" x="160" y="28">B</text>
+          <text font-family="Georgia,serif" font-style="italic" font-size="12" fill="#555" x="174" y="103">h</text>
+          <text font-family="Georgia,serif" font-style="italic" font-size="11" fill="#555" x="173" y="188" text-anchor="middle">a</text>
+          <text font-family="Georgia,serif" font-style="italic" font-size="11" fill="#555" x="340" y="101">h</text>
+          <path d="M 88 158 A 26 26 0 0 1 80 134" fill="none" stroke="#1a5fa8" stroke-width="0.9"/>
+          <text font-family="Georgia,serif" font-style="italic" font-size="11" fill="#1a5fa8" x="93" y="147">α</text>
+          <text font-family="system-ui,sans-serif" font-size="9" font-weight="600" fill="#2a7a4b" x="60" y="16">✓ Traits différenciés · italique · cotations · fond pâle</text>
+          <!-- MAUVAIS -->
+          <polygon points="390,158 538,158 460,50" fill="none" stroke="#c9520a" stroke-width="2" stroke-linejoin="round"/>
+          <line x1="460" y1="50" x2="460" y2="158" stroke="#c9520a" stroke-width="2"/>
+          <text font-family="sans-serif" font-size="13" fill="#b33" x="378" y="172">A</text>
+          <text font-family="sans-serif" font-size="13" fill="#b33" x="540" y="172">C</text>
+          <text font-family="sans-serif" font-size="13" fill="#b33" x="453" y="43">B</text>
+          <text font-family="system-ui,sans-serif" font-size="9" font-weight="600" fill="#b33" x="382" y="16">✗ Traits uniformes · sans-serif · pas de fond · pas de cotes</text>
+        </svg>
+        <p class="legende">Bonne pratique (gauche) — à éviter (droite)</p>
+      </div>
+
+      <div class="note">
+        <span class="note-ico">🖨</span>
+        <p><strong>Impression</strong>Les fonds très pâles (#EFF4FB) passent bien en impression couleur. Cocher <em>« Graphiques d'arrière-plan »</em> dans la boîte d'impression du navigateur.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ SECTION 2 — REPÈRES ET COURBES ══ -->
+  <div class="section orange">
+    <div class="sec-header"><span class="num">2</span>Repères et courbes de fonctions</div>
+    <div class="sec-body">
+
+      <div class="grille">
+        <div class="regle accent">
+          <h3>Axes et graduation</h3>
+          <ul>
+            <li>Axes gris foncé (#444), 1,2 px, flèche fine</li>
+            <li>Grille très légère : #D3D1C7, 0,5 px</li>
+            <li>Tirets de graduation : 5 px, 1 px d'épaisseur</li>
+            <li>Labels en Georgia italique, 11–12 px</li>
+            <li>Origine O légèrement décalée des axes</li>
+          </ul>
+        </div>
+        <div class="regle">
+          <h3>Courbes</h3>
+          <ul>
+            <li>Épaisseur : 2–2,5 px, couleur vive distincte des axes</li>
+            <li>Une couleur par courbe ; si plusieurs → légende</li>
+            <li>Points remarquables : disque plein Ø 6–7 px</li>
+            <li>Tangente : tiretée, teinte atténuée de la courbe</li>
+          </ul>
+        </div>
+        <div class="regle">
+          <h3>Couleurs à l'impression</h3>
+          <ul>
+            <li><strong>Passe bien</strong> : bleu #1a5fa8, orange #c9520a, vert #2a7a4b</li>
+            <li><strong>À éviter</strong> : jaune (invisible), cyan pâle (disparaît)</li>
+            <li>Tester en niveaux de gris avant de diffuser</li>
+          </ul>
+        </div>
+        <div class="regle">
+          <h3>Espace autour du repère</h3>
+          <ul>
+            <li>40–50 px de marge autour pour les étiquettes</li>
+            <li>Ne jamais coller la courbe au bord du SVG</li>
+            <li>Légende : coin, encadrée, 10–11 px</li>
+            <li>Unités entre parenthèses sur les axes, 10 px</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="ex-wrap">
+        <svg width="100%" viewBox="0 0 580 200" style="display:block;">
+          <defs>
+            <marker id="ax" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+              <path d="M1 1.5L8.5 5L1 8.5" fill="none" stroke="context-stroke" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </marker>
+          </defs>
+          <!-- Grille -->
+          <line x1="130" y1="25" x2="130" y2="178" stroke="#D3D1C7" stroke-width="0.5"/>
+          <line x1="182" y1="25" x2="182" y2="178" stroke="#D3D1C7" stroke-width="0.5"/>
+          <line x1="234" y1="25" x2="234" y2="178" stroke="#D3D1C7" stroke-width="0.5"/>
+          <line x1="286" y1="25" x2="286" y2="178" stroke="#D3D1C7" stroke-width="0.5"/>
+          <line x1="338" y1="25" x2="338" y2="178" stroke="#D3D1C7" stroke-width="0.5"/>
+          <line x1="390" y1="25" x2="390" y2="178" stroke="#D3D1C7" stroke-width="0.5"/>
+          <line x1="442" y1="25" x2="442" y2="178" stroke="#D3D1C7" stroke-width="0.5"/>
+          <line x1="494" y1="25" x2="494" y2="178" stroke="#D3D1C7" stroke-width="0.5"/>
+          <line x1="78"  y1="48"  x2="530" y2="48"  stroke="#D3D1C7" stroke-width="0.5"/>
+          <line x1="78"  y1="100" x2="530" y2="100" stroke="#D3D1C7" stroke-width="0.5"/>
+          <line x1="78"  y1="152" x2="530" y2="152" stroke="#D3D1C7" stroke-width="0.5"/>
+          <!-- Axes -->
+          <line x1="78" y1="100" x2="533" y2="100" stroke="#444" stroke-width="1.2" marker-end="url(#ax)"/>
+          <line x1="286" y1="185" x2="286" y2="22" stroke="#444" stroke-width="1.2" marker-end="url(#ax)"/>
+          <!-- Graduation x -->
+          <line x1="130" y1="95" x2="130" y2="105" stroke="#444" stroke-width="1"/>
+          <line x1="182" y1="95" x2="182" y2="105" stroke="#444" stroke-width="1"/>
+          <line x1="234" y1="95" x2="234" y2="105" stroke="#444" stroke-width="1"/>
+          <line x1="338" y1="95" x2="338" y2="105" stroke="#444" stroke-width="1"/>
+          <line x1="390" y1="95" x2="390" y2="105" stroke="#444" stroke-width="1"/>
+          <line x1="442" y1="95" x2="442" y2="105" stroke="#444" stroke-width="1"/>
+          <line x1="494" y1="95" x2="494" y2="105" stroke="#444" stroke-width="1"/>
+          <text font-family="Georgia,serif" font-size="11" fill="#444" text-anchor="middle" x="130" y="118">−3</text>
+          <text font-family="Georgia,serif" font-size="11" fill="#444" text-anchor="middle" x="182" y="118">−2</text>
+          <text font-family="Georgia,serif" font-size="11" fill="#444" text-anchor="middle" x="234" y="118">−1</text>
+          <text font-family="Georgia,serif" font-size="11" fill="#444" text-anchor="middle" x="338" y="118">1</text>
+          <text font-family="Georgia,serif" font-size="11" fill="#444" text-anchor="middle" x="390" y="118">2</text>
+          <text font-family="Georgia,serif" font-size="11" fill="#444" text-anchor="middle" x="442" y="118">3</text>
+          <text font-family="Georgia,serif" font-size="11" fill="#444" text-anchor="middle" x="494" y="118">4</text>
+          <!-- Graduation y -->
+          <line x1="281" y1="48"  x2="291" y2="48"  stroke="#444" stroke-width="1"/>
+          <line x1="281" y1="152" x2="291" y2="152" stroke="#444" stroke-width="1"/>
+          <text font-family="Georgia,serif" font-size="11" fill="#444" text-anchor="end" x="276" y="52">2</text>
+          <text font-family="Georgia,serif" font-size="11" fill="#444" text-anchor="end" x="276" y="156">−2</text>
+          <text font-family="Georgia,serif" font-size="11" fill="#444" text-anchor="end" x="278" y="114">O</text>
+          <text font-family="Georgia,serif" font-style="italic" font-size="13" fill="#444" x="536" y="104">x</text>
+          <text font-family="Georgia,serif" font-style="italic" font-size="13" fill="#444" x="290" y="18">y</text>
+          <!-- Courbe bleue (parabole) -->
+          <path d="M 104,34 C 140,55 175,82 234,127 Q 265,150 286,152 Q 318,150 338,140 C 375,114 420,64 494,10" fill="none" stroke="#1a5fa8" stroke-width="2.2"/>
+          <!-- Point remarquable -->
+          <circle cx="338" cy="126" r="3.5" fill="#c9520a" stroke="#fff" stroke-width="1.5"/>
+          <!-- Légende -->
+          <rect x="398" y="28" width="130" height="22" rx="4" fill="#fff" stroke="#dde2ea" stroke-width="0.8"/>
+          <line x1="406" y1="39" x2="426" y2="39" stroke="#1a5fa8" stroke-width="2"/>
+          <text font-family="Georgia,serif" font-style="italic" font-size="11" fill="#1a5fa8" x="431" y="43">f(x) = x²/4 − x</text>
+        </svg>
+        <p class="legende">Grille légère, courbe en bleu vif, point remarquable en orange</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ SECTION 3 — MISE EN PAGE EXERCICES ══ -->
+  <div class="section vert">
+    <div class="sec-header"><span class="num">3</span>Mise en page des exercices</div>
+    <div class="sec-body">
+
+      <div class="grille">
+        <div class="regle accent">
+          <h3>Hiérarchie visuelle</h3>
+          <ul>
+            <li><strong>Titre exercice</strong> : sans-serif, 13–14 pt, gras, couleur principale</li>
+            <li><strong>Énoncé / contexte</strong> : fond teinté + bordure gauche colorée</li>
+            <li><strong>Questions</strong> : numérotées, retrait 1 cm</li>
+            <li><strong>Données numériques</strong> : en gras dans l'énoncé ou dans un encadré séparé</li>
+          </ul>
+        </div>
+        <div class="regle">
+          <h3>Espacement</h3>
+          <ul>
+            <li>Entre titre et énoncé : 8–10 pt</li>
+            <li>Entre chaque question : 6–8 pt minimum</li>
+            <li>Zone de réponse tracée : 1,5–2 cm de haut</li>
+            <li>Marge gauche : 2 cm pour annotations élèves</li>
+          </ul>
+        </div>
+        <div class="regle">
+          <h3>Positionnement de la figure</h3>
+          <ul>
+            <li>Figure à <strong>droite</strong> si texte court → gain de place</li>
+            <li>Figure en <strong>dessous</strong> si lecture détaillée nécessaire</li>
+            <li>Largeur figure : 45–55 % de la colonne texte</li>
+            <li>Toujours une légende sous la figure, italique 9 pt</li>
+          </ul>
+        </div>
+        <div class="regle">
+          <h3>Formules mathématiques</h3>
+          <ul>
+            <li>MathJax ou KaTeX — jamais de texte brut pour les formules</li>
+            <li>Taille minimale lisible mobile : équivalent 12 px</li>
+            <li>Fractions importantes : affichage centré \[\dfrac{b}{2a}\]</li>
+            <li>Attendre le rendu MathJax avant d'imprimer</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Élément</th><th>Épaisseur</th><th>Style</th><th>Couleur recommandée</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Contour principal (triangle, cercle…)</td><td><span class="tag bon">1,2–1,5 px</span></td><td>Plein</td><td>Bleu #1a5fa8</td></tr>
+            <tr><td>Lignes auxiliaires (hauteur, médiane…)</td><td><span class="tag bon">0,8 px</span></td><td>Tiretée 5-4</td><td>Gris #888780</td></tr>
+            <tr><td>Grille de repère</td><td><span class="tag bon">0,5 px</span></td><td>Plein</td><td>Gris très clair #D3D1C7</td></tr>
+            <tr><td>Axes du repère</td><td><span class="tag bon">1,2 px</span></td><td>Plein + flèche</td><td>Gris foncé #444</td></tr>
+            <tr><td>Courbe de fonction</td><td><span class="tag bon">2–2,5 px</span></td><td>Plein</td><td>Bleu #1a5fa8 ou orange #c9520a</td></tr>
+            <tr><td>Lignes de cotation</td><td><span class="tag bon">0,7–0,8 px</span></td><td>Plein + flèches</td><td>Gris moyen #5F5E5A</td></tr>
+            <tr><td>Traits uniformes (à éviter)</td><td><span class="tag eviter">2 px partout</span></td><td>—</td><td>Noir pur : écrase la figure</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ SECTION 4 — IMPRESSION ══ -->
+  <div class="section violet">
+    <div class="sec-header"><span class="num">4</span>Règles spécifiques impression A4</div>
+    <div class="sec-body">
+
+      <div class="grille">
+        <div class="regle accent">
+          <h3>Couleurs qui passent bien</h3>
+          <ul>
+            <li>Bleu #1a5fa8 ✓</li>
+            <li>Orange #c9520a ✓</li>
+            <li>Vert #2a7a4b ✓</li>
+            <li>Gris foncé #3a3d45 ✓</li>
+            <li>Fonds très pâles (#F0F5FC, #D9F0E4…) ✓</li>
+          </ul>
+        </div>
+        <div class="regle">
+          <h3>Couleurs à éviter</h3>
+          <ul>
+            <li>Jaune pur → quasi invisible sur papier</li>
+            <li>Cyan pâle → disparaît à l'impression</li>
+            <li>Rouge vif → vire au brun selon imprimante</li>
+            <li>Fonds sombres → consomment beaucoup d'encre</li>
+          </ul>
+        </div>
+        <div class="regle">
+          <h3>CSS à inclure</h3>
+          <ul>
+            <li><code>print-color-adjust: exact</code></li>
+            <li><code>-webkit-print-color-adjust: exact</code></li>
+            <li>Marges : <code>14mm 16mm 16mm</code></li>
+            <li><code>page-break-inside: avoid</code> sur chaque bloc</li>
+            <li>SVG inline plutôt que <code>&lt;img src="*.png"&gt;</code></li>
+          </ul>
+        </div>
+        <div class="regle">
+          <h3>Vérification avant impression</h3>
+          <ul>
+            <li>Toujours prévisualiser en PDF d'abord</li>
+            <li>Cocher <em>« Graphiques d'arrière-plan »</em> dans le navigateur</li>
+            <li>Tester la lisibilité en niveaux de gris</li>
+            <li>Attendre le rendu MathJax (quelques secondes)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="note">
+        <span class="note-ico">💡</span>
+        <p><strong>Astuce GitHub Pages</strong>Les SVG inline (écrits directement dans le HTML) s'impriment toujours parfaitement. Éviter les <code>&lt;img src="figure.png"&gt;</code> qui pixelisent à l'impression. Préférer SVG inline ou un lien de téléchargement PDF vectoriel.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bouton bas de page -->
+  <div class="print-bar">
+    <span>Document prêt à l'impression A4</span>
+    <button class="btn-print" onclick="window.print()">🖨 Imprimer / Sauvegarder en PDF</button>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  Maths – Sciences LP · M. Azzouz · Lycée Eugène Hénaff · Académie de Créteil
+</footer>
+
+</body>
+</html>
