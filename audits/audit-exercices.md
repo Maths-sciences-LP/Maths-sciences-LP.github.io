@@ -1,7 +1,7 @@
 # Audit Pédagogique des Exercices
 
 **Date** : 2026-03-16
-**Dernière mise à jour** : 2026-03-25 (audit exhaustif Maths Seconde — 14 chapitres analysés)
+**Dernière mise à jour** : 2026-03-26 (corrections CSS inline + étiquettes type BTS + rectificatif activite.html)
 **Périmètre** : exercices.html, ds.html, qcm.html et interro.html — 8 sections (maths seconde/première/terminale, physique-chimie seconde/première-iccer/première-era/terminale-iccer/terminale-era)
 **Méthode** : échantillonnage de 2-3 fichiers exercices.html et 2-3 fichiers ds.html par section, lecture et analyse qualitative.
 
@@ -22,7 +22,7 @@
 
 **Fichiers analysés** : tous les 14 chapitres (ch01-ch14), exercices.html — vérification directe fichier par fichier, 2026-03-25
 
-**Couverture des fichiers** : 14/14 chapitres ont les 6 types obligatoires (lecon, exercices, ds, fiche, qcm, interro). 2/14 ont simulation.html (ch05, ch06). **0/14 ont activite.html.**
+**Couverture des fichiers** : 14/14 chapitres ont les 6 types obligatoires (lecon, exercices, ds, fiche, qcm, interro). 2/14 ont simulation.html (ch05, ch06). **14/14 ont activite.html** ✓ *(rectifié 2026-03-26 — présents depuis 2026-03-22, non détectés lors de l'audit du 25 mars)*
 
 #### Tableau par chapitre — état vérifié au 25 mars 2026
 
@@ -56,10 +56,10 @@
 **Points faibles** :
 - Ch02 (4 blocs appro) et ch03 (3 blocs appro) : approfondissement très insuffisant pour les élèves en poursuite BTS. Objectif : 10-12 blocs.
 - Ch04 : standard faible (8 blocs) et approfondissement limité (7 blocs).
-- Aucun `activite.html` dans les 14 chapitres (situation-problème de découverte).
+- ~~Aucun `activite.html`~~ → **14/14 activite.html présents** (rectifié 2026-03-26).
 - Simulations uniquement pour ch05 et ch06 — ch07-ch10 (fonctions) bénéficieraient d'outils de visualisation interactive.
-- CSS inline : `.methode` et `.cell-blank` redéfinis dans ch10 (et ch06, ch09) alors que `.meth` est déjà dans styles.css.
-- Ch07 exercice 12 : étiquette « type BTS » potentiellement décourageante pour une seconde Bac Pro.
+- ~~CSS inline : `.methode` et `.cell-blank` redéfinis dans ch10 (et ch06, ch09) alors que `.meth` est déjà dans styles.css.~~ → **RÉSOLU 2026-03-26** (ch06, ch09, ch10, ch13, ch14 nettoyés ; `.cell-blank` amélioré dans styles.css)
+- ~~Ch07 exercice 12 : étiquette « type BTS » potentiellement décourageante pour une seconde Bac Pro.~~ → **RÉSOLU 2026-03-26** (remplacé par « Approfondissement »)
 
 ---
 
@@ -445,17 +445,15 @@ Les deux fonctionnent, mais l'incohérence peut créer de la confusion lors de l
 
 ---
 
-### 8. activite.html manquant dans tous les chapitres de Maths Seconde (2026-03-25)
+### ~~8. activite.html manquant dans tous les chapitres de Maths Seconde~~ — RÉSOLU (2026-03-26)
 
-**Gravité : MOYENNE**
+**~~Gravité : MOYENNE~~** → **RÉSOLU**
 
-Aucun des 14 chapitres de `maths/seconde/` ne possède de fichier `activite.html` (situation-problème guidée vers la notion). Ce fichier est recommandé par la structure de chapitre du projet. Les simulations sont également absentes de 12 chapitres sur 14 (seuls ch05 et ch06 en ont une).
+~~Aucun des 14 chapitres de `maths/seconde/` ne possède de fichier `activite.html`.~~
 
-Les chapitres suivants bénéficieraient particulièrement d'une activité de découverte ou d'une simulation :
-- ch07-ch10 (Fonctions) : visualisation des tracés, exploration des paramètres a, b
-- ch11-ch14 (Géométrie) : manipulation de figures, mesures interactives
+**Rectificatif 2026-03-26** : Les 14 fichiers `activite.html` existent et sont complets (170–360 lignes chacun). Présents depuis 2026-03-22, non détectés lors de l'audit du 2026-03-25. Simulations toujours absentes de 12 chapitres sur 14 (seuls ch05 et ch06 en ont une).
 
-**Chapitres concernés** : ch01 à ch14 (0/14 activite.html)
+**Chapitres avec simulation manquante** : ch07, ch08, ch09, ch10 (fonctions) bénéficieraient particulièrement d'outils de visualisation interactive (tracé interactif des paramètres a et b).
 
 ---
 
@@ -512,7 +510,7 @@ De nombreux fichiers `exercices.html` redéfinissent des classes déjà présent
 | **P1** | `maths/bts/` — 18 DS stubs | ds.html tous vides | Créer le contenu pour tous les chapitres |
 | **P2** | `maths/terminale/ch11/exercices.html` | Contenu potentiellement hors programme | Vérifier avec le BO ; retirer ou déplacer en appro les questions sur équation cartésienne/vecteur normal |
 | **P2** | `maths/premiere/ch01-ch08` | Différenciation absente | Ajouter les tags diff-socle/standard/appro (seul ch09 utilise diff.js) |
-| **P3** | `maths/seconde/ch07/exercices.html` Ex.12 | Label « type BTS » potentiellement décourageant | Remplacer par « Approfondissement » ou « Pour aller plus loin » |
+| ~~**P3**~~ | ~~`maths/seconde/ch07/exercices.html` Ex.12~~ | ~~Label « type BTS » potentiellement décourageant~~ | **RÉSOLU 2026-03-26** — remplacé par « Approfondissement » |
 | **P3** | `physique-chimie/terminale-era/ch04/exercices.html` | Contexte ERA faible | Ajouter un exercice contextualisé menuiserie/agencement |
 | **P3** | `physique-chimie/premiere-iccer/ch10/exercices.html` | Lien ICCER ténu | Ajouter un exercice lié aux ondes dans le domaine thermique (ex : thermographie infrarouge) |
 
@@ -543,6 +541,9 @@ De nombreux fichiers `exercices.html` redéfinissent des classes déjà présent
   - Contextes professionnels ICCER (chauffagiste, CVC, PAC, solaire) et ERA (menuisier, agenceur, ébéniste)
 - **2026-03-22** : 84/84 interro.html complètes (Bac Pro). Ajout d'un Sujet B à chaque interro (252 sujets B, ~1 260 nouvelles questions avec corrections)
 - **2026-03-25** : Audit exhaustif Maths Seconde — vérification directe des 14 fichiers exercices.html. État réel : 518 exercices, **100% corrigés** (les audits précédents étaient périmés ou inexacts). Révision note : 4.5/5. Problèmes résolus depuis 2026-03-22 : numérotation séquentielle harmonisée, liens retour ch11/ch12 corrigés. Problèmes restants : approfondissement insuffisant ch02 (4), ch03 (3), ch04 (7) ; 0/14 activite.html ; simulations absentes ch07-ch10
+- **2026-03-26** : Rectificatif — les 14 `activite.html` de maths/seconde existent et sont complets (170–360 lignes chacun) ; l'audit du 25 mars les avait incorrectement signalés comme absents
+- **2026-03-26** : Nettoyage CSS inline exercices.html maths/seconde — suppression des redéfinitions de `.methode`/`.methode-box`/`.cell-blank` dans ch06, ch09, ch10, ch13, ch14 ; remplacement par `.meth` (styles.css) ; amélioration de `.cell-blank` dans styles.css (fond jaune, gras, couleur ambrée — harmonise les variantes inline)
+- **2026-03-26** : Correction étiquettes « type BTS » dans ch07/exercices.html (Ex.34 et Ex.35 appro) → remplacé par « Approfondissement »
 
 ---
 
@@ -583,14 +584,14 @@ De nombreux fichiers `exercices.html` redéfinissent des classes déjà présent
 - [ ] Renforcer l'approfondissement de ch04 (7→10 blocs) — probabilités pour BTS
 
 ### Priorité moyenne (Maths Seconde, 2026-03-25)
-- [ ] Créer les 14 `activite.html` manquants (0/14) — situations-problèmes de découverte
+- [x] ~~Créer les 14 `activite.html` manquants~~ — **14/14 présents** (rectifié 2026-03-26)
 - [ ] Ajouter simulation.html pour les chapitres fonctions (ch07, ch08, ch09, ch10) — tracé interactif
-- [ ] Remplacer le label « type BTS » → « Approfondissement » dans ch07/exercices.html
-- [ ] Nettoyer le CSS inline redéfini : `.methode` dans ch06, ch09, ch10 (utiliser `.meth` de styles.css)
+- [x] ~~Remplacer le label « type BTS » → « Approfondissement » dans ch07/exercices.html~~ — **RÉSOLU 2026-03-26**
+- [x] ~~Nettoyer le CSS inline redéfini : `.methode` dans ch06, ch09, ch10 (utiliser `.meth` de styles.css)~~ — **RÉSOLU 2026-03-26** (ch06, ch09, ch10, ch13, ch14)
 
 ### Priorité moyenne (structurel Seconde, 2026-03-19)
 - [x] ~~Harmoniser la numérotation des exercices~~ — **RÉSOLU 2026-03-22** (numérotation séquentielle sur tous les chapitres)
-- [ ] Nettoyer le CSS inline redéfini dans les fichiers exercices.html de Seconde (centraliser dans `styles.css`)
+- [x] ~~Nettoyer le CSS inline redéfini dans les fichiers exercices.html de Seconde (centraliser dans `styles.css`)~~ — **RÉSOLU 2026-03-26** (`.methode`/`.methode-box`/`.cell-blank` dans ch06, ch09, ch10, ch13, ch14)
 - [x] ~~Corriger les liens retour dans maths/seconde/ch11 et ch12~~ — **RÉSOLU** (vérifié 2026-03-25, liens corrects)
 - [ ] Supprimer la fonction `toggle()` morte dans physique-chimie/seconde/ch11/exercices.html
 
