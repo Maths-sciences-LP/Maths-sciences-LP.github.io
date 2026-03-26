@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Résistance thermique d'une paroi — Co-intervention ERA</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../print.css" media="print">
+<style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac;--s:#0ea5e9;--s-bg:#e0f2fe;--s-border:#7dd3fc}</style>
+</head>
+<body>
+<div class="c">
+<a href="index.html" class="nb">← Retour à l'index co-intervention</a>
+
+<header>
+  <h1>Résistance thermique d'une paroi composée</h1>
+  <p class="sous-titre">Co-intervention Maths-Sciences | Première Bac Pro ERA | Savoir S4.1 — CME 6</p>
+</header>
+
+<div class="objectifs">
+  <strong>Objectifs</strong>
+  <ul>
+    <li>Comprendre la signification physique de la conductivité thermique λ d'un matériau</li>
+    <li>Calculer la résistance thermique d'une couche : \(R = e / \lambda\)</li>
+    <li>Calculer la résistance totale d'une paroi composée : \(R_{\text{total}} = \sum R_i\)</li>
+    <li>Calculer le coefficient de transmission thermique : \(U = 1 / R_{\text{total}}\)</li>
+    <li>Vérifier la conformité d'une paroi à la réglementation thermique</li>
+  </ul>
+</div>
+
+<div style="border:1px solid var(--s-border);background:var(--s-bg);border-radius:8px;padding:1rem;margin:1rem 0;font-size:.9rem">
+  <strong>Identification de la ressource</strong>
+  <ul style="margin:.5rem 0 0">
+    <li><strong>Savoir professionnel ERA :</strong> S4.1 — Isolation thermique</li>
+    <li><strong>Module sciences :</strong> CME 6 — Comment fonctionnent certains dispositifs de chauffage ?</li>
+    <li><strong>Notions mathématiques :</strong> Calcul littéral, fractions, formules, conversions d'unités (mm → m)</li>
+    <li><strong>Niveau :</strong> Première Bac Pro ERA</li>
+  </ul>
+</div>
+
+<h2>1. Mise en situation professionnelle</h2>
+
+<div class="situation">
+  <strong>Contexte professionnel — Isolation d'une cuisine agencée</strong><br><br>
+  Un menuisier agenceur installe une cuisine équipée dans un appartement. Le client souhaite séparer la cuisine du garage non chauffé par une <strong>cloison isolante</strong>. La cloison est composée de trois couches :
+  <ul>
+    <li>Plaque de plâtre côté cuisine : épaisseur e = 13 mm, λ = 0,25 W/(m·K)</li>
+    <li>Laine de verre : épaisseur e = 100 mm, λ = 0,035 W/(m·K)</li>
+    <li>Panneau OSB côté garage : épaisseur e = 12 mm, λ = 0,13 W/(m·K)</li>
+  </ul>
+  Le maître d'œuvre vous demande : <em>« Cette paroi respecte-t-elle la réglementation thermique (U ≤ 0,36 W/(m²·K)) ? »</em>
+</div>
+
+<h2>2. La conductivité thermique λ</h2>
+
+<div class="def">
+  <span class="label label-def">Définition — Conductivité thermique λ</span><br>
+  La <strong>conductivité thermique λ</strong> (lambda) mesure la capacité d'un matériau à laisser passer la chaleur. Elle s'exprime en <strong>W/(m·K)</strong>.<br><br>
+  <strong>Plus λ est faible, meilleur est l'isolant.</strong>
+</div>
+
+<div class="prop">
+  <span class="label label-prop">Tableau — Valeurs λ de matériaux courants en agencement</span><br>
+  <table style="border-collapse:collapse;width:100%;font-size:.9rem;margin-top:.5rem">
+    <thead>
+      <tr style="background:var(--p-bg)">
+        <th style="border:1px solid var(--p-border);padding:.4rem .6rem;text-align:left">Matériau</th>
+        <th style="border:1px solid var(--p-border);padding:.4rem .6rem">λ W/(m·K)</th>
+        <th style="border:1px solid var(--p-border);padding:.4rem .6rem">Qualité isolante</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td style="border:1px solid var(--p-border);padding:.35rem .6rem">Laine de verre</td><td style="border:1px solid var(--p-border);padding:.35rem .6rem;text-align:center">0,032–0,040</td><td style="border:1px solid var(--p-border);padding:.35rem .6rem;text-align:center">Excellent isolant</td></tr>
+      <tr><td style="border:1px solid var(--p-border);padding:.35rem .6rem">Laine de roche</td><td style="border:1px solid var(--p-border);padding:.35rem .6rem;text-align:center">0,035–0,045</td><td style="border:1px solid var(--p-border);padding:.35rem .6rem;text-align:center">Excellent isolant</td></tr>
+      <tr><td style="border:1px solid var(--p-border);padding:.35rem .6rem">Bois massif (résineux)</td><td style="border:1px solid var(--p-border);padding:.35rem .6rem;text-align:center">0,12–0,18</td><td style="border:1px solid var(--p-border);padding:.35rem .6rem;text-align:center">Bon isolant</td></tr>
+      <tr><td style="border:1px solid var(--p-border);padding:.35rem .6rem">MDF / panneau bois</td><td style="border:1px solid var(--p-border);padding:.35rem .6rem;text-align:center">0,13</td><td style="border:1px solid var(--p-border);padding:.35rem .6rem;text-align:center">Bon isolant</td></tr>
+      <tr><td style="border:1px solid var(--p-border);padding:.35rem .6rem">Plaque de plâtre</td><td style="border:1px solid var(--p-border);padding:.35rem .6rem;text-align:center">0,25</td><td style="border:1px solid var(--p-border);padding:.35rem .6rem;text-align:center">Isolant moyen</td></tr>
+      <tr><td style="border:1px solid var(--p-border);padding:.35rem .6rem">Béton</td><td style="border:1px solid var(--p-border);padding:.35rem .6rem;text-align:center">1,75</td><td style="border:1px solid var(--p-border);padding:.35rem .6rem;text-align:center">Mauvais isolant</td></tr>
+      <tr><td style="border:1px solid var(--p-border);padding:.35rem .6rem">Verre</td><td style="border:1px solid var(--p-border);padding:.35rem .6rem;text-align:center">1,0</td><td style="border:1px solid var(--p-border);padding:.35rem .6rem;text-align:center">Mauvais isolant</td></tr>
+      <tr><td style="border:1px solid var(--p-border);padding:.35rem .6rem">Aluminium</td><td style="border:1px solid var(--p-border);padding:.35rem .6rem;text-align:center">237</td><td style="border:1px solid var(--p-border);padding:.35rem .6rem;text-align:center">Très conducteur</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>3. Résistance thermique d'une couche</h2>
+
+<div class="def">
+  <span class="label label-def">Définition — Résistance thermique R</span><br>
+  La <strong>résistance thermique</strong> d'une couche de matériau homogène se calcule par :
+  \[ R = \frac{e}{\lambda} \]
+  <ul>
+    <li>\(R\) : résistance thermique en <strong>m²·K/W</strong></li>
+    <li>\(e\) : épaisseur de la couche en <strong>mètres (m)</strong> — attention : convertir mm en m !</li>
+    <li>\(\lambda\) : conductivité thermique en <strong>W/(m·K)</strong></li>
+  </ul>
+  <strong>Plus R est grand, meilleure est l'isolation de la couche.</strong>
+</div>
+
+<div class="meth">
+  <span class="label label-meth">Méthode — Conversion mm → m et calcul de R</span><br>
+  <ol>
+    <li>Convertir l'épaisseur : \(e\,(\text{m}) = e\,(\text{mm}) \div 1\,000\)</li>
+    <li>Appliquer la formule : \(R = e / \lambda\)</li>
+    <li>Exprimer le résultat en m²·K/W avec 3 chiffres significatifs</li>
+  </ol>
+</div>
+
+<div class="ex">
+  <span class="label label-def">Exemple — Laine de verre 100 mm</span><br>
+  \(e = 100 \text{ mm} = 0{,}100 \text{ m}\) ; \(\lambda = 0{,}035\) W/(m·K)<br>
+  \[ R = \frac{0{,}100}{0{,}035} = 2{,}857 \text{ m²·K/W} \]
+</div>
+
+<h2>4. Paroi composée</h2>
+
+<div class="prop">
+  <span class="label label-prop">Propriété — Résistance totale d'une paroi composée</span><br>
+  Pour une paroi formée de plusieurs couches en série (l'une après l'autre), les résistances s'additionnent :
+  \[ R_{\text{total}} = R_1 + R_2 + R_3 + \cdots \]
+</div>
+
+<div class="prop">
+  <span class="label label-prop">Propriété — Coefficient de transmission thermique U</span><br>
+  Le coefficient U caractérise l'ensemble de la paroi. Il est l'inverse de la résistance totale :
+  \[ U = \frac{1}{R_{\text{total}}} \quad \text{en W/(m²·K)} \]
+  <strong>Plus U est faible, meilleure est l'isolation de la paroi.</strong>
+</div>
+
+<div class="att">
+  <span class="label label-att">Réglementation thermique</span><br>
+  La réglementation française (RE2020) impose pour les parois de séparation avec local non chauffé :<br>
+  \(U \leq 0{,}36 \text{ W/(m²·K)}\)<br>
+  Si U calculé ≤ 0,36 → la paroi est <strong>conforme</strong>. Sinon, il faut améliorer l'isolation.
+</div>
+
+<!-- SVG coupe de paroi -->
+<div class="svg-wrap" style="margin:1.2rem 0">
+<svg width="420" height="140" viewBox="0 0 420 140" style="max-width:100%;font-family:sans-serif;font-size:12px">
+  <!-- fond -->
+  <rect x="0" y="0" width="420" height="140" fill="#f9fafb" rx="6"/>
+  <!-- Plâtre -->
+  <rect x="60" y="20" width="50" height="90" fill="#d1d5db" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="85" y="75" text-anchor="middle" fill="#374151" font-weight="bold">Plâtre</text>
+  <text x="85" y="90" text-anchor="middle" fill="#374151">13 mm</text>
+  <!-- Laine de verre -->
+  <rect x="110" y="20" width="160" height="90" fill="#fde68a" stroke="#d97706" stroke-width="1.5"/>
+  <text x="190" y="68" text-anchor="middle" fill="#92400e" font-weight="bold">Laine de</text>
+  <text x="190" y="82" text-anchor="middle" fill="#92400e" font-weight="bold">verre</text>
+  <text x="190" y="96" text-anchor="middle" fill="#92400e">100 mm</text>
+  <!-- OSB -->
+  <rect x="270" y="20" width="50" height="90" fill="#d97706" fill-opacity=".35" stroke="#92400e" stroke-width="1.5"/>
+  <text x="295" y="75" text-anchor="middle" fill="#451a03" font-weight="bold">OSB</text>
+  <text x="295" y="90" text-anchor="middle" fill="#451a03">12 mm</text>
+  <!-- flèche chaleur -->
+  <defs><marker id="arr2" markerWidth="8" markerHeight="6" refX="6" refY="3" orient="auto"><polygon points="0,0 8,3 0,6" fill="#ef4444"/></marker></defs>
+  <line x1="15" y1="65" x2="55" y2="65" stroke="#ef4444" stroke-width="2.5" marker-end="url(#arr2)"/>
+  <text x="8" y="58" fill="#ef4444" font-weight="bold">Q →</text>
+  <!-- Labels côtés -->
+  <text x="85" y="125" text-anchor="middle" fill="#2da44e" font-size="11">Cuisine</text>
+  <text x="295" y="125" text-anchor="middle" fill="#6b7280" font-size="11">Garage</text>
+  <!-- accolade largeur totale -->
+  <line x1="60" y1="118" x2="320" y2="118" stroke="#6b7280" stroke-width="1"/>
+  <line x1="60" y1="114" x2="60" y2="122" stroke="#6b7280" stroke-width="1"/>
+  <line x1="320" y1="114" x2="320" y2="122" stroke="#6b7280" stroke-width="1"/>
+  <text x="190" y="135" text-anchor="middle" fill="#6b7280" font-size="11">125 mm total</text>
+</svg>
+</div>
+
+<h2>5. Application complète — Cloison cuisine/garage</h2>
+
+<div class="ex">
+  <span class="label label-def">Calcul de R_total et U pour la cloison de la mise en situation</span><br>
+
+  <strong>Couche 1 — Plaque de plâtre</strong> (e = 13 mm = 0,013 m, λ = 0,25) :<br>
+  \[ R_1 = \frac{0{,}013}{0{,}25} = 0{,}052 \text{ m²·K/W} \]
+
+  <strong>Couche 2 — Laine de verre</strong> (e = 100 mm = 0,100 m, λ = 0,035) :<br>
+  \[ R_2 = \frac{0{,}100}{0{,}035} = 2{,}857 \text{ m²·K/W} \]
+
+  <strong>Couche 3 — Panneau OSB</strong> (e = 12 mm = 0,012 m, λ = 0,13) :<br>
+  \[ R_3 = \frac{0{,}012}{0{,}13} = 0{,}092 \text{ m²·K/W} \]
+
+  <strong>Résistance totale :</strong><br>
+  \[ R_{\text{total}} = 0{,}052 + 2{,}857 + 0{,}092 = 3{,}001 \text{ m²·K/W} \]
+
+  <strong>Coefficient U :</strong><br>
+  \[ U = \frac{1}{3{,}001} = 0{,}333 \text{ W/(m²·K)} \]
+
+  <strong>Vérification :</strong> U = 0,333 ≤ 0,36 → la paroi est <strong style="color:#2da44e">conforme à la réglementation</strong>.
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li>\(R = e / \lambda\) — résistance d'une couche en m²·K/W (e en mètres !)</li>
+    <li>\(R_{\text{total}} = R_1 + R_2 + \cdots\) — addition des résistances couche par couche</li>
+    <li>\(U = 1 / R_{\text{total}}\) — coefficient de transmission en W/(m²·K)</li>
+    <li>Plus R est grand (ou U petit) → meilleure isolation</li>
+    <li>Réglementation : U ≤ 0,36 W/(m²·K) pour une séparation avec local non chauffé</li>
+  </ul>
+</div>
+
+<!-- EXERCICES -->
+<h2>Exercices</h2>
+
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 1</span>
+    <span class="exo-title">Résistance d'une couche isolante (guidé)</span>
+    <span class="tag-socle">Socle</span>
+  </div>
+  Une paroi de chambre froide d'exposition est composée d'une couche de laine de roche de 80 mm d'épaisseur (λ = 0,038 W/(m·K)).<br><br>
+  <strong>Étape 1 :</strong> Convertir l'épaisseur en mètres.<br>
+  \(e = 80 \text{ mm} = \ldots \div 1\,000 = \ldots\) m<br><br>
+  <strong>Étape 2 :</strong> Écrire la formule.<br>
+  \(R = \dfrac{\ldots}{\ldots}\)<br><br>
+  <strong>Étape 3 :</strong> Calculer numériquement.<br>
+  \(R = \dfrac{\ldots}{\ldots} = \ldots\) m²·K/W
+  <div class="corr">
+    <strong>Correction :</strong><br>
+    Étape 1 : \(e = 80 / 1\,000 = 0{,}080\) m<br>
+    Étape 2 : \(R = e / \lambda\)<br>
+    Étape 3 : \(R = 0{,}080 / 0{,}038 = \mathbf{2{,}11 \text{ m²·K/W}}\)
+  </div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+</div>
+
+<div class="exo diff-socle">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 2</span>
+    <span class="exo-title">Coefficient U et conformité</span>
+    <span class="tag-socle">Socle</span>
+  </div>
+  Une paroi de rangement agencé a une résistance totale \(R_{\text{total}} = 2{,}5\) m²·K/W.<br><br>
+  <strong>1.</strong> Calculer U.<br>
+  \(U = \dfrac{1}{\ldots} = \ldots\) W/(m²·K)<br><br>
+  <strong>2.</strong> Cette paroi est-elle conforme à la réglementation (U ≤ 0,36) ? Justifier.
+  <div class="corr">
+    <strong>Correction :</strong><br>
+    1. \(U = 1 / 2{,}5 = \mathbf{0{,}40 \text{ W/(m²·K)}}\)<br>
+    2. U = 0,40 > 0,36 → la paroi <strong>n'est pas conforme</strong>. Il faut augmenter l'épaisseur d'isolant.
+  </div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+</div>
+
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 3</span>
+    <span class="exo-title">Paroi de cloison de séparation</span>
+    <span class="tag-standard">Standard</span>
+  </div>
+  Une cloison de séparation entre deux pièces d'une maison est composée de :<br>
+  <ul>
+    <li>Plaque de plâtre : e = 13 mm, λ = 0,25 W/(m·K)</li>
+    <li>Laine de roche : e = 60 mm, λ = 0,038 W/(m·K)</li>
+    <li>Plaque de plâtre : e = 13 mm, λ = 0,25 W/(m·K)</li>
+  </ul>
+  <strong>1.</strong> Calculer R pour chaque couche.<br>
+  <strong>2.</strong> Calculer R_total.<br>
+  <strong>3.</strong> Calculer U et vérifier la conformité (U ≤ 0,36 W/(m²·K)).
+  <div class="corr">
+    <strong>Correction :</strong><br>
+    1. \(R_{\text{plâtre}} = 0{,}013 / 0{,}25 = 0{,}052\) m²·K/W (×2)<br>
+    \(R_{\text{laine}} = 0{,}060 / 0{,}038 = 1{,}579\) m²·K/W<br><br>
+    2. \(R_{\text{total}} = 0{,}052 + 1{,}579 + 0{,}052 = 1{,}683\) m²·K/W<br><br>
+    3. \(U = 1 / 1{,}683 = 0{,}594\) W/(m²·K)<br>
+    U = 0,594 > 0,36 → <strong>non conforme</strong> : l'isolation laine de roche de 60 mm est insuffisante pour cette application.
+  </div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+</div>
+
+<div class="exo diff-standard">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 4</span>
+    <span class="exo-title">Épaisseur minimale d'isolant à atteindre</span>
+    <span class="tag-standard">Standard</span>
+  </div>
+  Un architecte impose U ≤ 0,28 W/(m²·K) pour une paroi. La paroi comporte deux plaques de plâtre (2 × 13 mm, λ = 0,25) qui donnent \(R_{\text{plâtre}} = 0{,}104\) m²·K/W.<br><br>
+  On veut ajouter de la laine de verre (λ = 0,035 W/(m·K)).<br><br>
+  <strong>1.</strong> Quelle résistance totale minimale faut-il atteindre ?<br>
+  <strong>2.</strong> En déduire la résistance minimale que doit apporter la laine de verre.<br>
+  <strong>3.</strong> Calculer l'épaisseur minimale de laine de verre. Arrondir au cm supérieur.
+  <div class="corr">
+    <strong>Correction :</strong><br>
+    1. \(R_{\text{min}} = 1 / U_{\text{max}} = 1 / 0{,}28 = 3{,}571\) m²·K/W<br><br>
+    2. \(R_{\text{isolant}} \geq 3{,}571 - 0{,}104 = 3{,}467\) m²·K/W<br><br>
+    3. \(e \geq R \times \lambda = 3{,}467 \times 0{,}035 = 0{,}1213\) m = 121,3 mm → choisir <strong>e = 130 mm</strong> (épaisseur commerciale standard).
+  </div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+</div>
+
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 5</span>
+    <span class="exo-title">Paroi multicouche avec carrelage</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
+  Une paroi de cuisine est composée de (de l'extérieur vers l'intérieur) :<br>
+  <ul>
+    <li>Panneau OSB : e = 12 mm, λ = 0,13 W/(m·K)</li>
+    <li>Laine de verre : e = 120 mm, λ = 0,035 W/(m·K)</li>
+    <li>Plaque de plâtre : e = 13 mm, λ = 0,25 W/(m·K)</li>
+    <li>Carrelage mural : e = 8 mm, λ = 1,0 W/(m·K)</li>
+  </ul>
+  <strong>1.</strong> Calculer R pour chaque couche (convertir les épaisseurs).<br>
+  <strong>2.</strong> Calculer R_total et U.<br>
+  <strong>3.</strong> Comparer U à la réglementation (U ≤ 0,36) et conclure.<br>
+  <strong>4.</strong> Quel est le matériau qui contribue le plus à l'isolation ? Et celui qui contribue le moins ?
+  <div class="corr">
+    <strong>Correction :</strong><br>
+    1. \(R_{\text{OSB}} = 0{,}012/0{,}13 = 0{,}092\) m²·K/W<br>
+    \(R_{\text{laine}} = 0{,}120/0{,}035 = 3{,}429\) m²·K/W<br>
+    \(R_{\text{plâtre}} = 0{,}013/0{,}25 = 0{,}052\) m²·K/W<br>
+    \(R_{\text{carrelage}} = 0{,}008/1{,}0 = 0{,}008\) m²·K/W<br><br>
+    2. \(R_{\text{total}} = 0{,}092 + 3{,}429 + 0{,}052 + 0{,}008 = 3{,}581\) m²·K/W<br>
+    \(U = 1/3{,}581 = \mathbf{0{,}279 \text{ W/(m²·K)}}\)<br><br>
+    3. U = 0,279 ≤ 0,36 → <strong>conforme</strong> — très bonne isolation.<br><br>
+    4. La laine de verre contribue le plus (R = 3,429 sur 3,581 total, soit 96 %). Le carrelage contribue le moins (R = 0,008, quasi nul thermiquement).
+  </div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+</div>
+
+<div class="exo diff-appro">
+  <div class="exo-header">
+    <span class="exo-num">Exercice 6</span>
+    <span class="exo-title">Raisonnement : doubler l'isolant double-t-il R ?</span>
+    <span class="tag-appro">Approfondissement</span>
+  </div>
+  <strong>1.</strong> Calculer R pour de la laine de verre (λ = 0,035) avec e = 60 mm, puis avec e = 120 mm. Que constatez-vous ?<br><br>
+  <strong>2.</strong> Démontrer mathématiquement en utilisant \(R = e/\lambda\) que doubler l'épaisseur double la résistance thermique.<br><br>
+  <strong>3.</strong> En pratique, dans un projet d'agencement de cuisine, quel est le compromis entre isolation thermique et épaisseur de cloison ?
+  <div class="corr">
+    <strong>Correction :</strong><br>
+    1. \(R_{60} = 0{,}060/0{,}035 = 1{,}714\) m²·K/W ; \(R_{120} = 0{,}120/0{,}035 = 3{,}429\) m²·K/W<br>
+    On constate que \(R_{120} = 2 \times R_{60}\) : doubler l'épaisseur double R.<br><br>
+    2. Si l'épaisseur double : \(e' = 2e\)<br>
+    \(R' = e'/\lambda = 2e/\lambda = 2 \times (e/\lambda) = 2R\) ✓<br><br>
+    3. Une plus grande épaisseur d'isolant améliore l'isolation mais réduit la surface utile intérieure de la cuisine. L'agenceur doit trouver un compromis : choisir un isolant performant (λ faible) pour atteindre la résistance cible avec une épaisseur raisonnable. Par exemple, une laine de verre λ = 0,032 nécessite moins d'épaisseur qu'une laine à λ = 0,040 pour atteindre le même R.
+  </div>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+</div>
+
+</div>
+<script src="../nav.js"></script>
+<script src="../diff.js"></script>
+<script>
+function toggle(btn){
+  const c=btn.previousElementSibling;
+  if(c.style.display==='none'||!c.style.display){c.style.display='block';btn.textContent='Masquer la correction';}
+  else{c.style.display='none';btn.textContent='Voir la correction';}
+}
+</script>
+</body>
+</html>
