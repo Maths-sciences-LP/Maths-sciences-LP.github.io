@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch08 – Exercices par capacités – Solutions chimiques et concentration – 2nde Bac Pro</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#6f42c1;--p-bg:#f5f0ff;--p-border:#c4b5fd}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-2nde-pro.html" class="nb">← Retour au sommaire</a>
+<header>
+  <h1>Chapitre 8 – Exercices par capacités</h1>
+  <p class="sous-titre">Solutions chimiques et concentration &nbsp;|&nbsp; 2nde Bac Pro &nbsp;|&nbsp; Physique-Chimie</p>
+</header>
+
+<div class="objectifs">
+  <strong>Capacités et connaissances du programme :</strong>
+  <ul>
+    <li><strong>C1</strong> — Préparer une solution par dissolution (masse, volume, soluté, solvant)</li>
+    <li><strong>C2</strong> — Calculer une concentration massique \(c_m = m/V\)</li>
+    <li><strong>C3</strong> — Calculer une concentration molaire \(C = n/V\)</li>
+    <li><strong>C4</strong> — Réaliser une dilution et appliquer la relation \(C_1 V_1 = C_2 V_2\)</li>
+    <li><strong>C5</strong> — Identifier le soluté et le solvant dans une solution</li>
+  </ul>
+</div>
+
+<div class="cap-filtres">
+  <button class="btn-cap active" data-filtre="toutes">Toutes</button>
+  <button class="btn-cap" data-filtre="C1">C1 – Dissolution</button>
+  <button class="btn-cap" data-filtre="C2">C2 – Concentration massique</button>
+  <button class="btn-cap" data-filtre="C3">C3 – Concentration molaire</button>
+  <button class="btn-cap" data-filtre="C4">C4 – Dilution</button>
+  <button class="btn-cap" data-filtre="C5">C5 – Soluté / solvant</button>
+</div>
+<p id="cap-active-label" style="font-weight:700;color:var(--p);margin:0 0 12px;font-size:1.05em"></p>
+
+<!-- ===== C1 ===== -->
+<div class="cap-section" data-cap="C1">
+<h2>C1 — Préparer une solution par dissolution</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>Préparer une solution par dissolution consiste à dissoudre un <strong>soluté</strong> (solide ou liquide) dans un <strong>solvant</strong> (souvent l'eau) pour obtenir un mélange homogène. Le volume final de la solution est noté \(V\) (en L ou mL). Les étapes clés : peser la masse \(m\) de soluté, dissoudre dans un peu de solvant, puis compléter jusqu'au volume \(V\) voulu.</p>
+</div>
+
+<div class="exo">
+  <h3>Exercice 1</h3>
+  <p>Un technicien en nettoyage industriel prépare une solution désinfectante en dissolvant 25 g de chlorure de sodium (NaCl) dans de l'eau distillée pour obtenir 500 mL de solution.</p>
+  <ol type="a">
+    <li>Identifier le soluté et le solvant.</li>
+    <li>Quel volume d'eau faut-il utiliser en litre ?</li>
+    <li>Décrire les étapes de préparation à l'aide d'une fiole jaugée de 500 mL.</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>Soluté : chlorure de sodium NaCl. Solvant : eau distillée.</li>
+      <li>\(500\ \text{mL} = 0{,}500\ \text{L}\)</li>
+      <li>Étapes : peser 25 g de NaCl → introduire dans la fiole jaugée → ajouter un peu d'eau, agiter pour dissoudre → compléter jusqu'au trait de jauge 500 mL → boucher et homogénéiser.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 2</h3>
+  <p>Un laboratoire prépare 200 mL d'une solution de glucose en dissolvant 3,6 g de glucose dans de l'eau. Nommer les constituants de cette solution et préciser lequel est le soluté.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>La solution contient deux constituants : le <strong>glucose</strong> (soluté — espèce dissoute) et l'<strong>eau</strong> (solvant — liquide dans lequel on dissout). La solution est aqueuse.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 3</h3>
+  <p>Un agent de maintenance prépare une solution de nettoyage en mélangeant 15 g de carbonate de sodium (Na₂CO₃) dans 250 mL d'eau. Il constate que la poudre disparaît après agitation.</p>
+  <ol type="a">
+    <li>Expliquer ce qui se passe lors de la dissolution.</li>
+    <li>La solution obtenue est-elle homogène ou hétérogène ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>Les ions du carbonate de sodium (Na⁺ et CO₃²⁻) se séparent et se dispersent uniformément dans l'eau. Le soluté solide se dissocie en ions solvatés par les molécules d'eau.</li>
+      <li>La solution obtenue est <strong>homogène</strong> : on ne distingue plus les deux phases, le mélange est uniforme.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 4</h3>
+  <p>Un peintre prépare un bain de traitement du bois en dissolvant 80 g d'un sel protecteur dans de l'eau pour obtenir 2,0 L de solution. Exprimer en mL le volume de la solution, puis en m³.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>\(2{,}0\ \text{L} = 2\,000\ \text{mL}\)</p>
+    <p>\(2{,}0\ \text{L} = 2{,}0 \times 10^{-3}\ \text{m}^3\)</p>
+  </div>
+</div>
+</div>
+
+<!-- ===== C2 ===== -->
+<div class="cap-section" data-cap="C2">
+<h2>C2 — Calculer une concentration massique</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>La concentration massique \(c_m\) d'une solution est la masse de soluté dissoute par unité de volume de solution :</p>
+  <p>\[c_m = \frac{m}{V}\]</p>
+  <p>avec \(m\) en grammes (g) et \(V\) en litres (L), donc \(c_m\) en g/L. On peut aussi l'exprimer en g/mL ou en mg/L selon le contexte.</p>
+</div>
+
+<div class="exo">
+  <h3>Exercice 5</h3>
+  <p>Un chimiste dissout 12 g de sel dans 600 mL d'eau pour préparer une solution saline.</p>
+  <ol type="a">
+    <li>Convertir le volume en litres.</li>
+    <li>Calculer la concentration massique de la solution.</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>\(600\ \text{mL} = 0{,}600\ \text{L}\)</li>
+      <li>\(c_m = \frac{m}{V} = \frac{12}{0{,}600} = \mathbf{20\ \text{g/L}}\)</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 6</h3>
+  <p>Une solution de chlorure de calcium utilisée pour le dégivrage contient 45 g de soluté dans 1,5 L. Calculer sa concentration massique.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>\(c_m = \frac{m}{V} = \frac{45}{1{,}5} = \mathbf{30\ \text{g/L}}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 7</h3>
+  <p>Un technicien de laboratoire dispose d'une solution de concentration massique \(c_m = 50\ \text{g/L}\). Il souhaite en prélever 250 mL. Quelle masse de soluté ce prélèvement contient-il ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>On isole \(m\) : \(m = c_m \times V = 50 \times 0{,}250 = \mathbf{12{,}5\ \text{g}}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 8</h3>
+  <p>Une solution de glucose a une concentration massique de 18 g/L. Quel volume de solution contient 27 g de glucose ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>On isole \(V\) : \(V = \frac{m}{c_m} = \frac{27}{18} = \mathbf{1{,}5\ \text{L}}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 9</h3>
+  <p>L'étiquette d'un flacon de solution antiseptique indique : « concentration en principe actif : 10 g/L ». Un infirmier prélève 20 mL de cette solution. Calculer la masse de principe actif dans ce prélèvement.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>\(V = 20\ \text{mL} = 0{,}020\ \text{L}\)</p>
+    <p>\(m = c_m \times V = 10 \times 0{,}020 = \mathbf{0{,}20\ \text{g}}\)</p>
+  </div>
+</div>
+</div>
+
+<!-- ===== C3 ===== -->
+<div class="cap-section" data-cap="C3">
+<h2>C3 — Calculer une concentration molaire</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>La concentration molaire \(C\) (ou \(c\)) est le nombre de moles de soluté par litre de solution :</p>
+  <p>\[C = \frac{n}{V}\]</p>
+  <p>avec \(n\) en mol et \(V\) en L, donc \(C\) en mol/L (noté aussi mol·L⁻¹ ou M). Pour calculer le nombre de moles : \(n = \frac{m}{M\) où \(M\) est la masse molaire (g/mol).</p>
+</div>
+
+<div class="exo">
+  <h3>Exercice 10</h3>
+  <p>On dissout 5,85 g de chlorure de sodium NaCl dans de l'eau pour préparer 500 mL de solution. La masse molaire de NaCl est \(M = 58{,}5\ \text{g/mol}\).</p>
+  <ol type="a">
+    <li>Calculer le nombre de moles de NaCl.</li>
+    <li>Calculer la concentration molaire de la solution.</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>\(n = \frac{m}{M} = \frac{5{,}85}{58{,}5} = 0{,}100\ \text{mol}\)</li>
+      <li>\(C = \frac{n}{V} = \frac{0{,}100}{0{,}500} = \mathbf{0{,}200\ \text{mol/L}}\)</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 11</h3>
+  <p>Une solution d'acide chlorhydrique HCl a une concentration molaire \(C = 0{,}5\ \text{mol/L}\). Calculer le nombre de moles de HCl présent dans 300 mL de cette solution.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>\(V = 300\ \text{mL} = 0{,}300\ \text{L}\)</p>
+    <p>\(n = C \times V = 0{,}5 \times 0{,}300 = \mathbf{0{,}15\ \text{mol}}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 12</h3>
+  <p>Une solution de soude (NaOH, \(M = 40\ \text{g/mol}\)) a une concentration molaire de \(0{,}25\ \text{mol/L}\). Calculer la masse de NaOH contenue dans 2,0 L de cette solution.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>\(n = C \times V = 0{,}25 \times 2{,}0 = 0{,}50\ \text{mol}\)</p>
+    <p>\(m = n \times M = 0{,}50 \times 40 = \mathbf{20\ \text{g}}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 13</h3>
+  <p>Une solution de glucose (\(M = 180\ \text{g/mol}\)) est préparée en dissolvant 36 g dans de l'eau pour obtenir 1,0 L. Calculer la concentration molaire.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>\(n = \frac{m}{M} = \frac{36}{180} = 0{,}20\ \text{mol}\)</p>
+    <p>\(C = \frac{n}{V} = \frac{0{,}20}{1{,}0} = \mathbf{0{,}20\ \text{mol/L}}\)</p>
+  </div>
+</div>
+</div>
+
+<!-- ===== C4 ===== -->
+<div class="cap-section" data-cap="C4">
+<h2>C4 — Réaliser une dilution (\(C_1 V_1 = C_2 V_2\))</h2>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <p>La dilution consiste à ajouter du solvant à une solution pour diminuer sa concentration. La quantité de soluté reste constante :</p>
+  <p>\[C_1 V_1 = C_2 V_2\]</p>
+  <p>Le <strong>facteur de dilution</strong> est \(f = \frac{V_2}{V_1} = \frac{C_1}{C_2}\).</p>
+</div>
+
+<div class="exo">
+  <h3>Exercice 14</h3>
+  <p>On dilue 50 mL d'une solution de concentration \(C_1 = 2{,}0\ \text{mol/L}\) en ajoutant de l'eau pour obtenir 250 mL de solution finale. Calculer la concentration \(C_2\) de la solution diluée.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>\(C_1 V_1 = C_2 V_2\)</p>
+    <p>\(C_2 = \frac{C_1 V_1}{V_2} = \frac{2{,}0 \times 0{,}050}{0{,}250} = \frac{0{,}10}{0{,}250} = \mathbf{0{,}40\ \text{mol/L}}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 15</h3>
+  <p>Un technicien de labo dispose d'une solution mère de concentration massique \(C_1 = 100\ \text{g/L}\). Il veut préparer 500 mL d'une solution fille à \(C_2 = 20\ \text{g/L}\). Quel volume \(V_1\) de solution mère doit-il prélever ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>\(V_1 = \frac{C_2 V_2}{C_1} = \frac{20 \times 0{,}500}{100} = \frac{10}{100} = \mathbf{0{,}100\ \text{L} = 100\ \text{mL}}\)</p>
+    <p>On prélève 100 mL de solution mère et on complète à 500 mL avec de l'eau.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 16</h3>
+  <p>Un produit de nettoyage concentré est dilué au 1/10. Sa concentration initiale est de 5,0 mol/L. Calculer la concentration de la solution diluée.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Facteur de dilution \(f = 10\), donc \(C_2 = \frac{C_1}{f} = \frac{5{,}0}{10} = \mathbf{0{,}50\ \text{mol/L}}\)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 17</h3>
+  <p>On mélange 20 mL d'une solution à \(C_1 = 3{,}0\ \text{mol/L}\) avec de l'eau distillée jusqu'à obtenir 300 mL. Calculer le facteur de dilution et la nouvelle concentration.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Facteur de dilution : \(f = \frac{V_2}{V_1} = \frac{300}{20} = 15\)</p>
+    <p>Nouvelle concentration : \(C_2 = \frac{C_1 V_1}{V_2} = \frac{3{,}0 \times 0{,}020}{0{,}300} = \mathbf{0{,}20\ \text{mol/L}}\)</p>
+  </div>
+</div>
+</div>
+
+<!-- ===== C5 ===== -->
+<div class="cap-section" data-cap="C5">
+<h2>C5 — Identifier le soluté et le solvant dans une solution</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>Une <strong>solution</strong> est un mélange homogène composé de :</p>
+  <ul>
+    <li>Le <strong>soluté</strong> : l'espèce chimique dissoute (en plus faible quantité)</li>
+    <li>Le <strong>solvant</strong> : le liquide dans lequel on dissout (en plus grande quantité, souvent l'eau)</li>
+  </ul>
+  <p>Si le solvant est l'eau, la solution est dite <strong>aqueuse</strong>.</p>
+</div>
+
+<div class="exo">
+  <h3>Exercice 18</h3>
+  <p>Pour chacune des situations suivantes, identifier le soluté et le solvant :</p>
+  <ol type="a">
+    <li>Du sucre dissous dans du café.</li>
+    <li>Du sel dissous dans l'eau de mer.</li>
+    <li>De l'alcool (éthanol) dilué dans l'eau pour fabriquer un désinfectant.</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>Soluté : sucre. Solvant : café (eau).</li>
+      <li>Soluté : sel (NaCl). Solvant : eau.</li>
+      <li>Soluté : éthanol (en plus faible proportion). Solvant : eau. (Remarque : si l'éthanol est majoritaire, les rôles s'inversent — dans un désinfectant à 70°, l'éthanol est majoritaire et est en réalité le solvant.)</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 19</h3>
+  <p>Un plombier chauffagiste prépare un antigel pour circuit de chauffage en mélangeant du glycol dans de l'eau. La solution contient 30 % de glycol en masse et 70 % d'eau. Identifier le soluté et le solvant.</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Le solvant est l'<strong>eau</strong> (70 %, espèce majoritaire). Le soluté est le <strong>glycol</strong> (30 %, espèce dissoute dans l'eau). La solution est aqueuse.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 20</h3>
+  <p>On lit sur une étiquette : « Solution aqueuse d'acide sulfurique à 96 % ». Identifier le soluté et le solvant. Cette solution est-elle aqueuse ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Le soluté est l'<strong>acide sulfurique H₂SO₄</strong> (96 %). Le solvant est l'<strong>eau</strong> (4 %). La solution est bien aqueuse, même si l'acide est très concentré. (Attention : à cette concentration, l'acide est très corrosif.)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 21</h3>
+  <p>Classer les solutions suivantes comme « aqueuse » ou « non aqueuse » et identifier le solvant :</p>
+  <ol type="a">
+    <li>Vernis à base d'acétone avec des pigments colorés.</li>
+    <li>Solution de chlorure de potassium dans l'eau.</li>
+    <li>Solution d'iode dans l'alcool (teinture d'iode).</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>Non aqueuse — solvant : acétone.</li>
+      <li>Aqueuse — solvant : eau.</li>
+      <li>Non aqueuse — solvant : alcool (éthanol).</li>
+    </ol>
+  </div>
+</div>
+</div>
+
+</div>
+
+<script src="../../../nav.js"></script>
+<script src="../../../comp.js"></script>
+<script>
+function toggle(btn){
+  var corr=btn.nextElementSibling;
+  if(corr.style.display==='block'){corr.style.display='none';btn.textContent='Voir la correction';}
+  else{corr.style.display='block';btn.textContent='Masquer la correction';}
+}
+</script>
+</body>
+</html>
