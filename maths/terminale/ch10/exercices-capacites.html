@@ -26,6 +26,7 @@
     <li><strong>C3</strong> — Calculer le conjugué \(\bar{z}\) et le module \(|z|\) d'un nombre complexe</li>
     <li><strong>C4</strong> — Calculer le quotient de deux nombres complexes (multiplication par le conjugué du dénominateur)</li>
     <li><strong>C5</strong> — Résoudre une équation du second degré à discriminant négatif (solutions complexes conjuguées)</li>
+    <li><strong>C6</strong> — Déterminer l'argument et écrire la forme trigonométrique d'un nombre complexe</li>
   </ul>
 </div>
 
@@ -37,6 +38,7 @@
   <button class="btn-cap" data-filtre="C3">C3 – Conjugué et module</button>
   <button class="btn-cap" data-filtre="C4">C4 – Quotient</button>
   <button class="btn-cap" data-filtre="C5">C5 – Équation du 2nd degré</button>
+  <button class="btn-cap" data-filtre="C6">C6 – Argument et forme trigo</button>
 </div>
 <p id="cap-active-label" style="font-weight:700;color:var(--p);margin:0 0 12px;font-size:1.05em"></p>
 
@@ -530,6 +532,98 @@
 
 </div><!-- fin .c -->
 
+<!-- ===== C6 ===== -->
+<div class="cap-section" data-cap="C6">
+<h2>C6 — Argument et forme trigonométrique</h2>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <p>Tout nombre complexe non nul \(z = a + ib\) peut s'écrire sous <strong>forme trigonométrique</strong> : \(z = r(\cos\theta + i\sin\theta)\) où :<br>
+  — \(r = |z| = \sqrt{a^2 + b^2}\) est le module<br>
+  — \(\theta = \arg(z)\) est l'<strong>argument</strong> (angle en radians, \(\theta \in ]-\pi\,;\,\pi]\))<br>
+  On retrouve \(a = r\cos\theta\) et \(b = r\sin\theta\).</p>
+</div>
+
+<div class="exo">
+  <h3>Exercice 16</h3>
+  <p>Déterminer le module et l'argument des nombres complexes suivants, puis écrire leur forme trigonométrique :</p>
+  <ol type="a">
+    <li>\(z_1 = 1 + i\)</li>
+    <li>\(z_2 = -2\)</li>
+    <li>\(z_3 = 3i\)</li>
+    <li>\(z_4 = \sqrt{3} + i\)</li>
+  </ol>
+  <figure class="schema" style="text-align:center;margin:12px 0">
+    <svg width="220" height="220" viewBox="0 0 220 220" aria-label="Plan complexe avec z1, z2, z3, z4">
+      <rect width="220" height="220" fill="#f8fafc" rx="6"/>
+      <line x1="110" y1="210" x2="110" y2="5" stroke="#333" stroke-width="1.2"/>
+      <line x1="5" y1="110" x2="215" y2="110" stroke="#333" stroke-width="1.2"/>
+      <text x="200" y="105" font-size="9" fill="#333">Re</text>
+      <text x="115" y="12" font-size="9" fill="#333">Im</text>
+      <!-- z1 = 1+i → (150,70) -->
+      <circle cx="150" cy="70" r="4" fill="#0969da"/>
+      <text x="155" y="65" font-size="10" fill="#0969da">1+i</text>
+      <!-- z2 = -2 → (30,110) -->
+      <circle cx="30" cy="110" r="4" fill="#c53030"/>
+      <text x="15" y="100" font-size="10" fill="#c53030">-2</text>
+      <!-- z3 = 3i → (110,−30)→(110, 110-3*40)=(110,-10) clip →(110,10) -->
+      <circle cx="110" cy="10" r="4" fill="#2f855a"/>
+      <text x="115" y="18" font-size="10" fill="#2f855a">3i</text>
+      <!-- z4 = √3+i ≈ (1.73, 1) → (179, 70) -->
+      <circle cx="179" cy="70" r="4" fill="#d97706"/>
+      <text x="184" y="78" font-size="10" fill="#d97706">√3+i</text>
+    </svg>
+  </figure>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>\(|z_1| = \sqrt{1+1} = \sqrt{2}\). \(\cos\theta = \frac{1}{\sqrt{2}}\), \(\sin\theta = \frac{1}{\sqrt{2}}\) → \(\theta = \frac{\pi}{4}\).<br>
+      \(z_1 = \sqrt{2}\left(\cos\frac{\pi}{4} + i\sin\frac{\pi}{4}\right)\)</li>
+      <li>\(|z_2| = 2\). \(z_2\) est réel négatif → \(\theta = \pi\).<br>
+      \(z_2 = 2(\cos\pi + i\sin\pi)\)</li>
+      <li>\(|z_3| = 3\). \(z_3\) est imaginaire pur positif → \(\theta = \frac{\pi}{2}\).<br>
+      \(z_3 = 3\left(\cos\frac{\pi}{2} + i\sin\frac{\pi}{2}\right)\)</li>
+      <li>\(|z_4| = \sqrt{3+1} = 2\). \(\cos\theta = \frac{\sqrt{3}}{2}\), \(\sin\theta = \frac{1}{2}\) → \(\theta = \frac{\pi}{6}\).<br>
+      \(z_4 = 2\left(\cos\frac{\pi}{6} + i\sin\frac{\pi}{6}\right)\)</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 17</h3>
+  <p>Passer de la forme trigonométrique à la forme algébrique :</p>
+  <ol type="a">
+    <li>\(z = 4\left(\cos\frac{\pi}{3} + i\sin\frac{\pi}{3}\right)\)</li>
+    <li>\(z = 3\left(\cos\frac{3\pi}{4} + i\sin\frac{3\pi}{4}\right)\)</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>\(a = 4\cos\frac{\pi}{3} = 4 \times \frac{1}{2} = 2\), \(b = 4\sin\frac{\pi}{3} = 4 \times \frac{\sqrt{3}}{2} = 2\sqrt{3}\).<br>
+      \(z = 2 + 2\sqrt{3}\,i\)</li>
+      <li>\(a = 3\cos\frac{3\pi}{4} = 3 \times \left(-\frac{\sqrt{2}}{2}\right) = -\frac{3\sqrt{2}}{2}\), \(b = 3\sin\frac{3\pi}{4} = \frac{3\sqrt{2}}{2}\).<br>
+      \(z = -\frac{3\sqrt{2}}{2} + \frac{3\sqrt{2}}{2}\,i\)</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 18</h3>
+  <p>Soit \(z_1 = 2\left(\cos\frac{\pi}{6} + i\sin\frac{\pi}{6}\right)\) et \(z_2 = 3\left(\cos\frac{\pi}{4} + i\sin\frac{\pi}{4}\right)\).</p>
+  <ol type="a">
+    <li>Calculer \(|z_1 \times z_2|\) et \(\arg(z_1 \times z_2)\).</li>
+    <li>En déduire la forme trigonométrique de \(z_1 \times z_2\).</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>\(|z_1 \times z_2| = |z_1| \times |z_2| = 2 \times 3 = 6\).<br>
+      \(\arg(z_1 \times z_2) = \arg(z_1) + \arg(z_2) = \frac{\pi}{6} + \frac{\pi}{4} = \frac{2\pi + 3\pi}{12} = \frac{5\pi}{12}\).</li>
+      <li>\(z_1 \times z_2 = 6\left(\cos\frac{5\pi}{12} + i\sin\frac{5\pi}{12}\right)\).</li>
+    </ol>
+  </div>
+</div>
+</div>
 
 <script src="../../../nav.js"></script>
 <script src="../../../comp.js"></script>

@@ -25,6 +25,7 @@
     <li><strong>C3</strong> — Construire et utiliser un arbre de probabilités</li>
     <li><strong>C4</strong> — Appliquer la formule des probabilités totales</li>
     <li><strong>C5</strong> — Appliquer la formule de Bayes (probabilité des causes)</li>
+    <li><strong>C6</strong> — Montrer que deux événements sont indépendants</li>
   </ul>
 </div>
 
@@ -35,6 +36,7 @@
   <button class="btn-cap" data-filtre="C3">C3 – Arbre de probabilités</button>
   <button class="btn-cap" data-filtre="C4">C4 – Probabilités totales</button>
   <button class="btn-cap" data-filtre="C5">C5 – Formule de Bayes</button>
+  <button class="btn-cap" data-filtre="C6">C6 – Indépendance</button>
 </div>
 <p id="cap-active-label" style="font-weight:700;color:var(--p);margin:0 0 12px;font-size:1.05em"></p>
 
@@ -307,6 +309,51 @@
 </div>
 </div>
 
+</div>
+
+<!-- ===== C6 ===== -->
+<div class="cap-section" data-cap="C6">
+<h2>C6 — Montrer que deux événements sont indépendants</h2>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <p>Deux événements \(A\) et \(B\) sont <strong>indépendants</strong> si et seulement si \(P(A \cap B) = P(A) \times P(B)\).<br>
+  Autrement dit : la réalisation de \(A\) ne modifie pas la probabilité de \(B\), c'est-à-dire \(P(B \mid A) = P(B)\).</p>
+</div>
+
+<div class="exo">
+  <h3>Exercice 13</h3>
+  <p>Dans un atelier, 60 % des pièces sont en acier (événement \(A\)) et 30 % présentent un défaut de surface (événement \(D\)). On sait que \(P(A \cap D) = 0{,}18\).</p>
+  <ol type="a">
+    <li>Calculer \(P(A) \times P(D)\).</li>
+    <li>Les événements \(A\) et \(D\) sont-ils indépendants ? Justifier.</li>
+    <li>Calculer \(P(D \mid A)\) et comparer avec \(P(D)\).</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>\(P(A) \times P(D) = 0{,}6 \times 0{,}3 = 0{,}18\)</li>
+      <li>\(P(A \cap D) = 0{,}18 = P(A) \times P(D)\) → <strong>oui, A et D sont indépendants</strong>.</li>
+      <li>\(P(D \mid A) = \frac{P(A \cap D)}{P(A)} = \frac{0{,}18}{0{,}6} = 0{,}3 = P(D)\). Le fait que la pièce soit en acier ne change pas la probabilité de défaut.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 14</h3>
+  <p>Un installateur tire au hasard un fusible. La probabilité qu'il soit de marque X est \(P(X) = 0{,}4\), celle qu'il soit défectueux est \(P(D) = 0{,}05\), et \(P(X \cap D) = 0{,}03\).</p>
+  <ol type="a">
+    <li>Les événements X et D sont-ils indépendants ?</li>
+    <li>Interpréter le résultat : la marque X a-t-elle un lien avec le taux de défaut ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>\(P(X) \times P(D) = 0{,}4 \times 0{,}05 = 0{,}02 \neq 0{,}03 = P(X \cap D)\) → <strong>non, X et D ne sont pas indépendants</strong>.</li>
+      <li>\(P(D \mid X) = \frac{0{,}03}{0{,}4} = 0{,}075 > 0{,}05 = P(D)\). Les fusibles de marque X ont un taux de défaut plus élevé que la moyenne (7,5 % vs 5 %). La marque influence la fiabilité.</li>
+    </ol>
+  </div>
+</div>
 </div>
 
 <script src="../../../nav.js"></script>

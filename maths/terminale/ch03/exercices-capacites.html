@@ -25,6 +25,7 @@
     <li><strong>C3</strong> — Calculer la somme des \(n\) premiers termes d'une suite géométrique</li>
     <li><strong>C4</strong> — Modéliser une situation de croissance ou décroissance exponentielle</li>
     <li><strong>C5</strong> — Résoudre des problèmes concrets (capital, amortissement, doublement)</li>
+    <li><strong>C6</strong> — Représenter graphiquement le nuage \((n\,;\,u_n)\) et déterminer le sens de variation</li>
   </ul>
 </div>
 
@@ -35,6 +36,7 @@
   <button class="btn-cap" data-filtre="C3">C3 – Somme des termes</button>
   <button class="btn-cap" data-filtre="C4">C4 – Modélisation</button>
   <button class="btn-cap" data-filtre="C5">C5 – Problèmes concrets</button>
+  <button class="btn-cap" data-filtre="C6">C6 – Nuage de points et variations</button>
 </div>
 <p id="cap-active-label" style="font-weight:700;color:var(--p);margin:0 0 12px;font-size:1.05em"></p>
 
@@ -274,6 +276,57 @@
 </div>
 </div>
 
+</div>
+
+<!-- ===== C6 ===== -->
+<div class="cap-section" data-cap="C6">
+<h2>C6 — Représenter le nuage \((n\,;\,u_n)\) et déterminer le sens de variation</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>Le <strong>nuage de points</strong> \((n\,;\,u_n)\) représente les termes de la suite. Pour une suite géométrique de raison \(q > 0\) et de premier terme \(u_0 > 0\) :<br>
+  — Si \(q > 1\) : la suite est <strong>croissante</strong> (les points montent).<br>
+  — Si \(0 < q < 1\) : la suite est <strong>décroissante</strong> (les points descendent).<br>
+  — Si \(q = 1\) : la suite est <strong>constante</strong>.</p>
+</div>
+
+<div class="exo">
+  <h3>Exercice 16</h3>
+  <p>Soit \(u_n = 3 \times 2^n\).</p>
+  <ol type="a">
+    <li>Calculer \(u_0\), \(u_1\), \(u_2\), \(u_3\), \(u_4\).</li>
+    <li>Placer les points \((n\,;\,u_n)\) dans un repère.</li>
+    <li>La suite est-elle croissante ou décroissante ? Justifier à l'aide de \(q\).</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>\(u_0 = 3\), \(u_1 = 6\), \(u_2 = 12\), \(u_3 = 24\), \(u_4 = 48\).</li>
+      <li>Points : \((0\,;\,3)\), \((1\,;\,6)\), \((2\,;\,12)\), \((3\,;\,24)\), \((4\,;\,48)\). Les points montent de plus en plus vite (croissance exponentielle).</li>
+      <li>\(q = 2 > 1\) et \(u_0 = 3 > 0\) → la suite est <strong>strictement croissante</strong>.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 17</h3>
+  <p>La valeur d'un équipement de chantier diminue de 15 % par an. Sa valeur initiale est 8 000 €.</p>
+  <ol type="a">
+    <li>Exprimer la valeur \(v_n\) après \(n\) années (identifier \(q\)).</li>
+    <li>Calculer \(v_0\) à \(v_5\) et représenter le nuage de points.</li>
+    <li>La suite est-elle croissante ou décroissante ? Justifier.</li>
+    <li>À partir de quel rang la valeur passe-t-elle sous 3 000 € ?</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>Diminution de 15 % → coefficient multiplicateur \(q = 1 - 0{,}15 = 0{,}85\). Donc \(v_n = 8\,000 \times 0{,}85^n\).</li>
+      <li>\(v_0 = 8\,000\), \(v_1 = 6\,800\), \(v_2 = 5\,780\), \(v_3 = 4\,913\), \(v_4 = 4\,176\), \(v_5 = 3\,550\).</li>
+      <li>\(0 < q = 0{,}85 < 1\) et \(v_0 > 0\) → la suite est <strong>strictement décroissante</strong>.</li>
+      <li>\(v_5 = 3\,550 > 3\,000\) et \(v_6 = 3\,550 \times 0{,}85 = 3\,017 > 3\,000\) et \(v_7 = 3\,017 \times 0{,}85 \approx 2\,565 < 3\,000\). → À partir du <strong>rang 7</strong>.</li>
+    </ol>
+  </div>
+</div>
 </div>
 
 <script src="../../../nav.js"></script>

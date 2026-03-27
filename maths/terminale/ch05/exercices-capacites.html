@@ -26,6 +26,7 @@
     <li><strong>C3</strong> — Résoudre des équations de la forme \(a^x = b\) en utilisant \(\log_{10}\)</li>
     <li><strong>C4</strong> — Modéliser et calculer un temps de doublement ou de demi-vie</li>
     <li><strong>C5</strong> — Résoudre des problèmes de croissance et décroissance exponentielle en contexte professionnel</li>
+    <li><strong>C6</strong> — Résoudre des inéquations du type \(q^x \geq a\) et \(\log(x) \geq a\)</li>
   </ul>
 </div>
 
@@ -37,6 +38,7 @@
   <button class="btn-cap" data-filtre="C3">C3 – Équation \(a^x = b\)</button>
   <button class="btn-cap" data-filtre="C4">C4 – Doublement / demi-vie</button>
   <button class="btn-cap" data-filtre="C5">C5 – Croissance/décroissance</button>
+  <button class="btn-cap" data-filtre="C6">C6 – Inéquations</button>
 </div>
 <p id="cap-active-label" style="font-weight:700;color:var(--p);margin:0 0 12px;font-size:1.05em"></p>
 
@@ -455,6 +457,51 @@
 
 </div><!-- fin .c -->
 
+<!-- ===== C6 ===== -->
+<div class="cap-section" data-cap="C6">
+<h2>C6 — Résoudre des inéquations du type \(q^x \geq a\) et \(\log(x) \geq a\)</h2>
+
+<div class="meth">
+  <strong>Rappel de cours</strong>
+  <p>Pour résoudre \(q^x \geq a\) (avec \(q > 1\)) : passer au log → \(x \geq \frac{\log(a)}{\log(q)}\).<br>
+  Pour \(0 < q < 1\) : l'inégalité s'inverse → \(x \leq \frac{\log(a)}{\log(q)}\).<br>
+  Pour \(\log(x) \geq a\) : \(x \geq 10^a\) (car log est croissante).</p>
+</div>
+
+<div class="exo">
+  <h3>Exercice 16</h3>
+  <p>Résoudre les inéquations suivantes :</p>
+  <ol type="a">
+    <li>\(2^x \geq 64\)</li>
+    <li>\(3^x < 100\)</li>
+    <li>\(\log(x) \geq 2\)</li>
+    <li>\(\log(x) < -1\)</li>
+  </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ol type="a">
+      <li>\(2^x \geq 64 = 2^6\) → \(x \geq 6\). Solution : \([6\,;\,+\infty[\).</li>
+      <li>\(3^x < 100\) → \(x < \frac{\log(100)}{\log(3)} = \frac{2}{0{,}477} \approx 4{,}19\). Solution : \(]-\infty\,;\,4{,}19[\).</li>
+      <li>\(\log(x) \geq 2\) → \(x \geq 10^2 = 100\). Solution : \([100\,;\,+\infty[\).</li>
+      <li>\(\log(x) < -1\) → \(0 < x < 10^{-1} = 0{,}1\). Solution : \(]0\,;\,0{,}1[\).</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exo">
+  <h3>Exercice 17</h3>
+  <p>Un menuisier place 5 000 € sur un compte rémunéré à 3 % par an. À partir de combien d'années son capital dépassera-t-il 6 500 € ?</p>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    Capital après \(n\) ans : \(C_n = 5\,000 \times 1{,}03^n\).<br>
+    On résout \(5\,000 \times 1{,}03^n \geq 6\,500\) :<br>
+    \(1{,}03^n \geq 1{,}3\)<br>
+    \(n \geq \frac{\log(1{,}3)}{\log(1{,}03)} = \frac{0{,}114}{0{,}0128} \approx 8{,}9\)<br>
+    → À partir de <strong>9 ans</strong>, le capital dépasse 6 500 €.<br>
+    Vérification : \(5\,000 \times 1{,}03^9 \approx 6\,}523\) € ✔
+  </div>
+</div>
+</div>
 
 <script src="../../../nav.js"></script>
 <script src="../../../comp.js"></script>
