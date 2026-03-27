@@ -358,7 +358,36 @@
       <li>Base de temps : <strong>10 ms/div</strong></li>
       <li>Sensibilité verticale : <strong>2 V/div</strong></li>
     </ul>
-    <p>On observe un signal sinusoïdal. Une période occupe <strong>2 divisions</strong> horizontales. Le sommet du signal est à <strong>3 divisions</strong> au-dessus de l'axe zéro.</p>
+    <p>On observe le signal sinusoïdal suivant :</p>
+    <figure class="schema" style="text-align:center;margin:10px 0">
+      <svg width="280" height="180" viewBox="0 0 280 180">
+        <rect width="280" height="180" fill="#1a1a2e" rx="8"/>
+        <!-- Grille oscilloscope -->
+        <g stroke="#2d3a5e" stroke-width="0.5">
+          <line x1="20" y1="30" x2="20" y2="150"/><line x1="60" y1="30" x2="60" y2="150"/>
+          <line x1="100" y1="30" x2="100" y2="150"/><line x1="140" y1="30" x2="140" y2="150"/>
+          <line x1="180" y1="30" x2="180" y2="150"/><line x1="220" y1="30" x2="220" y2="150"/>
+          <line x1="260" y1="30" x2="260" y2="150"/>
+          <line x1="20" y1="30" x2="260" y2="30"/><line x1="20" y1="60" x2="260" y2="60"/>
+          <line x1="20" y1="90" x2="260" y2="90"/><line x1="20" y1="120" x2="260" y2="120"/>
+          <line x1="20" y1="150" x2="260" y2="150"/>
+        </g>
+        <!-- Axes centraux -->
+        <line x1="20" y1="90" x2="260" y2="90" stroke="#4a5568" stroke-width="1"/>
+        <line x1="140" y1="30" x2="140" y2="150" stroke="#4a5568" stroke-width="1"/>
+        <!-- Signal sinusoïdal: T=2div=80px, Umax=3div=60px -->
+        <path d="M 20,90 Q 40,30 60,90 Q 80,150 100,90 Q 120,30 140,90 Q 160,150 180,90 Q 200,30 220,90 Q 240,150 260,90" fill="none" stroke="#00ff88" stroke-width="2"/>
+        <!-- Annotations -->
+        <line x1="60" y1="165" x2="140" y2="165" stroke="#ffaa00" stroke-width="1.5"/>
+        <text x="85" y="177" font-size="9" fill="#ffaa00" text-anchor="middle">T = 2 div</text>
+        <line x1="265" y1="30" x2="265" y2="90" stroke="#ff6666" stroke-width="1.5"/>
+        <text x="270" y="65" font-size="8" fill="#ff6666">3 div</text>
+        <!-- Réglages -->
+        <text x="25" y="25" font-size="8" fill="#aaa">10 ms/div</text>
+        <text x="200" y="25" font-size="8" fill="#aaa">2 V/div</text>
+      </svg>
+      <figcaption style="font-size:.85em;color:#555;margin-top:2px">Oscillogramme — T = 2 divisions, U<sub>max</sub> = 3 divisions</figcaption>
+    </figure>
     <p>Suis les étapes :</p>
     <p><strong>Étape 1 :</strong> \( T = \text{nb div} \times \text{base de temps} = 2 \times 10\,\text{ms} = \ldots\ldots\,\text{ms} \)</p>
     <p><strong>Étape 2 :</strong> Convertir en secondes : \( T = \ldots\ldots\,\text{s} \)</p>
