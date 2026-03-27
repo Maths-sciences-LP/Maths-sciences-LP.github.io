@@ -75,7 +75,34 @@
     <span class="tag-socle">Socle</span>
   </div>
 
-  <p>Le sch&eacute;ma ci-dessous repr&eacute;sente un rayon lumineux frappant un miroir plan.</p>
+  <p>Le schéma ci-dessous représente un rayon lumineux frappant un miroir plan.
+    <figure class="schema" style="text-align:center;margin:10px 0">
+      <svg width="240" height="160" viewBox="0 0 240 160">
+        <rect width="240" height="160" fill="#f8fafc" rx="6"/>
+        <!-- Miroir -->
+        <line x1="40" y1="140" x2="200" y2="140" stroke="#6b7280" stroke-width="3"/>
+        <line x1="40" y1="143" x2="200" y2="143" stroke="#6b7280" stroke-width="1"/>
+        <!-- Normale -->
+        <line x1="120" y1="140" x2="120" y2="20" stroke="#888" stroke-width="1" stroke-dasharray="5,3"/>
+        <text x="125" y="30" font-size="9" fill="#888" font-style="italic">N</text>
+        <!-- Rayon incident -->
+        <line x1="40" y1="30" x2="120" y2="140" stroke="#0056b3" stroke-width="2"/>
+        <polygon points="85,92 78,86 90,86" fill="#0056b3"/>
+        <text x="45" y="60" font-size="10" fill="#0056b3" font-weight="bold">incident</text>
+        <!-- Rayon réfléchi -->
+        <line x1="120" y1="140" x2="200" y2="30" stroke="#c53030" stroke-width="2"/>
+        <polygon points="165,78 158,86 170,86" fill="#c53030"/>
+        <text x="160" y="60" font-size="10" fill="#c53030" font-weight="bold">réfléchi</text>
+        <!-- Angles -->
+        <path d="M 110,115 A 25,25 0 0,1 120,115" fill="none" stroke="#0056b3" stroke-width="1.5"/>
+        <text x="100" y="110" font-size="10" fill="#0056b3">i</text>
+        <path d="M 120,115 A 25,25 0 0,1 130,115" fill="none" stroke="#c53030" stroke-width="1.5"/>
+        <text x="132" y="110" font-size="10" fill="#c53030">r</text>
+        <!-- Point d'incidence -->
+        <circle cx="120" cy="140" r="3" fill="#333"/>
+      </svg>
+      <figcaption style="font-size:.85em;color:#555;margin-top:2px">Réflexion : angle incident i = angle réfléchi r</figcaption>
+    </figure></p>
 
   <!-- SVG miroir simple -->
   <div class="svg-wrap">

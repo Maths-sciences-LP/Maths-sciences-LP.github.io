@@ -27,6 +27,30 @@
 
 <!-- ===== INTRODUCTION ===== -->
 <div class="intro-box">
+<figure class="schema" style="text-align:center;margin:10px 0">
+      <svg width="280" height="140" viewBox="0 0 280 140">
+        <rect width="280" height="140" fill="#f8fafc" rx="6"/>
+        <!-- Axes -->
+        <line x1="40" y1="120" x2="260" y2="120" stroke="#333" stroke-width="1.5"/>
+        <line x1="40" y1="120" x2="40" y2="10" stroke="#333" stroke-width="1.5"/>
+        <text x="255" y="133" font-size="9" fill="#333">t</text>
+        <text x="15" y="15" font-size="9" fill="#333">T (°C)</text>
+        <!-- Courbe chauffage eau : montée, palier 0°C, montée, palier 100°C -->
+        <polyline points="40,110 70,80 120,80 150,40 200,40 240,15" fill="none" stroke="#0056b3" stroke-width="2.5"/>
+        <!-- Paliers -->
+        <line x1="40" y1="80" x2="120" y2="80" stroke="#888" stroke-width="0.5" stroke-dasharray="3,2"/>
+        <text x="15" y="83" font-size="8" fill="#333">0°C</text>
+        <line x1="40" y1="40" x2="200" y2="40" stroke="#888" stroke-width="0.5" stroke-dasharray="3,2"/>
+        <text x="10" y="43" font-size="8" fill="#333">100°C</text>
+        <!-- Labels -->
+        <text x="75" y="95" font-size="7" fill="#c53030">fusion</text>
+        <text x="155" y="55" font-size="7" fill="#c53030">vaporisation</text>
+        <text x="45" y="100" font-size="7" fill="#555">solide</text>
+        <text x="130" y="68" font-size="7" fill="#555">liquide</text>
+        <text x="210" y="30" font-size="7" fill="#555">gaz</text>
+      </svg>
+      <figcaption style="font-size:.85em;color:#555;margin-top:2px">Diagramme T(t) : paliers de changement d'état (fusion à 0°C, vaporisation à 100°C)</figcaption>
+    </figure>
   <strong>Rappels essentiels :</strong> La mati&egrave;re existe sous <strong>trois &eacute;tats</strong> (solide, liquide, gazeux). Les <strong>six changements d&apos;&eacute;tat</strong> sont les passages d&apos;un &eacute;tat &agrave; un autre. Lors d&apos;un changement d&apos;&eacute;tat d&apos;un corps pur, la <strong>temp&eacute;rature reste constante</strong> (palier) : toute l&apos;&eacute;nergie apport&eacute;e sert uniquement &agrave; changer l&apos;&eacute;tat.
   L&apos;&eacute;nergie &eacute;chang&eacute;e lors d&apos;un changement d&apos;&eacute;tat se calcule avec : \(E = m \cdot L\)
   o&ugrave; \(L\) est la chaleur latente (J/kg) et \(m\) la masse (kg).<br><br>
