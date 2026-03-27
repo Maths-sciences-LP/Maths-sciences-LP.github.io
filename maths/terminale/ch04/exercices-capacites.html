@@ -335,8 +335,8 @@
     — \(x < 0\) : \(g'(x) < 0\) → décroissant<br>
     — \(0 < x < 2\) : \(g'(x) > 0\) → croissant<br>
     — \(x > 2\) : \(g'(x) < 0\) → décroissant<br><br>
-    \(g(0) = -4\) → \(f'\) passe de \(-\) à \(+\) : <strong>minimum local</strong> en \((0; -4)\)<br>
-    \(g(2) = -16 + 24 - 4 = 4\) → \(f'\) passe de \(+\) à \(-\) : <strong>maximum local</strong> en \((2; 4)\)
+    \(g(0) = -4\) → \(g'\) passe de \(-\) à \(+\) : <strong>minimum local</strong> en \((0; -4)\)<br>
+    \(g(2) = -16 + 24 - 4 = 4\) → \(g'\) passe de \(+\) à \(-\) : <strong>maximum local</strong> en \((2; 4)\)
   </div>
 </div>
 
@@ -389,7 +389,31 @@
 <div class="exo">
   <h3>Exercice 17</h3>
   <p>Un fabricant de meubles produit des boîtes de rangement sans couvercle à partir d'une plaque carrée de 30 cm de côté. On découpe des petits carrés de côté \(x\) cm aux quatre coins, puis on rabat les bords.<br>
-  Le volume de la boîte est : \(V(x) = x(30 - 2x)^2 = 4x^3 - 120x^2 + 900x\) pour \(x \in ]0 ; 15[\).<br>
+  Le volume de la boîte est : \(V(x) = x(30 - 2x)^2 = 4x^3 - 120x^2 + 900x\) pour \(x \in ]0 ; 15[\).</p>
+  <figure class="schema" style="text-align:center;margin:12px 0">
+    <svg width="240" height="240" viewBox="0 0 240 240" aria-label="Plaque carrée 30cm avec carrés découpés aux coins">
+      <rect width="240" height="240" fill="#f8fafc" rx="6"/>
+      <!-- Plaque carrée -->
+      <rect x="30" y="30" width="180" height="180" fill="#dbeafe" stroke="#0969da" stroke-width="2"/>
+      <!-- Carrés découpés aux 4 coins -->
+      <rect x="30" y="30" width="40" height="40" fill="#fee2e2" stroke="#c53030" stroke-width="1.5"/>
+      <rect x="170" y="30" width="40" height="40" fill="#fee2e2" stroke="#c53030" stroke-width="1.5"/>
+      <rect x="30" y="170" width="40" height="40" fill="#fee2e2" stroke="#c53030" stroke-width="1.5"/>
+      <rect x="170" y="170" width="40" height="40" fill="#fee2e2" stroke="#c53030" stroke-width="1.5"/>
+      <!-- Lignes de pliage -->
+      <line x1="70" y1="30" x2="70" y2="210" stroke="#0969da" stroke-width="1" stroke-dasharray="5,3"/>
+      <line x1="170" y1="30" x2="170" y2="210" stroke="#0969da" stroke-width="1" stroke-dasharray="5,3"/>
+      <line x1="30" y1="70" x2="210" y2="70" stroke="#0969da" stroke-width="1" stroke-dasharray="5,3"/>
+      <line x1="30" y1="170" x2="210" y2="170" stroke="#0969da" stroke-width="1" stroke-dasharray="5,3"/>
+      <!-- Labels -->
+      <text x="45" y="55" font-size="12" fill="#c53030" font-weight="bold">x</text>
+      <text x="105" y="22" font-size="12" fill="#0969da">30 cm</text>
+      <text x="8" y="125" font-size="12" fill="#0969da" transform="rotate(-90,8,125)">30 cm</text>
+      <text x="100" y="125" font-size="11" fill="#555">30 − 2x</text>
+    </svg>
+    <figcaption style="font-size:0.88em;color:#555;margin-top:4px">Plaque carrée de 30 cm — on découpe des carrés de côté \(x\) aux 4 coins puis on plie</figcaption>
+  </figure>
+  <p>
   1. Calculer \(V'(x)\).<br>
   2. Résoudre \(V'(x) = 0\) sur \(]0;15[\).<br>
   3. Déterminer la valeur de \(x\) qui maximise le volume et calculer ce volume maximum.</p>
