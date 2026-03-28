@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Simulation – Atténuation sonore à travers une cloison</title>
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../print.css" media="print">
+<style>
+:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac}
+.sim-container{max-width:700px;margin:20px auto}
+.controls{background:#f0fff4;border:1px solid var(--p-border);border-radius:10px;padding:20px;margin:16px 0}
+.control-row{display:flex;align-items:center;gap:14px;margin:12px 0;flex-wrap:wrap}
+.control-row label{min-width:200px;font-weight:600;font-size:.95em}
+.control-row input[type=range]{flex:1;min-width:150px;accent-color:var(--p)}
+.control-row .value{min-width:100px;font-weight:700;color:var(--p);font-size:1.1em}
+.control-row select{padding:6px 10px;border-radius:6px;border:1px solid #ccc;font-size:.95em}
+.results{background:#f0fff4;border:2px solid #86efac;border-radius:10px;padding:20px;margin:16px 0}
+.results h3{margin:0 0 12px;color:#2f855a}
+.result-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #d1fae5;font-size:.95em}
+.result-row:last-child{border:none}
+.result-label{color:#555}
+.result-value{font-weight:700;font-size:1.05em}
+.result-ok{color:#2f855a}
+.result-warn{color:#d97706}
+.result-bad{color:#c53030}
+.norme-box{background:#fffbeb;border:1px solid #fde68a;border-radius:8px;padding:12px;margin:12px 0;font-size:.9em}
+.norme-box strong{color:#92400e}
+.db-bar{height:30px;border-radius:6px;margin:4px 0;transition:width 0.3s}
+.db-container{background:#f1f5f9;border-radius:6px;overflow:hidden;margin:6px 0}
+.legende{display:flex;gap:16px;flex-wrap:wrap;margin:10px 0;font-size:.85em}
+.legende span{display:flex;align-items:center;gap:4px}
+.legende .dot{width:14px;height:14px;border-radius:3px}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="../simulations.html" class="nb">← Retour aux simulations</a>
+
+<header>
+  <h1>Simulation — Atténuation sonore à travers une cloison</h1>
+  <p class="sous-titre">Acoustique &nbsp;|&nbsp; Terminale Bac Pro ERA-MA &nbsp;|&nbsp; L<sub>transmis</sub> = L<sub>incident</sub> − R</p>
+</header>
+
+<div class="norme-box">
+  <strong>Réglementation :</strong> dans un bureau, le niveau sonore maximal recommandé est de <strong>50 dB</strong>. Au-delà de <strong>85 dB</strong>, le port de protections auditives est obligatoire.
+</div>
+
+<!-- ===== SOURCE SONORE ===== -->
+<div class="controls">
+  <h3 style="margin:0 0 10px;color:var(--p)">Source sonore (atelier)</h3>
+
+  <div class="control-row">
+    <label for="source">Type de machine :</label>
+    <select id="source">
+      <option value="60">Conversation (60 dB)</option>
+      <option value="75">Ponceuse orbitale (75 dB)</option>
+      <option value="85">Scie à onglet (85 dB)</option>
+      <option value="92" selected>Ponceuse à bande (92 dB)</option>
+      <option value="95">Scie circulaire (95 dB)</option>
+      <option value="98">Défonceuse (98 dB)</option>
+      <option value="105">Raboteuse (105 dB)</option>
+    </select>
+    <span class="value" id="source-val">92 dB</span>
+  </div>
+
+  <div class="control-row">
+    <label for="source-custom">Ou niveau personnalisé :</label>
+    <input type="range" id="source-custom" min="40" max="120" step="1" value="92">
+    <span class="value" id="source-custom-val">92 dB</span>
+  </div>
+</div>
+
+<!-- ===== CLOISON ===== -->
+<div class="controls">
+  <h3 style="margin:0 0 10px;color:var(--p)">Cloison</h3>
+
+  <div class="control-row">
+    <label for="materiau">Type de cloison :</label>
+    <select id="materiau">
+      <option value="25">Placo simple (BA13) — R ≈ 25 dB</option>
+      <option value="35">Placo double (2×BA13) — R ≈ 35 dB</option>
+      <option value="40" selected>Cloison bois 40 mm — R ≈ 40 dB</option>
+      <option value="45">Cloison bois + laine minérale — R ≈ 45 dB</option>
+      <option value="50">Double cloison désolidarisée — R ≈ 50 dB</option>
+      <option value="55">Mur béton 16 cm — R ≈ 55 dB</option>
+      <option value="60">Double vitrage acoustique — R ≈ 60 dB</option>
+    </select>
+  </div>
+
+  <div class="control-row">
+    <label for="R-custom">Ou affaiblissement R personnalisé :</label>
+    <input type="range" id="R-custom" min="10" max="70" step="1" value="40">
+    <span class="value" id="R-val">R = 40 dB</span>
+  </div>
+
+  <div class="control-row">
+    <label for="isolant">Isolant supplémentaire :</label>
+    <select id="isolant">
+      <option value="0" selected>Aucun</option>
+      <option value="5">Laine de verre 40 mm (+5 dB)</option>
+      <option value="10">Laine de roche 60 mm (+10 dB)</option>
+      <option value="15">Laine de roche 100 mm (+15 dB)</option>
+      <option value="20">Double isolant (+20 dB)</option>
+    </select>
+  </div>
+</div>
+
+<!-- ===== VISUALISATION ===== -->
+<svg width="100%" height="160" viewBox="0 0 700 160" style="max-width:700px;display:block;margin:16px auto">
+  <rect width="700" height="160" fill="#f8fafc" rx="8"/>
+
+  <!-- Atelier -->
+  <rect x="20" y="20" width="250" height="120" rx="6" fill="#fee2e2" stroke="#c53030" stroke-width="1.5"/>
+  <text x="145" y="42" text-anchor="middle" font-size="13" font-weight="bold" fill="#c53030">ATELIER</text>
+  <text id="svg-source" x="145" y="62" text-anchor="middle" font-size="12" fill="#333">92 dB</text>
+
+  <!-- Barre source -->
+  <rect x="40" y="75" width="210" height="16" rx="4" fill="#e2e8f0"/>
+  <rect id="bar-source" x="40" y="75" width="170" height="16" rx="4" fill="#c53030"/>
+  <text id="bar-source-pct" x="145" y="87" text-anchor="middle" font-size="10" fill="white" font-weight="bold">92 dB</text>
+
+  <!-- Icône EPI -->
+  <text id="epi-icon" x="145" y="125" text-anchor="middle" font-size="24">🔇</text>
+  <text id="epi-text" x="145" y="140" text-anchor="middle" font-size="9" fill="#c53030" font-weight="bold"></text>
+
+  <!-- Cloison -->
+  <rect id="svg-cloison" x="280" y="20" width="40" height="120" fill="#9ca3af" stroke="#6b7280" stroke-width="2"/>
+  <text x="300" y="155" text-anchor="middle" font-size="10" fill="#555">Cloison</text>
+  <text id="svg-R" x="300" y="80" text-anchor="middle" font-size="11" fill="white" font-weight="bold">R=40</text>
+
+  <!-- Bureau -->
+  <rect x="330" y="20" width="350" height="120" rx="6" id="bureau-rect" fill="#d1fae5" stroke="#2f855a" stroke-width="1.5"/>
+  <text x="505" y="42" text-anchor="middle" font-size="13" font-weight="bold" fill="#2f855a">BUREAU</text>
+  <text id="svg-transmis" x="505" y="62" text-anchor="middle" font-size="12" fill="#333">52 dB</text>
+
+  <!-- Barre transmis -->
+  <rect x="350" y="75" width="310" height="16" rx="4" fill="#e2e8f0"/>
+  <rect id="bar-transmis" x="350" y="75" width="100" height="16" rx="4" fill="#2f855a"/>
+  <text id="bar-transmis-pct" x="400" y="87" text-anchor="middle" font-size="10" fill="white" font-weight="bold">52 dB</text>
+
+  <!-- Norme bureau -->
+  <line x1="350" y1="95" x2="660" y2="95" stroke="#d97706" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="660" y="93" font-size="9" fill="#d97706" text-anchor="end">max 50 dB</text>
+  <line id="norme-line" x1="480" y1="75" x2="480" y2="95" stroke="#d97706" stroke-width="2"/>
+
+  <!-- Verdict -->
+  <text id="svg-verdict" x="505" y="125" text-anchor="middle" font-size="13" font-weight="bold" fill="#2f855a">✓ Conforme</text>
+</svg>
+
+<div class="results">
+  <h3>Résultats</h3>
+  <div class="result-row">
+    <span class="result-label">Niveau incident (atelier)</span>
+    <span class="result-value" id="res-incident">92 dB</span>
+  </div>
+  <div class="result-row">
+    <span class="result-label">Affaiblissement total R</span>
+    <span class="result-value" id="res-R">40 dB</span>
+  </div>
+  <div class="result-row">
+    <span class="result-label">Niveau transmis (bureau)</span>
+    <span class="result-value" id="res-transmis">52 dB</span>
+  </div>
+  <div class="result-row">
+    <span class="result-label">Norme bureau (≤ 50 dB)</span>
+    <span class="result-value" id="res-norme">—</span>
+  </div>
+  <div class="result-row">
+    <span class="result-label">Protections auditives atelier (> 85 dB)</span>
+    <span class="result-value" id="res-epi">—</span>
+  </div>
+</div>
+
+<div class="legende">
+  <span><span class="dot" style="background:#c53030"></span> Dangereux (> 85 dB)</span>
+  <span><span class="dot" style="background:#d97706"></span> Non conforme bureau (> 50 dB)</span>
+  <span><span class="dot" style="background:#2f855a"></span> Conforme (≤ 50 dB)</span>
+</div>
+
+</div>
+
+<script>
+(function(){
+  var sourceSelect = document.getElementById('source');
+  var sourceSlider = document.getElementById('source-custom');
+  var matSelect = document.getElementById('materiau');
+  var rSlider = document.getElementById('R-custom');
+  var isolantSelect = document.getElementById('isolant');
+
+  function fmt(n) { return n.toFixed(0); }
+
+  sourceSelect.addEventListener('change', function(){
+    sourceSlider.value = this.value;
+    update();
+  });
+  sourceSlider.addEventListener('input', function(){
+    sourceSelect.value = '';
+    update();
+  });
+  matSelect.addEventListener('change', function(){
+    rSlider.value = this.value;
+    update();
+  });
+  rSlider.addEventListener('input', function(){
+    matSelect.value = '';
+    update();
+  });
+  isolantSelect.addEventListener('input', update);
+
+  function update(){
+    var L1 = parseFloat(sourceSlider.value);
+    var R_base = parseFloat(rSlider.value);
+    var R_iso = parseFloat(isolantSelect.value);
+    var R_total = R_base + R_iso;
+    var L2 = Math.max(0, L1 - R_total);
+
+    // Affichage valeurs
+    document.getElementById('source-val').textContent = fmt(L1) + ' dB';
+    document.getElementById('source-custom-val').textContent = fmt(L1) + ' dB';
+    document.getElementById('R-val').textContent = 'R = ' + fmt(R_total) + ' dB' + (R_iso > 0 ? ' (' + fmt(R_base) + '+' + fmt(R_iso) + ')' : '');
+
+    // Résultats
+    document.getElementById('res-incident').textContent = fmt(L1) + ' dB';
+    document.getElementById('res-R').textContent = fmt(R_total) + ' dB' + (R_iso > 0 ? ' (' + fmt(R_base) + ' + ' + fmt(R_iso) + ' isolant)' : '');
+    document.getElementById('res-transmis').textContent = fmt(L2) + ' dB';
+
+    // Norme
+    var normeEl = document.getElementById('res-norme');
+    if(L2 <= 50){
+      normeEl.textContent = '✓ Conforme (≤ 50 dB)';
+      normeEl.className = 'result-value result-ok';
+    } else {
+      normeEl.textContent = '⚠ Non conforme (' + fmt(L2) + ' > 50 dB, manque ' + fmt(L2-50) + ' dB)';
+      normeEl.className = 'result-value result-bad';
+    }
+
+    // EPI
+    var epiEl = document.getElementById('res-epi');
+    if(L1 >= 85){
+      epiEl.textContent = '⚠ Obligatoires (' + fmt(L1) + ' ≥ 85 dB)';
+      epiEl.className = 'result-value result-warn';
+    } else {
+      epiEl.textContent = '✓ Non nécessaires (' + fmt(L1) + ' < 85 dB)';
+      epiEl.className = 'result-value result-ok';
+    }
+
+    // SVG
+    document.getElementById('svg-source').textContent = fmt(L1) + ' dB';
+    document.getElementById('svg-transmis').textContent = fmt(L2) + ' dB';
+    document.getElementById('svg-R').textContent = 'R=' + fmt(R_total);
+
+    // Barres
+    var barW1 = Math.max(10, L1/120 * 210);
+    document.getElementById('bar-source').setAttribute('width', barW1);
+    document.getElementById('bar-source-pct').textContent = fmt(L1) + ' dB';
+    document.getElementById('bar-source').setAttribute('fill', L1 >= 85 ? '#c53030' : '#d97706');
+
+    var barW2 = Math.max(10, L2/120 * 310);
+    document.getElementById('bar-transmis').setAttribute('width', barW2);
+    document.getElementById('bar-transmis-pct').textContent = fmt(L2) + ' dB';
+    document.getElementById('bar-transmis').setAttribute('fill', L2 <= 50 ? '#2f855a' : L2 <= 85 ? '#d97706' : '#c53030');
+
+    // Norme line position
+    var normePx = 350 + (50/120) * 310;
+    document.getElementById('norme-line').setAttribute('x1', normePx);
+    document.getElementById('norme-line').setAttribute('x2', normePx);
+
+    // Bureau color
+    document.getElementById('bureau-rect').setAttribute('fill', L2 <= 50 ? '#d1fae5' : '#fef3c7');
+    document.getElementById('bureau-rect').setAttribute('stroke', L2 <= 50 ? '#2f855a' : '#d97706');
+
+    // Verdict
+    var verdictEl = document.getElementById('svg-verdict');
+    if(L2 <= 50){
+      verdictEl.textContent = '✓ Conforme';
+      verdictEl.setAttribute('fill', '#2f855a');
+    } else {
+      verdictEl.textContent = '✗ Non conforme (manque ' + fmt(L2-50) + ' dB)';
+      verdictEl.setAttribute('fill', '#c53030');
+    }
+
+    // EPI icon
+    document.getElementById('epi-icon').textContent = L1 >= 85 ? '🔇' : '🔊';
+    document.getElementById('epi-text').textContent = L1 >= 85 ? 'Protections obligatoires !' : '';
+  }
+
+  update();
+})();
+</script>
+
+<script src="../nav.js"></script>
+</body>
+</html>
