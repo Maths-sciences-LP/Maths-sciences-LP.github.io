@@ -1,0 +1,259 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{geometry}
+\geometry{left=2cm,right=2cm,top=1.5cm,bottom=2cm}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathmorphing}
+\usepackage{lastpage}
+
+% Couleurs
+\definecolor{vertpro}{HTML}{2da44e}
+\definecolor{orange}{HTML}{d97706}
+\definecolor{bleu}{HTML}{0056b3}
+\definecolor{rouge}{HTML}{c53030}
+\definecolor{gris}{HTML}{718096}
+
+% En-tête
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small \textcolor{rouge}{CORRECTION} — CCF Physique-Chimie — Terminale ERA-MA}
+\rhead{\small Acoustique \& Électricité}
+\cfoot{\thepage/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.5pt}
+
+% Boîtes
+\tcbuselibrary{skins,breakable}
+
+\newtcolorbox{correctionbox}{
+  colback=red!3,
+  colframe=rouge,
+  title={\textbf{CORRECTION DÉTAILLÉE}},
+  fonttitle=\large\bfseries,
+  breakable
+}
+
+\newtcolorbox{reponsecorr}{
+  colback=green!5,
+  colframe=vertpro,
+  boxrule=1pt,
+  arc=3pt,
+  before skip=4pt,
+  after skip=8pt,
+  breakable
+}
+
+\newcommand{\pts}[1]{\hfill\textcolor{gris}{\small\textbf{#1}}}
+\newcommand{\comp}[1]{\colorbox{blue!10}{\scriptsize\textbf{#1}}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries\color{rouge} CORRECTION — CCF Physique-Chimie}\\[8pt]
+{\large Terminale Bac Pro ERA-MA — Groupement 3}\\[8pt]
+{\Large\bfseries Atténuation sonore \& Transport de l'énergie électrique}
+\end{center}
+
+\vspace{10pt}
+
+% ================================================================
+\section*{Exercice 1 — TP numérique : choisir l'isolation d'un atelier \pts{5 points}}
+% ================================================================
+
+\textbf{Q1} \comp{APP} — Relevé des valeurs de la simulation \pts{1 pt}
+
+\begin{reponsecorr}
+Avec la scie circulaire (95 dB) et la cloison bois 40 mm ($R = 40$ dB) :
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|>{\centering\arraybackslash}m{5cm}|>{\centering\arraybackslash}m{4cm}|}
+\hline
+\textbf{Grandeur} & \textbf{Valeur} \\
+\hline
+Niveau incident $L_1$ & \textcolor{rouge}{\textbf{95 dB}} \\
+\hline
+Affaiblissement $R$ & \textcolor{rouge}{\textbf{40 dB}} \\
+\hline
+Niveau transmis $L_2$ & \textcolor{rouge}{\textbf{55 dB}} \\
+\hline
+Norme bureau respectée ? & \textcolor{rouge}{\textbf{Non (55 > 50 dB)}} \\
+\hline
+\end{tabular}
+\renewcommand{\arraystretch}{1}
+\end{center}
+\end{reponsecorr}
+
+\textbf{Q2} \comp{REA} — Vérification par le calcul \pts{1 pt}
+
+\begin{reponsecorr}
+On utilise la formule : $L_{\text{transmis}} = L_{\text{incident}} - R$
+
+\medskip
+$L_2 = L_1 - R = 95 - 40 = \boxed{55 \text{ dB}}$
+
+\medskip
+Le bureau reçoit \textbf{55 dB}, ce qui dépasse la norme de 50 dB de \textbf{5 dB}.
+\end{reponsecorr}
+
+\textbf{Q3} \comp{ANA} — Essais avec isolant supplémentaire \pts{1 pt}
+
+\begin{reponsecorr}
+Source : scie circulaire 95 dB, cloison bois 40 mm ($R_{\text{base}} = 40$ dB).
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|>{\centering\arraybackslash}m{1.2cm}|>{\centering\arraybackslash}m{3.5cm}|>{\centering\arraybackslash}m{2.2cm}|>{\centering\arraybackslash}m{2.2cm}|>{\centering\arraybackslash}m{2.2cm}|}
+\hline
+\textbf{Essai} & \textbf{Isolant ajouté} & \textbf{$R$ total} & \textbf{$L_2$} & \textbf{Conforme ?} \\
+\hline
+1 & Laine de verre 40 mm & \textcolor{rouge}{45 dB} & \textcolor{rouge}{50 dB} & \textcolor{vertpro}{\textbf{Oui}} \\
+\hline
+2 & Laine de roche 60 mm & \textcolor{rouge}{50 dB} & \textcolor{rouge}{45 dB} & \textcolor{vertpro}{\textbf{Oui}} \\
+\hline
+3 & Laine de roche 100 mm & \textcolor{rouge}{55 dB} & \textcolor{rouge}{40 dB} & \textcolor{vertpro}{\textbf{Oui}} \\
+\hline
+\end{tabular}
+\renewcommand{\arraystretch}{1}
+\end{center}
+
+\smallskip
+\textbf{Vérification essai 1 :} $L_2 = 95 - (40+5) = 95 - 45 = 50$ dB. Tout juste conforme.
+
+\textbf{Vérification essai 2 :} $L_2 = 95 - (40+10) = 95 - 50 = 45$ dB. Conforme avec marge de 5 dB.
+\end{reponsecorr}
+
+\textbf{Q4} \comp{ANA} — Test de différentes machines \pts{1 pt}
+
+\begin{reponsecorr}
+Cloison bois 40 mm + laine de roche 60 mm $\Rightarrow R_{\text{total}} = 40 + 10 = 50$ dB.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|>{\centering\arraybackslash}m{3.5cm}|>{\centering\arraybackslash}m{2cm}|>{\centering\arraybackslash}m{2cm}|>{\centering\arraybackslash}m{2cm}|>{\centering\arraybackslash}m{2cm}|}
+\hline
+\textbf{Machine} & \textbf{$L_1$} & \textbf{$L_2$} & \textbf{Bureau OK ?} & \textbf{EPI ?} \\
+\hline
+Ponceuse orbitale & \textcolor{rouge}{75 dB} & \textcolor{rouge}{25 dB} & \textcolor{vertpro}{Oui} & \textcolor{vertpro}{Non (< 85)} \\
+\hline
+Scie circulaire & \textcolor{rouge}{95 dB} & \textcolor{rouge}{45 dB} & \textcolor{vertpro}{Oui} & \textcolor{rouge}{Oui ($\geq$ 85)} \\
+\hline
+Raboteuse & \textcolor{rouge}{105 dB} & \textcolor{rouge}{55 dB} & \textcolor{rouge}{Non} & \textcolor{rouge}{Oui ($\geq$ 85)} \\
+\hline
+\end{tabular}
+\renewcommand{\arraystretch}{1}
+\end{center}
+
+\smallskip
+\textbf{Vérifications :}
+\begin{itemize}[nosep]
+  \item Ponceuse : $L_2 = 75 - 50 = 25$ dB $\leq 50$ dB $\checkmark$ \quad et $75 < 85$ dB (pas d'EPI)
+  \item Scie : $L_2 = 95 - 50 = 45$ dB $\leq 50$ dB $\checkmark$ \quad et $95 \geq 85$ dB (EPI obligatoires)
+  \item Raboteuse : $L_2 = 105 - 50 = 55$ dB $> 50$ dB $\times$ \quad et $105 \geq 85$ dB (EPI obligatoires)
+\end{itemize}
+
+La cloison avec $R = 50$ dB ne suffit pas pour la raboteuse. Il faudrait $R \geq 105 - 50 = 55$ dB.
+\end{reponsecorr}
+
+\textbf{Q5} \comp{COM} — Recommandation \pts{1 pt}
+
+\begin{reponsecorr}
+\textbf{Cloison recommandée :} cloison bois 40 mm + laine de roche 60 mm ($R = 50$ dB).
+
+\textbf{Justification :}
+\begin{itemize}[nosep]
+  \item Cette configuration assure la conformité pour les machines les plus courantes (scie circulaire, ponceuse, défonceuse).
+  \item Pour la raboteuse (105 dB), le bureau dépasse légèrement la norme (55 dB) ; on peut envisager de n'utiliser la raboteuse que quand le bureau est inoccupé, ou choisir un isolant plus épais (laine de roche 100 mm, $R = 55$ dB).
+  \item La laine de roche 60 mm est un bon compromis coût/performance : elle coûte moins cher que la version 100 mm et suffit pour la majorité des situations.
+  \item Dans tous les cas, les \textbf{EPI sont obligatoires} dans l'atelier dès que $L_1 \geq 85$ dB (scie, défonceuse, raboteuse).
+\end{itemize}
+\end{reponsecorr}
+
+\newpage
+
+% ================================================================
+\section*{Exercice 2 — Alimentation électrique de l'atelier \pts{5 points}}
+% ================================================================
+
+\textbf{Q1} \comp{APP} — Rôle du transformateur \pts{1 pt}
+
+\begin{reponsecorr}
+Le transformateur \textbf{abaisse} la tension de 20\,000 V (haute tension du réseau) à 400 V (tension utilisable par les machines de l'atelier).
+
+C'est un transformateur \textbf{abaisseur} car $U_2 < U_1$.
+\end{reponsecorr}
+
+\textbf{Q2} \comp{REA} — Rapport de transformation et nombre de spires \pts{1 pt}
+
+\begin{reponsecorr}
+Rapport de transformation :
+$$\frac{U_2}{U_1} = \frac{400}{20\,000} = \boxed{0{,}02}$$
+
+Nombre de spires au secondaire :
+$$\frac{N_2}{N_1} = \frac{U_2}{U_1} \quad \Rightarrow \quad N_2 = N_1 \times \frac{U_2}{U_1} = 1\,000 \times 0{,}02 = \boxed{20 \text{ spires}}$$
+\end{reponsecorr}
+
+\textbf{Q3} \comp{REA} — Intensité du courant côté atelier \pts{1 pt}
+
+\begin{reponsecorr}
+On utilise $P = U \times I$, donc :
+$$I = \frac{P}{U_2} = \frac{15\,000}{400} = \boxed{37{,}5 \text{ A}}$$
+\end{reponsecorr}
+
+\textbf{Q4} \comp{REA} — Pertes par effet Joule \pts{1 pt}
+
+\begin{reponsecorr}
+$$P_J = R \times I^2 = 0{,}1 \times (37{,}5)^2 = 0{,}1 \times 1\,406{,}25 = \boxed{140{,}6 \text{ W}}$$
+
+Cela représente $\dfrac{140{,}6}{15\,000} \times 100 \approx 0{,}94\%$ de la puissance totale.
+\end{reponsecorr}
+
+\textbf{Q5} \comp{ANA} — Comparaison avec alimentation en haute tension \pts{1 pt}
+
+\begin{reponsecorr}
+Si l'atelier était alimenté directement en $U_1 = 20\,000$ V :
+
+$$I' = \frac{P}{U_1} = \frac{15\,000}{20\,000} = 0{,}75 \text{ A}$$
+
+Pertes par effet Joule :
+$$P_J' = R \times (I')^2 = 0{,}1 \times (0{,}75)^2 = 0{,}1 \times 0{,}5625 = \boxed{0{,}056 \text{ W}}$$
+
+\textbf{Comparaison :}
+\begin{itemize}[nosep]
+  \item À 400 V : $I = 37{,}5$ A et $P_J = 140{,}6$ W
+  \item À 20\,000 V : $I' = 0{,}75$ A et $P_J' = 0{,}056$ W
+\end{itemize}
+
+Les pertes sont \textbf{2\,500 fois plus faibles} en haute tension ! ($140{,}6 / 0{,}056 = 2\,510$)
+
+\textbf{Conclusion :} transporter l'électricité en haute tension permet de réduire considérablement le courant et donc les pertes par effet Joule dans les câbles. C'est pourquoi EDF utilise la haute tension (20 kV, 225 kV, 400 kV) pour le transport, puis abaisse la tension près des lieux de consommation avec des transformateurs.
+\end{reponsecorr}
+
+\vfill
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Exercice} & \textbf{Thème} & \textbf{Barème} \\
+\hline
+1 & Acoustique — TP numérique & /5 \\
+\hline
+2 & Électricité — Transformateur & /5 \\
+\hline
+\multicolumn{2}{|r|}{\textbf{Total}} & \textbf{/10} \\
+\hline
+\end{tabular}
+\end{center}
+
+\end{document}
