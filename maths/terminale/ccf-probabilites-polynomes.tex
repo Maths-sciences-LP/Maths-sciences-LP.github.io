@@ -252,10 +252,37 @@ Le volume du bac obtenu est :
 \end{tikzpicture}
 \end{center}
 
-\textbf{Q1} \comp{REA} — \textbf{À la calculatrice (NumWorks) ou sur GeoGebra}, tracer la courbe de $V$ sur l'intervalle $[0\,;\,15]$. Reproduire ci-dessous l'allure de la courbe obtenue en indiquant les axes et les graduations. \pts{1 pt}
+\textbf{Q1} \comp{REA} — \textbf{À la calculatrice (NumWorks) ou sur GeoGebra}, tracer la courbe de $V$ sur l'intervalle $[0\,;\,15]$. Reproduire ci-dessous l'allure de la courbe obtenue. Placer le maximum. \pts{1 pt}
 
-\begin{reponsebox}[5cm]
-\end{reponsebox}
+\begin{center}
+\begin{tikzpicture}[scale=0.48]
+  % Quadrillage
+  \draw[gray!25, very thin] (0,0) grid[step=1] (16,14);
+  \draw[gray!50, thin] (0,0) grid[step=5] (16,14);
+  % Axes
+  \draw[->, thick] (0,0) -- (16.5,0) node[right] {$x$ (cm)};
+  \draw[->, thick] (0,0) -- (0,14.5) node[above] {$V$ (cm$^3$)};
+  % Graduations x
+  \foreach \x in {1,2,...,15} {
+    \draw (\x,0) -- (\x,-0.15);
+  }
+  \foreach \x in {5,10,15} {
+    \node[below] at (\x,-0.3) {\small\x};
+  }
+  % Graduations y (1 unité = 500 cm³)
+  \foreach \y in {1,2,...,13} {
+    \draw (0,\y) -- (-0.15,\y);
+  }
+  \node[left] at (-0.3,2) {\small 1000};
+  \node[left] at (-0.3,4) {\small 2000};
+  \node[left] at (-0.3,6) {\small 3000};
+  \node[left] at (-0.3,8) {\small 4000};
+  \node[left] at (-0.3,10) {\small 5000};
+  \node[left] at (-0.3,12) {\small 6000};
+  % Origine
+  \node[below left] at (0,0) {\small 0};
+\end{tikzpicture}
+\end{center}
 
 \textbf{Q2} \comp{APP} — \textbf{Par lecture graphique}, donner une valeur approchée de $x$ pour laquelle le volume semble maximal. Lire la valeur approchée de ce maximum. \pts{1 pt}
 
