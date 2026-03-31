@@ -123,7 +123,7 @@
       summary:      'maths-cap.html',
       summaryLabel: 'CAP',
       subject:      'Mathématiques',
-      types: { lecon: 'Cours', exercices: 'Exercices', qcm: 'QCM', fiche: 'Fiche résumé' },
+      types: { lecon: 'Cours', exercices: 'Exercices', qcm: 'QCM', fiche: 'Fiche résumé', activite: 'Activité', simulation: 'Simulation' },
       chapters: [
         { id: '01', title: 'Statistiques à une variable' },
         { id: '02', title: 'Probabilités' },
@@ -140,7 +140,7 @@
       summary:      'pc-cap.html',
       summaryLabel: 'CAP',
       subject:      'Physique-Chimie',
-      types: { lecon: 'Cours', exercices: 'Exercices', qcm: 'QCM', fiche: 'Fiche résumé' },
+      types: { lecon: 'Cours', exercices: 'Exercices', qcm: 'QCM', fiche: 'Fiche résumé', activite: 'Activité', simulation: 'Simulation' },
       chapters: [
         { id: '01', title: 'Sécurité' },
         { id: '02', title: 'Électricité' },
