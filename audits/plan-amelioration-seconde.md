@@ -1,7 +1,7 @@
 # Plan d'amelioration — Chapitres de Seconde
 
 **Date** : 2026-03-17
-**Derniere mise a jour** : 2026-03-31
+**Derniere mise a jour** : 2026-04-02
 **Perimetre** : maths/seconde (14 ch.) + physique-chimie/seconde (14 ch.)
 
 ---
@@ -35,18 +35,18 @@ Les corrections sont **toutes redigees**. Le chiffre "517 manquantes" etait une 
 
 ### PRIORITE 1 — Problemes techniques (corrections rapides)
 
-- [ ] **PC ch04, ch05 lecon** — Labels `.label-def` places hors des blocs `.def` (deplacer a l'interieur)
-- [ ] **PC ch01-ch14 lecon** — Uniformiser le format des `<title>` (adopter : `Ch0X — Titre — 2nde Bac Pro`)
-- [ ] **PC ch01-ch07 DS** — Entites HTML (`&eacute;`, `&ndash;`, etc.) a convertir en UTF-8 (ch08-ch14 deja propres)
-- [ ] **PC ch01-ch07 DS** — CSS inline redondant (classes `.partie`, `.pts`, `.comp-*` etc. a centraliser dans styles.css)
-- [ ] **Maths Seconde** — Harmoniser les badges de niveaux (`badge-niv badge-1` → format standard)
+- [x] **PC ch04, ch05 lecon** — Labels `.label-def` verifies : deja correctement places a l'interieur des blocs ✅ (non-issue)
+- [x] **PC ch01-ch14 lecon** — Titres `<title>` uniformises en UTF-8, entites HTML converties (6784 entites) ✅ 2026-04-02
+- [x] **PC ch01-ch14 DS + exercices** — Entites HTML converties en UTF-8 sur tous les fichiers (9478 entites) ✅ 2026-04-02
+- [x] **PC DS** — CSS inline verifie : classes `.partie`, `.pts`, `.comp-*` deja dans styles.css ✅ (non-issue)
+- [x] **Maths Seconde ch07** — Badges `badge-niv badge-1/2/3` verifies : classes deja definies dans styles.css ✅ (non-issue)
 
 ### PRIORITE 2 — Ameliorations pedagogiques
 
 - [x] **PC ch01-ch14 lecon** — Ajouter la classe `.situation` aux contextes professionnels existants ✅ 2026-03-31
 - [x] **PC Seconde** — Diversifier les contextes pro : ajout sante, sport, energie, telecoms, quotidien ✅ 2026-03-31
-- [ ] **Maths ch02 lecon** — Completer ou reorganiser le chapitre Statistiques (indicateurs de position/dispersion renvoyes vers ch03, cours anormalement court a 349 lignes)
-- [ ] **Maths Seconde** — Ajouter des sections "Erreurs frequentes" (blocs `.att`) dans les chapitres qui en manquent
+- [x] **Maths ch02 lecon** — Section mode ajoutee, objectifs realignes sur le contenu reel, bloc `retenir` vers ch03 ✅ 2026-03-31
+- [x] **Maths Seconde** — Sections "Erreurs frequentes" ajoutees dans les 8 chapitres qui en manquaient (ch03, ch09, ch10, ch11, ch12, ch13, ch14 + ch02) ✅ 2026-04-01
 
 ### PRIORITE 3 — Enrichissements
 
@@ -77,7 +77,9 @@ Les corrections sont **toutes redigees**. Le chiffre "517 manquantes" etait une 
 
 ## Corrections realisees
 
-- **2026-03-31** : Ajout de blocs `.situation` sur 13 lecons PC Seconde (ch01-ch14, ch07 deja traite). Diversification des contextes professionnels : sante (audiologie, serums, oxymetre), sport (tapis de course, cycliste, salle de sport), energie (pompe a chaleur, thermostat, panneaux solaires), telecoms (fibre optique internet), quotidien (boisson, sudation, thermos). Maths ch01 : SVG ajoutés dans exercices et exercices-capacites.
+- **2026-03-31** : Ajout de blocs `.situation` sur 13 lecons PC Seconde (ch01-ch14, ch07 deja traite). Diversification des contextes professionnels : sante (audiologie, serums, oxymetre), sport (tapis de course, cycliste, salle de sport), energie (pompe a chaleur, thermostat, panneaux solaires), telecoms (fibre optique internet), quotidien (boisson, sudation, thermos). Maths ch01 : SVG ajoutés dans exercices et exercices-capacites. Maths ch02 : section mode ajoutee, objectifs realignes, bloc retenir vers ch03.
+- **2026-04-01** : Sections "Erreurs frequentes" (blocs `.erreur-item`) ajoutees dans 7 lecons maths Seconde : ch03 (statistiques — mediane, IQR, etendue), ch09 (fonction affine — pente, sens de variation), ch10 (fonction carre — carre negatif, solutions), ch11 (figures planes — perimetre/aire, conversions), ch12 (Pythagore — hypotenuse, racine carree), ch13 (Thales — parallelisme, rapports, echelle), ch14 (solides — agrandissement, facteur 1/3). Total maths seconde : toutes les 14 lecons ont desormais une section erreurs frequentes.
+- **2026-04-02** : Phase 1 — Conversion UTF-8 : 6784 entites dans lecons PC, 1772 dans DS ch01-ch07, 1492 dans DS ch08-ch14, 7214 dans exercices PC. Total ~17000 entites converties sur 42 fichiers PC Seconde. Titres `<title>` uniformises (13 lecons). Labels et CSS inline verifies : deja conformes. : ch03 (statistiques — mediane, IQR, etendue), ch09 (fonction affine — pente, sens de variation), ch10 (fonction carre — carre negatif, solutions), ch11 (figures planes — perimetre/aire, conversions), ch12 (Pythagore — hypotenuse, racine carree), ch13 (Thales — parallelisme, rapports, echelle), ch14 (solides — agrandissement, facteur 1/3). Total maths seconde : toutes les 14 lecons ont desormais une section erreurs frequentes.
 
 ---
 
@@ -85,6 +87,6 @@ Les corrections sont **toutes redigees**. Le chiffre "517 manquantes" etait une 
 
 | Phase | Statut | Date debut | Date fin |
 |---|---|---|---|
-| Phase 1 — Corrections techniques | A faire | — | — |
-| Phase 2 — Ameliorations pedagogiques | En cours | 2026-03-31 | — |
+| Phase 1 — Corrections techniques | Terminee | 2026-04-02 | 2026-04-02 |
+| Phase 2 — Ameliorations pedagogiques | Terminee | 2026-03-31 | 2026-04-01 |
 | Phase 3 — Enrichissements | A faire | — | — |
