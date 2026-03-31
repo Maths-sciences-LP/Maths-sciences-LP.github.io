@@ -354,6 +354,7 @@ Une simulation doit toujours servir à :
 6. **QCM** : inclure `<script src="../../../qcm.js"></script>` dans les pages `qcm.html` — définir un objet global `explications` avec les clés correspondant aux `name` des radios
 7. **Chart.js** : `<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>` si graphiques
 8. **MathJax** : inclure le script si la page contient des formules mathématiques
+9. **UTF-8 obligatoire — ne jamais utiliser d'entités HTML pour les caractères accentués.** Écrire directement `é`, `è`, `à`, `ê`, `ô`, `ç`, `œ`, `–`, `'`, `«`, `»`, etc. Toutes les pages ont `<meta charset="UTF-8">` — les entités sont inutiles et rendent le code illisible. Seules exceptions autorisées : `&lt;` `&gt;` `&amp;` `&nbsp;` (entités structurelles).
 
 ### Scripts de maintenance
 
