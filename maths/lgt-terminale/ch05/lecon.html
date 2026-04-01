@@ -398,6 +398,85 @@
 </div>
 </div>
 
+<div class="anim-wrap" style="margin:2em 0">
+<h3 style="text-align:center;color:#4f46e5">Simulation — Suite récurrente et toile d'araignée</h3>
+<p style="text-align:center;font-size:.85rem;color:#666;margin-bottom:1em">Choisir une fonction \(f\), un point de départ \(u_0\) et observer la convergence ou divergence de la suite \(u_{n+1}=f(u_n)\).</p>
+<div style="text-align:center;margin-bottom:10px">
+  <label>Fonction : <select id="simSuiteFunc" style="padding:4px 8px;border-radius:4px;border:1px solid #ccc">
+    <option value="sqrt">√(x+2)</option>
+    <option value="cos">cos(x)</option>
+    <option value="half">x/2 + 1</option>
+    <option value="log">ln(x) + 1</option>
+  </select></label>
+  <label style="margin-left:12px">u₀ = <input type="range" id="simSuiteU0" min="0" max="4" step="0.1" value="0.5" style="vertical-align:middle"><span id="simSuiteU0Val">0.5</span></label>
+  <button onclick="drawCobweb()" style="margin-left:12px;padding:6px 16px;background:#4f46e5;color:#fff;border:none;border-radius:6px;cursor:pointer">Tracer</button>
+</div>
+<canvas id="canvasCobweb" width="500" height="500" style="display:block;margin:0 auto;max-width:100%;border:1px solid #e2e8f0;border-radius:8px;background:#fafbfc"></canvas>
+<p id="simSuiteInfo" style="text-align:center;font-size:.85rem;color:#4f46e5;margin-top:8px"></p>
+</div>
+<script>
+(function(){
+  var canvas=document.getElementById('canvasCobweb'),ctx=canvas.getContext('2d');
+  var funcs={
+    sqrt:function(x){return Math.sqrt(x+2)},
+    cos:function(x){return Math.cos(x)},
+    half:function(x){return x/2+1},
+    log:function(x){return x>0?Math.log(x)+1:0}
+  };
+  var ranges={sqrt:[0,4,0,4],cos:[-1,4,-1,2],half:[0,4,0,4],log:[0.1,4,-1,4]};
+  var slider=document.getElementById('simSuiteU0'),label=document.getElementById('simSuiteU0Val');
+  slider.oninput=function(){label.textContent=parseFloat(this.value).toFixed(1)};
+  window.drawCobweb=function(){
+    var sel=document.getElementById('simSuiteFunc').value;
+    var f=funcs[sel],r=ranges[sel];
+    var u0=parseFloat(slider.value);
+    var W=canvas.width,H=canvas.height,pad=40;
+    var xMin=r[0],xMax=r[1],yMin=r[2],yMax=r[3];
+    function toX(x){return pad+(x-xMin)/(xMax-xMin)*(W-2*pad)}
+    function toY(y){return H-pad-(y-yMin)/(yMax-yMin)*(H-2*pad)}
+    ctx.clearRect(0,0,W,H);
+    // axes
+    ctx.strokeStyle='#94a3b8';ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(pad,H-pad);ctx.lineTo(W-pad,H-pad);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(pad,H-pad);ctx.lineTo(pad,pad);ctx.stroke();
+    // y=x
+    ctx.strokeStyle='#cbd5e1';ctx.lineWidth=1;ctx.setLineDash([6,4]);
+    ctx.beginPath();ctx.moveTo(toX(xMin),toY(xMin));ctx.lineTo(toX(xMax),toY(xMax));ctx.stroke();
+    ctx.setLineDash([]);
+    // y=f(x)
+    ctx.strokeStyle='#4f46e5';ctx.lineWidth=2.5;ctx.beginPath();
+    for(var px=pad;px<=W-pad;px++){
+      var x=xMin+(px-pad)/(W-2*pad)*(xMax-xMin);
+      var y=f(x);if(isNaN(y)||!isFinite(y))continue;
+      var py=toY(y);
+      if(px===pad)ctx.moveTo(px,py);else ctx.lineTo(px,py);
+    }
+    ctx.stroke();
+    // cobweb
+    ctx.strokeStyle='#ef4444';ctx.lineWidth=1.5;ctx.beginPath();
+    var u=u0,steps=30,info='';
+    ctx.moveTo(toX(u),toY(0));
+    for(var i=0;i<steps;i++){
+      var fu=f(u);if(isNaN(fu)||!isFinite(fu))break;
+      ctx.lineTo(toX(u),toY(fu));
+      ctx.lineTo(toX(fu),toY(fu));
+      if(i<5)info+='u'+(i+1)+'='+fu.toFixed(3)+'  ';
+      u=fu;
+    }
+    ctx.stroke();
+    // u0 dot
+    ctx.fillStyle='#ef4444';ctx.beginPath();ctx.arc(toX(u0),toY(0),5,0,2*Math.PI);ctx.fill();
+    // labels
+    ctx.fillStyle='#4f46e5';ctx.font='bold 13px sans-serif';
+    ctx.fillText('y = f(x)',W-pad-60,toY(f(xMax-0.3))-10);
+    ctx.fillStyle='#94a3b8';ctx.fillText('y = x',W-pad-40,toY(xMax-0.3)+15);
+    ctx.fillStyle='#ef4444';ctx.font='12px sans-serif';ctx.fillText('u₀='+u0.toFixed(1),toX(u0)-10,toY(0)+16);
+    document.getElementById('simSuiteInfo').textContent=info;
+  };
+  drawCobweb();
+})();
+</script>
+
 <!-- ═══════════════════════════════════════════ -->
 <h2>VII. Raisonnement par récurrence</h2>
 <!-- ═══════════════════════════════════════════ -->

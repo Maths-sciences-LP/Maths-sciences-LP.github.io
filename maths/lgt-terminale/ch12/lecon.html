@@ -328,6 +328,76 @@
 </div>
 </div>
 
+<div class="anim-wrap" style="margin:2em 0">
+<h3 style="text-align:center;color:#4f46e5">Simulation — Méthode des rectangles</h3>
+<p style="text-align:center;font-size:.85rem;color:#666;margin-bottom:1em">Augmenter le nombre de rectangles pour approcher l'intégrale.</p>
+<div style="text-align:center;margin-bottom:10px">
+  <label>Fonction : <select id="simRectFunc" style="padding:4px 8px;border-radius:4px;border:1px solid #ccc">
+    <option value="x2">f(x) = x²</option>
+    <option value="sinx">f(x) = sin(x)</option>
+    <option value="expx">f(x) = eˣ</option>
+    <option value="sqrtx">f(x) = √x</option>
+  </select></label>
+  <label style="margin-left:12px">Rectangles : <input type="range" id="simRectN" min="1" max="100" value="5" style="vertical-align:middle"><span id="simRectNVal" style="font-weight:700;margin-left:4px">5</span></label>
+</div>
+<canvas id="canvasRect" width="560" height="360" style="display:block;margin:0 auto;max-width:100%;border:1px solid #e2e8f0;border-radius:8px;background:#fafbfc"></canvas>
+<p id="simRectInfo" style="text-align:center;font-size:.95rem;font-weight:600;color:#4f46e5;margin-top:8px"></p>
+</div>
+<script>
+(function(){
+  var cv=document.getElementById('canvasRect'),ctx=cv.getContext('2d');
+  var funcs={
+    x2:{f:function(x){return x*x},a:0,b:2,exact:'8/3 ≈ 2.667',label:'x²'},
+    sinx:{f:function(x){return Math.sin(x)},a:0,b:Math.PI,exact:'2',label:'sin(x)'},
+    expx:{f:function(x){return Math.exp(x)},a:0,b:1,exact:'e−1 ≈ 1.718',label:'eˣ'},
+    sqrtx:{f:function(x){return Math.sqrt(x)},a:0,b:4,exact:'16/3 ≈ 5.333',label:'√x'}
+  };
+  var slider=document.getElementById('simRectN'),nLabel=document.getElementById('simRectNVal');
+  var sel=document.getElementById('simRectFunc');
+  function draw(){
+    var key=sel.value,obj=funcs[key],f=obj.f,a=obj.a,b=obj.b;
+    var n=parseInt(slider.value);nLabel.textContent=n;
+    var W=cv.width,H=cv.height,pad=50,padR=20,padT=20;
+    // find yMax
+    var yMax=0;for(var i=0;i<=200;i++){var x=a+(b-a)*i/200;var y=f(x);if(y>yMax)yMax=y}
+    yMax*=1.15;if(yMax<1)yMax=1;
+    function toX(x){return pad+(x-a)/(b-a)*(W-pad-padR)}
+    function toY(y){return H-pad-y/yMax*(H-pad-padT)}
+    ctx.clearRect(0,0,W,H);
+    // axes
+    ctx.strokeStyle='#94a3b8';ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(pad,H-pad);ctx.lineTo(W-padR,H-pad);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(pad,H-pad);ctx.lineTo(pad,padT);ctx.stroke();
+    // axis labels
+    ctx.fillStyle='#64748b';ctx.font='12px sans-serif';ctx.textAlign='center';
+    for(var t=0;t<=4;t++){var xv=a+(b-a)*t/4;ctx.fillText(xv.toFixed(1),toX(xv),H-pad+18)}
+    // rectangles
+    var dx=(b-a)/n,sum=0;
+    ctx.fillStyle='rgba(79,70,229,0.2)';ctx.strokeStyle='#4f46e5';ctx.lineWidth=1;
+    for(var i=0;i<n;i++){
+      var xi=a+i*dx,yi=f(xi);sum+=yi*dx;
+      var rx=toX(xi),ry=toY(yi),rw=toX(xi+dx)-toX(xi),rh=toY(0)-toY(yi);
+      ctx.fillRect(rx,ry,rw,rh);ctx.strokeRect(rx,ry,rw,rh);
+    }
+    // curve
+    ctx.strokeStyle='#ef4444';ctx.lineWidth=2.5;ctx.beginPath();
+    for(var px=toX(a);px<=toX(b);px++){
+      var x=a+(px-toX(a))/(toX(b)-toX(a))*(b-a);
+      var y=f(x);var py=toY(y);
+      if(px===toX(a))ctx.moveTo(px,py);else ctx.lineTo(px,py);
+    }
+    ctx.stroke();
+    // label
+    ctx.fillStyle='#ef4444';ctx.font='bold 14px sans-serif';
+    ctx.fillText('f(x) = '+obj.label,toX((a+b)/2),padT+16);
+    document.getElementById('simRectInfo').textContent=
+      'Somme des rectangles (n='+n+') : S ≈ '+sum.toFixed(4)+'   |   Valeur exacte : '+obj.exact;
+  }
+  slider.oninput=draw;sel.onchange=draw;
+  draw();
+})();
+</script>
+
 </div>
 <script src="../../../nav.js"></script>
 </body>
