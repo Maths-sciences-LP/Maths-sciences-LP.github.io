@@ -140,7 +140,7 @@
 ### Priorité 1 — Classes de cette année (2nde MAMA, Term ICCER, Term ERA-MA)
 - [x] ~~Améliorer ch02, ch03 exercices.html (appro faible)~~ ✅ fait
 - [x] ~~Ajouter SVG ch09 exercices.html~~ ✅ fait (12 SVG)
-- [ ] Figures SVG PC Term ERA (ch02-08, comme fait pour ICCER)
+- [x] ~~Figures SVG PC Term ERA (ch02-08, comme fait pour ICCER)~~ ✅ fait (20 SVG : batteries, effet de serre, cinématique, corrosion, lumière, transmission, acoustique)
 
 ### Priorité 2 — CAP
 - [ ] exercices-capacités (14 fichiers)
