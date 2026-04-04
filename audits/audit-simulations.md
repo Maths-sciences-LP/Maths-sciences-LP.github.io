@@ -1,9 +1,9 @@
 # Audit Simulations Interactives
 
 **Date** : 2026-03-16
-**Dernière mise à jour** : 2026-03-31 (audit trigonometrie.html)
-**Périmètre** : dossier `simulations/` — 64 fichiers HTML
-**Méthode** : Lecture et analyse de l'ensemble des 64 simulations, vérification du référencement depuis les pages de cours, analyse de la couverture par chapitre, audit technique approfondi (autonomie, responsive, accessibilité, qualité JS).
+**Dernière mise à jour** : 2026-04-05 (métadonnées complétées, orphelines référencées)
+**Périmètre** : dossier `simulations/` — 70 fichiers HTML
+**Méthode** : Lecture et analyse de l'ensemble des simulations, vérification du référencement depuis les pages de cours, analyse de la couverture par chapitre, audit technique approfondi (autonomie, responsive, accessibilité, qualité JS).
 
 ---
 
@@ -132,15 +132,21 @@
 
 **Note** : `sources-lumineuses.html` et `melangeur.html` sont partagées entre Terminale ERA et PC Seconde Ch14.
 
-### Physique-Chimie — Terminale (non attribuées) (5 simulations)
+### Physique-Chimie — Première ICCER/ERA supplémentaires (3 simulations — 2026-04-05)
 
 | # | Fichier | Notion illustrée | Chapitre | Référencée | Pertinence |
 |---|---|---|---|---|---|
-| 53 | `chaleur.html` | Chaleur massique, Q = mcΔT | Tle + **PC 2nde Ch10** | **Oui** | Bonne |
-| 54 | `dephasage.html` | Déphasage, triangle des puissances | Tle (pas de ch.) | Non | Bonne |
-| 55 | `effet-joule.html` | Échauffement d'un conducteur | Tle (pas de ch.) | Non | Bonne |
-| 56 | `gaz.html` | Loi Boyle-Mariotte, Gay-Lussac | Tle (pas de ch.) | Non | Bonne |
-| 57 | `serre.html` | Effet de serre | Tle (pas de ch.) | Non | Bonne |
+| 53 | `chaleur.html` | Chaleur massique, Q = mcΔT | 1ère Ch04 (transferts thermiques) | **Oui** | Bonne |
+| 54 | `gaz.html` | Loi Boyle-Mariotte + Gay-Lussac | 1ère Ch07 (pression) | **Oui** | Bonne |
+| 55 | `boyle-mariotte.html` | Loi de Boyle-Mariotte, P×V = cste | 1ère Ch07 (pression) | **Oui** | Bonne |
+
+### Physique-Chimie — Terminale (simulations partagées)
+
+| # | Fichier | Notion illustrée | Chapitre | Référencée | Pertinence |
+|---|---|---|---|---|---|
+| 56 | `dephasage.html` | Déphasage, triangle des puissances | Tle ICCER Ch02 | **Oui** | Bonne |
+| 57 | `effet-joule.html` | Échauffement d'un conducteur | 1ère ICCER Ch02 | **Oui** | Bonne |
+| 58 | `serre.html` | Effet de serre | Tle ERA Ch03 | **Oui** | Bonne |
 
 ### ~~Simulations sans niveau ni chapitre~~ — RECLASSÉES
 
@@ -205,15 +211,24 @@ Simulations **non vérifiées** (potentiellement anciennes, à auditer) : `debit
 
 **Mise à jour 2026-03-17** : Parmi les simulations PC Seconde, seul `modeles-atome.html` manque de `@media` queries (utilise CSS Grid mais sans breakpoint explicite). Toutes les autres simulations PC Seconde sont bien responsives.
 
-### 5. 12 simulations avec métadonnées incomplètes
+### ~~5. 12 simulations avec métadonnées incomplètes~~ — CORRIGÉ
 
-**Gravité : MOYENNE**
+~~**Gravité : MOYENNE**~~
 
-Simulations mentionnant un chapitre sans niveau ou un niveau sans chapitre :
-- `chaleur.html`, `dephasage.html`, `effet-joule.html`, `gaz.html`, `serre.html` : "Terminale Bac Pro" sans chapitre
-- `debit.html`, `moteur.html`, `oxydoreduction.html`, `pression.html`, `puissance.html`, `rayonnement.html`, `redressement.html`, `son.html` : numéro de chapitre sans niveau
+**Corrigé le 2026-04-05** : Métadonnées (niveau + chapitre) ajoutées dans les 11 simulations sans subtitle, et chapter ajouté dans `attenuation-sonore.html`. Audit complet réalisé sur les 70 simulations.
 
-**Mise à jour 2026-03-17** : Les 14 simulations PC Seconde vérifiées ont toutes des métadonnées complètes (charset, viewport, lang="fr", référence au chapitre et au niveau dans le titre). Le problème ne concerne que les simulations hors PC Seconde.
+Simulations corrigées :
+- `atome-couches.html`, `atome.html`, `modeles-atome.html` → `2nde Bac Pro · Ch07`
+- `ohm.html` → `2nde Bac Pro · Ch03`
+- `signal-alternatif.html` → `2nde Bac Pro · Ch04`
+- `concentration.html` → `Bac Pro · Ch07-09`
+- `equations.html` → `2nde Bac Pro · Ch05`
+- `melangeur.html` → `2nde Bac Pro · Ch14`
+- `refraction.html` → `2nde Bac Pro · Ch13`
+- `traceur.html` → `2nde / 1ère Bac Pro · Ch05-10`
+- `attenuation-sonore.html` → `Ch08` ajouté
+
+**Constat de l'audit 2026-04-05** : Les 13 simulations initialement listées (chaleur, dephasage, effet-joule, gaz, serre, debit, moteur, oxydoreduction, pression, puissance, rayonnement, redressement, son) avaient en réalité déjà des métadonnées partielles ou complètes — l'audit initial était inexact pour ce groupe.
 
 ### ~~6. Simulation à pertinence faible~~ — CORRIGÉ
 
@@ -283,6 +298,7 @@ Simulations mentionnant un chapitre sans niveau ou un niveau sans chapitre :
 - **2026-03-17** : Audit technique approfondi des simulations PC Seconde et page simulations — corrections de l'inventaire : 17 simulations rattachées à PC Seconde (pas 11), 13/14 chapitres couverts, toutes référencées depuis les cours. Reclassement des 6 simulations "sans niveau". Identification d'un nouveau problème d'accessibilité (aria-label manquants). Confirmation que toutes les simulations PC Seconde utilisent le template moderne et sont responsives (sauf modeles-atome.html).
 - **2026-03-19** : Bilan Seconde — 32 simulations couvrent la Seconde (15 maths + 17 PC), couvrant 27/28 chapitres (seul PC ch01 Sécurité sans simulation). En plus, maths/seconde/ch05 et ch06 disposent de simulation.html intégrées dans le chapitre.
 - **2026-03-31** : Audit approfondi de `trigonometrie.html` (Maths Terminale Ch07) — 7 corrections : ajout `</head>` manquant (HTML invalide), correction arc d'angle pour α > 180°, correction bug marqueurs Chart.js (points invisibles car format `{x,y}` incompatible avec axe catégoriel), ajout aria-label sur canvas et `for` sur labels, extension affichage symbolique radians (17 angles remarquables au lieu de 5), surbrillance dynamique du tableau des angles remarquables, repositionnement labels sin/cos selon le quadrant.
+- **2026-04-05** : Audit complet des 70 simulations par chapitre. Métadonnées (niveau + chapitre) ajoutées dans 11 simulations : `atome-couches`, `atome`, `concentration`, `equations`, `melangeur`, `modeles-atome`, `ohm`, `refraction`, `signal-alternatif`, `traceur`, `attenuation-sonore`. Simulations orphelines liées depuis les leçons : `balance.html` → maths/seconde/ch05 ; `debit-fluide.html` → pc/terminale-iccer/ch06 ; `chaleur.html` → pc/premiere-iccer/ch04 + premiere-era/ch04 ; `gaz.html` + `boyle-mariotte.html` → pc/premiere-iccer/ch07 + premiere-era/ch07 ; `attenuation-sonore.html` → pc/terminale-era/ch08. Périmètre mis à jour : 70 simulations (vs 64 à la dernière mise à jour). (Maths Terminale Ch07) — 7 corrections : ajout `</head>` manquant (HTML invalide), correction arc d'angle pour α > 180°, correction bug marqueurs Chart.js (points invisibles car format `{x,y}` incompatible avec axe catégoriel), ajout aria-label sur canvas et `for` sur labels, extension affichage symbolique radians (17 angles remarquables au lieu de 5), surbrillance dynamique du tableau des angles remarquables, repositionnement labels sin/cos selon le quadrant.
 
 ---
 
@@ -290,8 +306,9 @@ Simulations mentionnant un chapitre sans niveau ou un niveau sans chapitre :
 
 ### Priorité haute
 - [x] Lier chaque simulation orpheline à la page de cours correspondante (79 pages modifiées, 2026-03-16)
-- [ ] Compléter les métadonnées des 12 simulations incomplètes (hors PC Seconde — celles-ci sont OK)
+- [x] Compléter les métadonnées des 12 simulations incomplètes (2026-04-05)
 - [x] Rattacher les 7 simulations sans niveau/chapitre à leur chapitre (atome→ch07, ohm→ch03, melangeur→ch14, traceur→ch05/ch10, 2026-03-16)
+- [ ] Mettre à jour `simulations.html` pour lister les 6 simulations récentes manquantes (boyle-mariotte, debit-fluide, ccf-bac-rangement, balance, attenuation-sonore, chaleur)
 
 ### Priorité moyenne
 - [x] Retirer `nav.js` des 26 simulations non conformes (2026-03-16)
@@ -313,12 +330,12 @@ Simulations mentionnant un chapitre sans niveau ou un niveau sans chapitre :
 
 | Indicateur | Valeur |
 |---|---|
-| Nombre total de simulations | **64** |
-| Référencées depuis un cours | **64** (100 %) |
+| Nombre total de simulations | **70** |
+| Référencées depuis un cours | **70** (100 %) |
 | Orphelines | **0** (0 %) |
-| Listées dans `simulations.html` | **64** (100 %) |
+| Listées dans `simulations.html` | **64** (index à mettre à jour — 6 simulations récentes manquantes) |
 | Sans niveau/chapitre | **0** (0 %) |
-| Avec métadonnées incomplètes | **12** (19 %) — hors PC Seconde |
+| Avec métadonnées incomplètes | **0** (0 %) — corrigé 2026-04-05 |
 | ~~Incluant `nav.js` (non-conforme)~~ | **0** (corrigé 2026-03-16) |
 | Sans media query | **8** (13 %) — dont 1 seule en PC Seconde |
 | Template ancien (à revérifier) | **~19** (estimation révisée, PC Seconde = 0) |
