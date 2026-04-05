@@ -173,7 +173,8 @@ h3 { font-size: 1em; color: var(--t); margin-top: 20px; margin-bottom: 8px; font
   padding: 14px 18px;
   margin: 16px 0;
 }
-.meth strong { color: var(--o); display: block; margin-bottom: 4px; }
+.meth strong { color: var(--o); }
+.meth > strong { display: block; margin-bottom: 4px; }
 
 .retenir {
   background: var(--s-bg);
