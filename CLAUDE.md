@@ -298,6 +298,7 @@ Avant de générer du contenu, consulter les fichiers dans `/prompts/` :
 
 | Fichier | Usage |
 |---|---|
+| `prompts/regles-communes.md` | Règles partagées — données uniquement, tableaux, références orphelines, animations Canvas, conventions SVG |
 | `prompts/prompt-cours.md` | Structure d'une page de cours |
 | `prompts/prompt-exercices.md` | Structure d'une page d'exercices |
 | `prompts/prompt-exercices-capacites.md` | Structure d'une page d'exercices par capacités du programme (`exercices-capacites.html`) |
