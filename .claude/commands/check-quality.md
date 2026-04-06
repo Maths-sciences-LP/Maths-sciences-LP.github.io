@@ -43,6 +43,26 @@ Lire chaque fichier HTML présent et vérifier les points suivants.
 
 #### exercices.html, ds.html, interro.html, exercices-capacites.html
 
+**Densité de visuels :**
+
+Compter sur la page :
+- `nb_visuels` = nombre de `<svg`, `<canvas`, instances Chart.js (`new Chart`), `<img` (hors balises décoratives sans `alt` significatif)
+- `nb_exercices` = nombre de blocs `.exo` ou titres d'exercice (`<h3>`, `<h4>` contenant "Exercice" ou numéro)
+
+Appliquer les règles suivantes :
+
+| Situation | Signal |
+|---|---|
+| `nb_visuels == 0` | 🔴 CRITIQUE — page sans aucun visuel |
+| `nb_visuels / nb_exercices < 0,25` et physique-chimie | 🟡 AVERTISSEMENT — moins de 1 visuel pour 4 exercices |
+| `nb_visuels / nb_exercices < 0,20` et maths (fonctions/géométrie/stats) | 🟡 AVERTISSEMENT |
+| `nb_visuels / nb_exercices < 0,20` et maths algèbre/calcul pur | ✅ Acceptable |
+
+Précisions :
+- Ne pas signaler l'absence de visuel sur un exercice individuel — la règle s'applique à la **page entière**
+- Un exercice purement numérique ou algébrique sans contexte géométrique n'a pas besoin de figure
+- Signaler uniquement si le ratio global de la page est insuffisant
+
 **Données uniquement :**
 - Parcourir tous les `<table>` hors `.corr`
 - Signaler toute ligne qui contient l'équation à construire, la valeur inconnue ou la solution
@@ -106,6 +126,7 @@ Afficher un rapport structuré :
 
 ### exercices.html
 - ✓ diff-socle/standard/appro présents
+- ✓ Visuels : 3 SVG pour 10 exercices (ratio 0,30 — OK)
 - ✗ Ex.3 : tableau avec "x = 12" hors .corr (ligne ~145)
 - ✗ Ex.7 : "le graphique ci-dessous" sans SVG adjacent
 
@@ -126,5 +147,16 @@ Afficher un rapport structuré :
 - Classer par gravité : critique > haute > moyenne > basse
 - Indiquer le fichier et le numéro de ligne ou d'exercice
 - Proposer la correction exacte
+
+---
+
+## Étape 4 — Mettre à jour le journal des audits
+
+Après avoir affiché le rapport, mettre à jour `audits/audit-log.md` :
+
+1. Chercher si le chapitre a déjà une ligne dans le tableau
+2. Si oui : mettre à jour la colonne `/check-quality` avec la date du jour (format `YYYY-MM-DD`) et le résultat (🔴 / 🟡 / 🟢)
+3. Si non : ajouter une nouvelle ligne
+4. Mettre à jour la date `Dernière mise à jour` en haut du fichier
 
 ARGUMENTS: $ARGUMENTS
