@@ -2,6 +2,7 @@
 
 **Date** : 2026-03-16
 **Dernière mise à jour** : 2026-04-06
+**Note** : compteur simulations corrigé (63 → 70) le 2026-04-06
 **Périmètre** : ensemble du site maths-sciences-lp.github.io
 
 ---
@@ -13,7 +14,7 @@
 | Pages HTML (chapitres) | **504** |
 | Sections (matière/niveau) | 8 (+1 BTS) |
 | Chapitres couverts | **84** |
-| Simulations interactives | 63 |
+| Simulations interactives | 70 |
 | Complétude structurelle | **100 %** (504/504 fichiers) |
 | Stubs détectés | **0** |
 | Sigles interdits (contenu) | ~90 occurrences |

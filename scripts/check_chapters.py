@@ -30,12 +30,21 @@ SECTIONS = [
     ('maths/seconde',                True,  'Maths Seconde'),
     ('maths/premiere',               True,  'Maths Première'),
     ('maths/terminale',              True,  'Maths Terminale'),
+    ('maths/lgt-terminale',          False, 'Maths LGT Terminale'),
+    ('maths/cap',                    False, 'Maths CAP'),
     ('maths/bts',                    False, 'Maths BTS'),
     ('physique-chimie/seconde',      True,  'PC Seconde'),
     ('physique-chimie/premiere-iccer', True, 'PC Première ICCER'),
     ('physique-chimie/premiere-era', True,  'PC Première ERA'),
+    ('physique-chimie/premiere-gpt2', False, 'PC Première GPT2'),
+    ('physique-chimie/premiere-gpt4', False, 'PC Première GPT4'),
+    ('physique-chimie/premiere-gpt6', False, 'PC Première GPT6'),
     ('physique-chimie/terminale-iccer', True, 'PC Terminale ICCER'),
     ('physique-chimie/terminale-era', True, 'PC Terminale ERA'),
+    ('physique-chimie/terminale-gpt2', False, 'PC Terminale GPT2'),
+    ('physique-chimie/terminale-gpt4', False, 'PC Terminale GPT4'),
+    ('physique-chimie/terminale-gpt5', False, 'PC Terminale GPT5'),
+    ('physique-chimie/cap',          False, 'PC CAP'),
 ]
 
 ONLY_MISSING = '--missing' in sys.argv
@@ -96,7 +105,7 @@ def check_section(section_path, label, uses_diff):
     print(f'  {label}  [{status}]')
     print(f'  Chemin : {section_path}')
     if not uses_diff:
-        print(f'  (BTS — pas de différenciation)')
+        print(f'  (pas de différenciation)')
     print(f'{"="*60}')
 
     for ch, result in issues:
