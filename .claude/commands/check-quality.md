@@ -126,6 +126,7 @@ Afficher un rapport structuré :
 
 ### exercices.html
 - ✓ diff-socle/standard/appro présents
+- ✓ Visuels : 3 SVG pour 10 exercices (ratio 0,30 — OK)
 - ✗ Ex.3 : tableau avec "x = 12" hors .corr (ligne ~145)
 - ✗ Ex.7 : "le graphique ci-dessous" sans SVG adjacent
 
