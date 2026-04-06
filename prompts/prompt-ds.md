@@ -1,5 +1,11 @@
 # Prompt de référence — Génération des Devoirs Surveillés (ds.html)
 
+> ⚠ **Interdits absolus** (→ détails dans [`regles-communes.md`](regles-communes.md)) :
+> 1. Les visuels montrent uniquement les données brutes — jamais l'équation, la solution, le point d'intersection
+> 2. Toute référence "le graphique ci-dessous" exige une figure présente dans la page
+> 3. Canvas animé interdit — SVG statique ou Chart.js (rendu une fois) uniquement
+> 4. Dès 3 valeurs numériques → `<table class="full">` avant les questions
+
 Guide de référence pour la création des pages `ds.html` dans chaque chapitre du site.
 
 ---
@@ -33,9 +39,9 @@ Chaque DS est proposé en **3 versions complètes** (pas 3 exercices d'un même 
 
 | Niveau | Profil | Caractéristiques |
 |---|---|---|
-| **Socle** | Élèves en difficulté | Consignes décomposées, calculs amorcés, tableaux pré-remplis, rappels de méthode intégrés, contextes du quotidien, questions fermées |
-| **Standard** | Majorité de la classe | Consignes complètes, contextes professionnels variés, rédaction attendue, toutes les capacités du programme |
-| **Approfondissement** | Poursuite BTS/MC | Mise en équation autonome, problèmes multi-étapes, raisonnement justifié, questions type BTS, contextes complexes |
+| **Socle** | Élèves en difficulté | Rappels `.meth`, calculs amorcés (`U = R × I = … × … =`), tableaux pré-remplis, questions fermées (cases à cocher, trous), étapes numérotées, contextes du quotidien |
+| **Standard** | Majorité de la classe | Consignes complètes, calculs intégraux, contextes professionnels variés (menuisier, installateur…), rédaction attendue pour COM |
+| **Approfondissement** | Poursuite BTS/MC | Aucune formule fournie, mise en équation autonome, problèmes multi-étapes, questions ouvertes ("Choisir et justifier"), vocabulaire BTS |
 
 ### Volume et barème
 
@@ -294,37 +300,7 @@ Chaque question doit être taguée avec la compétence qu'elle évalue. Distribu
 
 ## Figures et visuels dans les DS
 
-### Règle fondamentale — données uniquement
-
-**Un visuel dans un DS montre uniquement les données brutes fournies à l'élève.**
-
-Il ne doit **jamais** :
-- Montrer l'équation à construire
-- Afficher la valeur inconnue ou la solution
-- Tracer une droite que l'élève doit tracer lui-même
-- Indiquer un point d'intersection que l'élève doit déterminer
-
-Il doit **toujours** servir de support de compréhension, pas de support de correction.
-
-> **Règle mnémotechnique :** *"Ce que l'élève a le droit de voir sur sa copie, et rien de plus."*
-
-### Quand ajouter un tableau de données
-
-**Règle systématique :** dès qu'un exercice présente des valeurs numériques (prix, mesures, quantités, résultats), les regrouper dans un tableau avant les questions — même si le texte les cite déjà.
-
-```html
-<!-- Avant les questions, dans la situation -->
-<table class="full" style="margin:8px 0 14px;font-size:.92em;max-width:360px">
-  <thead><tr><th>Donnée</th><th>Valeur</th></tr></thead>
-  <tbody>
-    <tr><td>Puissance du radiateur</td><td>2 000 W</td></tr>
-    <tr><td>Durée de fonctionnement</td><td>8 h</td></tr>
-    <tr><td>Prix du kWh</td><td>0,18 €</td></tr>
-  </tbody>
-</table>
-```
-
-**Ne jamais ajouter** de ligne "Résultat", "Énergie = ?", "Coût à calculer" — ce sont les questions.
+→ Règles visuels complètes dans [`regles-communes.md`](regles-communes.md)
 
 ### Quand ajouter un schéma SVG
 
@@ -360,15 +336,6 @@ Il doit **toujours** servir de support de compréhension, pas de support de corr
 | PC Seconde | `#f5f0ff` | `#6f42c1` | `#c53030` italique |
 | Maths Première/Terminale | `#dbeafe` | `#0969da` | `#c53030` italique |
 | PC Première | `#dbeafe` ou `#f0fff4` | selon filière | `#c53030` italique |
-
-### Visuels dans les DS — statiques uniquement
-
-Toutes les pages du site fonctionnent en ligne et à l'impression. Dans les DS :
-- **SVG statique** ✓ — format privilégié
-- **Chart.js** ✓ — acceptable si rendu une seule fois (pas d'animation)
-- **Canvas animé** ✗ — réservé aux leçons et simulations
-
-L'élève observe et lit les figures — il ne les manipule pas.
 
 ### Repère vierge (graphique à compléter)
 
@@ -475,35 +442,6 @@ Placer un bouton `.bc` + `.corr` **à la fin de chaque partie**, pas après chaq
 
 ---
 
-## Structure des parties selon le niveau
-
-### Socle — principes de rédaction
-
-- **Rappels intégrés** : encadré `.meth` ou phrase "Rappel : formule =" avant les questions
-- **Calculs amorcés** : `\(U = R \times I = \ldots \times \ldots =\)` ………
-- **Tableaux pré-remplis partiellement** : certaines cellules complétées
-- **Questions fermées** : cases à cocher, compléter une phrase à trous, relier
-- **Étapes numérotées** : "Étape 1 : Étape 2 : Étape 3 :"
-- **Contextes simples** : quotidien, situations concrètes et familières
-
-### Standard — principes de rédaction
-
-- **Consignes complètes** : pas de guidage pas-à-pas
-- **Formule à rappeler** : "Rappel : P = U × I" seulement si c'est une formule secondaire
-- **Calculs intégraux** : l'élève écrit toutes les étapes
-- **Contextes professionnels** : menuisier, installateur, technicien...
-- **Rédaction attendue** : justifier, expliquer, argumenter pour COM
-
-### Approfondissement — principes de rédaction
-
-- **Mise en équation autonome** : aucune formule fournie
-- **Problèmes à plusieurs étapes** : l'élève doit planifier sa démarche
-- **Questions ouvertes** : "Choisir et justifier", "Rédiger un conseil", "Comparer"
-- **Vocabulaire technique** : termes du programme BTS si pertinents
-- **Contextes complexes** : deux grandeurs qui varient, optimisation, comparaison de solutions
-
----
-
 ## Mise en page et impression
 
 ### Espacement des réponses
@@ -553,19 +491,6 @@ Avant de valider un DS :
 
 ---
 
-## Règles de contexte professionnel
-
-Identiques à toutes les autres pages du site :
-
-**Interdit dans le contenu pédagogique :**
-- ~~"Un technicien ICCER..."~~ → "Un installateur thermique..."
-- ~~"Un technicien ERA-MA..."~~ → "Un menuisier agenceur..."
-- ~~"Contexte ERA-MA"~~ → "Contexte professionnel"
-
-**Varier les contextes :** professionnel + vie quotidienne + sport + science + énergie.
-
----
-
 ## Checklist avant publication
 
 ### Structure
@@ -605,14 +530,9 @@ Identiques à toutes les autres pages du site :
 - [ ] `<figure class="schema">` + `<figcaption>` autour de chaque SVG
 - [ ] Conventions couleur respectées selon la matière
 
----
-
-## Points de contrôle finaux
-
-Avant de soumettre le DS généré, vérifier :
-
-1. **Un seul contexte par partie** — ne pas mélanger deux situations dans la même partie
-2. **Les 3 sujets couvrent le même programme** — un élève socle et un élève appro ont accès au même savoir
-3. **Le sujet appro ne fait pas l'impasse sur les notions de base** — il les aborde différemment (plus de mise en équation)
-4. **Chaque ligne `.answer-line`** correspond à un espace de rédaction réaliste
-5. **Les données numériques sont cohérentes entre elles** — ex : si la production est de 15 pièces/h et qu'on demande la production sur 8h, le résultat de la correction doit être 120, pas 118
+### Cohérence
+- [ ] Un seul contexte par partie (ne pas mélanger deux situations)
+- [ ] Les 3 sujets couvrent le même programme (socle et appro accèdent au même savoir)
+- [ ] Le sujet appro n'occulte pas les notions de base — il les aborde différemment
+- [ ] Chaque `.answer-line` correspond à un espace réaliste
+- [ ] Les données numériques sont cohérentes entre elles (vérifier les calculs croisés)

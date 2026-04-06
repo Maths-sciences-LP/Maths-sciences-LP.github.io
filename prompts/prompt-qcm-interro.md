@@ -1,5 +1,11 @@
 # Prompt — QCM et Interrogations
 
+> ⚠ **Interdits absolus** (→ détails dans [`regles-communes.md`](regles-communes.md)) :
+> 1. Les visuels montrent uniquement les données brutes — jamais la réponse ni le point à déterminer
+> 2. Toute référence "le graphique ci-dessous" exige une figure présente dans la page
+> 3. Canvas animé interdit (`requestAnimationFrame`, `setInterval`)
+> 4. Dès 3 valeurs numériques → `<table class="full">` avant la question
+
 Guide de reference pour la creation des pages `qcm.html` et `interro.html` dans chaque chapitre du site.
 
 ---
@@ -30,26 +36,9 @@ Le QCM est un outil **numerique et interactif** que l'eleve utilise en autonomie
 - L'explication apres chaque reponse est **pedagogique**, pas juste "bonne/mauvaise reponse"
 - Le QCM est **rejouable** : l'eleve peut recommencer pour s'ameliorer
 
-**Ce que le QCM n'est PAS :**
-- Un exercice redige (pas de redaction, pas de demarche)
-- Un DS (pas de bareme officiel, pas de note dans le bulletin)
-- Un cours deguise (les explications restent breves, pas de theorie nouvelle)
-
 ### L'interrogation : outil de diagnostic rapide
 
-L'interrogation est un outil **papier** que l'enseignant utilise en classe pour prendre la temperature. Elle permet de reperer rapidement les eleves en difficulte et d'ajuster le cours.
-
-**Principes fondamentaux :**
-- **Courte** (10-15 min) : ne mange pas la seance, s'insere en debut ou fin de cours
-- **Ciblee** : 5-8 questions sur les notions essentielles du chapitre
-- **Imprimable** : concue pour etre distribuee sur papier en classe
-- Les corrections sont disponibles en ligne (bouton "Voir la correction")
-- L'interro donne une **photo instantanee** des acquis, pas une evaluation definitive
-
-**Ce que l'interro n'est PAS :**
-- Un DS (trop courte, pas le meme poids dans l'evaluation)
-- Un QCM (format redige, pas de choix multiples)
-- Un exercice d'entrainement (c'est une evaluation, meme si courte)
+L'interrogation est un outil **papier** distribué en classe. Courte (10-15 min), ciblée sur les notions essentielles, avec corrections disponibles en ligne.
 
 ### Difference cle entre interro et DS
 
@@ -71,31 +60,9 @@ L'interrogation est un outil **papier** que l'enseignant utilise en classe pour 
 
 Le QCM utilise `diff.js` pour proposer 3 series adaptees :
 
-**Socle (15 questions) :**
-- Questions directes, vocabulaire simple
-- Reconnaissance immediate (identifier, nommer, choisir)
-- Calculs elementaires (operations de base, substitution directe)
-- Contextes du quotidien
-- Formulations courtes et univoques
-- Exemple maths : "Quelle est la derivee de f(x) = 3x ?" → A. 3 / B. 3x / C. 0 / D. x
-- Exemple PC : "L'unite de la force est :" → A. le Joule / B. le Newton / C. le Watt / D. le Pascal
-
-**Standard (15 questions) :**
-- Questions classiques du programme
-- Application de formules dans un contexte
-- Interpretation de resultats, lecture de graphiques
-- Contextes professionnels varies
-- Formulations precises, vocabulaire technique attendu
-- Exemple maths : "f(x) = x^3 - 3x. f'(x) = 0 pour :" → A. x=1 / B. x=-1 et x=1 / C. x=0 / D. x=sqrt(3)
-- Exemple PC : "Un radiateur de 2000 W fonctionne 3h. L'energie consommee est :" → A. 6 kWh / B. 6000 J / C. 667 Wh / D. 6 kJ
-
-**Approfondissement (15 questions) :**
-- Questions a raisonnement (deduction, elimination, croisement de notions)
-- Problemes ouverts adaptes au format QCM (quel raisonnement est correct ?)
-- Vocabulaire BTS, formulations exigeantes
-- Contextes professionnels complexes ou scientifiques
-- Exemple maths : "f(x) = ax^3 + bx avec f(1)=2 et f'(1)=5. Alors a = :" → A. 1 / B. 2 / C. 3 / D. -1
-- Exemple PC : "Un systeme isole echange de la chaleur. La variation d'enthalpie est negative. On peut en deduire que :" → ...
+**Socle :** reconnaissance immédiate, vocabulaire simple, calculs élémentaires, contextes du quotidien
+**Standard :** application de formules dans un contexte, lecture de graphiques, vocabulaire technique, contextes professionnels
+**Approfondissement :** raisonnement par déduction/élimination, croisement de notions, vocabulaire BTS, contextes complexes
 
 ### Interro : 3 sujets de 5-8 questions
 
@@ -378,76 +345,21 @@ var explications = {
 
 ### Règle fondamentale — données uniquement
 
-**Un visuel dans un QCM ou une interro montre uniquement les données fournies à l'élève.** Il ne révèle jamais la réponse.
+→ Règle complète avec exemples dans [`regles-communes.md`](regles-communes.md)
 
-Pour un QCM :
-- Le visuel fait partie de **l'énoncé** de la question, pas des options A/B/C/D
-- Si 4 figures sont proposées comme options (ex : "Quel graphique représente f ?"), chaque option est un SVG minimaliste sans annotation qui révèle la réponse
-- Ne jamais tracer le point d'intersection ou la valeur cherchée sur la figure
-
-Pour une interro :
-- Le visuel est le **support de travail** — il montre la situation, pas la solution
-- Pour un graphique à lire : fournir la courbe, sans marquer le point de lecture
-- Pour un schéma à compléter : fournir le schéma partiel avec les éléments manquants représentés en pointillés ou laissés vides
+Points spécifiques au QCM/interro :
+- **QCM** : le visuel fait partie de l'énoncé, pas des options A/B/C/D ; ne jamais tracer le point d'intersection
+- **Interro** : pour un graphique à lire, fournir la courbe sans marquer le point de lecture ; pour un schéma à compléter, laisser les éléments manquants en pointillés
 
 > *"L'élève doit lire ou compléter le visuel — pas le recopier."*
 
-### Règle des tableaux de données (proactive)
-
-Dès qu'une question présente des valeurs numériques (mesures, prix, résultats), les regrouper dans un tableau **avant** la question — y compris dans les QCM.
-
-```html
-<!-- Dans le bloc de la question QCM, avant les options -->
-<table class="full" style="margin:6px 0 10px;font-size:.91em;max-width:340px">
-  <thead><tr><th>Machine</th><th>Niveau sonore</th></tr></thead>
-  <tbody>
-    <tr><td>Ponceuse orbitale</td><td>92 dB</td></tr>
-    <tr><td>Scie à format</td><td>100 dB</td></tr>
-    <tr><td>Défonceuse</td><td>108 dB</td></tr>
-  </tbody>
-</table>
-```
-
-Ne jamais ajouter une ligne "Protection requise ?" — c'est la question.
-
-### Vérification automatique
-
-Utiliser `python3 scripts/check_visuals.py` pour détecter les références orphelines avant publication.
-
 ### Règle absolue
 
-**Si une question porte sur un élément visuel (graphique, schéma, oscillogramme, figure géométrique), la figure SVG DOIT être présente dans la question.** Ne jamais écrire "le graphique ci-dessous montre..." sans fournir le graphique.
+**Si une question porte sur un élément visuel, la figure SVG DOIT être présente dans la question.** Ne jamais écrire "le graphique ci-dessous montre..." sans fournir le graphique.
 
 ### Quand une figure est OBLIGATOIRE
 
-**QCM maths — questions nécessitant une figure :**
-- Lecture graphique : "Quel est le maximum de f sur [a;b] ?" → fournir la courbe SVG
-- Identification de courbes : "Quelle courbe représente f(x) = x² ?" → fournir les 4 courbes en options
-- Statistiques : "Quelle est la médiane ?" → fournir le diagramme en boîte ou l'histogramme SVG
-- Géométrie : "Quelle est la mesure de l'angle ?" → fournir la figure cotée SVG
-- Suites : "Cette suite est-elle croissante ?" → fournir le nuage de points SVG
-- Probabilités : "Calculer P(A∩B)" → fournir l'arbre ou le tableau à double entrée
-
-**QCM physique-chimie — questions nécessitant une figure :**
-- Oscillogrammes : "La fréquence du signal est :" → fournir l'oscillogramme SVG
-- Circuits : "Quel est le schéma correct ?" → fournir les schémas de circuits SVG
-- Forces : "Quel vecteur représente le poids ?" → fournir le bilan des forces SVG
-- Optique : "L'angle de réfraction est :" → fournir le schéma rayon/normale SVG
-- Changements d'état : "La température de fusion est :" → fournir la courbe T(t) SVG
-- Spectres : "Cette lampe émet dans le :" → fournir le spectre SVG
-- Niveaux sonores : "Ce niveau est dangereux car :" → fournir l'échelle en dB SVG
-
-**Interro maths — questions nécessitant une figure :**
-- "À partir du graphique, déterminer..." → fournir le graphique SVG
-- "Compléter le tableau de variations à l'aide de la courbe" → fournir la courbe SVG
-- "Lire les coordonnées des points sur la figure" → fournir la figure SVG
-- Tout exercice de géométrie (triangles, Thalès, Pythagore) → fournir la figure cotée SVG
-
-**Interro physique-chimie — questions nécessitant une figure :**
-- "Légender le schéma" → fournir le schéma SVG à compléter
-- "Lire la valeur sur l'oscillogramme" → fournir l'oscillogramme SVG
-- "Compléter le schéma du circuit" → fournir le circuit SVG partiellement rempli
-- "Tracer le vecteur force" → fournir le schéma de la situation SVG
+Dès que la question porte sur : lecture graphique, courbe, oscillogramme, schéma électrique, bilan de forces, figure géométrique, spectre, tableau de mesures. Si la question cite un objet visuel, la figure SVG doit être dans la page.
 
 ### Style SVG à respecter
 
@@ -580,7 +492,7 @@ Pour les interros PC, utiliser `var(--p)` et `#7c3aed` (violet foncé) pour les 
 - [ ] **Tableaux de données** pour toute question avec valeurs numériques (avant les options)
 - [ ] **Les visuels montrent uniquement les données** — jamais la réponse ni le point de lecture
 - [ ] **Aucun Canvas animé** — Chart.js statique acceptable, animations Canvas interdites
-- [ ] `check_visuals.py` validé (aucune référence orpheline)
+- [ ] Aucune référence orpheline ("le graphique ci-dessous" sans figure)
 - [ ] diff.js inclus et fonctionnel
 - [ ] MathJax si formules
 - [ ] print.css inclus
@@ -601,7 +513,7 @@ Pour les interros PC, utiliser `var(--p)` et `#7c3aed` (violet foncé) pour les 
 - [ ] **Tableaux de données** pour toute question avec valeurs numériques (avant les sous-questions)
 - [ ] **Les visuels montrent uniquement les données** — jamais la réponse, le point de lecture, ou la valeur à trouver
 - [ ] **Aucun Chart.js / Canvas** — interro = papier imprimé, SVG statique uniquement
-- [ ] `check_visuals.py` validé (aucune référence orpheline)
+- [ ] Aucune référence orpheline ("le graphique ci-dessous" sans figure)
 - [ ] Rappels méthodologiques (`.meth`) pour le niveau socle uniquement
 - [ ] diff.js inclus
 - [ ] sujet.js inclus
