@@ -26,6 +26,15 @@
     <li>Un artisan utilise un miroir incliné à 45° pour renvoyer un faisceau laser horizontal vers le plafond. Quel est l'angle d'incidence sur le miroir ? Quel est l'angle entre le rayon incident et le rayon réfléchi ?</li>
     <li>Sur un chantier, un miroir plan est utilisé pour voir autour d'un coin de mur (angle de 90°). Quel angle d'inclinaison le miroir doit-il avoir pour renvoyer le faisceau à 90° ?</li>
   </ol>
+  <div class="zone-rep">
+    <label>Mes calculs :</label>
+    <span class="answer-line"></span>
+    <span class="answer-line"></span>
+    <span class="answer-line"></span>
+    <span class="answer-line"></span>
+  </div>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <strong>Correction :</strong>
     <ol>
@@ -35,15 +44,6 @@
       <li>Pour une déviation de 90°, il faut un angle d'incidence de 45° → miroir incliné à 45°.</li>
     </ol>
   </div>
-  <div class="zone-rep">
-    <label>Mes calculs :</label>
-    <span class="answer-line"></span>
-    <span class="answer-line"></span>
-    <span class="answer-line"></span>
-    <span class="answer-line"></span>
-  </div>
-
-  <button class="bc">Voir la correction</button>
 </div>
 
 <h2 style="border-left:4px solid var(--p);padding-left:12px">Capacité 2 — Réfraction et indice</h2>
@@ -57,6 +57,15 @@
     <li>Parmi les milieux donnés, lequel dévie le plus la lumière ? Justifiez.</li>
     <li>Un signalétiste coupe du plexiglas. Le rayon laser passe de l'air dans le plexiglas. Décrivez la déviation du rayon.</li>
   </ol>
+  <div class="zone-rep">
+    <label>Mes calculs :</label>
+    <span class="answer-line"></span>
+    <span class="answer-line"></span>
+    <span class="answer-line"></span>
+    <span class="answer-line"></span>
+  </div>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <strong>Correction :</strong>
     <ol>
@@ -66,15 +75,6 @@
       <li>Air → plexiglas (n = 1,49 > 1,00) : le rayon se rapproche de la normale à l'entrée dans le plexiglas.</li>
     </ol>
   </div>
-  <div class="zone-rep">
-    <label>Mes calculs :</label>
-    <span class="answer-line"></span>
-    <span class="answer-line"></span>
-    <span class="answer-line"></span>
-    <span class="answer-line"></span>
-  </div>
-
-  <button class="bc">Voir la correction</button>
 </div>
 
 <h2 style="border-left:4px solid var(--p);padding-left:12px">Capacité 3 — Décomposer la lumière blanche, spectre visible, IR et UV</h2>
@@ -87,6 +87,15 @@
     <li>Un panneau solaire infrarouge émet à 900 nm. Est-ce visible ? Quel effet thermique cela peut-il avoir sur la peau ?</li>
     <li>Pour voir les vraies couleurs d'un vernis bois, doit-on travailler sous lampe à incandescence (blanc chaud, 2700 K) ou sous éclairage LED blanc (5000 K) ? Justifiez.</li>
   </ol>
+  <div class="zone-rep">
+    <label>Mes calculs :</label>
+    <span class="answer-line"></span>
+    <span class="answer-line"></span>
+    <span class="answer-line"></span>
+    <span class="answer-line"></span>
+  </div>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <strong>Correction :</strong>
     <ol>
@@ -96,15 +105,6 @@
       <li>LED 5000 K (proche lumière du jour) : spectre complet → couleurs fidèles. Incandescence 2700 K : trop jaune, fausse la perception des teintes bleues et vertes.</li>
     </ol>
   </div>
-  <div class="zone-rep">
-    <label>Mes calculs :</label>
-    <span class="answer-line"></span>
-    <span class="answer-line"></span>
-    <span class="answer-line"></span>
-    <span class="answer-line"></span>
-  </div>
-
-  <button class="bc">Voir la correction</button>
 </div>
 
 <h2 style="border-left:4px solid var(--p);padding-left:12px">Capacité 4 — Synthèse additive des couleurs (RVB)</h2>
@@ -129,14 +129,6 @@
     <li>Un écran de signalétique LED affiche du bleu pur. Quelles LED sont allumées ?</li>
     <li>En synthèse soustractive (peintures), R + B + J = noir. Pourquoi le résultat est-il différent de la synthèse additive ?</li>
   </ol>
-  <div class="corr">
-    <strong>Correction :</strong>
-    <ol>
-      <li>Rouge / Jaune / Cyan / Magenta / Blanc / Noir.</li>
-      <li>Seule la LED bleue est allumée (R = 0, V = 0, B = 100%).</li>
-      <li>La synthèse soustractive (pigments) absorbe des longueurs d'onde. En mélangeant les pigments, chaque couleur absorbe une partie du spectre : au total, tout est absorbé → noir. La synthèse additive ajoute des lumières : l'addition de toutes les couleurs donne du blanc.</li>
-    </ol>
-  </div>
   <div class="zone-rep">
     <label>Mes calculs :</label>
     <span class="answer-line"></span>
@@ -145,11 +137,26 @@
     <span class="answer-line"></span>
   </div>
 
-  <button class="bc">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>Correction :</strong>
+    <ol>
+      <li>Rouge / Jaune / Cyan / Magenta / Blanc / Noir.</li>
+      <li>Seule la LED bleue est allumée (R = 0, V = 0, B = 100%).</li>
+      <li>La synthèse soustractive (pigments) absorbe des longueurs d'onde. En mélangeant les pigments, chaque couleur absorbe une partie du spectre : au total, tout est absorbé → noir. La synthèse additive ajoute des lumières : l'addition de toutes les couleurs donne du blanc.</li>
+    </ol>
+  </div>
 </div>
 
 </div>
 <script src="../../../nav.js"></script>
 <script src="../../../comp.js"></script>
+<script>
+function toggle(btn){
+  var c=btn.nextElementSibling;
+  if(c.style.display==='block'){c.style.display='none';btn.textContent='Voir la correction';}
+  else{c.style.display='block';btn.textContent='Masquer la correction';}
+}
+</script>
 </body>
 </html>

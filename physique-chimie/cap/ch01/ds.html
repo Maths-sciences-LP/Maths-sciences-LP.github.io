@@ -37,6 +37,7 @@
       d) Un EPI doit être adapté au risque identifié. &nbsp;&nbsp;VRAI / FAUX
     </li>
   </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <strong>Correction :</strong>
     <ol>
@@ -46,7 +47,6 @@
       <li>a) FAUX — b) FAUX — c) VRAI — d) VRAI.</li>
     </ol>
   </div>
-  <button class="bc">Voir la correction</button>
 </div>
 
 <!-- ========= STANDARD ========= -->
@@ -64,6 +64,7 @@
     <li>(2 pts) Lors d'un défaut d'isolation, quel dispositif protège la personne ? Pourquoi ?</li>
     <li>(2 pts) En atelier de menuiserie, une scie circulaire produit 102 dB. Quelle protection auditive est obligatoire et à partir de quel seuil ?</li>
   </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <strong>Correction :</strong>
     <ol>
@@ -73,7 +74,6 @@
       <li>Port de casque antibruit ou bouchons d'oreilles obligatoire dès 85 dB.</li>
     </ol>
   </div>
-  <button class="bc">Voir la correction</button>
 </div>
 
 <!-- ========= APPROFONDISSEMENT ========= -->
@@ -86,6 +86,7 @@
     <li>(2 pts) Pour le laser classe 4 : quelle est la différence de danger par rapport à un laser classe 2 ? L'absence de lunettes est-elle un oubli sans conséquence ? Justifiez.</li>
     <li>(2 pts) Les phrases H de l'acétone indiquent H225 (très inflammable), H319 (irritation oculaire), H336 (somnolence). Listez les mesures de prévention techniques et les EPI adaptés, en vous appuyant sur les phrases H.</li>
   </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <strong>Correction :</strong>
     <ol>
@@ -94,7 +95,6 @@
       <li>Mesures techniques : ventilation forcée ou aspiration des vapeurs, limitation de la quantité de solvant. EPI : masque à cartouche organique (H336), lunettes anti-projections (H319), gants résistants aux solvants. Précaution H225 : écarter toute source d'ignition (flamme, étincelle).</li>
     </ol>
   </div>
-  <button class="bc">Voir la correction</button>
 </div>
 
 <!-- ========= EXERCICE COMMUN ========= -->
@@ -113,6 +113,7 @@
     <li>(2 pts) Pourquoi les chiffons imprégnés de vernis ne peuvent-ils pas être mis dans la poubelle ordinaire ?</li>
     <li>(1 pt) Que risque-t-on à verser du white-spirit dans l'évier ?</li>
   </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <strong>Correction :</strong>
     <ol>
@@ -121,11 +122,13 @@
       <li>Pollution des eaux, risque d'explosion dans les canalisations (vapeurs inflammables). Interdit réglementairement.</li>
     </ol>
   </div>
-  <button class="bc">Voir la correction</button>
 </div>
 
 </div>
 <script src="../../../nav.js"></script>
 <script src="../../../diff.js"></script>
+<script>
+function toggle(btn){var c=btn.nextElementSibling;if(c.style.display==='block'){c.style.display='none';btn.textContent='Voir la correction';}else{c.style.display='block';btn.textContent='Masquer la correction';}}
+</script>
 </body>
 </html>

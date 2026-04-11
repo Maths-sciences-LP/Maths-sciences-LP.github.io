@@ -47,7 +47,7 @@
   <p><strong>4.</strong> Calculer le coût au tarif de 0,20 €/kWh :</p>
   <p>Coût = \(E \times \text{tarif} = ....... \times ....... = ....... \text{ €}\)</p>
 
-  <button class="bc">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p><strong>1.</strong> La <em>tension</em> \(U\) = 230 <em>volts</em> est la <em>tension</em> aux bornes de la résistance. La <em>puissance</em> \(P\) = 2 500 <em>watts</em> est la <em>puissance</em> de la résistance.</p>
     <p><strong>2.</strong> \(I = \dfrac{2\,500}{230} \approx 10{,}9 \text{ A}\)</p>
@@ -66,7 +66,7 @@
     <li>\(45 \text{ min} = ....... \text{ h}\)</li>
     <li>Un radiateur de 1 000 W fonctionne 3 h. \(E = ....... \text{ kWh} = ....... \text{ J}\)</li>
   </ol>
-  <button class="bc">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <ol>
       <li>\(3 \times 3\,600\,000 = 10\,800\,000 \text{ J}\)</li>
@@ -88,7 +88,7 @@
   <p><strong>1.</strong> Calculer l'énergie consommée pendant le mois de mars.</p>
   <p><strong>2.</strong> Calculer le coût au tarif de 0,22 €/kWh.</p>
   <p><strong>3.</strong> Donner une raison qui explique pourquoi la consommation est élevée en mars.</p>
-  <button class="bc">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p><strong>1.</strong> \(E = 9\,180 - 8\,520 = 660 \text{ kWh}\)</p>
     <p><strong>2.</strong> Coût = \(660 \times 0{,}22 = 145{,}20 \text{ €}\)</p>
@@ -117,7 +117,7 @@
     <li>Calculer l'énergie dissipée (perdue) en une journée, en kWh. (1,5 pt)</li>
     <li>Calculer le coût mensuel de fonctionnement (30 jours) au tarif de 0,22 €/kWh. (1,5 pt)</li>
   </ol>
-  <button class="bc">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <ol>
       <li>\(I = \dfrac{P}{U} = \dfrac{1\,800}{230} \approx 7{,}8 \text{ A}\)</li>
@@ -150,7 +150,7 @@
     <li>Calculer le coût annuel d'électricité pour chaque solution. (2 pts)</li>
     <li>Quelle solution conseillez-vous ? Justifier en calculant le temps de retour sur investissement. (1 pt)</li>
   </ol>
-  <button class="bc">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <ol>
       <li>Solution A : \(I = \frac{3\,000}{230} \approx 13 \text{ A}\) ; Solution B : \(I = \frac{2\,500}{230} \approx 10{,}9 \text{ A}\)</li>
@@ -188,7 +188,7 @@
     <li>Le technicien propose de remplacer les 3 climatiseurs classiques (COP = 2,8) par 3 climatiseurs inverter de même puissance frigorifique mais avec un COP de 4,5. Calculer la puissance électrique des nouveaux climatiseurs et l'économie annuelle. (2 pts)</li>
     <li>Les nouveaux climatiseurs coûtent 12 000 € au total (pose comprise). Calculer le temps de retour sur investissement. Conclure sur la pertinence de cet investissement. (2 pts)</li>
   </ol>
-  <button class="bc">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <ol>
       <li>
@@ -231,7 +231,7 @@
     <li>Calculer le coût annuel en tarif HC/HP en supposant que le chauffe-eau et le lave-linge sont programmés en heures creuses.</li>
     <li>Quel tarif est le plus avantageux ? De combien ?</li>
   </ol>
-  <button class="bc">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <ol>
       <li>
@@ -262,5 +262,8 @@
 </div>
 <script src="../../../nav.js"></script>
 <script src="../../../diff.js"></script>
+<script>
+function toggle(btn){var c=btn.nextElementSibling;if(c.style.display==='block'){c.style.display='none';btn.textContent='Voir la correction';}else{c.style.display='block';btn.textContent='Masquer la correction';}}
+</script>
 </body>
 </html>

@@ -23,7 +23,7 @@ canvas.graf{display:block;margin:12px auto;border-radius:10px;border:2px solid #
 <header>
   <h1>Chapitre 7 — Notion de fonction</h1>
   <p class="sous-titre">Exercices &nbsp;|&nbsp; Seconde Bac Pro MAMA &nbsp;|&nbsp; Mathématiques</p>
-  <p class="maj">Dernière mise à jour : 22 mars 2026</p>
+  <p class="maj">Dernière mise à jour : 10 avril 2026, 13:00</p>
 </header>
 
 <div style="background:#ebf5ff;border-radius:10px;padding:16px 20px;border:1px solid #93c5fd;margin-bottom:24px;font-size:.93em">
@@ -935,23 +935,22 @@ canvas.graf{display:block;margin:12px auto;border-radius:10px;border:2px solid #
       <!-- Courbe f(x)=x-1: sx=200+x*50, sy=200-fx*50 -->
       <!-- x=-2:sx=100,f=-3,sy=350(clip); x=-1:sx=150,f=-2,sy=300; x=0:sx=200,f=-1,sy=250 -->
       <!-- x=1:sx=250,f=0,sy=200; x=2:sx=300,f=1,sy=150; x=3:sx=350,f=2,sy=100; x=4:sx=400,f=3,sy=50 -->
-      <polyline points="100,300 150,250 200,200 250,150 300,100 350,50 400,0"
+      <polyline points="150,300 200,250 250,200 300,150 350,100 400,50"
                 stroke="#0056b3" stroke-width="2.5" fill="none" stroke-linecap="round"/>
       <text x="368" y="38" font-size="12" fill="#0056b3" font-style="italic" font-weight="bold">f(x)=x−1</text>
       <!-- Points annotés -->
-      <circle cx="300" cy="100" r="5" fill="#0056b3"/>
-      <circle cx="250" cy="150" r="5" fill="#0056b3"/>
+      <circle cx="300" cy="150" r="5" fill="#0056b3"/>
+      <circle cx="250" cy="200" r="5" fill="#0056b3"/>
       <circle cx="200" cy="250" r="5" fill="#0056b3"/>
       <!-- Lecture x=3 → f(3)=2 en rouge -->
-      <line x1="350" y1="50" x2="350" y2="200" stroke="#c53030" stroke-width="1.5" stroke-dasharray="5,4"/>
-      <line x1="200" y1="50" x2="350" y2="50" stroke="#c53030" stroke-width="1.5" stroke-dasharray="5,4"/>
-      <circle cx="350" cy="50" r="6" fill="#c53030"/>
-      <text x="356" y="45" font-size="11" fill="#c53030" font-weight="bold">(3;2)</text>
+      <line x1="350" y1="100" x2="350" y2="200" stroke="#c53030" stroke-width="1.5" stroke-dasharray="5,4"/>
+      <line x1="200" y1="100" x2="350" y2="100" stroke="#c53030" stroke-width="1.5" stroke-dasharray="5,4"/>
+      <circle cx="350" cy="100" r="6" fill="#c53030"/>
+      <text x="356" y="95" font-size="11" fill="#c53030" font-weight="bold">(3;2)</text>
       <!-- Lecture x=1 → f(1)=0 en vert -->
-      <line x1="250" y1="200" x2="250" y2="150" stroke="#2f855a" stroke-width="1.5" stroke-dasharray="5,4"/>
-      <line x1="200" y1="150" x2="250" y2="150" stroke="#2f855a" stroke-width="1.5" stroke-dasharray="5,4"/>
-      <circle cx="250" cy="150" r="6" fill="#2f855a"/>
-      <text x="256" y="145" font-size="11" fill="#2f855a" font-weight="bold">(1;0)</text>
+      <line x1="200" y1="200" x2="250" y2="200" stroke="#2f855a" stroke-width="1.5" stroke-dasharray="5,4"/>
+      <circle cx="250" cy="200" r="6" fill="#2f855a"/>
+      <text x="256" y="195" font-size="11" fill="#2f855a" font-weight="bold">(1;0)</text>
     </svg>
     <div class="svg-leg">Courbe de \(f(x)=x-1\). Les tirets rouges montrent \(f(3)=2\), les verts montrent \(f(1)=0\).</div>
   </div>

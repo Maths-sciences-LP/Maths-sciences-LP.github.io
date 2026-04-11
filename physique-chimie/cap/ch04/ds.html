@@ -40,6 +40,7 @@
     </li>
     <li>(2 pts) On ajoute de l'eau à un décapant de pH 2. Le pH va : ☐ augmenter ☐ diminuer ☐ rester à 2. Expliquez en une phrase.</li>
   </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <strong>Correction :</strong>
     <ol>
@@ -48,7 +49,6 @@
       <li>Augmenter. La dilution d'une solution acide rapproche son pH de 7.</li>
     </ol>
   </div>
-  <button class="bc">Voir la correction</button>
 </div>
 
 <!-- STANDARD -->
@@ -61,6 +61,7 @@
     <li>(2 pts) On prépare 1,5 L d'une solution de nettoyage à concentration massique \(C_m = 20\) g/L. Quelle masse de produit faut-il peser ?</li>
     <li>(2 pts) On dissout 36 g de produit désinfectant dans 0,4 L d'eau. Calculez la concentration massique.</li>
   </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <strong>Correction :</strong>
     <ol>
@@ -70,7 +71,6 @@
       <li>\(C_m = m/V = 36/0{,}4 = 90\) g/L.</li>
     </ol>
   </div>
-  <button class="bc">Voir la correction</button>
 </div>
 
 <!-- APPRO -->
@@ -83,6 +83,7 @@
     <li>(2 pts) Calculez le volume \(V_1\) de solution mère à prélever. (Relation : \(C_{m1} × V_1 = C_{m2} × V_2\).)</li>
     <li>(2 pts) Rédigez le protocole de dilution pour réaliser cette préparation de façon sécurisée, en respectant la règle absolue pour les acides.</li>
   </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <strong>Correction :</strong>
     <ol>
@@ -91,7 +92,6 @@
       <li>Protocole : (a) remplir une fiole jaugée de 2 L à moitié avec de l'eau distillée ; (b) prélever 100 mL de solution mère avec une pipette ; (c) verser l'acide dans l'eau (JAMAIS l'inverse → exothermique) ; (d) compléter avec de l'eau distillée jusqu'au trait de jauge 2 L ; (e) boucher et agiter par retournements. Porter gants et lunettes.</li>
     </ol>
   </div>
-  <button class="bc">Voir la correction</button>
 </div>
 
 <!-- COMMUN -->
@@ -103,6 +103,7 @@
     <li>(2 pts) La rouille est de l'oxyde de fer : Fe₂O₃. Combien d'atomes de chaque élément ? Quel est le nombre total d'atomes dans cette molécule ?</li>
     <li>(1 pt) Le plâtre est du sulfate de calcium (CaSO₄). Dénombrez les atomes de chaque élément.</li>
   </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <strong>Correction :</strong>
     <ol>
@@ -111,11 +112,13 @@
       <li>CaSO₄ : 1 Ca, 1 S, 4 O = 6 atomes au total.</li>
     </ol>
   </div>
-  <button class="bc">Voir la correction</button>
 </div>
 
 </div>
 <script src="../../../nav.js"></script>
 <script src="../../../diff.js"></script>
+<script>
+function toggle(btn){var c=btn.nextElementSibling;if(c.style.display==='block'){c.style.display='none';btn.textContent='Voir la correction';}else{c.style.display='block';btn.textContent='Masquer la correction';}}
+</script>
 </body>
 </html>

@@ -42,7 +42,7 @@
 
   <p><strong>4.</strong> Cette énergie perdue est-elle utile ? Pourquoi ?</p>
 
-  <button class="bc">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p><strong>1.</strong> Lorsqu'un <em>courant</em> traverse un conducteur qui possède une <em>résistance</em>, le conducteur s'échauffe. Ce phénomène s'appelle l'<em>effet Joule</em> : l'énergie électrique est transformée en <em>chaleur</em>.</p>
     <p><strong>2.</strong> \(P_J = 0{,}8 \times 15^2 = 0{,}8 \times 225 = 180 \text{ W}\)</p>
@@ -66,7 +66,7 @@
   <p><strong>4.</strong> En admettant que le transformateur est idéal (\(P_1 = P_2\)), calculer le courant au secondaire :</p>
   <p>\(I_2 = \dfrac{P_2}{U_2} = \dfrac{.......}{.......} = ....... \text{ A}\)</p>
 
-  <button class="bc">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p><strong>1.</strong> \(U_2 = 230 \text{ V} < U_1 = 20\,000 \text{ V}\). C'est un transformateur <strong>abaisseur</strong>.</p>
     <p><strong>2.</strong> \(m = \dfrac{230}{20\,000} = 0{,}0115\)</p>
@@ -88,7 +88,7 @@
     </tbody>
   </table>
   <p>Expliquer en une phrase pourquoi on utilise la haute tension pour le transport.</p>
-  <button class="bc">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p>Transport longue distance → <strong>400 kV</strong><br>
     Distribution dans les quartiers → <strong>20 kV</strong><br>
@@ -112,7 +112,7 @@
     <li>Exprimer les pertes en pourcentage de la puissance totale. (1 pt)</li>
     <li>L'atelier fonctionne 8 h par jour, 250 jours par an. Calculer le coût annuel des pertes au tarif de 0,22 €/kWh. (2 pts)</li>
   </ol>
-  <button class="bc">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <ol>
       <li>\(R = 1{,}7 \times 10^{-8} \times \dfrac{80}{6 \times 10^{-6}} = 0{,}227\;\Omega\)</li>
@@ -140,7 +140,7 @@
     <li>Si le courant était transporté en 400 V depuis le réseau (sans transformateur) sur un câble de résistance 2 \(\Omega\), calculer les pertes Joule. (1,5 pt)</li>
     <li>Comparer avec les pertes en 20 kV sur le même câble. Conclure. (1,5 pt)</li>
   </ol>
-  <button class="bc">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <ol>
       <li>\(P = 3 \times 5 + 4 + 6 = 25 \text{ kW}\)</li>
@@ -185,7 +185,7 @@
     <li>Proposer deux mesures pour réduire encore les pertes en ligne (hors changement de tension). (1,5 pt)</li>
   </ol>
 
-  <button class="bc">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p><strong>Partie A</strong></p>
     <ol>
@@ -215,5 +215,8 @@
 </div>
 <script src="../../../nav.js"></script>
 <script src="../../../diff.js"></script>
+<script>
+function toggle(btn){var c=btn.nextElementSibling;if(c.style.display==='block'){c.style.display='none';btn.textContent='Voir la correction';}else{c.style.display='block';btn.textContent='Masquer la correction';}}
+</script>
 </body>
 </html>

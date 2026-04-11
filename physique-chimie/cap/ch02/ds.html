@@ -42,6 +42,7 @@
       Le voltmètre se branche (entourez) : en <strong>série / dérivation</strong>.
     </li>
   </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <strong>Correction :</strong>
     <ol>
@@ -50,7 +51,6 @@
       <li>Ampèremètre : en série. Voltmètre : en dérivation.</li>
     </ol>
   </div>
-  <button class="bc">Voir la correction</button>
 </div>
 
 <!-- ========= STANDARD ========= -->
@@ -64,6 +64,7 @@
     <li>(2 pts) La plaque signalétique d'un radiateur indique 230 V~ 50 Hz — 1 200 W. Calculez l'intensité du courant consommé (relation \(P = U \times I\)).</li>
     <li>(2 pts) La tension du secteur est 230 V efficace. Calculez la tension maximale \(U_{\max}\) sachant que \(U_{\max} = U_{\text{eff}} \times \sqrt{2}\) avec \(\sqrt{2} \approx 1{,}41\).</li>
   </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <strong>Correction :</strong>
     <ol>
@@ -73,7 +74,6 @@
       <li>\(U_{\max} = 230 × 1{,}41 \approx 325\) V.</li>
     </ol>
   </div>
-  <button class="bc">Voir la correction</button>
 </div>
 
 <!-- ========= APPROFONDISSEMENT ========= -->
@@ -86,6 +86,7 @@
     <li>(2 pts) Calculez la période \(T\) puis la fréquence \(f\).</li>
     <li>(2 pts) Calculez \(U_{\text{eff}} = U_{\max}/\sqrt{2}\). Ce résultat est-il cohérent avec la tension du secteur en France ?</li>
   </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <strong>Correction :</strong>
     <ol>
@@ -94,7 +95,6 @@
       <li>\(U_{\text{eff}} = 325/1{,}414 \approx 230\) V. Oui, cohérent avec le secteur français (230 V / 50 Hz).</li>
     </ol>
   </div>
-  <button class="bc">Voir la correction</button>
 </div>
 
 <!-- COMMUN -->
@@ -106,6 +106,7 @@
     <li>(2 pts) Une LDR est-elle un dipôle ohmique ? Justifiez (la résistance varie-t-elle selon les conditions ?).</li>
     <li>(2 pts) La grandeur d'entrée de ce capteur est ___ et la grandeur de sortie est ___.</li>
   </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <strong>Correction :</strong>
     <ol>
@@ -114,11 +115,13 @@
       <li>Grandeur d'entrée : éclairement (lux). Grandeur de sortie : résistance (Ω).</li>
     </ol>
   </div>
-  <button class="bc">Voir la correction</button>
 </div>
 
 </div>
 <script src="../../../nav.js"></script>
 <script src="../../../diff.js"></script>
+<script>
+function toggle(btn){var c=btn.nextElementSibling;if(c.style.display==='block'){c.style.display='none';btn.textContent='Voir la correction';}else{c.style.display='block';btn.textContent='Masquer la correction';}}
+</script>
 </body>
 </html>

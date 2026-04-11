@@ -32,9 +32,6 @@
       <tr><td>Congélateur</td><td>−18</td><td></td></tr>
     </tbody>
   </table>
-  <div class="corr">
-    <strong>Correction :</strong> 65 → 338 K / 250 → 523 K / 100 → 373 K / 4 → 277 K / 0 K → −273 °C / −18 → 255 K.
-  </div>
   <div class="zone-rep">
     <label>Mes calculs :</label>
     <span class="answer-line"></span>
@@ -43,7 +40,10 @@
     <span class="answer-line"></span>
   </div>
 
-  <button class="bc">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>Correction :</strong> 65 → 338 K / 250 → 523 K / 100 → 373 K / 4 → 277 K / 0 K → −273 °C / −18 → 255 K.
+  </div>
 </div>
 
 <h2 style="border-left:4px solid var(--p);padding-left:12px">Capacité 2 — Identifier et choisir un capteur de température</h2>
@@ -60,9 +60,6 @@
       <tr><td>Vérification température eau rinçage</td><td>20 à 60 °C</td><td></td><td></td></tr>
     </tbody>
   </table>
-  <div class="corr">
-    <strong>Correction :</strong> Thermostat atelier → CTN (plage adaptée, simple) / Brasure haute T → thermocouple (plage jusqu'à 2000 °C) / Four industriel → Pt100 ou thermocouple (précision + plage) / Eau rinçage → CTN ou Pt100 (températures modérées).
-  </div>
   <div class="zone-rep">
     <label>Mes calculs :</label>
     <span class="answer-line"></span>
@@ -71,7 +68,10 @@
     <span class="answer-line"></span>
   </div>
 
-  <button class="bc">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>Correction :</strong> Thermostat atelier → CTN (plage adaptée, simple) / Brasure haute T → thermocouple (plage jusqu'à 2000 °C) / Four industriel → Pt100 ou thermocouple (précision + plage) / Eau rinçage → CTN ou Pt100 (températures modérées).
+  </div>
 </div>
 
 <h2 style="border-left:4px solid var(--p);padding-left:12px">Capacité 3 — Équilibre thermique, chaleur et température</h2>
@@ -83,14 +83,6 @@
     <li>Une pièce de métal à 450 °C est trempée dans l'eau à 15 °C. La température finale est 22 °C. Qui a cédé de la chaleur ? Qui en a reçu ? Y a-t-il eu transfert de matière ?</li>
     <li>Expliquez en une phrase la différence entre chaleur (Q, en joules) et température (θ, en °C).</li>
   </ol>
-  <div class="corr">
-    <strong>Correction :</strong>
-    <ol>
-      <li>Le panneau se refroidit, l'air de l'atelier se réchauffe légèrement. Température finale intermédiaire (proche de 20 °C car l'air est en grande quantité).</li>
-      <li>La pièce métallique a cédé de la chaleur, l'eau en a reçu. Il n'y a pas eu transfert de matière, seulement d'énergie.</li>
-      <li>La température mesure l'état thermique d'un corps (°C ou K) ; la chaleur est l'énergie transférée d'un corps chaud vers un corps froid (J).</li>
-    </ol>
-  </div>
   <div class="zone-rep">
     <label>Mes calculs :</label>
     <span class="answer-line"></span>
@@ -99,7 +91,15 @@
     <span class="answer-line"></span>
   </div>
 
-  <button class="bc">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>Correction :</strong>
+    <ol>
+      <li>Le panneau se refroidit, l'air de l'atelier se réchauffe légèrement. Température finale intermédiaire (proche de 20 °C car l'air est en grande quantité).</li>
+      <li>La pièce métallique a cédé de la chaleur, l'eau en a reçu. Il n'y a pas eu transfert de matière, seulement d'énergie.</li>
+      <li>La température mesure l'état thermique d'un corps (°C ou K) ; la chaleur est l'énergie transférée d'un corps chaud vers un corps froid (J).</li>
+    </ol>
+  </div>
 </div>
 
 <h2 style="border-left:4px solid var(--p);padding-left:12px">Capacité 4 — Changements d'état corps pur et mélange</h2>
@@ -115,14 +115,6 @@
       c) La glace fond dans un bac de refroidissement de machine.<br>
       d) La vapeur d'eau se condense sur la vitre froide de l'atelier.</li>
   </ol>
-  <div class="corr">
-    <strong>Correction :</strong>
-    <ol>
-      <li>Palier horizontal à la température de fusion : la température reste constante pendant tout le changement d'état.</li>
-      <li>Pour un mélange : pas de palier net, la température varie progressivement. Les composants ont des températures de fusion différentes, le changement se fait sur une plage de températures.</li>
-      <li>a) Vaporisation / b) Solidification / c) Fusion / d) Liquéfaction.</li>
-    </ol>
-  </div>
   <div class="zone-rep">
     <label>Mes calculs :</label>
     <span class="answer-line"></span>
@@ -131,11 +123,26 @@
     <span class="answer-line"></span>
   </div>
 
-  <button class="bc">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>Correction :</strong>
+    <ol>
+      <li>Palier horizontal à la température de fusion : la température reste constante pendant tout le changement d'état.</li>
+      <li>Pour un mélange : pas de palier net, la température varie progressivement. Les composants ont des températures de fusion différentes, le changement se fait sur une plage de températures.</li>
+      <li>a) Vaporisation / b) Solidification / c) Fusion / d) Liquéfaction.</li>
+    </ol>
+  </div>
 </div>
 
 </div>
 <script src="../../../nav.js"></script>
 <script src="../../../comp.js"></script>
+<script>
+function toggle(btn){
+  var c=btn.nextElementSibling;
+  if(c.style.display==='block'){c.style.display='none';btn.textContent='Voir la correction';}
+  else{c.style.display='block';btn.textContent='Masquer la correction';}
+}
+</script>
 </body>
 </html>

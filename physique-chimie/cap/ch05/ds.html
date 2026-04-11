@@ -37,6 +37,7 @@
       — Un son est une vibration _______________ qui se propage dans un milieu _______________.
     </li>
   </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <strong>Correction :</strong>
     <ol>
@@ -45,7 +46,6 @@
       <li>85 dB / 25 à 37 dB / mécanique / matériel.</li>
     </ol>
   </div>
-  <button class="bc">Voir la correction</button>
 </div>
 
 <!-- STANDARD -->
@@ -58,6 +58,7 @@
     <li>(2 pts) On teste deux matériaux isolants pour une paroi d'atelier : la laine de roche réduit le bruit de 28 dB et le panneau de mousse de 18 dB. Lequel est plus efficace ? Si le bruit initial est 100 dB, quel niveau passe à travers chaque matériau ?</li>
     <li>(2 pts) Un capteur piézoélectrique est utilisé pour détecter des vibrations dans une machine. En mode récepteur, que convertit-il ? Donnez une application concrète en atelier.</li>
   </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <strong>Correction :</strong>
     <ol>
@@ -67,7 +68,6 @@
       <li>En mode récepteur : convertit une vibration mécanique en signal électrique. Application : détection de chocs sur une machine, buzzer d'alarme.</li>
     </ol>
   </div>
-  <button class="bc">Voir la correction</button>
 </div>
 
 <!-- APPRO -->
@@ -80,6 +80,7 @@
     <li>(2 pts) Un casque antibruit atténue de 26 dB. Pour chaque machine, calculez le niveau perçu avec le casque. Le résultat est-il en deçà de la valeur limite ?</li>
     <li>(2 pts) Pour la scie circulaire : proposez deux solutions collectives (réduction à la source) et une solution individuelle (EPI). Expliquez pourquoi les solutions collectives sont prioritaires selon le principe de prévention.</li>
   </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <strong>Correction :</strong>
     <ol>
@@ -88,7 +89,6 @@
       <li>Solutions collectives : encoffrement des machines bruyantes (cabine insonorisée), plots anti-vibrations sous les machines. Solution individuelle : casque ou bouchons. Priorité collective : réduire le risque à la source est plus fiable que de compter sur le port correct de l'EPI.</li>
     </ol>
   </div>
-  <button class="bc">Voir la correction</button>
 </div>
 
 <!-- COMMUN -->
@@ -100,6 +100,7 @@
     <li>(2 pts) 88 dB : est-ce au-dessus ou en dessous du seuil de dangerosité ? Quelle mesure de protection s'impose ?</li>
     <li>(2 pts) Le peintre ferme une porte (atténuation : 20 dB). Le niveau passe-t-il en dessous du seuil de danger ? Quel niveau reste-t-il ?</li>
   </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <strong>Correction :</strong>
     <ol>
@@ -108,11 +109,13 @@
       <li>88 − 20 = 68 dB < 85 dB → oui, en dessous. Niveau résiduel : 68 dB.</li>
     </ol>
   </div>
-  <button class="bc">Voir la correction</button>
 </div>
 
 </div>
 <script src="../../../nav.js"></script>
 <script src="../../../diff.js"></script>
+<script>
+function toggle(btn){var c=btn.nextElementSibling;if(c.style.display==='block'){c.style.display='none';btn.textContent='Voir la correction';}else{c.style.display='block';btn.textContent='Masquer la correction';}}
+</script>
 </body>
 </html>

@@ -46,7 +46,7 @@
 
   <p><strong>3.</strong> Citer deux signes d'une combustion incomplète sur une chaudière.</p>
 
-  <button class="bc">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p><strong>1.</strong> Sommet 1 : <em>combustible</em>. Sommet 2 : <em>comburant</em>. Sommet 3 : <em>énergie d'activation</em>.</p>
     <p><strong>2.</strong> La combustion <em>complète</em> produit uniquement du CO₂ et de l'H₂O. La combustion <em>incomplète</em> produit du CO, un gaz <em>incolore</em> et <em>inodore</em> (mortel). La flamme est de couleur <em>bleue</em>.</p>
@@ -73,7 +73,7 @@
     </tbody>
   </table>
 
-  <button class="bc">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p><strong>1.</strong> Réactifs : propane + dioxygène. Produits : dioxyde de carbone + eau.</p>
     <p><strong>2.</strong> \(\text{C}_3\text{H}_8 + 5\,\text{O}_2 \longrightarrow 3\,\text{CO}_2 + 4\,\text{H}_2\text{O}\)</p>
@@ -98,7 +98,7 @@
   <p><strong>2.</strong> Calculer la masse annuelle de CO₂ :</p>
   <p>\(m_{\text{CO}_2} = 500 \times ....... = ....... \text{ kg}\)</p>
   <p><strong>3.</strong> Exprimer ce résultat en tonnes.</p>
-  <button class="bc">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p><strong>1.</strong> \(\text{Facteur} = \dfrac{44}{16} = 2{,}75\)</p>
     <p><strong>2.</strong> \(m_{\text{CO}_2} = 500 \times 2{,}75 = 1\,375 \text{ kg}\)</p>
@@ -126,7 +126,7 @@
     <li>Calculer la puissance perdue. Sous quelle forme cette énergie est-elle dissipée ? (1,5 pt)</li>
     <li>L'analyseur de fumées indique 120 ppm de CO. La norme impose un maximum de 50 ppm. Que doit faire le technicien ? Citer au moins deux actions. (1,5 pt)</li>
   </ol>
-  <button class="bc">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <ol>
       <li>\(\text{CH}_4 + 2\,\text{O}_2 \longrightarrow \text{CO}_2 + 2\,\text{H}_2\text{O}\)</li>
@@ -149,7 +149,7 @@
     <li>Calculer la masse de CO₂ émise par la combustion de la bouteille entière. (1 pt)</li>
     <li>Le pouvoir calorifique du butane est de 45 MJ/kg. Calculer l'énergie totale libérée par la bouteille (en kWh). (1 pt)</li>
   </ol>
-  <button class="bc">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <ol>
       <li>\(2\,\text{C}_4\text{H}_{10} + 13\,\text{O}_2 \longrightarrow 8\,\text{CO}_2 + 10\,\text{H}_2\text{O}\)</li>
@@ -197,7 +197,7 @@
     <li>Établir un tableau comparatif (coût, CO₂) et rédiger une conclusion argumentée. (2 pts)</li>
   </ol>
 
-  <button class="bc">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p><strong>Partie A</strong></p>
     <ol>
@@ -242,5 +242,8 @@
 </div>
 <script src="../../../nav.js"></script>
 <script src="../../../diff.js"></script>
+<script>
+function toggle(btn){var c=btn.nextElementSibling;if(c.style.display==='block'){c.style.display='none';btn.textContent='Voir la correction';}else{c.style.display='block';btn.textContent='Masquer la correction';}}
+</script>
 </body>
 </html>
