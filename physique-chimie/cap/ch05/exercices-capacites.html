@@ -30,9 +30,6 @@
       <tr><td>Bruit toupie</td><td>0,1 ms/div</td><td>1,5</td><td></td><td></td></tr>
     </tbody>
   </table>
-  <div class="corr">
-    <strong>Correction :</strong> Diapason : T = 4,5 × 0,5 = 2,25 ms → f = 1/0,00225 ≈ 444 Hz (proche du La 440 Hz) / Alarme : T = 2 × 0,2 = 0,4 ms → f = 2500 Hz / Toupie : T = 1,5 × 0,1 = 0,15 ms → f ≈ 6667 Hz.
-  </div>
   <div class="zone-rep">
     <label>Mes calculs :</label>
     <span class="answer-line"></span>
@@ -41,7 +38,10 @@
     <span class="answer-line"></span>
   </div>
 
-  <button class="bc">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <strong>Correction :</strong> Diapason : T = 4,5 × 0,5 = 2,25 ms → f = 1/0,00225 ≈ 444 Hz (proche du La 440 Hz) / Alarme : T = 2 × 0,2 = 0,4 ms → f = 2500 Hz / Toupie : T = 1,5 × 0,1 = 0,15 ms → f ≈ 6667 Hz.
+  </div>
 </div>
 
 <div class="exo">

@@ -131,6 +131,15 @@
     <li>Une solution à \(C_m = 80\) g/L est diluée 4 fois (son volume est multiplié par 4). Quelle est la nouvelle concentration ?</li>
     <li>Rédigez la règle de sécurité absolue à respecter lors d'une dilution d'acide.</li>
   </ol>
+  <div class="zone-rep">
+    <label>Mes calculs :</label>
+    <span class="answer-line"></span>
+    <span class="answer-line"></span>
+    <span class="answer-line"></span>
+    <span class="answer-line"></span>
+  </div>
+
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <strong>Correction :</strong>
     <ol>
@@ -140,19 +149,17 @@
       <li>Toujours verser l'acide dans l'eau, jamais l'inverse. La réaction est exothermique et des projections dangereuses peuvent se produire.</li>
     </ol>
   </div>
-  <div class="zone-rep">
-    <label>Mes calculs :</label>
-    <span class="answer-line"></span>
-    <span class="answer-line"></span>
-    <span class="answer-line"></span>
-    <span class="answer-line"></span>
-  </div>
-
-  <button class="bc">Voir la correction</button>
 </div>
 
 </div>
 <script src="../../../nav.js"></script>
 <script src="../../../comp.js"></script>
+<script>
+function toggle(btn){
+  var c=btn.nextElementSibling;
+  if(c.style.display==='block'){c.style.display='none';btn.textContent='Voir la correction';}
+  else{c.style.display='block';btn.textContent='Masquer la correction';}
+}
+</script>
 </body>
 </html>
