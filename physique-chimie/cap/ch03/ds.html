@@ -30,6 +30,7 @@
     <li>(2 pts) Une palette de bois pèse 200 N. Complétez : poids \(P\) = ___ N, direction : ___, sens : ___.</li>
     <li>(1 pt) La palette est posée sur une étagère et ne bouge pas. Elle est soumise à deux forces. Entourez la condition d'équilibre : même valeur / même direction / sens opposés / toutes les trois.</li>
   </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <strong>Correction :</strong>
     <ol>
@@ -39,7 +40,6 @@
       <li>Toutes les trois (même droite d'action, sens opposés, même valeur).</li>
     </ol>
   </div>
-  <button class="bc">Voir la correction</button>
 </div>
 
 <!-- STANDARD -->
@@ -53,6 +53,7 @@
     <li>(2 pts) Une caisse de matériaux de masse \(m = 45\) kg est soulevée par une grue. Calculez son poids (\(g = 9{,}8\) N/kg). Quelles sont les caractéristiques de la force de levage à l'équilibre ?</li>
     <li>(2 pts) Lors du levage, la vitesse de montée augmente régulièrement. Quel type de mouvement est-ce ? Sur une chronophotographie, que constatez-vous ?</li>
   </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <strong>Correction :</strong>
     <ol>
@@ -62,7 +63,6 @@
       <li>Mouvement uniformément accéléré. Sur la chronophotographie : points de plus en plus espacés.</li>
     </ol>
   </div>
-  <button class="bc">Voir la correction</button>
 </div>
 
 <!-- APPRO -->
@@ -75,6 +75,7 @@
     <li>(2 pts) Pendant la phase de décélération, quel type de mouvement est-ce ? Représentez schématiquement les vecteurs vitesse pour deux positions consécutives.</li>
     <li>(2 pts) Le meuble est finalement posé en équilibre contre un mur. Identifiez les deux forces qui s'exercent sur lui et vérifiez les trois conditions d'équilibre (\(P = m × g = 80 × 9{,}8\)).</li>
   </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <strong>Correction :</strong>
     <ol>
@@ -83,7 +84,6 @@
       <li>\(P = 80 × 9{,}8 = 784\) N vers le bas. Réaction du sol \(R = 784\) N vers le haut. Même droite d'action (verticale), sens opposés, même valeur 784 N → équilibre vérifié.</li>
     </ol>
   </div>
-  <button class="bc">Voir la correction</button>
 </div>
 
 <!-- COMMUN -->
@@ -95,6 +95,7 @@
     <li>(1 pt) Quel rouleau peut être soulevé à la main ? (règle pratique : max 25 kg, soit 245 N)</li>
     <li>(2 pts) Un convoyeur transporte 3 rouleaux A sur une distance de 8 m en 20 s. Calculez sa vitesse en m/s puis en km/h.</li>
   </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <strong>Correction :</strong>
     <ol>
@@ -103,11 +104,13 @@
       <li>\(v = 8/20 = 0{,}4\) m/s = \(0{,}4 × 3{,}6 = 1{,}44\) km/h.</li>
     </ol>
   </div>
-  <button class="bc">Voir la correction</button>
 </div>
 
 </div>
 <script src="../../../nav.js"></script>
 <script src="../../../diff.js"></script>
+<script>
+function toggle(btn){var c=btn.nextElementSibling;if(c.style.display==='block'){c.style.display='none';btn.textContent='Voir la correction';}else{c.style.display='block';btn.textContent='Masquer la correction';}}
+</script>
 </body>
 </html>

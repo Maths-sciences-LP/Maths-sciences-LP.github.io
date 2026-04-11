@@ -39,6 +39,7 @@
       Quel rayonnement invisible se situe au-delà du rouge : _______________ ?
     </li>
   </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <strong>Correction :</strong>
     <ol>
@@ -47,7 +48,6 @@
       <li>Violet < Vert < Rouge. Sous le violet : UV (ultraviolets). Au-delà du rouge : IR (infrarouges).</li>
     </ol>
   </div>
-  <button class="bc">Voir la correction</button>
 </div>
 
 <!-- STANDARD -->
@@ -60,6 +60,7 @@
     <li>(2 pts) Un laser de niveau utilisé sur chantier est de classe 2. Un autre (découpe signalétique) est de classe 4. Quelle est la différence de risque ? La règle absolue de sécurité commune aux deux ?</li>
     <li>(2 pts) En atelier de signalétique, le travail se fait sous éclairage blanc (4000 K). Pourquoi est-ce préférable à un éclairage jaune pour choisir les teintes d'encre ?</li>
   </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <strong>Correction :</strong>
     <ol>
@@ -69,7 +70,6 @@
       <li>Un éclairage blanc (toutes les longueurs d'onde) restitue fidèlement les couleurs réelles des encres. Un éclairage jaune filtre certaines couleurs et fausse la perception des teintes.</li>
     </ol>
   </div>
-  <button class="bc">Voir la correction</button>
 </div>
 
 <!-- APPRO -->
@@ -82,6 +82,7 @@
     <li>(2 pts) Le laser CO₂ émet à 10 600 nm = 10,6 µm. Ce rayonnement est-il visible ? Quel type de rayonnement est-ce (UV/visible/IR) ? Pourquoi est-il dangereux même si on ne le voit pas ?</li>
     <li>(2 pts) Un panneau LED doit afficher la couleur jaune. Quelles LED (R, V, B) doivent être allumées ? La synth additive et la synth soustractive donnent-elles le même résultat pour le jaune ?</li>
   </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <strong>Correction :</strong>
     <ol>
@@ -90,7 +91,6 @@
       <li>Jaune = Rouge + Vert (allumés) + Bleu (éteint). En synth soustractive (pigments) : le jaune s'obtient en mélangeant du magenta et du cyan. Les résultats sont différents car les principes sont opposés (addition vs soustraction de lumière).</li>
     </ol>
   </div>
-  <button class="bc">Voir la correction</button>
 </div>
 
 <!-- COMMUN -->
@@ -102,6 +102,7 @@
     <li>(2 pts) Le rayon réfléchi est-il dans le plan horizontal ou vertical ? Expliquez l'utilité de cette réflexion pour le chantier.</li>
     <li>(2 pts) Citez deux règles de sécurité à respecter avec ce laser de classe 2. Le réflexe de clignement protège-t-il systématiquement ?</li>
   </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <strong>Correction :</strong>
     <ol>
@@ -110,11 +111,13 @@
       <li>Ne jamais regarder directement dans le faisceau / ne jamais pointer vers une personne. Pour la classe 2, le réflexe de clignement protège normalement, mais pas en cas d'exposition volontaire et prolongée.</li>
     </ol>
   </div>
-  <button class="bc">Voir la correction</button>
 </div>
 
 </div>
 <script src="../../../nav.js"></script>
 <script src="../../../diff.js"></script>
+<script>
+function toggle(btn){var c=btn.nextElementSibling;if(c.style.display==='block'){c.style.display='none';btn.textContent='Voir la correction';}else{c.style.display='block';btn.textContent='Masquer la correction';}}
+</script>
 </body>
 </html>

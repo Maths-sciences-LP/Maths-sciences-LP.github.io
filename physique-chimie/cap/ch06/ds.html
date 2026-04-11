@@ -44,6 +44,7 @@
       d) Pour un mélange, il y a un palier net pendant le changement d'état. V / F
     </li>
   </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <strong>Correction :</strong>
     <ol>
@@ -52,7 +53,6 @@
       <li>a) V — b) F — c) V — d) F.</li>
     </ol>
   </div>
-  <button class="bc">Voir la correction</button>
 </div>
 
 <!-- STANDARD -->
@@ -65,6 +65,7 @@
     <li>(2 pts) Un artisan braise de l'étain (température de fusion = 232 °C). Il observe que la température reste stable à 232 °C pendant quelques secondes. Comment appelle-t-on cette phase ? Pourquoi la température ne change-t-elle pas ?</li>
     <li>(2 pts) Donnez les trois modes de transfert thermique et un exemple en atelier pour chacun.</li>
   </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <strong>Correction :</strong>
     <ol>
@@ -74,7 +75,6 @@
       <li>Conduction : manche métallique d'un fer à souder / Convection : air chaud au-dessus d'un radiateur / Rayonnement : chaleur d'un chalumeau à distance.</li>
     </ol>
   </div>
-  <button class="bc">Voir la correction</button>
 </div>
 
 <!-- APPRO -->
@@ -87,6 +87,7 @@
     <li>(2 pts) La soudure refroidit en dessous de 183 °C, elle redevient solide. Quel changement d'état se produit ? L'alliage cède-t-il ou reçoit-il de la chaleur ?</li>
     <li>(2 pts) Un thermocouple est utilisé pour surveiller la température pendant la brasure. Il mesure 198 °C. L'alliage est-il solide, en cours de fusion ou entièrement liquide à cette température ? Justifiez.</li>
   </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <strong>Correction :</strong>
     <ol>
@@ -95,7 +96,6 @@
       <li>198 °C est dans la plage de transition (183–212 °C) : l'alliage est partiellement en cours de fusion (mélange liquide-solide). Il n'est ni entièrement solide ni entièrement liquide.</li>
     </ol>
   </div>
-  <button class="bc">Voir la correction</button>
 </div>
 
 <!-- COMMUN -->
@@ -107,6 +107,7 @@
     <li>(2 pts) La résistance de la sonde Pt100 est de 100 Ω à 0 °C et augmente de 0,385 Ω par degré. Quelle est la résistance à 60 °C ?</li>
     <li>(2 pts) En ouvrant la porte de l'étuve, de l'air froid entre et de l'air chaud sort. Quel mode de transfert thermique explique ce phénomène ? Qu'observe-t-on sur la courbe de température ?</li>
   </ol>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <strong>Correction :</strong>
     <ol>
@@ -115,11 +116,13 @@
       <li>Convection : le fluide (air) se déplace en transportant l'énergie. La courbe montre une chute de température à l'ouverture de la porte, puis une remontée quand l'étuve se régule.</li>
     </ol>
   </div>
-  <button class="bc">Voir la correction</button>
 </div>
 
 </div>
 <script src="../../../nav.js"></script>
 <script src="../../../diff.js"></script>
+<script>
+function toggle(btn){var c=btn.nextElementSibling;if(c.style.display==='block'){c.style.display='none';btn.textContent='Voir la correction';}else{c.style.display='block';btn.textContent='Masquer la correction';}}
+</script>
 </body>
 </html>
