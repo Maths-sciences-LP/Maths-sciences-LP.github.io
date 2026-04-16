@@ -26,10 +26,10 @@
       subject:      'Mathématiques',
       types: { lecon: 'Cours', exercices: 'Exercices', 'exercices-capacites': 'Capacités', ds: 'Devoir surveillé', fiche: 'Fiche résumé', qcm: 'QCM', interro: 'Interrogation', activite: 'Activité', simulation: 'Simulation' },
       chapters: [
-        { id: '01', title: 'Proportionnalité et pourcentages' },
+        { id: '01', title: 'Proportionnalité et Pourcentages' },
         { id: '02', title: 'Statistiques à une variable' },
         { id: '03', title: 'Indicateurs statistiques' },
-        { id: '04', title: 'Fluctuations et probabilités' },
+        { id: '04', title: 'Probabilités et fluctuation des fréquences' },
         { id: '05', title: 'Équations du premier degré' },
         { id: '06', title: 'Inéquations du premier degré' },
         { id: '07', title: 'Notion de fonction' },
@@ -39,7 +39,7 @@
         { id: '11', title: 'Figures planes : périmètres et aires' },
         { id: '12', title: 'Théorème de Pythagore et réciproque' },
         { id: '13', title: 'Théorème de Thalès dans le triangle' },
-        { id: '14', title: 'Solides, volumes et agrandissement' }
+        { id: '14', title: 'Solides usuels, volumes et agrandissement' }
       ]
     },
 
