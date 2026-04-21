@@ -18,6 +18,7 @@ Ce fichier est lu automatiquement par Claude Code à chaque session.
 ├── diff.js                     ← Toggle différenciation pédagogique (socle/standard/appro)
 ├── qcm.js                     ← Fonctions partagées pour les QCM interactifs
 ├── comp.js                    ← Filtrage par capacité (exercices-capacites.html)
+├── sujet.js                   ← Toggle Sujet A / Sujet B (interrogations)
 ├── index.html                  ← Page d'accueil
 ├── maths-*.html / pc-*.html    ← Pages sommaire par matière/niveau
 ├── maths/
@@ -44,14 +45,24 @@ Ce fichier est lu automatiquement par Claude Code à chaque session.
 ├── automatismes/               ← Exercices d'entraînement rapide par thème — 22 pages
 ├── co-intervention/            ← Séances de co-intervention maths/sciences (38 pages, ICCER/ERA-MA)
 ├── prompts/                    ← Prompts pédagogiques de référence
-├── pdf/                        ← Programmes officiels Bac Pro & BTS
+├── pdf/                        ← Documents officiels
+│   ├── programmes/             ← Programmes scolaires (PDF + extractions .md)
+│   ├── referentiels/           ← Référentiels professionnels par filière
+│   └── vademecums/             ← Vademecums 2nde (familles de métiers)
 ├── audits/                     ← Audits qualité (documents vivants)
+├── latex/                      ← Sources LaTeX (local, gitignored) — livrets, DS, co-intervention
+│   ├── seconde/                ← Livrets, DS, co-intervention Seconde
+│   ├── cap/                    ← Cours CAP
+│   ├── terminale/              ← Cours Terminale
+│   ├── ccf/                    ← Convocations CCF
+│   └── livre-caplp/            ← Préparation CAPLP
 ├── scripts/                    ← Outils de maintenance
 │   ├── extract_css.py          ← Nettoyage CSS doublons
 │   ├── add_print_css.py        ← Ajout automatique de print.css aux pages
 │   ├── generate-pdf.js         ← Génération PDF des cours
 │   ├── link_simulations.py     ← Liaison simulations ↔ chapitres
-│   └── check_chapters.py       ← Vérification complétude des chapitres
+│   ├── check_chapters.py       ← Vérification complétude des chapitres
+│   └── telecharger_pdfs.py     ← Téléchargement des PDF programmes
 └── .claude/commands/           ← Commandes personnalisées Claude Code (skills)
 ```
 
@@ -309,20 +320,25 @@ Avant de générer du contenu, consulter les fichiers dans `/prompts/` :
 | `prompts/prompt-simulation.md` | Structure d'une simulation interactive (4 types) |
 | `prompts/prompt-superviseur.md` | Prompt de supervision globale du projet |
 | `prompts/prompt-filiere-2mama.md` | Contextes pro Seconde MAMA (menuiserie/agencement) |
+| `prompts/prompt-filiere-2tne.md` | Contextes pro Seconde TNE (transitions numérique et énergétique) |
 | `prompts/prompt-filiere-premiere-era.md` | Contextes pro Première ERA-MA (bois/agencement) |
 | `prompts/prompt-filiere-premiere-iccer.md` | Contextes pro Première ICCER (chauffage/énergie) |
 | `prompts/prompt-filiere-era-ma.md` | Contextes pro Terminale ERA/MA (agencement/bois) |
 | `prompts/prompt-filiere-ticcer.md` | Contextes pro Terminale ICCER (chauffage/énergie) |
+| `prompts/prompt-filiere-mee.md` | Contextes pro MEE (maintenance énergétique) |
+| `prompts/prompt-filiere-eeb-tgt.md` | Contextes pro EEB / TGT (bâtiment, géomètre) |
 | `prompts/prompt-filiere-cap-mit.md` | Contextes pro CAP MIT (installations thermiques) |
 | `prompts/prompt-filiere-cap-ebeniste.md` | Contextes pro CAP Ébéniste (bois, mobilier) |
 | `prompts/prompt-filiere-cap-sdg.md` | Contextes pro CAP SDG (signalétique, décors graphiques) |
 | `prompts/prompt-filiere-bma-ebeniste.md` | Contextes pro BMA Ébéniste (ébénisterie d'art) |
 | `prompts/prompt-filiere-bma-arts-graphiques.md` | Contextes pro BMA Arts Graphiques option A (signalétique) |
-| `prompts/prompt-filiere-eeb-tgt.md` | Contextes pro EEB / TGT (bâtiment, géomètre) |
-| `prompts/prompt-filiere-mee.md` | Contextes pro MEE (maintenance énergétique) |
 | `prompts/prompt-bts.md` | Structure et règles pour les pages BTS maths |
+| `prompts/prompt-caplp-cours.md` | Prompt de préparation CAPLP maths-sciences |
 | `prompts/prompt-cours-universel.md` | Prompt LaTeX universel pour générer un livret de cours (Overleaf) |
 | `prompts/prompt-exercices-universel.md` | Prompt LaTeX universel pour générer un livret d'exercices avec corrections (Overleaf) |
+| `prompts/instructions-co-intervention-ICCER.md` | Instructions co-intervention maths/sciences ICCER |
+| `prompts/instructions-co-intervention-ERA.md` | Instructions co-intervention maths/sciences ERA |
+| `prompts/instructions-co-intervention-MA.md` | Instructions co-intervention maths/sciences MA |
 
 ### Règles contextes professionnels
 
@@ -359,9 +375,43 @@ Ces sigles sont des noms de formations scolaires, pas des métiers réels. Ils n
 
 ---
 
-## PROGRAMMES OFFICIELS
+## PROGRAMMES OFFICIELS ET RÉFÉRENTIELS
 
-Les PDF des programmes Bac Pro sont dans `/pdf/`.
+Le dossier `/pdf/` est organisé en 3 sous-dossiers. Voir `pdf/README.md` pour l'inventaire complet.
+
+### Programmes scolaires (`pdf/programmes/`)
+
+- Maths Bac Pro : Seconde (2019), Première (2020), Terminale (2020)
+- PC Bac Pro : Seconde (2019), Première (2020), Terminale (2020)
+- CAP : maths (2019) + sciences (2019)
+- BMA : maths (2021) + PC (2021)
+- BTS : maths
+- Extractions `.md` exploitables : maths + PC Bac Pro (3 niveaux), CAP, BMA, BTS, PC 6 groupements
+
+### Référentiels de filières (`pdf/referentiels/`)
+
+| Pôle | Filière | Fichier |
+|---|---|---|
+| **Énergie** | Bac Pro ICCER | `referentiel-bcp-iccer.pdf` |
+| | Bac Pro MEE | `referentiel-bcp-mee.pdf` |
+| | CAP MIT | `referentiel-cap-mit.pdf` |
+| **Bois** | Bac Pro TMA | `referentiel-bcp-tma.pdf` |
+| | Bac Pro ERA | `referentiel-bcp-era-reglement-examen.pdf` (réf. complet sur [Legifrance](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000023894109/)) |
+| | CAP Ébéniste | `referentiel-cap-ebeniste.pdf` |
+| | BMA Ébéniste | `referentiel-bma-ebeniste-annexe-*.pdf` (6 annexes) |
+| **Arts graphiques** | CAP SDG | `referentiel-cap-sdg.pdf` |
+| | BMA Arts Graphiques | `referentiel-bma-arts-graphiques.pdf` |
+| **Bâtiment** | Bac Pro EEB | `referentiel-bcp-eeb.pdf` (complet) + `eeb-activites.pdf` / `eeb-certification.pdf` |
+| | Bac Pro Géomètre (TGT) | `referentiel-bcp-geometre.pdf` |
+
+### Vademecums Seconde (`pdf/vademecums/`)
+
+| Famille | Fichier | Débouchés |
+|---|---|---|
+| 2nde MAMA | `vademecum-...-agencement-...-70002.pdf` | → ERA, TMA |
+| 2nde TNE | `vademecum-...-transitions-...-70029.pdf` | → ICCER, MEE |
+| 2nde Bâtiment | `vademecum-...-batiment-68028.pdf` | → EEB, TGT |
+
 Vérifier les notions avant de créer du contenu : respecter les capacités attendues et ne pas introduire de hors-programme.
 
 ---
