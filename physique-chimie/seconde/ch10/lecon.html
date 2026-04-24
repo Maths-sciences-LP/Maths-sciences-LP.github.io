@@ -414,7 +414,7 @@
   <div class="chart-container">
     <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;font-size:13px;color:#718096;">
       <span style="display:flex;align-items:center;gap:5px;"><span style="width:14px;height:3px;background:#7F77DD;display:inline-block;border-radius:2px;"></span>CTN (résistance décroissante)</span>
-      <span style="display:flex;align-items:center;gap:5px;"><span style="width:14px;height:3px;background:#1D9E75;display:inline-block;border-radius:2px;"></span>Pt100 (résistance croissante, ×100 pour lisibilité)</span>
+      <span style="display:flex;align-items:center;gap:5px;"><span style="width:14px;height:3px;background:#1D9E75;display:inline-block;border-radius:2px;"></span>Pt100 (résistance croissante)</span>
     </div>
     <div style="position:relative;width:100%;height:320px;">
       <canvas id="chartCTN"></canvas>
@@ -834,13 +834,6 @@
     }
   });
 })();
-</script>
-<script>
-function toggle(btn){
-  var c=btn.nextElementSibling;
-  if(c.style.display==='block'){c.style.display='none';btn.textContent='Voir la correction';}
-  else{c.style.display='block';btn.textContent='Masquer la correction';}
-}
 </script>
 <script src="../../../nav.js"></script>
 </body>

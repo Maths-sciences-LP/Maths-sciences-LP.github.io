@@ -27,6 +27,7 @@
 </head>
 <body>
 <div class="c">
+  <a href="../../../pc-2nde-pro.html" class="nb">← Retour au sommaire</a>
   <header>
     <p class="sous-titre">Physique-Chimie — 2nde Bac Pro — Menuiserie, Agencement, Ameublement</p>
     <h1>Chapitre 8 — Solutions chimiques et concentration</h1>
@@ -608,15 +609,16 @@
     </ol>
   </div>
 
+<!-- Simulations interactives -->
+<div class="retenir" style="border-color:var(--p);background:var(--p-bg)">
+  <h3>Simulation interactive</h3>
+  <ul style="list-style:none;padding:0;margin:0">
+    <li style="margin:.4em 0"><a href="../../../simulations/concentration.html" target="_blank" style="color:var(--p);font-weight:600;text-decoration:underline">Solutions chimiques et concentration</a></li>
+  </ul>
+</div>
+
 </div><!-- /.c -->
 <script>
-// ── Toggle corrections ────────────────────────────────
-function toggle(btn){
-  var c=btn.nextElementSibling;
-  if(c.style.display==='block'){c.style.display='none';btn.textContent='Voir la correction';}
-  else{c.style.display='block';btn.textContent='Masquer la correction';}
-}
-
 // ── Chart.js : courbe de dilution ──────────────────────
 (function(){
   const Cm1=200, V1=50; // mL
@@ -708,14 +710,6 @@ function dilReset(){DIL.step=0;DIL.draw();}
 window.addEventListener('load',()=>DIL.init());
 </script>
 <script src="../../../nav.js"></script>
-
-<!-- Simulations interactives -->
-<div class="retenir" style="border-color:var(--p);background:var(--p-bg)">
-  <h3>Simulation interactive</h3>
-  <ul style="list-style:none;padding:0;margin:0">
-    <li style="margin:.4em 0"><a href="../../../simulations/concentration.html" target="_blank" style="color:var(--p);font-weight:600;text-decoration:underline">Solutions chimiques et concentration</a></li>
-  </ul>
-</div>
 
 </body>
 </html>

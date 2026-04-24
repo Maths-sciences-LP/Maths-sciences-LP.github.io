@@ -61,7 +61,7 @@ MathJax = {tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]}};
 
 <div class="ex">
   <span class="label label-ex">Ombre et pénombre</span><br>
-  La propagation rectiligne explique la formation des ombres. Avec une source ponctuée, on obtient une <strong>ombre nette</strong>. Avec une source étendue, on obtient une <strong>ombre et une pénombre</strong> (zone partiellement éclairée).
+  La propagation rectiligne explique la formation des ombres. Avec une source ponctuelle, on obtient une <strong>ombre nette</strong>. Avec une source étendue, on obtient une <strong>ombre et une pénombre</strong> (zone partiellement éclairée).
 </div>
 
 <!-- ===== SECTION 2 ===== -->
@@ -185,7 +185,7 @@ MathJax = {tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]}};
 
 <div class="ex">
   <span class="label label-ex">Applications en atelier</span><br>
-  • <strong>Bois poli / verni</strong> : la surface lisse crée une réflexion spéculaire (angle sortant = angle entrant) → aspect brillant. Plus le poncçage est fin, plus la réflexion est miroir.<br>
+  • <strong>Bois poli / verni</strong> : la surface lisse crée une réflexion spéculaire (angle sortant = angle entrant) → aspect brillant. Plus le ponçage est fin, plus la réflexion est miroir.<br>
   • <strong>Bois mat</strong> : surface rugueuse → réflexion diffuse (les rayons repartent dans toutes les directions) → aspect mat sans reflet.<br>
   • <strong>Surface vitrée</strong> (vitrine, huisserie) : réflexion partielle et transmission simultanées.
 </div>
@@ -457,7 +457,7 @@ MathJax = {tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]}};
 
 <div class="prop">
   <span class="label label-prop">4. Laser de découpe bois — guidage par réflexion sur miroirs</span><br>
-  Dans une machine de découpe ou gravure laser (CO₂, fibre), le faisceau laser est produit dans un tube fixe puis guidé jusqu'au matériau par un système de <strong>miroirs orientables</strong>. Chaque miroir exploite la loi de réflexion pour dévier le faisceau avec précision (tolérance &lt; 0,1 mm). Une lentille focalisante concentre ensuite la lumière sur le bois, portant la température locale à plusieurs centaines de degrés. En atelier de menuiserie, ces machines permettent la découpe de contr&eplaqué, MDF, acrylique, et la gravure de motifs décoratifs sans contact.
+  Dans une machine de découpe ou gravure laser (CO₂, fibre), le faisceau laser est produit dans un tube fixe puis guidé jusqu'au matériau par un système de <strong>miroirs orientables</strong>. Chaque miroir exploite la loi de réflexion pour dévier le faisceau avec précision (tolérance &lt; 0,1 mm). Une lentille focalisante concentre ensuite la lumière sur le bois, portant la température locale à plusieurs centaines de degrés. En atelier de menuiserie, ces machines permettent la découpe de contreplaqué, MDF, acrylique, et la gravure de motifs décoratifs sans contact.
 </div>
 
 <div class="ex">
@@ -521,11 +521,7 @@ MathJax = {tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]}};
 </div>
 
 <!-- ===== SECTION 9 ===== -->
-</div><!-- .c -->
-
-<!-- ===== SECTION 10 ===== -->
-<div class="c" style="margin-top:18px">
-<h2>10. Pour aller plus loin — Vocabulaire technique</h2>
+<h2>9. Pour aller plus loin — Vocabulaire technique</h2>
 <table>
   <thead>
     <tr><th>Terme</th><th>Définition rapide</th><th>Contexte professionnel</th></tr>
@@ -535,12 +531,11 @@ MathJax = {tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]}};
     <tr><td>Réflexion diffuse</td><td>Lumière répartie dans toutes les directions</td><td>Bois mat, peinture mate, plâtre</td></tr>
     <tr><td>Indice de réfraction</td><td>\(n = c/v\), sans unité, toujours ≥ 1</td><td>Choix du matériau de vitre ou de fibre</td></tr>
     <tr><td>Angle critique (θc)</td><td>Angle limite au-delà duquel la réflexion totale se produit</td><td>Cœur de fibre optique CNC</td></tr>
-    <tr><td>Glossmètre</td><td>Instrument mesurant le brillant en GU (Gloss Unit)</td><td>Contrôle qualité des finitions laquees</td></tr>
+    <tr><td>Glossmètre</td><td>Instrument mesurant le brillant en GU (Gloss Unit)</td><td>Contrôle qualité des finitions laquées</td></tr>
     <tr><td>LED IR (infrarouge)</td><td>Diode émettant dans l'infrarouge (invisible)</td><td>Capteurs de présence sur convoyeurs</td></tr>
     <tr><td>Laser CO₂</td><td>Laser à gaz, λ = 10,6 µm, puissant</td><td>Découpe bois, MDF, acrylique</td></tr>
   </tbody>
 </table>
-</div>
 
 <script>
 // ===== Chart.js : indice de réfraction vs vitesse de la lumière =====
@@ -770,13 +765,8 @@ MathJax = {tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]}};
   drawScene();
 })();
 
-function toggle(btn){
-  var c=btn.nextElementSibling;
-  if(c.style.display==='block'){c.style.display='none';btn.textContent='Voir la correction';}
-  else{c.style.display='block';btn.textContent='Masquer la correction';}
-}
+
 </script>
-<script src="../../../nav.js"></script>
 
 <!-- Simulations interactives -->
 <div class="retenir" style="border-color:var(--p);background:var(--p-bg)">
@@ -786,5 +776,7 @@ function toggle(btn){
   </ul>
 </div>
 
+</div><!-- .c -->
+<script src="../../../nav.js"></script>
 </body>
 </html>
