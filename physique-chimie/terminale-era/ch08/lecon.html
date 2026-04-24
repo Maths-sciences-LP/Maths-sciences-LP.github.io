@@ -205,7 +205,7 @@ input[type=range]{accent-color:var(--p);width:200px}
 <div class="mini-exo">
   <strong>Application</strong>
   <p>Un plaquiste pose une cloison entre l'atelier et le bureau d'un fabricant de meubles. Le niveau sonore côté atelier est 85 dB, et 47 dB côté bureau. Calculer l'indice d'affaiblissement R de la cloison.</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr" style="display:none">
     <p>\( R = L_i - L_t = 85 - 47 = \mathbf{38\ \text{dB}} \)</p>
     <p>Cette cloison a un affaiblissement de 38 dB, correspondant à une cloison placo-plâtre standard. La norme entre logements exige D<sub>nT,A</sub> ≥ 53 dB — ce n'est pas suffisant si c'est un logement.</p>
@@ -249,7 +249,7 @@ input[type=range]{accent-color:var(--p);width:200px}
 <div class="mini-exo">
   <strong>Application</strong>
   <p>Un châssis de fenêtre a un coefficient d'atténuation τ = 0,02. Calculer l'indice d'affaiblissement R.</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr" style="display:none">
     <p>\( R = -20 \times \log(0{,}02) = -20 \times (-1{,}699) \approx \mathbf{34\ \text{dB}} \)</p>
     <p>Ce résultat correspond à un double vitrage standard (R ≈ 32–36 dB).</p>
@@ -326,7 +326,7 @@ input[type=range]{accent-color:var(--p);width:200px}
 <div class="mini-exo">
   <strong>Application</strong>
   <p>Un menuisier agenceur choisit entre deux cloisons pour séparer deux bureaux. La cloison A a une masse surfacique de 30 kg/m² (R = 38 dB). La cloison B a une masse surfacique de 60 kg/m². Estimer l'indice R de la cloison B.</p>
-  <button class="bc" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">Voir la correction</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr" style="display:none">
     <p>On double la masse surfacique (30 → 60 kg/m²). D'après la loi de masse, doubler la masse ajoute environ +6 dB.</p>
     <p>R_B ≈ 38 + 6 = <strong>44 dB</strong></p>
