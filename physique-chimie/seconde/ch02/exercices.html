@@ -1481,18 +1481,17 @@ const ctxAuto = document.getElementById('chartAuto').getContext('2d');
 new Chart(ctxAuto, {
   type: 'bar',
   data: {
-    labels: ['Éclairage LED', 'Aspirateur copeaux', 'Ponceuse à bande', 'Scie à format', 'Total atelier'],
+    labels: ['Éclairage LED', 'Aspirateur copeaux', 'Scie à format', 'Total atelier'],
     datasets: [{
       label: 'Intensité (A)',
-      data: [1.2, 2.2, 6.5, 10.0, 19.9],
+      data: [1.2, 4.0, 10.0, 15.2],
       backgroundColor: [
         'rgba(47,133,90,0.75)',
         'rgba(111,66,193,0.75)',
-        'rgba(217,119,6,0.75)',
         'rgba(197,48,48,0.75)',
         'rgba(45,55,72,0.75)'
       ],
-      borderColor: ['#2f855a','#6f42c1','#d97706','#c53030','#2d3748'],
+      borderColor: ['#2f855a','#6f42c1','#c53030','#2d3748'],
       borderWidth: 2
     }]
   },
@@ -1505,7 +1504,7 @@ new Chart(ctxAuto, {
     scales: {
       y: {
         min: 0,
-        max: 25,
+        max: 20,
         title: { display: true, text: 'Intensité (A)' }
       }
     }
