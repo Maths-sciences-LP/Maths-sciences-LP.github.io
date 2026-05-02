@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch05 – Activité 3 – Cric hydraulique d'un garage – Terminale ICCER</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
+
+<header>
+  <h1>Activité 3 – Comment un cric hydraulique soulève une voiture <span style="font-size:.55em;color:#059669;font-weight:600">ÉTUDE DE CAS</span></h1>
+  <p class="sous-titre">Chapitre 5 – Pression dans un fluide immobile | Terminale Bac Pro (Grpt 1) | Physique – Mécanique des fluides | ⏱ 35 min</p>
+  <p class="maj">Dernière mise à jour : 2 mai 2026, 18:42</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
+
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Comprendre le principe de la presse hydraulique (théorème de Pascal)</li>
+    <li>Calculer le rapport de démultiplication des forces F₂/F₁ = S₂/S₁</li>
+    <li>Calculer le rapport des courses (déplacements) selon la conservation du volume</li>
+  </ul>
+</div>
+
+<p style="margin:8px 0;padding:8px 12px;background:#fef3c7;border-left:3px solid #b45309;font-size:.9em">
+  💡 Notions centrales : <a href="lecon.html">leçon</a> §6-7 (presse hydraulique). Théorème de Pascal : la pression appliquée à un fluide se transmet intégralement en tout point.
+</p>
+
+<!-- ===== SITUATION ===== -->
+<div class="situation">
+  <h2>Situation – soulever 1,5 tonne d'une seule main</h2>
+  <p><em>Yanis, apprenti mécanicien dans un garage, doit changer un pneu sur une Peugeot 308 (1 500 kg). Il utilise un <strong>cric hydraulique rouleur</strong>. Avec une simple pression sur le levier (à peine 50 N de force), il soulève sans effort le coin de la voiture (3 750 N de charge à supporter). Yanis se demande comment c'est physiquement possible avec si peu d'effort.</em></p>
+
+  <h3>Document 1 — Schéma de principe d'une presse hydraulique</h3>
+  <div class="svg-wrap" style="margin:14px 0">
+    <svg width="100%" viewBox="0 0 600 300" style="max-width:600px;display:block;margin:0 auto" role="img" aria-label="Schéma d'une presse hydraulique : 2 cylindres reliés par un tube. Cylindre 1 (petit, S1=1 cm²) à gauche avec piston sur lequel on applique force F1 vers le bas. Cylindre 2 (grand, S2=75 cm²) à droite avec piston qui soulève la charge F2 vers le haut. Le fluide hydraulique remplit les 2 cylindres et le tube de connexion. La pression P=F/S est la même partout dans le fluide.">
+      <defs>
+        <linearGradient id="huile" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0%" stop-color="#dc2626"/>
+          <stop offset="100%" stop-color="#7f1d1d"/>
+        </linearGradient>
+        <style>
+          .ti{font:700 13px sans-serif;text-anchor:middle;fill:#0969da}
+          .lbl{font:11px sans-serif;text-anchor:middle;fill:#1a202c}
+          .lblB{font:600 12px sans-serif;text-anchor:middle;fill:#1d4ed8}
+          .lblR{font:700 12px sans-serif;text-anchor:middle;fill:#b91c1c}
+          .cyl{fill:#cbd5e1;stroke:#1f2937;stroke-width:2.5}
+          .piston{fill:#94a3b8;stroke:#1f2937;stroke-width:1.8}
+          .force{stroke:#dc2626;stroke-width:3;fill:none}
+        </style>
+      </defs>
+      <text class="ti" x="300" y="22">Presse hydraulique — démultiplication des forces</text>
+
+      <!-- Cylindre 1 (petit) -->
+      <rect class="cyl" x="80" y="100" width="40" height="120"/>
+      <rect fill="url(#huile)" x="84" y="120" width="32" height="100"/>
+      <!-- Piston 1 -->
+      <rect class="piston" x="82" y="115" width="36" height="10"/>
+      <line x1="100" y1="90" x2="100" y2="115" stroke="#1f2937" stroke-width="2"/>
+      <rect class="piston" x="92" y="80" width="16" height="10"/>
+
+      <!-- Force F1 -->
+      <line class="force" x1="100" y1="50" x2="100" y2="80" marker-end="url(#aDn)"/>
+      <text class="lblR" x="100" y="45">F₁ (faible)</text>
+
+      <text class="lbl" x="100" y="240" font-weight="bold" fill="#1d4ed8">Section S₁</text>
+      <text class="lbl" x="100" y="255" fill="#475569" font-size="10">(petit cylindre)</text>
+
+      <!-- Tube de liaison -->
+      <rect fill="url(#huile)" x="120" y="200" width="280" height="30"/>
+      <line x1="120" y1="200" x2="400" y2="200" stroke="#1f2937" stroke-width="2"/>
+      <line x1="120" y1="230" x2="400" y2="230" stroke="#1f2937" stroke-width="2"/>
+      <text class="lbl" x="260" y="220" fill="#fff" font-style="italic">huile (fluide hydraulique)</text>
+
+      <!-- Cylindre 2 (gros) -->
+      <rect class="cyl" x="380" y="80" width="120" height="150"/>
+      <rect fill="url(#huile)" x="384" y="120" width="112" height="110"/>
+      <!-- Piston 2 -->
+      <rect class="piston" x="382" y="115" width="116" height="10"/>
+      <line x1="440" y1="80" x2="440" y2="115" stroke="#1f2937" stroke-width="2"/>
+      <rect class="piston" x="420" y="60" width="40" height="20"/>
+
+      <!-- Charge sur piston 2 -->
+      <rect x="395" y="20" width="90" height="40" fill="#94a3b8" stroke="#1f2937" stroke-width="1.5"/>
+      <text class="lbl" x="440" y="45" font-weight="bold">VOITURE</text>
+
+      <!-- Force F2 (vers le haut) -->
+      <line class="force" x1="540" y1="50" x2="540" y2="20" marker-end="url(#aUp)"/>
+      <text class="lblR" x="540" y="65">F₂ (forte)</text>
+      <text class="lblR" x="540" y="78">↑ soulève</text>
+
+      <text class="lbl" x="440" y="250" font-weight="bold" fill="#1d4ed8">Section S₂ (grande)</text>
+      <text class="lbl" x="440" y="265" fill="#475569" font-size="10">(gros cylindre)</text>
+
+      <!-- Pression au centre du tube -->
+      <text class="lbl" x="260" y="280" fill="#7c2d12" font-style="italic" font-weight="bold">Théorème de Pascal : la pression P est la même en tout point du fluide</text>
+
+      <defs>
+        <marker id="aDn" markerWidth="10" markerHeight="10" refX="5" refY="9" orient="auto">
+          <polygon points="0,0 5,9 10,0" fill="#dc2626"/>
+        </marker>
+        <marker id="aUp" markerWidth="10" markerHeight="10" refX="5" refY="0" orient="auto">
+          <polygon points="0,9 5,0 10,9" fill="#dc2626"/>
+        </marker>
+      </defs>
+    </svg>
+  </div>
+
+  <h3>Document 2 — Théorème de Pascal appliqué</h3>
+  <p>Quand on appuie avec une force F₁ sur le piston 1 (section S₁), on crée une pression :</p>
+  <p style="text-align:center">\(P = \dfrac{F_1}{S_1}\)</p>
+
+  <p>Cette pression se transmet <strong>intégralement</strong> à travers le fluide jusqu'au piston 2. La force exercée par le fluide sur le piston 2 (section S₂) est :</p>
+  <p style="text-align:center">\(F_2 = P \times S_2 = F_1 \times \dfrac{S_2}{S_1}\)</p>
+
+  <p>C'est ce qu'on appelle la <strong>démultiplication hydraulique</strong>.</p>
+
+  <h3>Document 3 — Caractéristiques du cric utilisé par Yanis</h3>
+  <ul>
+    <li>Section piston 1 (manuel) : <strong>S₁ = 1,0 cm²</strong></li>
+    <li>Section piston 2 (sous la voiture) : <strong>S₂ = 75 cm²</strong></li>
+    <li>Force exercée par Yanis sur le levier : F₁ = 50 N</li>
+    <li>Charge à soulever (un coin de Peugeot 308 = 1 500 kg / 4) : ≈ 375 kg → poids 3 750 N</li>
+  </ul>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Comment expliquer qu'une force de 50 N exercée par Yanis suffise à soulever 3 750 N (un coin de voiture de 375 kg) ?
+</div>
+
+<!-- ===== QUESTIONS ===== -->
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-green">APP</span></h2>
+  <p>D'après le schéma, à quelle pression P l'huile est-elle soumise quand Yanis appuie avec F₁ = 50 N sur le piston 1 (S₁ = 1 cm²) ?</p>
+  <p><em>Aide : convertir cm² en m². 1 cm² = 10⁻⁴ m².</em></p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>S₁ = 1 cm² = 1 × 10⁻⁴ m²</p>
+    <p>P = F₁ / S₁ = 50 / (1 × 10⁻⁴) = <strong>5 × 10⁵ Pa = 5 bar</strong></p>
+    <p>L'huile est mise sous une pression de 5 bar — ordre de grandeur courant pour des cric hydrauliques (limite typique 50 à 200 bar pour les modèles industriels).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>D'après le théorème de Pascal, cette pression de 5 bar règne aussi sous le piston 2 (S₂ = 75 cm²). Calculer la force F₂ qu'exerce alors l'huile sur ce piston.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>S₂ = 75 cm² = 75 × 10⁻⁴ m²</p>
+    <p>F₂ = P × S₂ = 5 × 10⁵ × 75 × 10⁻⁴ = <strong>3 750 N</strong></p>
+    <p>Cette force est exactement celle nécessaire pour soulever le quart de la voiture (375 kg × 10 = 3 750 N). ✓</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-blue">ANA</span></h2>
+  <p>Calculer le <strong>rapport de démultiplication</strong> F₂ / F₁. Montrer qu'il est égal au rapport des sections S₂ / S₁. Interpréter physiquement.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>F₂ / F₁ = 3 750 / 50 = <strong>75</strong></p>
+    <p>S₂ / S₁ = 75 / 1 = <strong>75</strong> ✓</p>
+    <p>La force est multipliée par 75 entre l'entrée (piston 1) et la sortie (piston 2). C'est exactement le rapport des sections.</p>
+    <p><strong>Interprétation physique :</strong> en élargissant la section du piston récepteur, la <strong>même</strong> pression agit sur une <strong>plus grande surface</strong>, donc produit une force totale plus grande. C'est l'astuce de l'hydraulique : il n'y a pas de « gain magique » — c'est une question de surface.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">ANA</span></h2>
+  <p>Si l'on gagne 75× en force, est-ce qu'on gagne aussi 75× en distance ? Pour soulever la voiture de 10 cm, quelle distance Yanis doit-il parcourir avec le piston 1 ?</p>
+  <p><em>Aide : conservation du volume du fluide. Le volume « envoyé » par le piston 1 = V₁ = S₁ × d₁ doit être égal au volume « reçu » par le piston 2 = V₂ = S₂ × d₂.</em></p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Non, on ne gagne pas en distance — on en perd.</strong></p>
+    <p>Conservation du volume : S₁ × d₁ = S₂ × d₂</p>
+    <p>D'où : d₁ = d₂ × S₂/S₁ = 10 × 75 = <strong>750 cm = 7,5 m</strong></p>
+    <p>Pour soulever la voiture de 10 cm, Yanis doit parcourir <strong>7,5 m de course totale</strong> avec le piston 1. En pratique, il fait des dizaines d'allers-retours sur le levier (chaque coup déplace de quelques cm).</p>
+    <p><strong>Compromis universel en mécanique :</strong> ce qu'on gagne en force, on le perd en distance. C'est la conservation de l'énergie : F₁ × d₁ = F₂ × d₂. Le travail (énergie) est le même des deux côtés.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-yellow">REA</span></h2>
+  <p>Vérifier la <strong>conservation de l'énergie</strong> en calculant le travail W₁ = F₁ × d₁ et W₂ = F₂ × d₂.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ul>
+      <li>W₁ = F₁ × d₁ = 50 × 7,5 = <strong>375 J</strong></li>
+      <li>W₂ = F₂ × d₂ = 3 750 × 0,10 = <strong>375 J</strong></li>
+    </ul>
+    <p>W₁ = W₂ ✓. <strong>L'énergie est conservée</strong> (en théorie, sans pertes de frottement). Le cric ne crée pas d'énergie : il transforme un mouvement long avec faible force en un mouvement court avec force importante.</p>
+    <p>En pratique, il y a un peu de pertes (frottements, fuites internes) — le rendement réel d'un cric est de 80 à 90 %.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">VAL</span></h2>
+  <p>Citer 3 autres applications du même principe physique (presse / vérin hydraulique) dans la vie courante ou industrielle.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ul>
+      <li><strong>Frein hydraulique de voiture</strong> : le pied appuie sur la pédale (piston 1, petite section), force amplifiée transmise aux étriers (pistons 2, grosses sections) qui serrent le disque.</li>
+      <li><strong>Pelle mécanique</strong> et <strong>chargeur</strong> : tous les bras articulés sont actionnés par des vérins hydrauliques.</li>
+      <li><strong>Presse industrielle</strong> : pour emboutir le métal (carrosserie auto), forces de plusieurs centaines de tonnes.</li>
+      <li><strong>Compacteur d'ordures ménagères</strong> sur les camions de collecte.</li>
+      <li><strong>Pont élévateur de garage</strong> : même principe que le cric, en plus puissant et plus haut.</li>
+      <li><strong>Siège de dentiste</strong>, <strong>fauteuil de coiffeur</strong> : version domestique.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger en 5 lignes une <strong>explication simple</strong> à donner à un client curieux qui demande « comment ce truc soulève-t-il ma voiture ? ».</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em>Le cric utilise le <strong>théorème de Pascal</strong> : quand on comprime un liquide dans un endroit, la pression se transmet partout pareil. Notre cric a 2 cylindres reliés : un petit (1 cm²) où on appuie avec une faible force, et un gros (75 cm²) où la voiture repose. La même pression règne dans les deux. Comme le gros cylindre a une surface 75 fois plus grande, la force qu'il exerce est <strong>75 fois plus grande</strong> aussi : nos 50 N se transforment en 3 750 N — assez pour soulever un coin de voiture.</em></p>
+    <p><em>« Pas de magie » : on perd en distance ce qu'on gagne en force. Pour monter la voiture de 10 cm, on doit faire 7,5 m de course totale avec le levier (en plusieurs allers-retours). L'énergie totale fournie est la même.</em></p>
+  </div>
+</div>
+
+<!-- ===== A RETENIR ===== -->
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Théorème de Pascal :</strong> la pression appliquée à un fluide se transmet intégralement en tout point.</li>
+    <li><strong>Démultiplication des forces :</strong> F₂ / F₁ = S₂ / S₁. Plus la section du piston récepteur est grande, plus la force amplifiée est grande.</li>
+    <li><strong>Compromis force/distance :</strong> on gagne en force ce qu'on perd en distance. Conservation de l'énergie : W₁ = W₂ → F₁·d₁ = F₂·d₂.</li>
+    <li><strong>Applications :</strong> cric, frein, vérin de pelle mécanique, presse industrielle, pont élévateur, fauteuil dentiste.</li>
+    <li><strong>Pression typique</strong> dans un circuit hydraulique : 50 à 200 bar (industrie) ; 5 bar pour un cric domestique simple.</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>
