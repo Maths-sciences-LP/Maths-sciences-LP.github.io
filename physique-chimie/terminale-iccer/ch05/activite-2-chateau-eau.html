@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch05 – Activité 2 – Pression d'un château d'eau – Terminale ICCER</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
+
+<header>
+  <h1>Activité 2 – Pression d'un château d'eau dans un quartier <span style="font-size:.55em;color:#0891b2;font-weight:600">SITUATION PRO</span></h1>
+  <p class="sous-titre">Chapitre 5 – Pression dans un fluide immobile | Terminale Bac Pro (Grpt 1) | Physique – Mécanique des fluides | ⏱ 30 min</p>
+  <p class="maj">Dernière mise à jour : 2 mai 2026, 18:42</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
+
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Appliquer la relation de Pascal P = P₀ + ρ·g·h</li>
+    <li>Calculer une pression statique selon la dénivellation</li>
+    <li>Comprendre pourquoi les châteaux d'eau sont surélevés</li>
+  </ul>
+</div>
+
+<p style="margin:8px 0;padding:8px 12px;background:#fef3c7;border-left:3px solid #b45309;font-size:.9em">
+  💡 Notions centrales : <a href="lecon.html">leçon</a> §2 (relation de Pascal). \(P = P_0 + \rho \cdot g \cdot h\) — la pression augmente de 1 bar tous les 10 m de profondeur d'eau.
+</p>
+
+<!-- ===== SITUATION ===== -->
+<div class="situation">
+  <h2>Situation – mise en service d'un nouveau quartier</h2>
+  <p><em>Chloé, technicienne en réseau d'eau potable au service des eaux de la ville, doit vérifier la pression d'arrivée chez les abonnés d'un nouveau quartier alimenté par le château d'eau communal. Le quartier comprend des maisons individuelles, un immeuble de 5 étages et un atelier industriel.</em></p>
+
+  <h3>Document 1 — Schéma du réseau</h3>
+  <div class="svg-wrap" style="margin:14px 0">
+    <svg width="100%" viewBox="0 0 720 360" style="max-width:720px;display:block;margin:0 auto" role="img" aria-label="Schéma de quartier alimenté par un château d'eau de 30 m de hauteur. Une canalisation enterrée descend vers les habitations : maison individuelle (sol = altitude 0m), immeuble de 5 étages (top = altitude 15m), atelier en contrebas (altitude -5m). La hauteur d'eau dans le château est notée 30m au-dessus du sol.">
+      <defs>
+        <linearGradient id="ciel" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0%" stop-color="#dbeafe"/>
+          <stop offset="100%" stop-color="#f0f9ff"/>
+        </linearGradient>
+        <linearGradient id="eau" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0%" stop-color="#3b82f6"/>
+          <stop offset="100%" stop-color="#1e40af"/>
+        </linearGradient>
+        <style>
+          .ti{font:700 13px sans-serif;text-anchor:middle;fill:#0969da}
+          .lbl{font:11px sans-serif;fill:#1a202c}
+          .lblB{font:600 11px sans-serif;fill:#1d4ed8}
+          .lblR{font:700 11px sans-serif;fill:#b91c1c}
+          .axe-niv{stroke:#475569;stroke-width:1;stroke-dasharray:4 3}
+        </style>
+      </defs>
+
+      <!-- Ciel -->
+      <rect width="720" height="290" fill="url(#ciel)"/>
+      <!-- Sol -->
+      <rect y="290" width="720" height="70" fill="#84cc16" opacity=".4"/>
+      <line y1="290" x2="720" y2="290" stroke="#16a34a" stroke-width="1.5"/>
+
+      <text class="ti" x="360" y="22">Réseau d'eau potable d'un quartier</text>
+
+      <!-- Château d'eau -->
+      <rect x="60" y="60" width="80" height="120" fill="#f1f5f9" stroke="#475569" stroke-width="2.5"/>
+      <rect x="64" y="68" width="72" height="106" fill="url(#eau)" opacity=".75"/>
+      <text class="lbl" x="100" y="125" text-anchor="middle" fill="#fff" font-weight="bold" font-size="14">EAU</text>
+      <!-- Pied du château -->
+      <rect x="80" y="180" width="40" height="110" fill="#94a3b8" stroke="#1f2937" stroke-width="2"/>
+      <text class="lbl" x="100" y="195" text-anchor="middle" fill="#fff" font-size="10">support</text>
+      <!-- Toit conique -->
+      <polygon points="55,60 100,30 145,60" fill="#7f1d1d"/>
+
+      <!-- Cote 30 m -->
+      <line class="axe-niv" x1="155" y1="60" x2="200" y2="60"/>
+      <line class="axe-niv" x1="155" y1="290" x2="200" y2="290"/>
+      <line x1="195" y1="60" x2="195" y2="290" stroke="#dc2626" stroke-width="1.5" marker-start="url(#aUp)" marker-end="url(#aDn)"/>
+      <text class="lblR" x="210" y="180" font-weight="bold">h = 30 m</text>
+
+      <!-- Surface libre marquée -->
+      <line x1="60" y1="68" x2="200" y2="68" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="3 3"/>
+      <text class="lbl" x="40" y="65" text-anchor="end" fill="#15803d" font-size="9">surface libre (P_atm)</text>
+
+      <!-- Canalisation enterrée -->
+      <line x1="100" y1="290" x2="100" y2="310" stroke="#1f2937" stroke-width="3"/>
+      <line x1="100" y1="310" x2="650" y2="310" stroke="#1f2937" stroke-width="3"/>
+      <text class="lbl" x="370" y="328" text-anchor="middle" fill="#475569" font-style="italic">canalisation enterrée</text>
+
+      <!-- Maison individuelle (à mi-distance, sol) -->
+      <line x1="280" y1="290" x2="280" y2="310" stroke="#1f2937" stroke-width="3"/>
+      <rect x="265" y="240" width="60" height="50" fill="#fef3c7" stroke="#92400e" stroke-width="1.5"/>
+      <polygon points="260,240 295,210 330,240" fill="#7f1d1d"/>
+      <rect x="285" y="265" width="20" height="25" fill="#92400e"/>
+      <text class="lbl" x="295" y="220" text-anchor="middle" font-weight="bold" font-size="9">MAISON</text>
+      <text class="lbl" x="295" y="305" text-anchor="middle" fill="#475569" font-size="9">RDC : 0 m</text>
+
+      <!-- Immeuble 5 étages (à droite) -->
+      <line x1="450" y1="290" x2="450" y2="310" stroke="#1f2937" stroke-width="3"/>
+      <rect x="425" y="160" width="80" height="130" fill="#cbd5e1" stroke="#1f2937" stroke-width="1.5"/>
+      <!-- Étages -->
+      <line x1="425" y1="186" x2="505" y2="186" stroke="#475569" stroke-width=".7"/>
+      <line x1="425" y1="212" x2="505" y2="212" stroke="#475569" stroke-width=".7"/>
+      <line x1="425" y1="238" x2="505" y2="238" stroke="#475569" stroke-width=".7"/>
+      <line x1="425" y1="264" x2="505" y2="264" stroke="#475569" stroke-width=".7"/>
+      <text class="lbl" x="465" y="180" text-anchor="middle" font-size="8">5e</text>
+      <text class="lbl" x="465" y="206" text-anchor="middle" font-size="8">4e</text>
+      <text class="lbl" x="465" y="232" text-anchor="middle" font-size="8">3e</text>
+      <text class="lbl" x="465" y="258" text-anchor="middle" font-size="8">2e</text>
+      <text class="lbl" x="465" y="284" text-anchor="middle" font-size="8">1er</text>
+      <text class="lbl" x="465" y="305" text-anchor="middle" fill="#475569" font-size="9">RDC : 0 m</text>
+      <text class="lbl" x="465" y="155" text-anchor="middle" font-weight="bold" font-size="9">5e étage : 15 m</text>
+
+      <!-- Atelier en contrebas -->
+      <line x1="630" y1="310" x2="630" y2="335" stroke="#1f2937" stroke-width="3"/>
+      <rect x="600" y="305" width="60" height="50" fill="#dbeafe" stroke="#475569" stroke-width="1.5"/>
+      <text class="lbl" x="630" y="325" text-anchor="middle" font-weight="bold" font-size="9">ATELIER</text>
+      <text class="lbl" x="630" y="350" text-anchor="middle" fill="#475569" font-size="9">contrebas : −5 m</text>
+
+      <!-- Échelle d'altitude à droite -->
+      <line class="axe-niv" x1="690" y1="68" x2="710" y2="68"/>
+      <line class="axe-niv" x1="690" y1="155" x2="710" y2="155"/>
+      <line class="axe-niv" x1="690" y1="290" x2="710" y2="290"/>
+      <line class="axe-niv" x1="690" y1="310" x2="710" y2="310"/>
+      <text class="lbl" x="715" y="71" font-size="9" fill="#475569">+30 m</text>
+      <text class="lbl" x="715" y="158" font-size="9" fill="#475569">+15 m</text>
+      <text class="lbl" x="715" y="293" font-size="9" fill="#475569">0 m</text>
+      <text class="lbl" x="715" y="313" font-size="9" fill="#475569">−5 m</text>
+
+      <defs>
+        <marker id="aUp" markerWidth="9" markerHeight="9" refX="4.5" refY="0" orient="auto">
+          <polygon points="0,9 4.5,0 9,9" fill="#dc2626"/>
+        </marker>
+        <marker id="aDn" markerWidth="9" markerHeight="9" refX="4.5" refY="9" orient="auto">
+          <polygon points="0,0 4.5,9 9,0" fill="#dc2626"/>
+        </marker>
+      </defs>
+    </svg>
+  </div>
+
+  <h3>Document 2 — Données techniques</h3>
+  <ul>
+    <li>Hauteur d'eau dans le château d'eau : <strong>h<sub>château</sub> = 30 m</strong> au-dessus du sol</li>
+    <li>Masse volumique de l'eau : ρ = <strong>1 000 kg/m³</strong></li>
+    <li>Accélération de la pesanteur : g = <strong>9,81 N/kg</strong> (souvent arrondi à 10)</li>
+    <li>Pression atmosphérique : P<sub>atm</sub> = <strong>1,01 × 10⁵ Pa</strong> ≈ 1 bar</li>
+    <li>Conversion : 1 bar = 10⁵ Pa = 100 kPa</li>
+  </ul>
+
+  <p><strong>Remarque importante :</strong> en pratique, on parle de <strong>« pression relative »</strong> au-dessus de la pression atmosphérique. Pour un robinet, ce qui compte c'est ΔP = P − P<sub>atm</sub>, qu'on peut aussi écrire P<sub>relative</sub> = ρ·g·h<sub>colonne</sub>.</p>
+  <p>Règle de calcul mental : <strong>1 m d'eau ≈ 0,1 bar</strong> (ou 10 m d'eau ≈ 1 bar).</p>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Quelle est la pression d'arrivée d'eau dans la maison, au 5ᵉ étage de l'immeuble et dans l'atelier en contrebas ? Tous les abonnés ont-ils un débit suffisant ?
+</div>
+
+<!-- ===== QUESTIONS ===== -->
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-green">APP</span></h2>
+  <p>Citer la relation de Pascal et préciser ce que représente chaque grandeur. Quelle est l'unité SI de la pression ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Relation de Pascal : \(P = P_0 + \rho \cdot g \cdot h\)</p>
+    <ul>
+      <li>P : pression au point considéré (Pa)</li>
+      <li>P₀ : pression de référence en surface (Pa)</li>
+      <li>ρ : masse volumique du fluide (kg/m³)</li>
+      <li>g : accélération de la pesanteur (≈ 9,81 N/kg)</li>
+      <li>h : profondeur sous la surface (m)</li>
+    </ul>
+    <p>Unité SI : <strong>pascal (Pa)</strong>. Unités usuelles : bar (1 bar = 10⁵ Pa) et mCE (mètre de colonne d'eau, 1 mCE ≈ 0,098 bar).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer la <strong>pression relative</strong> (au-dessus de l'atmosphérique) à l'arrivée du robinet de la <strong>maison individuelle</strong> (RDC, altitude 0 m). Exprimer en Pa et en bar.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>La hauteur d'eau au-dessus du robinet de la maison = 30 m (le château d'eau est à +30 m, le robinet à 0 m).</p>
+    <p>P<sub>rel</sub> = ρ·g·h = 1 000 × 9,81 × 30 = <strong>2,94 × 10⁵ Pa = 2,94 bar</strong></p>
+    <p>Cette pression est confortable pour un usage domestique (norme NF DTU : 3 à 5 bar souhaitable).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer la pression relative à l'arrivée du robinet du <strong>5ᵉ étage</strong> de l'immeuble (altitude +15 m).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>La hauteur d'eau au-dessus du robinet du 5ᵉ étage = 30 − 15 = <strong>15 m</strong>.</p>
+    <p>P<sub>rel</sub> = 1 000 × 9,81 × 15 = <strong>1,47 × 10⁵ Pa = 1,47 bar</strong></p>
+    <p>Cette pression est plus faible mais reste acceptable (norme : ≥ 1 bar à tous les étages).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer la pression relative à l'arrivée du robinet de l'<strong>atelier</strong> en contrebas (altitude −5 m).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>La hauteur d'eau au-dessus du robinet de l'atelier = 30 − (−5) = <strong>35 m</strong>.</p>
+    <p>P<sub>rel</sub> = 1 000 × 9,81 × 35 = <strong>3,43 × 10⁵ Pa = 3,43 bar</strong></p>
+    <p>Pression plus forte : c'est normal, l'atelier est plus bas, donc la colonne d'eau qui le « pousse » est plus haute.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">ANA</span></h2>
+  <p>Sans calcul, expliquer pourquoi le château d'eau est <strong>surélevé</strong>. Que se passerait-il si on plaçait le réservoir au sol ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Le château d'eau est surélevé pour <strong>créer une pression naturelle</strong> par gravité, sans avoir besoin de pompes en permanence.</p>
+    <p>Si le réservoir était au sol, P<sub>rel</sub> = 0 à l'arrivée des robinets. Aucun débit possible : il faudrait une pompe à chaque maison, en permanence — solution inefficace énergétiquement et fragile en cas de coupure de courant.</p>
+    <p>L'astuce du château d'eau : on remplit le réservoir une fois par jour avec une pompe, puis la <strong>gravité fournit la pression 24h/24 gratuitement</strong>. C'est de l'énergie potentielle stockée.</p>
+    <p>La hauteur typique de 30 m correspond à 3 bar — exactement ce qu'il faut pour un réseau résidentiel standard.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">VAL</span></h2>
+  <p>L'atelier souhaite installer une <strong>douche de sécurité</strong> qui exige une pression minimale de <strong>2 bar</strong> et un débit de 50 L/min. Va-t-il avoir une pression suffisante ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Oui : à l'atelier, P<sub>rel</sub> = 3,43 bar &gt; 2 bar requis. ✓</p>
+    <p>Marge de sécurité : 3,43 − 2 = 1,43 bar — confortable.</p>
+    <p>Attention cependant : la pression statique calculée (sans circulation) chute en pratique quand l'eau circule à fort débit, à cause des pertes de charge dans la canalisation. À 50 L/min, on peut perdre 0,3 à 0,5 bar dans une canalisation DN20 de 50 m. Pression dynamique restante ≈ 3 bar : OK.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger en 5 lignes le <strong>rapport de mise en service</strong> de Chloé pour la mairie.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em>Mise en service du nouveau quartier — 2 mai 2026.</em></p>
+    <p><em>Le château d'eau de 30 m au-dessus du sol fournit une pression statique satisfaisante à tous les abonnés du quartier : 2,94 bar pour les maisons individuelles au RDC, 1,47 bar au 5ᵉ étage de l'immeuble (≥ 1 bar requis), et 3,43 bar à l'atelier en contrebas. Tous les usages standards (sanitaires, électroménager, douche de sécurité atelier) sont assurés.</em></p>
+    <p><em>Recommandation : prévoir un suppresseur (pompe locale) si un futur immeuble dépasse 8 étages (au-delà de +20 m), ou si l'atelier installe un équipement industriel exigeant &gt; 4 bar dynamique.</em></p>
+  </div>
+</div>
+
+<!-- ===== A RETENIR ===== -->
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Relation de Pascal :</strong> \(P = P_0 + \rho g h\). Plus on descend, plus la pression augmente.</li>
+    <li><strong>Règle pratique :</strong> 1 m d'eau ≈ 0,1 bar = 10 kPa. 10 m d'eau = 1 bar.</li>
+    <li><strong>Pourquoi un château d'eau :</strong> stocker de l'énergie potentielle pour fournir une pression naturelle 24h/24, sans pompe permanente.</li>
+    <li><strong>Pressions standards (résidentiel) :</strong> 3 à 5 bar souhaitable, ≥ 1 bar minimum, &lt; 8 bar maximum (au-delà : usure prématurée des joints).</li>
+    <li><strong>Suppresseur :</strong> pompe locale qui ajoute de la pression — nécessaire au-delà de 7-8 étages alimentés depuis un château d'eau standard.</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

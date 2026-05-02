@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch05 – Activité 4 – Diagnostic de basse pression dans un immeuble – Terminale ICCER</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
+.indice{background:#fffbeb;border:1px solid #fde68a;border-left:4px solid #b45309;padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0}
+.indice-head{font-weight:700;color:#7c2d12;margin-bottom:6px;font-size:.95em}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
+
+<header>
+  <h1>Activité 4 – Diagnostic d'une basse pression dans un immeuble <span style="font-size:.55em;color:#b91c1c;font-weight:600">DIAGNOSTIC</span></h1>
+  <p class="sous-titre">Chapitre 5 – Pression dans un fluide immobile | Terminale Bac Pro (Grpt 1) | Physique – Mécanique des fluides | ⏱ 35 min</p>
+  <p class="maj">Dernière mise à jour : 2 mai 2026, 18:42</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
+
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Mesurer et comparer des pressions à différents étages d'un immeuble</li>
+    <li>Croiser des indices pour identifier l'origine d'un dysfonctionnement</li>
+    <li>Distinguer pression statique théorique et pression réelle (avec pertes)</li>
+  </ul>
+</div>
+
+<p style="margin:8px 0;padding:8px 12px;background:#fef3c7;border-left:3px solid #b45309;font-size:.9em">
+  💡 Notions centrales : <a href="lecon.html">leçon</a> §2 (Pascal) et §13 (instruments de mesure de pression).
+</p>
+
+<!-- ===== SITUATION ===== -->
+<div class="situation">
+  <h2>Situation – les habitants du 6ᵉ étage se plaignent</h2>
+  <p><em>Karim, plombier d'urgence, est appelé dans une résidence de 8 étages : les habitants des 6ᵉ et 7ᵉ étages signalent un débit d'eau froide très faible aux robinets. Le syndic suspecte une fuite ou un dysfonctionnement du suppresseur. Karim doit identifier la cause exacte.</em></p>
+
+  <h3>Indice 1 — Configuration de l'immeuble</h3>
+  <ul>
+    <li>Immeuble de 8 étages, hauteur sous plafond 2,80 m, RDC à 0 m</li>
+    <li>Suppresseur installé en sous-sol (au pied de la colonne montante)</li>
+    <li>Pression de sortie suppresseur affichée : <strong>5,5 bar</strong></li>
+    <li>Pression atmosphérique : 1 bar</li>
+  </ul>
+
+  <h3>Indice 2 — Mesures de Karim sur la colonne montante (à débit nul, robinets fermés)</h3>
+  <table>
+    <thead>
+      <tr><th>Étage</th><th>Altitude (m)</th><th>P statique attendue (bar)</th><th>P mesurée (bar)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>RDC</td><td>0</td><td>5,5</td><td>5,4 ✓</td></tr>
+      <tr><td>1er</td><td>2,8</td><td>5,22</td><td>5,1 ✓</td></tr>
+      <tr><td>3e</td><td>8,4</td><td>4,66</td><td>4,5 ✓</td></tr>
+      <tr><td>5e</td><td>14,0</td><td>4,10</td><td>4,0 ✓</td></tr>
+      <tr><td>6e</td><td>16,8</td><td>3,82</td><td><strong>1,2 ✗</strong></td></tr>
+      <tr><td>7e</td><td>19,6</td><td>3,54</td><td><strong>0,9 ✗</strong></td></tr>
+    </tbody>
+  </table>
+
+  <p><em>La pression chute brutalement entre le 5ᵉ et le 6ᵉ étage. Quelque chose ne va pas dans la colonne montante entre ces deux niveaux.</em></p>
+
+  <h3>Indice 3 — Inspection visuelle</h3>
+  <div class="indice">
+    <div class="indice-head">🔍 Karim ouvre les regards techniques entre 5ᵉ et 6ᵉ étage</div>
+    <p>Aucune fuite visible. Pas d'humidité dans les murs. Le robinet de chasse de la colonne au 6ᵉ donne un débit d'eau <strong>très faible</strong> (filet ténu) lors de la purge.</p>
+  </div>
+
+  <div class="indice">
+    <div class="indice-head">🔍 Témoignage du gardien</div>
+    <p>« Il y a 3 mois, on a fait des travaux de plomberie au 5ᵉ étage. Un autre plombier a remplacé un raccord et installé un <strong>réducteur de pression</strong> à la sortie de la colonne au 5ᵉ étage. Mais c'était pour un appartement spécifique, pas pour toute la colonne. »</p>
+  </div>
+
+  <h3>Indice 4 — Photo du local technique 5e étage</h3>
+  <div class="svg-wrap" style="margin:14px 0">
+    <svg width="100%" viewBox="0 0 600 220" style="max-width:600px;display:block;margin:0 auto" role="img" aria-label="Schéma de la colonne montante au 5e étage : tube vertical avec un réducteur de pression installé en série, donc en travers de toute la colonne. Le réducteur limite la pression sortie à 1,5 bar. Les étages au-dessus reçoivent donc seulement 1,5 bar au lieu de 4 bar attendus. Indication d'erreur : ce réducteur devrait être en dérivation pour un appartement seul, pas en série sur la colonne entière.">
+      <defs>
+        <style>
+          .ti{font:700 13px sans-serif;text-anchor:middle;fill:#0969da}
+          .lbl{font:11px sans-serif;text-anchor:middle;fill:#1a202c}
+          .lblR{font:700 12px sans-serif;text-anchor:middle;fill:#b91c1c}
+          .lblG{font:700 11px sans-serif;text-anchor:middle;fill:#15803d}
+          .col{stroke:#1d4ed8;stroke-width:6;fill:none;stroke-linecap:round}
+          .red{fill:#fef3c7;stroke:#b45309;stroke-width:2}
+        </style>
+      </defs>
+      <text class="ti" x="300" y="22">Local technique 5ᵉ étage — colonne montante</text>
+
+      <!-- Colonne montante (verticale) -->
+      <line class="col" x1="300" y1="40" x2="300" y2="200"/>
+      <text class="lbl" x="320" y="55" fill="#1d4ed8" font-weight="bold">↑ vers étages 6, 7, 8</text>
+      <text class="lbl" x="320" y="195" fill="#1d4ed8" font-weight="bold">↑ depuis étages bas</text>
+
+      <!-- Réducteur de pression EN SÉRIE (anomalie) -->
+      <rect class="red" x="270" y="100" width="60" height="40" rx="6"/>
+      <text class="lbl" x="300" y="118" font-weight="bold" fill="#92400e" font-size="10">RÉDUCTEUR</text>
+      <text class="lbl" x="300" y="132" fill="#92400e" font-size="9">→ 1,5 bar</text>
+
+      <!-- Manomètre -->
+      <circle cx="380" cy="80" r="20" fill="#fff" stroke="#1f2937" stroke-width="1.5"/>
+      <text x="380" y="84" text-anchor="middle" font-size="11" fill="#1d4ed8" font-weight="bold">4 bar</text>
+      <line x1="370" y1="78" x2="385" y2="65" stroke="#dc2626" stroke-width="1.5"/>
+      <text class="lbl" x="380" y="115" font-size="9" fill="#475569">manomètre amont</text>
+
+      <circle cx="380" cy="160" r="20" fill="#fff" stroke="#1f2937" stroke-width="1.5"/>
+      <text x="380" y="164" text-anchor="middle" font-size="11" fill="#dc2626" font-weight="bold">1,5 bar</text>
+      <line x1="370" y1="158" x2="380" y2="145" stroke="#dc2626" stroke-width="1.5"/>
+      <text class="lbl" x="380" y="195" font-size="9" fill="#475569">manomètre aval</text>
+
+      <!-- Annotation problème -->
+      <text class="lblR" x="150" y="100">⚠ Réducteur installé EN SÉRIE</text>
+      <text class="lblR" x="150" y="115">sur toute la colonne</text>
+      <text class="lblR" x="150" y="135">→ pénalise les étages 6, 7, 8</text>
+
+      <!-- Bonne configuration en pointillés -->
+      <text class="lblG" x="500" y="160">→ Devrait être en dérivation</text>
+      <text class="lblG" x="500" y="174">pour le seul appart concerné</text>
+    </svg>
+  </div>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Quelle est la cause exacte de la chute de pression aux 6ᵉ et 7ᵉ étages, et comment Karim peut-il rétablir une pression normale sans pénaliser l'appartement du 5ᵉ ?
+</div>
+
+<!-- ===== QUESTIONS ===== -->
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-yellow">REA</span></h2>
+  <p>Vérifier la <strong>pression statique attendue</strong> au 6ᵉ étage (altitude 16,8 m) à partir de la pression suppresseur (5,5 bar) et de la relation de Pascal.</p>
+  <p><em>Aide : pour une colonne d'eau qui monte, la pression diminue. P<sub>haut</sub> = P<sub>bas</sub> − ρ·g·h. Avec 1 m d'eau ≈ 0,1 bar.</em></p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>P<sub>6e</sub> = P<sub>RDC</sub> − ρ·g·h = 5,5 × 10⁵ − 1 000 × 9,81 × 16,8</p>
+    <p>P<sub>6e</sub> = 550 000 − 164 808 = 385 192 Pa ≈ <strong>3,85 bar</strong></p>
+    <p>Cohérent avec la valeur attendue du tableau (3,82 bar). Mais Karim mesure seulement 1,2 bar — il y a clairement <strong>une perte anormale</strong> entre le 5ᵉ et le 6ᵉ.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-blue">ANA</span></h2>
+  <p>Comparer les pressions <strong>attendue</strong> et <strong>mesurée</strong> à chaque étage. Entre quels étages la chute anormale se produit-elle ? Quelle est l'amplitude de cette chute ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Du RDC au 5ᵉ étage : la pression mesurée correspond bien à la valeur attendue (écart &lt; 0,2 bar normal, dû aux pertes de charge des équipements).</p>
+    <p>Entre le <strong>5ᵉ et le 6ᵉ étage</strong>, on observe une chute brutale :</p>
+    <ul>
+      <li>P<sub>attendue</sub> au 6ᵉ = 3,82 bar</li>
+      <li>P<sub>mesurée</sub> au 6ᵉ = 1,2 bar</li>
+      <li>Chute anormale = 3,82 − 1,2 = <strong>2,62 bar perdus</strong> entre 5ᵉ et 6ᵉ</li>
+    </ul>
+    <p>Une chute de 2,6 bar sur une montée de 2,8 m (1 étage) est <strong>physiquement impossible</strong> par simple gravité (qui ne donnerait que 0,28 bar de chute). Quelque chose dans la canalisation cause cette perte massive.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-blue">VAL</span></h2>
+  <p>D'après les indices 3 et 4, identifier la <strong>cause exacte</strong> de la chute de pression. Pourquoi est-elle problématique pour les étages au-dessus du 5ᵉ ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Cause :</strong> un <strong>réducteur de pression a été installé en série sur la colonne montante</strong> au 5ᵉ étage, lors de travaux faits il y a 3 mois.</p>
+    <p>Le réducteur force la pression aval à 1,5 bar, quelle que soit la pression amont. C'était utile pour <strong>protéger les équipements d'un appartement spécifique</strong> au 5ᵉ qui craignait la haute pression. Mais ayant été placé sur la colonne entière (mauvaise installation), il pénalise <strong>tous les étages au-dessus</strong> du 5ᵉ.</p>
+    <p>Au 6ᵉ : P<sub>aval réducteur</sub> − ρ·g·(h<sub>6</sub> − h<sub>5</sub>) = 1,5 − 0,28 = <strong>1,22 bar</strong> — correspond exactement à la mesure.</p>
+    <p>Au 7ᵉ : 1,5 − 0,55 = <strong>0,95 bar</strong> — correspond aussi.</p>
+    <p>Le diagnostic est confirmé.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">ANA</span></h2>
+  <p>Karim doit corriger l'installation. Citer 2 solutions possibles pour rétablir une pression normale aux 6ᵉ et 7ᵉ tout en protégeant l'appartement spécifique du 5ᵉ.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Solution 1 — Déplacer le réducteur :</strong> retirer le réducteur de la colonne montante et le réinstaller <strong>en dérivation</strong> à l'arrivée d'eau de l'appartement concerné, sur la nourrice individuelle du logement. La colonne récupère sa pleine pression pour les étages supérieurs.</p>
+    <p><strong>Solution 2 — Réducteur sectoriel :</strong> remplacer le réducteur par une <strong>vanne de coupure complète</strong> de la colonne, et installer le réducteur uniquement sur la <strong>dérivation horizontale</strong> qui dessert l'appartement du 5ᵉ. Plus complexe mais propre techniquement.</p>
+    <p>Solution 1 est la plus simple et la plus rapide (intervention 2 h, coût ~ 200 €). Solution 2 nécessite plus de modifications (~ 800 €).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-yellow">REA</span></h2>
+  <p>Après réparation (réducteur déplacé en dérivation), Karim refait les mesures. Calculer la pression statique attendue au 7ᵉ étage (altitude 19,6 m).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>P<sub>7e</sub> = 5,5 × 10⁵ − 1 000 × 9,81 × 19,6</p>
+    <p>P<sub>7e</sub> = 550 000 − 192 276 = 357 724 Pa ≈ <strong>3,58 bar</strong></p>
+    <p>Pression confortable, normale pour un 7ᵉ étage avec suppresseur correct.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger en 5–6 lignes le <strong>compte-rendu d'intervention</strong> de Karim, à remettre au syndic.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em>Compte-rendu d'intervention — Résidence Les Tilleuls — 2 mai 2026.</em></p>
+    <p><em>Symptôme : faible pression d'eau aux 6ᵉ et 7ᵉ étages. Diagnostic : un <strong>réducteur de pression</strong>, installé il y a 3 mois lors de travaux dans un appartement du 5ᵉ étage, a été <strong>placé par erreur en série sur la colonne montante</strong>, pénalisant tous les étages au-dessus. Mesures vérifiées : P attendue au 6ᵉ = 3,8 bar, P mesurée = 1,2 bar (chute de 2,6 bar non explicable par la gravité seule).</em></p>
+    <p><em>Intervention : déplacement du réducteur de la colonne vers la dérivation individuelle de l'appartement concerné. Mesures de contrôle après remise en eau : pression rétablie à 3,8 bar au 6ᵉ et 3,6 bar au 7ᵉ. Coût : 220 € TTC.</em></p>
+    <p><em>Recommandation : sensibiliser tous les plombiers intervenant dans la résidence à l'erreur classique « réducteur en série sur colonne ». Une plaque informative pourrait être apposée dans le local technique.</em></p>
+  </div>
+</div>
+
+<!-- ===== A RETENIR ===== -->
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Pression dans une colonne montante</strong> : décroît avec l'altitude. P<sub>haut</sub> = P<sub>bas</sub> − ρ·g·h. 1 étage (~ 2,8 m) ≈ 0,28 bar de perte par gravité.</li>
+    <li><strong>Méthode de diagnostic :</strong> mesurer les pressions à chaque étage, comparer aux valeurs attendues, repérer la chute anormale.</li>
+    <li><strong>Réducteur de pression</strong> : à installer <strong>en dérivation</strong> sur l'arrivée d'un logement individuel, jamais en série sur la colonne d'un immeuble.</li>
+    <li><strong>Suppresseur</strong> : pompe de surpression au pied de la colonne qui maintient une pression suffisante en haut. À dimensionner selon hauteur × 0,1 bar/m + 2 à 3 bar de marge.</li>
+    <li><strong>Norme :</strong> pression minimale 1 bar à tous les étages, idéale 3-5 bar.</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>
