@@ -1,52 +1,293 @@
 <!DOCTYPE html>
-<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ch10 – Activité 4 – Optimiser une clôture – 2nde MAMA</title>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch10 – Activité 4 – Optimiser une clôture : aire max à périmètre fixé – 2nde Bac Pro MAMA</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<link rel="stylesheet" href="../../../styles.css"><link rel="stylesheet" href="../../../print.css" media="print">
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0056b3;--p-bg:#ebf5ff;--p-border:#bee3f8}</style>
-</head><body><div class="c"><a href="../../../maths-2nde-mama.html" class="nb">← RETOUR SOMMAIRE</a>
-<header><h1>Activité 4 – Quel rectangle de surface max avec 100 m de clôture ? <span style="font-size:.55em;color:#7c3aed;font-weight:600">ÉTUDE DE CAS</span></h1>
-<p class="sous-titre">Chapitre 10 – Fonction carré | 2nde Bac Pro MAMA | ⏱ 30 min</p>
-<p class="maj">Dernière mise à jour : 3 mai 2026, 10:00</p></header>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-2nde-mama.html" class="nb">← RETOUR SOMMAIRE</a>
 
-<div class="situation"><h2>Situation – stockage extérieur</h2>
-<p><em>Un menuisier veut une zone rectangulaire pour stocker des planches. Il dispose de 100 m de grillage.</em></p>
-<p>Périmètre : 2L + 2l = 100, soit L + l = 50, donc l = 50 − L. Aire : A(L) = L × l = L(50 − L) = 50 L − L².</p></div>
+<header>
+  <h1>Activité 4 – Optimiser une clôture : aire max à périmètre fixé <span style="font-size:.55em;color:#7c3aed;font-weight:600">ÉTUDE DE CAS</span></h1>
+  <p class="sous-titre">Chapitre 10 – Fonctions usuelles (carré, racine) | 2nde Bac Pro MAMA | Mathématiques | ⏱ 50 min</p>
+  <p class="maj">Dernière mise à jour : 4 mai 2026, 11:30</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
 
-<div class="exo"><h2>Question 1 <span class="badge-yellow">REA</span></h2>
-<p>Calculer A pour L = 10, 20, 25, 30, 40 m.</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<table>
-<tr><th>L (m)</th><td>10</td><td>20</td><td>25</td><td>30</td><td>40</td></tr>
-<tr><th>l = 50−L</th><td>40</td><td>30</td><td>25</td><td>20</td><td>10</td></tr>
-<tr><th>A = L×l</th><td>400</td><td>600</td><td><strong>625</strong></td><td>600</td><td>400</td></tr>
-</table>
-<p>Maximum à L = 25 m → <strong>carré 25×25 = 625 m²</strong>.</p>
-</div></div>
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Modéliser une situation d'optimisation par une fonction du 2ème degré</li>
+    <li>Trouver le maximum d'une fonction A(L) = aL² + bL + c (a &lt; 0)</li>
+    <li>Comprendre que le carré est le rectangle optimal à périmètre fixé</li>
+    <li>Adapter la modélisation à différentes contraintes (mur, allée…)</li>
+  </ul>
+</div>
 
-<div class="exo"><h2>Question 2 <span class="badge-blue">ANA</span></h2>
-<p>Pourquoi le maximum est-il un carré ? (Géométrie)</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>Pour un périmètre donné, le rectangle d'aire maximale est le <strong>carré</strong>. Résultat connu en mathématiques (« inégalité arithmético-géométrique »).</p>
-<p>Plus généralement, à périmètre donné, le <strong>cercle</strong> a l'aire maximale (π r² &gt; carré équivalent). C'est pourquoi les fluides naturels (gouttelettes, planètes) tendent vers la sphère pour minimiser leur surface.</p>
-</div></div>
+<div class="situation">
+  <h2>Situation – aménagement d'un stockage extérieur</h2>
+  <p><em>Karim, gérant d'une menuiserie, veut clôturer une zone rectangulaire dans son arrière-cour pour stocker ses planches en plein air (à l'abri du vent). Il dispose de 100 m de grillage.</em></p>
 
-<div class="exo"><h2>Question 3 <span class="badge-blue">VAL</span></h2>
-<p>Si le menuisier ferme la zone <strong>contre un mur</strong> (3 côtés de grillage seulement), quel rectangle optimal avec 100 m de grillage ?</p>
-<ul class="lignes-reponse"><li</li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>2L + l = 100 (mur = 1 côté gratuit). l = 100 − 2L. A(L) = L(100 − 2L) = 100 L − 2L². Max où A'(L) = 100 − 4L = 0 → L = 25 m, l = 50 m.</p>
-<p>A_max = 25 × 50 = <strong>1 250 m²</strong>. Soit <strong>2 fois plus</strong> qu'avec 4 côtés grillage. L'astuce du mur double la surface !</p>
-</div></div>
+  <div style="background:#fff;padding:12px 16px;border-radius:8px;border:1px solid #cbd5e1;margin:14px 0">
+    <p style="margin:6px 0">📋 <strong>Contraintes initiales</strong></p>
+    <p style="margin:6px 0">• Forme : rectangle de longueur L et largeur l</p>
+    <p style="margin:6px 0">• Périmètre disponible : 100 m de grillage</p>
+    <p style="margin:6px 0">• Objectif : maximiser la surface utile pour le stockage</p>
+  </div>
 
-<div class="retenir"><strong>À retenir</strong>
-<ul><li><strong>À périmètre fixé :</strong> rectangle d'aire max = carré.</li>
-<li><strong>Avec 1 côté gratuit (mur) :</strong> rectangle d'aire max a un côté = 2× l'autre.</li>
-<li><strong>Optimisation :</strong> identifier la fonction à maximiser et la contrainte.</li></ul></div>
+  <h3>Document — modélisation mathématique</h3>
+  <p>Périmètre : 2L + 2l = 100 → L + l = 50 → l = 50 − L</p>
+  <p>Aire : A(L) = L × l = L × (50 − L) = <strong>50L − L²</strong></p>
 
-</div><script src="../../../nav.js"></script></body></html>
+  <h3>Document — graphique de la fonction A(L)</h3>
+  <div class="svg-wrap" style="margin:14px 0">
+    <svg width="100%" viewBox="0 0 540 280" style="max-width:540px;display:block;margin:0 auto" role="img" aria-label="Parabole A(L) = 50L - L² pour L de 0 à 50. Sommet à L = 25 m, A = 625 m². Courbe symétrique passant par 0, 0 et 50, 0.">
+        <defs>
+          <style>
+            .ax{stroke:#1a202c;stroke-width:1.5}
+            .gd{stroke:#cbd5e1;stroke-width:.6}
+            .lbl{font:11px sans-serif;fill:#1a202c}
+            .lblA{font:600 12px sans-serif;fill:#1a202c}
+            .ti{font:700 13px sans-serif;text-anchor:middle;fill:#0056b3}
+          </style>
+        </defs>
+        <text class="ti" x="270" y="22">A(L) = 50 L − L² — aire selon la longueur</text>
+
+        <!-- Y : 0 → 240, 700 m² → 50. 1 m² = 0,271 px. 400 → 132, 600 → 78, 625 → 71 -->
+        <g class="gd">
+          <line x1="60" y1="50" x2="500" y2="50"/>
+          <line x1="60" y1="98" x2="500" y2="98"/>
+          <line x1="60" y1="145" x2="500" y2="145"/>
+          <line x1="60" y1="193" x2="500" y2="193"/>
+          <line x1="60" y1="240" x2="500" y2="240"/>
+        </g>
+        <line class="ax" x1="60" y1="240" x2="510" y2="240"/>
+        <line class="ax" x1="60" y1="40" x2="60" y2="240"/>
+
+        <g class="lbl" text-anchor="end">
+          <text x="55" y="244">0</text>
+          <text x="55" y="197">175</text>
+          <text x="55" y="149">350</text>
+          <text x="55" y="102">525</text>
+          <text x="55" y="54">700</text>
+        </g>
+        <text class="lblA" x="20" y="145" transform="rotate(-90 20 145)" text-anchor="middle">Aire (m²)</text>
+
+        <!-- X : 0 → 60, 50 m → 500. 1 m = 8,8 px -->
+        <g class="lbl" text-anchor="middle">
+          <text x="60" y="258">0</text>
+          <text x="148" y="258">10</text>
+          <text x="236" y="258">20</text>
+          <text x="280" y="258" font-weight="bold" fill="#dc2626">25</text>
+          <text x="324" y="258">30</text>
+          <text x="412" y="258">40</text>
+          <text x="500" y="258">50</text>
+        </g>
+        <text class="lblA" x="270" y="275" text-anchor="middle">Longueur L (m)</text>
+
+        <!-- Parabole A(L) = -L² + 50L. Points (0,0) → (60,240). (10, 400) → (148, 132). (20, 600) → (236, 78). (25, 625) → (280, 71). (30, 600) → (324, 78). (40, 400) → (412, 132). (50, 0) → (500, 240) -->
+        <path d="M 60,240 Q 280,-100 500,240" fill="none" stroke="#0056b3" stroke-width="2.5"/>
+
+        <!-- Sommet -->
+        <circle cx="280" cy="71" r="6" fill="#dc2626"/>
+        <text x="280" y="60" class="lbl" fill="#dc2626" font-weight="bold" text-anchor="middle">★ max (25 ; 625)</text>
+
+        <line x1="280" y1="71" x2="280" y2="240" stroke="#dc2626" stroke-width="1" stroke-dasharray="3 2"/>
+        <line x1="60" y1="71" x2="280" y2="71" stroke="#dc2626" stroke-width="1" stroke-dasharray="3 2"/>
+        <text x="55" y="68" class="lbl" fill="#dc2626" font-weight="bold" text-anchor="end">625</text>
+
+        <!-- Points repères -->
+        <circle cx="60" cy="240" r="4" fill="#15803d"/>
+        <circle cx="500" cy="240" r="4" fill="#15803d"/>
+        <text x="60" y="225" class="lbl" fill="#15803d" text-anchor="middle">L=0 → A=0</text>
+        <text x="500" y="225" class="lbl" fill="#15803d" text-anchor="middle">L=50 → A=0</text>
+    </svg>
+  </div>
+
+  <p style="font-size:.9em;color:#475569"><em>📚 Cette activité réinvestit les notions du cours §3 (fonction du 2ème degré) et §4 (sommet d'une parabole = optimum).</em></p>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Avec 100 m de grillage, quelles dimensions du rectangle donnent la plus grande surface ?
+</div>
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-blue">APP</span></h2>
+  <p>Vérifier que la formule A(L) = 50 L − L² provient bien des contraintes du problème (périmètre 100 m, rectangle).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Périmètre : 2L + 2l = 100 → l = (100 − 2L) / 2 = 50 − L.</p>
+    <p>Aire : A = L × l = L × (50 − L) = 50 L − L². ✓</p>
+    <p>L'aire dépend de la seule variable L (la largeur l est imposée par la contrainte de périmètre).</p>
+    <p>Domaine de validité : L ∈ [0 ; 50] (longueur positive et inférieure au demi-périmètre).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Compléter le tableau suivant pour différentes valeurs de L :</p>
+  <table>
+    <thead>
+      <tr><th>L (m)</th><th>l = 50−L</th><th>A = L × l (m²)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>5</td><td>…</td><td>…</td></tr>
+      <tr><td>10</td><td>…</td><td>…</td></tr>
+      <tr><td>20</td><td>…</td><td>…</td></tr>
+      <tr><td>25</td><td>…</td><td>…</td></tr>
+      <tr><td>30</td><td>…</td><td>…</td></tr>
+      <tr><td>40</td><td>…</td><td>…</td></tr>
+    </tbody>
+  </table>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <table>
+      <thead><tr><th>L</th><th>l</th><th>A</th></tr></thead>
+      <tbody>
+        <tr><td>5</td><td>45</td><td>225</td></tr>
+        <tr><td>10</td><td>40</td><td>400</td></tr>
+        <tr><td>20</td><td>30</td><td>600</td></tr>
+        <tr><td>25</td><td>25</td><td><strong>625</strong> (max)</td></tr>
+        <tr><td>30</td><td>20</td><td>600</td></tr>
+        <tr><td>40</td><td>10</td><td>400</td></tr>
+      </tbody>
+    </table>
+    <p>L'aire <strong>maximale</strong> est obtenue pour <strong>L = 25 m, l = 25 m</strong> → un carré de 625 m².</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-blue">ANA</span></h2>
+  <p>Sur le graphique, quel point représente le maximum d'aire ? Quelles sont ses coordonnées ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Le maximum est le <strong>sommet de la parabole</strong> (point le plus haut).</p>
+    <p>Coordonnées : <strong>(25 ; 625)</strong>.</p>
+    <p>L = 25 m donne l'aire maximale A = 625 m².</p>
+    <p>L'axe de symétrie de la parabole passe par L = 25 (qui est le milieu de [0 ; 50]).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">VAL</span></h2>
+  <p>Pourquoi le rectangle optimal est-il un carré ? Comparer avec un rectangle « long et étroit » de 5 m × 45 m.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Carré 25 × 25 : aire 625 m².</p>
+    <p>Rectangle 5 × 45 : aire 225 m². <strong>2,8 fois moins</strong> que le carré, alors que les deux ont le <strong>même périmètre</strong> (100 m).</p>
+    <p><strong>Théorème géométrique :</strong> à périmètre donné, parmi tous les rectangles, le <strong>carré</strong> est celui qui a l'aire maximale.</p>
+    <p>Intuition : un rectangle « extrême » (très long, très fin) a beaucoup de bords mais peu de surface intérieure. Le carré équilibre les bords (= compact).</p>
+    <p>Encore plus général : le <strong>cercle</strong> a l'aire maximale parmi toutes les formes à périmètre donné. C'est pourquoi les bulles de savon sont sphériques !</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">VAL</span></h2>
+  <p>Karim s'aperçoit qu'un mur existant peut servir de côté gratuit (1 côté du rectangle = mur, 3 côtés = grillage). Modifier la modélisation et trouver les nouvelles dimensions optimales.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Nouvelle contrainte : 2L + l = 100 (le mur dispense d'1 côté).</p>
+    <p>l = 100 − 2L</p>
+    <p>A(L) = L × (100 − 2L) = 100 L − 2 L²</p>
+    <p>Tester différentes valeurs : L = 25 → l = 50 → A = 1 250. L = 20 → l = 60 → A = 1 200. L = 30 → l = 40 → A = 1 200.</p>
+    <p>Maximum à <strong>L = 25, l = 50</strong> → A = <strong>1 250 m²</strong>.</p>
+    <p>Le rectangle optimal est <strong>2 fois plus long que large</strong> (1 × 2). Plus du tout un carré.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">ANA</span></h2>
+  <p>Comparer l'aire obtenue avec et sans le mur. Quel est le gain ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Sans mur : 625 m².</p>
+    <p>Avec mur (1 côté gratuit) : 1 250 m².</p>
+    <p><strong>Gain : ×2</strong> (l'aire est doublée !).</p>
+    <p>Le mur « libère » un côté → on peut allonger l'enclos sans dépenser de grillage. Astuce simple, énorme gain.</p>
+    <p><strong>Pratique pro :</strong> toujours regarder ce qui peut servir de « bord gratuit » (mur, haie, fossé naturel). Ça change drastiquement le design optimal.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-blue">ANA</span></h2>
+  <p>Le grillage coûte 12 €/m. Karim envisage d'acheter 50 m supplémentaires (donc 150 m total) pour gagner en surface. Calculer la nouvelle aire optimale (cas sans mur) et le surcoût/gain.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Périmètre 150 → demi-périmètre 75 → carré optimal de 37,5 × 37,5.</p>
+    <p>A_max = 37,5² = <strong>1 406,25 m²</strong>.</p>
+    <p>Gain en aire : 1 406 − 625 = <strong>781 m²</strong> (+125 %).</p>
+    <p>Surcoût grillage : 50 × 12 = <strong>600 €</strong>.</p>
+    <p>Si Karim peut valoriser cette surface supplémentaire (= y stocker plus de marchandises pour produire et vendre), 600 € est facilement amorti. Sinon, c'est un investissement non rentable.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger en 5 lignes la note finale pour Karim, comparant les 3 scénarios étudiés et formulant une recommandation.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em><strong>Note — Optimisation clôture stockage</strong></em></p>
+    <table>
+      <thead><tr><th>Scénario</th><th>Forme optimale</th><th>Aire</th></tr></thead>
+      <tbody>
+        <tr><td>100 m grillage, 4 côtés</td><td>Carré 25×25</td><td>625 m²</td></tr>
+        <tr><td>100 m grillage, contre mur (3 côtés)</td><td>Rectangle 25×50</td><td>1 250 m²</td></tr>
+        <tr><td>150 m grillage, 4 côtés</td><td>Carré 37,5×37,5</td><td>1 406 m²</td></tr>
+      </tbody>
+    </table>
+    <p><em><strong>Recommandation :</strong> exploiter le mur existant (option 2) → gain de 625 m² pour aucun investissement. Si le besoin grandit, ajouter du grillage devient envisageable mais à ROI moyen.</em></p>
+  </div>
+</div>
+
+<div class="exo" style="background:#fef3c7;border:1px solid #b45309">
+  <h2>🚀 Pour aller plus loin <span class="badge-blue">ANA</span></h2>
+  <p>Au lieu d'un rectangle, Karim envisage une forme circulaire avec 100 m de grillage. Calculer le rayon et l'aire de cette zone circulaire. Comparer au carré optimal.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Périmètre cercle = 2 π r = 100 → r = 100 / (2π) ≈ <strong>15,92 m</strong>.</p>
+    <p>Aire cercle : π r² = π × 15,92² ≈ <strong>795 m²</strong>.</p>
+    <p>Comparaison :</p>
+    <ul>
+      <li>Carré 25 × 25 : 625 m²</li>
+      <li>Cercle r = 15,92 m : 795 m² (+ 27 %)</li>
+    </ul>
+    <p>Le cercle est <strong>plus efficace</strong> que le carré ! Mais en pratique :</p>
+    <ul>
+      <li>Difficile de mettre des poteaux courbes.</li>
+      <li>Surface arrondie pas pratique pour ranger des planches rectilignes.</li>
+      <li>Coins inutilisables si l'objet à stocker est rectangulaire.</li>
+    </ul>
+    <p>Théoriquement optimal mais <strong>rarement pratique</strong>. C'est pourquoi on utilise des formes simples (rectangle, carré).</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Optimisation :</strong> trouver le maximum (ou minimum) d'une fonction sous une contrainte.</li>
+    <li><strong>Méthode :</strong> exprimer la quantité à optimiser comme fonction d'une seule variable, puis chercher le sommet de la parabole.</li>
+    <li><strong>À périmètre fixé :</strong> rectangle optimal = carré.</li>
+    <li><strong>Avec un côté « gratuit » (mur) :</strong> rectangle optimal a un côté = 2 × l'autre.</li>
+    <li><strong>Forme la plus efficace :</strong> le cercle (à périmètre donné), peu pratique en construction.</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

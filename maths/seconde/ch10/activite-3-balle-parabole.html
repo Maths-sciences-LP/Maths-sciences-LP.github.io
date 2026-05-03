@@ -1,52 +1,262 @@
 <!DOCTYPE html>
-<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ch10 – Activité 3 – Trajectoire d'une balle – 2nde MAMA</title>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch10 – Activité 3 – Trajectoire en parabole : balle de tennis – 2nde Bac Pro MAMA</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<link rel="stylesheet" href="../../../styles.css"><link rel="stylesheet" href="../../../print.css" media="print">
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0056b3;--p-bg:#ebf5ff;--p-border:#bee3f8}</style>
-</head><body><div class="c"><a href="../../../maths-2nde-mama.html" class="nb">← RETOUR SOMMAIRE</a>
-<header><h1>Activité 3 – Trajectoire d'une balle (parabole) <span style="font-size:.55em;color:#7c2d12;font-weight:600">ÉTUDE DE CAS</span></h1>
-<p class="sous-titre">Chapitre 10 – Fonction carré | 2nde Bac Pro MAMA | ⏱ 25 min</p>
-<p class="maj">Dernière mise à jour : 3 mai 2026, 10:00</p></header>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-2nde-mama.html" class="nb">← RETOUR SOMMAIRE</a>
 
-<div class="situation"><h2>Situation – lance-balle pour entraînement</h2>
-<p><em>Une balle lancée à plat suit l'équation : h(x) = −0,02 x² + 0,5 x où h = hauteur (m), x = distance horizontale (m).</em></p></div>
+<header>
+  <h1>Activité 3 – Trajectoire d'une balle de tennis : la parabole <span style="font-size:.55em;color:#7c2d12;font-weight:600">ÉTUDE DE CAS</span></h1>
+  <p class="sous-titre">Chapitre 10 – Fonctions usuelles (carré, racine) | 2nde Bac Pro MAMA | Mathématiques | ⏱ 50 min</p>
+  <p class="maj">Dernière mise à jour : 4 mai 2026, 11:30</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
 
-<div class="exo"><h2>Question 1 <span class="badge-yellow">REA</span></h2>
-<p>Calculer h(0), h(5), h(12,5), h(25).</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<ul>
-<li>h(0) = 0 (départ)</li>
-<li>h(5) = −0,02×25 + 2,5 = 2 m</li>
-<li>h(12,5) = −0,02×156,25 + 6,25 = −3,125 + 6,25 = <strong>3,125 m</strong> (sommet)</li>
-<li>h(25) = −0,02×625 + 12,5 = −12,5 + 12,5 = 0 (atterrissage)</li>
-</ul>
-</div></div>
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Reconnaître une trajectoire parabolique (fonction du second degré)</li>
+    <li>Calculer image (hauteur en x donné) et antécédents (distances pour une hauteur)</li>
+    <li>Identifier le sommet et l'axe de symétrie d'une parabole</li>
+    <li>Interpréter physiquement les coefficients</li>
+  </ul>
+</div>
 
-<div class="exo"><h2>Question 2 <span class="badge-blue">ANA</span></h2>
-<p>Décrire l'allure du graphique.</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>C'est une <strong>parabole</strong> tournée vers le bas. La balle monte de 0 à 12,5 m horizontaux, atteint 3,125 m de hauteur, puis redescend pour atterrir à 25 m.</p>
-<p>Coefficient négatif (-0,02) → branches vers le bas.</p>
-</div></div>
+<div class="situation">
+  <h2>Situation – terrain d'entraînement de tennis</h2>
+  <p><em>L'atelier de Karim a obtenu un contrat pour fabriquer des bancs et des grilles pour un club de tennis. Il faut prévoir l'emplacement précis des grilles de protection contre les balles. Karim consulte le coach qui lui fournit l'équation moyenne de la trajectoire d'une balle frappée à plat depuis le fond de court :</em></p>
 
-<div class="exo"><h2>Question 3 <span class="badge-blue">VAL</span></h2>
-<p>À quelle distance la balle est-elle à 1,5 m de hauteur (montée et descente) ?</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>−0,02 x² + 0,5 x = 1,5 → 0,02 x² − 0,5 x + 1,5 = 0</p>
-<p>Δ = 0,25 − 0,12 = 0,13 → √Δ ≈ 0,361</p>
-<p>x = (0,5 ± 0,361)/(0,04) = 21,5 ou 3,5 m. <strong>Entre 3,5 m (montée) et 21,5 m (descente)</strong>.</p>
-</div></div>
+  <div style="background:#fff;padding:12px 16px;border-radius:8px;border:1px solid #cbd5e1;margin:14px 0">
+    <p style="margin:6px 0">🎾 <strong>Trajectoire-type d'une balle</strong></p>
+    <p style="margin:6px 0">h(x) = <strong>−0,02 × x² + 0,5 × x</strong></p>
+    <p style="margin:6px 0">où x = distance horizontale parcourue (m), h(x) = hauteur de la balle (m)</p>
+    <p style="margin:6px 0">Validité : x ∈ [0 ; 25] (du départ à l'atterrissage)</p>
+  </div>
 
-<div class="retenir"><strong>À retenir</strong>
-<ul><li><strong>Parabole :</strong> graphique d'une fonction f(x) = ax² + bx + c.</li>
-<li><strong>Si a &lt; 0 :</strong> branches vers le bas, sommet = max.</li>
-<li><strong>2 antécédents</strong> pour chaque image (sauf le sommet).</li></ul></div>
+  <h3>Document — graphique de la trajectoire</h3>
+  <div class="svg-wrap" style="margin:14px 0">
+    <svg width="100%" viewBox="0 0 540 280" style="max-width:540px;display:block;margin:0 auto" role="img" aria-label="Trajectoire parabolique de la balle. Démarre à (0, 0), monte jusqu'au sommet (12,5 m, 3,125 m), redescend à (25 m, 0). Symétrique par rapport à l'axe x = 12,5.">
+        <defs>
+          <style>
+            .ax{stroke:#1a202c;stroke-width:1.5}
+            .gd{stroke:#cbd5e1;stroke-width:.6}
+            .lbl{font:11px sans-serif;fill:#1a202c}
+            .lblA{font:600 12px sans-serif;fill:#1a202c}
+            .ti{font:700 13px sans-serif;text-anchor:middle;fill:#0056b3}
+          </style>
+        </defs>
+        <text class="ti" x="270" y="22">h(x) = −0,02 x² + 0,5 x — trajectoire d'une balle</text>
 
-</div><script src="../../../nav.js"></script></body></html>
+        <!-- Y : 0 m → 240, 4 m → 50. 1 m = 47,5 px. 1,5 → 169, 3,125 → 91 -->
+        <g class="gd">
+          <line x1="60" y1="50" x2="500" y2="50"/>
+          <line x1="60" y1="98" x2="500" y2="98"/>
+          <line x1="60" y1="145" x2="500" y2="145"/>
+          <line x1="60" y1="193" x2="500" y2="193"/>
+          <line x1="60" y1="240" x2="500" y2="240"/>
+        </g>
+        <line class="ax" x1="60" y1="240" x2="510" y2="240"/>
+        <line class="ax" x1="60" y1="40" x2="60" y2="240"/>
+
+        <g class="lbl" text-anchor="end">
+          <text x="55" y="244">0</text>
+          <text x="55" y="197">1</text>
+          <text x="55" y="149">2</text>
+          <text x="55" y="102">3</text>
+          <text x="55" y="54">4</text>
+        </g>
+        <text class="lblA" x="20" y="145" transform="rotate(-90 20 145)" text-anchor="middle">Hauteur h (m)</text>
+
+        <!-- X : 0 → 60, 25 m → 500. 1 m = 17,6 px -->
+        <g class="lbl" text-anchor="middle">
+          <text x="60" y="258">0</text>
+          <text x="148" y="258">5</text>
+          <text x="236" y="258">10</text>
+          <text x="324" y="258">15</text>
+          <text x="412" y="258">20</text>
+          <text x="500" y="258">25</text>
+        </g>
+        <text class="lblA" x="270" y="275" text-anchor="middle">Distance x (m)</text>
+
+        <!-- Parabole h(x) = -0,02 x² + 0,5 x. Points (0,0) → (60,240). (5,2) → (148, 240-95=145). (10, 3) → (236, 97,5). (12,5, 3,125) → (280, 91). (15, 3) → (324, 97,5). (20, 2) → (412, 145). (25, 0) → (500, 240) -->
+        <path d="M 60,240 Q 280,-30 500,240" fill="none" stroke="#0056b3" stroke-width="2.5"/>
+
+        <!-- Points clés -->
+        <circle cx="60" cy="240" r="4" fill="#15803d"/>
+        <text x="60" y="225" class="lbl" fill="#15803d" font-weight="bold" text-anchor="middle">départ</text>
+
+        <circle cx="280" cy="91" r="5" fill="#dc2626"/>
+        <text x="280" y="80" class="lbl" fill="#dc2626" font-weight="bold" text-anchor="middle">★ sommet (12,5 ; 3,125)</text>
+
+        <circle cx="500" cy="240" r="4" fill="#15803d"/>
+        <text x="500" y="225" class="lbl" fill="#15803d" font-weight="bold" text-anchor="middle">arrivée</text>
+
+        <!-- Axe de symétrie -->
+        <line x1="280" y1="40" x2="280" y2="240" stroke="#7c3aed" stroke-width="1" stroke-dasharray="3 2"/>
+        <text x="280" y="38" class="lbl" fill="#7c3aed" font-weight="bold" text-anchor="middle">axe x = 12,5</text>
+
+        <!-- Ligne h=1,5 m -->
+        <line x1="60" y1="169" x2="500" y2="169" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3 2"/>
+        <text x="495" y="166" class="lbl" fill="#94a3b8" text-anchor="end">h = 1,5 m</text>
+    </svg>
+  </div>
+
+  <p style="font-size:.9em;color:#475569"><em>📚 Cette activité réinvestit les notions du cours §3 (fonction du 2ème degré f(x) = ax² + bx + c) et §4 (sommet, axe de symétrie).</em></p>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Comment décrire la trajectoire de la balle (hauteur max, portée, retombée) pour positionner correctement les grilles de protection ?
+</div>
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer la hauteur de la balle pour les distances suivantes :</p>
+  <ol type="a">
+    <li>x = 0 m (départ)</li>
+    <li>x = 5 m</li>
+    <li>x = 12,5 m (milieu du court)</li>
+    <li>x = 20 m</li>
+    <li>x = 25 m (fond de court adverse)</li>
+  </ol>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ul>
+      <li>h(0) = 0 + 0 = <strong>0 m</strong> (départ au sol)</li>
+      <li>h(5) = −0,02 × 25 + 2,5 = −0,5 + 2,5 = <strong>2 m</strong></li>
+      <li>h(12,5) = −0,02 × 156,25 + 6,25 = −3,125 + 6,25 = <strong>3,125 m</strong> (sommet)</li>
+      <li>h(20) = −0,02 × 400 + 10 = −8 + 10 = <strong>2 m</strong></li>
+      <li>h(25) = −0,02 × 625 + 12,5 = −12,5 + 12,5 = <strong>0 m</strong> (atterrissage)</li>
+    </ul>
+    <p>Remarquer la <strong>symétrie</strong> : h(5) = h(20) = 2 m. C'est l'axe de symétrie passant par x = 12,5.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-blue">ANA</span></h2>
+  <p>Décrire l'allure générale de la trajectoire à partir des résultats de la question 1.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>La trajectoire est une <strong>parabole</strong> tournée vers le bas (« cloche »).</p>
+    <p>La balle :</p>
+    <ul>
+      <li>part du sol à x = 0 (h = 0)</li>
+      <li>monte jusqu'à un sommet à x = 12,5 m, h_max = 3,125 m</li>
+      <li>redescend symétriquement</li>
+      <li>retombe au sol à x = 25 m</li>
+    </ul>
+    <p>Le coefficient devant x² est <strong>négatif</strong> (−0,02), ce qui donne les branches vers le bas (= sommet en haut).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-blue">APP</span></h2>
+  <p>À partir du graphique, donner les coordonnées du <strong>sommet</strong> et lire l'<strong>axe de symétrie</strong> de la parabole.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Sommet :</strong> point le plus haut de la parabole = <strong>(12,5 ; 3,125)</strong>.</p>
+    <p><strong>Axe de symétrie :</strong> droite verticale passant par le sommet = <strong>x = 12,5</strong>.</p>
+    <p>L'axe de symétrie partage la trajectoire en deux moitiés identiques (montée et descente).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-yellow">REA</span></h2>
+  <p>Le filet du tennis est à 9 mètres du joueur, et il mesure 1 m de haut. La balle passe-t-elle au-dessus ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>h(9) = −0,02 × 81 + 4,5 = −1,62 + 4,5 = <strong>2,88 m</strong>.</p>
+    <p>2,88 m &gt; 1 m → <strong>oui, la balle passe largement au-dessus du filet</strong>. Confortable.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">ANA</span></h2>
+  <p>Karim doit poser une grille de 1,5 m de haut pour protéger les spectateurs. À quelles distances x la balle est-elle à exactement 1,5 m ? Pourquoi y a-t-il deux solutions ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Résoudre : −0,02 x² + 0,5 x = 1,5</p>
+    <p>0,02 x² − 0,5 x + 1,5 = 0 → multiplier par 50 : x² − 25 x + 75 = 0</p>
+    <p>Discriminant : Δ = 25² − 4 × 75 = 625 − 300 = 325 → √325 ≈ 18,03</p>
+    <p>x = (25 ± 18,03) / 2 → <strong>x₁ ≈ 3,5 m</strong> et <strong>x₂ ≈ 21,5 m</strong>.</p>
+    <p><strong>Deux solutions</strong> car la balle est à 1,5 m <strong>une fois en montée</strong> (3,5 m) et <strong>une fois en descente</strong> (21,5 m). C'est une caractéristique des paraboles : <strong>2 antécédents</strong> pour chaque hauteur (sauf le sommet, antécédent unique).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">VAL</span></h2>
+  <p>Le coach lance maintenant des balles plus fortes : la trajectoire devient h(x) = −0,015 x² + 0,6 x. Calculer la nouvelle distance d'atterrissage.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Atterrissage : h(x) = 0 → x × (−0,015 x + 0,6) = 0.</p>
+    <p>Solutions : x = 0 (départ) ou −0,015 x + 0,6 = 0 → x = 0,6 / 0,015 = <strong>40 m</strong>.</p>
+    <p>La balle va plus loin (40 m vs 25 m). Logique : un service plus fort = trajectoire plus longue.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-blue">ANA</span></h2>
+  <p>Que représentent physiquement les coefficients dans l'équation h(x) = a x² + b x + c ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>a = −0,02 (terme en x²)</strong> : lié à la <strong>gravité</strong> et à la vitesse de la balle. Plus a est petit en valeur absolue (vitesse forte ou gravité faible), plus la trajectoire est tendue. a est négatif → l'objet retombe.</p>
+    <p><strong>b = 0,5 (terme en x)</strong> : lié à l'<strong>angle de tir</strong> (« inclinaison initiale »). Plus b est grand, plus la balle monte vite au début.</p>
+    <p><strong>c = 0 (constante)</strong> : <strong>hauteur initiale</strong> du tir. Ici 0 (balle frappée au ras du sol). Si on tirait depuis 1 m, on aurait c = 1.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger en 5 lignes une note technique pour le client (club de tennis) résumant les caractéristiques de la trajectoire et les recommandations pour les grilles.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em><strong>Note technique — Trajectoire et grilles de protection</strong></em></p>
+    <p><em>La balle moyenne décrit une parabole d'équation h(x) = −0,02 x² + 0,5 x. Hauteur maximale 3,12 m à mi-court (12,5 m). Atterrissage à 25 m du joueur.</em></p>
+    <p><em>La balle dépasse 1,5 m de hauteur entre les positions x = 3,5 m et x = 21,5 m du serveur. Les grilles de protection latérales doivent donc être <strong>au moins de 3,5 m de hauteur</strong> sur cette zone (avec marge de sécurité pour balles plus fortes).</em></p>
+    <p><em>Pour les balles puissantes, la portée peut atteindre 40 m → prévoir un dégagement.</em></p>
+  </div>
+</div>
+
+<div class="exo" style="background:#fef3c7;border:1px solid #b45309">
+  <h2>🚀 Pour aller plus loin <span class="badge-blue">ANA</span></h2>
+  <p>Pour la trajectoire h(x) = −0,02 x² + 0,5 x, calculer la hauteur de la balle à 18 m. Vérifier que la symétrie est respectée par rapport à l'axe x = 12,5.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>h(18) = −0,02 × 324 + 9 = −6,48 + 9 = <strong>2,52 m</strong>.</p>
+    <p>Vérification symétrie : 18 est à 18 − 12,5 = 5,5 m après l'axe. Le point symétrique est à 12,5 − 5,5 = 7 m.</p>
+    <p>h(7) = −0,02 × 49 + 3,5 = −0,98 + 3,5 = <strong>2,52 m</strong>. ✓</p>
+    <p>La symétrie est confirmée : h(7) = h(18). Cette propriété permet de <strong>diviser par 2</strong> les calculs en pratique : il suffit d'étudier la moitié de la parabole.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Parabole :</strong> graphique de f(x) = ax² + bx + c.</li>
+    <li><strong>Si a &gt; 0 :</strong> branches vers le haut (sommet en bas, minimum).</li>
+    <li><strong>Si a &lt; 0 :</strong> branches vers le bas (sommet en haut, maximum).</li>
+    <li><strong>Symétrie :</strong> axe vertical passant par le sommet. Deux antécédents pour chaque image (sauf au sommet).</li>
+    <li><strong>Application :</strong> trajectoires balistiques, optimisation (max bénéfice, min coût), antennes paraboliques.</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>
