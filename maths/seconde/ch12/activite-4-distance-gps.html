@@ -1,47 +1,282 @@
 <!DOCTYPE html>
-<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ch12 – Activité 4 – Distance entre 2 points GPS – 2nde MAMA</title>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch12 – Activité 4 – Comment ton GPS calcule la distance – 2nde Bac Pro MAMA</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<link rel="stylesheet" href="../../../styles.css"><link rel="stylesheet" href="../../../print.css" media="print">
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0056b3;--p-bg:#ebf5ff;--p-border:#bee3f8}</style>
-</head><body><div class="c"><a href="../../../maths-2nde-mama.html" class="nb">← RETOUR SOMMAIRE</a>
-<header><h1>Activité 4 – Comment ton GPS calcule la distance <span style="font-size:.55em;color:#7c3aed;font-weight:600">PROJET DOCUMENTAIRE</span></h1>
-<p class="sous-titre">Chapitre 12 – Pythagore | 2nde Bac Pro MAMA | ⏱ 25 min</p>
-<p class="maj">Dernière mise à jour : 3 mai 2026, 10:00</p></header>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-2nde-mama.html" class="nb">← RETOUR SOMMAIRE</a>
 
-<div class="situation"><h2>Situation – Pythagore dans ton smartphone</h2>
-<p>Quand ton GPS calcule la distance entre 2 points, il utilise (en simplifié) la formule de Pythagore avec les coordonnées (x ; y) en mètres :</p>
-<p style="text-align:center"><strong>d = √((x₂ − x₁)² + (y₂ − y₁)²)</strong></p>
-<p>(C'est la formule de la distance entre 2 points, ou « théorème de Pythagore en repère ».)</p></div>
+<header>
+  <h1>Activité 4 – Comment ton GPS calcule la distance entre 2 points <span style="font-size:.55em;color:#7c3aed;font-weight:600">PROJET DOCUMENTAIRE</span></h1>
+  <p class="sous-titre">Chapitre 12 – Théorème de Pythagore | 2nde Bac Pro MAMA | Mathématiques | ⏱ 50 min</p>
+  <p class="maj">Dernière mise à jour : 4 mai 2026, 11:30</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
 
-<div class="exo"><h2>Question 1 <span class="badge-yellow">REA</span></h2>
-<p>Distance entre A(2, 3) et B(7, 15) (en km).</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>d = √((7−2)² + (15−3)²) = √(25 + 144) = √169 = <strong>13 km</strong>.</p>
-</div></div>
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Appliquer Pythagore au calcul de distance entre 2 points en repère</li>
+    <li>Comprendre la formule de la distance d = √((Δx)² + (Δy)²)</li>
+    <li>Distinguer distance à vol d'oiseau et distance routière</li>
+    <li>Faire le lien entre maths et technologies du quotidien (GPS)</li>
+  </ul>
+</div>
 
-<div class="exo"><h2>Question 2 <span class="badge-blue">ANA</span></h2>
-<p>Pourquoi le « GPS routier » donne 16 km alors que d = 13 km à vol d'oiseau ?</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>La formule donne la distance <strong>à vol d'oiseau</strong> (ligne droite). Le GPS routier suit les routes disponibles, plus longues à cause des virages, ronds-points, traversées d'agglomérations.</p>
-<p>Ratio typique route/vol d'oiseau : 1,2 à 1,5. Ici 16/13 ≈ 1,23.</p>
-</div></div>
+<div class="situation">
+  <h2>Situation – Pythagore dans ton smartphone</h2>
+  <p><em>À chaque fois que tu utilises ton smartphone pour calculer la distance entre toi et un client, ton GPS effectue (de manière simplifiée) un calcul basé sur le théorème de Pythagore. Voyons comment.</em></p>
 
-<div class="exo"><h2>Question 3 <span class="badge-blue">VAL</span></h2>
-<p>Pour un grand chantier où 4 ouvriers doivent se rejoindre, comment Pythagore peut-il être utile ?</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>Pour identifier le <strong>point central optimal</strong> : minimiser la somme des distances aux 4 ouvriers. Ce point existe (dit « centre géométrique » ou point de Fermat-Torricelli). Les coordinatrices d'équipe utilisent ce calcul pour optimiser les déplacements.</p>
-</div></div>
+  <h3>Document — formule de la distance dans un repère</h3>
+  <div style="background:#dbeafe;padding:10px 14px;border-radius:6px;border-left:3px solid #1d4ed8;margin:14px 0">
+    <p>Pour deux points A(x₁ ; y₁) et B(x₂ ; y₂) dans un repère :</p>
+    <p style="text-align:center;font-size:1.1em"><strong>d(A, B) = √((x₂ − x₁)² + (y₂ − y₁)²)</strong></p>
+    <p>C'est l'application directe du théorème de Pythagore au triangle rectangle de côtés Δx (différence des abscisses) et Δy (différence des ordonnées).</p>
+  </div>
 
-<div class="retenir"><strong>À retenir</strong>
-<ul><li><strong>Distance entre 2 points (x₁,y₁) et (x₂,y₂) :</strong> d = √((Δx)² + (Δy)²).</li>
-<li><strong>Vol d'oiseau ≠ trajet routier.</strong> Toujours plus court en ligne droite.</li>
-<li><strong>GPS = Pythagore + sphère terrestre + routes.</strong></li></ul></div>
+  <h3>Document — schéma du calcul de distance</h3>
+  <div class="svg-wrap" style="margin:14px 0">
+    <svg width="100%" viewBox="0 0 540 280" style="max-width:540px;display:block;margin:0 auto" role="img" aria-label="Repère orthonormé avec deux points A(2,3) et B(7,15). Triangle rectangle formé par les 2 points et le 3ème point C(7,3) ; côtés horizontal Δx=5 et vertical Δy=12 ; hypoténuse d=13 km.">
+        <defs>
+          <style>
+            .ax{stroke:#1a202c;stroke-width:1.5}
+            .gd{stroke:#cbd5e1;stroke-width:.6}
+            .b{stroke:#1a202c;stroke-width:2}
+            .lbl{font:11px sans-serif;fill:#1a202c}
+            .lblA{font:600 12px sans-serif;fill:#1a202c}
+            .ti{font:700 13px sans-serif;text-anchor:middle;fill:#0056b3}
+          </style>
+        </defs>
+        <text class="ti" x="270" y="22">Distance entre A(2, 3) et B(7, 15)</text>
 
-</div><script src="../../../nav.js"></script></body></html>
+        <!-- Repère : 1 unité = 25 px. Origine en (60, 250). -->
+        <!-- Lignes de grille -->
+        <g class="gd">
+          <line x1="60" y1="100" x2="500" y2="100"/>
+          <line x1="60" y1="150" x2="500" y2="150"/>
+          <line x1="60" y1="200" x2="500" y2="200"/>
+          <line x1="60" y1="250" x2="500" y2="250"/>
+          <line x1="110" y1="50" x2="110" y2="250"/>
+          <line x1="160" y1="50" x2="160" y2="250"/>
+          <line x1="210" y1="50" x2="210" y2="250"/>
+          <line x1="260" y1="50" x2="260" y2="250"/>
+          <line x1="310" y1="50" x2="310" y2="250"/>
+          <line x1="360" y1="50" x2="360" y2="250"/>
+          <line x1="410" y1="50" x2="410" y2="250"/>
+        </g>
+        <line class="ax" x1="60" y1="250" x2="510" y2="250"/>
+        <line class="ax" x1="60" y1="40" x2="60" y2="250"/>
+
+        <!-- X grad -->
+        <g class="lbl" text-anchor="middle">
+          <text x="60" y="265">0</text>
+          <text x="160" y="265">2 (A)</text>
+          <text x="260" y="265">4</text>
+          <text x="360" y="265">7 (B)</text>
+        </g>
+        <text class="lblA" x="270" y="278" text-anchor="middle">x (km)</text>
+
+        <!-- Y grad -->
+        <g class="lbl" text-anchor="end">
+          <text x="55" y="253">0</text>
+          <text x="55" y="203">5</text>
+          <text x="55" y="153">10</text>
+          <text x="55" y="103">15 (B)</text>
+        </g>
+        <text class="lblA" x="20" y="145" transform="rotate(-90 20 145)" text-anchor="middle">y (km)</text>
+
+        <!-- A en (2, 3) → x = 60 + 2*25 = 110, y = 250 - 3*10 = 220. y_pixel : 1 km = 10 px -->
+        <!-- Recalcul : 15 km en y → max y = 50 ; 0 → 250 ; 1 km = (250-50)/15 = 13,3 px. y(3) = 250-3*13,3 = 210. y(15) = 250-15*13,3 = 50 -->
+        <!-- 1 km en x : (500-60)/9 = 49 px. x(2) = 60+2*49=158. x(7) = 60+7*49=403 -->
+        <!-- Recalc : 1 km en x = 50 px (plus simple). x(2)=160, x(7)=410. Faux. Reprenons. -->
+        <!-- Final : 1 km x = 50 px ; 1 km y = 14 px. A(2,3) → (160, 250-3*14=208). B(7,15) → (410, 250-15*14=40) -->
+        <!-- Mais Δy=12 → 12*14=168 vs Δx=5*50=250. Format pas ortho. On force x = 25 px/km, y = 14 px/km pour 5/12 ratio acceptable -->
+        <!-- À refaire : Δx=5km*X, Δy=12km*Y pour visualiser le triangle. Plus simple : prendre échelle non métrique. -->
+
+        <!-- Garder schématique : -->
+        <!-- A en (160, 220) -->
+        <circle cx="160" cy="220" r="6" fill="#dc2626"/>
+        <text x="155" y="215" class="lblA" fill="#dc2626" text-anchor="end" font-weight="bold">A(2 ; 3)</text>
+
+        <!-- B en (360, 70) -->
+        <circle cx="360" cy="70" r="6" fill="#15803d"/>
+        <text x="370" y="68" class="lblA" fill="#15803d" font-weight="bold">B(7 ; 15)</text>
+
+        <!-- C en (360, 220) -->
+        <circle cx="360" cy="220" r="4" fill="#7c3aed"/>
+        <text x="365" y="235" class="lbl" fill="#7c3aed">C(7 ; 3)</text>
+
+        <!-- Côté horizontal AC -->
+        <line x1="160" y1="220" x2="360" y2="220" stroke="#0056b3" stroke-width="2"/>
+        <text x="260" y="240" class="lblA" fill="#0056b3" text-anchor="middle" font-weight="bold">Δx = 5 km</text>
+
+        <!-- Côté vertical CB -->
+        <line x1="360" y1="220" x2="360" y2="70" stroke="#0056b3" stroke-width="2"/>
+        <text x="378" y="145" class="lblA" fill="#0056b3" text-anchor="start" font-weight="bold">Δy = 12 km</text>
+
+        <!-- Angle droit en C -->
+        <rect x="350" y="210" width="10" height="10" fill="none" stroke="#1a202c" stroke-width="1"/>
+
+        <!-- Hypoténuse AB -->
+        <line x1="160" y1="220" x2="360" y2="70" stroke="#dc2626" stroke-width="2.5" stroke-dasharray="6 3"/>
+        <text x="220" y="120" class="lblA" fill="#dc2626" text-anchor="middle" font-weight="bold">d = 13 km</text>
+        <text x="220" y="135" class="lbl" fill="#dc2626" text-anchor="middle">(à vol d'oiseau)</text>
+    </svg>
+  </div>
+
+  <p style="font-size:.9em;color:#475569"><em>📚 Cette activité réinvestit les notions du cours §2 (calcul d'une hypoténuse) et §5 (distance dans un repère).</em></p>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Comment le GPS de ton téléphone calcule-t-il la distance à vol d'oiseau entre 2 points, et pourquoi diffère-t-elle de la distance routière ?
+</div>
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer la distance à vol d'oiseau entre l'atelier A(2 ; 3) et le client B(7 ; 15), où les coordonnées sont en kilomètres dans un plan local.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Δx = x_B − x_A = 7 − 2 = 5 km</p>
+    <p>Δy = y_B − y_A = 15 − 3 = 12 km</p>
+    <p>d = √(Δx² + Δy²) = √(5² + 12²) = √(25 + 144) = √169 = <strong>13 km</strong>.</p>
+    <p>Note : 5-12-13 est un <strong>triplet pythagoricien</strong> classique. La distance « tombe juste ».</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-blue">ANA</span></h2>
+  <p>Le GPS routier indique 16 km par la route. Pourquoi cette distance est-elle différente de la distance calculée par Pythagore (13 km) ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>La formule de Pythagore donne la distance « <strong>à vol d'oiseau</strong> » : la ligne droite directe entre 2 points (théoriquement parcourable par un drone, un oiseau, un avion).</p>
+    <p>Le GPS routier donne la distance <strong>en suivant les routes existantes</strong>, qui :</p>
+    <ul>
+      <li>contournent les obstacles (rivières, montagnes, propriétés privées)</li>
+      <li>suivent les sens de circulation (sens unique, ronds-points)</li>
+      <li>traversent les agglomérations en zigzag</li>
+    </ul>
+    <p>Ratio typique route/vol d'oiseau : <strong>1,2 à 1,5</strong>. Ici : 16 / 13 ≈ 1,23, dans la fourchette normale.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer la distance à vol d'oiseau entre les points C(0 ; 0) et D(8 ; 6).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>d = √(8² + 6²) = √(64 + 36) = √100 = <strong>10 unités</strong>.</p>
+    <p>Encore un triplet pythagoricien (6-8-10).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">VAL</span></h2>
+  <p>Tom a 3 chantiers à visiter dans la journée. Coordonnées : Atelier (0 ; 0), Chantier 1 (4 ; 3), Chantier 2 (10 ; 5), Retour atelier. Calculer la distance totale à vol d'oiseau.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Calcul des 3 segments :</p>
+    <ul>
+      <li>Atelier → Ch1 : √(4² + 3²) = √25 = 5 km</li>
+      <li>Ch1 → Ch2 : √((10−4)² + (5−3)²) = √(36 + 4) = √40 ≈ 6,32 km</li>
+      <li>Ch2 → Atelier : √(10² + 5²) = √125 ≈ 11,18 km</li>
+    </ul>
+    <p>Total : 5 + 6,32 + 11,18 = <strong>22,5 km</strong> à vol d'oiseau.</p>
+    <p>Distance routière probable : 22,5 × 1,3 ≈ 29 km. À 60 km/h moyenne : ~30 minutes de route au total.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">ANA</span></h2>
+  <p>Tom veut savoir l'ordre des chantiers le plus court. Comparer les 3 ordres possibles : A→1→2→A, A→2→1→A. Quel est le moins long ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Ordre A→1→2→A :</strong> 5 + 6,32 + 11,18 = 22,5 km (déjà calculé).</p>
+    <p><strong>Ordre A→2→1→A :</strong> 11,18 + 6,32 + 5 = 22,5 km (idem, symétrique).</p>
+    <p>Pour ce cas simple à 2 chantiers, les 2 ordres font le même nombre de km totaux (les segments sont parcourus dans le sens inverse).</p>
+    <p>Pour 3+ chantiers, le problème devient le <strong>« voyageur de commerce »</strong> (TSP), qui n'a pas de solution simple. Ton GPS utilise des algorithmes complexes pour optimiser.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">ANA</span></h2>
+  <p>Les coordonnées GPS réelles sont en latitude / longitude. Sur de courtes distances (&lt; 100 km), on peut les convertir approximativement : 1° latitude ≈ 111 km, 1° longitude ≈ 78 km (en France). Calculer la distance entre Paris (48,85 N ; 2,35 E) et Versailles (48,80 N ; 2,12 E).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Δlat = 48,85 − 48,80 = 0,05 → Δy = 0,05 × 111 = 5,55 km.</p>
+    <p>Δlon = 2,35 − 2,12 = 0,23 → Δx = 0,23 × 78 = 17,94 km.</p>
+    <p>d = √(5,55² + 17,94²) = √(30,8 + 321,8) = √352,6 ≈ <strong>18,8 km</strong>.</p>
+    <p>Distance réelle à vol d'oiseau Paris-Versailles ≈ 17 km. Notre estimation est bonne (~10 % d'écart, due à la simplification de la sphère).</p>
+    <p>Pour des distances plus longues (> 100 km), il faut utiliser la <strong>formule sphérique</strong> (Haversine), plus complexe.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-blue">VAL</span></h2>
+  <p>Pour un grand chantier où 4 ouvriers travaillent à des coordonnées différentes, comment Pythagore peut-il être utile pour optimiser leur coordination ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Pythagore permet de trouver le <strong>point central optimal</strong> (le « barycentre » géométrique) à partir duquel la somme des distances vers les 4 ouvriers est minimisée.</p>
+    <p>Pour 4 points A, B, C, D, le centre G a pour coordonnées :</p>
+    <p>G_x = (x_A + x_B + x_C + x_D) / 4</p>
+    <p>G_y = (y_A + y_B + y_C + y_D) / 4</p>
+    <p>Application : placer le poste de commandement, le stockage des outils, le coffre à clés au point G → minimum de pas pour tous les ouvriers.</p>
+    <p>C'est ce que font les apps de logistique pour optimiser les positions des entrepôts (Amazon, FedEx).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger en 5 lignes une explication pour un public non-mathématicien : « Comment fonctionne le calcul de distance dans ton GPS ? »</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em><strong>Comment ton GPS calcule la distance ?</strong></em></p>
+    <p><em>Ton GPS connaît tes coordonnées (latitude, longitude) et celles du destinataire. Il calcule alors la <strong>différence horizontale (Δx)</strong> et la <strong>différence verticale (Δy)</strong>, et applique le théorème de Pythagore :</em></p>
+    <p style="text-align:center"><em><strong>distance = √(Δx² + Δy²)</strong></em></p>
+    <p><em>C'est la distance « à vol d'oiseau » (ligne droite). Pour la distance par la route, le GPS suit les voies existantes, généralement 20-50 % plus longues. Pour les longs trajets (sur une planète sphérique), il utilise une formule plus complexe (Haversine) qui tient compte de la courbure.</em></p>
+    <p><em>Bref, à chaque fois que tu utilises Google Maps ou Waze, c'est Pythagore (et un peu de trigonométrie sphérique) qui travaille pour toi !</em></p>
+  </div>
+</div>
+
+<div class="exo" style="background:#fef3c7;border:1px solid #b45309">
+  <h2>🚀 Pour aller plus loin <span class="badge-blue">ANA</span></h2>
+  <p>Un drone agricole survole un champ rectangulaire (300 m × 200 m) en suivant ses 2 diagonales. Quelle est la distance totale parcourue ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Diagonale d'un rectangle 300 × 200 :</p>
+    <p>d = √(300² + 200²) = √(90 000 + 40 000) = √130 000 ≈ <strong>360,6 m</strong>.</p>
+    <p>Comme le drone suit les 2 diagonales : 2 × 360,6 = <strong>721 m</strong>.</p>
+    <p>À 5 m/s (vitesse drone agricole) : 721 / 5 = 144 secondes ≈ 2 min 24.</p>
+    <p>Plus efficace que de suivre le contour (4 côtés = 1 000 m). Optimisation du temps de vol = économie de batterie.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Distance entre 2 points (x₁, y₁) et (x₂, y₂) :</strong> d = √((Δx)² + (Δy)²) — directement issue de Pythagore.</li>
+    <li><strong>Vol d'oiseau ≠ trajet routier.</strong> La ligne droite est toujours plus courte (mais souvent impraticable).</li>
+    <li><strong>GPS = Pythagore + sphère terrestre + base de données routière.</strong></li>
+    <li><strong>Applications :</strong> logistique, livraison, optimisation de tournées, drones agricoles, pompiers.</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>
