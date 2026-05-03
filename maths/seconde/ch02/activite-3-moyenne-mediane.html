@@ -1,58 +1,265 @@
 <!DOCTYPE html>
-<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ch02 – Activité 3 – Moyenne ou médiane ? – 2nde MAMA</title>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch02 – Activité 3 – Moyenne ou médiane ? – 2nde Bac Pro MAMA</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<link rel="stylesheet" href="../../../styles.css"><link rel="stylesheet" href="../../../print.css" media="print">
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0056b3;--p-bg:#ebf5ff;--p-border:#bee3f8}</style>
-</head><body><div class="c"><a href="../../../maths-2nde-mama.html" class="nb">← RETOUR SOMMAIRE</a>
-<header><h1>Activité 3 – Moyenne ou médiane ? <span style="font-size:.55em;color:#7c3aed;font-weight:600">ÉTUDE DOCUMENTAIRE</span></h1>
-<p class="sous-titre">Chapitre 2 – Statistiques | 2nde Bac Pro MAMA | ⏱ 30 min</p>
-<p class="maj">Dernière mise à jour : 3 mai 2026, 10:00</p></header>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-2nde-mama.html" class="nb">← RETOUR SOMMAIRE</a>
 
-<div class="objectifs"><strong>Objectifs :</strong><ul><li>Distinguer moyenne et médiane</li><li>Choisir le bon indicateur selon la situation</li></ul></div>
+<header>
+  <h1>Activité 3 – Moyenne ou médiane ? Le piège des salaires <span style="font-size:.55em;color:#7c3aed;font-weight:600">ÉTUDE DOCUMENTAIRE</span></h1>
+  <p class="sous-titre">Chapitre 2 – Statistiques à une variable | 2nde Bac Pro MAMA | Mathématiques | ⏱ 50 min</p>
+  <p class="maj">Dernière mise à jour : 4 mai 2026, 10:00</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
 
-<div class="situation"><h2>Situation – qui ment dans le restaurant ?</h2>
-<p><em>Un patron de restaurant dit : « Le salaire moyen ici est de 3 500 €/mois. » Une salariée répond : « C'est faux, on touche presque tous le SMIC ! »</em></p>
-<p>Salaires (€/mois) des 10 employés : 1 600, 1 700, 1 700, 1 800, 1 800, 1 900, 1 900, 2 100, 2 500, <strong>18 000</strong> (le patron).</p></div>
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Calculer la moyenne et la médiane d'une série statistique</li>
+    <li>Comprendre la différence entre les deux indicateurs</li>
+    <li>Choisir l'indicateur adapté selon la situation</li>
+    <li>Aiguiser son esprit critique face à la communication par les chiffres</li>
+  </ul>
+</div>
+
+<div class="situation">
+  <h2>Situation – le restaurant « Chez Marcel »</h2>
+  <p><em>Le restaurant « Chez Marcel » à Lyon a 10 employés et un patron. Lors d'une discussion avec ses clients, le patron affirme : « Le salaire moyen ici est de 3 500 € par mois ! C'est très correct. » Une serveuse, Lina, lui rétorque : « C'est faux ! On touche presque tous le SMIC, même pas 2 000 €. » Qui dit la vérité ?</em></p>
+
+  <h3>Document 1 — Salaires mensuels nets dans le restaurant (€/mois)</h3>
+  <table>
+    <thead>
+      <tr><th>Personne</th><th>Poste</th><th>Salaire</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Lina</td><td>Serveuse</td><td>1 600</td></tr>
+      <tr><td>Karim</td><td>Plongeur</td><td>1 700</td></tr>
+      <tr><td>Sophie</td><td>Serveuse</td><td>1 700</td></tr>
+      <tr><td>Marc</td><td>Aide-cuisine</td><td>1 800</td></tr>
+      <tr><td>Tom</td><td>Aide-cuisine</td><td>1 800</td></tr>
+      <tr><td>Julie</td><td>Serveuse senior</td><td>1 900</td></tr>
+      <tr><td>Hugo</td><td>Cuisinier</td><td>1 900</td></tr>
+      <tr><td>Léa</td><td>Cuisinier</td><td>2 100</td></tr>
+      <tr><td>Pierre</td><td>Sommelier</td><td>2 500</td></tr>
+      <tr><td>Marcel</td><td><strong>Patron</strong></td><td><strong>18 000</strong></td></tr>
+    </tbody>
+  </table>
+
+  <h3>Document 2 — Définitions</h3>
+  <ul>
+    <li><strong>Moyenne</strong> : somme de toutes les valeurs divisée par leur nombre. Indicateur sensible aux valeurs extrêmes.</li>
+    <li><strong>Médiane</strong> : valeur qui partage la série triée en 2 parties égales (50 % en dessous, 50 % au-dessus). Indicateur robuste aux valeurs extrêmes.</li>
+  </ul>
+
+  <p style="font-size:.9em;color:#475569"><em>📚 Cette activité réinvestit les notions du cours §4 (moyenne) et §5 (médiane et quartiles).</em></p>
+</div>
 
 <div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
-<strong>Problématique :</strong> Qui dit la vérité, le patron ou la salariée ?</div>
+  <strong>Problématique :</strong> Qui dit la vérité — le patron qui parle de 3 500 € ou Lina qui parle de moins de 2 000 € ? Quel indicateur statistique reflète le mieux la situation des employés ?
+</div>
 
-<div class="exo"><h2>Question 1 <span class="badge-yellow">REA</span></h2>
-<p>Calculer la moyenne et la médiane des 10 salaires.</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p><strong>Moyenne</strong> : (1600+1700+1700+1800+1800+1900+1900+2100+2500+18000) / 10 = 35 000 / 10 = <strong>3 500 €</strong></p>
-<p><strong>Médiane</strong> (10 valeurs triées) : moyenne des 5ᵉ et 6ᵉ valeurs = (1 800 + 1 900) / 2 = <strong>1 850 €</strong></p>
-</div></div>
+<div class="exo">
+  <h2>Question 1 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer la <strong>moyenne</strong> des 10 salaires (en incluant le patron Marcel).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Somme = 1 600 + 1 700 + 1 700 + 1 800 + 1 800 + 1 900 + 1 900 + 2 100 + 2 500 + 18 000</p>
+    <p>Somme = 35 000 €</p>
+    <p>Moyenne = 35 000 / 10 = <strong>3 500 €/mois</strong> ✓</p>
+    <p>Le patron a raison sur le calcul mathématique. Il dit la vérité, statistiquement.</p>
+  </div>
+</div>
 
-<div class="exo"><h2>Question 2 <span class="badge-blue">VAL</span></h2>
-<p>Qui dit la vérité ? Pourquoi un seul salaire fait basculer la moyenne ?</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>Les <strong>deux</strong> ont raison... mais la salariée est plus représentative.</p>
-<p>Le salaire du patron (18 000 €) « tire » la moyenne vers le haut. La médiane (1 850 €) reflète mieux la situation des employés.</p>
-<p>La <strong>moyenne</strong> est sensible aux valeurs extrêmes. La <strong>médiane</strong> est robuste : 50 % gagnent plus, 50 % gagnent moins.</p>
-</div></div>
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer la <strong>médiane</strong> des 10 salaires.</p>
+  <p><em>Aide : pour 10 valeurs (nombre pair), la médiane est la moyenne des 5ᵉ et 6ᵉ valeurs (après tri croissant).</em></p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Salaires triés : 1 600 ; 1 700 ; 1 700 ; 1 800 ; <strong>1 800</strong> ; <strong>1 900</strong> ; 1 900 ; 2 100 ; 2 500 ; 18 000.</p>
+    <p>Médiane = (5ᵉ + 6ᵉ) / 2 = (1 800 + 1 900) / 2 = <strong>1 850 €/mois</strong>.</p>
+    <p>Lina est plus proche de la vérité : la moitié des employés gagnent moins de 1 850 € — proche de ses 1 600 €.</p>
+  </div>
+</div>
 
-<div class="exo"><h2>Question 3 <span class="badge-blue">ANA</span></h2>
-<p>Pour 3 contextes, quel indicateur préférer ?</p>
-<ol type="a"><li>Annoncer la production typique d'un atelier</li><li>Évaluer le revenu d'un foyer en France</li><li>Tarif moyen d'une chambre d'hôtel</li></ol>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<ul>
-<li>(a) <strong>Médiane</strong> ou <strong>mode</strong> : la « production typique » n'est pas tirée par les exceptions.</li>
-<li>(b) <strong>Médiane</strong> : le revenu moyen est tiré par les très hauts salaires (1 % gagne énormément). Médiane plus parlante.</li>
-<li>(c) <strong>Moyenne</strong> ou <strong>médiane</strong> selon objectif : moyenne pour le total des recettes, médiane pour le tarif typique.</li>
-</ul>
-</div></div>
+<div class="exo">
+  <h2>Question 3 <span class="badge-blue">ANA</span></h2>
+  <p>Visualiser la situation sur un axe gradué :</p>
+  <div class="svg-wrap" style="margin:14px 0">
+    <svg width="100%" viewBox="0 0 600 220" style="max-width:600px;display:block;margin:0 auto" role="img" aria-label="Axe horizontal des salaires en € : 9 employés concentrés entre 1600 et 2500 €, et 1 patron isolé à 18000 €. Médiane à 1850 € (au milieu des employés). Moyenne à 3500 € (tirée vers le haut par le patron).">
+      <defs>
+        <style>
+          .ax{stroke:#1a202c;stroke-width:1.5}
+          .gd{stroke:#cbd5e1;stroke-width:.6}
+          .lbl{font:11px sans-serif;fill:#1a202c}
+          .lblA{font:600 12px sans-serif;fill:#1a202c}
+          .ti{font:700 13px sans-serif;text-anchor:middle;fill:#0056b3}
+        </style>
+      </defs>
+      <text class="ti" x="300" y="22">Répartition des 10 salaires (axe en €)</text>
 
-<div class="retenir"><strong>À retenir</strong>
-<ul><li><strong>Moyenne :</strong> somme/total. Sensible aux valeurs extrêmes.</li>
-<li><strong>Médiane :</strong> 50 % au-dessus, 50 % en-dessous. Robuste aux extrêmes.</li>
-<li><strong>Choix :</strong> moyenne pour les comptes (total budget), médiane pour le « typique ».</li></ul></div>
+      <!-- Axe horizontal de 0 à 20 000. x = 60 → 0 ; x = 540 → 20000 ; soit 0,024 px/€ -->
+      <line class="ax" x1="60" y1="130" x2="550" y2="130"/>
+      <!-- Graduations : 0, 5000, 10000, 15000, 20000 -->
+      <g>
+        <line x1="60" y1="125" x2="60" y2="135" stroke="#1a202c" stroke-width="1.5"/>
+        <text x="60" y="155" class="lbl" text-anchor="middle">0</text>
+        <line x1="180" y1="125" x2="180" y2="135" stroke="#1a202c" stroke-width="1.5"/>
+        <text x="180" y="155" class="lbl" text-anchor="middle">5 000</text>
+        <line x1="300" y1="125" x2="300" y2="135" stroke="#1a202c" stroke-width="1.5"/>
+        <text x="300" y="155" class="lbl" text-anchor="middle">10 000</text>
+        <line x1="420" y1="125" x2="420" y2="135" stroke="#1a202c" stroke-width="1.5"/>
+        <text x="420" y="155" class="lbl" text-anchor="middle">15 000</text>
+        <line x1="540" y1="125" x2="540" y2="135" stroke="#1a202c" stroke-width="1.5"/>
+        <text x="540" y="155" class="lbl" text-anchor="middle">20 000 €</text>
+      </g>
 
-</div><script src="../../../nav.js"></script></body></html>
+      <!-- Points des 9 employés (1600 à 2500). Position x = 60 + sal * 0,024 -->
+      <!-- 1600 : 98,4 ; 1700 : 100,8 ; 1800 : 103,2 ; 1900 : 105,6 ; 2100 : 110,4 ; 2500 : 120 -->
+      <circle cx="98" cy="130" r="6" fill="#0056b3"/>
+      <circle cx="101" cy="130" r="6" fill="#0056b3"/>
+      <circle cx="101" cy="130" r="6" fill="#0056b3"/>
+      <circle cx="103" cy="130" r="6" fill="#0056b3"/>
+      <circle cx="103" cy="130" r="6" fill="#0056b3"/>
+      <circle cx="106" cy="130" r="6" fill="#0056b3"/>
+      <circle cx="106" cy="130" r="6" fill="#0056b3"/>
+      <circle cx="110" cy="130" r="6" fill="#0056b3"/>
+      <circle cx="120" cy="130" r="6" fill="#0056b3"/>
+      <text x="105" y="100" class="lbl" text-anchor="middle" fill="#0056b3" font-weight="bold">9 employés</text>
+      <text x="105" y="113" class="lbl" text-anchor="middle" fill="#0056b3">1 600 — 2 500 €</text>
+
+      <!-- Patron à 18000 → x = 60 + 18000*0,024 = 60 + 432 = 492 -->
+      <circle cx="492" cy="130" r="9" fill="#dc2626"/>
+      <text x="492" y="100" class="lbl" text-anchor="middle" fill="#b91c1c" font-weight="bold">Patron</text>
+      <text x="492" y="113" class="lbl" text-anchor="middle" fill="#b91c1c">18 000 €</text>
+
+      <!-- Médiane (1850 € → x = 104) -->
+      <line x1="104" y1="170" x2="104" y2="190" stroke="#15803d" stroke-width="2"/>
+      <text x="104" y="205" class="lblA" text-anchor="middle" fill="#15803d">Médiane</text>
+      <text x="104" y="218" class="lbl" text-anchor="middle" fill="#15803d">1 850 €</text>
+
+      <!-- Moyenne (3500 € → x = 60 + 84 = 144) -->
+      <line x1="144" y1="170" x2="144" y2="190" stroke="#dc2626" stroke-width="2"/>
+      <text x="144" y="205" class="lblA" text-anchor="middle" fill="#b91c1c">Moyenne</text>
+      <text x="144" y="218" class="lbl" text-anchor="middle" fill="#b91c1c">3 500 €</text>
+
+      <!-- Flèche du patron qui « tire » la moyenne -->
+      <path d="M 480 150 Q 350 200 155 175" stroke="#b91c1c" stroke-width="1.5" fill="none" stroke-dasharray="4 3" marker-end="url(#arrow)"/>
+      <text x="320" y="195" class="lbl" font-style="italic" text-anchor="middle" fill="#b91c1c">le patron « tire » la moyenne vers le haut</text>
+
+      <defs>
+        <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+          <polygon points="0,0 8,4 0,8" fill="#b91c1c"/>
+        </marker>
+      </defs>
+    </svg>
+  </div>
+  <p>Décrire ce que tu observes : où sont les employés, où est le patron, où sont la médiane et la moyenne ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Les 9 employés sont concentrés entre 1 600 et 2 500 € (zone bleue à gauche). Le patron à 18 000 € est très isolé à droite.</p>
+    <p>La <strong>médiane (1 850 €)</strong> est positionnée au milieu des employés — elle reflète bien leur réalité.</p>
+    <p>La <strong>moyenne (3 500 €)</strong> est tirée vers le patron : elle est près du double de ce que gagne réellement la majorité des employés.</p>
+    <p>Visuellement, on voit clairement que la moyenne est trompée par la valeur extrême du patron.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">VAL</span></h2>
+  <p>Le patron utilise la moyenne pour communiquer. Pourquoi ce choix est-il statistiquement honnête mais socialement trompeur ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Statistiquement honnête</strong> : le calcul est juste, la moyenne est bien 3 500 €.</p>
+    <p><strong>Socialement trompeur</strong> : la moyenne suggère que les employés gagnent en moyenne 3 500 €, alors qu'<strong>aucun</strong> employé ne touche ce montant ! Tous les employés gagnent moins. C'est <strong>seul</strong> le patron qui fait monter la moyenne.</p>
+    <p>L'auditeur (un client par exemple) entend « 3 500 € » et pense que les serveurs sont bien payés, alors que la réalité est très différente. C'est une manipulation par les chiffres, classique en politique et en communication d'entreprise.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-yellow">REA</span></h2>
+  <p>Recalculer la moyenne <strong>sans le patron</strong> (uniquement les 9 employés). Comparer à la médiane.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Somme sans patron = 35 000 − 18 000 = 17 000 €.</p>
+    <p>Moyenne sans patron = 17 000 / 9 ≈ <strong>1 889 €/mois</strong>.</p>
+    <p>Cette moyenne (1 889 €) est très proche de la médiane (1 850 €). C'est cohérent : sans valeur extrême, moyenne et médiane se rejoignent.</p>
+    <p>Conclusion pédagogique : <strong>quand moyenne ≈ médiane, la série est « équilibrée »</strong>. Quand moyenne ≫ médiane, il y a une (ou plusieurs) valeur extrême qui « tire » la moyenne.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">ANA</span></h2>
+  <p>Pour chacun des 4 contextes ci-dessous, indiquer quel indicateur (moyenne ou médiane) est le plus pertinent et pourquoi :</p>
+  <ol type="a">
+    <li>Annoncer la production typique d'un atelier de menuiserie</li>
+    <li>Calculer le revenu moyen des Français pour comparer à un autre pays</li>
+    <li>Estimer le tarif d'une chambre d'hôtel à Paris</li>
+    <li>Calculer le total des recettes d'un restaurant sur 1 mois</li>
+  </ol>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ul>
+      <li>(a) <strong>Médiane ou mode</strong> : la « production typique » ne doit pas être tirée par les exceptions (semaines exceptionnelles).</li>
+      <li>(b) <strong>Médiane</strong> : le revenu moyen est tiré par les très hauts salaires (1 % gagne énormément). La médiane est plus représentative du Français « typique ». L'INSEE publie d'ailleurs les 2 valeurs.</li>
+      <li>(c) <strong>Médiane</strong> pour le tarif typique. Si l'on veut juste « combien je vais payer », la médiane est plus utile (la moyenne est biaisée par les hôtels de luxe).</li>
+      <li>(d) <strong>Moyenne</strong> : pour calculer le total mensuel à partir d'une moyenne journalière (Total = moyenne × jours). La moyenne est ici l'outil approprié.</li>
+    </ul>
+    <p>Règle : <strong>moyenne pour les comptes (totaux, budgets), médiane pour le « typique »</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger en 5 lignes la <strong>réponse</strong> que Lina pourrait donner aux clients pour rétablir la vérité.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em>« Mes clients, le calcul du patron est techniquement juste mais trompeur. La moyenne de 3 500 € s'explique par le seul salaire de Marcel (18 000 €) qui « tire » la moyenne vers le haut. </em></p>
+    <p><em>En réalité, <strong>la moitié des employés gagne moins de 1 850 €</strong> par mois (c'est ce qu'on appelle la médiane). Mes 1 600 € de salaire sont tout à fait représentatifs de ce que touchent les serveurs et plongeurs. La prochaine fois qu'on vous parle d'un salaire « moyen », demandez aussi le salaire « médian » : c'est lui qui dit la vérité sur la situation typique. »</em></p>
+  </div>
+</div>
+
+<div class="exo" style="background:#fef3c7;border:1px solid #b45309">
+  <h2>🚀 Pour aller plus loin <span class="badge-blue">VAL</span></h2>
+  <p>Si Marcel embauchait 5 nouveaux employés au SMIC (1 600 € chacun), comment évolueraient la moyenne et la médiane ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Nouvelle série (15 personnes) : 1 600 × 6 (5 nouveaux + Lina) ; 1 700 × 2 ; 1 800 × 2 ; 1 900 × 2 ; 2 100 ; 2 500 ; 18 000.</p>
+    <p>Somme = 6×1600 + 2×1700 + 2×1800 + 2×1900 + 2100 + 2500 + 18 000 = 9 600 + 3 400 + 3 600 + 3 800 + 2 100 + 2 500 + 18 000 = 43 000 €.</p>
+    <p>Moyenne = 43 000 / 15 ≈ <strong>2 867 €</strong>. (baisse vs 3 500)</p>
+    <p>Médiane (15 valeurs, donc la 8ᵉ après tri) = <strong>1 700 €</strong>. (baisse vs 1 850)</p>
+    <p>L'effet de Marcel sur la moyenne est dilué (avec plus d'employés bas salaires, son influence proportionnelle baisse), mais reste très important. La médiane baisse encore plus, reflet d'une masse salariale dégradée.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Moyenne</strong> = somme / total. Sensible aux valeurs extrêmes.</li>
+    <li><strong>Médiane</strong> = valeur centrale (50 % au-dessus, 50 % en-dessous). Robuste aux valeurs extrêmes.</li>
+    <li><strong>Quand utiliser la moyenne :</strong> calculs de totaux, budgets, comptabilité.</li>
+    <li><strong>Quand utiliser la médiane :</strong> revenus, prix, salaires, valeurs « typiques ».</li>
+    <li><strong>Test rapide :</strong> si moyenne ≫ médiane, c'est qu'il y a au moins une valeur extrême qui biaise la moyenne.</li>
+    <li><strong>Esprit critique :</strong> face à un chiffre unique (« moyenne »), demander toujours la médiane et la dispersion pour comprendre la vraie situation.</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>
