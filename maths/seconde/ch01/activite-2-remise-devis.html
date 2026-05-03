@@ -68,6 +68,34 @@
     <li>Marge de Karim sur ce devis : <strong>25 %</strong> du prix HT (avant remise)</li>
     <li>1 € HT × 1,20 = 1 € TTC ; remise de p % → coefficient 1 − p/100</li>
   </ul>
+
+  <h3>Document 4 — Décomposition du prix HT (8 500 €)</h3>
+  <div class="svg-wrap" style="margin:14px 0">
+    <svg width="100%" viewBox="0 0 600 230" style="max-width:600px;display:block;margin:0 auto" role="img" aria-label="Diagramme empilé : décomposition du prix HT 8500 € en 75 % de coûts (matières + main d'œuvre = 6375 €) et 25 % de marge (2125 €). Une remise commerciale ne réduit que la marge, pas les coûts.">
+      <defs>
+        <style>
+          .lbl{font:11px sans-serif;fill:#1a202c}
+          .lblB{font:600 12px sans-serif;fill:#fff;text-anchor:middle}
+          .ti{font:700 13px sans-serif;text-anchor:middle;fill:#0056b3}
+        </style>
+      </defs>
+      <text class="ti" x="300" y="22">Décomposition d'un devis HT 8 500 €</text>
+      <rect x="50" y="60" width="375" height="60" fill="#94a3b8" stroke="#1f2937" stroke-width="1.5"/>
+      <rect x="425" y="60" width="125" height="60" fill="#fbbf24" stroke="#1f2937" stroke-width="1.5"/>
+      <text class="lblB" x="237" y="85">Coûts (matières + main d'œuvre)</text>
+      <text class="lblB" x="237" y="103">75 % × 8 500 = 6 375 €</text>
+      <text class="lblB" x="487" y="85" fill="#7c2d12">Marge</text>
+      <text class="lblB" x="487" y="103" fill="#7c2d12">25 % = 2 125 €</text>
+      <line x1="50" y1="135" x2="550" y2="135" stroke="#1f2937" stroke-width="1"/>
+      <text x="300" y="155" font-size="11" font-weight="bold" text-anchor="middle">Prix HT total = 8 500 €</text>
+      <text x="300" y="185" font-size="11" fill="#475569" font-style="italic" text-anchor="middle">Une remise commerciale ne réduit PAS les coûts (matières et heures restent payées) :</text>
+      <text x="300" y="203" font-size="11" font-weight="bold" fill="#b91c1c" text-anchor="middle">elle vient ENTIÈREMENT sur la marge.</text>
+      <path d="M 487 125 Q 487 165 487 158" stroke="#b91c1c" stroke-width="2" fill="none"/>
+      <text x="487" y="170" font-size="10" fill="#b91c1c" font-weight="bold" text-anchor="middle">↓ remise</text>
+    </svg>
+  </div>
+
+  <p style="font-size:.9em;color:#475569"><em>📚 Cette activité réinvestit les notions vues dans le cours §3 (calcul d'un pourcentage) et §5 (évolutions et coefficients multiplicateurs).</em></p>
 </div>
 
 <div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
@@ -187,6 +215,20 @@
     <p><em>Je peux vous accorder la remise de 5 % demandée, ce qui ramène le prix à <strong>8 075 € HT, soit 9 690 € TTC</strong>. Vous restez sous votre budget de 10 000 € TTC.</em></p>
     <p><em>Je préfère être transparent : cette remise vient entièrement sur ma marge artisanale et représente 20 % de mon bénéfice sur ce chantier — je ne peux pas aller plus loin sans renoncer à la qualité ou aux finitions choisies. Si vous voulez un prix encore inférieur, nous pouvons étudier ensemble : remplacer 2 façades vitrées par des façades pleines (économie ~ 200 €), ou repousser certaines options à plus tard.</em></p>
     <p><em>Sinon, je peux démarrer le chantier dès la semaine du 5 mai. Bonne réception, Karim.</em></p>
+  </div>
+</div>
+
+<div class="exo" style="background:#fef3c7;border:1px solid #b45309">
+  <h2>🚀 Pour aller plus loin <span class="badge-blue">VAL</span></h2>
+  <p>Un autre client demande à Karim une remise de 8 %. Karim hésite : avec sa marge de 25 %, peut-il accepter ?</p>
+  <p>Calculer le pourcentage de marge perdue. À ton avis, quel est le pourcentage de remise <strong>maximum</strong> que Karim devrait accepter pour conserver au moins la moitié de sa marge ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Pour 8 % de remise : 8 % × 8 500 = 680 € de remise. Marge perdue : 680 / 2 125 = <strong>32 % de marge en moins</strong>. Critique.</p>
+    <p>Pour conserver au moins la moitié de la marge (1 062,50 € au lieu de 2 125 €), il faudrait que la remise totale ne dépasse pas 1 062,50 €.</p>
+    <p>1 062,50 / 8 500 = 12,5 %. Donc <strong>remise max = 12,5 %</strong> pour conserver au moins 50 % de la marge.</p>
+    <p>Règle pour artisan : <strong>remise max = taux de marge / 2</strong>. Avec 25 % de marge, ne jamais dépasser 12,5 % de remise.</p>
   </div>
 </div>
 
