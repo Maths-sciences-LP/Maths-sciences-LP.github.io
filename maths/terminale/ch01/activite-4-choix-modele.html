@@ -1,81 +1,301 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Ch01 – Activité 4 – Choisir un modèle d'ajustement – Term Bac Pro</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<link rel="stylesheet" href="../../../styles.css"><link rel="stylesheet" href="../../../print.css" media="print">
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}</style>
 </head>
 <body>
-<div class="c"><a href="../../../maths-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
-<header><h1>Activité 4 – Choisir un modèle d'ajustement (linéaire ou non) <span style="font-size:.55em;color:#7c2d12;font-weight:600">FICHE TECHNIQUE</span></h1>
-<p class="sous-titre">Chapitre 1 – Statistiques à deux variables | Terminale Bac Pro | ⏱ 30 min</p>
-<p class="maj">Dernière mise à jour : 3 mai 2026, 09:00</p></header>
+<div class="c">
+<a href="../../../maths-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
 
-<div class="objectifs"><strong>Objectifs :</strong><ul>
-<li>Comparer un nuage à 3 modèles : linéaire, exponentiel, puissance</li>
-<li>Choisir le modèle le plus adapté</li></ul></div>
+<header>
+  <h1>Activité 4 – Choisir un modèle d'ajustement (linéaire, exponentiel ou puissance) <span style="font-size:.55em;color:#7c2d12;font-weight:600">FICHE TECHNIQUE</span></h1>
+  <p class="sous-titre">Chapitre 1 – Statistiques à deux variables | Terminale Bac Pro | Mathématiques | ⏱ 50 min</p>
+  <p class="maj">Dernière mise à jour : 4 mai 2026, 11:30</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
+
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Comparer plusieurs modèles d'ajustement (linéaire, exponentiel, puissance)</li>
+    <li>Utiliser le coefficient r² pour évaluer la qualité d'un modèle</li>
+    <li>Choisir le modèle adapté selon le contexte</li>
+    <li>Faire des prévisions et estimer leur fiabilité</li>
+  </ul>
+</div>
 
 <div class="situation">
-<h2>Situation – production d'une PME</h2>
-<p><em>Léo, gérant d'une PME, étudie l'évolution de son chiffre d'affaires sur 6 ans pour faire des prévisions.</em></p>
-<table><thead><tr><th>Année x</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th></tr></thead>
-<tbody><tr><td>CA y (k€)</td><td>50</td><td>62</td><td>78</td><td>97</td><td>121</td><td>151</td></tr></tbody></table>
-<p>Trois modèles sont testés à la calculatrice :</p>
-<ul>
-<li><strong>Linéaire :</strong> y = 20,3 x + 25,7  (r = 0,975)</li>
-<li><strong>Exponentiel :</strong> y = 41,2 × 1,25ˣ  (r = 0,999)</li>
-<li><strong>Puissance :</strong> y = 47,3 × x^0,79  (r = 0,990)</li>
-</ul>
+  <h2>Situation – PME en croissance</h2>
+  <p><em>Léo, gérant d'une PME d'agencement de magasins, étudie l'évolution de son chiffre d'affaires (CA) sur les 6 dernières années pour préparer son business plan et solliciter un crédit bancaire.</em></p>
+
+  <h3>Document — données CA des 6 dernières années</h3>
+  <table>
+    <thead>
+      <tr><th>Année x</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>CA y (k€)</td><td>50</td><td>62</td><td>78</td><td>97</td><td>121</td><td>151</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Document — 3 modèles testés à la calculatrice</h3>
+  <table>
+    <thead>
+      <tr><th>Modèle</th><th>Équation</th><th>Coefficient r</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Linéaire</td><td>y = 20,3 × x + 25,7</td><td>0,975</td></tr>
+      <tr><td>Exponentiel</td><td>y = 41,2 × 1,25^x</td><td>0,999</td></tr>
+      <tr><td>Puissance</td><td>y = 47,3 × x^0,79</td><td>0,990</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Document — nuage de points et 3 courbes</h3>
+  <div class="svg-wrap" style="margin:14px 0">
+    <svg width="100%" viewBox="0 0 540 280" style="max-width:540px;display:block;margin:0 auto" role="img" aria-label="Nuage de points 6 années avec CA croissant. 3 courbes superposées : droite linéaire, courbe exponentielle (qui colle le mieux), courbe puissance.">
+      <defs>
+        <style>
+          .ax{stroke:#1a202c;stroke-width:1.5}
+          .gd{stroke:#cbd5e1;stroke-width:.6}
+          .lbl{font:11px sans-serif;fill:#1a202c}
+          .lblA{font:600 12px sans-serif;fill:#1a202c}
+          .ti{font:700 13px sans-serif;text-anchor:middle;fill:#0969da}
+        </style>
+      </defs>
+      <text class="ti" x="270" y="22">Évolution du CA et 3 modèles d'ajustement</text>
+
+      <!-- Y : 0 → 240, 250 k€ → 50. 1 k€ = 0,76 px. 50 → 202, 62 → 193, 78 → 181, 97 → 166, 121 → 148, 151 → 125 -->
+      <g class="gd">
+        <line x1="60" y1="50" x2="500" y2="50"/>
+        <line x1="60" y1="98" x2="500" y2="98"/>
+        <line x1="60" y1="145" x2="500" y2="145"/>
+        <line x1="60" y1="193" x2="500" y2="193"/>
+        <line x1="60" y1="240" x2="500" y2="240"/>
+      </g>
+      <line class="ax" x1="60" y1="240" x2="510" y2="240"/>
+      <line class="ax" x1="60" y1="40" x2="60" y2="240"/>
+
+      <g class="lbl" text-anchor="end">
+        <text x="55" y="244">0</text>
+        <text x="55" y="197">62,5</text>
+        <text x="55" y="149">125</text>
+        <text x="55" y="102">187,5</text>
+        <text x="55" y="54">250</text>
+      </g>
+      <text class="lblA" x="20" y="145" transform="rotate(-90 20 145)" text-anchor="middle">CA (k€)</text>
+
+      <!-- X : 0 → 60, 8 ans → 500. 1 an = 55 px -->
+      <g class="lbl" text-anchor="middle">
+        <text x="60" y="258">0</text>
+        <text x="115" y="258">1</text>
+        <text x="170" y="258">2</text>
+        <text x="225" y="258">3</text>
+        <text x="280" y="258">4</text>
+        <text x="335" y="258">5</text>
+        <text x="390" y="258">6</text>
+        <text x="445" y="258">7</text>
+        <text x="500" y="258">8</text>
+      </g>
+      <text class="lblA" x="270" y="275" text-anchor="middle">Année x</text>
+
+      <!-- Points (1,50)(2,62)(3,78)(4,97)(5,121)(6,151) -->
+      <circle cx="115" cy="202" r="5" fill="#dc2626"/>
+      <circle cx="170" cy="193" r="5" fill="#dc2626"/>
+      <circle cx="225" cy="181" r="5" fill="#dc2626"/>
+      <circle cx="280" cy="166" r="5" fill="#dc2626"/>
+      <circle cx="335" cy="148" r="5" fill="#dc2626"/>
+      <circle cx="390" cy="125" r="5" fill="#dc2626"/>
+
+      <!-- Modèle linéaire : y = 20,3x + 25,7. (1, 46) → (115, 205). (8, 188) → (500, 240-188*0,76=240-143=97) -->
+      <line x1="115" y1="205" x2="500" y2="97" stroke="#15803d" stroke-width="1.5"/>
+      <text x="490" y="92" class="lbl" fill="#15803d" font-weight="bold" text-anchor="end">linéaire</text>
+
+      <!-- Modèle exponentiel : y = 41,2 * 1,25^x. (1, 51,5) (2, 64,4) (3, 80,5) (6, 157,2) (8, 245,5) -->
+      <!-- Tracer courbe : approx -->
+      <path d="M 115,201 Q 280,170 500,53" fill="none" stroke="#dc2626" stroke-width="2" stroke-dasharray="0"/>
+      <text x="490" y="48" class="lbl" fill="#dc2626" font-weight="bold" text-anchor="end">exponentiel</text>
+
+      <!-- Modèle puissance (intermédiaire) -->
+      <path d="M 115,206 Q 280,160 500,67" fill="none" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="4 3"/>
+      <text x="490" y="76" class="lbl" fill="#7c3aed" font-weight="bold" text-anchor="end">puissance</text>
+    </svg>
+  </div>
+
+  <p style="font-size:.9em;color:#475569"><em>📚 Cette activité réinvestit les notions du cours §3 (coefficient de corrélation), §4 (modèles d'ajustement) et §5 (prévisions).</em></p>
 </div>
 
 <div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
-<strong>Problématique :</strong> Quel modèle choisir, et que prévoir pour l'année 8 ?</div>
+  <strong>Problématique :</strong> Quel modèle choisir pour décrire la croissance du CA, et quelle prévision fiable faire pour l'année 8 ?
+</div>
 
 <div class="exo">
-<h2>Question 1 <span class="badge-blue">ANA</span></h2>
-<p>D'après les valeurs de r, quel est le modèle le mieux adapté au nuage ?</p>
-<ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>Le modèle <strong>exponentiel</strong> a le meilleur r (0,999). Il colle quasi parfaitement.</p>
-<p>Le linéaire (0,975) est moins bon : visuellement, le CA augmente <strong>de plus en plus vite</strong>, ce que le linéaire ne capte pas.</p>
-</div></div>
+  <h2>Question 1 <span class="badge-blue">APP</span></h2>
+  <p>Décrire l'allure du nuage de points : la croissance du CA est-elle linéaire ou non ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Différences successives : 62−50 = 12 ; 78−62 = 16 ; 97−78 = 19 ; 121−97 = 24 ; 151−121 = 30.</p>
+    <p>Les écarts <strong>augmentent d'année en année</strong> → croissance <strong>plus que linéaire</strong>. Le CA accélère.</p>
+    <p>Visuellement, la courbe a une forme d'« exponentielle » : départ doux, puis pente forte.</p>
+  </div>
+</div>
 
 <div class="exo">
-<h2>Question 2 <span class="badge-yellow">REA</span></h2>
-<p>Avec chacun des 3 modèles, prévoir le CA pour l'année 8.</p>
-<ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<ul>
-<li>Linéaire : 20,3×8 + 25,7 = <strong>188 k€</strong></li>
-<li>Exponentiel : 41,2 × 1,25⁸ = 41,2 × 5,96 = <strong>246 k€</strong></li>
-<li>Puissance : 47,3 × 8^0,79 = 47,3 × 4,82 = <strong>228 k€</strong></li>
-</ul>
-<p>Écart énorme entre les modèles : 188 vs 246 = 58 k€ de différence ! Le choix du modèle est crucial.</p>
-</div></div>
+  <h2>Question 2 <span class="badge-blue">ANA</span></h2>
+  <p>D'après les valeurs de r, quel est le modèle le mieux adapté au nuage ? Justifier.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Modèle exponentiel : r = 0,999 → <strong>meilleur score</strong>.</p>
+    <p>Modèle puissance : r = 0,990 → bon mais moins.</p>
+    <p>Modèle linéaire : r = 0,975 → correct mais moins bon.</p>
+    <p>Le <strong>modèle exponentiel</strong> est le plus adapté. C'est cohérent avec l'analyse du nuage (croissance qui s'accélère).</p>
+  </div>
+</div>
 
 <div class="exo">
-<h2>Question 3 <span class="badge-blue">VAL</span></h2>
-<p>Léo doit-il prévoir 246 k€ pour l'année 8 ? Quels risques avec un modèle exponentiel ?</p>
-<ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>Le modèle exponentiel colle bien aux 6 années passées, mais un CA ne peut pas croître exponentiellement à l'infini :</p>
-<ul>
-<li><strong>Saturation du marché :</strong> tôt ou tard, on touche tous les clients potentiels.</li>
-<li><strong>Capacité de production :</strong> il faut investir, embaucher, qui prend du temps.</li>
-<li><strong>Concurrence :</strong> le succès attire les concurrents qui ralentissent la croissance.</li>
-</ul>
-<p>Recommandation : utiliser <strong>246 k€ comme prévision optimiste</strong> ; viser 200-220 k€ comme prévision plausible. Surveiller année après année et changer de modèle si la croissance ralentit.</p>
-</div></div>
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Avec chacun des 3 modèles, calculer la prévision du CA pour l'année 8.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ul>
+      <li>Linéaire : 20,3 × 8 + 25,7 = 162,4 + 25,7 = <strong>188 k€</strong></li>
+      <li>Exponentiel : 41,2 × 1,25⁸ = 41,2 × 5,96 ≈ <strong>246 k€</strong></li>
+      <li>Puissance : 47,3 × 8^0,79 ≈ 47,3 × 4,82 ≈ <strong>228 k€</strong></li>
+    </ul>
+    <p>Écart énorme entre les modèles : <strong>de 188 à 246 k€</strong>, soit 58 k€ de différence (= 30 % d'écart).</p>
+    <p>Le choix du modèle est <strong>crucial</strong> pour la prévision !</p>
+  </div>
+</div>
 
-<div class="retenir"><strong>À retenir</strong>
-<ul><li><strong>3 modèles courants :</strong> linéaire (y=ax+b), exponentiel (y=a·bˣ), puissance (y=a·xⁿ).</li>
-<li><strong>Choix du modèle :</strong> coefficient r le plus proche de 1, mais aussi <strong>cohérence avec le contexte</strong>.</li>
-<li><strong>Prévisions :</strong> toujours considérer plusieurs modèles, et donner une fourchette plutôt qu'une valeur unique.</li></ul></div>
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">VAL</span></h2>
+  <p>Léo doit-il prévoir 246 k€ pour l'année 8 (modèle exponentiel) ? Quels sont les risques d'utiliser un modèle exponentiel pour des prévisions à long terme ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Le modèle exponentiel colle bien aux 6 années passées (r = 0,999), mais <strong>un CA ne peut pas croître exponentiellement à l'infini</strong> :</p>
+    <ul>
+      <li><strong>Saturation du marché :</strong> tôt ou tard, on a tous les clients potentiels.</li>
+      <li><strong>Capacité de production :</strong> il faut investir, embaucher, qui prend du temps. La croissance est limitée par les ressources.</li>
+      <li><strong>Concurrence :</strong> le succès attire des concurrents qui ralentissent la croissance.</li>
+      <li><strong>Crise économique :</strong> récession ponctuelle peut casser la tendance.</li>
+    </ul>
+    <p>Recommandation pratique : utiliser 246 k€ comme <strong>scénario optimiste</strong> ; viser 200-220 k€ comme <strong>prévision médiane plausible</strong>. Le modèle puissance (228 k€) est un bon compromis : croissance qui ralentit doucement.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">ANA</span></h2>
+  <p>Imaginons que la 7ème année, Léo observe un CA réel de 175 k€. Lequel des 3 modèles est le plus proche de la réalité ? Faut-il le confirmer pour autant ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Calcul des prévisions à l'année 7 :</p>
+    <ul>
+      <li>Linéaire : 20,3 × 7 + 25,7 = 167,8 k€ → écart 7,2</li>
+      <li>Exponentiel : 41,2 × 1,25⁷ = 196,3 k€ → écart 21,3</li>
+      <li>Puissance : 47,3 × 7^0,79 = 195,8 k€ → écart 20,8</li>
+    </ul>
+    <p>Le <strong>linéaire</strong> est cette fois plus proche !</p>
+    <p>Cela peut indiquer que la croissance commence à <strong>ralentir</strong> (saturation, concurrence). Léo devrait :</p>
+    <ul>
+      <li>continuer à observer (ne pas tirer de conclusion sur 1 année)</li>
+      <li>refaire la régression avec les 7 nouvelles données</li>
+      <li>peut-être passer à un modèle plus complexe (logistique, qui saturer à un plafond)</li>
+    </ul>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">VAL</span></h2>
+  <p>Pour le banquier, quelle prévision présenter ? Justifier le choix.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Pour un banquier, présenter <strong>3 scénarios</strong> :</p>
+    <ul>
+      <li><strong>Pessimiste</strong> (basé sur le linéaire) : 188 k€</li>
+      <li><strong>Médian</strong> (basé sur le modèle puissance ou moyenne) : 215 k€</li>
+      <li><strong>Optimiste</strong> (basé sur l'exponentiel) : 246 k€</li>
+    </ul>
+    <p>Cette présentation est <strong>plus honnête et crédible</strong> qu'un seul chiffre.</p>
+    <p>Le banquier appréciera la transparence et la prudence. Demander un crédit basé sur le scénario médian ou pessimiste donne une marge de sécurité.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-blue">ANA</span></h2>
+  <p>Quels sont les avantages et inconvénients de chaque modèle pour ce type de prévision ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <table>
+      <thead><tr><th>Modèle</th><th>Avantages</th><th>Inconvénients</th></tr></thead>
+      <tbody>
+        <tr><td>Linéaire</td><td>Simple, prudent, facile à expliquer</td><td>Sous-estime souvent la croissance</td></tr>
+        <tr><td>Exponentiel</td><td>Capte bien la croissance accélérée</td><td>Diverge à l'infini, peu réaliste à long terme</td></tr>
+        <tr><td>Puissance</td><td>Croissance ralentie, plus naturelle</td><td>Plus complexe, paramètres difficiles à interpréter</td></tr>
+      </tbody>
+    </table>
+    <p>En pratique : utiliser le linéaire pour les prévisions courtes (1-2 ans après les données), l'exponentiel pour des explosions de marché, la puissance pour des phénomènes naturels (croissance d'une plante, propagation).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-yellow">COM</span></h2>
+  <p>Présenter en 5 lignes le tableau de prévision à présenter au banquier de Léo.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em><strong>Prévisions de chiffre d'affaires — PME Agencement</strong></em></p>
+    <table>
+      <thead><tr><th>Année</th><th>Pessimiste</th><th>Médian</th><th>Optimiste</th></tr></thead>
+      <tbody>
+        <tr><td>An 7</td><td>168 k€</td><td>196 k€</td><td>196 k€</td></tr>
+        <tr><td>An 8</td><td>188 k€</td><td>228 k€</td><td>246 k€</td></tr>
+        <tr><td>An 9</td><td>208 k€</td><td>261 k€</td><td>308 k€</td></tr>
+      </tbody>
+    </table>
+    <p><em>Prévisions basées sur 6 ans de données. Modèle exponentiel (r=0,999) recommandé pour court terme, linéaire pour long terme. Demande de crédit calée sur scénario médian (sécurité). Plan B basé sur scénario pessimiste si conjoncture difficile.</em></p>
+  </div>
+</div>
+
+<div class="exo" style="background:#fef3c7;border:1px solid #b45309">
+  <h2>🚀 Pour aller plus loin <span class="badge-blue">ANA</span></h2>
+  <p>Le modèle « logistique » (en S) est utilisé pour modéliser une croissance qui sature : y = K / (1 + a × e^(−bx)), avec K = limite max. Pour la PME de Léo, si on suppose un plafond de 500 k€, comment serait l'évolution ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>La courbe logistique commence comme une exponentielle, puis ralentit pour atteindre asymptotiquement le plafond K = 500 k€.</p>
+    <p>Phases :</p>
+    <ul>
+      <li>Démarrage (années 1-3) : croissance lente</li>
+      <li>Accélération (années 4-8) : croissance rapide quasi-exponentielle</li>
+      <li>Inflexion (années 8-12) : passage par 250 k€ (la moitié de K)</li>
+      <li>Saturation (années 12+) : approche progressive de 500 k€</li>
+    </ul>
+    <p>Ce modèle est <strong>plus réaliste à long terme</strong> car il intègre la saturation du marché. Il est utilisé pour modéliser : adoption de nouveaux produits, croissance bactérienne, propagation d'une épidémie.</p>
+    <p>Inconvénient : <strong>K est inconnu a priori</strong> (combien de clients potentiels ?). Il faut l'estimer par enquête de marché.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>3 modèles courants :</strong> linéaire (y = ax + b), exponentiel (y = a × b^x), puissance (y = a × x^n).</li>
+    <li><strong>Choix du modèle :</strong> coefficient r le plus proche de 1, MAIS aussi <strong>cohérence avec le contexte</strong> (saturation possible ?).</li>
+    <li><strong>Prévisions :</strong> toujours considérer plusieurs scénarios et donner une fourchette plutôt qu'une valeur unique.</li>
+    <li><strong>Modèle = approximation,</strong> pas une vérité. À réajuster avec les nouvelles données.</li>
+  </ul>
+</div>
 
 </div>
 <script src="../../../nav.js"></script>

@@ -12,98 +12,256 @@
 <body>
 <div class="c">
 <a href="../../../maths-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
-<header>
-  <h1>Activité 3 – Corrélation n'est pas causalité <span style="font-size:.55em;color:#7c3aed;font-weight:600">ÉTUDE DOCUMENTAIRE</span></h1>
-  <p class="sous-titre">Chapitre 1 – Statistiques à deux variables | Terminale Bac Pro | ⏱ 30 min</p>
-  <p class="maj">Dernière mise à jour : 3 mai 2026, 09:00</p>
-</header>
-<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer</button>
 
-<div class="objectifs"><strong>Objectifs :</strong>
-<ul><li>Comprendre la différence entre corrélation et causalité</li>
-<li>Identifier des « variables cachées » qui expliquent une fausse corrélation</li>
-<li>Aiguiser son esprit critique face aux statistiques publiées</li></ul></div>
+<header>
+  <h1>Activité 3 – Corrélation n'est pas causalité : développer son esprit critique <span style="font-size:.55em;color:#7c3aed;font-weight:600">ÉTUDE DOCUMENTAIRE</span></h1>
+  <p class="sous-titre">Chapitre 1 – Statistiques à deux variables | Terminale Bac Pro | Mathématiques | ⏱ 50 min</p>
+  <p class="maj">Dernière mise à jour : 4 mai 2026, 11:30</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
+
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Distinguer corrélation statistique et causalité</li>
+    <li>Identifier des variables cachées (de confusion)</li>
+    <li>Aiguiser l'esprit critique face aux affirmations statistiques</li>
+    <li>Comprendre la différence entre étude observationnelle et expérimentale</li>
+  </ul>
+</div>
 
 <div class="situation">
   <h2>Situation – article de presse trompeur</h2>
-  <p><em>Inès, lectrice avertie, lit dans un magazine : « 95 % de corrélation entre la consommation de chocolat par habitant et le nombre de prix Nobel par pays. Manger du chocolat rend-il plus intelligent ? » Inès soupçonne un piège statistique.</em></p>
+  <p><em>Inès, lectrice avertie, lit dans un magazine populaire : « Étonnant : 95 % de corrélation entre la consommation de chocolat par habitant et le nombre de prix Nobel par pays ! Manger du chocolat rend-il plus intelligent ? » Inès soupçonne un piège statistique. Étudions.</em></p>
 
-  <h3>3 exemples célèbres de fausses corrélations</h3>
+  <h3>Document — exemples célèbres de fausses corrélations</h3>
   <table>
-    <thead><tr><th>Variables corrélées</th><th>r ≈</th><th>Cause réelle ?</th></tr></thead>
+    <thead>
+      <tr><th>Variables corrélées</th><th>r ≈</th><th>Cause réelle</th></tr>
+    </thead>
     <tbody>
       <tr><td>Ventes de glaces ↔ noyades</td><td>+0,90</td><td>Saison estivale (variable cachée : chaleur)</td></tr>
       <tr><td>Cigognes ↔ naissances (Allemagne, par région)</td><td>+0,85</td><td>Régions rurales (espace, jeunes familles)</td></tr>
-      <tr><td>Pirates de la mer ↔ température mondiale</td><td>−0,90</td><td>Coïncidence historique (modernisation)</td></tr>
-      <tr><td>Chocolat ↔ Nobels (par pays)</td><td>+0,79</td><td>PIB par habitant (richesse → éducation + chocolat)</td></tr>
+      <tr><td>Pirates de la mer ↔ température mondiale</td><td>−0,90</td><td>Coïncidence historique (industrialisation)</td></tr>
+      <tr><td>Chocolat ↔ Nobel (par pays)</td><td>+0,79</td><td>PIB par habitant (richesse → éducation + chocolat)</td></tr>
+      <tr><td>Pointure de chaussure ↔ niveau de lecture (chez l'enfant)</td><td>+0,80</td><td>Âge (plus âgé → grande pointure ET meilleur lecteur)</td></tr>
     </tbody>
   </table>
+
+  <h3>Document — schéma : variable cachée</h3>
+  <div class="svg-wrap" style="margin:14px 0">
+    <svg width="100%" viewBox="0 0 540 260" style="max-width:540px;display:block;margin:0 auto" role="img" aria-label="Schéma : 3 cercles. La variable cachée Z (été) influence à la fois X (ventes glaces) et Y (noyades). La corrélation entre X et Y est trompeuse.">
+      <defs>
+        <style>
+          .b{stroke:#1a202c;stroke-width:1.5;fill:none}
+          .lbl{font:12px sans-serif;fill:#1a202c}
+          .lblA{font:600 13px sans-serif;fill:#1a202c}
+          .ti{font:700 13px sans-serif;text-anchor:middle;fill:#0969da}
+        </style>
+      </defs>
+      <text class="ti" x="270" y="22">Variable cachée : exemple « glaces / noyades »</text>
+
+      <!-- Z (variable cachée, en haut) -->
+      <ellipse cx="270" cy="80" rx="80" ry="35" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+      <text x="270" y="78" class="lblA" text-anchor="middle">Z = saison été</text>
+      <text x="270" y="94" class="lbl" text-anchor="middle">(variable cachée)</text>
+
+      <!-- X (gauche) -->
+      <ellipse cx="120" cy="200" rx="80" ry="35" fill="#dbeafe" stroke="#0969da" stroke-width="2"/>
+      <text x="120" y="198" class="lblA" text-anchor="middle">X = ventes glaces</text>
+      <text x="120" y="214" class="lbl" text-anchor="middle">(observée)</text>
+
+      <!-- Y (droite) -->
+      <ellipse cx="420" cy="200" rx="80" ry="35" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+      <text x="420" y="198" class="lblA" text-anchor="middle">Y = noyades</text>
+      <text x="420" y="214" class="lbl" text-anchor="middle">(observée)</text>
+
+      <!-- Flèches Z → X et Z → Y (en orange, vraies relations causales) -->
+      <line x1="220" y1="115" x2="160" y2="170" stroke="#b45309" stroke-width="2" marker-end="url(#arrow)"/>
+      <text x="170" y="138" class="lbl" fill="#b45309" font-weight="bold" text-anchor="middle">cause</text>
+
+      <line x1="320" y1="115" x2="380" y2="170" stroke="#b45309" stroke-width="2" marker-end="url(#arrow)"/>
+      <text x="370" y="138" class="lbl" fill="#b45309" font-weight="bold" text-anchor="middle">cause</text>
+
+      <!-- Flèche X ⟷ Y (corrélation observée mais sans cause directe) -->
+      <line x1="200" y1="200" x2="340" y2="200" stroke="#7c3aed" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#arrow2)" marker-start="url(#arrow2start)"/>
+      <text x="270" y="195" class="lbl" fill="#7c3aed" font-weight="bold" text-anchor="middle">CORRÉLATION OBSERVÉE</text>
+      <text x="270" y="220" class="lbl" fill="#7c3aed" text-anchor="middle">(mais pas de causalité directe)</text>
+
+      <defs>
+        <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L9,3 z" fill="#b45309"/>
+        </marker>
+        <marker id="arrow2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L9,3 z" fill="#7c3aed"/>
+        </marker>
+        <marker id="arrow2start" markerWidth="10" markerHeight="10" refX="2" refY="3" orient="auto">
+          <path d="M9,0 L9,6 L0,3 z" fill="#7c3aed"/>
+        </marker>
+      </defs>
+    </svg>
+  </div>
+
+  <p style="font-size:.9em;color:#475569"><em>📚 Cette activité approfondit les notions du cours §3 (interprétation du coefficient de corrélation) en développant l'esprit critique scientifique.</em></p>
 </div>
 
 <div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
-  <strong>Problématique :</strong> Comment éviter le piège « corrélation = causalité » ?
+  <strong>Problématique :</strong> Pourquoi une corrélation, même très forte, ne prouve-t-elle pas une causalité, et comment développer son esprit critique face aux statistiques ?
 </div>
 
 <div class="exo">
   <h2>Question 1 <span class="badge-green">APP</span></h2>
   <p>Définir avec tes propres mots :</p>
-  <ol type="a"><li>Corrélation</li><li>Causalité</li></ol>
+  <ol type="a">
+    <li>Corrélation</li>
+    <li>Causalité</li>
+  </ol>
   <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <ul>
-      <li><strong>Corrélation :</strong> deux variables varient ensemble (l'une augmente quand l'autre augmente, ou inversement). Notion <strong>statistique</strong>, mesurée par r.</li>
-      <li><strong>Causalité :</strong> l'une est la <strong>cause</strong> directe de l'autre. Notion <strong>physique / mécaniste</strong> qui demande à être prouvée.</li>
+      <li><strong>Corrélation :</strong> deux variables varient ensemble (l'une augmente avec l'autre, ou inversement). Notion <strong>statistique</strong>, mesurée par le coefficient r.</li>
+      <li><strong>Causalité :</strong> l'une est la <strong>cause directe</strong> de l'autre. Notion <strong>physique / mécaniste</strong>, qui demande à être prouvée par un mécanisme explicatif.</li>
     </ul>
-    <p>Une corrélation peut exister <strong>sans</strong> causalité (exemples ci-dessus). Ce piège est très fréquent dans la presse.</p>
+    <p>Une corrélation peut exister <strong>sans causalité</strong>. Ce piège est très fréquent dans les médias et la communication d'entreprise.</p>
   </div>
 </div>
 
 <div class="exo">
   <h2>Question 2 <span class="badge-blue">ANA</span></h2>
-  <p>Pour chaque exemple ci-dessus, identifier la <strong>variable cachée</strong> qui explique la corrélation observée.</p>
+  <p>Pour chacun des exemples du tableau, identifier la <strong>variable cachée</strong> ou la <strong>raison</strong> qui explique la corrélation observée sans qu'il y ait causalité directe.</p>
   <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <ul>
-      <li>Glaces/noyades : <strong>été</strong> (chaleur → plus de glaces ET plus de baignades).</li>
-      <li>Cigognes/naissances : <strong>ruralité</strong> (campagne → plus de cigognes ET plus de jeunes familles).</li>
-      <li>Pirates/température : <strong>aucune</strong>, simple coïncidence historique (les pirates ont disparu en même temps que la révolution industrielle).</li>
-      <li>Chocolat/Nobel : <strong>PIB</strong> (riches → meilleur système éducatif ET plus de chocolat consommé).</li>
+      <li><strong>Glaces/noyades :</strong> variable cachée = été. Chaleur → plus de glaces ET plus de baignades → plus de noyades.</li>
+      <li><strong>Cigognes/naissances :</strong> variable cachée = ruralité. Régions rurales → plus de cigognes ET plus de jeunes familles.</li>
+      <li><strong>Pirates/température :</strong> aucune cause commune, simple <strong>coïncidence historique</strong>. Les pirates ont disparu pendant que la révolution industrielle commençait à émettre du CO₂.</li>
+      <li><strong>Chocolat/Nobel :</strong> variable cachée = PIB. Pays riches → meilleur système éducatif ET plus de chocolat consommé (produit de luxe).</li>
+      <li><strong>Pointure/lecture :</strong> variable cachée = âge. Enfant grandit → pied grandit ET il apprend à lire.</li>
     </ul>
   </div>
 </div>
 
 <div class="exo">
   <h2>Question 3 <span class="badge-blue">VAL</span></h2>
-  <p>Citer 3 questions à se poser face à une affirmation « X cause Y » dans la presse.</p>
+  <p>Citer 3 questions à se poser face à une affirmation « X cause Y » lue dans la presse.</p>
   <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <ol>
-      <li>Y a-t-il un <strong>mécanisme physique/biologique</strong> connu qui expliquerait que X cause Y ?</li>
-      <li>Y a-t-il une <strong>variable cachée Z</strong> qui pourrait causer à la fois X et Y ?</li>
-      <li>L'étude est-elle <strong>expérimentale</strong> (groupe testé vs témoin) ou seulement <strong>observationnelle</strong> ? Seule l'étude expérimentale prouve une causalité.</li>
-      <li>(Bonus) Le résultat a-t-il été <strong>reproduit</strong> par d'autres équipes ?</li>
+      <li><strong>Y a-t-il un mécanisme connu</strong> (physique, biologique, chimique) qui expliquerait pourquoi X cause Y ?</li>
+      <li><strong>Y a-t-il une variable cachée Z</strong> qui pourrait causer à la fois X et Y ?</li>
+      <li><strong>L'étude est-elle expérimentale</strong> (groupe testé vs groupe témoin, randomisation) <strong>ou seulement observationnelle</strong> ? Seule l'étude expérimentale peut prouver une causalité.</li>
+      <li><em>(Bonus)</em> Le résultat a-t-il été <strong>reproduit</strong> indépendamment par d'autres équipes ?</li>
+      <li><em>(Bonus)</em> Quelle est la <strong>taille de l'échantillon</strong> et la marge d'erreur ?</li>
     </ol>
   </div>
 </div>
 
 <div class="exo">
-  <h2>Question 4 <span class="badge-yellow">COM</span></h2>
-  <p>Rédiger en 4 lignes une réponse pédagogique à un ami qui dit « le chocolat rend intelligent ».</p>
+  <h2>Question 4 <span class="badge-blue">ANA</span></h2>
+  <p>Pour les variables suivantes, dire si la corrélation observée correspond à une causalité réelle ou non, et expliquer pourquoi.</p>
+  <ol type="a">
+    <li>Vitesse de pédalage ↔ vitesse du vélo</li>
+    <li>Nombre de pompiers ↔ ampleur des dégâts d'un incendie</li>
+    <li>Nombre d'écoles dans une ville ↔ nombre de cafés</li>
+  </ol>
   <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
-  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p><em>« Tu cites une étude statistique : c'est vrai que les pays qui mangent beaucoup de chocolat ont plus de prix Nobel. Mais ça ne veut pas dire que le chocolat rend intelligent ! Une variable cachée explique tout : le PIB. Les pays riches consomment plus de chocolat (luxe abordable) ET ont plus de moyens pour la recherche scientifique → plus de Nobels. La cause commune est la richesse, pas le chocolat. C'est ce qu'on appelle une variable de confusion : corrélation ≠ causalité. »</em></p>
+    <p>a. <strong>Causalité réelle</strong> : pédaler plus vite fait directement avancer le vélo plus vite (mécanisme physique).</p>
+    <p>b. <strong>Pas de causalité directe</strong> : variable cachée = ampleur de l'incendie (gros incendie → plus de pompiers ET plus de dégâts). Naïvement, on pourrait croire « plus de pompiers cause plus de dégâts » → faux !</p>
+    <p>c. <strong>Pas de causalité directe</strong> : variable cachée = taille de la ville (grande ville → plus d'écoles ET plus de cafés).</p>
+    <p>Toujours suspecter une variable cachée quand le mécanisme n'est pas évident.</p>
   </div>
 </div>
 
-<div class="retenir"><strong>À retenir</strong>
-<ul><li><strong>Corrélation ≠ causalité.</strong> Coefficient r mesure le lien statistique, pas le lien de cause à effet.</li>
-<li><strong>Variable cachée :</strong> 3ᵉ variable qui influence X et Y simultanément, créant une fausse corrélation.</li>
-<li><strong>Test expérimental</strong> = seul moyen de prouver une causalité (avec groupe contrôle).</li>
-<li><strong>Esprit critique :</strong> toujours chercher le mécanisme avant d'accepter une affirmation statistique.</li></ul></div>
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">VAL</span></h2>
+  <p>Pourquoi la <strong>randomisation</strong> dans une étude clinique permet-elle de démontrer une causalité ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>La <strong>randomisation</strong> consiste à diviser les participants en 2 groupes <strong>au hasard</strong> :</p>
+    <ul>
+      <li>Groupe traité : reçoit le médicament</li>
+      <li>Groupe témoin : reçoit un placebo</li>
+    </ul>
+    <p>Comme le tirage est aléatoire, les <strong>variables cachées</strong> (âge, santé initiale, mode de vie...) sont <strong>équilibrées entre les 2 groupes</strong>. La seule différence systématique est le médicament vs placebo.</p>
+    <p>Donc si le groupe traité va mieux, c'est <strong>nécessairement</strong> dû au médicament → causalité prouvée.</p>
+    <p>Sans randomisation (étude observationnelle), on a seulement de la corrélation. C'est pourquoi <strong>l'étude clinique randomisée double aveugle</strong> est l'étalon-or de la médecine.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">ANA</span></h2>
+  <p>Une étude affirme : « les gens qui prennent leur petit-déjeuner ont 25 % moins de risques de maladie cardiaque ». L'auteur conclut : « petit-déjeuner = bonne santé ». Est-ce une causalité prouvée ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Non, ce n'est qu'une corrélation observée.</strong> Variables cachées possibles :</p>
+    <ul>
+      <li><strong>Mode de vie globale</strong> : les gens qui déjeunent régulièrement ont souvent un mode de vie plus structuré (sport, sommeil régulier, moins de tabac).</li>
+      <li><strong>Niveau socio-économique</strong> : avoir le temps et les moyens de prendre un vrai petit-déjeuner.</li>
+      <li><strong>Type d'aliments</strong> : un petit-déjeuner sain (fruits) ≠ un déjeuner industriel sucré.</li>
+    </ul>
+    <p>Pour prouver la causalité, il faudrait une étude randomisée : un groupe sans déjeuner, un groupe avec, comparer leur santé sur 10 ans. Coûteux et difficile.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-yellow">REA</span></h2>
+  <p>Dans son métier, un menuisier observe que les chantiers où il pleut au moment de la pose ont 30 % de finitions médiocres. Conclusion possible : pluie cause défauts ?</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Oui, une <strong>causalité directe est plausible</strong> dans ce cas :</p>
+    <ul>
+      <li>L'humidité altère la prise des colles à bois.</li>
+      <li>Le bois mouillé se déforme et se travaille mal.</li>
+      <li>Les vis et fixations rouillent dans des conditions humides.</li>
+    </ul>
+    <p>Le mécanisme physique est <strong>connu et documenté</strong>. Donc la corrélation observée correspond bien à une causalité.</p>
+    <p>Avant de conclure, vérifier qu'on n'a pas oublié de variables cachées (saison, type de chantier, équipe, etc.).</p>
+    <p>Pratique : ne pas poser sous la pluie, prévoir une bâche, ou reporter le chantier.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger en 5 lignes une réponse pédagogique à un ami qui dit « le chocolat rend intelligent ! ».</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em>« Tu cites une étude statistique. C'est vrai que les pays qui consomment beaucoup de chocolat ont aussi plus de prix Nobel par habitant. Mais ça ne signifie pas que le chocolat rend intelligent !</em></p>
+    <p><em>Une <strong>variable cachée</strong> explique tout : le PIB. Les pays riches consomment plus de chocolat (luxe abordable) ET ont plus de moyens pour la recherche scientifique → plus de Nobels. La cause commune est la richesse économique, pas le chocolat lui-même.</em></p>
+    <p><em>C'est ce qu'on appelle une <strong>variable de confusion</strong>. Règle d'or : <strong>corrélation ≠ causalité</strong>. Pour prouver qu'un aliment rend intelligent, il faudrait une étude randomisée sur des décennies. »</em></p>
+  </div>
+</div>
+
+<div class="exo" style="background:#fef3c7;border:1px solid #b45309">
+  <h2>🚀 Pour aller plus loin <span class="badge-blue">ANA</span></h2>
+  <p>Sur le site « Spurious Correlations » (Tyler Vigen), des corrélations farfelues sont collectées. Exemple : « consommation de fromage par habitant ↔ nombre de personnes mortes étranglées par leur drap de lit » (r = +0,95). Comment interpréter ce résultat ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>r = 0,95 entre 2 variables totalement étrangères (fromage et étranglements par drap) : <strong>simple coïncidence statistique</strong>.</p>
+    <p>Quand on cherche dans des centaines de séries temporelles indépendantes, on trouve forcément des corrélations fortes par <strong>pure chance</strong>. C'est le piège du « <strong>p-hacking</strong> » : multiplier les comparaisons jusqu'à en trouver une qui semble significative.</p>
+    <p>Règle scientifique : <strong>seules les hypothèses formulées AVANT l'étude</strong> peuvent être testées. Tout test rétrospectif est suspect.</p>
+    <p>Le site de Tyler Vigen est une démonstration humoristique mais profonde : <strong>la statistique ne remplace pas la pensée</strong>.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Corrélation ≠ causalité.</strong> Le coefficient r mesure le lien statistique, pas le lien de cause à effet.</li>
+    <li><strong>Variable cachée (de confusion) :</strong> 3ᵉ variable qui influence X et Y simultanément, créant une fausse corrélation.</li>
+    <li><strong>Étude expérimentale randomisée</strong> = seul moyen rigoureux de prouver une causalité.</li>
+    <li><strong>Esprit critique :</strong> chercher le mécanisme avant d'accepter une affirmation statistique. Demander la taille de l'échantillon et la méthodologie.</li>
+  </ul>
+</div>
 
 </div>
 <script src="../../../nav.js"></script>
