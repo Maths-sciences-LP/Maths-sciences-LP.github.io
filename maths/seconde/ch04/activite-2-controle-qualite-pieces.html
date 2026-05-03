@@ -1,51 +1,229 @@
 <!DOCTYPE html>
-<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ch04 – Activité 2 – Contrôle qualité production – 2nde MAMA</title>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch04 – Activité 2 – Probabilité d'une pièce conforme – 2nde Bac Pro MAMA</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<link rel="stylesheet" href="../../../styles.css"><link rel="stylesheet" href="../../../print.css" media="print">
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0056b3;--p-bg:#ebf5ff;--p-border:#bee3f8}</style>
-</head><body><div class="c"><a href="../../../maths-2nde-mama.html" class="nb">← RETOUR SOMMAIRE</a>
-<header><h1>Activité 2 – Probabilité d'une pièce conforme <span style="font-size:.55em;color:#0891b2;font-weight:600">SITUATION PRO</span></h1>
-<p class="sous-titre">Chapitre 4 – Probabilités | 2nde Bac Pro MAMA | ⏱ 30 min</p>
-<p class="maj">Dernière mise à jour : 3 mai 2026, 10:00</p></header>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-2nde-mama.html" class="nb">← RETOUR SOMMAIRE</a>
 
-<div class="objectifs"><strong>Objectifs :</strong><ul><li>Calculer une probabilité simple</li><li>Distinguer fréquence observée et probabilité</li></ul></div>
+<header>
+  <h1>Activité 2 – Probabilité d'une pièce conforme dans un atelier <span style="font-size:.55em;color:#0891b2;font-weight:600">SITUATION PRO</span></h1>
+  <p class="sous-titre">Chapitre 4 – Probabilités | 2nde Bac Pro MAMA | Mathématiques | ⏱ 50 min</p>
+  <p class="maj">Dernière mise à jour : 4 mai 2026, 11:30</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
 
-<div class="situation"><h2>Situation – contrôle qualité de pieds de meubles</h2>
-<p><em>Sur un lot de 200 pieds de meubles tournés, 8 présentent un défaut. Un contrôleur prend un pied au hasard.</em></p></div>
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Calculer une probabilité simple à partir de proportions</li>
+    <li>Distinguer fréquence observée et probabilité théorique</li>
+    <li>Calculer la probabilité de l'événement contraire</li>
+    <li>Estimer un nombre attendu sur un grand effectif</li>
+  </ul>
+</div>
+
+<div class="situation">
+  <h2>Situation – atelier de fabrication de pieds de table</h2>
+  <p><em>Yann, tourneur sur bois dans une menuiserie de Lille, fabrique des pieds de table en chêne tournés. La fabrication se fait sur un tour à bois traditionnel. Comme tout processus manuel, certaines pièces présentent des défauts (nœuds visibles, fente, mauvaise finition). Pour préparer une grosse commande, le contrôleur qualité (Sami) doit estimer le taux de défaut de l'atelier.</em></p>
+
+  <h3>Document 1 — Échantillon contrôlé</h3>
+  <p>Sur un lot représentatif de <strong>200 pieds de meubles tournés</strong>, le contrôleur Sami trouve <strong>8 pieds défectueux</strong>.</p>
+
+  <p>Liste des défauts rencontrés :</p>
+  <ul>
+    <li>3 pieds avec nœud apparent et fente</li>
+    <li>2 pieds avec mauvaise finition (rugosité excessive)</li>
+    <li>2 pieds aux dimensions hors tolérance</li>
+    <li>1 pied cassé en cours de manipulation</li>
+  </ul>
+
+  <h3>Document 2 — Vocabulaire des probabilités</h3>
+  <ul>
+    <li><strong>Issue</strong> : un résultat possible d'une expérience aléatoire (ici : « pied conforme » ou « pied défectueux »).</li>
+    <li><strong>Probabilité</strong> : nombre entre 0 et 1 qui mesure la « chance » qu'une issue se réalise. P(issue) = nb cas favorables / nb total.</li>
+    <li><strong>Événement contraire</strong> : pour un événement A, l'événement « non A ». Propriété : P(A) + P(non A) = 1.</li>
+    <li><strong>Fréquence observée</strong> : sur un échantillon réel, c'est la part observée. La <strong>probabilité théorique</strong> est ce vers quoi tend la fréquence quand l'échantillon devient grand (loi des grands nombres).</li>
+  </ul>
+
+  <p style="font-size:.9em;color:#475569"><em>📚 Cette activité réinvestit les notions du cours §1 (vocabulaire des probabilités) et §2 (probabilité et fréquence).</em></p>
+</div>
 
 <div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
-<strong>Problématique :</strong> Quelle est la probabilité qu'il soit défectueux ?</div>
+  <strong>Problématique :</strong> Quelle est la probabilité qu'un pied tiré au hasard dans la production de Yann soit défectueux ? Cette information est-elle suffisante pour la commande à venir ?
+</div>
 
-<div class="exo"><h2>Question 1 <span class="badge-yellow">REA</span></h2>
-<p>Calculer la probabilité P(défaut).</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>P(défaut) = 8 / 200 = <strong>0,04 = 4 %</strong>.</p>
-</div></div>
+<div class="exo">
+  <h2>Question 1 <span class="badge-green">APP</span></h2>
+  <p>Identifier dans la situation :</p>
+  <ol type="a">
+    <li>L'expérience aléatoire</li>
+    <li>Les 2 issues possibles</li>
+    <li>L'effectif total et le nombre de cas favorables (« défectueux »)</li>
+  </ol>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ul>
+      <li>(a) Expérience : <strong>tirer au hasard 1 pied dans la production</strong>.</li>
+      <li>(b) 2 issues : <strong>« conforme »</strong> ou <strong>« défectueux »</strong>.</li>
+      <li>(c) Effectif total : <strong>200</strong>. Cas favorables (défectueux) : <strong>8</strong>. Cas favorables (conformes) : 200 − 8 = 192.</li>
+    </ul>
+  </div>
+</div>
 
-<div class="exo"><h2>Question 2 <span class="badge-yellow">REA</span></h2>
-<p>P(conforme) = ?</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>P(conforme) = 1 − P(défaut) = 0,96 = <strong>96 %</strong>.</p>
-<p>Ou directement : 192 conformes / 200 = 0,96.</p>
-</div></div>
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer la <strong>probabilité P(défaut)</strong> qu'un pied tiré au hasard soit défectueux.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>P(défaut) = nb défectueux / nb total = 8 / 200 = <strong>0,04 = 4 %</strong>.</p>
+    <p>Interprétation : sur un grand nombre de pieds, environ 4 % seront défectueux.</p>
+  </div>
+</div>
 
-<div class="exo"><h2>Question 3 <span class="badge-blue">ANA</span></h2>
-<p>Sur un grand chantier, on commande 5 000 pieds. Combien de défectueux à prévoir ?</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>Estimation : 5 000 × 0,04 = <strong>200 pièces défectueuses</strong> à prévoir (en moyenne).</p>
-<p>Ne pas oublier de commander une marge de sécurité (5-10 % en plus) pour pallier les défauts.</p>
-</div></div>
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer la probabilité <strong>P(conforme)</strong> par 2 méthodes différentes :</p>
+  <ol type="a">
+    <li>Directement à partir des effectifs</li>
+    <li>En utilisant la propriété de l'événement contraire</li>
+  </ol>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>(a) Direct : P(conforme) = 192 / 200 = <strong>0,96 = 96 %</strong>.</p>
+    <p>(b) Événement contraire : P(conforme) = 1 − P(défaut) = 1 − 0,04 = <strong>0,96 = 96 %</strong>. ✓</p>
+    <p>Les 2 méthodes donnent le même résultat. La méthode (b) est plus rapide quand on connaît P(défaut).</p>
+  </div>
+</div>
 
-<div class="retenir"><strong>À retenir</strong>
-<ul><li><strong>Probabilité :</strong> nb cas favorables / nb total. Toujours entre 0 et 1.</li>
-<li><strong>Événement contraire :</strong> P(non A) = 1 − P(A).</li>
-<li><strong>Estimation :</strong> sur un grand effectif, le nombre attendu d'occurrences = N × P.</li></ul></div>
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">ANA</span></h2>
+  <p>Représenter les 2 issues sur un schéma proportionnel (camembert ou rectangle).</p>
+  <div class="svg-wrap" style="margin:14px 0">
+    <svg width="100%" viewBox="0 0 600 230" style="max-width:600px;display:block;margin:0 auto" role="img" aria-label="Rectangle proportionnel : 96 % en vert (pieds conformes, 192/200), 4 % en rouge (pieds défectueux, 8/200).">
+      <defs>
+        <style>
+          .lbl{font:11px sans-serif;fill:#1a202c}
+          .lblA{font:600 12px sans-serif;fill:#fff;text-anchor:middle}
+          .ti{font:700 13px sans-serif;text-anchor:middle;fill:#0056b3}
+        </style>
+      </defs>
+      <text class="ti" x="300" y="22">Répartition de la production : 200 pieds</text>
 
-</div><script src="../../../nav.js"></script></body></html>
+      <!-- Rectangle proportionnel : largeur totale 480 px (de x=60 à x=540) -->
+      <!-- 96 % = 460,8 px ; 4 % = 19,2 px -->
+      <rect x="60" y="60" width="461" height="80" fill="#15803d" stroke="#1f2937" stroke-width="1.5"/>
+      <rect x="521" y="60" width="19" height="80" fill="#dc2626" stroke="#1f2937" stroke-width="1.5"/>
+
+      <text class="lblA" x="290" y="95">Pieds conformes</text>
+      <text class="lblA" x="290" y="113">192 / 200 = 96 %</text>
+
+      <text x="540" y="50" font-size="11" font-weight="bold" fill="#b91c1c" text-anchor="end">Défectueux 4 %</text>
+      <text x="540" y="155" font-size="10" fill="#b91c1c" text-anchor="end">8 pieds</text>
+
+      <text x="300" y="170" class="lbl" text-anchor="middle">P(conforme) = 0,96 + P(défectueux) = 0,04 = 1</text>
+
+      <!-- Détails -->
+      <g transform="translate(60 195)">
+        <rect width="14" height="10" fill="#15803d"/>
+        <text x="20" y="9" class="lbl">P(conforme) = 192/200 = 0,96</text>
+        <rect x="240" width="14" height="10" fill="#dc2626"/>
+        <text x="260" y="9" class="lbl">P(défaut) = 8/200 = 0,04</text>
+      </g>
+    </svg>
+  </div>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Le rectangle représente l'ensemble de la production (200 pieds). La grande zone verte (96 %) correspond aux pieds conformes, la petite zone rouge (4 %) aux pieds défectueux.</p>
+    <p>Visuellement, on voit que la production est globalement de bonne qualité, mais le défaut, bien que rare en proportion, peut représenter beaucoup d'unités sur un grand lot.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-yellow">REA</span></h2>
+  <p>Sami doit fournir une <strong>commande de 5 000 pieds</strong> à un fabricant de mobilier. Estimer le nombre de pieds défectueux à prévoir.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Estimation = effectif total × probabilité de défaut = 5 000 × 0,04 = <strong>200 pieds défectueux</strong> en moyenne.</p>
+    <p>Sur cette base, Sami doit prévoir une <strong>marge de production</strong> : commander/fabriquer environ 5 200 pieds pour livrer 5 000 conformes.</p>
+    <p>Mieux : 5 % de marge (250 pieds en plus = 5 250 production), pour absorber les éventuelles fluctuations au-dessus des 4 %.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">ANA</span></h2>
+  <p>Si Sami refait un échantillon de 200 pieds dans 2 mois, va-t-il retrouver exactement 8 défectueux ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Pas forcément.</strong> Sami pourrait trouver 5, 7, 10, 12 défectueux. C'est la <strong>fluctuation des fréquences</strong>.</p>
+    <p>Sur des échantillons de 200, il est normal d'observer un nombre de défauts entre 5 et 11 (autour de 8) — ce que l'on appelle l'<strong>intervalle de fluctuation</strong>.</p>
+    <p>Plus l'échantillon est grand (par ex. 10 000 pieds), plus la fréquence observée se rapproche de la probabilité théorique 0,04. C'est la <strong>loi des grands nombres</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-blue">VAL</span></h2>
+  <p>Sami envisage de demander à Yann d'<strong>améliorer la qualité</strong> en visant 1 % de défauts (au lieu de 4 %). Pour cela, Yann doit changer sa machine. Combien de pieds défectueux en moins sur la commande de 5 000 ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Avec 1 % de défaut : 5 000 × 0,01 = <strong>50 pieds défectueux</strong> (au lieu de 200).</p>
+    <p>Économie : 200 − 50 = <strong>150 pieds non défectueux en plus</strong> sur la commande.</p>
+    <p>Au prix de 35 €/pied, cela représente 150 × 35 = 5 250 € d'économie. Un investissement dans une nouvelle machine peut être rentabilisé rapidement.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger en 5 lignes le <strong>compte-rendu d'analyse qualité</strong> que Sami transmet à Yann.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em>📋 <strong>Analyse qualité — Atelier Yann (n = 200 pieds)</strong></em></p>
+    <p><em>Sur l'échantillon contrôlé de 200 pieds, j'ai relevé 8 défectueux (4 %). Probabilités : P(conforme) = 0,96 ; P(défaut) = 0,04. Sur la commande client de 5 000 pieds, on peut estimer environ 200 défectueux à prévoir → fabriquer 5 250 pour livrer 5 000.</em></p>
+    <p><em>Les défauts les plus fréquents (3 sur 8 = 37,5 %) sont les nœuds + fentes : amélioration possible par un meilleur tri des planches en amont. Les défauts de finition (2 sur 8) suggèrent un calibrage à revoir sur le tour.</em></p>
+    <p><em>Si on vise 1 % de défaut (objectif réaliste avec un investissement modéré), on économiserait 150 pieds par lot de 5 000 — soit ~ 5 250 € à 35 €/pied. Investissement rentable dès la 2ᵉ commande.</em></p>
+  </div>
+</div>
+
+<div class="exo" style="background:#fef3c7;border:1px solid #b45309">
+  <h2>🚀 Pour aller plus loin <span class="badge-blue">VAL</span></h2>
+  <p>Un autre atelier annonce 2 % de défauts seulement, mais sur un échantillon de 50 pieds (1 défectueux). Cette information est-elle aussi fiable que celle de Yann (8 sur 200) ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Non.</strong> Sur un échantillon trop petit (50 pieds), 1 défaut peut être un coup de chance ou de malchance. La fréquence observée est très peu fiable.</p>
+    <p>Avec 50 pieds, l'intervalle de fluctuation est large : la vraie probabilité pourrait être n'importe où entre 0 % et 8-10 %.</p>
+    <p>Avec 200 pieds, on a beaucoup plus de fiabilité. Avec 1 000 ou 10 000 pieds, on serait quasi certain.</p>
+    <p>Règle pratique : <strong>plus l'échantillon est grand, plus la probabilité estimée est proche de la réalité</strong>. C'est la loi des grands nombres.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Probabilité :</strong> nb cas favorables / nb total. Toujours entre 0 (impossible) et 1 (certain).</li>
+    <li><strong>Événement contraire :</strong> P(A) + P(non A) = 1.</li>
+    <li><strong>Fréquence observée vs probabilité :</strong> sur un grand échantillon, la fréquence approche la probabilité (loi des grands nombres).</li>
+    <li><strong>Estimation sur grand effectif :</strong> nb attendu = N × P. Sur 5 000 pièces avec 4 % de défaut, prévoir ≈ 200 défectueux.</li>
+    <li><strong>Marge de production :</strong> toujours fabriquer plus que la commande pour absorber les défauts.</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

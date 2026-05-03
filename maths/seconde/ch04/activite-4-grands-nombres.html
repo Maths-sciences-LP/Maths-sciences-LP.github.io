@@ -1,63 +1,259 @@
 <!DOCTYPE html>
-<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ch04 – Activité 4 – Loi des grands nombres – 2nde MAMA</title>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch04 – Activité 4 – Loi des grands nombres et fluctuation – 2nde Bac Pro MAMA</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<link rel="stylesheet" href="../../../styles.css"><link rel="stylesheet" href="../../../print.css" media="print">
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0056b3;--p-bg:#ebf5ff;--p-border:#bee3f8}</style>
-</head><body><div class="c"><a href="../../../maths-2nde-mama.html" class="nb">← RETOUR SOMMAIRE</a>
-<header><h1>Activité 4 – La fluctuation et la loi des grands nombres <span style="font-size:.55em;color:#7c3aed;font-weight:600">PROJET DOCUMENTAIRE</span></h1>
-<p class="sous-titre">Chapitre 4 – Probabilités | 2nde Bac Pro MAMA | ⏱ 30 min</p>
-<p class="maj">Dernière mise à jour : 3 mai 2026, 10:00</p></header>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-2nde-mama.html" class="nb">← RETOUR SOMMAIRE</a>
 
-<div class="objectifs"><strong>Objectifs :</strong><ul><li>Comprendre la fluctuation des fréquences</li><li>Saisir intuitivement la loi des grands nombres</li></ul></div>
+<header>
+  <h1>Activité 4 – La loi des grands nombres et la fluctuation des fréquences <span style="font-size:.55em;color:#7c3aed;font-weight:600">PROJET DOCUMENTAIRE</span></h1>
+  <p class="sous-titre">Chapitre 4 – Probabilités | 2nde Bac Pro MAMA | Mathématiques | ⏱ 50 min</p>
+  <p class="maj">Dernière mise à jour : 4 mai 2026, 11:30</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
 
-<div class="situation"><h2>Situation – pile ou face</h2>
-<p><em>Avec une pièce équilibrée, P(pile) = 0,5. Que se passe-t-il en pratique sur 10 lancers, 100 lancers, 10 000 lancers ?</em></p>
-<p>Résultats simulés (au hasard) :</p>
-<table>
-<thead><tr><th>Nombre de lancers</th><th>Nb pile</th><th>Fréquence pile</th></tr></thead>
-<tbody>
-<tr><td>10</td><td>3</td><td>0,30 (loin de 0,5)</td></tr>
-<tr><td>100</td><td>54</td><td>0,54</td></tr>
-<tr><td>1 000</td><td>508</td><td>0,508</td></tr>
-<tr><td>10 000</td><td>5 023</td><td>0,5023 (très proche de 0,5)</td></tr>
-</tbody></table></div>
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Comprendre la fluctuation des fréquences sur un petit échantillon</li>
+    <li>Saisir intuitivement la loi des grands nombres</li>
+    <li>Démasquer l'illusion du joueur (« compensation »)</li>
+    <li>Appliquer ces principes à la qualité industrielle</li>
+  </ul>
+</div>
+
+<div class="situation">
+  <h2>Situation – pile ou face : un classique pour comprendre</h2>
+  <p><em>L'expérience la plus simple en probabilités est le lancer d'une pièce équilibrée. P(pile) = 0,5 (autant de chance que face). Mais que se passe-t-il en pratique sur 10 lancers ? 100 lancers ? 10 000 lancers ? La réponse va te surprendre — et a des conséquences directes pour le contrôle qualité industriel.</em></p>
+
+  <h3>Document 1 — Simulation de lancers (résultats statistiques)</h3>
+  <p>Voici les résultats de 4 simulations indépendantes (par ordinateur, sur une pièce parfaitement équilibrée) :</p>
+  <table>
+    <thead>
+      <tr><th>Nombre de lancers</th><th>Nb piles obtenus</th><th>Fréquence pile</th><th>Écart à 0,5</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>10</td><td>3</td><td>0,300</td><td><strong>0,200</strong> (très loin)</td></tr>
+      <tr><td>100</td><td>54</td><td>0,540</td><td>0,040</td></tr>
+      <tr><td>1 000</td><td>508</td><td>0,508</td><td>0,008</td></tr>
+      <tr><td>10 000</td><td>5 023</td><td>0,5023</td><td><strong>0,0023</strong> (quasi nul)</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Document 2 — Représentation graphique</h3>
+  <div class="svg-wrap" style="margin:14px 0">
+    <svg width="100%" viewBox="0 0 600 280" style="max-width:600px;display:block;margin:0 auto" role="img" aria-label="Graphique semi-log : fréquence des piles en fonction du nombre de lancers. La fréquence fluctue beaucoup à 10 lancers (0,30), s'approche progressivement de 0,5 pour les grandes valeurs.">
+      <defs>
+        <style>
+          .ax{stroke:#1a202c;stroke-width:1.5}
+          .gd{stroke:#cbd5e1;stroke-width:.6}
+          .lbl{font:11px sans-serif;fill:#1a202c}
+          .lblA{font:600 12px sans-serif;fill:#1a202c}
+          .ti{font:700 13px sans-serif;text-anchor:middle;fill:#0056b3}
+        </style>
+      </defs>
+      <text class="ti" x="300" y="22">Convergence des fréquences vers la probabilité (0,5)</text>
+
+      <!-- Y : 0 → 240, 1 → 50. 1 unité = 190 px. 0,5 → 145 -->
+      <g class="gd">
+        <line x1="80" y1="50" x2="540" y2="50"/>
+        <line x1="80" y1="98" x2="540" y2="98"/>
+        <line x1="80" y1="145" x2="540" y2="145"/>
+        <line x1="80" y1="193" x2="540" y2="193"/>
+        <line x1="80" y1="240" x2="540" y2="240"/>
+      </g>
+      <line class="ax" x1="80" y1="240" x2="550" y2="240"/>
+      <line class="ax" x1="80" y1="40" x2="80" y2="240"/>
+
+      <!-- Y graduations -->
+      <g class="lbl" text-anchor="end">
+        <text x="75" y="244">0</text>
+        <text x="75" y="197">0,25</text>
+        <text x="75" y="149">0,50</text>
+        <text x="75" y="102">0,75</text>
+        <text x="75" y="54">1,00</text>
+      </g>
+      <text class="lblA" x="30" y="155" transform="rotate(-90 30 155)" text-anchor="middle">Fréquence pile</text>
+
+      <!-- X : log scale 10 → 580. log(10)=1, log(10000)=4. x = 80 + (log(N)-1)*150 -->
+      <!-- N=10 : x=80 ; N=100 : x=230 ; N=1000 : x=380 ; N=10000 : x=530 -->
+      <g class="lbl" text-anchor="middle">
+        <text x="80" y="258">10</text>
+        <text x="230" y="258">100</text>
+        <text x="380" y="258">1 000</text>
+        <text x="530" y="258">10 000</text>
+      </g>
+      <text class="lblA" x="300" y="275" text-anchor="middle">Nombre de lancers (échelle log)</text>
+
+      <!-- Ligne de référence à 0,5 -->
+      <line x1="80" y1="145" x2="540" y2="145" stroke="#15803d" stroke-width="1.5" stroke-dasharray="5 3"/>
+      <text x="555" y="148" class="lbl" fill="#15803d" font-weight="bold">P=0,5</text>
+
+      <!-- Points : 10 → 0,30 (y=183) ; 100 → 0,54 (y=137) ; 1000 → 0,508 (y=144) ; 10000 → 0,5023 (y=145) -->
+      <circle cx="80" cy="183" r="6" fill="#dc2626"/>
+      <text x="80" y="175" class="lbl" text-anchor="middle" fill="#b91c1c" font-weight="bold">0,30</text>
+
+      <circle cx="230" cy="137" r="6" fill="#ea580c"/>
+      <text x="230" y="130" class="lbl" text-anchor="middle" fill="#c2410c" font-weight="bold">0,54</text>
+
+      <circle cx="380" cy="144" r="6" fill="#2dd4bf"/>
+      <text x="380" y="137" class="lbl" text-anchor="middle" fill="#0d9488" font-weight="bold">0,508</text>
+
+      <circle cx="530" cy="145" r="6" fill="#15803d"/>
+      <text x="530" y="138" class="lbl" text-anchor="middle" fill="#15803d" font-weight="bold">0,5023</text>
+
+      <!-- Courbe enveloppe (fluctuation diminue) -->
+      <path d="M 80 183 L 230 137 L 380 144 L 530 145" stroke="#0056b3" stroke-width="2" fill="none" stroke-dasharray="3 2"/>
+    </svg>
+  </div>
+
+  <h3>Document 3 — Énoncé de la loi des grands nombres</h3>
+  <p style="background:#dbeafe;padding:10px 14px;border-radius:6px;border-left:3px solid #1d4ed8">
+    <strong>Loi des grands nombres</strong> (Jacob Bernoulli, 1713) : <em>quand le nombre d'essais N devient grand, la fréquence observée d'un événement tend vers sa probabilité théorique.</em>
+  </p>
+
+  <p style="font-size:.9em;color:#475569"><em>📚 Cette activité réinvestit les notions du cours §5 (fluctuation des fréquences) et §6 (loi des grands nombres).</em></p>
+</div>
 
 <div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
-<strong>Problématique :</strong> Pourquoi la fréquence se rapproche-t-elle de la probabilité quand le nombre d'essais augmente ?</div>
+  <strong>Problématique :</strong> Pourquoi la fréquence se rapproche-t-elle de la probabilité quand N grandit, et quelles conséquences pour la qualité industrielle et les jeux d'argent ?
+</div>
 
-<div class="exo"><h2>Question 1 <span class="badge-blue">ANA</span></h2>
-<p>D'après le tableau, comment évolue l'écart entre fréquence et 0,5 ?</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>Écart : 0,20 (10 lancers) → 0,04 (100) → 0,008 (1000) → 0,0023 (10 000).</p>
-<p>L'écart <strong>diminue</strong> avec le nombre d'essais. C'est la <strong>loi des grands nombres</strong> (Bernoulli, 1713).</p>
-</div></div>
+<div class="exo">
+  <h2>Question 1 <span class="badge-blue">ANA</span></h2>
+  <p>D'après le tableau du document 1, comment évolue l'écart entre la fréquence observée et 0,5 quand N augmente ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Écart à 0,5 :</p>
+    <ul>
+      <li>10 lancers : 0,200 (énorme)</li>
+      <li>100 lancers : 0,040 (petit)</li>
+      <li>1 000 lancers : 0,008 (très petit)</li>
+      <li>10 000 lancers : 0,0023 (quasi nul)</li>
+    </ul>
+    <p>L'écart <strong>diminue</strong> rapidement. Quand N est multiplié par 10, l'écart est divisé environ par √10 ≈ 3.</p>
+    <p>C'est exactement la <strong>loi des grands nombres</strong> en action : à l'infini, l'écart tend vers 0.</p>
+  </div>
+</div>
 
-<div class="exo"><h2>Question 2 <span class="badge-blue">VAL</span></h2>
-<p>Au casino, après 5 « rouge » d'affilée, des joueurs misent sur « noir » par « compensation ». Est-ce justifié ?</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p><strong>NON. C'est l'illusion du joueur (gambler's fallacy).</strong></p>
-<p>La roulette n'a pas de mémoire. P(noir) reste 18/37 à chaque tour, peu importe le passé.</p>
-<p>La loi des grands nombres signifie que sur un GRAND nombre de tours, on tend vers 50/50. Mais elle ne « rééquilibre » pas les tours suivants. Un déséquilibre ne se compense pas, il se <strong>dilue</strong> dans les milliers de tours.</p>
-</div></div>
+<div class="exo">
+  <h2>Question 2 <span class="badge-blue">VAL</span></h2>
+  <p>Au casino, après 5 « rouge » d'affilée à la roulette, des joueurs misent sur « noir » par « compensation » (« ça doit s'équilibrer »). Cette intuition est-elle correcte ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>NON. C'est l'illusion du joueur (« gambler's fallacy »).</strong></p>
+    <p>La roulette n'a <strong>pas de mémoire</strong>. Chaque tour est indépendant des précédents.</p>
+    <p>P(noir) reste 18/37 ≈ 0,486 à chaque tour, peu importe les résultats passés.</p>
+    <p>La loi des grands nombres signifie que sur un GRAND nombre de tours, la fréquence tend vers 0,486. Mais elle ne <strong>compense pas</strong> les déséquilibres passés ; elle les <strong>dilue</strong> dans le grand nombre de tours.</p>
+    <p>Exemple : après 5 rouges sur 5 tours (déséquilibre +5), au tour 1 000, on aura environ 486 noirs et 514 rouges (déséquilibre +28 — qui aurait grandi, pas diminué !). Mais la fréquence sera proche de 0,486.</p>
+    <p>Cette illusion fait perdre des fortunes aux joueurs naïfs.</p>
+  </div>
+</div>
 
-<div class="exo"><h2>Question 3 <span class="badge-blue">VAL</span></h2>
-<p>Quelle implication pour un atelier de menuiserie qui fait 4 % de défauts en moyenne ?</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>Sur 25 pièces : on peut avoir 0 défaut une semaine, 3 défauts la suivante. <strong>Fluctuation normale</strong>.</p>
-<p>Sur 1 000 pièces : on a quasi systématiquement 35-45 défauts (4 %, ± 1 %). <strong>Stabilité</strong>.</p>
-<p>Conclusion : ne pas s'alarmer d'une « mauvaise semaine » sur peu de pièces. Calculer les statistiques sur des effectifs suffisants.</p>
-</div></div>
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Un atelier de menuiserie a un taux de défaut de 4 % en théorie. Sur une commande de 25 pièces, quel nombre de défauts attend-on ? Quelle fluctuation peut-on observer ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Attendu : 25 × 0,04 = <strong>1 défaut</strong> en moyenne.</p>
+    <p>Mais sur 25 pièces, on peut observer 0, 1, 2, voire 3 défauts par pure fluctuation. C'est la <strong>fluctuation d'échantillonnage</strong>.</p>
+    <p>Conclusion : <strong>ne pas s'alarmer d'une « mauvaise semaine »</strong> sur peu de pièces. Une mauvaise semaine peut être due au hasard, pas à un dysfonctionnement.</p>
+  </div>
+</div>
 
-<div class="retenir"><strong>À retenir</strong>
-<ul><li><strong>Loi des grands nombres :</strong> la fréquence observée tend vers la probabilité quand N → ∞.</li>
-<li><strong>Petit échantillon :</strong> grande fluctuation, peu fiable.</li>
-<li><strong>Illusion du joueur :</strong> le hasard n'a pas de mémoire. Pas de « compensation » à attendre.</li></ul></div>
+<div class="exo">
+  <h2>Question 4 <span class="badge-yellow">REA</span></h2>
+  <p>Sur une commande beaucoup plus grande (1 000 pièces), quel nombre de défauts attend-on ? Et la fluctuation ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Attendu : 1 000 × 0,04 = <strong>40 défauts</strong> en moyenne.</p>
+    <p>La fluctuation absolue augmente (on peut avoir 35 ou 45 défauts), mais la <strong>fluctuation relative diminue</strong> : on est entre 3,5 et 4,5 % au lieu de 0 à 8 %.</p>
+    <p>Sur 1 000 pièces, l'estimation à 4 % est très fiable. C'est l'<strong>effet de stabilisation</strong> de la loi des grands nombres.</p>
+  </div>
+</div>
 
-</div><script src="../../../nav.js"></script></body></html>
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">ANA</span></h2>
+  <p>Un nouvel atelier annonce 2 % de défauts, sur un échantillon de 50 pièces (1 défectueux). Cette information est-elle aussi fiable que celle d'un autre atelier qui annonce 4 % sur 1 000 pièces (40 défectueux) ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Non.</strong> L'échantillon de 50 est trop petit pour être fiable. 1 défectueux peut être un coup de chance ou de malchance.</p>
+    <p>L'intervalle de fluctuation à 95 % pour un échantillon de 50 avec 1 défaut est environ [0 % ; 8 %]. La vraie probabilité pourrait être n'importe où dans cette plage.</p>
+    <p>Pour comparer 2 ateliers, il faut des échantillons <strong>de taille comparable</strong> et suffisamment grands (au moins 100, idéalement 500-1 000).</p>
+    <p>Règle pratique : <strong>plus l'échantillon est grand, plus l'estimation est précise</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">VAL</span></h2>
+  <p>Un sondage politique annonce 52 % d'intentions de vote pour le candidat A, avec une marge d'erreur de ± 3 %. Comment interpréter cette information ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>52 % ± 3 % signifie que la vraie proportion d'intentions de vote est, avec une grande probabilité (95 %), entre 49 % et 55 %.</p>
+    <p>Donc le candidat peut être :</p>
+    <ul>
+      <li>vraiment majoritaire (55 %)</li>
+      <li>légèrement majoritaire (52 %)</li>
+      <li>minoritaire (49 %) — ce qui signifierait une défaite !</li>
+    </ul>
+    <p>Conclusion : <strong>tant que la marge d'erreur englobe 50 %</strong>, l'élection est <strong>incertaine</strong>. Les médias qui annoncent « le candidat A va gagner » avec 52 % se trompent statistiquement.</p>
+    <p>L'instruction civique mathématique : toujours regarder la <strong>taille de l'échantillon</strong> et la <strong>marge d'erreur</strong>, pas seulement le pourcentage central.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger en 5 lignes un <strong>petit guide</strong> à destination de ton apprenti pour qu'il comprenne la loi des grands nombres et ne tombe pas dans le piège du « pas de bol cette semaine ».</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em>📋 <strong>Guide qualité — La loi des grands nombres pour les apprentis</strong></em></p>
+    <p><em>Quand on a un taux de défaut de 4 % théorique, ce n'est pas qu'<strong>exactement</strong> 4 pièces sur 100 sont défectueuses. C'est en moyenne. Sur 25 pièces, tu peux avoir 0, 1, 2 ou 3 défauts par pure fluctuation. Sur 1 000 pièces, ce sera bien 40 ± 5.</em></p>
+    <p><em>Conclusion : ne juge pas la qualité de l'atelier sur une seule petite commande. Et si tu observes 3 défauts sur 25 ce mois-ci (12 %), ne panique pas : c'est peut-être juste la fluctuation. Recompte le mois suivant.</em></p>
+    <p><em>Inversement, si tu as eu 0 défaut sur 25, ne crois pas que tu as résolu le problème. La fluctuation peut t'avoir favorisé temporairement.</em></p>
+  </div>
+</div>
+
+<div class="exo" style="background:#fef3c7;border:1px solid #b45309">
+  <h2>🚀 Pour aller plus loin <span class="badge-blue">VAL</span></h2>
+  <p>Au Loto FDJ, P(gagner le jackpot) ≈ 1/19 millions par grille. Un joueur achète 1 grille par semaine pendant 50 ans. Quelle est la probabilité qu'il gagne au moins une fois ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Sur 50 ans, il joue 52 × 50 = 2 600 grilles.</p>
+    <p>P(jamais gagner) = (1 − 1/19 000 000)^2600 ≈ 1 − 2600/19 000 000 ≈ 0,99986.</p>
+    <p>P(au moins 1 gain) = 1 − 0,99986 ≈ <strong>0,00014 = 0,014 %</strong>.</p>
+    <p>Soit <strong>1 chance sur 7 000</strong>. Sur toute une vie, c'est statistiquement quasi impossible.</p>
+    <p>Coût total : 2 600 × 2,20 € ≈ <strong>5 700 €</strong> dépensés pour un espoir infinitésimal. La loi des grands nombres confirme ici que les jeux d'argent sont conçus pour faire perdre les joueurs, pas gagner.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Loi des grands nombres :</strong> quand N augmente, la fréquence observée tend vers la probabilité.</li>
+    <li><strong>Fluctuation d'échantillonnage :</strong> sur petit N, la fréquence peut être très éloignée de P. Plus N grandit, plus elle se stabilise.</li>
+    <li><strong>Illusion du joueur :</strong> le hasard n'a pas de mémoire. Pas de « compensation » à attendre.</li>
+    <li><strong>Sondages :</strong> toujours regarder la taille de l'échantillon et la marge d'erreur.</li>
+    <li><strong>Industrie :</strong> juger de la qualité sur des effectifs suffisants (≥ 100, idéalement &gt; 500).</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>
