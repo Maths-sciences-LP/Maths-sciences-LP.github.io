@@ -1,55 +1,274 @@
 <!DOCTYPE html>
-<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ch02 – Activité 2 – Production hebdo d'un atelier – 2nde MAMA</title>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch02 – Activité 2 – Production hebdo d'un atelier – 2nde Bac Pro MAMA</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<link rel="stylesheet" href="../../../styles.css"><link rel="stylesheet" href="../../../print.css" media="print">
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0056b3;--p-bg:#ebf5ff;--p-border:#bee3f8}</style>
-</head><body><div class="c"><a href="../../../maths-2nde-mama.html" class="nb">← RETOUR SOMMAIRE</a>
-<header><h1>Activité 2 – Production hebdomadaire d'un atelier <span style="font-size:.55em;color:#0891b2;font-weight:600">SITUATION PRO</span></h1>
-<p class="sous-titre">Chapitre 2 – Statistiques | 2nde Bac Pro MAMA | ⏱ 30 min</p>
-<p class="maj">Dernière mise à jour : 3 mai 2026, 10:00</p></header>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-2nde-mama.html" class="nb">← RETOUR SOMMAIRE</a>
 
-<div class="objectifs"><strong>Objectifs :</strong><ul><li>Construire un tableau des effectifs et fréquences</li><li>Représenter les données par un diagramme en bâtons</li></ul></div>
+<header>
+  <h1>Activité 2 – Étude statistique de la production hebdomadaire <span style="font-size:.55em;color:#0891b2;font-weight:600">SITUATION PRO</span></h1>
+  <p class="sous-titre">Chapitre 2 – Statistiques à une variable | 2nde Bac Pro MAMA | Mathématiques | ⏱ 50 min</p>
+  <p class="maj">Dernière mise à jour : 4 mai 2026, 10:00</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
 
-<div class="situation"><h2>Situation – atelier de menuiserie</h2>
-<p><em>Sur 12 semaines, l'atelier de Mehdi a produit (en chaises/semaine) :</em></p>
-<p>15, 18, 22, 18, 20, 15, 22, 25, 18, 20, 18, 22</p></div>
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Construire un tableau d'effectifs et de fréquences à partir de données brutes</li>
+    <li>Représenter une série statistique par un diagramme en bâtons</li>
+    <li>Identifier le mode et l'étendue d'une série</li>
+    <li>Utiliser ces indicateurs pour prendre une décision professionnelle</li>
+  </ul>
+</div>
+
+<div class="situation">
+  <h2>Situation – atelier de menuiserie de Mehdi à Toulouse</h2>
+  <p><em>Mehdi gère un atelier de menuiserie spécialisé dans la fabrication de chaises en bois massif. Pour préparer un appel d'offre auprès d'une grande surface d'ameublement, il doit présenter ses statistiques de production. Il sort son carnet de bord et note la production réalisée chaque semaine sur les 12 dernières semaines.</em></p>
+
+  <h3>Document 1 — Productions hebdomadaires (en chaises/semaine)</h3>
+  <p>Données brutes des 12 dernières semaines :</p>
+  <p style="text-align:center;font-family:monospace;font-size:1.1em;background:#f8fafc;padding:10px;border-radius:6px">
+  15 ; 18 ; 22 ; 18 ; 20 ; 15 ; 22 ; 25 ; 18 ; 20 ; 18 ; 22
+  </p>
+
+  <h3>Document 2 — Vocabulaire statistique</h3>
+  <ul>
+    <li><strong>Effectif</strong> d'une valeur : nombre de fois où elle apparaît dans la série.</li>
+    <li><strong>Fréquence</strong> d'une valeur : effectif / effectif total. S'exprime en décimal ou en %.</li>
+    <li><strong>Mode</strong> : valeur ayant le plus grand effectif (la plus fréquente).</li>
+    <li><strong>Étendue</strong> : différence entre la valeur maximale et la valeur minimale.</li>
+  </ul>
+
+  <p style="font-size:.9em;color:#475569"><em>📚 Cette activité réinvestit les notions du cours §1 (effectifs et fréquences) et §3 (mode et étendue).</em></p>
+</div>
 
 <div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
-<strong>Problématique :</strong> Quelle est la production typique de l'atelier ?</div>
+  <strong>Problématique :</strong> Quelle production hebdomadaire Mehdi peut-il s'engager à fournir auprès de la grande surface ? Quelle valeur représente le mieux la production typique de l'atelier ?
+</div>
 
-<div class="exo"><h2>Question 1 <span class="badge-green">APP</span></h2>
-<p>Construire le tableau des effectifs (nombre de semaines pour chaque valeur).</p>
-<ul class="lignes-reponse"><li</li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<table><thead><tr><th>Production</th><th>15</th><th>18</th><th>20</th><th>22</th><th>25</th></tr></thead>
-<tbody><tr><th>Effectif</th><td>2</td><td>4</td><td>2</td><td>3</td><td>1</td></tr></tbody></table>
-<p>Total : 12 ✓</p>
-</div></div>
+<div class="exo">
+  <h2>Question 1 <span class="badge-green">APP</span></h2>
+  <p>Compléter le tableau des effectifs (nombre de semaines pour chaque valeur de production).</p>
+  <table>
+    <thead><tr><th>Production (chaises/semaine)</th><th>15</th><th>18</th><th>20</th><th>22</th><th>25</th><th><strong>Total</strong></th></tr></thead>
+    <tbody><tr><td>Effectif (nb de semaines)</td><td>……</td><td>……</td><td>……</td><td>……</td><td>……</td><td><strong>……</strong></td></tr></tbody>
+  </table>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <table>
+      <thead><tr><th>Production</th><th>15</th><th>18</th><th>20</th><th>22</th><th>25</th><th><strong>Total</strong></th></tr></thead>
+      <tbody><tr><td>Effectif</td><td>2</td><td>4</td><td>2</td><td>3</td><td>1</td><td><strong>12</strong></td></tr></tbody>
+    </table>
+    <p>Vérification : 2 + 4 + 2 + 3 + 1 = 12 (= nombre total de semaines observées) ✓</p>
+  </div>
+</div>
 
-<div class="exo"><h2>Question 2 <span class="badge-yellow">REA</span></h2>
-<p>Calculer les fréquences (en %).</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<table><tr><th>Production</th><td>15</td><td>18</td><td>20</td><td>22</td><td>25</td></tr>
-<tr><th>Fréq. (%)</th><td>16,7</td><td>33,3</td><td>16,7</td><td>25,0</td><td>8,3</td></tr></table>
-<p>Total = 100 % ✓</p>
-</div></div>
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer la <strong>fréquence</strong> (en décimal puis en %) de chaque valeur. Vérifier que la somme des fréquences vaut bien 100 %.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <table>
+      <thead><tr><th>Production</th><th>Effectif</th><th>Fréquence</th><th>Pourcentage</th></tr></thead>
+      <tbody>
+        <tr><td>15</td><td>2</td><td>2/12 ≈ 0,167</td><td><strong>16,7 %</strong></td></tr>
+        <tr><td>18</td><td>4</td><td>4/12 ≈ 0,333</td><td><strong>33,3 %</strong></td></tr>
+        <tr><td>20</td><td>2</td><td>2/12 ≈ 0,167</td><td><strong>16,7 %</strong></td></tr>
+        <tr><td>22</td><td>3</td><td>3/12 = 0,25</td><td><strong>25,0 %</strong></td></tr>
+        <tr><td>25</td><td>1</td><td>1/12 ≈ 0,083</td><td><strong>8,3 %</strong></td></tr>
+        <tr><td><strong>Total</strong></td><td><strong>12</strong></td><td><strong>1</strong></td><td><strong>100 %</strong></td></tr>
+      </tbody>
+    </table>
+    <p>Vérification : 16,7 + 33,3 + 16,7 + 25,0 + 8,3 = 100 % ✓</p>
+  </div>
+</div>
 
-<div class="exo"><h2>Question 3 <span class="badge-blue">VAL</span></h2>
-<p>Quelle production hebdomadaire promettre à un nouveau client ? Justifier.</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>La valeur la plus fréquente (mode) est 18 chaises (33 %). C'est la production « typique ».</p>
-<p>Pour être prudent : promettre <strong>15-18 chaises/semaine</strong>. La meilleure semaine (25) est exceptionnelle, ne pas la prendre comme référence pour engager le client.</p>
-</div></div>
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Construire le <strong>diagramme en bâtons</strong> représentant les effectifs (échelle : 1 carreau = 1 semaine en ordonnée).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <div class="svg-wrap" style="margin:14px 0">
+      <svg width="100%" viewBox="0 0 600 300" style="max-width:600px;display:block;margin:0 auto" role="img" aria-label="Diagramme en bâtons : production hebdomadaire en chaises avec leurs effectifs. 15 chaises : 2 semaines. 18 chaises : 4 semaines (mode). 20 chaises : 2 semaines. 22 chaises : 3 semaines. 25 chaises : 1 semaine.">
+        <defs>
+          <style>
+            .ax{stroke:#1a202c;stroke-width:1.5}
+            .gd{stroke:#cbd5e1;stroke-width:.6}
+            .bar{fill:#0056b3}
+            .bar-mode{fill:#dc2626}
+            .lbl{font:11px sans-serif;fill:#1a202c}
+            .lblA{font:600 12px sans-serif;fill:#1a202c}
+            .ti{font:700 13px sans-serif;text-anchor:middle;fill:#0056b3}
+          </style>
+        </defs>
+        <text class="ti" x="300" y="22">Production hebdomadaire de l'atelier (12 semaines)</text>
 
-<div class="retenir"><strong>À retenir</strong>
-<ul><li><strong>Effectif :</strong> nombre d'occurrences. <strong>Fréquence :</strong> effectif / total.</li>
-<li><strong>Mode :</strong> valeur la plus fréquente. Bonne référence pour la « production typique ».</li>
-<li><strong>Engagement client :</strong> se baser sur le mode ou un quartile bas, pas sur le maximum exceptionnel.</li></ul></div>
+        <!-- Mapping: y de 0 à 5 effectifs sur 200 px (40 px/effectif) -->
+        <g class="gd">
+          <line x1="80" y1="60" x2="540" y2="60"/>
+          <line x1="80" y1="100" x2="540" y2="100"/>
+          <line x1="80" y1="140" x2="540" y2="140"/>
+          <line x1="80" y1="180" x2="540" y2="180"/>
+          <line x1="80" y1="220" x2="540" y2="220"/>
+        </g>
+        <line class="ax" x1="80" y1="260" x2="550" y2="260"/>
+        <line class="ax" x1="80" y1="50" x2="80" y2="260"/>
 
-</div><script src="../../../nav.js"></script></body></html>
+        <!-- Y graduations -->
+        <g class="lbl" text-anchor="end">
+          <text x="75" y="264">0</text>
+          <text x="75" y="224">1</text>
+          <text x="75" y="184">2</text>
+          <text x="75" y="144">3</text>
+          <text x="75" y="104">4</text>
+          <text x="75" y="64">5</text>
+        </g>
+        <text class="lblA" x="30" y="155" transform="rotate(-90 30 155)" text-anchor="middle">Effectif (semaines)</text>
+
+        <!-- Bâtons : x = 130, 220, 310, 400, 490 ; largeur 60 -->
+        <!-- 15 : eff 2 → hauteur 80, y_top = 180 -->
+        <rect class="bar" x="100" y="180" width="60" height="80"/>
+        <text x="130" y="173" class="lbl" text-anchor="middle" font-weight="bold">2</text>
+        <text x="130" y="278" class="lblA" text-anchor="middle">15</text>
+
+        <!-- 18 : eff 4 → hauteur 160, y_top = 100 (MODE) -->
+        <rect class="bar-mode" x="190" y="100" width="60" height="160"/>
+        <text x="220" y="93" class="lbl" text-anchor="middle" font-weight="bold" fill="#b91c1c">4</text>
+        <text x="220" y="278" class="lblA" text-anchor="middle">18</text>
+        <text x="220" y="293" class="lbl" text-anchor="middle" fill="#b91c1c" font-weight="bold">MODE</text>
+
+        <!-- 20 : eff 2 -->
+        <rect class="bar" x="280" y="180" width="60" height="80"/>
+        <text x="310" y="173" class="lbl" text-anchor="middle" font-weight="bold">2</text>
+        <text x="310" y="278" class="lblA" text-anchor="middle">20</text>
+
+        <!-- 22 : eff 3 → hauteur 120, y_top = 140 -->
+        <rect class="bar" x="370" y="140" width="60" height="120"/>
+        <text x="400" y="133" class="lbl" text-anchor="middle" font-weight="bold">3</text>
+        <text x="400" y="278" class="lblA" text-anchor="middle">22</text>
+
+        <!-- 25 : eff 1 → hauteur 40, y_top = 220 -->
+        <rect class="bar" x="460" y="220" width="60" height="40"/>
+        <text x="490" y="213" class="lbl" text-anchor="middle" font-weight="bold">1</text>
+        <text x="490" y="278" class="lblA" text-anchor="middle">25</text>
+
+        <text class="lblA" x="310" y="298" text-anchor="middle">Production (chaises/semaine)</text>
+      </svg>
+    </div>
+    <p>La hauteur de chaque bâton représente l'effectif (le nombre de semaines). Le bâton le plus haut est celui de la valeur 18 (mode).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-green">APP</span></h2>
+  <p>Identifier le <strong>mode</strong> (valeur la plus fréquente) et l'<strong>étendue</strong> de cette série.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Mode = 18 chaises/semaine</strong> (4 semaines sur 12, soit 33,3 % du temps). C'est la valeur la plus fréquente.</p>
+    <p><strong>Étendue = 25 − 15 = 10 chaises/semaine.</strong> L'amplitude de variation est de 10 chaises sur 12 semaines.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer la <strong>moyenne</strong> de la production hebdomadaire.</p>
+  <p><em>Aide : moyenne = (somme des productions) / (nombre de semaines).</em></p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Méthode 1 (somme directe) :</p>
+    <p>Somme = 15+18+22+18+20+15+22+25+18+20+18+22 = 233</p>
+    <p>Moyenne = 233 / 12 ≈ <strong>19,4 chaises/semaine</strong>.</p>
+    <p>Méthode 2 (à partir du tableau d'effectifs) :</p>
+    <p>Moyenne = (15×2 + 18×4 + 20×2 + 22×3 + 25×1) / 12</p>
+    <p>= (30 + 72 + 40 + 66 + 25) / 12 = 233 / 12 ≈ 19,4 ✓</p>
+    <p>La méthode 2 est plus rapide quand les effectifs sont déjà calculés.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">ANA</span></h2>
+  <p>Mehdi hésite entre 3 valeurs pour s'engager auprès de la grande surface : <strong>le mode (18)</strong>, la <strong>moyenne (19)</strong> ou le <strong>maximum (25)</strong>. Quelles sont les conséquences de chaque choix ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ul>
+      <li><strong>Mode (18) :</strong> production typique. Mehdi tient cet engagement 33 % du temps + chaque fois qu'il fait mieux (50 % du temps total) — soit dans environ 5/6 des cas. <strong>Engagement prudent</strong>, marge de sécurité.</li>
+      <li><strong>Moyenne (19) :</strong> production moyenne. La moyenne masque les variations. La moitié des semaines, Mehdi sera en dessous → risque de retard.</li>
+      <li><strong>Maximum (25) :</strong> seulement atteint 1 fois sur 12 (8 %). <strong>Engagement irréaliste</strong>, retards garantis 11 fois sur 12.</li>
+    </ul>
+    <p>Le bon choix dépend de la pénalité contractuelle pour retard. En général, on choisit le mode ou la médiane, pas la moyenne ni le maximum.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-blue">VAL</span></h2>
+  <p>Quel engagement Mehdi doit-il prendre pour ne risquer aucun retard ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Pour ne JAMAIS être en retard, Mehdi devrait s'engager sur le <strong>minimum observé : 15 chaises/semaine</strong>.</p>
+    <p>Mais cet engagement est très bas (sous-utilisation de la capacité de l'atelier). En pratique, on choisit un compromis : <strong>15 ou 18 chaises minimum garanties</strong>, en signalant que la production réelle peut être supérieure.</p>
+    <p>L'idéal commercial : « Production hebdomadaire garantie : 18 chaises minimum ; capacité moyenne 19-20 ; pic à 25. »</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger en 4 lignes la <strong>fiche de présentation statistique</strong> que Mehdi joint à son dossier d'appel d'offre.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em>📋 <strong>Atelier Menuiserie Mehdi — Production hebdomadaire (n=12 semaines)</strong></em></p>
+    <p><em>• Production minimale observée : <strong>15 chaises</strong>/semaine • Mode (production typique) : <strong>18 chaises</strong> (33 % des semaines) • Moyenne : <strong>19,4 chaises</strong>/semaine • Production maximale : <strong>25 chaises</strong> en pointe.</em></p>
+    <p><em>Engagement contractuel : <strong>18 chaises/semaine minimum</strong>, possibilité de monter jusqu'à 22-25 sur demande (préavis 1 semaine pour réorganisation).</em></p>
+    <p><em>Capacité totale annuelle estimée (45 semaines de production effective) : 850 à 1 100 chaises.</em></p>
+  </div>
+</div>
+
+<div class="exo" style="background:#fef3c7;border:1px solid #b45309">
+  <h2>🚀 Pour aller plus loin <span class="badge-blue">VAL</span></h2>
+  <p>Si Mehdi pouvait recruter un apprenti et augmenter sa production de 20 %, quelles deviendraient les nouvelles valeurs minimum, mode, moyenne et maximum ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Multiplier toute la série par 1,20 :</p>
+    <ul>
+      <li>Min : 15 × 1,2 = <strong>18</strong></li>
+      <li>Mode : 18 × 1,2 = <strong>21,6 ≈ 22</strong></li>
+      <li>Moyenne : 19,4 × 1,2 = <strong>23,3</strong></li>
+      <li>Max : 25 × 1,2 = <strong>30</strong></li>
+    </ul>
+    <p>Toutes les valeurs sont multipliées par le même coefficient 1,20. C'est la propriété de proportionnalité des données.</p>
+    <p>L'étendue serait aussi multipliée par 1,20 : (30 − 18) = 12 (vs 10 actuellement).</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Tableau d'effectifs :</strong> regroupe les valeurs et compte leur nombre d'apparitions. Vérification : somme des effectifs = nombre total d'observations.</li>
+    <li><strong>Fréquence :</strong> effectif / total. La somme des fréquences vaut toujours 1 (100 %).</li>
+    <li><strong>Diagramme en bâtons :</strong> hauteur de chaque bâton = effectif de la valeur correspondante.</li>
+    <li><strong>Mode :</strong> valeur la plus fréquente (bâton le plus haut). <strong>Étendue :</strong> max − min.</li>
+    <li><strong>Pour s'engager professionnellement :</strong> préférer le mode ou la médiane à la moyenne (qui masque les variations) et au maximum (irréaliste).</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

@@ -1,46 +1,241 @@
 <!DOCTYPE html>
-<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ch12 – Activité 2 – Diagonale d'une porte – 2nde MAMA</title>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch12 – Activité 2 – Diagonale d'une porte (Pythagore) – 2nde Bac Pro MAMA</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<link rel="stylesheet" href="../../../styles.css"><link rel="stylesheet" href="../../../print.css" media="print">
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0056b3;--p-bg:#ebf5ff;--p-border:#bee3f8}</style>
-</head><body><div class="c"><a href="../../../maths-2nde-mama.html" class="nb">← RETOUR SOMMAIRE</a>
-<header><h1>Activité 2 – Le meuble passe-t-il par la porte ? <span style="font-size:.55em;color:#0891b2;font-weight:600">SITUATION PRO</span></h1>
-<p class="sous-titre">Chapitre 12 – Pythagore | 2nde Bac Pro MAMA | ⏱ 25 min</p>
-<p class="maj">Dernière mise à jour : 3 mai 2026, 10:00</p></header>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-2nde-mama.html" class="nb">← RETOUR SOMMAIRE</a>
 
-<div class="situation"><h2>Situation – livraison</h2>
-<p><em>Tom doit livrer une armoire de 200 cm × 80 cm × 60 cm. La porte d'entrée mesure 90 cm de large × 210 cm de haut.</em></p></div>
+<header>
+  <h1>Activité 2 – Le meuble passe-t-il par la porte ? <span style="font-size:.55em;color:#0891b2;font-weight:600">SITUATION PRO</span></h1>
+  <p class="sous-titre">Chapitre 12 – Théorème de Pythagore | 2nde Bac Pro MAMA | Mathématiques | ⏱ 50 min</p>
+  <p class="maj">Dernière mise à jour : 4 mai 2026, 11:30</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
 
-<div class="exo"><h2>Question 1 <span class="badge-yellow">REA</span></h2>
-<p>Calculer la diagonale de la porte (par Pythagore).</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>d = √(90² + 210²) = √(8 100 + 44 100) = √52 200 ≈ <strong>228,5 cm</strong>.</p>
-</div></div>
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Appliquer le théorème de Pythagore pour calculer une diagonale</li>
+    <li>Identifier triangle rectangle, hypoténuse et côtés</li>
+    <li>Résoudre un problème pratique de livraison de meubles</li>
+    <li>Combiner plusieurs calculs pour décider d'une stratégie</li>
+  </ul>
+</div>
 
-<div class="exo"><h2>Question 2 <span class="badge-blue">VAL</span></h2>
-<p>L'armoire en position « inclinée » mesure 200 cm de hauteur. Peut-elle passer ?</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>200 cm &lt; diagonale 228,5 cm → <strong>oui</strong>, en l'inclinant la livraison est possible.</p>
-<p>Pour passer un meuble plus haut que la porte, on l'incline ou on le démonte. La diagonale donne la hauteur max possible.</p>
-</div></div>
+<div class="situation">
+  <h2>Situation – livraison d'une armoire chez un client</h2>
+  <p><em>Tom, livreur dans une menuiserie, doit livrer une armoire à un client. Avant de monter chez le client, il veut s'assurer que l'armoire passera par la porte d'entrée. Voici les dimensions :</em></p>
 
-<div class="exo"><h2>Question 3 <span class="badge-blue">ANA</span></h2>
-<p>L'armoire fait 80 cm × 60 cm en section. Quel critère vraiment ? Calculer aussi sa diagonale en section.</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>Diagonale section : √(80² + 60²) = √10 000 = <strong>100 cm</strong>.</p>
-<p>Pour passer la porte de 90 cm : 100 &gt; 90 → l'armoire ne passe pas en section, sauf si elle est inclinée à plat.</p>
-<p>Donc en pratique : à la fois incliner pour la hauteur (200 vs 210 cm) et tourner pour passer la section.</p>
-</div></div>
+  <div style="background:#fff;padding:12px 16px;border-radius:8px;border:1px solid #cbd5e1;margin:14px 0">
+    <p style="margin:6px 0">📏 <strong>Armoire à livrer</strong></p>
+    <p style="margin:6px 0">• Hauteur : 200 cm</p>
+    <p style="margin:6px 0">• Largeur : 80 cm</p>
+    <p style="margin:6px 0">• Profondeur : 60 cm</p>
+    <p style="margin:6px 0; margin-top:10px">🚪 <strong>Porte d'entrée du client</strong></p>
+    <p style="margin:6px 0">• Largeur : 90 cm</p>
+    <p style="margin:6px 0">• Hauteur : 210 cm</p>
+  </div>
 
-<div class="retenir"><strong>À retenir</strong>
-<ul><li><strong>Pythagore :</strong> dans un triangle rectangle, hyp² = c1² + c2².</li>
-<li><strong>Diagonale d'un rectangle :</strong> √(L² + l²). Toujours plus grande que les côtés.</li></ul></div>
+  <h3>Document — schéma de la porte avec sa diagonale</h3>
+  <div class="svg-wrap" style="margin:14px 0">
+    <svg width="100%" viewBox="0 0 540 280" style="max-width:540px;display:block;margin:0 auto" role="img" aria-label="Schéma d'une porte rectangulaire 90 cm x 210 cm avec sa diagonale 228,5 cm. Triangle rectangle formé par la diagonale et les 2 côtés.">
+        <defs>
+          <style>
+            .b{stroke:#1a202c;stroke-width:1.5}
+            .lbl{font:12px sans-serif;fill:#1a202c}
+            .lblA{font:600 13px sans-serif;fill:#1a202c}
+            .ti{font:700 13px sans-serif;text-anchor:middle;fill:#0056b3}
+          </style>
+        </defs>
+        <text class="ti" x="270" y="22">Porte d'entrée — calcul de la diagonale</text>
 
-</div><script src="../../../nav.js"></script></body></html>
+        <!-- Échelle : porte 90×210 → 90×210 px (1cm=1px). Centrer x=180-270, y=40-250 -->
+        <rect class="b" x="180" y="40" width="90" height="210" fill="#dbeafe" opacity=".3"/>
+
+        <!-- Diagonale -->
+        <line x1="180" y1="250" x2="270" y2="40" stroke="#dc2626" stroke-width="2.5"/>
+
+        <!-- Marquages triangle rectangle -->
+        <line x1="180" y1="250" x2="270" y2="250" stroke="#1a202c" stroke-width="2"/>
+        <line x1="270" y1="250" x2="270" y2="40" stroke="#1a202c" stroke-width="2"/>
+        <!-- Angle droit -->
+        <rect x="262" y="242" width="8" height="8" fill="none" stroke="#1a202c" stroke-width="1"/>
+
+        <!-- Cotes -->
+        <text x="225" y="265" class="lblA" text-anchor="middle">90 cm (largeur)</text>
+        <text x="290" y="145" class="lblA" text-anchor="start">210 cm</text>
+        <text x="290" y="160" class="lblA" text-anchor="start">(hauteur)</text>
+        <text x="200" y="135" class="lblA" fill="#dc2626" font-weight="bold" text-anchor="end" transform="rotate(-67 200 135)">d = ? cm</text>
+
+        <!-- Indications -->
+        <text x="175" y="35" class="lbl" text-anchor="end">A</text>
+        <text x="280" y="35" class="lbl" text-anchor="start">B</text>
+        <text x="175" y="265" class="lbl" text-anchor="end">D</text>
+        <text x="280" y="265" class="lbl" text-anchor="start">C</text>
+
+        <!-- Annotation Pythagore -->
+        <text x="60" y="70" class="lbl" font-weight="bold" fill="#0056b3">Théorème de Pythagore :</text>
+        <text x="60" y="92" class="lbl" fill="#0056b3">d² = 90² + 210²</text>
+        <text x="60" y="112" class="lbl" fill="#0056b3">d = √(90² + 210²)</text>
+        <text x="60" y="132" class="lbl" fill="#0056b3">d = √52 200</text>
+        <text x="60" y="152" class="lbl" fill="#0056b3" font-weight="bold">d ≈ 228,5 cm</text>
+    </svg>
+  </div>
+
+  <p style="font-size:.9em;color:#475569"><em>📚 Cette activité réinvestit les notions du cours §1 (théorème de Pythagore) et §2 (calcul d'une hypoténuse).</em></p>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> L'armoire passera-t-elle par la porte d'entrée, en position normale ou en position inclinée ?
+</div>
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-blue">APP</span></h2>
+  <p>L'armoire en position verticale (200 cm de hauteur) passe-t-elle par la porte (210 cm de hauteur) ? Et avec une largeur de 80 cm vs porte de 90 cm ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Hauteur : 200 cm &lt; 210 cm ✓ — passe en hauteur.</p>
+    <p>Largeur : 80 cm &lt; 90 cm ✓ — passe en largeur.</p>
+    <p>Mais en réalité, il faut tenir compte de la <strong>profondeur</strong> (60 cm) : si l'armoire est tenue debout, sa section passe (80 × 60 ≤ 90 × 210). À première vue, ça passe.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer la diagonale d de la porte (qui est la hauteur maximale d'un objet pouvant passer en l'inclinant). Utiliser le théorème de Pythagore.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Triangle rectangle ABD avec :</p>
+    <ul>
+      <li>côtés : largeur 90 cm et hauteur 210 cm</li>
+      <li>hypoténuse : la diagonale d</li>
+    </ul>
+    <p>D'après Pythagore : d² = 90² + 210² = 8 100 + 44 100 = 52 200.</p>
+    <p>d = √52 200 ≈ <strong>228,5 cm</strong>.</p>
+    <p>La diagonale est plus grande que la hauteur (228,5 &gt; 210) → en inclinant l'armoire, on peut passer un objet de jusqu'à 228 cm.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-blue">VAL</span></h2>
+  <p>L'armoire mesure 200 cm de hauteur. Tom craint que l'armoire ne passe pas en position verticale (au cas où le couloir serait étroit). Pourrait-elle passer en l'inclinant ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Hauteur armoire : 200 cm.</p>
+    <p>Diagonale porte : 228,5 cm.</p>
+    <p>200 &lt; 228,5 → <strong>oui, l'armoire passe largement en l'inclinant</strong>.</p>
+    <p>Marge : 228,5 − 200 = 28,5 cm de jeu.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer aussi la <strong>diagonale de la section</strong> de l'armoire (80 cm × 60 cm). Pourquoi peut-on en avoir besoin ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Diagonale section : d_section = √(80² + 60²) = √(6 400 + 3 600) = √10 000 = <strong>100 cm</strong>.</p>
+    <p>(C'est un triplet pythagoricien remarquable : 60-80-100.)</p>
+    <p><strong>Utilité :</strong> dans un couloir étroit ou à un angle, l'armoire devra peut-être tourner. Sa <strong>diagonale</strong> en section indique la largeur minimale de passage <strong>en pivot</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">ANA</span></h2>
+  <p>Le couloir du client mesure 90 cm de large et fait un angle à 90°. L'armoire (section 80 × 60 cm) peut-elle pivoter dans cet angle ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Pour pivoter dans un angle, l'armoire doit, à un moment, être en diagonale dans le couloir. Sa diagonale (100 cm) doit donc rentrer dans la largeur (90 cm).</p>
+    <p>100 cm &gt; 90 cm → <strong>non, l'armoire ne peut pas pivoter</strong> dans cet angle.</p>
+    <p>Solutions :</p>
+    <ul>
+      <li>démonter l'armoire (la livrer à plat, la remonter sur place)</li>
+      <li>passer par une autre voie (escalier large, ascenseur si dispo)</li>
+      <li>louer un treuil/monte-meuble</li>
+    </ul>
+    <p><strong>Pro :</strong> avant la livraison, toujours <strong>vérifier les dimensions du parcours complet</strong>, pas seulement la porte d'entrée.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">VAL</span></h2>
+  <p>Si Tom décide de démonter l'armoire (sans le fond, sans les portes), elle passe alors comme un assemblage de panneaux plats. Le plus grand panneau mesure 200 × 80 cm. Sa diagonale est-elle inférieure à la diagonale de la porte ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Diagonale du panneau : √(200² + 80²) = √(40 000 + 6 400) = √46 400 ≈ <strong>215,4 cm</strong>.</p>
+    <p>Diagonale de la porte : 228,5 cm.</p>
+    <p>215,4 &lt; 228,5 ✓ — <strong>oui, le panneau passe</strong> par la porte (en l'inclinant).</p>
+    <p>Stratégie démontée + livraison à plat = la solution.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-blue">ANA</span></h2>
+  <p>L'armoire arrive en kit chez Tom : 6 panneaux de bois (chacun 200 × 80 cm). Tom calcule que sa camionnette (compartiment 220 × 130 cm) peut-elle accueillir tous les panneaux empilés à plat sur une face de 80 cm ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>6 panneaux empilés (épaisseur ~3 cm chacun = 18 cm) :</p>
+    <ul>
+      <li>Longueur (200 cm) ≤ 220 cm ✓</li>
+      <li>Largeur (80 cm) ≤ 130 cm ✓</li>
+      <li>Hauteur empilage (18 cm) → loin de la limite</li>
+    </ul>
+    <p>Tous les panneaux passent dans la camionnette à plat. Bien arrimer pour éviter glissement.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger en 5 lignes le compte-rendu de la livraison à transmettre à l'atelier.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em><strong>Compte-rendu livraison armoire (client X)</strong></em></p>
+    <p><em>La porte d'entrée (90 × 210 cm) a une diagonale de 228 cm, suffisante pour passer l'armoire en hauteur (200 cm) en l'inclinant.</em></p>
+    <p><em>Cependant, le couloir interne (90 cm) ne permet pas le pivot de la section 80×60 (diagonale 100 cm). <strong>Décision : livraison en kit démonté</strong>, montage sur place.</em></p>
+    <p><em>Les 6 panneaux (200×80 cm) passent par la porte (diagonale 215,4 ≤ 228 ✓) et tiennent dans la camionnette. Temps montage estimé : 1 h 30. Outils nécessaires : visseuse + équerre + niveau.</em></p>
+  </div>
+</div>
+
+<div class="exo" style="background:#fef3c7;border:1px solid #b45309">
+  <h2>🚀 Pour aller plus loin <span class="badge-blue">ANA</span></h2>
+  <p>Au lieu de démonter, Tom envisage d'utiliser un monte-charge extérieur pour passer par la fenêtre du salon (1,2 m × 1,5 m). Calculer la diagonale de la fenêtre et vérifier si l'armoire intacte peut passer.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Diagonale fenêtre : √(120² + 150²) = √(14 400 + 22 500) = √36 900 ≈ <strong>192,1 cm</strong>.</p>
+    <p>Hauteur armoire : 200 cm.</p>
+    <p>200 &gt; 192 → l'armoire <strong>ne passe pas</strong> par la fenêtre (même inclinée). On revient au plan « démonter ».</p>
+    <p>Le monte-charge serait utile pour des objets de moins de 192 cm. Coût location : 200-300 €/jour. À comparer au temps de démontage/remontage (1h30 = 30-40 € de main-d'œuvre).</p>
+    <p>Le calcul aide à <strong>chiffrer la décision logistique</strong>.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Théorème de Pythagore :</strong> dans un triangle rectangle, hyp² = c1² + c2².</li>
+    <li><strong>Diagonale d'un rectangle :</strong> d = √(L² + l²). Toujours plus grande que les 2 côtés.</li>
+    <li><strong>Triplets pythagoriciens utiles :</strong> 3-4-5, 6-8-10, 60-80-100. Reconnaître ces triplets accélère les calculs.</li>
+    <li><strong>Application pro :</strong> livraison de meubles, dimensionnement de passages, optimisation logistique.</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

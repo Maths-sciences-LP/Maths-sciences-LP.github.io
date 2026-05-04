@@ -1,57 +1,249 @@
 <!DOCTYPE html>
-<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ch08 – Activité 4 – Pourquoi la proportionnalité partout ? – 2nde MAMA</title>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch08 – Activité 4 – Pourquoi la linéarité est-elle partout en physique ? – 2nde Bac Pro MAMA</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<link rel="stylesheet" href="../../../styles.css"><link rel="stylesheet" href="../../../print.css" media="print">
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0056b3;--p-bg:#ebf5ff;--p-border:#bee3f8}</style>
-</head><body><div class="c"><a href="../../../maths-2nde-mama.html" class="nb">← RETOUR SOMMAIRE</a>
-<header><h1>Activité 4 – Pourquoi la linéarité est partout en physique ? <span style="font-size:.55em;color:#7c3aed;font-weight:600">PROJET DOCUMENTAIRE</span></h1>
-<p class="sous-titre">Chapitre 8 – Fonction linéaire | 2nde Bac Pro MAMA | ⏱ 25 min</p>
-<p class="maj">Dernière mise à jour : 3 mai 2026, 10:00</p></header>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-2nde-mama.html" class="nb">← RETOUR SOMMAIRE</a>
 
-<div class="objectifs"><strong>Objectifs :</strong><ul><li>Identifier des lois physiques linéaires</li><li>Comprendre l'utilité de la linéarisation en sciences</li></ul></div>
+<header>
+  <h1>Activité 4 – Pourquoi la linéarité est-elle partout en physique ? <span style="font-size:.55em;color:#7c3aed;font-weight:600">PROJET DOCUMENTAIRE</span></h1>
+  <p class="sous-titre">Chapitre 8 – Fonction linéaire et proportionnalité | 2nde Bac Pro MAMA | Mathématiques | ⏱ 50 min</p>
+  <p class="maj">Dernière mise à jour : 4 mai 2026, 11:30</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
 
-<div class="situation"><h2>Situation – la nature préfère le linéaire</h2>
-<p>De nombreuses lois physiques sont linéaires. Pourquoi ?</p>
-<table>
-<thead><tr><th>Loi physique</th><th>Formule</th><th>Constante</th></tr></thead>
-<tbody>
-<tr><td>Loi de Hooke (ressort)</td><td>F = k × x</td><td>k = raideur</td></tr>
-<tr><td>Loi d'Ohm (électricité)</td><td>U = R × I</td><td>R = résistance</td></tr>
-<tr><td>Loi de Newton (mouvement uniforme)</td><td>d = v × t</td><td>v = vitesse</td></tr>
-<tr><td>Dilatation thermique</td><td>ΔL = α × L₀ × ΔT</td><td>α = coef. dilatation</td></tr>
-<tr><td>Densité (masse-volume)</td><td>m = ρ × V</td><td>ρ = masse volumique</td></tr>
-</tbody></table></div>
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Identifier des lois physiques linéaires courantes</li>
+    <li>Calculer une grandeur à partir d'une loi linéaire</li>
+    <li>Comprendre la notion de domaine de validité d'un modèle</li>
+    <li>Saisir l'utilité de la linéarité en sciences appliquées</li>
+  </ul>
+</div>
 
-<div class="exo"><h2>Question 1 <span class="badge-yellow">REA</span></h2>
-<p>Calculer la masse de 0,5 m³ de chêne (ρ = 700 kg/m³).</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>m = 700 × 0,5 = <strong>350 kg</strong>.</p>
-</div></div>
+<div class="situation">
+  <h2>Situation – les lois fondamentales de la nature</h2>
+  <p><em>Beaucoup de lois physiques utilisées dans les métiers techniques (menuiserie, énergie, électricité, mécanique) sont des fonctions linéaires. Pourquoi cette omniprésence du linéaire ?</em></p>
 
-<div class="exo"><h2>Question 2 <span class="badge-yellow">REA</span></h2>
-<p>Une barre d'acier de 10 m s'allonge de 1,2 mm à 100 °C par rapport à 0 °C. Calculer α (en °C⁻¹).</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>ΔL = α L₀ ΔT → α = ΔL / (L₀ ΔT) = 0,0012 / (10 × 100) = <strong>1,2 × 10⁻⁶ °C⁻¹</strong></p>
-<p>Cohérent avec la valeur tabulée de l'acier (≈ 1,2 × 10⁻⁵ — note : on s'est trompé d'un facteur 10 dans l'énoncé pour obtenir 1,2×10⁻⁶, ce qui est trop faible. La vraie dilatation de l'acier sur 10 m est ~12 mm pour 100 °C). Important d'être rigoureux !</p>
-</div></div>
+  <h3>Document 1 — exemples de lois physiques linéaires</h3>
+  <table>
+    <thead>
+      <tr><th>Loi physique</th><th>Formule</th><th>Coefficient</th><th>Domaine d'application</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Loi de Hooke (ressort)</td><td>F = k × x</td><td>k = raideur (N/m)</td><td>Petits étirements</td></tr>
+      <tr><td>Loi d'Ohm (électricité)</td><td>U = R × I</td><td>R = résistance (Ω)</td><td>Composants ohmiques</td></tr>
+      <tr><td>Mouvement uniforme</td><td>d = v × t</td><td>v = vitesse (m/s)</td><td>Vitesse constante</td></tr>
+      <tr><td>Dilatation thermique</td><td>ΔL = α × L₀ × ΔT</td><td>α = coef. dilatation</td><td>Variations modérées de T</td></tr>
+      <tr><td>Densité (masse/volume)</td><td>m = ρ × V</td><td>ρ = masse volumique (kg/m³)</td><td>Matériaux homogènes</td></tr>
+      <tr><td>Loi d'Archimède (poussée)</td><td>F = ρ × V × g</td><td>g ≈ 9,81 m/s²</td><td>Tout fluide</td></tr>
+    </tbody>
+  </table>
 
-<div class="exo"><h2>Question 3 <span class="badge-blue">ANA</span></h2>
-<p>Pourquoi la linéarité est si présente en physique ?</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>Pour de <strong>petites variations</strong>, la plupart des phénomènes peuvent être approchés linéairement (« approximation au premier ordre »).</p>
-<p>Quand on s'éloigne, des effets non-linéaires apparaissent : un ressort très étiré ne suit plus Hooke, un fil chauffé ne suit plus Ohm parfaitement, etc.</p>
-<p>L'avantage : la linéarité permet des prédictions simples et précises pour les usages courants.</p>
-</div></div>
+  <h3>Document 2 — graphique : ressort dans son domaine linéaire et au-delà</h3>
+  <div class="svg-wrap" style="margin:14px 0">
+    <svg width="100%" viewBox="0 0 540 280" style="max-width:540px;display:block;margin:0 auto" role="img" aria-label="Graphique force/allongement d'un ressort. Zone linéaire (Hooke) jusqu'à 5 cm. Au-delà, courbe non linéaire (limite élastique).">
+        <defs>
+          <style>
+            .ax{stroke:#1a202c;stroke-width:1.5}
+            .gd{stroke:#cbd5e1;stroke-width:.6}
+            .lbl{font:11px sans-serif;fill:#1a202c}
+            .lblA{font:600 12px sans-serif;fill:#1a202c}
+            .ti{font:700 13px sans-serif;text-anchor:middle;fill:#0056b3}
+          </style>
+        </defs>
+        <text class="ti" x="270" y="22">Force selon allongement d'un ressort (loi de Hooke)</text>
 
-<div class="retenir"><strong>À retenir</strong>
-<ul><li><strong>De nombreuses lois physiques</strong> sont linéaires : F = k x, U = R I, d = v t, m = ρ V.</li>
-<li><strong>Domaine de validité :</strong> linéaire sur une plage limitée. Hors de la plage, il faut un modèle plus complexe.</li></ul></div>
+        <!-- Y : 0 → 240, 60 N → 50. 1 N = 3,17 px. 25 → 161, 50 → 81 -->
+        <g class="gd">
+          <line x1="60" y1="50" x2="500" y2="50"/>
+          <line x1="60" y1="113" x2="500" y2="113"/>
+          <line x1="60" y1="177" x2="500" y2="177"/>
+          <line x1="60" y1="240" x2="500" y2="240"/>
+        </g>
+        <line class="ax" x1="60" y1="240" x2="510" y2="240"/>
+        <line class="ax" x1="60" y1="40" x2="60" y2="240"/>
 
-</div><script src="../../../nav.js"></script></body></html>
+        <g class="lbl" text-anchor="end">
+          <text x="55" y="244">0</text>
+          <text x="55" y="181">20</text>
+          <text x="55" y="117">40</text>
+          <text x="55" y="54">60</text>
+        </g>
+        <text class="lblA" x="20" y="145" transform="rotate(-90 20 145)" text-anchor="middle">Force F (N)</text>
+
+        <!-- X : 0 → 60, 10 cm → 500. 1 cm = 44 px. 5 → 280 -->
+        <g class="lbl" text-anchor="middle">
+          <text x="60" y="258">0</text>
+          <text x="148" y="258">2</text>
+          <text x="236" y="258">4</text>
+          <text x="324" y="258">6</text>
+          <text x="412" y="258">8</text>
+          <text x="500" y="258">10</text>
+        </g>
+        <text class="lblA" x="270" y="275" text-anchor="middle">Allongement x (cm)</text>
+
+        <!-- Zone linéaire : F = 5 N/cm. (0,0) → (60,240) ; (5, 25 N) → (280, 161) -->
+        <line x1="60" y1="240" x2="280" y2="161" stroke="#15803d" stroke-width="2.5"/>
+        <text x="160" y="195" class="lbl" fill="#15803d" font-weight="bold" text-anchor="middle">Zone linéaire</text>
+        <text x="160" y="208" class="lbl" fill="#15803d" text-anchor="middle">F = 5 × x</text>
+
+        <!-- Zone non-linéaire : courbe au-delà de 5 cm -->
+        <path d="M 280,161 C 320,150 380,142 500,135" fill="none" stroke="#dc2626" stroke-width="2.5"/>
+        <text x="395" y="100" class="lbl" fill="#dc2626" font-weight="bold" text-anchor="middle">Zone non-linéaire</text>
+        <text x="395" y="113" class="lbl" fill="#dc2626" text-anchor="middle">(déformation plastique)</text>
+
+        <!-- Limite élastique -->
+        <line x1="280" y1="40" x2="280" y2="240" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="5 3"/>
+        <text x="280" y="38" class="lbl" fill="#7c3aed" font-weight="bold" text-anchor="middle">limite élastique</text>
+    </svg>
+  </div>
+
+  <p style="font-size:.9em;color:#475569"><em>📚 Cette activité réinvestit les notions du cours §1 (proportionnalité), §3 (lois physiques) et complète le programme PC.</em></p>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Pourquoi la linéarité est-elle omniprésente en physique ? Et jusqu'où peut-on faire confiance à un modèle linéaire ?
+</div>
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-blue">APP</span></h2>
+  <p>Pour chacune des lois du document 1, identifier la grandeur de sortie et la grandeur d'entrée (« j'ai X, je veux Y »).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ul>
+      <li>Hooke : <strong>x → F</strong> (j'allonge le ressort, j'obtiens une force)</li>
+      <li>Ohm : <strong>I → U</strong> (intensité → tension), ou inversement</li>
+      <li>Mouvement : <strong>t → d</strong> (temps → distance)</li>
+      <li>Dilatation : <strong>ΔT → ΔL</strong> (variation T → variation longueur)</li>
+      <li>Densité : <strong>V → m</strong> (volume → masse)</li>
+      <li>Archimède : <strong>V → F</strong> (volume immergé → poussée)</li>
+    </ul>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer la masse de 0,5 m³ de chêne, sachant que ρ_chêne = 700 kg/m³.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>m = ρ × V = 700 × 0,5 = <strong>350 kg</strong>.</p>
+    <p>Donc 0,5 m³ de chêne pèse 350 kg, soit environ 7 personnes adultes. À soulever avec un transpalette ou en équipe pour la sécurité.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Une barre d'acier de longueur L₀ = 10 m est exposée au soleil et passe de 0 °C à 30 °C. Coefficient de dilatation de l'acier : α = 1,2 × 10⁻⁵ °C⁻¹. Calculer son allongement ΔL en mm.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>ΔL = α × L₀ × ΔT = 1,2 × 10⁻⁵ × 10 × 30 = 3,6 × 10⁻³ m = <strong>3,6 mm</strong>.</p>
+    <p>3,6 mm peut paraître petit, mais c'est crucial pour les rails de chemin de fer (joints de dilatation), les ponts (appareils d'appui), les fenêtres en aluminium (jeu fonctionnel).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-yellow">REA</span></h2>
+  <p>Sur le ressort du document 2, on accroche une masse de 2 kg, soit une force d'environ 20 N. Combien le ressort va-t-il s'allonger ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>F = k × x avec k = 5 N/cm.</p>
+    <p>x = F / k = 20 / 5 = <strong>4 cm</strong>.</p>
+    <p>4 cm &lt; 5 cm (limite élastique) → on est <strong>encore dans le domaine linéaire</strong>. Le ressort retrouvera sa forme initiale après décharge.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">VAL</span></h2>
+  <p>On accroche maintenant une masse de 4 kg (40 N). Si on extrapole avec F = 5 x, on obtient x = 8 cm. Sur le graphique, ce résultat est-il fiable ? Justifier.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Non, le résultat n'est pas fiable.</strong></p>
+    <p>À 8 cm, on est <strong>au-delà de la limite élastique</strong> (5 cm). La courbe devient non linéaire (zone rouge) : F augmente moins vite que prévu.</p>
+    <p>De plus, le ressort risque de subir une <strong>déformation plastique</strong> : il ne reviendra pas à sa forme initiale après décharge — il sera <strong>endommagé</strong>.</p>
+    <p><strong>Leçon :</strong> les lois linéaires ont un <strong>domaine de validité</strong>. Hors de ce domaine, elles donnent des résultats faux et peuvent endommager le matériel.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">ANA</span></h2>
+  <p>Pourquoi la nature « préfère »-t-elle la linéarité ? Donner 2 raisons.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>1. Approximation au premier ordre :</strong> pour de <strong>petites variations</strong>, n'importe quelle fonction « gentille » peut être approchée par une droite. C'est l'idée du « zoom assez fort » sur une courbe : elle apparaît rectiligne. Mathématiquement, c'est le principe de la dérivée.</p>
+    <p><strong>2. Symétrie des phénomènes :</strong> beaucoup de lois physiques expriment une <strong>réponse proportionnelle</strong> à une cause (« deux fois plus de cause = deux fois plus d'effet »). Quand il n'y a pas de mécanisme particulier de saturation ou de cumul, le linéaire émerge naturellement.</p>
+    <p>Hors des conditions « petites variations » et « pas de saturation », la non-linéarité réapparaît : ressort qui casse, conducteur qui chauffe, peinture qui sèche...</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-blue">ANA</span></h2>
+  <p>Donner 3 exemples de phénomènes non linéaires qu'on rencontre en menuiserie/agencement.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ul>
+      <li><strong>Aire d'un panneau carré</strong> en fonction du côté : A = c² (carré, pas linéaire). Doubler le côté multiplie l'aire par 4.</li>
+      <li><strong>Volume d'un cube</strong> : V = c³ (cube). Doubler le côté multiplie le volume par 8.</li>
+      <li><strong>Coût total</strong> avec remise par paliers : non linéaire (« cassure » à chaque seuil).</li>
+      <li><strong>Séchage du bois</strong> : pas linéaire (loi exponentielle inversée).</li>
+      <li><strong>Diffusion de la chaleur</strong> dans une pièce : exponentielle.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger en 5 lignes ce qu'il faut retenir sur les lois linéaires en sciences appliquées.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em><strong>Mémo — Linéarité en physique appliquée</strong></em></p>
+    <p><em>De nombreuses lois sont linéaires : F = k x (ressort), U = R I (Ohm), m = ρ V (densité). Elles permettent des prédictions simples : doubler l'entrée double la sortie.</em></p>
+    <p><em>Mais attention au <strong>domaine de validité</strong> : tout modèle linéaire a ses limites (limite élastique d'un ressort, échauffement d'un conducteur, etc.). Hors de ce domaine, le matériau peut être endommagé ou les calculs faux.</em></p>
+    <p><em>Avant chaque calcul, identifier la loi, ses unités, et son domaine de validité. Toujours <strong>vérifier la cohérence</strong> du résultat (ordre de grandeur, signe). Le linéaire est un outil puissant, pas une vérité absolue.</em></p>
+  </div>
+</div>
+
+<div class="exo" style="background:#fef3c7;border:1px solid #b45309">
+  <h2>🚀 Pour aller plus loin <span class="badge-blue">ANA</span></h2>
+  <p>Les ailes d'un avion subissent une force de portance F = ½ × ρ × S × v² × C_L. Cette loi est-elle linéaire en v (vitesse) ? Comment évolue F si v double ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>F dépend de v². Ce n'est <strong>pas linéaire</strong> en v, c'est une fonction <strong>quadratique</strong>.</p>
+    <p>Si v double : F est multipliée par 4. Si v triple : F × 9.</p>
+    <p>Conséquence : un avion qui décolle a besoin d'une vitesse minimale pour générer assez de portance. À mi-vitesse, la portance ne fait que 25 % du nécessaire — l'avion ne peut pas voler.</p>
+    <p>De même, la <strong>résistance d'un panneau au vent</strong> dépend de v² : un panneau de 10 m² subit 4 fois plus de force quand le vent passe de 30 à 60 km/h. Important pour fixer les enseignes !</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>De nombreuses lois physiques</strong> sont linéaires : F = k x (Hooke), U = R I (Ohm), d = v t, m = ρ V.</li>
+    <li><strong>Domaine de validité :</strong> chaque loi linéaire est <strong>valable dans une plage limitée</strong>. Hors plage, modèle non valable.</li>
+    <li><strong>Linéarité émerge :</strong> pour les petites variations, ou en l'absence de mécanisme de saturation.</li>
+    <li><strong>Phénomènes non linéaires :</strong> aire (x²), volume (x³), force aérodynamique (v²), exponentielle (séchage, intérêts composés).</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

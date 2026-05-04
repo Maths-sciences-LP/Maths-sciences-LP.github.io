@@ -1,50 +1,259 @@
 <!DOCTYPE html>
-<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ch04 – Activité 3 – Tirages dans un sac – 2nde MAMA</title>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch04 – Activité 3 – Tirages dans un sac de chevilles – 2nde Bac Pro MAMA</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<link rel="stylesheet" href="../../../styles.css"><link rel="stylesheet" href="../../../print.css" media="print">
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0056b3;--p-bg:#ebf5ff;--p-border:#bee3f8}</style>
-</head><body><div class="c"><a href="../../../maths-2nde-mama.html" class="nb">← RETOUR SOMMAIRE</a>
-<header><h1>Activité 3 – Tirages aléatoires dans un sac de chevilles <span style="font-size:.55em;color:#7c2d12;font-weight:600">ÉTUDE DE CAS</span></h1>
-<p class="sous-titre">Chapitre 4 – Probabilités | 2nde Bac Pro MAMA | ⏱ 30 min</p>
-<p class="maj">Dernière mise à jour : 3 mai 2026, 10:00</p></header>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-2nde-mama.html" class="nb">← RETOUR SOMMAIRE</a>
 
-<div class="objectifs"><strong>Objectifs :</strong><ul><li>Calculer P(événement A ou B)</li><li>Lire un diagramme en arbre</li></ul></div>
+<header>
+  <h1>Activité 3 – Tirages aléatoires dans un sac de quincaillerie <span style="font-size:.55em;color:#7c2d12;font-weight:600">ÉTUDE DE CAS</span></h1>
+  <p class="sous-titre">Chapitre 4 – Probabilités | 2nde Bac Pro MAMA | Mathématiques | ⏱ 50 min</p>
+  <p class="maj">Dernière mise à jour : 4 mai 2026, 11:30</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
 
-<div class="situation"><h2>Situation – tri de quincaillerie</h2>
-<p><em>Dans un sac : 30 chevilles bois Ø 6 mm, 20 chevilles bois Ø 8 mm, 50 chevilles plastique Ø 6 mm. Total : 100 chevilles. On en pioche 1 au hasard.</em></p></div>
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Calculer la probabilité d'un événement composé (intersection, union)</li>
+    <li>Lire et utiliser un tableau à double entrée</li>
+    <li>Comprendre la formule P(A ou B) = P(A) + P(B) − P(A et B)</li>
+    <li>Distinguer événements compatibles et incompatibles</li>
+  </ul>
+</div>
+
+<div class="situation">
+  <h2>Situation – atelier de menuiserie de Tom</h2>
+  <p><em>Tom, jeune apprenti menuisier, a reçu une dotation de quincaillerie pour son atelier. Tout est mélangé dans un grand sac de chevilles : il y a des chevilles de 2 matériaux différents (bois ou plastique) et de 2 diamètres différents (Ø 6 mm ou Ø 8 mm). Pour faire l'inventaire, Tom les compte et classe.</em></p>
+
+  <h3>Document 1 — Inventaire des chevilles</h3>
+  <table>
+    <thead>
+      <tr><th>Type</th><th>Bois</th><th>Plastique</th><th>Total</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Ø 6 mm</td><td>30</td><td>50</td><td><strong>80</strong></td></tr>
+      <tr><td>Ø 8 mm</td><td>20</td><td>0</td><td><strong>20</strong></td></tr>
+      <tr><td><strong>Total</strong></td><td><strong>50</strong></td><td><strong>50</strong></td><td><strong>100</strong></td></tr>
+    </tbody>
+  </table>
+  <p>Tom mélange tout dans le sac et tire 1 cheville au hasard.</p>
+
+  <h3>Document 2 — Vocabulaire</h3>
+  <ul>
+    <li><strong>Événement A et B</strong> (intersection) : « A se produit ET B se produit ». Notation A ∩ B.</li>
+    <li><strong>Événement A ou B</strong> (union) : « A se produit OU B se produit (ou les deux) ». Notation A ∪ B.</li>
+    <li><strong>Événements compatibles :</strong> peuvent se produire ensemble. P(A ∪ B) = P(A) + P(B) − P(A ∩ B).</li>
+    <li><strong>Événements incompatibles :</strong> ne peuvent pas se produire ensemble. P(A ∪ B) = P(A) + P(B).</li>
+  </ul>
+
+  <p style="font-size:.9em;color:#475569"><em>📚 Cette activité réinvestit les notions du cours §3 (intersection et union) et §4 (formule de l'union).</em></p>
+</div>
 
 <div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
-<strong>Problématique :</strong> Probabilité d'obtenir une cheville bois ? Une Ø 6 mm ?</div>
+  <strong>Problématique :</strong> Quelle est la probabilité que la cheville tirée soit en bois OU de Ø 6 mm ? Pourquoi ne suffit-il pas d'additionner les 2 probabilités ?
+</div>
 
-<div class="exo"><h2>Question 1 <span class="badge-yellow">REA</span></h2>
-<p>Calculer P(bois) et P(Ø 6 mm).</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>P(bois) = (30 + 20)/100 = <strong>0,50</strong></p>
-<p>P(Ø 6 mm) = (30 + 50)/100 = <strong>0,80</strong></p>
-</div></div>
+<div class="exo">
+  <h2>Question 1 <span class="badge-green">APP</span></h2>
+  <p>D'après le tableau, donner le nombre de chevilles :</p>
+  <ol type="a">
+    <li>en bois</li>
+    <li>en plastique</li>
+    <li>de Ø 6 mm</li>
+    <li>de Ø 8 mm</li>
+    <li>en bois ET de Ø 6 mm</li>
+    <li>en plastique ET de Ø 8 mm</li>
+  </ol>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ul>
+      <li>(a) Bois : 50</li>
+      <li>(b) Plastique : 50</li>
+      <li>(c) Ø 6 mm : 80</li>
+      <li>(d) Ø 8 mm : 20</li>
+      <li>(e) Bois ET Ø 6 mm : 30 (case en haut à gauche)</li>
+      <li>(f) Plastique ET Ø 8 mm : <strong>0</strong> ! Le plastique 8 mm n'existe pas dans le sac.</li>
+    </ul>
+  </div>
+</div>
 
-<div class="exo"><h2>Question 2 <span class="badge-yellow">REA</span></h2>
-<p>Calculer P(bois ET Ø 6 mm).</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>P(bois ET Ø 6) = 30/100 = <strong>0,30</strong> (les chevilles bois 6 mm)</p>
-</div></div>
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer les probabilités suivantes :</p>
+  <ol type="a">
+    <li>P(bois)</li>
+    <li>P(Ø 6 mm)</li>
+    <li>P(bois ET Ø 6 mm)</li>
+  </ol>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ul>
+      <li>P(bois) = 50/100 = <strong>0,50</strong></li>
+      <li>P(Ø 6 mm) = 80/100 = <strong>0,80</strong></li>
+      <li>P(bois ET Ø 6 mm) = 30/100 = <strong>0,30</strong> (la case « bois × 6 mm »)</li>
+    </ul>
+  </div>
+</div>
 
-<div class="exo"><h2>Question 3 <span class="badge-yellow">REA</span></h2>
-<p>P(bois OU Ø 6 mm) = ?</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>Formule : P(A ou B) = P(A) + P(B) − P(A et B) = 0,50 + 0,80 − 0,30 = <strong>1,00 = 100 %</strong>.</p>
-<p>Cohérent : toutes les chevilles sont soit en bois, soit Ø 6 mm (la 8 mm plastique n'existe pas dans le sac). Vérification directe : 30+20+50 = 100 ✓.</p>
-</div></div>
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer la probabilité <strong>P(bois OU Ø 6 mm)</strong> par 2 méthodes :</p>
+  <ol type="a">
+    <li>Directement en comptant le nombre de chevilles « bois OU 6 mm »</li>
+    <li>En utilisant la formule P(A ∪ B) = P(A) + P(B) − P(A ∩ B)</li>
+  </ol>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>(a) Direct : nb chevilles bois OU 6 mm = bois (50) + plastique 6 mm (50) = 100. Donc P = 100/100 = <strong>1</strong>.</p>
+    <p>Toutes les chevilles sont en bois ou de Ø 6 mm (sauf... aucune, vu que les Ø 8 mm sont aussi en bois).</p>
+    <p>(b) Formule : P(bois) + P(6 mm) − P(bois ∩ 6 mm) = 0,50 + 0,80 − 0,30 = <strong>1,00</strong> ✓</p>
+    <p>Les 2 méthodes donnent le même résultat. Conclusion : <strong>toutes les chevilles vérifient la condition « bois OU 6 mm »</strong>.</p>
+  </div>
+</div>
 
-<div class="retenir"><strong>À retenir</strong>
-<ul><li><strong>P(A ou B) = P(A) + P(B) − P(A et B).</strong> Soustraire l'intersection (sinon comptée 2 fois).</li>
-<li><strong>P(événement certain) = 1.</strong> P(événement impossible) = 0.</li></ul></div>
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">ANA</span></h2>
+  <p>Pourquoi <strong>NE PAS additionner</strong> simplement P(A) + P(B) (= 0,50 + 0,80 = 1,30) ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Une probabilité ne peut jamais dépasser 1. Si on additionne directement, on obtient 1,30 — impossible.</p>
+    <p>L'erreur : les chevilles « bois ET 6 mm » (30 chevilles) sont comptées <strong>2 fois</strong>, une fois dans « bois » et une fois dans « 6 mm ». Il faut soustraire l'intersection pour ne pas les compter en double.</p>
+    <p>Visualisation par diagramme de Venn :</p>
+    <div class="svg-wrap" style="margin:14px 0">
+      <svg width="100%" viewBox="0 0 600 240" style="max-width:600px;display:block;margin:0 auto" role="img" aria-label="Diagramme de Venn : 2 ensembles bois (50 chevilles) et 6 mm (80 chevilles) avec intersection bois ET 6 mm de 30 chevilles. L'addition directe compterait 30 chevilles 2 fois.">
+        <defs>
+          <style>
+            .lbl{font:11px sans-serif;fill:#1a202c}
+            .lblA{font:600 12px sans-serif;fill:#1a202c}
+            .ti{font:700 13px sans-serif;text-anchor:middle;fill:#0056b3}
+          </style>
+        </defs>
+        <text class="ti" x="300" y="22">Diagramme de Venn — sac de 100 chevilles</text>
 
-</div><script src="../../../nav.js"></script></body></html>
+        <!-- Cercle A (bois) -->
+        <circle cx="220" cy="130" r="80" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2" fill-opacity=".5"/>
+        <!-- Cercle B (6 mm) -->
+        <circle cx="320" cy="130" r="100" fill="#fef3c7" stroke="#b45309" stroke-width="2" fill-opacity=".5"/>
+
+        <!-- Labels intérieurs -->
+        <text x="180" y="135" class="lblA" text-anchor="middle" fill="#1d4ed8">Bois seul</text>
+        <text x="180" y="152" class="lbl" text-anchor="middle" fill="#1d4ed8">20 (Ø 8 mm)</text>
+
+        <text x="270" y="135" class="lblA" text-anchor="middle" fill="#7c2d12">Bois ∩ 6 mm</text>
+        <text x="270" y="152" class="lbl" text-anchor="middle" fill="#7c2d12">30</text>
+
+        <text x="370" y="135" class="lblA" text-anchor="middle" fill="#92400e">6 mm seul</text>
+        <text x="370" y="152" class="lbl" text-anchor="middle" fill="#92400e">50 (plastique)</text>
+
+        <!-- En dehors -->
+        <text x="500" y="135" class="lbl" fill="#475569">Hors : 0</text>
+        <text x="500" y="155" class="lbl" fill="#475569" font-size="9">(rien d'autre que bois</text>
+        <text x="500" y="167" class="lbl" fill="#475569" font-size="9">ou 6 mm dans ce sac)</text>
+
+        <!-- Étiquettes des cercles -->
+        <text x="170" y="60" class="lblA" fill="#1d4ed8">Bois (50)</text>
+        <text x="380" y="60" class="lblA" fill="#92400e">Ø 6 mm (80)</text>
+
+        <!-- Total -->
+        <text x="300" y="220" class="lblA" text-anchor="middle">Total : 20 + 30 + 50 = 100 chevilles ✓</text>
+      </svg>
+    </div>
+    <p>Sur le diagramme, les 30 chevilles « bois ∩ 6 mm » apparaissent dans la zone d'intersection — elles sont à la fois dans « bois » et dans « 6 mm ». La formule corrige le double comptage.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer P(plastique OU Ø 8 mm).</p>
+  <p>Ces 2 événements sont-ils <strong>compatibles</strong> ou <strong>incompatibles</strong> ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>P(plastique ∩ 8 mm) = 0/100 = <strong>0</strong> (aucune cheville plastique 8 mm dans le sac).</p>
+    <p>Les événements sont donc <strong>incompatibles</strong>.</p>
+    <p>P(plastique OU 8 mm) = P(plastique) + P(8 mm) = 50/100 + 20/100 = <strong>0,70</strong> (la formule simplifiée s'applique car l'intersection est vide).</p>
+    <p>Vérification directe : nb chevilles plastique ou 8 mm = 50 + 20 = 70 → P = 70/100 = 0,70 ✓.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">ANA</span></h2>
+  <p>Tom prend une cheville sans regarder. Sachant qu'elle est en bois, quelle est la probabilité qu'elle soit de Ø 6 mm ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>On se restreint aux 50 chevilles en bois. Parmi elles, 30 sont de Ø 6 mm.</p>
+    <p>P(6 mm | bois) = 30/50 = <strong>0,60 = 60 %</strong>.</p>
+    <p>C'est une <strong>probabilité conditionnelle</strong> (« sachant que »). Elle se distingue de P(bois ET 6 mm) = 0,30. Attention à ne pas confondre.</p>
+    <p>Pour comparaison : P(6 mm | plastique) = 50/50 = 1 (toutes les chevilles plastique sont 6 mm).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-blue">VAL</span></h2>
+  <p>Tom a besoin de 1 cheville bois 6 mm pour fixer un caisson. Quelle est la probabilité de l'obtenir au premier tirage ? Si raté, à quoi ressemble la situation après ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>P(bois 6 mm) = 30/100 = <strong>0,30 = 30 %</strong>. 1 chance sur 3.</p>
+    <p>Si Tom tire une cheville et la remet (tirage <strong>avec remise</strong>) : situation inchangée, P toujours 0,30. Loi du hasard.</p>
+    <p>Si Tom garde la cheville ratée (tirage <strong>sans remise</strong>) : pour le 2ᵉ tirage, la composition du sac a changé. Si la 1ʳᵉ cheville n'était pas bois 6 mm, P(bois 6 mm au 2ᵉ tirage) = 30/99 ≈ 0,303 (très légèrement plus). Si elle était bois 6 mm (cas favorable), il en reste 29 sur 99 → P = 29/99 ≈ 0,293.</p>
+    <p>En pratique, sur un grand sac, la différence est négligeable — sauf s'il reste très peu de chevilles.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger en 4 lignes une <strong>note d'inventaire</strong> que Tom peut écrire à son chef d'atelier.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em>📋 <strong>Inventaire chevilles atelier — Tom (apprenti)</strong></em></p>
+    <p><em>Sac actuel : 100 chevilles. Composition : 50 bois (30 Ø 6 mm + 20 Ø 8 mm) et 50 plastique (toutes Ø 6 mm). Si on tire au hasard, on a 80 % de chance d'avoir une Ø 6 mm, 50 % une bois.</em></p>
+    <p><em>Manque dans le stock : <strong>chevilles plastique Ø 8 mm</strong> (0 unité). À commander si nécessaire pour les fixations dans le placo.</em></p>
+    <p><em>Recommandation : trier le sac par compartiments (bois 6, bois 8, plastique 6) pour gagner du temps en chantier.</em></p>
+  </div>
+</div>
+
+<div class="exo" style="background:#fef3c7;border:1px solid #b45309">
+  <h2>🚀 Pour aller plus loin <span class="badge-blue">VAL</span></h2>
+  <p>Si on ajoute 30 chevilles plastique Ø 8 mm dans le sac (total 130), recalculer P(plastique OU Ø 8 mm).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Nouveau tableau : plastique 50 + 30 = 80 ; Ø 8 mm 20 + 30 = 50 ; intersection plastique ∩ 8 mm = 30 (pas 0 cette fois).</p>
+    <p>P(plastique) = 80/130 ≈ 0,615 ; P(8 mm) = 50/130 ≈ 0,385 ; P(plastique ∩ 8 mm) = 30/130 ≈ 0,231.</p>
+    <p>P(plastique OU 8 mm) = 0,615 + 0,385 − 0,231 = <strong>0,769 ≈ 77 %</strong>.</p>
+    <p>Vérification directe : nb chevilles plastique ou 8 mm = 80 + 50 − 30 = 100. P = 100/130 ≈ 0,769 ✓.</p>
+    <p>Les événements sont maintenant <strong>compatibles</strong> (l'intersection n'est plus vide). La formule complète s'applique.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Tableau à double entrée :</strong> outil pratique pour visualiser 2 critères croisés.</li>
+    <li><strong>Intersection (A et B) :</strong> les deux critères sont vérifiés en même temps.</li>
+    <li><strong>Union (A ou B) :</strong> P(A ∪ B) = P(A) + P(B) − P(A ∩ B). Soustraire l'intersection (sinon comptée 2 fois).</li>
+    <li><strong>Événements incompatibles</strong> (intersection vide) : P(A ∪ B) = P(A) + P(B).</li>
+    <li><strong>Probabilité conditionnelle</strong> P(B | A) = nb cas favorables dans A / nb cas dans A. Différent de P(A ∩ B).</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

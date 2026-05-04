@@ -1,54 +1,265 @@
 <!DOCTYPE html>
-<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ch08 – Activité 3 – Conversion d'unités – 2nde MAMA</title>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch08 – Activité 3 – Conversions d'unités : fonctions linéaires – 2nde Bac Pro MAMA</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<link rel="stylesheet" href="../../../styles.css"><link rel="stylesheet" href="../../../print.css" media="print">
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0056b3;--p-bg:#ebf5ff;--p-border:#bee3f8}</style>
-</head><body><div class="c"><a href="../../../maths-2nde-mama.html" class="nb">← RETOUR SOMMAIRE</a>
-<header><h1>Activité 3 – Conversions d'unités linéaires <span style="font-size:.55em;color:#7c2d12;font-weight:600">ÉTUDE DE CAS</span></h1>
-<p class="sous-titre">Chapitre 8 – Fonction linéaire | 2nde Bac Pro MAMA | ⏱ 25 min</p>
-<p class="maj">Dernière mise à jour : 3 mai 2026, 10:00</p></header>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-2nde-mama.html" class="nb">← RETOUR SOMMAIRE</a>
 
-<div class="objectifs"><strong>Objectifs :</strong><ul><li>Comprendre qu'une conversion est une fonction linéaire</li></ul></div>
+<header>
+  <h1>Activité 3 – Conversions d'unités : fonctions linéaires <span style="font-size:.55em;color:#7c2d12;font-weight:600">ÉTUDE DE CAS</span></h1>
+  <p class="sous-titre">Chapitre 8 – Fonction linéaire et proportionnalité | 2nde Bac Pro MAMA | Mathématiques | ⏱ 50 min</p>
+  <p class="maj">Dernière mise à jour : 4 mai 2026, 11:30</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
 
-<div class="situation"><h2>Situation – plans en pieds (USA)</h2>
-<p><em>Un client américain donne ses dimensions en pieds (ft) : 1 ft = 0,3048 m exactement.</em></p>
-<p>Conversion : f(x) = 0,3048 × x (x en pieds, f(x) en m).</p></div>
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Comprendre qu'une conversion d'unités est une fonction linéaire</li>
+    <li>Manipuler le coefficient de conversion et son inverse</li>
+    <li>Convertir entre unités usuelles (longueur, masse, volume, vitesse)</li>
+    <li>Lire et utiliser un graphique de conversion</li>
+  </ul>
+</div>
 
-<div class="exo"><h2>Question 1 <span class="badge-yellow">REA</span></h2>
-<p>Convertir 12 ft en m.</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>f(12) = 0,3048 × 12 ≈ <strong>3,66 m</strong>.</p>
-</div></div>
+<div class="situation">
+  <h2>Situation – chantier d'agencement avec un client américain</h2>
+  <p><em>Tania, technicienne d'agencement, doit aménager les bureaux d'une entreprise américaine en France. Le client a transmis son cahier des charges avec des dimensions en <strong>pieds (ft)</strong> et <strong>pouces (in)</strong>. Tania doit tout convertir en mètres pour ses plans et commandes.</em></p>
 
-<div class="exo"><h2>Question 2 <span class="badge-yellow">REA</span></h2>
-<p>Inversement, convertir 5 m en pieds.</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>x = 5 / 0,3048 ≈ <strong>16,40 ft</strong>.</p>
-<p>La fonction réciproque est aussi linéaire : x = (1/0,3048) × y ≈ 3,28 y.</p>
-</div></div>
+  <h3>Document — table des conversions usuelles en menuiserie/agencement</h3>
+  <table>
+    <thead>
+      <tr><th>Unité de départ</th><th>Unité d'arrivée</th><th>Coefficient k</th><th>Formule</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1 pied (ft)</td><td>m</td><td>0,3048</td><td>m = 0,3048 × ft</td></tr>
+      <tr><td>1 pouce (in)</td><td>cm</td><td>2,54</td><td>cm = 2,54 × in</td></tr>
+      <tr><td>1 m</td><td>cm</td><td>100</td><td>cm = 100 × m</td></tr>
+      <tr><td>1 kg</td><td>g</td><td>1 000</td><td>g = 1 000 × kg</td></tr>
+      <tr><td>1 tonne (t)</td><td>kg</td><td>1 000</td><td>kg = 1 000 × t</td></tr>
+      <tr><td>1 m³</td><td>L</td><td>1 000</td><td>L = 1 000 × m³</td></tr>
+      <tr><td>1 km/h</td><td>m/s</td><td>1 / 3,6 ≈ 0,278</td><td>m/s = km/h / 3,6</td></tr>
+    </tbody>
+  </table>
 
-<div class="exo"><h2>Question 3 <span class="badge-blue">ANA</span></h2>
-<p>Citer 3 conversions d'unités courantes en menuiserie.</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<ul>
-<li>cm ↔ m : facteur 100</li>
-<li>m ↔ inches : 1 in = 2,54 cm = 0,0254 m</li>
-<li>kg ↔ tonnes : facteur 1 000</li>
-<li>m³ ↔ litres : facteur 1 000</li>
-<li>cm³ ↔ ml : facteur 1</li>
-</ul>
-<p>Toutes sont des fonctions linéaires y = k × x, donc proportionnelles.</p>
-</div></div>
+  <h3>Document — graphique de conversion pieds ↔ mètres</h3>
+  <div class="svg-wrap" style="margin:14px 0">
+    <svg width="100%" viewBox="0 0 540 280" style="max-width:540px;display:block;margin:0 auto" role="img" aria-label="Graphique de la conversion pieds → mètres. Droite passant par l'origine, pente 0,3048. Points repère 5 ft = 1,52 m, 10 ft = 3,05 m, 20 ft = 6,10 m.">
+        <defs>
+          <style>
+            .ax{stroke:#1a202c;stroke-width:1.5}
+            .gd{stroke:#cbd5e1;stroke-width:.6}
+            .lbl{font:11px sans-serif;fill:#1a202c}
+            .lblA{font:600 12px sans-serif;fill:#1a202c}
+            .ti{font:700 13px sans-serif;text-anchor:middle;fill:#0056b3}
+          </style>
+        </defs>
+        <text class="ti" x="270" y="22">Conversion pieds → mètres : f(x) = 0,3048 × x</text>
 
-<div class="retenir"><strong>À retenir</strong>
-<ul><li><strong>Toute conversion d'unités</strong> est une fonction linéaire (proportionnalité).</li>
-<li><strong>Coefficient :</strong> rapport des 2 unités. Réciproque : 1/coefficient.</li></ul></div>
+        <!-- Y : 0 → 240, 8 m → 50. 1 m = 23,75 px. 1,52 → 204, 3,05 → 167,5, 6,10 → 95, 8 → 50 -->
+        <g class="gd">
+          <line x1="60" y1="50" x2="500" y2="50"/>
+          <line x1="60" y1="98" x2="500" y2="98"/>
+          <line x1="60" y1="145" x2="500" y2="145"/>
+          <line x1="60" y1="192" x2="500" y2="192"/>
+          <line x1="60" y1="240" x2="500" y2="240"/>
+        </g>
+        <line class="ax" x1="60" y1="240" x2="510" y2="240"/>
+        <line class="ax" x1="60" y1="40" x2="60" y2="240"/>
 
-</div><script src="../../../nav.js"></script></body></html>
+        <g class="lbl" text-anchor="end">
+          <text x="55" y="244">0</text>
+          <text x="55" y="196">2</text>
+          <text x="55" y="149">4</text>
+          <text x="55" y="102">6</text>
+          <text x="55" y="54">8</text>
+        </g>
+        <text class="lblA" x="20" y="145" transform="rotate(-90 20 145)" text-anchor="middle">Mètres</text>
+
+        <!-- X : 0 → 60, 25 ft → 500. 1 ft = 17,6 px -->
+        <g class="lbl" text-anchor="middle">
+          <text x="60" y="258">0</text>
+          <text x="148" y="258">5</text>
+          <text x="236" y="258">10</text>
+          <text x="324" y="258">15</text>
+          <text x="412" y="258">20</text>
+          <text x="500" y="258">25</text>
+        </g>
+        <text class="lblA" x="270" y="275" text-anchor="middle">Pieds (ft)</text>
+
+        <!-- Droite f(x) = 0,3048 x : (0,0) → (60,240) ; (25, 7,62) → (500, 240-181=59) -->
+        <line x1="60" y1="240" x2="500" y2="59" stroke="#0056b3" stroke-width="2.5"/>
+
+        <!-- Points repère -->
+        <circle cx="148" cy="204" r="4" fill="#dc2626"/>
+        <text x="148" y="198" class="lbl" fill="#dc2626" text-anchor="middle">5 ft = 1,52 m</text>
+
+        <circle cx="236" cy="167" r="4" fill="#dc2626"/>
+        <text x="236" y="161" class="lbl" fill="#dc2626" text-anchor="middle">10 ft = 3,05 m</text>
+
+        <circle cx="412" cy="95" r="4" fill="#dc2626"/>
+        <text x="412" y="89" class="lbl" fill="#dc2626" text-anchor="middle">20 ft = 6,10 m</text>
+    </svg>
+  </div>
+
+  <p style="font-size:.9em;color:#475569"><em>📚 Cette activité réinvestit les notions du cours §1 (proportionnalité) et §3 (fonction linéaire et son inverse).</em></p>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Comment convertir rapidement entre unités, et pourquoi toutes les conversions sont-elles des fonctions linéaires ?
+</div>
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-blue">APP</span></h2>
+  <p>Le client demande des étagères de 12 ft de long. Convertir cette longueur en mètres.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>f(12) = 0,3048 × 12 = <strong>3,6576 m</strong> ≈ <strong>3,66 m</strong>.</p>
+    <p>Tania commandera donc des planches de 3,66 m (ou 3,7 m si seule cette longueur standard est dispo).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Convertir les 4 pièces du chantier données en pieds en mètres :</p>
+  <ol type="a">
+    <li>Hauteur sous plafond : 9 ft</li>
+    <li>Largeur d'une porte : 3 ft</li>
+    <li>Longueur d'un comptoir : 18 ft</li>
+    <li>Hauteur d'un meuble : 6,5 ft</li>
+  </ol>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ul>
+      <li>9 ft = 9 × 0,3048 = <strong>2,74 m</strong> (hauteur standard)</li>
+      <li>3 ft = 3 × 0,3048 = <strong>0,91 m</strong> (porte un peu étroite)</li>
+      <li>18 ft = 18 × 0,3048 = <strong>5,49 m</strong></li>
+      <li>6,5 ft = 6,5 × 0,3048 = <strong>1,98 m</strong></li>
+    </ul>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Inversement, Tania doit retransmettre des dimensions au client. Convertir :</p>
+  <ol type="a">
+    <li>5 m en pieds</li>
+    <li>2,40 m en pieds</li>
+  </ol>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Pour passer de m à ft, on divise par 0,3048 (ou on multiplie par 1/0,3048 ≈ 3,281).</p>
+    <ul>
+      <li>5 m = 5 / 0,3048 ≈ <strong>16,40 ft</strong></li>
+      <li>2,40 m = 2,40 / 0,3048 ≈ <strong>7,87 ft</strong></li>
+    </ul>
+    <p>La fonction <strong>réciproque</strong> g(y) = y / 0,3048 est aussi <strong>linéaire</strong> (de coefficient 3,281).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">APP</span></h2>
+  <p>Pourquoi peut-on dire que toute conversion d'unités est une <strong>proportionnalité</strong> (et donc une fonction linéaire) ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Quand on convertit, par exemple 1 ft → 0,3048 m, on a la règle « X fois plus de pieds = X fois plus de mètres » :</p>
+    <ul>
+      <li>1 ft → 0,3048 m</li>
+      <li>2 ft → 0,6096 m (× 2)</li>
+      <li>10 ft → 3,048 m (× 10)</li>
+    </ul>
+    <p>Le rapport <strong>m / ft est constant</strong> (= 0,3048). C'est la définition de la proportionnalité.</p>
+    <p>Et 0 ft → 0 m : la fonction passe par l'origine (caractéristique du linéaire).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">ANA</span></h2>
+  <p>Tania veut commander 0,5 m³ de bois (= 500 dm³). Combien cela fait-il en litres ? Et en pieds-cubes (1 ft³ = 28,32 L) ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>0,5 m³ = 0,5 × 1 000 = <strong>500 L</strong> (1 m³ = 1 000 L exactement).</p>
+    <p>500 L / 28,32 = <strong>17,66 ft³</strong>.</p>
+    <p>Toutes ces conversions sont des fonctions linéaires : y = k × x avec k = coefficient propre à chaque paire d'unités.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">VAL</span></h2>
+  <p>Le client a précisé que la pièce mesure « 16 ft 6 in ». Convertir cette longueur en mètres avec précision (1 ft = 12 in).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>16 ft 6 in = 16 + 6/12 ft = 16,5 ft.</p>
+    <p>16,5 × 0,3048 = <strong>5,03 m</strong>.</p>
+    <p><strong>Attention pro :</strong> la notation pied-pouce US comporte parfois des fractions (ex. « 6½ in »). Toujours convertir d'abord les pouces en fraction de pied avant de basculer en mètres.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-blue">ANA</span></h2>
+  <p>Le camion de livraison roule à 65 mph (miles par heure, où 1 mph ≈ 1,609 km/h). Convertir cette vitesse en km/h, puis en m/s. Cette vitesse est-elle légale en France sur autoroute (limite 130 km/h) ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>65 mph × 1,609 = <strong>104,6 km/h</strong>. Légale en France (≤ 130 km/h sur autoroute).</p>
+    <p>En m/s : 104,6 / 3,6 ≈ <strong>29,1 m/s</strong>.</p>
+    <p>À 29 m/s, en 1 seconde le camion parcourt presque 30 m → distance d'arrêt importante. Conducteur doit anticiper.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger un mémo en 4 lignes pour expliquer à un nouvel apprenti comment convertir rapidement entre unités, en s'appuyant sur le concept de fonction linéaire.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em><strong>Mémo — Conversions d'unités</strong></em></p>
+    <p><em>1. Toute conversion suit la règle : <strong>arrivée = coefficient × départ</strong>. Identifier le coefficient (table de conversion).</em></p>
+    <p><em>2. C'est une fonction linéaire (proportionnalité) : 0 ft → 0 m, 1 ft → 0,3048 m, doubler ft = doubler m.</em></p>
+    <p><em>3. Pour la conversion <strong>inverse</strong>, diviser par le coefficient : 5 m / 0,3048 ≈ 16,4 ft.</em></p>
+    <p><em>4. Toujours <strong>vérifier la cohérence</strong> par estimation rapide : 1 ft ≈ 30 cm, 1 m ≈ 3,3 ft. Si le résultat sort de cet ordre, recommencer.</em></p>
+  </div>
+</div>
+
+<div class="exo" style="background:#fef3c7;border:1px solid #b45309">
+  <h2>🚀 Pour aller plus loin <span class="badge-blue">ANA</span></h2>
+  <p>Le client donne la température du chantier en degrés Fahrenheit (°F). Conversion : °C = (°F − 32) × 5/9. Pourquoi cette conversion <strong>n'est-elle pas</strong> une fonction linéaire ? À quel type appartient-elle ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>°C = (°F − 32) × 5/9 = (5/9) × °F − (5/9) × 32 ≈ 0,556 × °F − 17,78.</p>
+    <p>Cette fonction a la forme f(x) = a × x + b avec b ≠ 0. C'est donc une <strong>fonction affine</strong> (et non linéaire).</p>
+    <p>Vérification : 0 °F = −17,78 °C ≠ 0 → la fonction <strong>ne passe pas par l'origine</strong> car les deux échelles n'ont pas le même zéro.</p>
+    <p><strong>Cas particulier :</strong> les conversions d'unités <strong>dont les deux échelles ont le même zéro</strong> (m/ft, kg/g, mph/km/h…) sont linéaires. Les autres (°F/°C, dates entre calendriers…) sont affines.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Conversion d'unités à zéro commun :</strong> fonction linéaire f(x) = k × x. C'est une <strong>proportionnalité</strong>.</li>
+    <li><strong>Coefficient k :</strong> rapport des deux unités (ex. 0,3048 m/ft).</li>
+    <li><strong>Conversion inverse :</strong> y / k = x, soit le coefficient inverse 1/k.</li>
+    <li><strong>Conversion à zéro différent</strong> (ex. °F → °C) : fonction <strong>affine</strong>, pas linéaire.</li>
+    <li><strong>Toujours vérifier</strong> par estimation rapide pour détecter les erreurs.</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

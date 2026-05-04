@@ -1,45 +1,274 @@
 <!DOCTYPE html>
-<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ch10 – Activité 2 – Surface d'un terrain carré – 2nde MAMA</title>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch10 – Activité 2 – Surface d'un terrain carré : la fonction carré – 2nde Bac Pro MAMA</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<link rel="stylesheet" href="../../../styles.css"><link rel="stylesheet" href="../../../print.css" media="print">
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0056b3;--p-bg:#ebf5ff;--p-border:#bee3f8}</style>
-</head><body><div class="c"><a href="../../../maths-2nde-mama.html" class="nb">← RETOUR SOMMAIRE</a>
-<header><h1>Activité 2 – Surface d'un terrain carré <span style="font-size:.55em;color:#0891b2;font-weight:600">SITUATION PRO</span></h1>
-<p class="sous-titre">Chapitre 10 – Fonction carré | 2nde Bac Pro MAMA | ⏱ 25 min</p>
-<p class="maj">Dernière mise à jour : 3 mai 2026, 10:00</p></header>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-2nde-mama.html" class="nb">← RETOUR SOMMAIRE</a>
 
-<div class="situation"><h2>Situation – terrain pour atelier</h2>
-<p><em>Yann achète un terrain carré pour construire un atelier. Aire : f(x) = x² (x en m, aire en m²).</em></p></div>
+<header>
+  <h1>Activité 2 – Surface d'un terrain carré : la fonction f(x) = x² <span style="font-size:.55em;color:#0891b2;font-weight:600">SITUATION PRO</span></h1>
+  <p class="sous-titre">Chapitre 10 – Fonctions usuelles (carré, racine) | 2nde Bac Pro MAMA | Mathématiques | ⏱ 50 min</p>
+  <p class="maj">Dernière mise à jour : 4 mai 2026, 11:30</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
 
-<div class="exo"><h2>Question 1 <span class="badge-yellow">REA</span></h2>
-<p>Calculer l'aire pour x = 12 m, x = 25 m, x = 50 m.</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>x = 12 : 144 m². x = 25 : 625 m². x = 50 : <strong>2 500 m²</strong>.</p>
-<p>Doubler le côté (12 → 24) donne 4× l'aire (144 → 576). Quadrupler avec doubler le côté.</p>
-</div></div>
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Calculer une image par la fonction carré</li>
+    <li>Trouver un antécédent en utilisant la racine carrée</li>
+    <li>Comprendre l'effet « non linéaire » du carré (doubler → ×4)</li>
+    <li>Lire un graphique de parabole pour estimer rapidement</li>
+  </ul>
+</div>
 
-<div class="exo"><h2>Question 2 <span class="badge-yellow">REA</span></h2>
-<p>Pour 400 m² souhaités, quelle longueur de côté ?</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>x² = 400 → x = √400 = <strong>20 m</strong>.</p>
-</div></div>
+<div class="situation">
+  <h2>Situation – Yann veut acheter un terrain pour son atelier</h2>
+  <p><em>Yann, jeune artisan menuisier, cherche un terrain carré pour construire son futur atelier. Le notaire et l'agent immobilier lui présentent les surfaces de plusieurs terrains, certains avec leurs dimensions, d'autres avec seulement leur surface. Il doit savoir convertir entre côté et surface.</em></p>
 
-<div class="exo"><h2>Question 3 <span class="badge-blue">VAL</span></h2>
-<p>Le prix au m² est 80 €. Quel terrain coûte 100 000 € ?</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>Surface : 100 000 / 80 = 1 250 m². Côté : √1 250 ≈ <strong>35,4 m</strong>.</p>
-</div></div>
+  <h3>Document — terrains disponibles dans la zone artisanale</h3>
+  <table>
+    <thead>
+      <tr><th>N°</th><th>Côté (m)</th><th>Surface (m²)</th><th>Prix au m²</th><th>Prix total</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>12</td><td>?</td><td>80 €</td><td>?</td></tr>
+      <tr><td>2</td><td>25</td><td>?</td><td>80 €</td><td>?</td></tr>
+      <tr><td>3</td><td>?</td><td>400</td><td>80 €</td><td>?</td></tr>
+      <tr><td>4</td><td>?</td><td>1 250</td><td>80 €</td><td>?</td></tr>
+    </tbody>
+  </table>
 
-<div class="retenir"><strong>À retenir</strong>
-<ul><li><strong>Fonction carré :</strong> f(x) = x². Croissante pour x ≥ 0.</li>
-<li><strong>Doubler le côté = quadrupler la surface</strong> (effet du carré).</li>
-<li><strong>Antécédent :</strong> √y (racine carrée).</li></ul></div>
+  <h3>Document — graphique de la fonction carré f(x) = x²</h3>
+  <div class="svg-wrap" style="margin:14px 0">
+    <svg width="100%" viewBox="0 0 540 280" style="max-width:540px;display:block;margin:0 auto" role="img" aria-label="Parabole f(x) = x² pour x ≥ 0. Points repères 12 m → 144 m², 20 m → 400 m², 25 m → 625 m². Courbe croissante avec accélération.">
+        <defs>
+          <style>
+            .ax{stroke:#1a202c;stroke-width:1.5}
+            .gd{stroke:#cbd5e1;stroke-width:.6}
+            .lbl{font:11px sans-serif;fill:#1a202c}
+            .lblA{font:600 12px sans-serif;fill:#1a202c}
+            .ti{font:700 13px sans-serif;text-anchor:middle;fill:#0056b3}
+          </style>
+        </defs>
+        <text class="ti" x="270" y="22">f(x) = x² — surface d'un carré de côté x</text>
 
-</div><script src="../../../nav.js"></script></body></html>
+        <!-- Y : 0 → 240, 1000 m² → 50. 1 m² = 0,19 px. 144 → 213, 400 → 164, 625 → 121, 900 → 69 -->
+        <g class="gd">
+          <line x1="60" y1="50" x2="500" y2="50"/>
+          <line x1="60" y1="98" x2="500" y2="98"/>
+          <line x1="60" y1="145" x2="500" y2="145"/>
+          <line x1="60" y1="193" x2="500" y2="193"/>
+          <line x1="60" y1="240" x2="500" y2="240"/>
+        </g>
+        <line class="ax" x1="60" y1="240" x2="510" y2="240"/>
+        <line class="ax" x1="60" y1="40" x2="60" y2="240"/>
+
+        <g class="lbl" text-anchor="end">
+          <text x="55" y="244">0</text>
+          <text x="55" y="197">250</text>
+          <text x="55" y="149">500</text>
+          <text x="55" y="102">750</text>
+          <text x="55" y="54">1 000</text>
+        </g>
+        <text class="lblA" x="20" y="145" transform="rotate(-90 20 145)" text-anchor="middle">Surface (m²)</text>
+
+        <!-- X : 0 → 60, 35 m → 500. 1 m = 12,57 px -->
+        <g class="lbl" text-anchor="middle">
+          <text x="60" y="258">0</text>
+          <text x="123" y="258">5</text>
+          <text x="186" y="258">10</text>
+          <text x="248" y="258">15</text>
+          <text x="311" y="258">20</text>
+          <text x="374" y="258">25</text>
+          <text x="437" y="258">30</text>
+          <text x="500" y="258">35</text>
+        </g>
+        <text class="lblA" x="270" y="275" text-anchor="middle">Côté x (m)</text>
+
+        <!-- Parabole : pour x ∈ [0, 32], y = x² . Génération via path. y_pixel = 240 - x²*0,19 -->
+        <path d="M 60,240 Q 280,235 320,200 T 470,80 L 500,52" fill="none" stroke="#0056b3" stroke-width="2.5"/>
+        <!-- Approximation simplifiée par cubique. Plus précis : -->
+        <path d="M 60,240 L 123,239 L 186,233 L 248,222 L 311,164 L 374,101 L 437,18" fill="none" stroke="#0056b3" stroke-width="2.5" stroke-dasharray="0"/>
+
+        <!-- Points repères -->
+        <circle cx="211" cy="213" r="5" fill="#dc2626"/>
+        <text x="211" y="207" class="lbl" fill="#dc2626" text-anchor="middle">12m → 144m²</text>
+
+        <circle cx="311" cy="164" r="5" fill="#dc2626"/>
+        <text x="311" y="158" class="lbl" fill="#dc2626" text-anchor="middle">20m → 400m²</text>
+
+        <circle cx="374" cy="121" r="5" fill="#dc2626"/>
+        <text x="374" y="115" class="lbl" fill="#dc2626" text-anchor="middle">25m → 625m²</text>
+    </svg>
+  </div>
+
+  <p style="font-size:.9em;color:#475569"><em>📚 Cette activité réinvestit les notions du cours §1 (fonction carré) et §2 (racine carrée comme antécédent).</em></p>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Comment passer du côté d'un terrain à sa surface (et inversement), et pourquoi la surface évolue-t-elle plus vite que la longueur ?
+</div>
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer la surface des terrains 1 et 2 du tableau (côté connu, surface inconnue) en utilisant f(x) = x².</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ul>
+      <li>Terrain 1 : f(12) = 12² = <strong>144 m²</strong></li>
+      <li>Terrain 2 : f(25) = 25² = <strong>625 m²</strong></li>
+    </ul>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer le côté des terrains 3 et 4 du tableau (surface connue, côté inconnu).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ul>
+      <li>Terrain 3 : x² = 400 → x = √400 = <strong>20 m</strong>.</li>
+      <li>Terrain 4 : x² = 1 250 → x = √1 250 ≈ <strong>35,36 m</strong>.</li>
+    </ul>
+    <p>La <strong>racine carrée</strong> est la fonction réciproque du carré : si f(x) = x², alors f⁻¹(y) = √y.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer le prix total de chaque terrain (au tarif de 80 €/m²).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ul>
+      <li>Terrain 1 (144 m²) : 144 × 80 = <strong>11 520 €</strong></li>
+      <li>Terrain 2 (625 m²) : 625 × 80 = <strong>50 000 €</strong></li>
+      <li>Terrain 3 (400 m²) : 400 × 80 = <strong>32 000 €</strong></li>
+      <li>Terrain 4 (1 250 m²) : 1 250 × 80 = <strong>100 000 €</strong></li>
+    </ul>
+    <p>Le prix varie énormément (de 11 k€ à 100 k€) alors que les côtés ne varient que d'un facteur 3 (12 à 35 m). C'est l'<strong>effet du carré</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">ANA</span></h2>
+  <p>Compléter le tableau de progression :</p>
+  <table>
+    <thead><tr><th>Côté x (m)</th><th>5</th><th>10</th><th>20</th><th>40</th></tr></thead>
+    <tbody><tr><td>Surface x² (m²)</td><td>…</td><td>…</td><td>…</td><td>…</td></tr></tbody>
+  </table>
+  <p>Quand on double le côté, comment évolue la surface ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <table>
+      <thead><tr><th>Côté</th><th>5</th><th>10</th><th>20</th><th>40</th></tr></thead>
+      <tbody><tr><td>Surface</td><td>25</td><td>100</td><td>400</td><td>1 600</td></tr></tbody>
+    </table>
+    <p>De 5 → 10 (×2) : 25 → 100 (×4)</p>
+    <p>De 10 → 20 (×2) : 100 → 400 (×4)</p>
+    <p>De 20 → 40 (×2) : 400 → 1 600 (×4)</p>
+    <p><strong>Règle :</strong> doubler le côté <strong>quadruple</strong> la surface (× 4 = 2²).</p>
+    <p>Plus généralement, <strong>multiplier le côté par k multiplie la surface par k²</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">VAL</span></h2>
+  <p>Yann a un budget de 100 000 €. Quelle est la <strong>surface</strong> maximum qu'il peut acheter ? Et le côté correspondant si le terrain est carré ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Surface max : 100 000 / 80 = <strong>1 250 m²</strong>.</p>
+    <p>Côté : √1 250 ≈ <strong>35,36 m</strong>.</p>
+    <p>C'est le terrain 4 du tableau. À ce prix, terrain confortable pour un atelier (~ 1/4 d'hectare).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">ANA</span></h2>
+  <p>Si le prix au m² monte de 80 € à 100 € (+25 %), quelle est la nouvelle surface accessible avec 100 000 € ? Le côté augmente-t-il aussi de 25 % ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Nouvelle surface : 100 000 / 100 = <strong>1 000 m²</strong> (− 20 %).</p>
+    <p>Nouveau côté : √1 000 ≈ <strong>31,62 m</strong> (− 11 %).</p>
+    <p>Le côté <strong>diminue moins</strong> que le prix : c'est l'effet inverse de la racine carrée. Si la surface diminue de 20 %, le côté diminue d'environ 11 %.</p>
+    <p>Cette propriété est utile pour les analyses de coût : une petite réduction de côté permet de grosses économies.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-blue">VAL</span></h2>
+  <p>Yann pense que pour un atelier de 100 m² utilisable, il a besoin d'un terrain de 200 m² (espace extérieur compris). Quel côté minimum doit avoir le terrain carré ? Vérifier avec le graphique.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Côté minimum : √200 ≈ <strong>14,14 m</strong>.</p>
+    <p>Sur le graphique, on cherche x tel que x² = 200 → on lit x ≈ 14 m. Cohérent avec le calcul exact.</p>
+    <p>Pour avoir une marge, prendre <strong>15 m</strong> de côté (surface 225 m²).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger en 4 lignes une note pour Yann récapitulant la méthode pour estimer rapidement la surface d'un terrain carré ou retrouver le côté à partir de la surface.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em><strong>Méthode — Terrain carré</strong></em></p>
+    <p><em>1. <strong>Côté → Surface</strong> : faire côté × côté (ex : 12 × 12 = 144 m²).</em></p>
+    <p><em>2. <strong>Surface → Côté</strong> : faire la racine carrée (ex : √400 = 20 m). Calculatrice scientifique : touche √.</em></p>
+    <p><em>3. <strong>Règle pratique</strong> : doubler le côté = 4 × la surface ; tripler = 9 × la surface (effet du carré).</em></p>
+    <p><em>4. <strong>Estimation rapide</strong> : pour avoir 1 000 m², prévoir un côté d'environ 32 m. Pour 500 m² : ~22 m. Pour 100 m² : 10 m.</em></p>
+  </div>
+</div>
+
+<div class="exo" style="background:#fef3c7;border:1px solid #b45309">
+  <h2>🚀 Pour aller plus loin <span class="badge-blue">ANA</span></h2>
+  <p>Yann hésite entre un terrain carré de 35 m de côté et un terrain rectangulaire de 30 m × 45 m. Lequel a la plus grande surface ? Lequel a le périmètre le plus court (économie de clôture) ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Surfaces :</strong></p>
+    <ul>
+      <li>Carré 35 m : 35² = 1 225 m²</li>
+      <li>Rectangle 30 × 45 : 1 350 m²</li>
+    </ul>
+    <p>Rectangle plus grand de 125 m².</p>
+    <p><strong>Périmètres :</strong></p>
+    <ul>
+      <li>Carré : 4 × 35 = 140 m</li>
+      <li>Rectangle : 2 × (30 + 45) = 150 m</li>
+    </ul>
+    <p>Carré a un périmètre plus court (- 10 m) → moins de clôture à payer.</p>
+    <p><strong>Propriété mathématique :</strong> à périmètre donné, le carré est la forme rectangulaire qui maximise la surface. Inversement, à surface donnée, le carré minimise le périmètre. C'est une <strong>optimisation</strong> classique.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Fonction carré :</strong> f(x) = x². Croissante pour x ≥ 0 (positives).</li>
+    <li><strong>Doubler le côté = quadrupler la surface</strong> (×k pour le côté → ×k² pour la surface).</li>
+    <li><strong>Antécédent (carré → côté) :</strong> racine carrée √y. Touche √ sur la calculatrice.</li>
+    <li><strong>Graphique :</strong> parabole qui passe par l'origine, croissance accélérée.</li>
+    <li><strong>Application pro :</strong> calcul de surface, dimensionnement, estimation rapide de coût.</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

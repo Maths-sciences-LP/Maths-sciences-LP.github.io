@@ -12,85 +12,268 @@
 <body>
 <div class="c">
 <a href="../../../maths-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
-<header>
-  <h1>Activité 2 – Régression linéaire hauteur/âge d'un arbre <span style="font-size:.55em;color:#0891b2;font-weight:600">SITUATION PRO</span></h1>
-  <p class="sous-titre">Chapitre 1 – Statistiques à deux variables | Terminale Bac Pro | ⏱ 30 min</p>
-  <p class="maj">Dernière mise à jour : 3 mai 2026, 09:00</p>
-</header>
-<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer</button>
 
-<div class="objectifs"><strong>Objectifs :</strong>
-<ul><li>Construire un nuage de points</li><li>Tracer une droite d'ajustement et lire l'équation</li><li>Faire des prévisions et discuter leur fiabilité</li></ul></div>
+<header>
+  <h1>Activité 2 – Régression linéaire : hauteur d'un arbre selon son âge <span style="font-size:.55em;color:#0891b2;font-weight:600">SITUATION PRO</span></h1>
+  <p class="sous-titre">Chapitre 1 – Statistiques à deux variables | Terminale Bac Pro | Mathématiques | ⏱ 50 min</p>
+  <p class="maj">Dernière mise à jour : 4 mai 2026, 11:30</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
+
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Construire et lire un nuage de points</li>
+    <li>Utiliser la droite de régression pour prévoir une valeur</li>
+    <li>Comprendre la signification du coefficient de corrélation r</li>
+    <li>Distinguer interpolation et extrapolation</li>
+  </ul>
+</div>
 
 <div class="situation">
   <h2>Situation – exploitation forestière</h2>
-  <p><em>Tom, technicien forestier, étudie la croissance des chênes d'une parcelle pour planifier les coupes. Il mesure 8 chênes d'âges connus.</em></p>
+  <p><em>Tom, technicien forestier, étudie la croissance des chênes d'une parcelle pour planifier les coupes (éclaircies et abattage). Il mesure la hauteur de 8 chênes d'âges connus, en faisant attention de prendre des arbres de la même variété et soumis à des conditions équivalentes.</em></p>
+
+  <h3>Document — relevé de Tom (parcelle Nord)</h3>
   <table>
-    <thead><tr><th>Âge x (ans)</th><th>10</th><th>20</th><th>30</th><th>40</th><th>50</th><th>60</th><th>70</th><th>80</th></tr></thead>
-    <tbody><tr><td>Hauteur y (m)</td><td>4,5</td><td>9,0</td><td>13,2</td><td>16,8</td><td>19,5</td><td>22,0</td><td>24,0</td><td>25,8</td></tr></tbody>
+    <thead>
+      <tr><th>Âge x (ans)</th><th>10</th><th>20</th><th>30</th><th>40</th><th>50</th><th>60</th><th>70</th><th>80</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Hauteur y (m)</td><td>4,5</td><td>9,0</td><td>13,2</td><td>16,8</td><td>19,5</td><td>22,0</td><td>24,0</td><td>25,8</td></tr>
+    </tbody>
   </table>
-  <p>L'équation de la droite d'ajustement obtenue avec une calculatrice : <strong>y = 0,30 x + 3,0</strong> (coefficient de corrélation r ≈ 0,997).</p>
+
+  <h3>Document — nuage de points et droite d'ajustement</h3>
+  <div class="svg-wrap" style="margin:14px 0">
+    <svg width="100%" viewBox="0 0 540 280" style="max-width:540px;display:block;margin:0 auto" role="img" aria-label="Nuage de points hauteur/âge des chênes : 8 points alignés croissants. Droite d'ajustement y = 0,30x + 3,0 passant par le point moyen.">
+      <defs>
+        <style>
+          .ax{stroke:#1a202c;stroke-width:1.5}
+          .gd{stroke:#cbd5e1;stroke-width:.6}
+          .lbl{font:11px sans-serif;fill:#1a202c}
+          .lblA{font:600 12px sans-serif;fill:#1a202c}
+          .ti{font:700 13px sans-serif;text-anchor:middle;fill:#0969da}
+        </style>
+      </defs>
+      <text class="ti" x="270" y="22">Hauteur des chênes selon l'âge</text>
+
+      <!-- Y : 0 → 240, 30 m → 50. 1 m = 6,33 px. 4,5 → 211, 9 → 183, 13,2 → 156, 16,5 → 135, 16,85 → 133, 19,5 → 116, 22 → 100, 24 → 88, 25,8 → 77 -->
+      <g class="gd">
+        <line x1="60" y1="50" x2="500" y2="50"/>
+        <line x1="60" y1="98" x2="500" y2="98"/>
+        <line x1="60" y1="145" x2="500" y2="145"/>
+        <line x1="60" y1="193" x2="500" y2="193"/>
+        <line x1="60" y1="240" x2="500" y2="240"/>
+      </g>
+      <line class="ax" x1="60" y1="240" x2="510" y2="240"/>
+      <line class="ax" x1="60" y1="40" x2="60" y2="240"/>
+
+      <g class="lbl" text-anchor="end">
+        <text x="55" y="244">0</text>
+        <text x="55" y="197">7,5</text>
+        <text x="55" y="149">15</text>
+        <text x="55" y="102">22,5</text>
+        <text x="55" y="54">30</text>
+      </g>
+      <text class="lblA" x="20" y="145" transform="rotate(-90 20 145)" text-anchor="middle">Hauteur (m)</text>
+
+      <!-- X : 0 → 60, 100 ans → 500. 10 ans = 44 px -->
+      <g class="lbl" text-anchor="middle">
+        <text x="60" y="258">0</text>
+        <text x="148" y="258">20</text>
+        <text x="236" y="258">40</text>
+        <text x="324" y="258">60</text>
+        <text x="412" y="258">80</text>
+        <text x="500" y="258">100</text>
+      </g>
+      <text class="lblA" x="270" y="275" text-anchor="middle">Âge x (ans)</text>
+
+      <!-- Points -->
+      <circle cx="104" cy="211" r="5" fill="#dc2626"/>
+      <circle cx="148" cy="183" r="5" fill="#dc2626"/>
+      <circle cx="192" cy="157" r="5" fill="#dc2626"/>
+      <circle cx="236" cy="134" r="5" fill="#dc2626"/>
+      <circle cx="280" cy="117" r="5" fill="#dc2626"/>
+      <circle cx="324" cy="101" r="5" fill="#dc2626"/>
+      <circle cx="368" cy="88" r="5" fill="#dc2626"/>
+      <circle cx="412" cy="77" r="5" fill="#dc2626"/>
+
+      <!-- Droite y = 0,3 x + 3 : (0, 3) → (60, 240-3*6,33=221). (100, 33) → (500, 240-33*6,33=240-208,9=31) -->
+      <line x1="60" y1="221" x2="500" y2="31" stroke="#0969da" stroke-width="2"/>
+      <text x="490" y="24" class="lbl" fill="#0969da" font-weight="bold" text-anchor="end">y = 0,30 x + 3,0</text>
+
+      <!-- Point moyen G(45, 16,85) → x=60+45*4,4=258, y=240-16,85*6,33=240-106,7=133 -->
+      <circle cx="258" cy="133" r="6" fill="#15803d" stroke="#fff" stroke-width="2"/>
+      <text x="265" y="128" class="lbl" fill="#15803d" font-weight="bold">G</text>
+    </svg>
+  </div>
+
+  <p>L'équation de la droite d'ajustement obtenue avec une calculatrice est : <strong>y = 0,30 x + 3,0</strong> avec un coefficient de corrélation r ≈ 0,997 (très proche de 1).</p>
+
+  <p style="font-size:.9em;color:#475569"><em>📚 Cette activité réinvestit les notions du cours §2 (nuage de points, droite d'ajustement) et §3 (coefficient de corrélation, fiabilité d'une prévision).</em></p>
 </div>
 
 <div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
-  <strong>Problématique :</strong> Peut-on prédire la hauteur d'un chêne à partir de son âge, et pour quelles plages d'âge la prédiction est-elle fiable ?
+  <strong>Problématique :</strong> Peut-on prédire de manière fiable la hauteur d'un chêne à partir de son âge, et jusqu'où le modèle linéaire reste-t-il valide ?
 </div>
 
 <div class="exo">
-  <h2>Question 1 <span class="badge-yellow">REA</span></h2>
-  <p>Calculer les coordonnées du point moyen G(<span style="font-style:italic">x̄, ȳ</span>) de la série.</p>
-  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <h2>Question 1 <span class="badge-blue">APP</span></h2>
+  <p>Lire sur le graphique :</p>
+  <ol type="a">
+    <li>la hauteur d'un chêne de 30 ans</li>
+    <li>l'âge correspondant à une hauteur de 22 m</li>
+  </ol>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p>x̄ = (10+20+...+80)/8 = 360/8 = <strong>45 ans</strong></p>
-    <p>ȳ = (4,5+9,0+...+25,8)/8 = 134,8/8 = <strong>16,85 m</strong></p>
-    <p>Vérification : la droite y = 0,30×45 + 3,0 = 16,5 m, proche de 16,85 (l'écart vient du fait que la série n'est pas parfaitement linéaire — la croissance d'un arbre ralentit avec l'âge).</p>
+    <ul>
+      <li>30 ans : hauteur ≈ <strong>13,2 m</strong> (lecture du point ; calcul : 0,30 × 30 + 3 = 12 m, écart car la donnée brute n'est pas exactement sur la droite).</li>
+      <li>22 m : âge ≈ <strong>60 ans</strong>.</li>
+    </ul>
   </div>
 </div>
 
 <div class="exo">
   <h2>Question 2 <span class="badge-yellow">REA</span></h2>
-  <p>Estimer la hauteur d'un chêne de 35 ans (interpolation) et de 100 ans (extrapolation).</p>
-  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <p>Calculer les coordonnées du point moyen G(x̄, ȳ).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>x̄ = (10 + 20 + 30 + 40 + 50 + 60 + 70 + 80) / 8 = 360 / 8 = <strong>45 ans</strong></p>
+    <p>ȳ = (4,5 + 9,0 + 13,2 + 16,8 + 19,5 + 22,0 + 24,0 + 25,8) / 8 = 134,8 / 8 = <strong>16,85 m</strong></p>
+    <p>G a pour coordonnées <strong>(45 ; 16,85)</strong>.</p>
+    <p>Vérification : la droite y = 0,30 × 45 + 3 = 16,5 m, proche de 16,85 (petit écart car la croissance n'est pas strictement linéaire).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Utiliser l'équation y = 0,30 x + 3,0 pour estimer la hauteur d'un chêne de :</p>
+  <ol type="a">
+    <li>35 ans (interpolation)</li>
+    <li>100 ans (extrapolation)</li>
+  </ol>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <ul>
-      <li>35 ans : y = 0,30×35 + 3,0 = <strong>13,5 m</strong> (cohérent avec les données)</li>
-      <li>100 ans : y = 0,30×100 + 3,0 = <strong>33 m</strong></li>
+      <li>35 ans : y = 0,30 × 35 + 3 = 10,5 + 3 = <strong>13,5 m</strong>. Cohérent avec les données voisines (30 ans → 13,2 m, 40 ans → 16,8 m).</li>
+      <li>100 ans : y = 0,30 × 100 + 3 = <strong>33 m</strong>.</li>
     </ul>
   </div>
 </div>
 
 <div class="exo">
-  <h2>Question 3 <span class="badge-blue">VAL</span></h2>
-  <p>L'estimation à 100 ans est-elle fiable ? Pourquoi un chêne de 200 ans ne fait-il pas 63 m ?</p>
+  <h2>Question 4 <span class="badge-blue">VAL</span></h2>
+  <p>L'estimation à 100 ans est-elle fiable ? Pourquoi un chêne de 200 ans ne mesure-t-il pas 63 m comme le calcul le prévoit ?</p>
   <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p><strong>Limites de la régression linéaire :</strong></p>
+    <p><strong>Limites du modèle linéaire :</strong></p>
     <ul>
-      <li>Le modèle linéaire n'est valide que dans la <strong>plage observée</strong> (10 à 80 ans). Au-delà : extrapolation risquée.</li>
-      <li>Biologiquement, un arbre ne grandit pas indéfiniment. Sa hauteur tend vers une <strong>asymptote</strong> (25-35 m pour un chêne pédonculé typique).</li>
-      <li>La croissance ralentit avec l'âge (modèle réel : sigmoïde ou logarithmique, pas linéaire).</li>
+      <li>La droite est ajustée pour la <strong>plage 10-80 ans</strong>. Au-delà, on extrapole sans données.</li>
+      <li>Biologiquement, un arbre <strong>ne grandit pas indéfiniment</strong>. Sa hauteur tend vers une asymptote (25-35 m pour un chêne pédonculé).</li>
+      <li>La croissance ralentit avec l'âge (modèle réel : courbe sigmoïde ou logarithmique).</li>
     </ul>
-    <p>Conclusion : interpolation à 35 ans = fiable. Extrapolation à 100 ans = approximative. À 200 ans : modèle invalide, l'arbre fait toujours ~30 m.</p>
+    <p><strong>Conclusion :</strong> à 100 ans, l'estimation 33 m est <strong>douteuse</strong> mais pas absurde. À 200 ans (63 m prévus), <strong>le modèle est faux</strong> : aucun chêne n'atteint 63 m.</p>
+    <p>Règle pro : <strong>jamais extrapoler trop loin</strong> hors de la plage des données.</p>
   </div>
 </div>
 
 <div class="exo">
-  <h2>Question 4 <span class="badge-yellow">COM</span></h2>
-  <p>Rédiger une note d'aide à Tom pour utiliser correctement son modèle dans la planification des coupes.</p>
+  <h2>Question 5 <span class="badge-blue">APP</span></h2>
+  <p>Que signifie le coefficient de corrélation r = 0,997 ? Est-ce une bonne valeur ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>r mesure la <strong>force de la corrélation linéaire</strong> entre x et y.</p>
+    <ul>
+      <li>r = 1 ou −1 : corrélation linéaire parfaite (tous les points alignés exactement).</li>
+      <li>r ≈ 0 : pas de corrélation linéaire.</li>
+      <li>r ≈ 0,997 : <strong>corrélation très forte et positive</strong>. Le modèle linéaire est très bon.</li>
+    </ul>
+    <p>En pratique :</p>
+    <ul>
+      <li>|r| &gt; 0,9 : excellente corrélation</li>
+      <li>0,7 &lt; |r| &lt; 0,9 : bonne corrélation</li>
+      <li>|r| &lt; 0,5 : corrélation faible, modèle peu fiable</li>
+    </ul>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">VAL</span></h2>
+  <p>Tom veut prévoir le diamètre du tronc à partir de l'âge (autre étude). Il trouve r = 0,5. Peut-il utiliser ce modèle pour ses prévisions ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>r = 0,5 indique une <strong>corrélation faible</strong>. Le modèle linéaire ne captre que ~ 25 % de la variabilité (r² ≈ 0,25 → 25 % de variance expliquée).</p>
+    <p>Donc <strong>peu fiable</strong> pour des prévisions individuelles. Il y a probablement d'autres facteurs (sol, exposition, génétique) qui influencent le diamètre.</p>
+    <p>Tom doit :</p>
+    <ul>
+      <li>Soit chercher d'autres variables explicatives (régression multiple)</li>
+      <li>Soit augmenter son échantillon pour confirmer la tendance</li>
+      <li>Soit accepter qu'il ne peut pas prédire le diamètre fiablement</li>
+    </ul>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-yellow">REA</span></h2>
+  <p>Si Tom souhaite des chênes d'au moins 25 m pour la coupe d'œuvre (charpente), à quel âge minimum doivent-ils être abattus selon le modèle ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Résoudre : 0,30 × x + 3 = 25 → 0,30 × x = 22 → x = 22 / 0,30 ≈ <strong>73 ans</strong>.</p>
+    <p>Donc Tom doit prévoir des chênes <strong>d'au moins 73 ans</strong> pour la coupe charpente.</p>
+    <p>Vérification dans le tableau : à 70 ans, hauteur 24 m ; à 80 ans, 25,8 m → cohérent.</p>
+    <p>Cycle commercial typique d'un chêne : 80-150 ans (selon usage et qualité du bois recherchée).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger en 5 lignes une note d'aide à Tom pour utiliser correctement son modèle dans la planification des coupes.</p>
   <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir un exemple</button>
   <div class="corr">
-    <p><em>Note régression hauteur/âge — chênes parcelle Nord. Le modèle y = 0,30x + 3,0 (r = 0,997) prédit avec précision la hauteur dans la plage 10-80 ans. L'utiliser pour décider des coupes intermédiaires (éclaircies à 30, 50 ans). Pour les chênes &gt; 80 ans, la croissance ralentit fortement → ne pas extrapoler la droite. Refaire des mesures terrain pour les chênes anciens.</em></p>
+    <p><em><strong>Note régression hauteur/âge — chênes parcelle Nord</strong></em></p>
+    <p><em>Le modèle <strong>y = 0,30 x + 3,0</strong> (r = 0,997) prédit avec précision la hauteur des chênes dans la <strong>plage 10-80 ans</strong>. À utiliser pour décider des éclaircies à 30 ans, 50 ans, et l'abattage entre 75 et 90 ans (hauteur ≥ 25 m).</em></p>
+    <p><em>Pour les chênes &gt; 80 ans, la croissance ralentit fortement → ne pas extrapoler la droite. Refaire des mesures terrain avant abattage des arbres anciens.</em></p>
+    <p><em>Refaire une nouvelle régression tous les 5 ans pour réajuster (climat, sol évoluent).</em></p>
   </div>
 </div>
 
-<div class="retenir"><strong>À retenir</strong>
-<ul><li><strong>Régression linéaire :</strong> y = ax + b. La droite passe toujours par le point moyen G(x̄, ȳ).</li>
-<li><strong>r (coefficient de corrélation) :</strong> proche de ±1 = forte corrélation linéaire.</li>
-<li><strong>Interpolation</strong> (dans la plage observée) : fiable. <strong>Extrapolation</strong> (hors plage) : à éviter sans justification.</li></ul></div>
+<div class="exo" style="background:#fef3c7;border:1px solid #b45309">
+  <h2>🚀 Pour aller plus loin <span class="badge-blue">ANA</span></h2>
+  <p>Tom veut tester un modèle non linéaire (courbe en racine carrée : y = a × √x + b). En plus du modèle linéaire, comment décider lequel des 2 modèles est le meilleur ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Le modèle racine carrée s'écrit y = a × √x + b. Il modélise une croissance qui <strong>ralentit avec l'âge</strong>, ce qui est plus réaliste biologiquement.</p>
+    <p>Pour comparer 2 modèles :</p>
+    <ul>
+      <li><strong>Comparer les r² :</strong> celui qui explique la plus grande variance.</li>
+      <li><strong>Comparer les résidus :</strong> écarts entre points observés et prédits. Petit résidu = bon modèle.</li>
+      <li><strong>Vérifier la cohérence physique :</strong> le modèle se comporte-t-il bien aux limites ?</li>
+    </ul>
+    <p>Pour les arbres : la racine carrée est souvent meilleure aux grands âges (modèle linéaire diverge à 200 ans → aberrant). Mais sur 10-80 ans, le linéaire est très bon.</p>
+    <p><strong>Choix du modèle = compromis</strong> entre simplicité et précision selon l'usage.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Régression linéaire :</strong> y = a × x + b. La droite passe toujours par le point moyen G(x̄, ȳ).</li>
+    <li><strong>Coefficient de corrélation r :</strong> mesure la force du lien linéaire. |r| ≈ 1 : forte corrélation. |r| ≈ 0 : pas de lien linéaire.</li>
+    <li><strong>Interpolation</strong> (dans la plage observée) : <strong>fiable</strong>.</li>
+    <li><strong>Extrapolation</strong> (hors plage) : à éviter sans justification (modèle peut diverger).</li>
+    <li><strong>Tout modèle a un domaine de validité.</strong> Toujours vérifier la cohérence du résultat avec la situation réelle.</li>
+  </ul>
+</div>
 
 </div>
 <script src="../../../nav.js"></script>

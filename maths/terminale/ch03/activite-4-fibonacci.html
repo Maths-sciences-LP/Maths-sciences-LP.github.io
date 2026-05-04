@@ -1,85 +1,276 @@
 <!DOCTYPE html>
-<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ch03 – Activité 4 – La suite de Fibonacci – Term Bac Pro</title>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch03 – Activité 4 – Fibonacci, nombre d'or et nature – Term Bac Pro</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<link rel="stylesheet" href="../../../styles.css"><link rel="stylesheet" href="../../../print.css" media="print">
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}</style>
-</head><body><div class="c"><a href="../../../maths-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
-<header><h1>Activité 4 – La suite de Fibonacci dans la nature <span style="font-size:.55em;color:#7c3aed;font-weight:600">PROJET DOCUMENTAIRE</span></h1>
-<p class="sous-titre">Chapitre 3 – Suites numériques | Terminale Bac Pro | ⏱ 30 min</p>
-<p class="maj">Dernière mise à jour : 3 mai 2026, 09:00</p></header>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
 
-<div class="objectifs"><strong>Objectifs :</strong><ul>
-<li>Découvrir une suite récurrente célèbre</li>
-<li>Identifier le « nombre d'or » comme limite</li>
-<li>Reconnaître Fibonacci dans la nature et l'art</li></ul></div>
+<header>
+  <h1>Activité 4 – La suite de Fibonacci, le nombre d'or et la nature <span style="font-size:.55em;color:#7c3aed;font-weight:600">PROJET DOCUMENTAIRE</span></h1>
+  <p class="sous-titre">Chapitre 3 – Suites numériques | Terminale Bac Pro | Mathématiques | ⏱ 50 min</p>
+  <p class="maj">Dernière mise à jour : 4 mai 2026, 11:30</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
 
-<div class="situation"><h2>Situation – énigme du moine du XIIIᵉ siècle</h2>
-<p><em>En 1202, le moine italien Leonardo Fibonacci écrit dans son livre Liber Abaci : « Combien de couples de lapins peut-on obtenir d'un couple en un an, si chaque couple engendre un nouveau couple chaque mois, lequel commence à se reproduire à partir du second mois ? »</em></p>
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Découvrir une suite récurrente célèbre (Fibonacci)</li>
+    <li>Identifier le nombre d'or comme limite des rapports successifs</li>
+    <li>Reconnaître Fibonacci dans la nature et l'art</li>
+    <li>Faire le lien entre maths abstraites et phénomènes réels</li>
+  </ul>
+</div>
 
-<p>Cette énigme donne la suite \(F_n\) :</p>
-<ul><li>\(F_1 = 1\), \(F_2 = 1\)</li>
-<li>\(F_{n+2} = F_{n+1} + F_n\) pour n ≥ 1</li></ul>
+<div class="situation">
+  <h2>Situation – énigme du moine du XIIIᵉ siècle</h2>
+  <p><em>En 1202, le moine italien Leonardo Fibonacci écrit dans son livre Liber Abaci :</em></p>
+  <p style="background:#dbeafe;padding:10px 14px;border-radius:6px;border-left:3px solid #1d4ed8;font-style:italic">
+    « Combien de couples de lapins peut-on obtenir d'un couple en un an, si chaque couple engendre un nouveau couple chaque mois, lequel commence à se reproduire à partir du second mois ? »
+  </p>
+  <p>Cette énigme donne la suite F_n :</p>
+  <ul>
+    <li>F₁ = 1, F₂ = 1</li>
+    <li>F_(n+2) = F_(n+1) + F_n pour n ≥ 1</li>
+  </ul>
 
-<p><strong>Apparitions dans la nature :</strong> nombre de pétales (3, 5, 8, 13, 21...), spirales d'un tournesol, écailles de pomme de pin, coquille de Nautilus, branches d'arbre.</p></div>
+  <h3>Document — apparitions de Fibonacci dans la nature</h3>
+  <table>
+    <thead>
+      <tr><th>Phénomène</th><th>Nombres observés (Fibonacci)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Pétales (rose, marguerite, lis)</td><td>3, 5, 8, 13, 21, 34, 55, 89</td></tr>
+      <tr><td>Spirales d'un tournesol</td><td>21 horaires + 34 anti-horaires (ou 34/55, 55/89)</td></tr>
+      <tr><td>Écailles d'une pomme de pin</td><td>5 + 8, ou 8 + 13</td></tr>
+      <tr><td>Branches d'arbres par étage</td><td>1, 1, 2, 3, 5, 8...</td></tr>
+      <tr><td>Coquille du Nautilus</td><td>spirale logarithmique selon le ratio φ</td></tr>
+      <tr><td>Étoile de mer, méduse</td><td>5 bras (souvent)</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Document — schéma : la spirale d'or</h3>
+  <div class="svg-wrap" style="margin:14px 0">
+    <svg width="100%" viewBox="0 0 540 280" style="max-width:540px;display:block;margin:0 auto" role="img" aria-label="Spirale dorée construite à partir de carrés de tailles Fibonacci (1, 1, 2, 3, 5, 8, 13...) avec arcs de cercle qui forment la spirale logarithmique caractéristique des coquillages.">
+      <defs>
+        <style>
+          .b{stroke:#1a202c;stroke-width:1.2;fill:none}
+          .lbl{font:11px sans-serif;fill:#1a202c}
+          .ti{font:700 13px sans-serif;text-anchor:middle;fill:#0969da}
+        </style>
+      </defs>
+      <text class="ti" x="270" y="22">Spirale d'or — construite avec des carrés Fibonacci</text>
+
+      <!-- Construction : carrés 1, 1, 2, 3, 5, 8, 13, 21 -->
+      <!-- Échelle 1 unité = 10 px. Centrer autour de (250, 150) -->
+
+      <!-- Carré 21 (grand) : 210 px -->
+      <rect class="b" x="120" y="50" width="210" height="210" fill="#fef3c7"/>
+
+      <!-- Carré 13 : 130 px -->
+      <rect class="b" x="200" y="50" width="130" height="130" fill="#fde68a"/>
+
+      <!-- Carré 8 : 80 px -->
+      <rect class="b" x="200" y="180" width="80" height="80" fill="#fbbf24"/>
+
+      <!-- Carré 5 : 50 px -->
+      <rect class="b" x="280" y="180" width="50" height="50" fill="#f59e0b"/>
+
+      <!-- Carré 3 : 30 px -->
+      <rect class="b" x="280" y="230" width="30" height="30" fill="#d97706"/>
+
+      <!-- Carré 2 : 20 px -->
+      <rect class="b" x="310" y="230" width="20" height="30" fill="#b45309"/>
+
+      <!-- Indications -->
+      <text x="225" y="165" class="lbl" text-anchor="middle">21</text>
+      <text x="265" y="120" class="lbl" text-anchor="middle">13</text>
+      <text x="240" y="225" class="lbl" text-anchor="middle">8</text>
+      <text x="305" y="210" class="lbl" text-anchor="middle">5</text>
+      <text x="295" y="248" class="lbl" text-anchor="middle">3</text>
+
+      <!-- Spirale (arcs) -->
+      <path d="M 320,255 A 5,5 0 0,0 320,245 A 10,10 0 0,0 310,235 A 30,30 0 0,0 280,205 A 50,50 0 0,0 230,205 A 80,80 0 0,0 200,205 M 200,205 A 80,80 0 0,0 200,180 A 130,130 0 0,1 200,50 A 210,210 0 0,1 120,260" fill="none" stroke="#dc2626" stroke-width="2"/>
+
+      <!-- Annotation -->
+      <text x="450" y="80" class="lbl" font-weight="bold">Tailles des carrés :</text>
+      <text x="450" y="100" class="lbl">1, 1, 2, 3, 5, 8, 13, 21...</text>
+      <text x="450" y="115" class="lbl">(suite Fibonacci)</text>
+
+      <text x="450" y="155" class="lbl" font-weight="bold">Ratio :</text>
+      <text x="450" y="173" class="lbl">21 / 13 ≈ 1,615</text>
+      <text x="450" y="188" class="lbl" fill="#dc2626" font-weight="bold">→ φ ≈ 1,618</text>
+    </svg>
+  </div>
+
+  <p style="font-size:.9em;color:#475569"><em>📚 Cette activité approfondit les notions du cours §3 (suite récurrente d'ordre 2) par une dimension culturelle et historique.</em></p>
+</div>
 
 <div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
-<strong>Problématique :</strong> Pourquoi cette suite apparaît-elle si souvent dans la nature ?</div>
+  <strong>Problématique :</strong> Pourquoi la suite de Fibonacci apparaît-elle si souvent dans la nature, et qu'est-ce que le nombre d'or qui en émerge ?
+</div>
 
-<div class="exo"><h2>Question 1 <span class="badge-yellow">REA</span></h2>
-<p>Calculer les 12 premiers termes de Fibonacci.</p>
-<ul class="lignes-reponse"><li></li><li></li><li</li><li></li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>F₁ = 1, F₂ = 1, F₃ = 2, F₄ = 3, F₅ = 5, F₆ = 8, F₇ = 13, F₈ = 21, F₉ = 34, F₁₀ = 55, F₁₁ = 89, F₁₂ = <strong>144</strong>.</p>
-<p>Réponse à l'énigme : 144 couples de lapins après 12 mois.</p>
-</div></div>
+<div class="exo">
+  <h2>Question 1 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer les 12 premiers termes de la suite de Fibonacci.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>F₁ = 1, F₂ = 1, F₃ = 1+1 = 2, F₄ = 1+2 = 3, F₅ = 2+3 = 5, F₆ = 3+5 = 8.</p>
+    <p>F₇ = 5+8 = 13, F₈ = 8+13 = 21, F₉ = 13+21 = 34, F₁₀ = 21+34 = 55.</p>
+    <p>F₁₁ = 34+55 = 89, F₁₂ = 55+89 = <strong>144</strong>.</p>
+    <p>Réponse à l'énigme du moine : <strong>144 couples de lapins après 12 mois</strong>.</p>
+  </div>
+</div>
 
-<div class="exo"><h2>Question 2 <span class="badge-yellow">REA</span></h2>
-<p>Calculer les rapports \(F_{n+1}/F_n\) pour n = 1 à 10. Vers quoi tendent-ils ?</p>
-<ul class="lignes-reponse"><li></li><li></li><li</li><li></li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<table>
-<thead><tr><th>n</th><th>F_n+1/F_n</th></tr></thead>
-<tbody>
-<tr><td>1</td><td>1/1 = 1,000</td></tr>
-<tr><td>2</td><td>2/1 = 2,000</td></tr>
-<tr><td>3</td><td>3/2 = 1,500</td></tr>
-<tr><td>5</td><td>8/5 = 1,600</td></tr>
-<tr><td>7</td><td>21/13 ≈ 1,615</td></tr>
-<tr><td>10</td><td>89/55 ≈ 1,6182</td></tr>
-</tbody></table>
-<p>Le rapport tend vers le <strong>nombre d'or</strong> φ = (1 + √5) / 2 ≈ <strong>1,6180339887</strong>...</p>
-<p>Propriété : φ vérifie φ² = φ + 1 (cohérent avec la relation de récurrence Fibonacci).</p>
-</div></div>
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer les rapports F_(n+1) / F_n pour n = 1 à 10. Vers quel nombre tendent-ils ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <table>
+      <thead><tr><th>n</th><th>F_(n+1) / F_n</th><th>Valeur</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>1 / 1</td><td>1,000</td></tr>
+        <tr><td>2</td><td>2 / 1</td><td>2,000</td></tr>
+        <tr><td>3</td><td>3 / 2</td><td>1,500</td></tr>
+        <tr><td>4</td><td>5 / 3</td><td>1,667</td></tr>
+        <tr><td>5</td><td>8 / 5</td><td>1,600</td></tr>
+        <tr><td>6</td><td>13 / 8</td><td>1,625</td></tr>
+        <tr><td>7</td><td>21 / 13</td><td>1,615</td></tr>
+        <tr><td>10</td><td>89 / 55</td><td>1,6182</td></tr>
+      </tbody>
+    </table>
+    <p>Les rapports tendent vers le <strong>nombre d'or</strong> φ = (1 + √5) / 2 ≈ <strong>1,6180339887...</strong></p>
+  </div>
+</div>
 
-<div class="exo"><h2>Question 3 <span class="badge-blue">ANA</span></h2>
-<p>Pourquoi cette suite apparaît-elle dans les pétales, les pommes de pin et les tournesols ?</p>
-<ul class="lignes-reponse"><li></li><li></li><li</li><li></li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>Les plantes disposent leurs feuilles, pétales et graines selon un <strong>angle d'or</strong> (≈ 137,5°) qui assure une exposition optimale au soleil pour chaque feuille (chacune ne fait pas d'ombre à la suivante).</p>
-<p>Cette disposition crée des spirales dont le nombre suit Fibonacci. Sur un tournesol typique : 21 spirales horaires + 34 anti-horaires (deux Fibonacci consécutifs).</p>
-<p>C'est un exemple d'<strong>optimisation par évolution</strong>. La nature « découvre » les mathématiques sans les calculer.</p>
-</div></div>
+<div class="exo">
+  <h2>Question 3 <span class="badge-blue">APP</span></h2>
+  <p>Vérifier que φ vérifie l'équation φ² = φ + 1.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>φ² = ((1 + √5) / 2)² = (1 + 2√5 + 5) / 4 = (6 + 2√5) / 4 = (3 + √5) / 2.</p>
+    <p>φ + 1 = (1 + √5)/2 + 1 = (1 + √5 + 2) / 2 = (3 + √5) / 2.</p>
+    <p>Égalité ✓. Cette propriété est cohérente avec la relation de Fibonacci : F_(n+2) = F_(n+1) + F_n se traduit, en passant à la limite des rapports, par φ² = φ + 1.</p>
+  </div>
+</div>
 
-<div class="exo"><h2>Question 4 <span class="badge-yellow">COM</span></h2>
-<p>Citer 2 utilisations du nombre d'or dans l'art ou l'architecture.</p>
-<ul class="lignes-reponse"><li></li><li></li><li</li><li></li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir un exemple</button>
-<div class="corr">
-<ul>
-<li><strong>Architecture :</strong> Parthénon (Athènes), pyramide de Khéops, Notre-Dame, Le Corbusier (Modulor).</li>
-<li><strong>Peinture :</strong> Léonard de Vinci (la Joconde, l'Homme de Vitruve), Salvador Dalí (la Cène).</li>
-<li><strong>Photographie / design :</strong> règle de composition « tiers » (proche de φ).</li>
-<li><strong>Musique :</strong> Béla Bartók structure ses morceaux selon des proportions liées à φ.</li>
-</ul>
-</div></div>
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">ANA</span></h2>
+  <p>Pourquoi la suite Fibonacci apparaît-elle dans les pétales, les pommes de pin et les tournesols ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Les plantes disposent leurs feuilles, pétales et graines selon un <strong>angle d'or</strong> (≈ 137,5° = 360° / φ²).</p>
+    <p>Cet angle assure une <strong>exposition optimale au soleil</strong> : aucune feuille ne fait d'ombre directe à la suivante. C'est l'angle qui permet la <strong>meilleure répartition</strong>.</p>
+    <p>Cette disposition crée des spirales dont le nombre suit Fibonacci. Sur un tournesol typique : 21 spirales horaires + 34 anti-horaires (deux Fibonacci consécutifs).</p>
+    <p>C'est un exemple d'<strong>optimisation par évolution</strong> : la nature « découvre » les maths sans les calculer. Les plantes qui poussaient avec un angle non optimal étaient moins productives → sélection naturelle.</p>
+  </div>
+</div>
 
-<div class="retenir"><strong>À retenir</strong>
-<ul><li><strong>Fibonacci :</strong> F_{n+2} = F_{n+1} + F_n. Suite récurrente d'ordre 2.</li>
-<li><strong>Nombre d'or :</strong> φ = (1 + √5)/2 ≈ 1,618. Limite de F_{n+1}/F_n.</li>
-<li><strong>Présence universelle :</strong> spirales naturelles (tournesol, ananas, coquillages), proportions humaines, art.</li></ul></div>
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">VAL</span></h2>
+  <p>Citer 3 utilisations du nombre d'or dans l'art, l'architecture ou le design.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ul>
+      <li><strong>Architecture antique :</strong> Parthénon (Athènes), pyramides de Gizeh, théâtres grecs.</li>
+      <li><strong>Architecture moderne :</strong> Le Corbusier (Modulor), Notre-Dame de Paris, ONU New York.</li>
+      <li><strong>Peinture :</strong> Léonard de Vinci (la Joconde, l'Homme de Vitruve), Salvador Dalí (la Cène), Mondrian.</li>
+      <li><strong>Design / photographie :</strong> règle des « tiers » utilisée en composition.</li>
+      <li><strong>Musique :</strong> Béla Bartók structure ses morceaux selon des proportions liées à φ.</li>
+      <li><strong>Web design :</strong> proportions de mises en page, ratio largeur / hauteur de logos.</li>
+    </ul>
+    <p>Le ratio φ est jugé <strong>esthétiquement harmonieux</strong> par le cerveau humain (raison neurologique encore débattue).</p>
+  </div>
+</div>
 
-</div><script src="../../../nav.js"></script></body></html>
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">ANA</span></h2>
+  <p>Construire un rectangle d'or : si la largeur fait 10 cm, quelle est la longueur ?</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Rectangle d'or : longueur / largeur = φ.</p>
+    <p>Longueur = 10 × 1,618 = <strong>16,18 cm</strong>.</p>
+    <p>Propriété remarquable : si on enlève un carré (10 × 10) du rectangle d'or, ce qui reste est un autre rectangle d'or de dimensions 10 × 6,18 ! C'est une propriété d'auto-similarité.</p>
+    <p>Cette propriété fait que la spirale dorée est une <strong>spirale logarithmique</strong> (zoom infini sur elle-même).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-blue">ANA</span></h2>
+  <p>Le ratio largeur/hauteur d'une carte de crédit est environ 1,586 (proche de φ). Citer d'autres objets du quotidien dont les proportions sont proches du nombre d'or.</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ul>
+      <li><strong>Carte d'identité, carte bancaire :</strong> 85,6 × 53,98 mm → ratio 1,586 ≈ φ</li>
+      <li><strong>Logo Apple, Twitter, Pepsi :</strong> proportions basées sur φ</li>
+      <li><strong>Couverture de livre :</strong> souvent format A (≠ φ mais proche)</li>
+      <li><strong>Écran TV ancien (4/3) :</strong> 1,33, plus loin de φ</li>
+      <li><strong>Écran TV récent (16/9) :</strong> 1,78, plus proche</li>
+      <li><strong>iPhone :</strong> ratio 19,5/9 ≈ 2,17 (s'éloigne de φ)</li>
+    </ul>
+    <p>L'utilisation de φ en design n'est pas <strong>systématique</strong>, mais elle reste une référence esthétique.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger en 5 lignes une présentation pour un panneau d'exposition « Fibonacci, le code secret de la nature ».</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em><strong>FIBONACCI — Le code secret de la nature</strong></em></p>
+    <p><em>Au XIIIᵉ siècle, le moine Leonardo Fibonacci découvre une suite simple : <strong>1, 1, 2, 3, 5, 8, 13, 21, 34...</strong> (chaque terme est la somme des deux précédents).</em></p>
+    <p><em>Stupéfaction : cette suite apparaît partout dans la nature ! Pétales de fleurs (3, 5, 8, 13...), spirales de tournesols (21+34), pommes de pin, coquillages, et même les proportions du corps humain.</em></p>
+    <p><em>La raison : les rapports successifs (1/1, 2/1, 3/2, 5/3...) tendent vers le <strong>nombre d'or φ ≈ 1,618</strong>, qui correspond à un angle de croissance optimal pour l'exposition au soleil.</em></p>
+    <p><em>Du Parthénon à la Joconde, en passant par les coquillages : les mathématiques expriment l'<strong>harmonie universelle</strong>.</em></p>
+  </div>
+</div>
+
+<div class="exo" style="background:#fef3c7;border:1px solid #b45309">
+  <h2>🚀 Pour aller plus loin <span class="badge-blue">ANA</span></h2>
+  <p>Le ratio Fibonacci est utilisé en finance : « retracements de Fibonacci » pour prédire les cours boursiers. Les niveaux 38,2 %, 50 %, 61,8 % sont calculés à partir de Fibonacci. Que penser de cette utilisation ?</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>61,8 % = 1 / φ. 38,2 % = 1 / φ². Ces niveaux sont parfois utilisés en analyse technique boursière.</p>
+    <p><strong>Critique scientifique :</strong></p>
+    <ul>
+      <li>Aucune base théorique solide pour appliquer Fibonacci aux marchés financiers.</li>
+      <li>L'effet est probablement auto-réalisateur : si beaucoup de traders utilisent ces niveaux, les prix s'arrêtent là par psychologie collective.</li>
+      <li>Études empiriques mitigées sur l'efficacité prédictive.</li>
+    </ul>
+    <p>Conclusion : c'est une <strong>« superstition mathématique »</strong> qui marche partiellement par effet de groupe, pas par lois naturelles. À ne pas confondre avec les vraies applications scientifiques de Fibonacci (biologie, cristallographie).</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Suite de Fibonacci :</strong> F_(n+2) = F_(n+1) + F_n. Suite récurrente d'ordre 2.</li>
+    <li><strong>Nombre d'or :</strong> φ = (1 + √5) / 2 ≈ 1,618. Limite de F_(n+1) / F_n.</li>
+    <li><strong>Propriété :</strong> φ² = φ + 1 (équation caractéristique de Fibonacci).</li>
+    <li><strong>Présence universelle :</strong> spirales naturelles (tournesol, ananas, coquillages), proportions humaines, art, architecture.</li>
+    <li><strong>Optimisation naturelle :</strong> angle d'or 137,5° → meilleure exposition au soleil pour les plantes.</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

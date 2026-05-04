@@ -1,46 +1,251 @@
 <!DOCTYPE html>
-<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ch13 – Activité 3 – Plan à l'échelle – 2nde MAMA</title>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch13 – Activité 3 – Plan à l'échelle d'une cuisine – 2nde Bac Pro MAMA</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<link rel="stylesheet" href="../../../styles.css"><link rel="stylesheet" href="../../../print.css" media="print">
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0056b3;--p-bg:#ebf5ff;--p-border:#bee3f8}</style>
-</head><body><div class="c"><a href="../../../maths-2nde-mama.html" class="nb">← RETOUR SOMMAIRE</a>
-<header><h1>Activité 3 – Plan d'un meuble à l'échelle <span style="font-size:.55em;color:#7c2d12;font-weight:600">ÉTUDE DE CAS</span></h1>
-<p class="sous-titre">Chapitre 13 – Théorème de Thalès | 2nde Bac Pro MAMA | ⏱ 25 min</p>
-<p class="maj">Dernière mise à jour : 3 mai 2026, 10:00</p></header>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-2nde-mama.html" class="nb">← RETOUR SOMMAIRE</a>
 
-<div class="situation"><h2>Situation – plan du client</h2>
-<p><em>Le client envoie le plan d'une cuisine à l'échelle 1/50 : sur le plan, la cuisine mesure 8 cm × 6 cm. Léa, agenceuse, doit calculer les dimensions réelles.</em></p>
-<p>Échelle 1/50 signifie : 1 cm sur le plan = 50 cm en vrai.</p></div>
+<header>
+  <h1>Activité 3 – Plan d'une cuisine à l'échelle : Thalès et homothéties <span style="font-size:.55em;color:#7c2d12;font-weight:600">ÉTUDE DE CAS</span></h1>
+  <p class="sous-titre">Chapitre 13 – Théorème de Thalès | 2nde Bac Pro MAMA | Mathématiques | ⏱ 50 min</p>
+  <p class="maj">Dernière mise à jour : 4 mai 2026, 11:30</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
 
-<div class="exo"><h2>Question 1 <span class="badge-yellow">REA</span></h2>
-<p>Calculer les dimensions réelles de la cuisine.</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>L = 8 × 50 = 400 cm = 4 m. l = 6 × 50 = 300 cm = 3 m. Cuisine de <strong>4 m × 3 m = 12 m²</strong>.</p>
-</div></div>
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Comprendre la notion d'échelle (homothétie de rapport k)</li>
+    <li>Convertir des dimensions plan ↔ réel</li>
+    <li>Reproduire un plan à une échelle différente</li>
+    <li>Utiliser les conventions des plans architecturaux</li>
+  </ul>
+</div>
 
-<div class="exo"><h2>Question 2 <span class="badge-yellow">REA</span></h2>
-<p>Léa veut redessiner ce plan à l'échelle 1/25. Quelles dimensions sur le nouveau plan ?</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>Échelle 1/25 : 1 cm = 25 cm. Pour 4 m = 400 cm : sur le plan, 400/25 = <strong>16 cm</strong>. Pour 3 m : 300/25 = <strong>12 cm</strong>.</p>
-<p>Plan plus grand qu'à 1/50 (échelle 2× plus grande).</p>
-</div></div>
+<div class="situation">
+  <h2>Situation – Léa réceptionne un plan client</h2>
+  <p><em>Léa, agenceuse de cuisines, reçoit le plan d'une cuisine que son client souhaite faire installer. Le plan est dessiné à l'échelle 1/50 (notation : « 1:50 » ou « 1/50 »). Sur le plan, la cuisine apparaît comme un rectangle de 8 cm × 6 cm avec un évier de 1,2 cm × 0,8 cm placé contre le mur.</em></p>
 
-<div class="exo"><h2>Question 3 <span class="badge-blue">VAL</span></h2>
-<p>Sur le plan 1/50, le client a placé un évier 1,2 cm × 0,8 cm. Dimensions réelles ? Conformes au standard (60×40 cm) ?</p>
-<ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>Réel : 60 cm × 40 cm. ✓ Cohérent avec un évier standard simple cuve.</p>
-</div></div>
+  <h3>Document — convention des échelles</h3>
+  <div style="background:#dbeafe;padding:10px 14px;border-radius:6px;border-left:3px solid #1d4ed8;margin:14px 0">
+    <p><strong>Échelle 1/n :</strong> 1 cm sur le plan = n cm en réalité.</p>
+    <p>Exemple : 1/50 → 1 cm sur le plan = 50 cm en vrai = 0,50 m.</p>
+    <p>Pour passer du plan au réel : <strong>multiplier par n</strong>.</p>
+    <p>Pour passer du réel au plan : <strong>diviser par n</strong>.</p>
+  </div>
 
-<div class="retenir"><strong>À retenir</strong>
-<ul><li><strong>Échelle 1/n :</strong> 1 cm sur le plan = n cm en réalité.</li>
-<li><strong>Conversion plan → réel :</strong> multiplier par n. Réel → plan : diviser par n.</li>
-<li><strong>Échelles courantes :</strong> 1/50 et 1/100 (architecture), 1/20 (menuiserie), 1/2 (pièces détaillées).</li></ul></div>
+  <h3>Document — échelles standards en construction et menuiserie</h3>
+  <table>
+    <thead>
+      <tr><th>Échelle</th><th>Usage typique</th><th>Précision</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1/500 ou 1/200</td><td>Plan de masse (terrain, bâtiment)</td><td>Vue d'ensemble</td></tr>
+      <tr><td>1/100</td><td>Plan de niveau (étage)</td><td>Architecture</td></tr>
+      <tr><td>1/50</td><td>Plan d'aménagement (cuisine, salle de bain)</td><td>Architecte d'intérieur</td></tr>
+      <tr><td>1/20</td><td>Détails de menuiserie</td><td>Plans d'agencement</td></tr>
+      <tr><td>1/10 ou 1/5</td><td>Plans de fabrication</td><td>Cotes précises</td></tr>
+      <tr><td>1/1 (échelle réelle)</td><td>Gabarits</td><td>Découpe exacte</td></tr>
+    </tbody>
+  </table>
 
-</div><script src="../../../nav.js"></script></body></html>
+  <h3>Document — plan reçu (à l'échelle 1/50)</h3>
+  <div class="svg-wrap" style="margin:14px 0">
+    <svg width="100%" viewBox="0 0 540 280" style="max-width:540px;display:block;margin:0 auto" role="img" aria-label="Plan d'une cuisine rectangulaire 8 cm x 6 cm sur le plan, avec un évier de 1,2 x 0,8 cm contre un mur. Échelle 1/50.">
+        <defs>
+          <style>
+            .b{stroke:#1a202c;stroke-width:1.5}
+            .lbl{font:11px sans-serif;fill:#1a202c}
+            .lblA{font:600 12px sans-serif;fill:#1a202c}
+            .ti{font:700 13px sans-serif;text-anchor:middle;fill:#0056b3}
+          </style>
+        </defs>
+        <text class="ti" x="270" y="22">Plan reçu (échelle 1/50) — 1 cm = 50 cm</text>
+
+        <!-- Plan 8 cm × 6 cm → 320 × 240 px (échelle px = 40px/cm). Centrer en x=110-430, y=50-240 -->
+        <rect class="b" x="110" y="50" width="320" height="190" fill="#dbeafe" opacity=".4"/>
+
+        <!-- Cuisinière -->
+        <rect x="115" y="55" width="50" height="30" fill="#fbbf24" stroke="#1a202c" stroke-width="1"/>
+        <text x="140" y="75" class="lbl" text-anchor="middle">cuisi.</text>
+
+        <!-- Évier 1,2 × 0,8 cm = 48 × 32 px -->
+        <rect x="370" y="55" width="48" height="32" fill="#0ea5e9" stroke="#1a202c" stroke-width="1.5"/>
+        <text x="394" y="75" class="lbl" text-anchor="middle" fill="#fff" font-weight="bold">évier</text>
+
+        <!-- Réfrigérateur -->
+        <rect x="370" y="200" width="40" height="35" fill="#94a3b8" stroke="#1a202c" stroke-width="1"/>
+        <text x="390" y="223" class="lbl" text-anchor="middle">frigo</text>
+
+        <!-- Cotes -->
+        <text x="270" y="42" class="lblA" text-anchor="middle">8 cm (sur plan)</text>
+        <line x1="110" y1="35" x2="430" y2="35" stroke="#1a202c" stroke-width="1"/>
+        <text x="105" y="148" class="lblA" text-anchor="end" transform="rotate(-90 100 148)">6 cm</text>
+
+        <!-- Annotation évier -->
+        <text x="394" y="100" class="lbl" fill="#0ea5e9" text-anchor="middle">1,2 × 0,8 cm</text>
+
+        <!-- Légende -->
+        <text x="60" y="265" class="lbl" font-weight="bold">Échelle : 1 / 50</text>
+    </svg>
+  </div>
+
+  <p style="font-size:.9em;color:#475569"><em>📚 Cette activité réinvestit les notions du cours §3 (homothéties et agrandissements) et §4 (échelles dans les plans).</em></p>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Comment passer d'un plan à l'échelle aux dimensions réelles, et comment redessiner ce plan à une échelle différente ?
+</div>
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-blue">APP</span></h2>
+  <p>Que signifie « échelle 1/50 » pour la longueur ? Pour la surface ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Pour les longueurs :</strong> 1 cm sur le plan = 50 cm = 0,50 m en réalité. Le rapport est k = 1/50 (réduction).</p>
+    <p><strong>Pour les surfaces :</strong> attention, la surface est multipliée par k² ! 1 cm² sur le plan correspond à 50² = 2 500 cm² = 0,25 m² en réalité.</p>
+    <p>Ce facteur k² (et k³ pour les volumes) est une <strong>conséquence de la dimension</strong> : agrandir d'un facteur k augmente l'aire d'un facteur k².</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer les dimensions réelles de la cuisine (8 cm × 6 cm sur le plan, échelle 1/50).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Longueur réelle : 8 × 50 = 400 cm = <strong>4 m</strong>.</p>
+    <p>Largeur réelle : 6 × 50 = 300 cm = <strong>3 m</strong>.</p>
+    <p>Cuisine réelle : <strong>4 m × 3 m = 12 m²</strong>.</p>
+    <p>C'est une cuisine de taille moyenne pour un appartement familial.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer les dimensions réelles de l'évier (1,2 cm × 0,8 cm sur le plan).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Longueur évier : 1,2 × 50 = 60 cm.</p>
+    <p>Largeur évier : 0,8 × 50 = 40 cm.</p>
+    <p>Évier réel : <strong>60 × 40 cm</strong>.</p>
+    <p>✓ Conforme au standard d'un évier 1 cuve simple (60 × 40 ou 60 × 50).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-yellow">REA</span></h2>
+  <p>Léa veut redessiner ce plan à l'échelle 1/25 (deux fois plus grand) pour mieux étudier les détails. Calculer les dimensions de la cuisine et de l'évier sur ce nouveau plan.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>À l'échelle 1/25 : 1 cm = 25 cm.</p>
+    <p><strong>Cuisine :</strong> 4 m = 400 cm → sur le plan : 400 / 25 = <strong>16 cm</strong>.</p>
+    <p>3 m = 300 cm → 300 / 25 = <strong>12 cm</strong>.</p>
+    <p>Cuisine sur nouveau plan : 16 × 12 cm.</p>
+    <p><strong>Évier :</strong> 60 cm → 60 / 25 = <strong>2,4 cm</strong>. 40 cm → 40 / 25 = <strong>1,6 cm</strong>.</p>
+    <p>Le plan est <strong>2 fois plus grand</strong> en linéaire (et 4 fois plus grand en surface), mais les dimensions réelles sont identiques.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">VAL</span></h2>
+  <p>Quel est l'avantage de redessiner à 1/25 plutôt qu'à 1/50 ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>À 1/25, on dispose de <strong>2 fois plus de place</strong> sur le papier pour chaque mètre de cuisine. Donc :</p>
+    <ul>
+      <li>les détails (charnières, prises, accessoires) sont mieux visibles</li>
+      <li>les annotations s'inscrivent sans serrer</li>
+      <li>les cotes se lisent plus facilement</li>
+    </ul>
+    <p><strong>Inconvénient :</strong> il faut un format de papier plus grand. Une cuisine de 4 m fait 16 cm à 1/25 (tient en A4) ; une grande pièce de 10 m ferait 40 cm (besoin d'un A3 ou A2).</p>
+    <p>Choix d'échelle = compromis entre <strong>précision du dessin</strong> et <strong>format papier</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">ANA</span></h2>
+  <p>Le plan total de l'appartement est fourni à l'échelle 1/100. La cuisine y mesure 4 cm × 3 cm. Calculer ses dimensions réelles. Cela cohère-t-il avec le plan à 1/50 ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>À 1/100 : 4 cm × 100 = 400 cm = 4 m, et 3 cm × 100 = 300 cm = 3 m.</p>
+    <p>Cuisine réelle : 4 m × 3 m. <strong>Cohérent</strong> avec le plan à 1/50.</p>
+    <p>Plus l'échelle est petite (1/100 &lt; 1/50), plus le plan est <strong>réduit</strong>. C'est utile pour montrer un grand espace dans peu de papier.</p>
+    <p>Astuce de conversion entre échelles : à 1/100 (la cuisine fait 4 cm) et à 1/50 (elle fait 8 cm) → ratio 2. Donc pour passer de 1/100 à 1/50, on multiplie les dimensions par 2.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-blue">ANA</span></h2>
+  <p>Léa veut faire un gabarit grandeur nature (échelle 1/1) pour la pose des meubles muraux. Calculer les dimensions des meubles si elle a un plan à 1/20 où ils mesurent 4 cm × 3 cm. Quel matériau utiliser pour le gabarit ?</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Plan 1/20 : 4 cm × 20 = 80 cm, 3 cm × 20 = 60 cm.</p>
+    <p>Meuble réel : 80 × 60 cm.</p>
+    <p>Pour le gabarit 1/1 (taille réelle), utiliser :</p>
+    <ul>
+      <li>Carton léger (3-5 mm), facile à découper et manipuler</li>
+      <li>Papier kraft (rouleau), à coller au mur pour visualiser</li>
+      <li>Contreplaqué fin (3 mm) si réutilisation longue durée</li>
+    </ul>
+    <p>L'avantage du 1/1 : tester le placement réel, <strong>vérifier les cotes avant achat</strong>, valider auprès du client visuellement.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger en 5 lignes la fiche pratique de Léa pour les conversions entre échelles.</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em><strong>Fiche pratique — Conversions plan ↔ réel</strong></em></p>
+    <p><em>1. <strong>Lire l'échelle</strong> du plan (en bas à droite) : ex. 1/50, 1/100.</em></p>
+    <p><em>2. Plan → réel : <strong>multiplier les dimensions par n</strong> (= 50, 100…). Garder les unités cohérentes (cm, m).</em></p>
+    <p><em>3. Réel → plan : <strong>diviser par n</strong>.</em></p>
+    <p><em>4. Pour les <strong>surfaces</strong>, utiliser n² ; pour les <strong>volumes</strong>, n³.</em></p>
+    <p><em>5. Toujours <strong>vérifier la cohérence</strong> : une cuisine de 100 m² ou 0,1 m² ? → erreur d'échelle. Un évier 6 m ? → impossible.</em></p>
+  </div>
+</div>
+
+<div class="exo" style="background:#fef3c7;border:1px solid #b45309">
+  <h2>🚀 Pour aller plus loin <span class="badge-blue">ANA</span></h2>
+  <p>Sur une carte routière à l'échelle 1/200 000, deux villes apparaissent à 25 cm. Calculer la distance réelle. À 90 km/h moyenne, combien de temps de trajet en voiture ?</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Distance réelle : 25 × 200 000 = 5 000 000 cm = 50 000 m = <strong>50 km</strong>.</p>
+    <p>Temps à 90 km/h : 50 / 90 ≈ 0,556 h ≈ <strong>33 minutes</strong> (à vol d'oiseau).</p>
+    <p>En réalité, par la route (~1,3 fois plus long) : 50 × 1,3 = 65 km, soit ~43 min à 90 km/h.</p>
+    <p><strong>Note :</strong> les cartes routières utilisent souvent 1/100 000 (cartes IGN détaillées) à 1/1 000 000 (cartes générales). Choisir l'échelle selon le besoin (orientation locale vs vue d'ensemble).</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Échelle 1/n :</strong> 1 cm sur le plan = n cm en réalité.</li>
+    <li><strong>Conversion :</strong> plan → réel : <strong>× n</strong>. Réel → plan : <strong>÷ n</strong>.</li>
+    <li><strong>Surfaces : × n²</strong>. <strong>Volumes : × n³</strong>.</li>
+    <li><strong>Échelles courantes :</strong> 1/100 (plan d'étage), 1/50 (cuisine), 1/20 (menuiserie), 1/10 ou 1/5 (détails fabrication).</li>
+    <li><strong>Choix de l'échelle :</strong> compromis entre précision du dessin et format papier.</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>
