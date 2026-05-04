@@ -3,55 +3,120 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ch06 – Activité 4 – Lumière et santé visuelle – Term ERA</title>
+<title>Ch06 – Activité 4 – Lumière et santé visuelle – PC Term ERA-MA</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <link rel="stylesheet" href="../../../styles.css">
 <link rel="stylesheet" href="../../../print.css" media="print">
-<style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac}</style>
+<style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac;--s:#0ea5e9}</style>
 </head>
 <body>
 <div class="c">
 <a href="../../../pc-term-erama.html" class="nb">← RETOUR SOMMAIRE</a>
+
 <header>
   <h1>Activité 4 – Lumière et santé : la lumière bleue des LED <span style="font-size:.55em;color:#7c3aed;font-weight:600">PROJET DOCUMENTAIRE</span></h1>
-  <p class="sous-titre">Chapitre 6 – Source lumineuse | Term Bac Pro (Grpt 3) | Physique – Optique / PSE | ⏱ 30 min</p>
-  <p class="maj">Dernière mise à jour : 2 mai 2026, 18:42</p>
+  <p class="sous-titre">Chapitre 6 – Source lumineuse | Terminale Bac Pro ERA-MA | Physique-Chimie / PSE | ⏱ 50 min</p>
+  <p class="maj">Dernière mise à jour : 4 mai 2026, 14:15</p>
 </header>
-<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer</button>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
 
-<div class="objectifs"><strong>Objectifs :</strong>
-<ul><li>Comprendre la composition spectrale d'une source LED</li>
-<li>Identifier les risques liés à la lumière bleue</li>
-<li>Choisir une température de couleur adaptée à l'usage</li></ul></div>
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Comprendre la composition spectrale d'une LED blanche</li>
+    <li>Identifier les risques liés à la lumière bleue (sommeil, fatigue oculaire)</li>
+    <li>Choisir une température de couleur adaptée à l'usage</li>
+    <li>Connaître les recommandations officielles ANSES 2023</li>
+  </ul>
+</div>
 
 <div class="situation">
   <h2>Situation – pourquoi mes LED « blanc froid » me fatiguent ?</h2>
-  <p><em>Karim, agenceur, a remplacé ses néons par des LED « blanc froid 6500 K » dans son atelier. Il constate après 1 mois : maux de tête en fin de journée, troubles du sommeil, ouvriers qui se plaignent. Sa femme a entendu parler de « lumière bleue » dans une émission TV. Il s'interroge.</em></p>
+  <p><em>Karim, agenceur, a remplacé ses néons par des LED « blanc froid 6 500 K » dans son atelier il y a 1 mois. Constat : maux de tête en fin de journée, troubles du sommeil, ouvriers qui se plaignent. Sa femme a entendu parler de « lumière bleue » dans une émission TV. Karim s'interroge.</em></p>
 
-  <h3>Document 1 — Les LED émettent surtout du bleu</h3>
-  <p>Une LED blanche est en réalité une <strong>LED bleue (450 nm)</strong> recouverte d'un phosphore qui convertit une partie du bleu en jaune/rouge. Le mélange donne le « blanc » mais le pic dans le bleu reste très marqué.</p>
-  <p>Plus la température de couleur est <strong>élevée</strong> (en kelvins), plus la proportion de bleu est importante :</p>
+  <h3>Document 1 — Comment fabriquer une LED « blanche »</h3>
+  <div class="svg-wrap" style="margin:14px 0">
+    <svg width="100%" viewBox="0 0 540 200" style="max-width:540px;display:block;margin:0 auto" role="img" aria-label="Schéma de principe d'une LED blanche : LED bleue 450 nm + phosphore jaune (YAG:Ce) → lumière blanche par addition.">
+      <defs>
+        <style>
+          .lbl{font:11px sans-serif;fill:#1a202c;text-anchor:middle}
+          .lblA{font:600 12px sans-serif;fill:#1a202c;text-anchor:middle}
+          .ti{font:700 13px sans-serif;text-anchor:middle;fill:#2da44e}
+        </style>
+      </defs>
+      <text class="ti" x="270" y="20">LED blanche = LED bleue + phosphore jaune</text>
+
+      <!-- LED bleue émet du bleu -->
+      <rect x="60" y="80" width="60" height="40" fill="#3b82f6" stroke="#1a202c"/>
+      <text x="90" y="105" class="lblA" fill="#fff">LED</text>
+      <text x="90" y="118" class="lblA" fill="#fff">bleue</text>
+      <text x="90" y="140" class="lbl">450 nm</text>
+      <text x="90" y="155" class="lbl">(GaN)</text>
+
+      <!-- Flèche bleue vers phosphore -->
+      <line x1="125" y1="100" x2="180" y2="100" stroke="#3b82f6" stroke-width="3" marker-end="url(#ar1)"/>
+
+      <!-- Phosphore jaune -->
+      <rect x="190" y="70" width="80" height="60" fill="#fbbf24" stroke="#1a202c"/>
+      <text x="230" y="95" class="lblA">Phosphore</text>
+      <text x="230" y="110" class="lblA">YAG:Ce</text>
+      <text x="230" y="123" class="lbl">(jaune)</text>
+
+      <!-- Flèche jaune sortie -->
+      <line x1="275" y1="90" x2="330" y2="90" stroke="#fbbf24" stroke-width="3" marker-end="url(#ar2)"/>
+      <text x="305" y="80" class="lbl">jaune</text>
+      <!-- Flèche bleue passant -->
+      <line x1="275" y1="115" x2="330" y2="115" stroke="#3b82f6" stroke-width="3" marker-end="url(#ar3)"/>
+      <text x="305" y="135" class="lbl">bleu</text>
+
+      <!-- Mélange = blanc -->
+      <circle cx="370" cy="100" r="20" fill="#fef3c7" stroke="#1a202c"/>
+      <text x="370" y="105" class="lbl">+</text>
+      <line x1="395" y1="100" x2="440" y2="100" stroke="#1a202c" stroke-width="2" marker-end="url(#ar4)"/>
+      <rect x="450" y="70" width="60" height="60" fill="#f8fafc" stroke="#1a202c" stroke-width="2"/>
+      <text x="480" y="95" class="lblA">blanc</text>
+      <text x="480" y="115" class="lbl">perçu</text>
+
+      <defs>
+        <marker id="ar1" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#3b82f6"/></marker>
+        <marker id="ar2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#fbbf24"/></marker>
+        <marker id="ar3" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#3b82f6"/></marker>
+        <marker id="ar4" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#1a202c"/></marker>
+      </defs>
+
+      <text x="270" y="180" class="lbl">⚠ Le pic dans le bleu (450 nm) reste visible dans le spectre final → effet biologique</text>
+    </svg>
+  </div>
+
+  <p>Plus la température de couleur est <strong>élevée</strong> (en kelvins), plus la proportion de bleu est forte :</p>
   <ul>
-    <li><strong>2 700 K — blanc chaud (jaune) :</strong> ambiance domestique, soir</li>
-    <li><strong>4 000 K — blanc neutre :</strong> bureau, atelier, magasin</li>
-    <li><strong>6 500 K — blanc froid (bleu) :</strong> hôpital, pharmacie</li>
+    <li><strong>2 700 K — blanc chaud (jaune-orange) :</strong> ambiance domestique, soir, restaurants.</li>
+    <li><strong>3 000 K — chaud :</strong> hôtel, salon, chambre à coucher.</li>
+    <li><strong>4 000 K — blanc neutre :</strong> bureau, atelier, magasin.</li>
+    <li><strong>5 000-6 500 K — blanc froid (bleu) :</strong> hôpital, pharmacie, lumière du jour.</li>
   </ul>
 
-  <h3>Document 2 — Effets de la lumière bleue sur la santé</h3>
+  <h3>Document 2 — Effets biologiques de la lumière bleue</h3>
+  <table>
+    <thead><tr><th>Moment</th><th>Effet</th></tr></thead>
+    <tbody>
+      <tr><td>Matin / journée</td><td>✅ Stimule vigilance, synchronise rythme circadien</td></tr>
+      <tr><td>Soir / nuit</td><td>❌ Bloque sécrétion de mélatonine → endormissement difficile</td></tr>
+      <tr><td>Exposition longue (≥ 8 h)</td><td>⚠ Fatigue oculaire, maux de tête</td></tr>
+      <tr><td>Très long terme (rétine)</td><td>⚠ Phototoxicité possible (études en cours)</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Document 3 — Recommandations ANSES (Avril 2023)</h3>
   <ul>
-    <li><strong>Effet positif (jour) :</strong> stimule la vigilance, synchronise le rythme circadien sur la lumière du jour</li>
-    <li><strong>Effet négatif (soir) :</strong> bloque la sécrétion de mélatonine (hormone du sommeil) → endormissement difficile, sommeil non réparateur</li>
-    <li><strong>Risque rétinien (LED &lt; 6500 K, exposition longue) :</strong> dégradation possible des cellules photoréceptrices à très long terme (études en cours, prudence)</li>
-    <li><strong>Maux de tête / fatigue oculaire :</strong> liés à la composition spectrale + scintillement (driver de mauvaise qualité)</li>
+    <li>Privilégier les LED <strong>2 700 K à 3 500 K</strong> en intérieur résidentiel le soir.</li>
+    <li>Maximum <strong>4 000 K</strong> en atelier / bureau (au-delà → manque de calme nerveux).</li>
+    <li>Éviter les LED 6 500 K en intérieur (sauf usage médical où l'IRC est critique).</li>
+    <li>Filtre lumière bleue sur smartphones/écrans après 21 h (mode nuit).</li>
+    <li>Pour les enfants &lt; 6 ans : éviter strictement le 6 500 K (rétine en développement).</li>
   </ul>
 
-  <h3>Document 3 — Recommandations ANSES (2023)</h3>
-  <ul>
-    <li>Privilégier les LED <strong>2 700 K à 3 500 K</strong> en intérieur résidentiel le soir</li>
-    <li>Maximum 4 000 K en atelier / bureau (pas plus chaud sinon manque de vigilance)</li>
-    <li>Éviter les LED 6 500 K en intérieur (réservées au médical, où l'IRC est critique)</li>
-    <li>Filtre lumière bleue sur smartphones/écrans après 21 h</li>
-  </ul>
+  <p style="font-size:.9em;color:#475569"><em>📚 Cette activité fait le lien entre §5 (température de couleur) du Ch06 PC et le programme de PSE (Module Santé).</em></p>
 </div>
 
 <div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
@@ -64,56 +129,128 @@
   <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p>Le composant de base est une LED qui émet du bleu (450 nm). On dépose ensuite un revêtement de phosphore qui absorbe une partie du bleu et le réémet en jaune/rouge. Le mélange bleu + jaune donne du « blanc » à l'œil. Mais le spectre conserve un pic prononcé dans le bleu, plus important qu'avec une lampe à incandescence ou un néon.</p>
+    <p>Le composant de base d'une LED blanche est une LED qui émet du bleu (450 nm) en nitrure de gallium (GaN). On dépose ensuite un revêtement de phosphore jaune (YAG:Ce, grenat d'yttrium-aluminium dopé cérium) qui absorbe une partie du bleu et le réémet en jaune et rouge.</p>
+    <p>Mélange bleu + jaune = blanc à l'œil (par synthèse additive).</p>
+    <p>Mais le spectre conserve un <strong>pic prononcé dans le bleu</strong>, plus important qu'avec une lampe à incandescence (spectre lissé) ou un néon (pics multiples).</p>
   </div>
 </div>
 
 <div class="exo">
   <h2>Question 2 <span class="badge-blue">ANA</span></h2>
-  <p>Pourquoi un éclairage 6 500 K est-il problématique en intérieur le soir ?</p>
-  <ul class="lignes-reponse"><li></li><li></li><li></li><li</li><li></li></ul>
+  <p>Pourquoi un éclairage 6 500 K est-il problématique en intérieur, le soir notamment ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p>À 6 500 K, la proportion de bleu est très élevée. La lumière bleue, perçue par des récepteurs spécifiques de la rétine (cellules ipRGC), <strong>bloque la sécrétion de mélatonine</strong> par le cerveau. Or la mélatonine est l'hormone qui prépare au sommeil. Conséquences :</p>
+    <p>À 6 500 K, la proportion de bleu (400-500 nm) est très élevée. La lumière bleue est captée par des récepteurs spécifiques de la rétine, les cellules <strong>ipRGC</strong> (intrinsically photosensitive Retinal Ganglion Cells, découvertes en 2002).</p>
+    <p>Ces cellules transmettent l'information à l'horloge biologique du cerveau (noyau suprachiasmatique). Quand elles détectent du bleu intense, le cerveau interprète : « il fait jour, ne pas dormir ».</p>
+    <p>→ <strong>Blocage de la sécrétion de mélatonine</strong> (hormone du sommeil).</p>
+    <p>Conséquences :</p>
     <ul>
-      <li>Endormissement retardé (jusqu'à 1-2 h de plus)</li>
-      <li>Sommeil léger, non réparateur</li>
-      <li>Fatigue chronique</li>
-      <li>Maux de tête (à long terme)</li>
+      <li>Endormissement retardé (jusqu'à 1-2 h de plus le soir).</li>
+      <li>Sommeil léger, peu réparateur.</li>
+      <li>Fatigue chronique, irritabilité.</li>
+      <li>Maux de tête à long terme.</li>
     </ul>
-    <p>L'évolution naturelle de l'humain est calée sur la lumière solaire qui rougit le soir (couchant) et bleuit le matin. Le 6 500 K mime un soleil de midi en plein soir → confusion biologique.</p>
+    <p>L'évolution naturelle de l'humain est calée sur la lumière solaire qui rougit le soir (couchant) et bleuit le matin. Le 6 500 K mime un soleil de midi en plein soir → <strong>confusion biologique</strong>.</p>
   </div>
 </div>
 
 <div class="exo">
   <h2>Question 3 <span class="badge-blue">VAL</span></h2>
-  <p>Quelle température de couleur Karim devrait-il choisir pour son atelier ? Pour son bureau personnel le soir ?</p>
+  <p>Quelle température de couleur Karim devrait-il choisir : (a) pour son atelier ? (b) pour son bureau personnel le soir ? (c) pour la chambre de son fils de 4 ans ?</p>
   <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <ul>
-      <li><strong>Atelier (jour) :</strong> 4 000 K — neutre, vigilance, IRC ≥ 90 pour distinguer les bois et finitions.</li>
-      <li><strong>Bureau personnel (soir) :</strong> 2 700-3 000 K — chaud, ambiance détendue, prépare au sommeil.</li>
+      <li><strong>(a) Atelier (jour) :</strong> 4 000 K — neutre, vigilance, IRC ≥ 90 pour distinguer les bois et finitions.</li>
+      <li><strong>(b) Bureau personnel (soir) :</strong> 2 700-3 000 K — chaud, ambiance détendue, prépare au sommeil.</li>
+      <li><strong>(c) Chambre enfant 4 ans :</strong> 2 700 K maximum, voire moins (lumière chaude obligatoire). Rétine en développement → pas de bleu intense. Idéalement intensité réglable.</li>
     </ul>
-    <p>Si Karim a un coin bureau dans l'atelier, idéalement <strong>2 sources distinctes</strong> avec interrupteurs séparés pour adapter selon l'heure. Ou <strong>LED à température ajustable</strong> (CCT, 2 700 → 4 000 K) qui change automatiquement avec l'heure.</p>
+    <p>Si Karim a un coin bureau dans l'atelier, idéalement <strong>2 sources distinctes</strong> avec interrupteurs séparés pour adapter selon l'heure. Ou <strong>LED Tunable White</strong> (2 700 → 6 500 K) qui change automatiquement avec l'heure.</p>
   </div>
 </div>
 
 <div class="exo">
-  <h2>Question 4 <span class="badge-yellow">COM</span></h2>
-  <p>Rédiger en 4 lignes le bilan que Karim peut donner à ses ouvriers pour les rassurer.</p>
-  <ul class="lignes-reponse"><li></li><li></li><li</li><li></li><li></li></ul>
-  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <h2>Question 4 <span class="badge-blue">ANA</span></h2>
+  <p>Comment expliquer que les ouvriers de Karim aient des maux de tête en plus des troubles du sommeil ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p><em>Vous aviez raison de signaler la fatigue. Nos LED 6500 K sont trop « bleues » pour un atelier où on travaille toute la journée — la lumière trop bleue fatigue les yeux et perturbe le sommeil le soir. Je commande des tubes LED 4000 K (blanc neutre, plus doux) à remplacer la semaine prochaine. Pour le bureau, je passe à 3000 K. Le surcoût est minime, les bénéfices sur votre confort et votre santé sont importants. La recommandation officielle de l'ANSES (2023) confirme cette démarche.</em></p>
+    <p>3 facteurs combinés :</p>
+    <ol>
+      <li><strong>Lumière trop blanche/bleue (6 500 K)</strong> : sollicite trop les cellules ipRGC, fatigue le système nerveux central.</li>
+      <li><strong>Scintillement (flicker)</strong> : les LED bas de gamme oscillent à 100 Hz (ou plus). L'œil ne perçoit pas consciemment, mais le cerveau « voit » et fatigue. Test : filmer la LED avec un smartphone — si ça scintille à l'écran, le driver est mauvais.</li>
+      <li><strong>Éblouissement</strong> : les LED émettent une lumière très ponctuelle et intense. Sans diffuseur, le contraste avec l'arrière-plan fatigue les yeux.</li>
+    </ol>
+    <p>Solutions : LED 4 000 K + driver « flicker-free » + diffuseurs/abat-jours. La différence se ressent en quelques jours.</p>
   </div>
 </div>
 
-<div class="retenir"><strong>À retenir</strong>
-<ul><li><strong>LED blanche = LED bleue + phosphore.</strong> Pic de bleu plus marqué que les autres sources.</li>
-<li><strong>Température de couleur :</strong> 2 700 K (chaud, soir) → 4 000 K (neutre, jour) → 6 500 K (froid, médical).</li>
-<li><strong>Lumière bleue le soir</strong> bloque la mélatonine → trouble du sommeil. Recommandation : ≤ 3 500 K en intérieur le soir.</li>
-<li><strong>Atelier optimal :</strong> 4 000 K avec IRC ≥ 90 le jour, passer à 2 700 K en soirée si possible.</li></ul></div>
+<div class="exo">
+  <h2>Question 5 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer le coût du remplacement des 8 LED 6 500 K par 8 LED 4 000 K pour Karim, à 18 €/tube, et comparer aux conséquences santé non-traitées.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Coût remplacement matériel : 8 × 18 = <strong>144 €</strong>. Pose : 1 h électricien à 50 € = 50 €. <strong>Total : ~ 200 €</strong>.</p>
+    <p>Coût des troubles non traités :</p>
+    <ul>
+      <li>Productivité en baisse (estimée -10 % avec mal de tête chronique) → pour un atelier 200 000 €/an de CA, c'est 20 000 €/an de perte.</li>
+      <li>Arrêts maladie occasionnels.</li>
+      <li>Risque accident augmenté (fatigue → mauvaise visibilité).</li>
+      <li>Démotivation, turnover.</li>
+    </ul>
+    <p>Investissement de 200 € pour des bénéfices de plusieurs milliers d'euros. Retour sur investissement <strong>quasi-immédiat</strong>. À faire dès demain.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger en 5 lignes le bilan que Karim peut donner à ses ouvriers pour les rassurer.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em><strong>Note d'information aux équipes :</strong></em></p>
+    <p><em>Vous aviez raison de signaler la fatigue. Nos LED 6 500 K sont trop « bleues » pour un atelier où on travaille toute la journée — la lumière trop bleue fatigue les yeux et perturbe le sommeil le soir (recommandation officielle ANSES 2023).</em></p>
+    <p><em>Je commande des tubes <strong>LED 4 000 K (blanc neutre)</strong>, plus doux, à remplacer la semaine prochaine. Pour le coin bureau, je passe à 3 000 K.</em></p>
+    <p><em>Le surcoût est minime (200 €), les bénéfices sur votre confort et votre santé sont importants. Merci d'avoir alerté.</em></p>
+  </div>
+</div>
+
+<div class="exo" style="background:#fef3c7;border:1px solid #b45309">
+  <h2>🚀 Pour aller plus loin <span class="badge-blue">ANA</span></h2>
+  <p>Pourquoi les écrans (smartphones, tablettes) sont-ils aussi concernés par la lumière bleue, alors qu'ils ne sont pas si lumineux qu'un plafonnier ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>3 raisons :</p>
+    <ol>
+      <li><strong>Distance d'utilisation :</strong> un écran est à 30 cm des yeux ; un plafonnier à 2-3 m. L'éclairement (en lux) reçu par la rétine est comparable.</li>
+      <li><strong>Durée d'exposition :</strong> on regarde un écran en moyenne 7 h/jour (étude IFOP 2024), souvent juste avant de dormir.</li>
+      <li><strong>Type d'écran :</strong> les écrans LCD/OLED utilisent des LED bleues comme rétroéclairage ou émettent directement en bleu (OLED bleu = 460 nm).</li>
+    </ol>
+    <p>Solutions :</p>
+    <ul>
+      <li>Mode nuit / Night Shift / Dark Mode : décale le spectre vers le rouge le soir (Apple iOS, Android, Windows).</li>
+      <li>Application f.lux (gratuite) : réglage automatique selon l'heure.</li>
+      <li>Lunettes anti-lumière bleue (utilité débattue, mais peut aider).</li>
+      <li>Règle 20-20-20 : toutes les 20 min, regarder 20 secondes à 20 pieds (6 m) de distance.</li>
+      <li>Idéal : pas d'écran 1 h avant le coucher.</li>
+    </ul>
+    <p>L'OMS et l'ANSES recommandent ces mesures depuis 2019.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>LED blanche = LED bleue + phosphore jaune.</strong> Pic de bleu plus marqué que les autres sources (incandescence, fluorescent).</li>
+    <li><strong>Température de couleur :</strong> 2 700 K (chaud, soir) → 4 000 K (neutre, jour) → 6 500 K (froid, médical).</li>
+    <li><strong>Lumière bleue le soir</strong> bloque la mélatonine → trouble du sommeil. Recommandation ANSES : ≤ 3 500 K en intérieur le soir.</li>
+    <li><strong>Atelier optimal :</strong> 4 000 K avec IRC ≥ 90 le jour. Coin bureau soir : 2 700-3 000 K. Chambre enfant : 2 700 K max.</li>
+    <li><strong>Écrans :</strong> mode nuit après 21 h, distance 50 cm, pause 20-20-20.</li>
+  </ul>
+</div>
 
 </div>
 <script src="../../../nav.js"></script>

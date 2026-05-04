@@ -3,139 +3,288 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ch08 – Activité 4 – Audition et risques sonores en menuiserie – Term ERA</title>
+<title>Ch08 – Activité 4 – Audition et risques sonores en menuiserie – PC Term ERA-MA</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <link rel="stylesheet" href="../../../styles.css">
 <link rel="stylesheet" href="../../../print.css" media="print">
-<style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac}</style>
+<style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac;--s:#0ea5e9}</style>
 </head>
 <body>
 <div class="c">
 <a href="../../../pc-term-erama.html" class="nb">← RETOUR SOMMAIRE</a>
+
 <header>
   <h1>Activité 4 – Audition et risques sonores en menuiserie <span style="font-size:.55em;color:#7c3aed;font-weight:600">PROJET DOCUMENTAIRE</span></h1>
-  <p class="sous-titre">Chapitre 8 – Atténuation onde sonore | Term Bac Pro (Grpt 3) | PSE / Acoustique | ⏱ 30 min</p>
-  <p class="maj">Dernière mise à jour : 2 mai 2026, 18:42</p>
+  <p class="sous-titre">Chapitre 8 – Atténuation onde sonore | Terminale Bac Pro ERA-MA | Physique-Chimie / PSE | ⏱ 50 min</p>
+  <p class="maj">Dernière mise à jour : 4 mai 2026, 15:45</p>
 </header>
-<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer</button>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
 
-<div class="objectifs"><strong>Objectifs :</strong>
-<ul><li>Évaluer les risques auditifs liés au métier de menuisier</li>
-<li>Comprendre l'irréversibilité des dommages auditifs</li>
-<li>Choisir un EPI auditif adapté au chantier</li></ul></div>
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Évaluer les risques auditifs liés au métier de menuisier</li>
+    <li>Comprendre l'irréversibilité des dommages auditifs (cellules ciliées)</li>
+    <li>Connaître les seuils légaux du Code du travail</li>
+    <li>Choisir un EPI auditif adapté au chantier</li>
+  </ul>
+</div>
 
 <div class="situation">
   <h2>Situation – exposé PSE de Maël en formation</h2>
-  <p><em>Maël, élève de Term Bac Pro, prépare un exposé pour le module Prévention Santé Environnement : « Mon métier de futur menuisier-agenceur me met-il en danger auditif ? Comment me protéger ? »</em></p>
+  <p><em>Maël, élève de Term Bac Pro ERA-MA, prépare un exposé pour le module Prévention Santé Environnement (PSE) : « Mon métier de futur menuisier-agenceur me met-il en danger auditif ? Comment me protéger durablement ? »</em></p>
 
-  <h3>Document 1 — Niveaux sonores typiques en atelier de menuiserie</h3>
+  <h3>Document 1 — Anatomie de l'oreille interne</h3>
+  <div class="svg-wrap" style="margin:14px 0">
+    <svg width="100%" viewBox="0 0 540 220" style="max-width:540px;display:block;margin:0 auto" role="img" aria-label="Schéma simplifié : pavillon, conduit auditif, tympan, marteau-enclume-étrier, cochlée avec cellules ciliées, nerf auditif.">
+      <defs>
+        <style>
+          .lbl{font:11px sans-serif;fill:#1a202c;text-anchor:middle}
+          .lblA{font:600 12px sans-serif;fill:#1a202c;text-anchor:middle}
+          .ti{font:700 13px sans-serif;text-anchor:middle;fill:#2da44e}
+        </style>
+      </defs>
+      <text class="ti" x="270" y="20">Anatomie simplifiée de l'oreille humaine</text>
+
+      <!-- Onde sonore -->
+      <text x="40" y="115" class="lblA" fill="#dc2626">Son</text>
+      <line x1="60" y1="115" x2="100" y2="115" stroke="#dc2626" stroke-width="2" marker-end="url(#arr)"/>
+      <path d="M 60 105 Q 70 100 80 105 T 100 105" stroke="#dc2626" stroke-width="1" fill="none"/>
+
+      <!-- Pavillon -->
+      <path d="M 105 80 Q 130 70 140 100 Q 145 120 140 140 Q 130 160 105 150" fill="#fef3c7" stroke="#1a202c"/>
+      <text x="125" y="180" class="lbl">pavillon</text>
+
+      <!-- Conduit auditif -->
+      <rect x="140" y="105" width="60" height="20" fill="#dbeafe" stroke="#1a202c"/>
+      <text x="170" y="180" class="lbl">conduit</text>
+
+      <!-- Tympan -->
+      <line x1="200" y1="100" x2="200" y2="130" stroke="#dc2626" stroke-width="3"/>
+      <text x="200" y="145" class="lbl">tympan</text>
+
+      <!-- 3 osselets -->
+      <circle cx="220" cy="115" r="4" fill="#fbbf24"/>
+      <circle cx="240" cy="105" r="4" fill="#fbbf24"/>
+      <circle cx="260" cy="115" r="4" fill="#fbbf24"/>
+      <text x="240" y="140" class="lbl">osselets</text>
+
+      <!-- Cochlée -->
+      <path d="M 290 110 Q 320 90 340 110 Q 360 130 340 140 Q 320 150 310 140 Q 300 125 320 120" fill="#dcfce7" stroke="#1a202c" stroke-width="1.5"/>
+      <text x="320" y="175" class="lbl">cochlée</text>
+      <text x="320" y="190" class="lbl">(cellules ciliées)</text>
+
+      <!-- Cellules ciliées zoom -->
+      <line x1="340" y1="115" x2="430" y2="80" stroke="#1a202c" stroke-dasharray="2 2"/>
+      <rect x="430" y="60" width="80" height="60" fill="#f0fdf4" stroke="#1a202c"/>
+      <text x="470" y="75" class="lbl">Zoom :</text>
+      <!-- Petites lignes représentant les cellules ciliées -->
+      <line x1="440" y1="100" x2="445" y2="85" stroke="#15803d" stroke-width="1"/>
+      <line x1="450" y1="100" x2="455" y2="85" stroke="#15803d" stroke-width="1"/>
+      <line x1="460" y1="100" x2="465" y2="85" stroke="#15803d" stroke-width="1"/>
+      <line x1="470" y1="100" x2="475" y2="85" stroke="#15803d" stroke-width="1"/>
+      <line x1="480" y1="100" x2="485" y2="85" stroke="#15803d" stroke-width="1"/>
+      <line x1="490" y1="100" x2="495" y2="85" stroke="#15803d" stroke-width="1"/>
+      <line x1="430" y1="100" x2="510" y2="100" stroke="#1a202c"/>
+      <text x="470" y="115" class="lbl">cellules ciliées</text>
+
+      <!-- Nerf auditif -->
+      <line x1="350" y1="120" x2="380" y2="120" stroke="#7c3aed" stroke-width="2"/>
+      <text x="380" y="135" class="lbl">→ nerf</text>
+
+      <defs>
+        <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#dc2626"/></marker>
+      </defs>
+    </svg>
+  </div>
+
+  <p>L'oreille interne contient ~ <strong>15 000 cellules ciliées</strong> qui transforment les vibrations sonores en signal nerveux. Une exposition prolongée à un bruit fort détruit progressivement ces cellules. Comme elles <strong>ne se régénèrent pas</strong>, la perte est <strong>définitive et irréversible</strong>.</p>
+
+  <h3>Document 2 — Niveaux sonores typiques en atelier de menuiserie</h3>
   <table>
     <thead><tr><th>Activité / machine</th><th>Niveau (dB)</th><th>Risque</th></tr></thead>
     <tbody>
-      <tr><td>Visite client / atelier au repos</td><td>50-60</td><td>Aucun</td></tr>
-      <tr><td>Aspirateur central seul</td><td>75-80</td><td>Limite</td></tr>
-      <tr><td>Toupie défonceuse</td><td>92-98</td><td>EPI obligatoire</td></tr>
-      <tr><td>Scie circulaire à format</td><td>95-100</td><td>EPI obligatoire</td></tr>
-      <tr><td>Dégauchisseuse-raboteuse</td><td>98-102</td><td>EPI obligatoire</td></tr>
-      <tr><td>Cloueuse pneumatique</td><td>100-110</td><td>EPI casque obligatoire</td></tr>
+      <tr><td>Visite client / atelier au repos</td><td>50-60</td><td>✅ Aucun</td></tr>
+      <tr><td>Aspirateur central seul</td><td>75-80</td><td>🟡 Limite</td></tr>
+      <tr><td>Toupie défonceuse</td><td>92-98</td><td>🔴 EPI obligatoire</td></tr>
+      <tr><td>Scie circulaire à format</td><td>95-100</td><td>🔴 EPI obligatoire</td></tr>
+      <tr><td>Dégauchisseuse-raboteuse</td><td>98-102</td><td>🔴 EPI obligatoire</td></tr>
+      <tr><td>Cloueuse pneumatique</td><td>100-110</td><td>🔴 EPI casque obligatoire</td></tr>
+      <tr><td>Marteau / massette sur enclume</td><td>110-130 (impulsif)</td><td>🔴 Très dangereux instantanément</td></tr>
     </tbody>
   </table>
 
-  <h3>Document 2 — Mécanisme de la perte auditive</h3>
-  <p>L'oreille interne contient des <strong>cellules ciliées</strong> qui transforment les vibrations sonores en signal nerveux. Une exposition prolongée à un bruit fort détruit progressivement ces cellules. Comme elles ne se régénèrent pas, la perte est <strong>définitive et irréversible</strong>.</p>
-  <p>Symptômes :</p>
+  <h3>Document 3 — Symptômes des dommages auditifs</h3>
   <ul>
-    <li><strong>Acouphènes</strong> permanents (sifflement, bourdonnement)</li>
-    <li><strong>Hyperacousie</strong> (douleur même à des sons normaux)</li>
-    <li><strong>Perte sélective des aigus</strong> (difficulté à comprendre les conversations dans le bruit ambiant)</li>
-    <li><strong>Surdité progressive</strong> (à long terme)</li>
+    <li><strong>Acouphènes</strong> permanents (sifflement, bourdonnement aigu jour et nuit).</li>
+    <li><strong>Hyperacousie</strong> (douleur même à des sons normaux : bruits de cuisine, conversations).</li>
+    <li><strong>Perte sélective des aigus</strong> (difficulté à comprendre les conversations dans le bruit ambiant — « cocktail party effect »).</li>
+    <li><strong>Surdité progressive</strong> (à long terme, port d'appareil auditif obligatoire).</li>
+    <li><strong>Vertiges / troubles de l'équilibre</strong> (oreille interne).</li>
   </ul>
 
-  <h3>Document 3 — Code du travail (durée d'exposition max sans EPI)</h3>
+  <h3>Document 4 — Code du travail : seuils et durées d'exposition</h3>
   <table>
-    <thead><tr><th>Niveau (dB)</th><th>Durée max</th><th>Action obligatoire</th></tr></thead>
+    <thead><tr><th>Niveau (dB)</th><th>Durée max sans EPI</th><th>Action obligatoire (Art. R4431-2)</th></tr></thead>
     <tbody>
       <tr><td>≤ 80</td><td>Illimitée</td><td>Aucune</td></tr>
-      <tr><td>85</td><td>8 h/jour</td><td>EPI à disposition</td></tr>
-      <tr><td>90</td><td>2 h 30/jour</td><td>EPI obligatoire</td></tr>
-      <tr><td>100</td><td>15 min/jour</td><td>EPI obligatoire + suivi</td></tr>
-      <tr><td>110</td><td>1 min/jour</td><td>EPI casque + bouchons</td></tr>
+      <tr><td>85 (VAI*)</td><td>8 h/jour</td><td>EPI à disposition + information</td></tr>
+      <tr><td>87 (VLE*)</td><td>—</td><td>EPI obligatoire</td></tr>
+      <tr><td>90</td><td>2 h 30/jour</td><td>EPI obligatoire + signalisation zone</td></tr>
+      <tr><td>100</td><td>15 min/jour</td><td>EPI obligatoire + suivi médical annuel</td></tr>
+      <tr><td>110</td><td>1 min/jour</td><td>EPI casque + bouchons (double protection)</td></tr>
+      <tr><td>140 (impulsif)</td><td>0</td><td>Risque immédiat de surdité</td></tr>
     </tbody>
   </table>
+  <p style="font-size:.9em">*VAI = Valeur d'Action Inférieure ; VLE = Valeur Limite d'Exposition.</p>
 
-  <h3>Document 4 — EPI auditifs disponibles</h3>
+  <h3>Document 5 — EPI auditifs disponibles</h3>
   <table>
     <thead><tr><th>EPI</th><th>SNR (atténuation)</th><th>Avantages</th><th>Coût</th></tr></thead>
     <tbody>
-      <tr><td>Bouchons mousse jetables</td><td>20-25 dB</td><td>1 €, discret</td><td>1 €/jour</td></tr>
-      <tr><td>Bouchons sur mesure</td><td>15-30 dB</td><td>Confortable, durable 3 ans</td><td>150 € (≈ 0,15 €/jour)</td></tr>
-      <tr><td>Casque anti-bruit</td><td>25-35 dB</td><td>Forte atténuation, réutilisable</td><td>40-100 €</td></tr>
-      <tr><td>Casque actif électronique</td><td>30-40 dB</td><td>Atténue le bruit constant, laisse passer la voix</td><td>200-400 €</td></tr>
+      <tr><td>Bouchons mousse jetables</td><td>20-25 dB</td><td>1 €, discret, vite mis</td><td>~ 1 €/jour</td></tr>
+      <tr><td><strong>Bouchons sur mesure</strong></td><td>15-30 dB</td><td>Confortable, durable 3 ans, qualité</td><td>150 € (~ 0,15 €/jour)</td></tr>
+      <tr><td>Casque anti-bruit</td><td>25-35 dB</td><td>Forte atténuation, réutilisable, durée de vie 5 ans</td><td>40-100 €</td></tr>
+      <tr><td><strong>Casque actif électronique</strong></td><td>30-40 dB</td><td>Atténue le bruit constant, laisse passer la voix → on peut converser</td><td>200-400 €</td></tr>
     </tbody>
   </table>
+
+  <p style="font-size:.9em;color:#475569"><em>📚 Cette activité fait le lien Ch08 PC (atténuation sonore) avec le programme PSE (module Risques professionnels). Référence : référentiel CAP MIT et BCP ERA, capacité « identifier et prévenir les risques liés à l'activité ».</em></p>
 </div>
 
 <div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
-  <strong>Problématique :</strong> Mon métier comporte-t-il un risque auditif réel, et comment me protéger durablement ?
+  <strong>Problématique :</strong> Mon métier de menuisier-agenceur comporte-t-il un risque auditif réel, et comment me protéger durablement ?
 </div>
 
 <div class="exo">
   <h2>Question 1 <span class="badge-blue">ANA</span></h2>
-  <p>D'après le document 1, à partir de quel équipement Maël devra-t-il porter des EPI selon le code du travail ? Combien d'heures par jour pourrait-il travailler sans EPI à 95 dB ?</p>
-  <ul class="lignes-reponse"><li></li><li></li><li</li><li></li><li</li></ul>
+  <p>D'après le document 2, à partir de quelle machine Maël devra-t-il porter des EPI selon le Code du travail ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p>EPI obligatoire dès 85-90 dB → toupie, scie, dégau, cloueuse. Dans un atelier de menuiserie typique, on dépasse régulièrement les 90 dB → EPI nécessaires <strong>quasi en permanence</strong> dès qu'une machine tourne.</p>
-    <p>À 95 dB, durée max selon le tableau : entre 2 h 30 (90 dB) et 15 min (100 dB), interpolation ≈ <strong>1 h max sans EPI</strong>. Vite atteint si on travaille toute la journée à la machine.</p>
+    <p>Le seuil VLE (Valeur Limite d'Exposition) du Code du travail est <strong>87 dB</strong>. EPI obligatoires au-dessus.</p>
+    <p>Donc dès la <strong>toupie</strong> (92-98 dB), la <strong>scie</strong> (95-100 dB), la <strong>dégau</strong> (98-102 dB) et la <strong>cloueuse</strong> (100-110 dB) → EPI obligatoires.</p>
+    <p>L'aspirateur seul (75-80 dB) est en dessous du seuil VAI 85 dB → EPI conseillés mais non obligatoires.</p>
+    <p>Conclusion : dans un atelier de menuiserie typique, on dépasse régulièrement les 90 dB → EPI nécessaires <strong>quasi en permanence</strong> dès qu'une machine tourne.</p>
   </div>
 </div>
 
 <div class="exo">
   <h2>Question 2 <span class="badge-yellow">REA</span></h2>
   <p>Maël utilise sa toupie (95 dB) pendant 4 h dans la journée avec des bouchons SNR 25 dB. Quel est le niveau effectif reçu à son oreille ? Est-ce sécuritaire ?</p>
-  <ul class="lignes-reponse"><li></li><li></li><li</li><li></li><li</li></ul>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p>Niveau effectif = 95 − 25 = <strong>70 dB</strong>. C'est en dessous du seuil de 80 dB → durée illimitée. Sécuritaire ✓.</p>
-    <p>Sans bouchons : 95 dB → durée max ~ 1 h, donc 4 h par jour serait dangereux à long terme.</p>
+    <p>Niveau effectif = 95 − 25 = <strong>70 dB</strong>.</p>
+    <p>70 dB est en dessous du seuil VAI 85 dB → durée illimitée. <strong>Sécuritaire ✓</strong>.</p>
+    <p>Sans bouchons : 95 dB → durée max ~ 1 h selon le tableau (entre 90 dB / 2h30 et 100 dB / 15 min). 4 h par jour serait dangereux à long terme : usure progressive des cellules ciliées.</p>
+    <p>L'EPI fait passer un risque très élevé à un risque nul. Il est <strong>indispensable</strong>, pas optionnel.</p>
   </div>
 </div>
 
 <div class="exo">
-  <h2>Question 3 <span class="badge-blue">VAL</span></h2>
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>À 100 dB (cloueuse), durée max sans EPI = 15 min. Combien de fois par jour Maël peut-il « cloueriser » sans EPI sur une journée de 8 h ? Conclusion ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Sur 8 h de travail = 480 min. Avec 15 min par jour à 100 dB = <strong>3,1 % du temps de travail</strong>.</p>
+    <p>Or une session de pose de plinthes ou parquet, c'est facilement <strong>2-3 h consécutives</strong> de cloueuse.</p>
+    <p>→ Sans EPI, on dépasse <strong>massivement</strong> la limite réglementaire à chaque journée. Et dans la pratique, la plupart des artisans <strong>négligent</strong> cette protection.</p>
+    <p>Résultat : la perte auditive est la <strong>1ʳᵉ maladie professionnelle reconnue</strong> en France (avec les troubles musculo-squelettiques). Statistiquement, 15 % des menuisiers ont une perte auditive avérée à 50 ans.</p>
+    <p>Avec un casque actif (atténuation 35 dB) : niveau effectif = 100 − 35 = 65 dB → utilisation illimitée sans risque.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">VAL</span></h2>
   <p>Pourquoi est-il important de comprendre que la perte auditive est <strong>irréversible</strong> ?</p>
-  <ul class="lignes-reponse"><li></li><li</li><li></li><li</li><li></li></ul>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p>Les cellules ciliées détruites ne repoussent pas. Une fois l'oreille endommagée, c'est <strong>pour la vie</strong> :</p>
+    <p>Les cellules ciliées détruites ne repoussent pas (contrairement aux cellules de la peau ou du foie). Une fois l'oreille endommagée, c'est <strong>pour la vie</strong>.</p>
+    <p>Conséquences à long terme :</p>
     <ul>
-      <li>Acouphènes permanents (sifflements jour et nuit, gênants pour le sommeil)</li>
-      <li>Difficulté à comprendre la voix dans le bruit (gros impact sur la vie sociale et familiale)</li>
-      <li>Sur-protection nécessaire dans la suite de la carrière (cercle vicieux)</li>
-      <li>Pas de traitement médical pour récupérer (les appareils auditifs compensent partiellement, mais ne « réparent » pas)</li>
+      <li><strong>Acouphènes permanents</strong> (sifflements jour et nuit, gênants pour le sommeil).</li>
+      <li><strong>Difficulté à comprendre la voix dans le bruit</strong> (gros impact sur la vie sociale, familiale, professionnelle — réunions devenues pénibles).</li>
+      <li><strong>Sur-protection nécessaire</strong> dans la suite de la carrière (cercle vicieux : on a déjà perdu de l'audition, donc on doit doubler la protection pour ne pas perdre plus).</li>
+      <li><strong>Pas de traitement médical</strong> pour récupérer. Les <strong>appareils auditifs</strong> compensent partiellement (ils amplifient, mais ne « réparent » pas).</li>
+      <li><strong>Coût appareils auditifs :</strong> 800-2 500 € la paire, à renouveler tous les 5-7 ans, à vie. Rembousement Sécu partiel.</li>
     </ul>
-    <p>Le port d'EPI dès le début de la carrière (à 16-18 ans) est <strong>la seule prévention efficace</strong>. Les négligences à 20 ans se paient à 50 ans.</p>
+    <p>Le port d'EPI dès le début de la carrière (à 16-18 ans) est <strong>la seule prévention efficace</strong>. Les négligences à 20 ans se paient à 50 ans (et jusqu'à la fin de la vie).</p>
   </div>
 </div>
 
 <div class="exo">
-  <h2>Question 4 <span class="badge-yellow">COM</span></h2>
+  <h2>Question 5 <span class="badge-blue">VAL</span></h2>
+  <p>Comparer économiquement : « pas d'EPI » sur 30 ans de carrière vs « bouchons sur mesure tous les 3 ans ».</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Option A — Bouchons sur mesure (3 ans, 150 €) :</strong></p>
+    <p>30 ans / 3 = 10 paires × 150 € = <strong>1 500 €</strong> pour toute la carrière.</p>
+    <p><strong>Option B — Pas d'EPI :</strong></p>
+    <ul>
+      <li>Apparition perte auditive à 50 ans : appareils auditifs à vie.</li>
+      <li>Première paire d'appareils : 2 500 €. Renouvellement tous les 5-7 ans pendant 25 ans (50 → 75 ans) : 4 paires × 2 500 € = 10 000 €.</li>
+      <li>Indemnité maladie professionnelle CPAM en cas de surdité reconnue : versement éventuel 200-500 €/mois (tableau MP 42).</li>
+      <li>Coût social : isolement, dépression possible (15 % des malentendants).</li>
+      <li>Reclassement professionnel possible si perte sévère avant 60 ans.</li>
+    </ul>
+    <p>Bilan : <strong>1 500 € (avec EPI) vs 10 000-50 000 € + qualité de vie (sans EPI)</strong>.</p>
+    <p>L'EPI est l'investissement le plus rentable de toute la carrière.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-yellow">COM</span></h2>
   <p>Rédiger en 5 lignes la conclusion de l'exposé de Maël pour ses camarades.</p>
-  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li></li></ul>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir un exemple</button>
   <div class="corr">
-    <p><em>Notre métier de menuisier-agenceur expose à des niveaux sonores importants : toupie, scie, dégau, cloueuse — 90 à 110 dB en moyenne. Selon le Code du travail, EPI obligatoire dès 90 dB. Sans protection, l'oreille s'abîme <strong>définitivement</strong> : une fois les cellules ciliées détruites, c'est pour la vie (acouphènes, surdité progressive, difficulté à comprendre en réunion). Pas de retour en arrière, pas de médicament miracle.</em></p>
-    <p><em>La solution : port systématique de bouchons sur mesure (150 € pour 3 ans, soit 0,15 €/jour) ou casque actif électronique. Atténuation de 25-30 dB qui ramène les niveaux dangereux à des niveaux sûrs. Investir dans ses oreilles à 18 ans, c'est conserver son audition à 60 ans.</em></p>
-    <p><em>Règle simple : <strong>si je dois élever la voix pour me faire entendre à 1 m, je dois mettre des EPI</strong>.</em></p>
+    <p><em><strong>Audition et menuiserie : protégez-vous dès aujourd'hui</strong></em></p>
+    <p><em>Notre métier de menuisier-agenceur expose à des niveaux sonores importants : toupie, scie, dégau, cloueuse — 90 à 110 dB en moyenne. Selon le Code du travail (R4431-2), <strong>EPI obligatoire dès 87 dB</strong>.</em></p>
+    <p><em>Sans protection, l'oreille s'abîme <strong>définitivement</strong> : une fois les 15 000 cellules ciliées détruites, c'est pour la vie (acouphènes, surdité progressive, difficulté à comprendre en réunion). Pas de retour en arrière, pas de médicament miracle.</em></p>
+    <p><em>La solution : <strong>bouchons sur mesure</strong> (150 € pour 3 ans = 0,15 €/jour) ou <strong>casque actif électronique</strong> (200-400 €). Atténuation 25-35 dB qui ramène les niveaux dangereux à des niveaux sûrs.</em></p>
+    <p><em><strong>Règle simple :</strong> si je dois élever la voix pour me faire entendre à 1 m, je dois mettre des EPI. Investir dans ses oreilles à 18 ans, c'est entendre à 60 ans.</em></p>
   </div>
 </div>
 
-<div class="retenir"><strong>À retenir</strong>
-<ul><li><strong>Atelier menuiserie :</strong> 90 à 110 dB en marche → EPI obligatoires.</li>
-<li><strong>Atteinte auditive irréversible</strong> : les cellules ciliées détruites ne se régénèrent pas.</li>
-<li><strong>Seuils Code du travail :</strong> 80 dB EPI à dispo, 85 dB EPI à utiliser, 90 dB EPI obligatoire.</li>
-<li><strong>Recommandation pro :</strong> bouchons sur mesure (~ 150 €, 3 ans) ou casque actif. Atténuation 25-30 dB.</li>
-<li><strong>Règle d'or :</strong> investir dans ses oreilles à 18 ans, c'est entendre à 60 ans.</li></ul></div>
+<div class="exo" style="background:#fef3c7;border:1px solid #b45309">
+  <h2>🚀 Pour aller plus loin <span class="badge-blue">ANA</span></h2>
+  <p>Pourquoi les écouteurs Bluetooth (AirPods, etc.) sont-ils aussi un risque pour l'audition des jeunes ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>L'OMS estime que <strong>1,1 milliard de jeunes</strong> dans le monde sont exposés à un risque de perte auditive par usage prolongé d'écouteurs.</p>
+    <p>Mécanisme du risque :</p>
+    <ul>
+      <li><strong>Volume élevé :</strong> les écouteurs intra-auriculaires peuvent dépasser 100 dB à pleine puissance (équivalent à une moto).</li>
+      <li><strong>Durée prolongée :</strong> 4-8 h par jour pour beaucoup d'adolescents (musique, jeux, vidéos).</li>
+      <li><strong>Bruits ambiants :</strong> on monte le volume pour couvrir le métro, la rue → cercle vicieux.</li>
+      <li><strong>Cumul avec d'autres expositions :</strong> concert, club, atelier → effet additif.</li>
+    </ul>
+    <p>Recommandations OMS / Apple :</p>
+    <ul>
+      <li><strong>Règle 60/60 :</strong> jamais plus de 60 % du volume max, jamais plus de 60 min consécutives.</li>
+      <li>Utiliser le mode <strong>« Réduction du bruit »</strong> au lieu d'augmenter le volume.</li>
+      <li>iOS et Android ont des <strong>alertes de niveau sonore</strong> (Réglages → Sons → Sécurité auditive). À activer.</li>
+      <li>Un casque actif est paradoxalement <strong>plus protecteur</strong> qu'un écouteur car il atténue le bruit ambiant → on n'a pas besoin de monter le volume.</li>
+    </ul>
+    <p>Mêmes principes que pour l'atelier menuiserie : c'est la <strong>dose totale</strong> (intensité × durée) qui détruit les cellules ciliées.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Atelier menuiserie :</strong> 90 à 110 dB en marche → EPI obligatoires (Code du travail R4431-2).</li>
+    <li><strong>Atteinte auditive irréversible :</strong> les 15 000 cellules ciliées détruites ne se régénèrent pas. Acouphènes, surdité progressive, difficulté à comprendre en réunion.</li>
+    <li><strong>Seuils Code du travail :</strong> 80 dB (alerte), 85 dB EPI à disposition, 87 dB VLE (EPI obligatoire), 90 dB obligation renforcée.</li>
+    <li><strong>Recommandation pro :</strong> bouchons sur mesure (~ 150 €, 3 ans) ou casque actif (200-400 €). Atténuation 25-35 dB.</li>
+    <li><strong>Règle d'or :</strong> investir dans ses oreilles à 18 ans, c'est entendre à 60 ans.</li>
+  </ul>
+</div>
 
 </div>
 <script src="../../../nav.js"></script>

@@ -3,48 +3,117 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ch05 – Activité 4 – La galvanisation à chaud – Term ERA</title>
+<title>Ch05 – Activité 4 – La galvanisation à chaud – PC Term ERA-MA</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <link rel="stylesheet" href="../../../styles.css">
 <link rel="stylesheet" href="../../../print.css" media="print">
-<style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac}</style>
+<style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac;--s:#0ea5e9}</style>
 </head>
 <body>
 <div class="c">
 <a href="../../../pc-term-erama.html" class="nb">← RETOUR SOMMAIRE</a>
+
 <header>
   <h1>Activité 4 – Comprendre la galvanisation à chaud <span style="font-size:.55em;color:#7c3aed;font-weight:600">ÉTUDE DOCUMENTAIRE</span></h1>
-  <p class="sous-titre">Chapitre 5 – Oxydoréduction et corrosion | Term Bac Pro (Grpt 3) | Chimie | ⏱ 30 min</p>
-  <p class="maj">Dernière mise à jour : 2 mai 2026, 18:42</p>
+  <p class="sous-titre">Chapitre 5 – Oxydoréduction et corrosion | Terminale Bac Pro ERA-MA | Physique-Chimie | ⏱ 50 min</p>
+  <p class="maj">Dernière mise à jour : 4 mai 2026, 13:30</p>
 </header>
-<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer</button>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
 
-<div class="objectifs"><strong>Objectifs :</strong>
-<ul><li>Comprendre le procédé industriel de galvanisation à chaud</li>
-<li>Expliquer le double mécanisme de protection (barrière + sacrificielle)</li>
-<li>Identifier les pièces métalliques galvanisées dans l'agencement</li></ul></div>
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Comprendre le procédé industriel de galvanisation à chaud</li>
+    <li>Expliquer le double mécanisme de protection (barrière + sacrificielle)</li>
+    <li>Identifier les pièces métalliques galvanisées dans l'agencement</li>
+    <li>Évaluer la durée de vie selon l'environnement</li>
+  </ul>
+</div>
 
 <div class="situation">
   <h2>Situation – pourquoi tout est galvanisé en construction</h2>
   <p><em>Sur un chantier de showroom, Sara, agenceuse, voit son fournisseur livrer poteaux, ferrures, fixations, gouttières — tout est « galva ». Elle se demande pourquoi cette technique est si répandue.</em></p>
 
-  <h3>Document 1 — Le procédé industriel</h3>
+  <h3>Document 1 — Le procédé industriel en 4 étapes</h3>
   <ol>
-    <li><strong>Décapage :</strong> les pièces sont plongées dans des bains d'acide (HCl) pour enlever rouille et calamine.</li>
-    <li><strong>Fluxage :</strong> bain de chlorures de zinc et d'ammonium pour préparer la surface.</li>
+    <li><strong>Décapage :</strong> les pièces sont plongées dans des bains d'acide chlorhydrique (HCl) pour enlever rouille et calamine.</li>
+    <li><strong>Fluxage :</strong> bain de chlorures de zinc et d'ammonium pour préparer la surface (enlève traces d'oxyde).</li>
     <li><strong>Galvanisation :</strong> immersion dans un bain de zinc fondu à <strong>450 °C</strong> pendant 5 à 10 minutes.</li>
-    <li><strong>Refroidissement :</strong> couche de zinc déposée d'épaisseur typique 70-100 µm.</li>
+    <li><strong>Refroidissement :</strong> couche de zinc déposée d'épaisseur typique <strong>70-100 µm</strong>.</li>
   </ol>
 
-  <h3>Document 2 — Le double mécanisme de protection</h3>
+  <h3>Document 2 — Schéma du procédé</h3>
+  <div class="svg-wrap" style="margin:14px 0">
+    <svg width="100%" viewBox="0 0 540 220" style="max-width:540px;display:block;margin:0 auto" role="img" aria-label="Schéma du procédé de galvanisation : 4 bains successifs (décapage HCl, fluxage, zinc fondu 450°C, refroidissement). Pièce métallique passant de gauche à droite avec une couche de zinc en sortie.">
+      <defs>
+        <style>
+          .b{stroke:#1a202c;stroke-width:1.5;fill:none}
+          .lbl{font:11px sans-serif;fill:#1a202c;text-anchor:middle}
+          .lblA{font:600 12px sans-serif;fill:#1a202c;text-anchor:middle}
+          .ti{font:700 13px sans-serif;text-anchor:middle;fill:#2da44e}
+        </style>
+      </defs>
+      <text class="ti" x="270" y="22">Procédé de galvanisation à chaud (4 étapes)</text>
+
+      <!-- 4 cuves -->
+      <!-- 1. Décapage HCl -->
+      <rect class="b" x="40" y="80" width="100" height="80" fill="#fee2e2"/>
+      <text x="90" y="60" class="lblA">1. Décapage</text>
+      <text x="90" y="120" class="lbl">HCl</text>
+      <text x="90" y="135" class="lbl">enlève rouille</text>
+
+      <!-- 2. Fluxage -->
+      <rect class="b" x="160" y="80" width="100" height="80" fill="#dbeafe"/>
+      <text x="210" y="60" class="lblA">2. Fluxage</text>
+      <text x="210" y="120" class="lbl">ZnCl₂ + NH₄Cl</text>
+      <text x="210" y="135" class="lbl">prépare surface</text>
+
+      <!-- 3. Bain de zinc -->
+      <rect class="b" x="280" y="80" width="100" height="80" fill="#fbbf24"/>
+      <text x="330" y="60" class="lblA">3. Galvanisation</text>
+      <text x="330" y="120" class="lblA" font-weight="bold">Zn fondu</text>
+      <text x="330" y="135" class="lbl">450 °C, 5-10 min</text>
+
+      <!-- 4. Refroidissement -->
+      <rect class="b" x="400" y="80" width="100" height="80" fill="#cbd5e1"/>
+      <text x="450" y="60" class="lblA">4. Refroidissement</text>
+      <text x="450" y="120" class="lbl">couche</text>
+      <text x="450" y="135" class="lbl">70-100 µm</text>
+
+      <!-- Pièce qui se déplace -->
+      <rect x="60" y="100" width="20" height="20" fill="#94a3b8" stroke="#1a202c"/>
+      <text x="90" y="200" class="lbl">acier brut</text>
+      <text x="90" y="180" class="lbl">→</text>
+
+      <rect x="180" y="100" width="20" height="20" fill="#475569" stroke="#1a202c"/>
+      <text x="210" y="180" class="lbl">→</text>
+
+      <rect x="300" y="100" width="20" height="20" fill="#475569" stroke="#fbbf24" stroke-width="2"/>
+      <text x="330" y="180" class="lbl">→</text>
+
+      <rect x="420" y="100" width="20" height="20" fill="#475569" stroke="#cbd5e1" stroke-width="3"/>
+      <text x="450" y="200" class="lbl" font-weight="bold">galva ✓</text>
+
+      <!-- Flèche progression -->
+      <line x1="20" y1="195" x2="510" y2="195" stroke="#0969da" stroke-width="1.5" marker-end="url(#arr)"/>
+
+      <defs>
+        <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L9,3 z" fill="#0969da"/>
+        </marker>
+      </defs>
+    </svg>
+  </div>
+
+  <h3>Document 3 — Le double mécanisme de protection</h3>
   <ol>
     <li><strong>Protection passive (barrière) :</strong> la couche de zinc isole l'acier de l'eau et de l'air. Tant que le zinc est intact, la rouille ne peut pas démarrer.</li>
     <li><strong>Protection active (anode sacrificielle) :</strong> en cas de rayure ou choc qui expose l'acier, le zinc s'oxyde <strong>à la place</strong> de l'acier (Zn²⁺/Zn plus réducteur que Fe²⁺/Fe). L'acier est ainsi protégé même si la couche est légèrement endommagée.</li>
   </ol>
-  <p>Demi-équations : Zn → Zn²⁺ + 2e⁻ (anode) ; ½ O₂ + H₂O + 2e⁻ → 2 OH⁻ (cathode).</p>
+  <p>Demi-équations : Zn → Zn²⁺ + 2 e⁻ (anode) ; ½ O₂ + H₂O + 2 e⁻ → 2 OH⁻ (cathode).</p>
   <p>L'oxyde de zinc formé (ZnO, blanc) est <strong>adhérent et étanche</strong> — il forme une couche protectrice supplémentaire (passivation).</p>
 
-  <h3>Document 3 — Durée de vie</h3>
+  <h3>Document 4 — Durée de vie selon l'environnement</h3>
   <table>
     <thead><tr><th>Environnement</th><th>Durée de vie galvanisation 80 µm</th></tr></thead>
     <tbody>
@@ -55,6 +124,8 @@
       <tr><td>Bord de mer</td><td>10-15 ans</td></tr>
     </tbody>
   </table>
+
+  <p style="font-size:.9em;color:#475569"><em>📚 Cette activité réinvestit les notions du cours §4 (anode sacrificielle) et §5 (techniques de protection).</em></p>
 </div>
 
 <div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
@@ -64,10 +135,15 @@
 <div class="exo">
   <h2>Question 1 <span class="badge-green">APP</span></h2>
   <p>Décrire les 4 étapes du procédé de galvanisation à chaud.</p>
-  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p>(1) Décapage acide pour enlever rouille/calamine ; (2) Fluxage pour préparer la surface ; (3) Bain de zinc fondu à 450 °C, 5-10 min ; (4) Refroidissement, couche de zinc 70-100 µm.</p>
+    <ol>
+      <li><strong>Décapage</strong> dans HCl pour enlever rouille et calamine.</li>
+      <li><strong>Fluxage</strong> dans ZnCl₂ + NH₄Cl pour préparer la surface.</li>
+      <li><strong>Bain de zinc fondu</strong> à 450 °C, 5-10 min.</li>
+      <li><strong>Refroidissement</strong>, couche de zinc 70-100 µm.</li>
+    </ol>
   </div>
 </div>
 
@@ -78,15 +154,32 @@
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <ol>
-      <li><strong>Barrière physique :</strong> la couche Zn isole l'acier de l'air et de l'eau.</li>
-      <li><strong>Anode sacrificielle :</strong> en cas de rayure, le zinc s'oxyde à la place du fer (couple Zn²⁺/Zn plus réducteur que Fe²⁺/Fe). L'acier reste protégé même avec une couche imparfaite.</li>
+      <li><strong>Barrière physique :</strong> la couche Zn isole l'acier de l'air et de l'eau (protection passive).</li>
+      <li><strong>Anode sacrificielle :</strong> en cas de rayure, le zinc s'oxyde à la place du fer (couple Zn²⁺/Zn plus réducteur que Fe²⁺/Fe). L'acier reste protégé même avec une couche imparfaite (protection active).</li>
     </ol>
     <p>C'est cette double protection qui rend la galvanisation très <strong>tolérante aux défauts</strong> (contrairement à une simple peinture qui rouille dès la première rayure).</p>
   </div>
 </div>
 
 <div class="exo">
-  <h2>Question 3 <span class="badge-blue">VAL</span></h2>
+  <h2>Question 3 <span class="badge-blue">APP</span></h2>
+  <p>Pourquoi le zinc s'oxyde-t-il à la place du fer ? (Notion de potentiel d'oxydoréduction)</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Tableau des potentiels standard :</p>
+    <ul>
+      <li>Zn²⁺ + 2 e⁻ → Zn : E° = <strong>−0,76 V</strong></li>
+      <li>Fe²⁺ + 2 e⁻ → Fe : E° = <strong>−0,44 V</strong></li>
+    </ul>
+    <p>Le zinc a un potentiel <strong>plus négatif</strong> que le fer → il est <strong>plus réducteur</strong>, donc il « préfère » s'oxyder.</p>
+    <p>C'est le principe général des <strong>anodes sacrificielles</strong> : on couple un métal plus réducteur (Zn, Mg, Al) à un métal à protéger (Fe, Cu). Le plus réducteur s'oxyde en premier.</p>
+    <p>Application étendue : protection des coques de bateaux (anode Zn), des cuves enterrées, des pipelines.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">VAL</span></h2>
   <p>Sara doit poser des poteaux galvanisés dans 3 contextes : intérieur magasin, terrasse extérieure (urbain), abri de jardin en bord de mer. Quelle durée de vie attendre dans chaque cas ?</p>
   <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
@@ -94,26 +187,121 @@
     <ul>
       <li>Intérieur magasin : <strong>&gt; 100 ans</strong> — la galvanisation est éternelle dans ce contexte.</li>
       <li>Terrasse urbaine : <strong>30-40 ans</strong> — toujours très long, mais finira par disparaître en surface (passage par couche de ZnO blanche).</li>
-      <li>Bord de mer : <strong>10-15 ans</strong> — l'air salin attaque le zinc plus vite. Soit on accepte (dans 15 ans on ne sera plus là), soit on ajoute une peinture par-dessus le galva pour doubler la durée.</li>
+      <li>Bord de mer : <strong>10-15 ans</strong> — l'air salin attaque le zinc plus vite. Soit on accepte (dans 15 ans on ne sera plus là), soit on ajoute une peinture par-dessus le galva pour doubler la durée (« duplex »).</li>
     </ul>
   </div>
 </div>
 
 <div class="exo">
-  <h2>Question 4 <span class="badge-yellow">COM</span></h2>
-  <p>Rédiger en 4 lignes une explication simple à un client qui demande « pourquoi tout est galva ? »</p>
-  <ul class="lignes-reponse"><li></li><li></li><li></li><li</li><li></li></ul>
-  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <h2>Question 5 <span class="badge-blue">ANA</span></h2>
+  <p>Pourquoi l'air marin attaque-t-il plus vite le zinc ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p><em>« Galva » = galvanisé à chaud. C'est une fine couche de zinc (~ 80 µm) déposée sur l'acier en l'immergeant dans du zinc fondu à 450 °C. Le zinc protège de 2 façons : (1) il forme une barrière physique entre l'acier et l'humidité, et (2) il « se sacrifie » en s'oxydant à la place de l'acier en cas de rayure. Résultat : la durée de vie passe de quelques années (acier nu) à 30-100 ans selon l'environnement, sans entretien. C'est peu cher (~ 1,50 €/kg de pièce traitée), efficace, recyclable. C'est pourquoi 80 % des pièces métalliques de construction sont galvanisées.</em></p>
+    <p>L'air marin contient :</p>
+    <ul>
+      <li><strong>Chlorures (Cl⁻)</strong> issus du sel marin (NaCl) en suspension.</li>
+      <li><strong>Humidité élevée</strong> (90-100 %).</li>
+    </ul>
+    <p>Les ions chlorure forment du chlorure de zinc (ZnCl₂) <strong>soluble dans l'eau</strong> (contrairement à ZnO qui est étanche). La couche protectrice est donc « lavée » par chaque pluie/embrun.</p>
+    <p>Ce qui devrait durer 100 ans en intérieur ne dure que 10-15 ans au bord de mer.</p>
+    <p>Solutions : galvanisation à plus forte épaisseur (200 µm), peinture en plus (duplex), ou utilisation d'inox.</p>
   </div>
 </div>
 
-<div class="retenir"><strong>À retenir</strong>
-<ul><li><strong>Galvanisation à chaud :</strong> immersion dans du zinc fondu à 450 °C, dépôt 70-100 µm.</li>
-<li><strong>Double protection :</strong> (1) barrière physique, (2) anode sacrificielle (Zn s'oxyde avant Fe).</li>
-<li><strong>Durée de vie :</strong> 100 ans intérieur, 30-40 ans urbain extérieur, 10-15 ans bord de mer.</li>
-<li><strong>Pourquoi universelle :</strong> peu chère, efficace, tolérante aux rayures, recyclable, sans entretien.</li></ul></div>
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">VAL</span></h2>
+  <p>Citer 5 pièces galvanisées que Sara peut voir sur ses chantiers d'agencement.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ul>
+      <li><strong>Visserie</strong> (vis, écrous, rondelles)</li>
+      <li><strong>Ferrures</strong> (équerres, sabots, fixations bois-béton)</li>
+      <li><strong>Profilés acier</strong> (poteaux, IPN, IPE)</li>
+      <li><strong>Gouttières et descentes</strong></li>
+      <li><strong>Volets roulants</strong> (lames, coffres)</li>
+      <li><strong>Garde-corps</strong> de balcons et terrasses</li>
+      <li><strong>Bardages métalliques</strong></li>
+      <li><strong>Treillis soudés</strong> de béton armé</li>
+    </ul>
+    <p>En général, <strong>80 % des pièces métalliques visibles ou exposées</strong> en construction sont galvanisées.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-blue">ANA</span></h2>
+  <p>La galvanisation est-elle écologique ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Bilan écologique :</p>
+    <p><strong>Avantages :</strong></p>
+    <ul>
+      <li>Énergie nécessaire : ~ 1 kWh/kg (faible vs aluminium 14 kWh/kg).</li>
+      <li>Le zinc est <strong>recyclable à 100 %</strong> (refondu en fin de vie).</li>
+      <li>Allonge la durée de vie de l'acier × 5 à 10 → moins de matériaux gaspillés.</li>
+    </ul>
+    <p><strong>Inconvénients :</strong></p>
+    <ul>
+      <li>Le HCl du décapage doit être neutralisé (déchet industriel).</li>
+      <li>Émissions atmosphériques en bain (filtres efficaces dans les usines modernes).</li>
+      <li>Le zinc lui-même est extrait de mines (impact local).</li>
+    </ul>
+    <p>Bilan global : <strong>positif</strong> car la durée de vie multipliée compense largement l'impact de fabrication.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger en 5 lignes une explication simple à un client qui demande « pourquoi tout est galva ? »</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em><strong>Pourquoi « galva » partout ?</strong></em></p>
+    <p><em>« Galva » = galvanisé à chaud. C'est une fine couche de zinc (~ 80 µm) déposée sur l'acier en l'immergeant dans du zinc fondu à 450 °C.</em></p>
+    <p><em>Le zinc protège de 2 façons :</em></p>
+    <ul><em>
+      <li>Il forme une <strong>barrière physique</strong> entre l'acier et l'humidité.</li>
+      <li>Il « se sacrifie » en s'oxydant à la place de l'acier en cas de rayure.</li>
+    </em></ul>
+    <p><em>Résultat : la durée de vie passe de quelques années (acier nu) à 30-100 ans selon l'environnement, sans entretien. C'est peu cher (~ 1,50 €/kg de pièce traitée), efficace, recyclable. C'est pourquoi 80 % des pièces métalliques de construction sont galvanisées.</em></p>
+  </div>
+</div>
+
+<div class="exo" style="background:#fef3c7;border:1px solid #b45309">
+  <h2>🚀 Pour aller plus loin <span class="badge-blue">ANA</span></h2>
+  <p>L'inox est une autre solution antirouille. Comment fonctionne-t-il, et quand préférer l'inox à la galvanisation ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>L'inox (acier inoxydable) contient au moins <strong>10,5 % de chrome</strong> (Cr). Au contact de l'air, le chrome forme une couche d'oxyde Cr₂O₃ ultra-fine (1-3 nm) mais très adhérente et <strong>auto-régénérante</strong> en cas de rayure.</p>
+    <p>L'inox 304 (18 % Cr, 8 % Ni) est le plus courant. L'inox 316L (avec molybdène) résiste à l'eau de mer.</p>
+    <p>Inox vs galvanisation :</p>
+    <table>
+      <thead><tr><th></th><th>Galvanisé</th><th>Inox 304</th></tr></thead>
+      <tbody>
+        <tr><td>Prix</td><td>Bas (~ 1,5 €/kg)</td><td>Élevé (~ 6 €/kg)</td></tr>
+        <tr><td>Durée air sec</td><td>100 ans</td><td>illimitée</td></tr>
+        <tr><td>Durée bord mer</td><td>10-15 ans</td><td>30+ ans</td></tr>
+        <tr><td>Réparable</td><td>Oui (ré-galvanisation)</td><td>Non (pas réparable)</td></tr>
+      </tbody>
+    </table>
+    <p><strong>Quand choisir l'inox :</strong> bord de mer, environnement chimique, applications visibles haut de gamme (cuisine, design), pièces tournantes (frottement).</p>
+    <p><strong>Quand choisir la galvanisation :</strong> tout le reste (90 % des cas). Plus économique, suffisant.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Galvanisation à chaud :</strong> immersion dans du zinc fondu à 450 °C, dépôt 70-100 µm.</li>
+    <li><strong>Double protection :</strong> (1) barrière physique, (2) anode sacrificielle (Zn s'oxyde avant Fe).</li>
+    <li><strong>Durée de vie :</strong> 100 ans intérieur, 30-40 ans urbain extérieur, 10-15 ans bord de mer.</li>
+    <li><strong>Pourquoi universelle :</strong> peu chère, efficace, tolérante aux rayures, recyclable, sans entretien.</li>
+    <li><strong>Alternative haut de gamme :</strong> inox (couche Cr₂O₃ auto-régénérante).</li>
+  </ul>
+</div>
 
 </div>
 <script src="../../../nav.js"></script>
