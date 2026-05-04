@@ -1,62 +1,248 @@
 <!DOCTYPE html>
-<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ch03 – Activité 3 – Population de poissons – Term Bac Pro</title>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch03 – Activité 3 – Population de poissons (modèle logistique) – Term Bac Pro</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<link rel="stylesheet" href="../../../styles.css"><link rel="stylesheet" href="../../../print.css" media="print">
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}</style>
-</head><body><div class="c"><a href="../../../maths-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
-<header><h1>Activité 3 – Population de poissons d'un étang <span style="font-size:.55em;color:#7c3aed;font-weight:600">ÉTUDE DE CAS</span></h1>
-<p class="sous-titre">Chapitre 3 – Suites numériques | Terminale Bac Pro | ⏱ 30 min</p>
-<p class="maj">Dernière mise à jour : 3 mai 2026, 09:00</p></header>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
 
-<div class="objectifs"><strong>Objectifs :</strong><ul>
-<li>Étudier une suite récurrente issue d'un modèle biologique</li>
-<li>Identifier une limite et son interprétation</li>
-<li>Comprendre l'effet d'une pêche annuelle sur l'équilibre</li></ul></div>
+<header>
+  <h1>Activité 3 – Population de poissons d'un étang : pêche durable <span style="font-size:.55em;color:#7c3aed;font-weight:600">ÉTUDE DE CAS</span></h1>
+  <p class="sous-titre">Chapitre 3 – Suites numériques | Terminale Bac Pro | Mathématiques | ⏱ 50 min</p>
+  <p class="maj">Dernière mise à jour : 4 mai 2026, 11:30</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
 
-<div class="situation"><h2>Situation – gestion durable d'un étang</h2>
-<p><em>Sami, gestionnaire d'un étang de pêche, modélise la population de carpes. Sans intervention, elle augmente de 10 % par an grâce à la reproduction, mais l'étang ne peut pas dépasser 5 000 individus (saturation des ressources).</em></p>
-<p>Modèle : \(P_{n+1} = P_n + 0{,}10 P_n (1 - P_n / 5000)\) (modèle logistique discret)</p>
-<p>L'étang contient actuellement P₀ = 800 carpes. Sami pêche 200 carpes par an (vendues aux pêcheurs).</p>
-<p>Modèle avec pêche : \(P_{n+1} = P_n + 0{,}10 P_n (1 - P_n / 5000) - 200\)</p></div>
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Étudier une suite récurrente issue d'un modèle biologique (logistique)</li>
+    <li>Identifier une limite et son interprétation écologique</li>
+    <li>Comprendre l'effet d'une pêche annuelle sur l'équilibre</li>
+    <li>Définir la notion de gestion durable</li>
+  </ul>
+</div>
+
+<div class="situation">
+  <h2>Situation – gestion durable d'un étang de pêche</h2>
+  <p><em>Sami, gestionnaire d'un étang de pêche associatif, modélise la population de carpes pour planifier sa pêche annuelle. Sans intervention, la population augmente de 10 % par an grâce à la reproduction, mais l'étang ne peut pas dépasser 5 000 individus (saturation des ressources : nourriture, oxygène, espace).</em></p>
+
+  <h3>Document — modèle logistique discret</h3>
+  <div style="background:#dbeafe;padding:10px 14px;border-radius:6px;border-left:3px solid #1d4ed8;margin:14px 0">
+    <p>Sans pêche : <strong>P_(n+1) = P_n + 0,10 × P_n × (1 − P_n / 5 000)</strong></p>
+    <p>Avec pêche : <strong>P_(n+1) = P_n + 0,10 × P_n × (1 − P_n / 5 000) − Q</strong> (Q = pêche annuelle)</p>
+    <p>P_n = nombre de carpes en année n. Données : P₀ = 800. Pêche actuelle : Q = 200/an.</p>
+  </div>
+
+  <h3>Document — graphique des 2 scénarios</h3>
+  <div class="svg-wrap" style="margin:14px 0">
+    <svg width="100%" viewBox="0 0 540 280" style="max-width:540px;display:block;margin:0 auto" role="img" aria-label="Graphique de la population sur 20 ans : sans pêche (courbe sigmoïde montant à 5000) et avec pêche 200/an (courbe descendant à 0).">
+      <defs>
+        <style>
+          .ax{stroke:#1a202c;stroke-width:1.5}
+          .gd{stroke:#cbd5e1;stroke-width:.6}
+          .lbl{font:11px sans-serif;fill:#1a202c}
+          .lblA{font:600 12px sans-serif;fill:#1a202c}
+          .ti{font:700 13px sans-serif;text-anchor:middle;fill:#0969da}
+        </style>
+      </defs>
+      <text class="ti" x="270" y="22">Évolution de la population de carpes</text>
+
+      <g class="gd">
+        <line x1="60" y1="50" x2="500" y2="50"/>
+        <line x1="60" y1="98" x2="500" y2="98"/>
+        <line x1="60" y1="145" x2="500" y2="145"/>
+        <line x1="60" y1="193" x2="500" y2="193"/>
+        <line x1="60" y1="240" x2="500" y2="240"/>
+      </g>
+      <line class="ax" x1="60" y1="240" x2="510" y2="240"/>
+      <line class="ax" x1="60" y1="40" x2="60" y2="240"/>
+
+      <g class="lbl" text-anchor="end">
+        <text x="55" y="244">0</text>
+        <text x="55" y="197">1 250</text>
+        <text x="55" y="149">2 500</text>
+        <text x="55" y="102">3 750</text>
+        <text x="55" y="54">5 000</text>
+      </g>
+      <text class="lblA" x="20" y="145" transform="rotate(-90 20 145)" text-anchor="middle">Population</text>
+
+      <g class="lbl" text-anchor="middle">
+        <text x="60" y="258">0</text>
+        <text x="170" y="258">5</text>
+        <text x="280" y="258">10</text>
+        <text x="390" y="258">15</text>
+        <text x="500" y="258">20</text>
+      </g>
+      <text class="lblA" x="270" y="275" text-anchor="middle">Année</text>
+
+      <!-- Sans pêche : sigmoïde montant à 5000 -->
+      <path d="M 60,209 C 130,180 220,90 350,55 L 500,52" fill="none" stroke="#15803d" stroke-width="2.5"/>
+      <text x="490" y="48" class="lbl" fill="#15803d" font-weight="bold" text-anchor="end">sans pêche</text>
+
+      <!-- Avec pêche 200 : décroissance puis 0 -->
+      <path d="M 60,209 C 100,220 130,235 160,240" fill="none" stroke="#dc2626" stroke-width="2.5"/>
+      <text x="170" y="232" class="lbl" fill="#dc2626" font-weight="bold">extinction</text>
+
+      <!-- Avec pêche 100 (durable) : stabilisation autour de 4000 -->
+      <path d="M 60,209 C 130,180 240,110 360,90 L 500,90" fill="none" stroke="#0969da" stroke-width="2" stroke-dasharray="5 3"/>
+      <text x="495" y="86" class="lbl" fill="#0969da" font-weight="bold" text-anchor="end">pêche 100/an</text>
+
+      <!-- Population initiale -->
+      <circle cx="60" cy="209" r="5" fill="#7c3aed"/>
+      <text x="60" y="225" class="lbl" fill="#7c3aed" font-weight="bold" text-anchor="middle">P₀ = 800</text>
+    </svg>
+  </div>
+
+  <p style="font-size:.9em;color:#475569"><em>📚 Cette activité réinvestit les notions du cours §3 (suite récurrente) et §6 (limite, équilibre, modélisation écologique).</em></p>
+</div>
 
 <div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
-<strong>Problématique :</strong> La gestion de Sami (pêche 200/an) est-elle durable ?</div>
+  <strong>Problématique :</strong> La pêche actuelle (200/an) est-elle durable, et combien de carpes Sami peut-il pêcher au maximum sans épuiser l'étang ?
+</div>
 
-<div class="exo"><h2>Question 1 <span class="badge-yellow">REA</span></h2>
-<p>Calculer P₁, P₂ (sans pêche pour commencer, modèle naturel).</p>
-<ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>P₁ = 800 + 0,10 × 800 × (1 − 800/5000) = 800 + 80 × 0,84 = 800 + 67,2 = <strong>867</strong></p>
-<p>P₂ = 867 + 0,10 × 867 × (1 − 867/5000) = 867 + 86,7 × 0,827 = <strong>939</strong></p>
-<p>La population croît rapidement quand elle est loin de la capacité maximale.</p>
-</div></div>
+<div class="exo">
+  <h2>Question 1 <span class="badge-yellow">REA</span></h2>
+  <p>Sans pêche (modèle naturel), calculer P₁ et P₂.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>P₁ = 800 + 0,10 × 800 × (1 − 800/5000) = 800 + 80 × 0,84 = 800 + 67,2 ≈ <strong>867</strong>.</p>
+    <p>P₂ = 867 + 0,10 × 867 × (1 − 867/5000) = 867 + 86,7 × 0,827 ≈ <strong>939</strong>.</p>
+    <p>La population croît rapidement (+ 67, + 72) car elle est <strong>loin de la capacité maximale</strong> (5 000).</p>
+  </div>
+</div>
 
-<div class="exo"><h2>Question 2 <span class="badge-blue">ANA</span></h2>
-<p>Sans pêche, vers quelle valeur tend P quand n grandit ?</p>
-<ul class="lignes-reponse"><li></li><li></li><li</li><li></li><li></li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>À l'équilibre, P_{n+1} = P_n, donc 0,10 P (1 − P/5000) = 0 → P = 0 ou P = 5 000.</p>
-<p>P₀ = 800 ≠ 0 et &lt; 5 000, donc P tend vers <strong>5 000 (capacité de l'étang)</strong>.</p>
-<p>Cohérent avec l'intuition : sans pêche ni prédateurs, la population sature à la capacité du milieu.</p>
-</div></div>
+<div class="exo">
+  <h2>Question 2 <span class="badge-blue">ANA</span></h2>
+  <p>Sans pêche, vers quelle valeur tend P quand n devient grand ? Justifier.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>À l'équilibre, P_(n+1) = P_n, donc :</p>
+    <p>0,10 × P × (1 − P/5000) = 0</p>
+    <p>D'où P = 0 (extinction) ou P = 5 000 (saturation).</p>
+    <p>Comme P₀ = 800 (≠ 0 et &lt; 5 000), la population <strong>tend vers 5 000</strong> = capacité maximale.</p>
+    <p>Croissance rapide au départ, puis ralentit en approchant de 5 000 (sigmoïde).</p>
+  </div>
+</div>
 
-<div class="exo"><h2>Question 3 <span class="badge-blue">VAL</span></h2>
-<p>Avec pêche de 200/an, calculer P₁ et P₂. Que se passe-t-il à long terme (à tester sur tableur) ?</p>
-<ul class="lignes-reponse"><li></li><li></li><li</li><li></li><li</li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>P₁ = 867 − 200 = <strong>667</strong>. P₂ = 667 + 0,10 × 667 × (1 − 667/5000) − 200 = 725 − 200 = <strong>525</strong>.</p>
-<p>La population baisse ! À long terme, elle s'effondre : P → 0 vers l'année 5-6. <strong>Pêche non durable.</strong></p>
-<p>Pour être durable, la pêche annuelle doit être ≤ <strong>croissance naturelle</strong> au point d'équilibre. Calcul : maximum de 0,10 × P × (1 − P/5000) atteint à P = 2 500 → croissance max = 125 individus/an.</p>
-<p>Conclusion : <strong>Sami devrait pêcher au maximum 125 carpes/an</strong>, pas 200.</p>
-</div></div>
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Avec la pêche de 200/an, calculer P₁ et P₂. Que constate-t-on ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>P₁ = 867 − 200 = <strong>667</strong>.</p>
+    <p>P₂ = 667 + 0,10 × 667 × (1 − 667/5000) − 200 = 667 + 66,7 × 0,867 − 200 ≈ 525.</p>
+    <p>La population <strong>baisse</strong> : 800 → 667 → 525 ! La pêche dépasse la croissance naturelle.</p>
+  </div>
+</div>
 
-<div class="retenir"><strong>À retenir</strong>
-<ul><li><strong>Modèle logistique :</strong> u_{n+1} = u_n + r·u_n·(1 − u_n/K). K = capacité du milieu.</li>
-<li><strong>Pêche/exploitation durable :</strong> ne pas dépasser la croissance naturelle au point d'équilibre.</li>
-<li><strong>Maximum durable :</strong> ~ 1/4 de la croissance brute du milieu (atteint à P = K/2).</li></ul></div>
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">VAL</span></h2>
+  <p>En itérant sur tableur, à quel rythme la population décroît-elle ? Vers quelle valeur tend-elle ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>En itérant : P₃ ≈ 350, P₄ ≈ 175, P₅ &lt; 0.</p>
+    <p>La population <strong>s'effondre</strong> en 5-6 ans. <strong>Extinction</strong>.</p>
+    <p>La pêche actuelle (200/an) <strong>n'est pas durable</strong>. Sami doit changer sa pratique sinon il perdra l'étang.</p>
+  </div>
+</div>
 
-</div><script src="../../../nav.js"></script></body></html>
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">ANA</span></h2>
+  <p>Calculer la croissance naturelle annuelle de la population à différents niveaux : P = 1 000, 2 500, 4 000.</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Croissance = 0,10 × P × (1 − P/5000) :</p>
+    <ul>
+      <li>P = 1 000 : 0,10 × 1 000 × 0,80 = <strong>80 carpes/an</strong></li>
+      <li>P = 2 500 : 0,10 × 2 500 × 0,50 = <strong>125 carpes/an (maximum)</strong></li>
+      <li>P = 4 000 : 0,10 × 4 000 × 0,20 = <strong>80 carpes/an</strong></li>
+    </ul>
+    <p>La croissance est <strong>maximale à P = K/2 = 2 500</strong> (1/4 de la croissance brute du milieu).</p>
+    <p>C'est la propriété fondamentale du modèle logistique.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">VAL</span></h2>
+  <p>Quelle pêche maximale Q_max Sami peut-il prélever sans épuiser l'étang ?</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Pour une pêche <strong>durable</strong>, il faut Q ≤ croissance naturelle.</p>
+    <p>Le maximum de la croissance est <strong>125 carpes/an</strong> (atteint à P = 2 500).</p>
+    <p>Donc <strong>Q_max = 125 carpes/an</strong>.</p>
+    <p>Sami pêche actuellement 200 → trop. Il doit <strong>baisser à 100-125/an</strong> pour assurer la durabilité.</p>
+    <p>En écologie, c'est le concept de <strong>« rendement maximal soutenable » (MSY = Maximum Sustainable Yield)</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-blue">ANA</span></h2>
+  <p>Avec une pêche de 100/an (durable), vers quelle valeur tend la population à long terme ?</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>À l'équilibre : 0,10 × P × (1 − P/5000) = 100.</p>
+    <p>Soit 0,10 P − P²/50 000 = 100, ou P² − 5 000 P + 5 000 000 = 0.</p>
+    <p>Δ = 25 000 000 − 20 000 000 = 5 000 000.</p>
+    <p>P = (5 000 ± 2 236) / 2 = <strong>3 618</strong> ou 1 382.</p>
+    <p>L'équilibre stable est à 3 618 carpes (l'autre est instable). Tend vers 3 618 si on commence assez haut.</p>
+    <p>Sami peut donc pêcher 100/an et maintenir une population stable d'environ 3 600 carpes. <strong>Pratique durable</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger en 5 lignes une note pour le bureau de l'association : recommandations de gestion de l'étang.</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em><strong>Note — Gestion durable de l'étang associatif</strong></em></p>
+    <p><em>Diagnostic : la pêche actuelle de 200 carpes/an est <strong>non durable</strong>. La modélisation prévoit l'épuisement total de l'étang en 5-6 ans si rien ne change.</em></p>
+    <p><em>Recommandation : limiter la pêche à <strong>100-125 carpes/an maximum</strong>. À ce rythme, la population se stabilisera autour de 3 600 individus, garantissant un étang sain et productif sur le long terme.</em></p>
+    <p><em>Action : informer les membres, mettre en place un compteur des prises, organiser un suivi annuel de la population (échantillonnage). Réviser le règlement intérieur.</em></p>
+  </div>
+</div>
+
+<div class="exo" style="background:#fef3c7;border:1px solid #b45309">
+  <h2>🚀 Pour aller plus loin <span class="badge-blue">ANA</span></h2>
+  <p>Le modèle logistique a été inventé par Verhulst en 1838 pour modéliser la population humaine mondiale. Il prédisait une saturation à ~ 9-10 milliards d'humains. Notre population actuelle est ~ 8 milliards. Le modèle reste-t-il valide ?</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Verhulst a estimé K (capacité de la Terre) à environ 9-10 milliards. À sa mort (1849), la population était ~ 1,2 milliard.</p>
+    <p>Aujourd'hui (2026) : ~ 8 milliards. La courbe ralentit (taux de natalité en baisse mondialement).</p>
+    <p>Les projections ONU prévoient un pic vers 2080 entre 9 et 11 milliards, puis légère diminution.</p>
+    <p><strong>Le modèle de Verhulst, bien qu'imparfait, reste remarquablement prédictif</strong> sur 200 ans !</p>
+    <p>Limites : il ne tient pas compte des révolutions technologiques (agriculture intensive, médecine, énergie) qui peuvent changer K. Mais l'idée d'une <strong>saturation</strong> est validée.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Modèle logistique :</strong> u_(n+1) = u_n + r × u_n × (1 − u_n / K). K = capacité du milieu.</li>
+    <li><strong>Croissance maximale :</strong> à u = K/2 (population à mi-chemin de la saturation).</li>
+    <li><strong>Pêche/exploitation durable :</strong> ne pas dépasser la croissance naturelle au point d'équilibre. Q ≤ r × K / 4.</li>
+    <li><strong>MSY (Maximum Sustainable Yield) :</strong> rendement max d'exploitation sans épuiser la ressource.</li>
+    <li><strong>Application :</strong> pêcheries, forêts, gibier, eau, gestion environnementale.</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

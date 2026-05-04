@@ -1,62 +1,251 @@
 <!DOCTYPE html>
-<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ch03 – Activité 2 – Crédit immobilier (suite récurrente) – Term Bac Pro</title>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch03 – Activité 2 – Modéliser un crédit immobilier (suites) – Term Bac Pro</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<link rel="stylesheet" href="../../../styles.css"><link rel="stylesheet" href="../../../print.css" media="print">
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
 <style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}</style>
-</head><body><div class="c"><a href="../../../maths-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
-<header><h1>Activité 2 – Modéliser un crédit immobilier <span style="font-size:.55em;color:#0891b2;font-weight:600">SITUATION PRO</span></h1>
-<p class="sous-titre">Chapitre 3 – Suites numériques | Terminale Bac Pro | ⏱ 30 min</p>
-<p class="maj">Dernière mise à jour : 3 mai 2026, 09:00</p></header>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-term-iccer.html" class="nb">← RETOUR SOMMAIRE</a>
 
-<div class="objectifs"><strong>Objectifs :</strong><ul>
-<li>Modéliser une situation par une suite récurrente</li>
-<li>Calculer les premiers termes</li>
-<li>Comprendre l'effet d'un taux d'intérêt</li></ul></div>
+<header>
+  <h1>Activité 2 – Modéliser un crédit immobilier par une suite récurrente <span style="font-size:.55em;color:#0891b2;font-weight:600">SITUATION PRO</span></h1>
+  <p class="sous-titre">Chapitre 3 – Suites numériques | Terminale Bac Pro | Mathématiques | ⏱ 50 min</p>
+  <p class="maj">Dernière mise à jour : 4 mai 2026, 11:30</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
 
-<div class="situation"><h2>Situation – emprunt pour acheter sa première maison</h2>
-<p><em>Maxime emprunte <strong>200 000 €</strong> pour acheter une maison, à taux 3,5 % annuel. Il rembourse <strong>10 000 €/an</strong>. Combien d'années pour rembourser ?</em></p>
-<p>Soit \(C_n\) le capital restant dû après n années :</p>
-<ul><li>\(C_0 = 200\,000\)</li>
-<li>\(C_{n+1} = C_n \times 1{,}035 - 10\,000\) (les intérêts s'ajoutent, on retire la mensualité)</li></ul></div>
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Modéliser une situation par une suite récurrente arithmético-géométrique</li>
+    <li>Calculer les premiers termes d'une suite</li>
+    <li>Comprendre l'effet d'un taux d'intérêt sur un capital</li>
+    <li>Comparer plusieurs scénarios de remboursement</li>
+  </ul>
+</div>
+
+<div class="situation">
+  <h2>Situation – Maxime achète sa première maison</h2>
+  <p><em>Maxime, jeune chef d'atelier, emprunte 200 000 € pour acheter sa première maison. Il signe avec sa banque un crédit à taux fixe de 3,5 % annuel et rembourse 10 000 € par an. Combien d'années lui faudra-t-il pour rembourser, et combien d'intérêts paiera-t-il au total ?</em></p>
+
+  <h3>Document — modélisation par suite récurrente</h3>
+  <p>Soit C_n le capital restant dû à la fin de l'année n :</p>
+  <ul>
+    <li>C₀ = 200 000 € (montant initial emprunté)</li>
+    <li>C_(n+1) = C_n × 1,035 − 10 000</li>
+  </ul>
+  <p>Explication : chaque année, le capital augmente de 3,5 % d'intérêts (× 1,035), puis on retire la mensualité annuelle (− 10 000 €).</p>
+
+  <h3>Document — graphique du remboursement année par année</h3>
+  <div class="svg-wrap" style="margin:14px 0">
+    <svg width="100%" viewBox="0 0 540 280" style="max-width:540px;display:block;margin:0 auto" role="img" aria-label="Graphique du capital restant dû en fonction des années. Décroissance lente au début (intérêts élevés), accélérée à la fin. Atteint 0 vers 30 ans.">
+      <defs>
+        <style>
+          .ax{stroke:#1a202c;stroke-width:1.5}
+          .gd{stroke:#cbd5e1;stroke-width:.6}
+          .lbl{font:11px sans-serif;fill:#1a202c}
+          .lblA{font:600 12px sans-serif;fill:#1a202c}
+          .ti{font:700 13px sans-serif;text-anchor:middle;fill:#0969da}
+        </style>
+      </defs>
+      <text class="ti" x="270" y="22">Capital restant dû selon les années</text>
+
+      <g class="gd">
+        <line x1="60" y1="50" x2="500" y2="50"/>
+        <line x1="60" y1="98" x2="500" y2="98"/>
+        <line x1="60" y1="145" x2="500" y2="145"/>
+        <line x1="60" y1="193" x2="500" y2="193"/>
+        <line x1="60" y1="240" x2="500" y2="240"/>
+      </g>
+      <line class="ax" x1="60" y1="240" x2="510" y2="240"/>
+      <line class="ax" x1="60" y1="40" x2="60" y2="240"/>
+
+      <g class="lbl" text-anchor="end">
+        <text x="55" y="244">0</text>
+        <text x="55" y="197">50 k€</text>
+        <text x="55" y="149">100 k€</text>
+        <text x="55" y="102">150 k€</text>
+        <text x="55" y="54">200 k€</text>
+      </g>
+      <text class="lblA" x="20" y="145" transform="rotate(-90 20 145)" text-anchor="middle">Capital restant</text>
+
+      <g class="lbl" text-anchor="middle">
+        <text x="60" y="258">0</text>
+        <text x="148" y="258">5</text>
+        <text x="236" y="258">10</text>
+        <text x="324" y="258">15</text>
+        <text x="412" y="258">20</text>
+        <text x="500" y="258">30</text>
+      </g>
+      <text class="lblA" x="270" y="275" text-anchor="middle">Année</text>
+
+      <!-- Courbe : convexe vers le bas, départ haut, atteint 0 vers 30 ans -->
+      <!-- Points approximatifs : (0, 200) (5, 184) (10, 162) (15, 132) (20, 91) (25, 36) (30, 0) -->
+      <!-- Pixels Y : 200→50, 184→65, 162→85, 132→112, 91→149, 36→200, 0→240 -->
+      <!-- Pixels X : 0→60, 5→148, 10→236, 15→324, 20→412, 25→465, 30→500 -->
+      <path d="M 60,50 Q 200,80 324,112 Q 420,160 500,240" fill="none" stroke="#0969da" stroke-width="2.5"/>
+
+      <!-- Points -->
+      <circle cx="60" cy="50" r="4" fill="#0969da"/>
+      <circle cx="148" cy="60" r="4" fill="#0969da"/>
+      <circle cx="236" cy="83" r="4" fill="#0969da"/>
+      <circle cx="324" cy="115" r="4" fill="#0969da"/>
+      <circle cx="412" cy="156" r="4" fill="#0969da"/>
+      <circle cx="500" cy="240" r="5" fill="#15803d"/>
+
+      <text x="500" y="232" class="lbl" fill="#15803d" font-weight="bold" text-anchor="end">remboursé !</text>
+    </svg>
+  </div>
+
+  <p style="font-size:.9em;color:#475569"><em>📚 Cette activité réinvestit les notions du cours §3 (suites récurrentes) et §5 (modélisation financière).</em></p>
+</div>
 
 <div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
-<strong>Problématique :</strong> Combien d'années Maxime mettra-t-il pour rembourser et combien aura-t-il payé d'intérêts au total ?</div>
+  <strong>Problématique :</strong> En combien d'années Maxime rembourse-t-il son crédit, et combien d'intérêts cela représente-t-il au total ?
+</div>
 
-<div class="exo"><h2>Question 1 <span class="badge-yellow">REA</span></h2>
-<p>Calculer C₁, C₂, C₃ (capitaux restants à fin année 1, 2, 3).</p>
-<ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<ul>
-<li>C₁ = 200 000 × 1,035 − 10 000 = 207 000 − 10 000 = <strong>197 000 €</strong></li>
-<li>C₂ = 197 000 × 1,035 − 10 000 = 203 895 − 10 000 = <strong>193 895 €</strong></li>
-<li>C₃ = 193 895 × 1,035 − 10 000 = 200 681 − 10 000 = <strong>190 681 €</strong></li>
-</ul>
-<p>Le capital baisse lentement : −3 000 € après 1 an, −6 105 € après 2 ans... Les intérêts mangent une grosse partie des 10 000 € versés.</p>
-</div></div>
+<div class="exo">
+  <h2>Question 1 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer C₁, C₂ et C₃ (capitaux restants en fin d'années 1, 2, 3).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ul>
+      <li>C₁ = 200 000 × 1,035 − 10 000 = 207 000 − 10 000 = <strong>197 000 €</strong></li>
+      <li>C₂ = 197 000 × 1,035 − 10 000 = 203 895 − 10 000 = <strong>193 895 €</strong></li>
+      <li>C₃ = 193 895 × 1,035 − 10 000 = 200 681 − 10 000 = <strong>190 681 €</strong></li>
+    </ul>
+    <p>Le capital baisse lentement : 3 000 € la 1ère année, 3 105 € la 2ème, 3 214 € la 3ème.</p>
+    <p>La majorité des 10 000 € versés couvre les <strong>intérêts</strong>, pas le remboursement du capital.</p>
+  </div>
+</div>
 
-<div class="exo"><h2>Question 2 <span class="badge-blue">ANA</span></h2>
-<p>Sans calculer terme à terme, à partir de quelle année C devient nul ? (on peut utiliser une calculatrice avec mode tableur)</p>
-<ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>En itérant la suite avec un tableur, on trouve : C₂₈ ≈ 12 700 €, C₂₉ ≈ 3 145 €, C₃₀ &lt; 0. Donc <strong>environ 30 ans pour rembourser</strong>.</p>
-<p>Total versé : 30 × 10 000 = 300 000 €. <strong>Total des intérêts : 100 000 €</strong> (50 % de la somme empruntée !).</p>
-</div></div>
+<div class="exo">
+  <h2>Question 2 <span class="badge-blue">APP</span></h2>
+  <p>Pour C₁, identifier la part « intérêts » et la part « capital remboursé » dans les 10 000 € versés.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Intérêts année 1 : 200 000 × 0,035 = <strong>7 000 €</strong>.</p>
+    <p>Capital remboursé : 10 000 − 7 000 = <strong>3 000 €</strong>.</p>
+    <p>70 % de la mensualité va aux intérêts, 30 % au remboursement réel ! C'est <strong>typique du début d'un crédit</strong> : les premières années, on paie surtout les intérêts.</p>
+  </div>
+</div>
 
-<div class="exo"><h2>Question 3 <span class="badge-blue">VAL</span></h2>
-<p>Si Maxime double sa mensualité (20 000 €/an), en combien d'années rembourse-t-il et quels intérêts paie-t-il ?</p>
-<ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
-<button class="bc" onclick="toggle(this)">Voir la correction</button>
-<div class="corr">
-<p>Avec 20 000 €/an : la suite \(C_{n+1} = 1{,}035 C_n - 20\,000\) atteint 0 en environ 12 ans. Total versé : 240 000 €. <strong>Intérêts : 40 000 €</strong>.</p>
-<p>Doublé la mensualité divise les intérêts par 2,5. Conclusion : en accélérant les remboursements, on économise massivement.</p>
-</div></div>
+<div class="exo">
+  <h2>Question 3 <span class="badge-blue">ANA</span></h2>
+  <p>En utilisant un tableur ou une calculatrice (mode itératif), trouver l'année où C devient nul. Combien d'années pour rembourser ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>En itérant : C₁₀ ≈ 162 600 ; C₂₀ ≈ 91 200 ; C₂₅ ≈ 39 600 ; C₂₈ ≈ 12 700 ; C₂₉ ≈ 3 145 ; C₃₀ &lt; 0.</p>
+    <p>Donc <strong>environ 30 ans pour rembourser</strong>.</p>
+    <p>(Plus précisément, dernière mensualité un peu plus petite à l'année 30.)</p>
+  </div>
+</div>
 
-<div class="retenir"><strong>À retenir</strong>
-<ul><li><strong>Suite récurrente</strong> de type \(u_{n+1} = a u_n + b\) (« arithmético-géométrique »). Présente partout en finance.</li>
-<li><strong>Crédit :</strong> intérêts énormes sur la durée. Mensualités élevées = intérêts moindres.</li>
-<li><strong>Exemple typique :</strong> 200 k€ à 3,5 % sur 30 ans → coût total ~ 100 k€ d'intérêts.</li></ul></div>
+<div class="exo">
+  <h2>Question 4 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer le total versé par Maxime sur 30 ans, et en déduire le coût total des intérêts.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Total versé : 30 × 10 000 = <strong>300 000 €</strong>.</p>
+    <p>Capital emprunté : 200 000 €.</p>
+    <p>Intérêts payés : 300 000 − 200 000 = <strong>100 000 €</strong>.</p>
+    <p>Soit <strong>50 % du capital emprunté en intérêts</strong> ! Une maison de 200 k€ payée 300 k€ au final.</p>
+  </div>
+</div>
 
-</div><script src="../../../nav.js"></script></body></html>
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">VAL</span></h2>
+  <p>Si Maxime double sa mensualité (20 000 €/an), en combien d'années rembourse-t-il et combien d'intérêts paie-t-il ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Nouvelle suite : C_(n+1) = 1,035 × C_n − 20 000.</p>
+    <p>En itérant : C atteint 0 en environ <strong>12 ans</strong>.</p>
+    <p>Total versé : 12 × 20 000 = 240 000 €. Intérêts : 240 000 − 200 000 = <strong>40 000 €</strong>.</p>
+    <p>Économie : 100 000 − 40 000 = <strong>60 000 €</strong> en doublant la mensualité.</p>
+    <p>Conclusion : <strong>plus on rembourse vite, plus on paie peu d'intérêts</strong>. C'est exponentiel.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">ANA</span></h2>
+  <p>Si le taux d'intérêt monte de 3,5 % à 5 % (taux des années 80-90), combien d'intérêts paierait Maxime sur 30 ans (mensualité 10 000 €) ?</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Suite : C_(n+1) = 1,05 × C_n − 10 000.</p>
+    <p>Calcul (tableur) : Maxime <strong>ne rembourserait jamais</strong> à ce rythme ! Le capital reste autour de 200 000 € (les intérêts annuels = 10 000 € exactement la mensualité).</p>
+    <p>En réalité, à 5 %, il faut au moins 12 000 €/an pour finir un emprunt de 200 k€ en 30 ans. Avec 10 000 €, il faudrait 50 ans ou plus.</p>
+    <p>L'effet du taux est <strong>énorme</strong> : un demi-pourcent de plus peut rallonger énormément la durée.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-blue">VAL</span></h2>
+  <p>Pour acheter une maison plus chère (300 k€), Maxime augmente sa mensualité à 15 000 €/an. Calculer la durée de remboursement et les intérêts (taux 3,5 %).</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Suite : C_(n+1) = 1,035 × C_n − 15 000, avec C₀ = 300 000.</p>
+    <p>En itérant : C atteint 0 en environ <strong>30 ans</strong>.</p>
+    <p>Total versé : 30 × 15 000 = 450 000 €. Intérêts : 150 000 €.</p>
+    <p>Cas comparable au premier (proportions similaires : 1/3 d'intérêts sur le total) car même taux et durée.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger en 5 lignes des conseils pratiques à un jeune qui veut emprunter pour sa 1ère maison.</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em><strong>Premier crédit immobilier — 5 conseils mathématiques</strong></em></p>
+    <ol><em>
+      <li><strong>Comprends que tu paieras ~ 50 % d'intérêts</strong> sur 30 ans (au taux actuel 3,5 %). Une maison à 200 k€ coûte 300 k€ au final.</li>
+      <li><strong>Plus tu rembourses vite, mieux c'est.</strong> Doubler la mensualité divise les intérêts par 2,5.</li>
+      <li><strong>Renégocie ton taux</strong> si les taux baissent (économie possible : 30-50 k€).</li>
+      <li><strong>Effectue des remboursements anticipés</strong> dès que tu as des liquidités.</li>
+      <li><strong>Reste prudent</strong> sur la mensualité (≤ 33 % du salaire net) pour pouvoir absorber les coups durs.</li>
+    </em></ol>
+  </div>
+</div>
+
+<div class="exo" style="background:#fef3c7;border:1px solid #b45309">
+  <h2>🚀 Pour aller plus loin <span class="badge-blue">ANA</span></h2>
+  <p>La suite C_(n+1) = a × C_n + b est dite « arithmético-géométrique ». Sa limite (si elle existe) est b / (1 − a). Pour notre crédit (a = 1,035, b = −10 000) : que vaut cette limite ? Que signifie-t-elle ?</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Limite théorique : L = b / (1 − a) = −10 000 / (1 − 1,035) = −10 000 / (−0,035) = <strong>285 714 €</strong>.</p>
+    <p>Interprétation : si Maxime n'avait emprunté que <strong>285 714 €</strong>, ses 10 000 €/an couvriraient exactement les intérêts → le capital resterait constant et il ne finirait <strong>jamais</strong> de rembourser !</p>
+    <p>Avec 200 000 € (&lt; 285 714), le capital diminue → il finit par rembourser.</p>
+    <p>Avec 300 000 € (&gt; 285 714), le capital croît → il s'enfonce dans la dette.</p>
+    <p>Cette limite est utile pour comprendre quand un crédit est <strong>soutenable</strong>. Règle pratique : mensualité &gt; intérêts annuels du capital initial.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Suite récurrente arithmético-géométrique :</strong> u_(n+1) = a × u_n + b. Présente partout en finance.</li>
+    <li><strong>Crédit immobilier :</strong> intérêts énormes sur 30 ans (~ 50 % du capital).</li>
+    <li><strong>Mensualités élevées</strong> = remboursement plus rapide ET moins d'intérêts.</li>
+    <li><strong>Effet du taux :</strong> un petit % de plus peut rallonger énormément la durée.</li>
+    <li><strong>Limite :</strong> si mensualité = intérêts annuels initiaux → on ne rembourse jamais.</li>
+  </ul>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>
