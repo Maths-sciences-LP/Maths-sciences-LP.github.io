@@ -39,8 +39,8 @@
     <li>Modèle : Makita BL1830B</li>
     <li>Tension nominale : <strong>18 V</strong></li>
     <li>Capacité nominale : <strong>3,0 Ah</strong> (annoncée à neuf)</li>
-    <li>Type : <strong>Li-ion</strong> (10 cellules de 3,7 V × 3 Ah, en 5S2P)</li>
-    <li>Date de fabrication : 2022</li>
+    <li>Type : <strong>Li-ion</strong> — 10 cellules 18650 (3,7 V / 1,5 Ah), assemblées en <strong>5S2P</strong> (5 en série × 2 en parallèle → 18,5 V / 3 Ah)</li>
+    <li>Date de fabrication : 2022 — usage ~ 200 jours/an pendant 4 ans = 800 cycles environ</li>
   </ul>
 
   <h3>Document 2 — Test au wattmètre USB</h3>
@@ -208,24 +208,24 @@
 <div class="exo">
   <h2>Question 6 <span class="badge-blue">VAL</span></h2>
   <p>Pourquoi le « rebatteryage » est-il risqué techniquement ?</p>
-  <ul class="lignes-reponse"><li></li><li></li><li</li><li</li><li</li></ul>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p>Une batterie Li-ion 18 V est composée de 5 cellules en série (× 3,7 V = 18,5 V). Quand on remplace 1 cellule HS par une neuve :</p>
+    <p>La batterie BL1830B contient <strong>10 cellules</strong> (configuration 5S2P). Quand on remplace 1 ou 2 cellules HS par des neuves :</p>
     <ul>
-      <li>Les 4 anciennes cellules (qui ont déjà subi 800 cycles) sont à ~ 56 % de capacité.</li>
-      <li>La neuve est à 100 %.</li>
-      <li>Lors de la charge : les anciennes saturent avant la neuve → BMS coupe → la neuve ne se charge jamais à 100 %.</li>
-      <li>Lors de la décharge : la cellule la plus faible se décharge la première → BMS coupe → la batterie ne donne que la capacité de la plus faible.</li>
+      <li>Les anciennes cellules (qui ont subi ~ 800 cycles) sont à ~ 56 % de capacité.</li>
+      <li>Les neuves sont à 100 %.</li>
+      <li>Lors de la <strong>charge</strong> : les neuves saturent avant les anciennes → BMS (Battery Management System) coupe → les anciennes ne se chargent pas complètement.</li>
+      <li>Lors de la <strong>décharge</strong> : les cellules les plus faibles se déchargent en premier → BMS coupe → la batterie ne donne que la capacité de la cellule la plus faible.</li>
     </ul>
-    <p>Conclusion : <strong>il faut remplacer TOUTES les cellules en même temps</strong>, sinon le gain est minime. Et pour cela, autant acheter une batterie neuve.</p>
+    <p>Conclusion : <strong>il faut remplacer TOUTES les cellules en même temps</strong>, sinon le gain est minime à cause du déséquilibrage. Et pour cela, autant acheter une batterie neuve d'origine (BMS d'usine, équilibrage parfait, garantie).</p>
   </div>
 </div>
 
 <div class="exo">
   <h2>Question 7 <span class="badge-blue">VAL</span></h2>
   <p>Yann doit recycler son ancienne batterie. Pourquoi pas la jeter à la poubelle ?</p>
-  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <p>Une batterie Li-ion contient des matériaux <strong>toxiques et précieux</strong> :</p>
@@ -247,7 +247,7 @@
 <div class="exo">
   <h2>Question 8 <span class="badge-yellow">COM</span></h2>
   <p>Rédiger en 5 lignes un message pour aider d'autres bricoleurs sur un forum.</p>
-  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir un exemple</button>
   <div class="corr">
     <p><em><strong>« Batterie Makita 18V/3Ah HS — diagnostic et solution »</strong></em></p>
@@ -260,7 +260,7 @@
 <div class="exo" style="background:#fef3c7;border:1px solid #b45309">
   <h2>🚀 Pour aller plus loin <span class="badge-blue">ANA</span></h2>
   <p>Pour prolonger la durée de vie d'une batterie Li-ion, citer 3 bonnes pratiques.</p>
-  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <ul>
