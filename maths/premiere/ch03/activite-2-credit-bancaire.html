@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch03 – Activité 2 – Crédit professionnel et suite – 1ère Pro</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
+.bonus{background:#fef3c7;border-left:4px solid #f59e0b;padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-1ere-pro.html" class="nb">← Retour au sommaire</a>
+
+<header>
+  <h1>Activité 2 – Remboursement d'un crédit professionnel <span style="font-size:.55em;color:#0969da;font-weight:600">SITUATION PRO</span></h1>
+  <p class="sous-titre">Chapitre 3 — Suites numériques | 1ère Bac Pro | Mathématiques | ⏱ 30 min</p>
+  <p class="maj">Dernière mise à jour : 5 mai 2026, format manuel scolaire</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
+
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Reconnaître une suite arithmétique</li>
+    <li>Calculer un terme général u_n = u_0 + n × r</li>
+    <li>Calculer la somme des termes d'une suite arithmétique</li>
+    <li>Comparer deux options de financement</li>
+  </ul>
+</div>
+
+<div class="situation">
+  <h2>Situation – emprunt pour acheter une CNC</h2>
+  <p><em>Léa, gérante de <strong>Bois & Précision</strong> à Saint-Étienne, achète une fraiseuse CNC à 36 000 €. Elle souscrit un crédit professionnel sur 5 ans (60 mois) avec remboursements mensuels constants de capital de 600 €/mois. Les intérêts (5 % annuel sur capital restant dû) s'ajoutent.</em></p>
+
+  <h3>Document 1 – Données</h3>
+  <ul>
+    <li>Capital emprunté : 36 000 €.</li>
+    <li>Durée : 60 mois (5 ans).</li>
+    <li>Remboursement capital : 600 €/mois constant.</li>
+    <li>Taux mensuel d'intérêt : 5 % / 12 ≈ 0,4167 % par mois.</li>
+  </ul>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Combien Léa va-t-elle payer au total en intérêts pour son crédit ?
+</div>
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-blue">ANA</span></h2>
+  <p>Notons C_n le capital restant dû après n mois de remboursement (C_0 = 36 000).</p>
+  <p>Donner la relation entre C_(n+1) et C_n.</p>
+  <p>S'agit-il d'une suite arithmétique ou géométrique ?</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Chaque mois, Léa rembourse 600 € de capital. Donc C_(n+1) = C_n − 600.</p>
+    <p>C'est une <strong>suite arithmétique</strong> de raison r = −600 (négative car le capital diminue).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer C_1, C_2, C_5, C_60.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>C_n = 36 000 − 600 × n.</p>
+    <p>C_1 = 35 400 € · C_2 = 34 800 € · C_5 = 33 000 € · C_60 = <strong>0 €</strong> ✔ (tout remboursé).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer les intérêts I_n payés au mois n : I_n = C_(n−1) × 0,004167.</p>
+  <p>Calculer I_1, I_30, I_60.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>I_1 = 36 000 × 0,004167 = <strong>150 €</strong> (intérêts du 1<sup>er</sup> mois).</p>
+    <p>C_29 = 36 000 − 600×29 = 18 600. I_30 = 18 600 × 0,004167 ≈ <strong>77,50 €</strong>.</p>
+    <p>C_59 = 600. I_60 = 600 × 0,004167 ≈ <strong>2,50 €</strong>.</p>
+    <p>Les intérêts diminuent au fil du temps (capital restant dû qui baisse).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-yellow">REA</span></h2>
+  <p>La somme des intérêts payés sur 60 mois est :</p>
+  <p style="text-align:center">\(I_{tot} = 0{,}004167 \times \sum_{n=0}^{59} C_n = 0{,}004167 \times (C_0 + C_1 + \ldots + C_{59})\)</p>
+  <p>La somme C_0 + C_1 + ... + C_59 est la somme des termes d'une suite arithmétique :</p>
+  <p style="text-align:center">\(S = \dfrac{n \times (C_0 + C_{n-1})}{2}\)</p>
+  <p>Calculer S puis I_tot.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>n = 60 termes (de C_0 à C_59). C_59 = 36 000 − 600×59 = 600.</p>
+    <p>S = 60 × (36 000 + 600) / 2 = 60 × 18 300 = 1 098 000 €.</p>
+    <p>I_tot = 0,004167 × 1 098 000 ≈ <strong>4 575 €</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">ANA</span></h2>
+  <p>Léa rembourse au total : capital + intérêts. Calculer le total payé.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Total payé : 36 000 (capital) + 4 575 (intérêts) = <strong>40 575 €</strong>.</p>
+    <p>Le coût du crédit : 4 575 € pour emprunter 36 000 € sur 5 ans (12,7 % du capital).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">ANA</span></h2>
+  <p>Le banquier propose une mensualité constante (capital + intérêts) de 679 € sur 60 mois (au lieu de 600 € capital + intérêts variables).</p>
+  <p>Calculer le total payé sur 60 mois. Comparer.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Total mensualité constante : 60 × 679 = 40 740 €.</p>
+    <p>Soit un coût total de 4 740 € (165 € de plus que la formule à capital constant).</p>
+    <p>L'option mensualité constante coûte légèrement plus cher mais est plus simple à gérer (montant prévisible chaque mois).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-green">VAL</span></h2>
+  <p>Si le taux passe à 4 % au lieu de 5 %, recalculer les intérêts totaux (formule à capital constant).</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Taux mensuel : 4 % / 12 ≈ 0,003333.</p>
+    <p>I_tot = 0,003333 × 1 098 000 ≈ <strong>3 660 €</strong>.</p>
+    <p>Économie par rapport à 5 % : 4 575 − 3 660 = <strong>915 €</strong>. Négocier le taux est important.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-red">COM</span></h2>
+  <p>Léa rédige une note pour son comité financier. 5 lignes max.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p style="background:#fef3c7;border:2px solid #f59e0b;padding:14px;border-radius:6px">
+      <strong>Financement CNC 36 k€ — Bois & Précision</strong><br>
+      • Crédit 60 mois à 5 % annuel, capital constant 600 €/mois.<br>
+      • Capital restant dû : suite arithmétique de raison −600 €.<br>
+      • <strong>Total intérêts : 4 575 €</strong> (12,7 % du capital).<br>
+      • Coût total : 40 575 €. Mensualité constante = +165 € seulement.<br>
+      • Négocier le taux (4 % au lieu de 5 %) économise ≈ 915 €.
+    </p>
+  </div>
+</div>
+
+<div class="bonus">
+  <strong>Pour aller plus loin (bonus)</strong>
+  <p>Si Léa rembourse 800 €/mois au lieu de 600 €/mois, en combien de mois aura-t-elle remboursé tout le capital ? Combien d'intérêts économisera-t-elle ?</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>36 000 / 800 = <strong>45 mois</strong>.</p>
+    <p>Nouveaux intérêts : S = 45 × (36 000 + 800)/2 = 45 × 18 400 = 828 000. I_tot = 0,004167 × 828 000 ≈ 3 450 €.</p>
+    <p>Économie : 4 575 − 3 450 = <strong>1 125 €</strong>. Plus on rembourse vite, moins on paie d'intérêts.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Suite arithmétique</strong> : u_(n+1) = u_n + r (r = raison constante).</li>
+    <li>Terme général : u_n = u_0 + n × r.</li>
+    <li>Somme : S = n × (u_0 + u_(n−1)) / 2.</li>
+    <li>Application : remboursement à capital constant (suite arithmétique du capital restant dû).</li>
+  </ul>
+  <p style="margin-top:10px"><em>📚 Cette activité s'appuie sur §1 (Suites arithmétiques) de la leçon Ch03.</em></p>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

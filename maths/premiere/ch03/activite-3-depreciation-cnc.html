@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch03 – Activité 3 – Dépréciation suite géométrique – 1ère Pro</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
+.bonus{background:#fef3c7;border-left:4px solid #f59e0b;padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-1ere-pro.html" class="nb">← Retour au sommaire</a>
+
+<header>
+  <h1>Activité 3 – Dépréciation d'une fraiseuse CNC <span style="font-size:.55em;color:#0969da;font-weight:600">SITUATION PRO</span></h1>
+  <p class="sous-titre">Chapitre 3 — Suites numériques | 1ère Bac Pro | Mathématiques | ⏱ 30 min</p>
+  <p class="maj">Dernière mise à jour : 5 mai 2026, format manuel scolaire</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
+
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Reconnaître une suite géométrique</li>
+    <li>Calculer u_n = u_0 × q^n</li>
+    <li>Comparer suite arithmétique et géométrique</li>
+    <li>Évaluer une perte de valeur</li>
+  </ul>
+</div>
+
+<div class="situation">
+  <h2>Situation – revente d'une fraiseuse CNC</h2>
+  <p><em>Marc, gérant d'<strong>Atelier 39</strong> à Lons-le-Saunier, a acheté une fraiseuse CNC 36 000 € il y a 5 ans. Il veut la revendre. Sa valeur diminue de 18 % par an.</em></p>
+
+  <h3>Document 1 – Notations</h3>
+  <ul>
+    <li>V_0 = 36 000 € (valeur initiale).</li>
+    <li>V_n = valeur au bout de n années.</li>
+    <li>Chaque année : valeur diminue de 18 % → V_(n+1) = V_n × (1 − 0,18) = V_n × 0,82.</li>
+  </ul>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Quelle est la valeur de revente de la fraiseuse au bout de 5 ans ?
+</div>
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-blue">ANA</span></h2>
+  <p>S'agit-il d'une suite arithmétique ou géométrique ? Quelle est sa raison ?</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Suite <strong>géométrique</strong> de raison q = 0,82 (multiplication par un coefficient constant).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer V_1, V_2, V_5.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>V_n = 36 000 × 0,82^n.</p>
+    <p>V_1 = 29 520 €. V_2 = 24 206 €. V_5 = 36 000 × 0,82⁵ ≈ 36 000 × 0,3707 ≈ <strong>13 345 €</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-blue">ANA</span></h2>
+  <p>La perte totale au bout de 5 ans est-elle de 5 × 18 % = 90 % ? Justifier.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Non. Chaque année la perte est de 18 % de la valeur restante (et pas de la valeur initiale). Cumulée : 1 − 0,82⁵ = 1 − 0,3707 ≈ 63 % de perte.</p>
+    <p>L'erreur consiste à confondre suite arithmétique (somme des taux) et géométrique (produit des taux).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-yellow">REA</span></h2>
+  <p>À partir de quelle année la fraiseuse vaudra-t-elle moins de 5 000 € ?</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>On résout 36 000 × 0,82^n &lt; 5 000 → 0,82^n &lt; 0,1389 → n × ln(0,82) &lt; ln(0,1389)</p>
+    <p>n &gt; ln(0,1389)/ln(0,82) ≈ 9,93 → à partir de l'<strong>année 10</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">ANA</span></h2>
+  <p>Comparer avec un amortissement comptable linéaire sur 7 ans (6 000 €/an) et un seuil 5 000 € atteint à n = 5,2 ans. Quelle dépréciation est plus réaliste ?</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>L'amortissement comptable est <strong>linéaire</strong> (perte égale chaque année). En réalité, les machines perdent plus de valeur les premières années (suite géométrique). Le marché de l'occasion suit plutôt le modèle géométrique.</p>
+    <p>Pour la comptabilité de l'entreprise : amortissement linéaire (règle fiscale). Pour l'estimation de revente : modèle géométrique.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-green">VAL</span></h2>
+  <p>Marc a-t-il intérêt à revendre maintenant (n = 5) ou attendre 2 ans ? Calculer V_7.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>V_7 = 36 000 × 0,82⁷ ≈ <strong>8 970 €</strong>. Soit 4 375 € de moins qu'aujourd'hui (V_5 = 13 345 €).</p>
+    <p>Si Marc veut maximiser sa revente, il a intérêt à vendre <strong>maintenant</strong>. Sauf si la machine continue à générer des revenus en production (auquel cas il faut comparer revenus production + valeur résiduelle dans 2 ans vs valeur de revente actuelle + non-utilisation de la machine).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-red">COM</span></h2>
+  <p>Marc rédige une note pour le comité de pilotage. 5 lignes max.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p style="background:#fef3c7;border:2px solid #f59e0b;padding:14px;border-radius:6px">
+      <strong>Décision revente fraiseuse CNC</strong><br>
+      • Achetée 36 000 € il y a 5 ans, dépréciation 18 %/an (suite géométrique).<br>
+      • <strong>Valeur actuelle : 13 345 €</strong> (perte cumulée 63 %).<br>
+      • Si conservée 2 ans : V_7 ≈ 8 970 € (perte +33 %).<br>
+      • Recommandation : <strong>revendre maintenant</strong> sauf besoin de production essentiel.<br>
+      • Investir le produit dans une nouvelle machine (cycle d'amortissement).
+    </p>
+  </div>
+</div>
+
+<div class="bonus">
+  <strong>Pour aller plus loin (bonus)</strong>
+  <p>Quel taux annuel de dépréciation correspond à une perte de 50 % en 5 ans ?</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>0,5 = q⁵ → q = 0,5^(1/5) = 0,5^0,2 ≈ 0,871. Soit <strong>12,9 % de dépréciation/an</strong>.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Suite géométrique</strong> : u_(n+1) = u_n × q (q = raison).</li>
+    <li>Terme général : u_n = u_0 × q^n.</li>
+    <li>Si q &lt; 1 : suite décroissante (dépréciation, désintégration).</li>
+    <li>Si q &gt; 1 : suite croissante (croissance, intérêts composés).</li>
+    <li><strong>Cumul</strong> de pourcentages = produit, pas somme.</li>
+  </ul>
+  <p style="margin-top:10px"><em>📚 Cette activité s'appuie sur §2 (Suites géométriques) de la leçon Ch03.</em></p>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>
