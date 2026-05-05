@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch09 – Activité 3 – Charpente et angles – 1ère Pro</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
+.bonus{background:#fef3c7;border-left:4px solid #f59e0b;padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-1ere-pro.html" class="nb">← Retour au sommaire</a>
+
+<header>
+  <h1>Activité 3 – Charpente : longueur d'un chevron <span style="font-size:.55em;color:#0969da;font-weight:600">SITUATION PRO</span></h1>
+  <p class="sous-titre">Chapitre 9 — Trigonométrie | 1ère Bac Pro | Mathématiques | ⏱ 30 min</p>
+  <p class="maj">Dernière mise à jour : 5 mai 2026, format manuel scolaire</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
+
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Utiliser la loi des cosinus dans un triangle quelconque</li>
+    <li>Calculer un angle ou un côté</li>
+    <li>Appliquer en charpente</li>
+  </ul>
+</div>
+
+<div class="situation">
+  <h2>Situation – charpente d'un toit en V</h2>
+  <p><em>Une charpente forme un triangle (chevron) : largeur de la base 6 m, hauteur au faîtage 2,5 m. Le chevron va d'un côté de la base au faîtage.</em></p>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Quelle est la longueur exacte du chevron et l'angle de toit ?
+</div>
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-yellow">REA</span></h2>
+  <p>Le faîtage est au milieu : base demi-largeur = 3 m, hauteur = 2,5 m. Calculer la longueur du chevron par Pythagore.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>L = √(3² + 2,5²) = √(9 + 6,25) = √15,25 ≈ <strong>3,91 m</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer l'angle au sol α (entre le chevron et la base).</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>tan α = 2,5 / 3 → α = arctan(0,833) ≈ <strong>39,8°</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer l'angle au faîtage (entre les 2 chevrons opposés).</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Triangle isocèle : angle au sommet = 180° − 2 × 39,8° = <strong>100,4°</strong>. Toit relativement plat.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">ANA</span></h2>
+  <p>Si la base est de 6 m et l'angle au sol est de 45°, calculer la hauteur au faîtage.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>tan 45° = 1 = h/3 → h = <strong>3 m</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">ANA</span></h2>
+  <p>Loi des cosinus : pour un triangle, c² = a² + b² − 2ab cos C. Appliquer pour calculer la longueur de la diagonale d'un parallélogramme dont 2 côtés font 5 et 8 m, angle entre 60°.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>c² = 25 + 64 − 2 × 5 × 8 × cos 60° = 89 − 40 = 49.</p>
+    <p>c = <strong>7 m</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-yellow">REA</span></h2>
+  <p>Pour un toit à 30° de pente, base 6 m, calculer hauteur et longueur des 2 chevrons.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>tan 30° = h/3 → h = 3 × 0,577 ≈ 1,73 m.</p>
+    <p>L_chevron = 3 / cos 30° = 3 / 0,866 ≈ <strong>3,46 m</strong> par chevron.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-green">VAL</span></h2>
+  <p>Comparer le besoin en bois entre toit 30° (Q6) et toit 45° pour la même base 6 m.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Toit 30° : 2 × 3,46 = 6,93 m de bois (chevrons).</p>
+    <p>Toit 45° : L_chev = 3 / cos 45° = 4,24 m. 2 chevrons : 8,49 m.</p>
+    <p>Toit 30° : 18 % de bois en moins. Mais isolation moins épaisse possible (combles peu rentables).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-red">COM</span></h2>
+  <p>Rédiger la fiche de découpe des chevrons.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p style="background:#fef3c7;border:2px solid #f59e0b;padding:14px;border-radius:6px">
+      <strong>Découpe chevrons — toit 6 m base, 2,5 m haut</strong><br>
+      • Angle au sol α ≈ 40°. Angle au faîtage 100°.<br>
+      • <strong>Longueur chevron : 3,91 m</strong>. 2 unités par fermette.<br>
+      • Découpe extrémité haute : 50° (= 90 − 40) par rapport à la verticale.<br>
+      • Découpe extrémité basse : 40° par rapport à la sablière.
+    </p>
+  </div>
+</div>
+
+<div class="bonus">
+  <strong>Pour aller plus loin (bonus)</strong>
+  <p>Quel angle de pente est optimal pour des panneaux solaires en France métropolitaine ?</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>≈ 30° à 35° (correspond à la latitude moyenne 45-50°N moins 15° pour optimiser la capture solaire annuelle).</p>
+    <p>Si 30° de pente, le toit sert efficacement aussi à l'autoconsommation solaire.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li>Pythagore (triangle rectangle) : c² = a² + b².</li>
+    <li>SOH-CAH-TOA : sin = opp/hyp, cos = adj/hyp, tan = opp/adj.</li>
+    <li>Loi des cosinus (triangle quelconque) : c² = a² + b² − 2ab cos C.</li>
+  </ul>
+  <p style="margin-top:10px"><em>📚 Cette activité s'appuie sur §2 (Calculs trigonométriques) et §3 (Triangle quelconque) de la leçon Ch09.</em></p>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>
