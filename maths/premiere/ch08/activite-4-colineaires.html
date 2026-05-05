@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch08 – Activité 4 – Vecteurs colinéaires – 1ère Pro</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
+.bonus{background:#fef3c7;border-left:4px solid #f59e0b;padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-1ere-pro.html" class="nb">← Retour au sommaire</a>
+
+<header>
+  <h1>Activité 4 – Vérifier l'alignement de 3 points <span style="font-size:.55em;color:#0969da;font-weight:600">SITUATION PRO</span></h1>
+  <p class="sous-titre">Chapitre 8 — Vecteurs du plan | 1ère Bac Pro | Mathématiques | ⏱ 30 min</p>
+  <p class="maj">Dernière mise à jour : 5 mai 2026, format manuel scolaire</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
+
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Tester si 2 vecteurs sont colinéaires</li>
+    <li>Vérifier l'alignement de 3 points</li>
+    <li>Vérifier le parallélisme de 2 droites</li>
+  </ul>
+</div>
+
+<div class="situation">
+  <h2>Situation – aligner 3 charnières</h2>
+  <p><em>Théo, menuisier, doit fixer 3 charnières sur une grande porte. Il a tracé 3 points : A(2 ; 5), B(8 ; 12), C(15 ; 22). Sont-ils alignés ?</em></p>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Les 3 charnières seront-elles parfaitement alignées si Théo les fixe à ces emplacements ?
+</div>
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-green">APP</span></h2>
+  <p>Énoncer le critère pour que 3 points soient alignés.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>3 points A, B, C sont alignés ⇔ les vecteurs AB et AC sont <strong>colinéaires</strong>.</p>
+    <p>2 vecteurs (a;b) et (c;d) colinéaires ⇔ <strong>ad − bc = 0</strong> (déterminant nul).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer AB et AC.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>AB = (8 − 2 ; 12 − 5) = (6 ; 7).</p>
+    <p>AC = (15 − 2 ; 22 − 5) = (13 ; 17).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer le déterminant 6 × 17 − 7 × 13. Conclure.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>det = 102 − 91 = <strong>11 ≠ 0</strong>.</p>
+    <p>AB et AC ne sont <strong>pas colinéaires</strong> → A, B, C ne sont pas alignés.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">ANA</span></h2>
+  <p>Théo veut corriger la position de C. Si A et B sont fixés, où placer C pour qu'il soit aligné avec A et B ?</p>
+  <p><em>Indication : C aligné ⇔ AC = k × AB pour un certain k.</em></p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>AC = (13 ; 17). Pour que ce soit k × (6 ; 7), il faut 13/6 = 17/7 ? 13/6 ≈ 2,17 et 17/7 ≈ 2,43. Pas égaux → confirmation pas aligné.</p>
+    <p>Pour aligner C avec un facteur k = 2 (par exemple) : C = A + 2 × AB = (2 + 12 ; 5 + 14) = (14 ; 19). Ou k = 13/6 ≈ 2,17 : C = (2 + 13 ; 5 + 15,17) = (15 ; 20,17).</p>
+    <p>Avec k = 17/7 : C = (2 + 102/7 ; 5 + 17) = (16,57 ; 22). Plusieurs solutions possibles selon où on veut placer la 3<sup>e</sup> charnière.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">ANA</span></h2>
+  <p>2 droites (AB) et (CD) sont parallèles si AB et CD sont colinéaires. Vérifier que (AB) // (CD) avec D(20 ; 30).</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>AB = (6 ; 7). CD = (20 − 15 ; 30 − 22) = (5 ; 8).</p>
+    <p>det = 6 × 8 − 7 × 5 = 48 − 35 = 13 ≠ 0 → <strong>non colinéaires</strong>, droites non parallèles.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-yellow">REA</span></h2>
+  <p>Pour qu'une droite soit parallèle à (AB), un vecteur directeur doit être colinéaire à (6 ; 7). Donner 3 exemples.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>(12 ; 14), (3 ; 3,5), (60 ; 70). Tous multiples de (6 ; 7).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-green">VAL</span></h2>
+  <p>Pour que ABCD soit un parallélogramme, on doit avoir AB = DC. Avec A(2;5), B(8;12), C(15;22), trouver D.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>DC = AB → C − D = AB → D = C − AB = (15 − 6 ; 22 − 7) = <strong>(9 ; 15)</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-red">COM</span></h2>
+  <p>Rédiger la procédure de vérification d'alignement pour Théo. 4 lignes max.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p style="background:#fef3c7;border:2px solid #f59e0b;padding:14px;border-radius:6px">
+      <strong>Vérification alignement charnières</strong><br>
+      • Calculer AB = (xB−xA ; yB−yA) et AC = (xC−xA ; yC−yA).<br>
+      • Vérifier si <strong>det = AB_x × AC_y − AB_y × AC_x = 0</strong>.<br>
+      • Si det = 0 : alignés. Sinon, repositionner C en suivant la même direction que AB.<br>
+      • Pour 3 points : utiliser un cordeau ou un laser pour validation finale.
+    </p>
+  </div>
+</div>
+
+<div class="bonus">
+  <strong>Pour aller plus loin (bonus)</strong>
+  <p>Vérifier que ABCD avec D(9 ; 15) (calculé Q7) est bien un parallélogramme.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>AB = (6 ; 7). DC = (15 − 9 ; 22 − 15) = (6 ; 7) ✓. AB = DC → parallélogramme confirmé.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li>2 vecteurs colinéaires ⇔ déterminant ad − bc = 0.</li>
+    <li>3 points alignés ⇔ AB et AC colinéaires.</li>
+    <li>2 droites parallèles ⇔ vecteurs directeurs colinéaires.</li>
+    <li>ABCD parallélogramme ⇔ AB = DC.</li>
+  </ul>
+  <p style="margin-top:10px"><em>📚 Cette activité s'appuie sur §4 (Colinéarité) et §5 (Application au parallélogramme) de la leçon Ch08.</em></p>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch08 – Activité 3 – Composition de forces – 1ère Pro</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
+.bonus{background:#fef3c7;border-left:4px solid #f59e0b;padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-1ere-pro.html" class="nb">← Retour au sommaire</a>
+
+<header>
+  <h1>Activité 3 – Forces sur une étagère murale <span style="font-size:.55em;color:#0969da;font-weight:600">SITUATION PRO</span></h1>
+  <p class="sous-titre">Chapitre 8 — Vecteurs du plan | 1ère Bac Pro | Mathématiques | ⏱ 30 min</p>
+  <p class="maj">Dernière mise à jour : 5 mai 2026, format manuel scolaire</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
+
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Représenter une force par un vecteur</li>
+    <li>Décomposer un vecteur selon 2 axes</li>
+    <li>Vérifier l'équilibre d'un système de forces</li>
+  </ul>
+</div>
+
+<div class="situation">
+  <h2>Situation – étagère murale en équilibre</h2>
+  <p><em>Une étagère est suspendue par un câble incliné à 30° par rapport à l'horizontale. Elle pèse 50 N. Le câble exerce une force F sur le mur, le mur exerce une réaction normale N sur l'étagère.</em></p>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Quelle est l'intensité du câble pour équilibrer l'étagère ?
+</div>
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-blue">ANA</span></h2>
+  <p>Le poids P est vertical (vers le bas), de norme 50 N. Donner ses coordonnées dans un repère (Ox horizontal vers la droite, Oy vertical vers le haut).</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>P = (0 ; −50) N. Composante x = 0 (vertical), y = −50 (vers le bas).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Le câble fait 30° avec l'horizontale, sa force F (tendant l'étagère vers le mur) a pour composantes : F_x = ||F|| × cos 30° (horizontal vers le mur, vers la gauche) et F_y = ||F|| × sin 30° (vertical vers le haut).</p>
+  <p>Donner F = (Fx ; Fy) en fonction de la norme F.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>F = (−F cos 30° ; F sin 30°) = (−0,866 F ; 0,5 F) (avec F = ||F||).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-blue">ANA</span></h2>
+  <p>La réaction normale du mur N est horizontale, vers la droite. N = (N ; 0).</p>
+  <p>Équilibre : P + F + N = 0. Écrire les 2 équations en x et en y.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>x : −0,866 F + N = 0 → N = 0,866 F.</p>
+    <p>y : 0,5 F − 50 = 0 → <strong>F = 100 N</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-yellow">REA</span></h2>
+  <p>En déduire N.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>N = 0,866 × 100 = <strong>86,6 N</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">ANA</span></h2>
+  <p>Si on rend le câble plus vertical (60° au lieu de 30°), recalculer F.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>0,5 sin 60° F = 50 → F sin 60° = 50 → F = 50 / 0,866 ≈ <strong>57,7 N</strong>.</p>
+    <p>Plus le câble est vertical, moins la tension est forte (la composante verticale est plus efficace).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">ANA</span></h2>
+  <p>Inversement, si le câble est presque horizontal (10°), la tension F est très grande. Calculer.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>F = 50 / sin 10° = 50 / 0,174 ≈ <strong>288 N</strong>. Près de 6 fois plus que verticalement !</p>
+    <p>Risque de rupture du câble. Conseil : éviter les angles très petits.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-green">VAL</span></h2>
+  <p>Le câble est noté 200 N de résistance maximale. Quel angle minimum pour rester en sécurité ?</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>F = 50 / sin α &lt; 200 → sin α &gt; 0,25 → α &gt; <strong>14,5°</strong>.</p>
+    <p>Conseil : rester à 20° ou plus pour avoir une marge de sécurité.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-red">COM</span></h2>
+  <p>Rédiger la fiche d'installation. 4 lignes max.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p style="background:#fef3c7;border:2px solid #f59e0b;padding:14px;border-radius:6px">
+      <strong>Pose étagère sur câble</strong><br>
+      • Charge : 50 N (≈ 5 kg).<br>
+      • Câble à 30° : tension = 100 N. À 60° : 58 N.<br>
+      • <strong>Angle min recommandé : 20°</strong> (tension ≤ 146 N pour câble 200 N).<br>
+      • Vérifier la fixation au mur (force normale 86 N à 30°).
+    </p>
+  </div>
+</div>
+
+<div class="bonus">
+  <strong>Pour aller plus loin (bonus)</strong>
+  <p>Si on utilise 2 câbles symétriques (gauche et droite) à 30° au lieu d'un seul, calculer la tension dans chaque câble.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>2 câbles supportent ensemble : 2 F sin 30° = 50 → F = <strong>50 N</strong> par câble. Moitié de la tension. Solution beaucoup plus sûre et équilibrée.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li>Une force est représentée par un vecteur (intensité + direction + sens).</li>
+    <li>Décomposition : F = (F cos α ; F sin α).</li>
+    <li>Équilibre : somme vectorielle nulle (équations en x et y).</li>
+  </ul>
+  <p style="margin-top:10px"><em>📚 Cette activité s'appuie sur §3 (Norme) et §4 (Application aux forces) de la leçon Ch08.</em></p>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

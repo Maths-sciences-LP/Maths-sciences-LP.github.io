@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch08 – Activité 2 – Déplacement vectoriel CNC – 1ère Pro</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
+.bonus{background:#fef3c7;border-left:4px solid #f59e0b;padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-1ere-pro.html" class="nb">← Retour au sommaire</a>
+
+<header>
+  <h1>Activité 2 – Programmation des déplacements CNC <span style="font-size:.55em;color:#0969da;font-weight:600">SITUATION PRO</span></h1>
+  <p class="sous-titre">Chapitre 8 — Vecteurs du plan | 1ère Bac Pro | Mathématiques | ⏱ 30 min</p>
+  <p class="maj">Dernière mise à jour : 5 mai 2026, format manuel scolaire</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
+
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Calculer les coordonnées d'un vecteur déplacement</li>
+    <li>Calculer la norme d'un vecteur</li>
+    <li>Comprendre la somme de vecteurs</li>
+  </ul>
+</div>
+
+<div class="situation">
+  <h2>Situation – programmation d'une CNC</h2>
+  <p><em>La tête de découpe d'une CNC doit aller du point A(20 ; 30) au point B(80 ; 70), puis au point C(120 ; 30) (coordonnées en mm).</em></p>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Quels sont les déplacements à programmer pour la CNC ?
+</div>
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer les coordonnées du vecteur AB.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>AB = (x_B − x_A ; y_B − y_A) = (80 − 20 ; 70 − 30) = <strong>(60 ; 40)</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer la norme ||AB|| = distance parcourue.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>||AB|| = √(60² + 40²) = √(3 600 + 1 600) = √5 200 ≈ <strong>72,1 mm</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer les coordonnées de BC et sa norme.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>BC = (40 ; −40). ||BC|| = √(1 600 + 1 600) = √3 200 ≈ 56,6 mm.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer le déplacement total AC = AB + BC.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>AC = (60 + 40 ; 40 − 40) = <strong>(100 ; 0)</strong>. Déplacement uniquement en x.</p>
+    <p>Vérification directe : C − A = (120 − 20 ; 30 − 30) = (100 ; 0) ✔</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">ANA</span></h2>
+  <p>Distance totale parcourue (A→B→C) vs distance directe (A→C).</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>A→B→C : 72,1 + 56,6 = 128,7 mm.</p>
+    <p>A→C direct : 100 mm.</p>
+    <p>Différence : 28,7 mm. Le passage par B ajoute du chemin (utile pour contour de pièce).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-yellow">REA</span></h2>
+  <p>Si la CNC a une vitesse d'avance F = 4 m/min, calculer la durée totale du parcours.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>F = 4 m/min = 4 000 mm/min.</p>
+    <p>t = 128,7 / 4 000 = 0,032 min ≈ <strong>1,9 s</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-blue">ANA</span></h2>
+  <p>Pour graver un texte sur une plaque, la tête fait 50 vecteurs successifs de norme moyenne 8 mm. Calculer la durée totale.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Distance : 50 × 8 = 400 mm.</p>
+    <p>Durée : 400 / 4 000 = 0,1 min = <strong>6 s</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-red">COM</span></h2>
+  <p>Rédiger les codes G de programmation CNC pour A→B→C.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p style="background:#fef3c7;border:2px solid #f59e0b;padding:14px;border-radius:6px">
+      <strong>Programme G-code CNC</strong><br>
+      <code>G00 X20 Y30 (positionnement rapide en A)<br>
+      G01 X80 Y70 F4000 (interpolation linéaire vers B)<br>
+      G01 X120 Y30 F4000 (interpolation linéaire vers C)</code>
+    </p>
+  </div>
+</div>
+
+<div class="bonus">
+  <strong>Pour aller plus loin (bonus)</strong>
+  <p>Si la CNC peut faire un arc (G02/G03), comment passer de A à B en arc de cercle de centre M(50 ; 30) ?</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Vérifier que MA = MB :</p>
+    <p>MA = (20−50 ; 30−30) = (−30 ; 0), ||MA|| = 30. MB = (30 ; 40), ||MB|| = 50. <strong>Pas un arc</strong> (rayons différents).</p>
+    <p>Pour qu'un arc soit possible, il faut M équidistant de A et B (donc sur la médiatrice de [AB]).</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li>Vecteur AB = (x_B − x_A ; y_B − y_A).</li>
+    <li>Norme : ||AB|| = √((x_B − x_A)² + (y_B − y_A)²).</li>
+    <li>Somme : AB + BC = AC (relation de Chasles).</li>
+  </ul>
+  <p style="margin-top:10px"><em>📚 Cette activité s'appuie sur §1 (Vecteurs), §2 (Coordonnées) et §3 (Norme) de la leçon Ch08.</em></p>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>
