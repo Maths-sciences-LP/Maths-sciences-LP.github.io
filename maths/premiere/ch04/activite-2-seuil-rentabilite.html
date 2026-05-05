@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch04 – Activité 2 – Seuil de rentabilité – 1ère Pro</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
+.bonus{background:#fef3c7;border-left:4px solid #f59e0b;padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-1ere-pro.html" class="nb">← Retour au sommaire</a>
+
+<header>
+  <h1>Activité 2 – Seuil de rentabilité d'un atelier <span style="font-size:.55em;color:#0969da;font-weight:600">SITUATION PRO</span></h1>
+  <p class="sous-titre">Chapitre 4 — Résolution graphique | 1ère Bac Pro | Mathématiques | ⏱ 30 min</p>
+  <p class="maj">Dernière mise à jour : 5 mai 2026, format manuel scolaire</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
+
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Tracer deux droites représentant coûts et chiffre d'affaires</li>
+    <li>Trouver graphiquement le point d'intersection (seuil de rentabilité)</li>
+    <li>Vérifier par le calcul algébrique</li>
+    <li>Interpréter dans un contexte économique</li>
+  </ul>
+</div>
+
+<div class="situation">
+  <h2>Situation – création d'un atelier de placards</h2>
+  <p><em>Hugo crée son atelier <strong>Placards 13</strong> à Aix-en-Provence. Il fabrique des placards à 350 € pièce. Ses charges fixes mensuelles : 4 200 €. Coût matières premières par placard : 80 €.</em></p>
+
+  <h3>Document 1 – Modélisation</h3>
+  <ul>
+    <li>Coût total mensuel : C(x) = 4 200 + 80 x (x = nombre de placards).</li>
+    <li>Chiffre d'affaires mensuel : CA(x) = 350 x.</li>
+    <li>Bénéfice : B(x) = CA(x) − C(x) = 270 x − 4 200.</li>
+  </ul>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> À partir de combien de placards par mois Hugo est-il rentable ?
+</div>
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer C(0), C(20), C(40). Calculer CA(0), CA(20), CA(40).</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>C : 4 200 ; 5 800 ; 7 400.</p>
+    <p>CA : 0 ; 7 000 ; 14 000.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Tracer les deux droites C(x) et CA(x) sur un même graphique (échelle : 1 cm par placard sur x, 1 cm par 1 000 € sur y).</p>
+  <p>Lire graphiquement le point d'intersection.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Les deux droites se croisent vers x ≈ 15-16 placards (entre les valeurs lues à 5 800 et 7 000).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Résoudre algébriquement C(x) = CA(x).</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>4 200 + 80 x = 350 x → 4 200 = 270 x → x = <strong>15,56</strong>.</p>
+    <p>Soit <strong>16 placards/mois</strong> (arrondi supérieur, on ne peut pas vendre 0,56 placard).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">ANA</span></h2>
+  <p>Avec le bénéfice B(x) = 270x − 4200, résoudre B(x) &gt; 0.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>270 x − 4 200 &gt; 0 → x &gt; 4 200 / 270 ≈ 15,56.</p>
+    <p>Hugo est rentable à partir de <strong>16 placards/mois</strong>. À ce seuil, B(16) = 270 × 16 − 4 200 = 120 €.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-yellow">REA</span></h2>
+  <p>Si Hugo vend 25 placards en mai, calculer son bénéfice.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>B(25) = 270 × 25 − 4 200 = 6 750 − 4 200 = <strong>2 550 €</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">ANA</span></h2>
+  <p>Hugo vise un bénéfice de 5 000 €/mois. Combien doit-il vendre ?</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>270 x − 4 200 = 5 000 → 270 x = 9 200 → x ≈ <strong>34 placards/mois</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-green">VAL</span></h2>
+  <p>Hugo envisage d'augmenter le prix à 380 €. Calculer le nouveau seuil de rentabilité.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Nouveau B(x) = (380 − 80) x − 4 200 = 300 x − 4 200.</p>
+    <p>Seuil : 300 x = 4 200 → x = <strong>14 placards</strong>.</p>
+    <p>Augmenter le prix de 30 € baisse le seuil de 16 à 14 placards (mais peut faire fuir des clients).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-red">COM</span></h2>
+  <p>Hugo rédige son business plan. 5 lignes max.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p style="background:#fef3c7;border:2px solid #f59e0b;padding:14px;border-radius:6px">
+      <strong>Business plan — Placards 13 (Aix-en-Provence)</strong><br>
+      • Charges fixes : 4 200 €/mois · Matière 1<sup>e</sup> : 80 €/placard · Vente : 350 €/placard.<br>
+      • <strong>Seuil de rentabilité : 16 placards/mois</strong> (B(16) = 120 €).<br>
+      • Objectif : 25 placards → bénéfice ≈ 2 550 €/mois.<br>
+      • Variante prix +30 € (380 €) : seuil descend à 14 placards.<br>
+      • Action : marketing local pour atteindre 20-30 commandes/mois en année 1.
+    </p>
+  </div>
+</div>
+
+<div class="bonus">
+  <strong>Pour aller plus loin (bonus)</strong>
+  <p>Pour mieux résister à la baisse du marché, Hugo veut diviser ses charges fixes par 2. Calculer le nouveau seuil de rentabilité avec C_fixe = 2 100.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>270 x = 2 100 → x = 7,8 → <strong>8 placards/mois</strong>. Hugo serait rentable beaucoup plus vite. Solutions : domicile + atelier réduit, mutualiser local, etc.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li>Le <strong>seuil de rentabilité</strong> est le point d'intersection entre coûts et CA.</li>
+    <li>Résolution graphique = lecture du point d'intersection. Résolution algébrique = équation C(x) = CA(x).</li>
+    <li>B(x) &gt; 0 = bénéfice ; B(x) &lt; 0 = perte.</li>
+    <li>Réduire les charges fixes ou augmenter la marge unitaire baissent le seuil.</li>
+  </ul>
+  <p style="margin-top:10px"><em>📚 Cette activité s'appuie sur §1 (Résolution graphique) et §2 (Résolution algébrique) de la leçon Ch04.</em></p>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>
