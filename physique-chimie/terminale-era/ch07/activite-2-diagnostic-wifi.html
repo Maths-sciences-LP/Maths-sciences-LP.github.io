@@ -3,128 +3,288 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ch07 – Activité 2 – Diagnostic d'un Wi-Fi faible – Term ERA</title>
+<title>Ch07 – Activité 2 – Diagnostic d'un Wi-Fi faible – PC Term ERA-MA</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <link rel="stylesheet" href="../../../styles.css">
 <link rel="stylesheet" href="../../../print.css" media="print">
-<style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac}</style>
+<style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac;--s:#0ea5e9}</style>
 </head>
 <body>
 <div class="c">
 <a href="../../../pc-term-erama.html" class="nb">← RETOUR SOMMAIRE</a>
+
 <header>
   <h1>Activité 2 – Diagnostic d'un Wi-Fi faible dans une grande maison <span style="font-size:.55em;color:#b91c1c;font-weight:600">DIAGNOSTIC</span></h1>
-  <p class="sous-titre">Chapitre 7 – Transmission de l'information | Term Bac Pro (Grpt 3) | Physique – Signaux | ⏱ 30 min</p>
-  <p class="maj">Dernière mise à jour : 2 mai 2026, 18:42</p>
+  <p class="sous-titre">Chapitre 7 – Transmission de l'information | Terminale Bac Pro ERA-MA | Physique-Chimie | ⏱ 50 min</p>
+  <p class="maj">Dernière mise à jour : 4 mai 2026, 14:30</p>
 </header>
-<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer</button>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
 
-<div class="objectifs"><strong>Objectifs :</strong>
-<ul><li>Comprendre l'atténuation d'une onde radio avec la distance et les obstacles</li>
-<li>Lire des mesures de puissance Wi-Fi en dBm</li>
-<li>Choisir une solution (répéteur, CPL, mesh, câble)</li></ul></div>
-
-<div class="situation">
-  <h2>Situation – cuisine connectée installée, signal faible</h2>
-  <p><em>Lola, agenceuse, vient d'installer une cuisine connectée chez un client (four piloté par Wi-Fi, hotte connectée, tablette). Le client se plaint que le four perd la connexion la moitié du temps. La box internet est dans le bureau à 12 m de la cuisine, séparée par 2 murs.</em></p>
-
-  <h3>Document — Niveau de signal Wi-Fi mesuré au smartphone</h3>
-  <table>
-    <thead><tr><th>Position</th><th>Signal mesuré (dBm)</th><th>Qualité</th></tr></thead>
-    <tbody>
-      <tr><td>À côté de la box (bureau)</td><td>−40 dBm</td><td>Excellent</td></tr>
-      <tr><td>Couloir</td><td>−65 dBm</td><td>Moyen</td></tr>
-      <tr><td>Cuisine (devant le four)</td><td>−85 dBm</td><td>Faible (instable)</td></tr>
-      <tr><td>Cuisine (derrière l'îlot, près du four encastré)</td><td>−95 dBm</td><td>Très faible / coupures</td></tr>
-    </tbody>
-  </table>
-
-  <h3>Échelle de qualité Wi-Fi</h3>
+<div class="objectifs">
+  <strong>Objectifs :</strong>
   <ul>
-    <li>−30 à −50 dBm : excellent (proche du routeur)</li>
-    <li>−50 à −70 dBm : bon (utilisation normale)</li>
-    <li>−70 à −80 dBm : moyen (vidéo OK, jeux laggés)</li>
-    <li>−80 à −90 dBm : faible (à peine connecté)</li>
-    <li>&lt; −90 dBm : signal hors limite — coupures</li>
-  </ul>
-
-  <h3>Atténuation typique par obstacles</h3>
-  <ul>
-    <li>1 mur cloison plâtre : −5 à −10 dB</li>
-    <li>1 mur béton/brique : −10 à −20 dB</li>
-    <li>1 dalle béton : −20 à −30 dB</li>
-    <li>1 four encastré métallique : −15 à −25 dB (cage de Faraday)</li>
+    <li>Comprendre l'atténuation d'une onde radio avec la distance et les obstacles</li>
+    <li>Lire et interpréter des mesures de puissance Wi-Fi en dBm</li>
+    <li>Calculer les longueurs d'onde des bandes Wi-Fi 2,4 et 5 GHz</li>
+    <li>Choisir la bonne solution (répéteur, mesh, CPL, câble Ethernet)</li>
   </ul>
 </div>
 
+<div class="situation">
+  <h2>Situation – cuisine connectée installée, signal faible</h2>
+  <p><em>Lola, agenceuse, vient d'installer une cuisine connectée chez un client (four piloté par Wi-Fi, hotte connectée, tablette de recettes). Le client se plaint que le four perd la connexion la moitié du temps. La box internet est dans le bureau à 12 m de la cuisine, séparée par 2 murs.</em></p>
+
+  <h3>Document 1 — Plan d'implantation</h3>
+  <div class="svg-wrap" style="margin:14px 0">
+    <svg width="100%" viewBox="0 0 540 240" style="max-width:540px;display:block;margin:0 auto" role="img" aria-label="Plan : box dans le bureau, 2 murs et 1 couloir séparant du four. Distances et niveaux de signal indiqués.">
+      <defs>
+        <style>
+          .lbl{font:11px sans-serif;fill:#1a202c;text-anchor:middle}
+          .val{font:600 11px sans-serif;fill:#dc2626;text-anchor:middle}
+          .ti{font:700 13px sans-serif;text-anchor:middle;fill:#2da44e}
+          .room{fill:#f8fafc;stroke:#1a202c;stroke-width:1.5}
+          .wall{stroke:#475569;stroke-width:6;fill:none}
+        </style>
+      </defs>
+      <text class="ti" x="270" y="20">Plan : trajet du signal Wi-Fi du bureau vers le four</text>
+
+      <!-- Bureau (gauche) -->
+      <rect class="room" x="30" y="50" width="140" height="160"/>
+      <text class="lbl" x="100" y="70">BUREAU</text>
+      <!-- Box -->
+      <rect x="60" y="100" width="40" height="20" fill="#0ea5e9" stroke="#1a202c"/>
+      <text x="80" y="114" class="lbl" fill="#fff">BOX</text>
+      <!-- Onde -->
+      <circle cx="80" cy="110" r="20" fill="none" stroke="#0ea5e9" stroke-width="1" opacity="0.5"/>
+      <circle cx="80" cy="110" r="35" fill="none" stroke="#0ea5e9" stroke-width="1" opacity="0.4"/>
+      <text class="val" x="100" y="170">−40 dBm</text>
+
+      <!-- Mur 1 -->
+      <line class="wall" x1="170" y1="50" x2="170" y2="210"/>
+      <text x="170" y="225" class="lbl">mur béton</text>
+      <text class="val" x="170" y="245">−15 dB</text>
+
+      <!-- Couloir -->
+      <rect class="room" x="170" y="50" width="100" height="160"/>
+      <text class="lbl" x="220" y="70">COULOIR</text>
+      <text class="val" x="220" y="170">−65 dBm</text>
+
+      <!-- Mur 2 -->
+      <line class="wall" x1="270" y1="50" x2="270" y2="210"/>
+      <text x="270" y="225" class="lbl">mur béton</text>
+      <text class="val" x="270" y="245">−15 dB</text>
+
+      <!-- Cuisine -->
+      <rect class="room" x="270" y="50" width="240" height="160"/>
+      <text class="lbl" x="390" y="70">CUISINE</text>
+      <!-- Îlot -->
+      <rect x="320" y="160" width="80" height="20" fill="#cbd5e1" stroke="#1a202c"/>
+      <text x="360" y="174" class="lbl">îlot</text>
+      <!-- Four encastré -->
+      <rect x="430" y="120" width="50" height="50" fill="#1f2937" stroke="#1a202c"/>
+      <text x="455" y="142" class="lbl" fill="#fff">FOUR</text>
+      <text x="455" y="156" class="lbl" fill="#fff">métal.</text>
+      <text x="455" y="180" class="val">−95 dBm</text>
+      <text x="455" y="195" class="lbl">cage Faraday</text>
+
+      <!-- Distance -->
+      <line x1="80" y1="40" x2="455" y2="40" stroke="#1a202c" stroke-width="1" marker-end="url(#ar)"/>
+      <line x1="80" y1="40" x2="455" y2="40" stroke="#1a202c" stroke-width="1" marker-start="url(#ar)"/>
+      <text x="270" y="35" class="lbl">12 m</text>
+
+      <defs>
+        <marker id="ar" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#1a202c"/></marker>
+      </defs>
+    </svg>
+  </div>
+
+  <h3>Document 2 — Niveau de signal Wi-Fi mesuré au smartphone</h3>
+  <table>
+    <thead><tr><th>Position</th><th>Signal mesuré (dBm)</th><th>Qualité</th></tr></thead>
+    <tbody>
+      <tr><td>À côté de la box (bureau)</td><td>−40 dBm</td><td>✅ Excellent</td></tr>
+      <tr><td>Couloir</td><td>−65 dBm</td><td>🟢 Bon</td></tr>
+      <tr><td>Cuisine (devant le four)</td><td>−85 dBm</td><td>🟠 Faible (instable)</td></tr>
+      <tr><td>Cuisine (derrière l'îlot, près du four encastré)</td><td>−95 dBm</td><td>🔴 Hors limite</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Document 3 — Échelle de qualité Wi-Fi (dBm)</h3>
+  <ul>
+    <li><strong>−30 à −50 dBm :</strong> excellent (proche du routeur).</li>
+    <li><strong>−50 à −70 dBm :</strong> bon (utilisation normale, vidéo HD).</li>
+    <li><strong>−70 à −80 dBm :</strong> moyen (vidéo OK, jeux laggés).</li>
+    <li><strong>−80 à −90 dBm :</strong> faible (à peine connecté, coupures fréquentes).</li>
+    <li><strong>&lt; −90 dBm :</strong> signal hors limite — coupures, perte de connexion.</li>
+  </ul>
+
+  <h3>Document 4 — Atténuation typique par obstacles</h3>
+  <table>
+    <thead><tr><th>Obstacle</th><th>Atténuation (dB)</th></tr></thead>
+    <tbody>
+      <tr><td>Mur cloison plâtre BA13</td><td>−5 à −10</td></tr>
+      <tr><td>Mur brique / béton</td><td>−10 à −20</td></tr>
+      <tr><td>Dalle béton</td><td>−20 à −30</td></tr>
+      <tr><td>Four encastré métallique (cage de Faraday)</td><td>−15 à −25</td></tr>
+      <tr><td>Vitre standard</td><td>−2 à −4</td></tr>
+      <tr><td>Eau (aquarium, plantes humides)</td><td>−5 à −10 (résonance 2,4 GHz)</td></tr>
+    </tbody>
+  </table>
+
+  <p style="font-size:.9em;color:#475569"><em>📚 Cette activité s'appuie sur §1 (ondes EM) et §3 (atténuation) de la leçon Ch07.</em></p>
+</div>
+
 <div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
-  <strong>Problématique :</strong> Quelle solution Lola peut-elle proposer pour rétablir un Wi-Fi fiable au four ?
+  <strong>Problématique :</strong> Quelle solution Lola peut-elle proposer pour rétablir un Wi-Fi fiable au four connecté ?
 </div>
 
 <div class="exo">
   <h2>Question 1 <span class="badge-blue">ANA</span></h2>
-  <p>Calculer la perte de signal entre le bureau (−40 dBm) et le four (−95 dBm). Comparer à l'atténuation théorique 2 murs + 1 four.</p>
+  <p>Calculer la perte totale de signal entre la box (−40 dBm) et le four (−95 dBm). Comparer à l'atténuation théorique 2 murs + 1 four + distance.</p>
   <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p>Atténuation totale = −40 − (−95) = <strong>55 dB de perte</strong>.</p>
-    <p>Théorique : 2 × 15 (murs) + 20 (four métallique) + 5 (distance) = <strong>55 dB</strong>. Cohérent ✓.</p>
-    <p>Le four encastré agit comme une « cage de Faraday » qui bloque la majorité du signal.</p>
+    <p>Atténuation totale mesurée = 95 − 40 = <strong>55 dB</strong> de perte.</p>
+    <p>Théorique :</p>
+    <ul>
+      <li>2 murs béton : 2 × 15 = 30 dB</li>
+      <li>Four métallique : 20 dB</li>
+      <li>Distance 12 m (espace libre, négligeable car 2,4 GHz à 12 m ≈ 5 dB)</li>
+    </ul>
+    <p>Total théorique : 30 + 20 + 5 = <strong>55 dB</strong>. Cohérent ✓.</p>
+    <p>Le four encastré agit comme une <strong>« cage de Faraday »</strong> qui bloque la majorité du signal. C'est le verrou principal.</p>
   </div>
 </div>
 
 <div class="exo">
-  <h2>Question 2 <span class="badge-blue">VAL</span></h2>
-  <p>Lola pense à 4 solutions. Évaluer chacune.</p>
-  <ol type="a">
-    <li>Déplacer la box dans le couloir</li>
-    <li>Ajouter un répéteur Wi-Fi dans le couloir</li>
-    <li>Tirer un câble Ethernet du bureau au four</li>
-    <li>Système Wi-Fi mesh (3 boitiers répartis)</li>
-  </ol>
+  <h2>Question 2 <span class="badge-blue">APP</span></h2>
+  <p>Qu'est-ce qu'une cage de Faraday ? Pourquoi le four en est-il une ?</p>
   <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <ul>
-      <li>(a) Déplacer la box : pas toujours possible (arrivée fibre fixe). Peut réduire le problème mais peut en créer ailleurs.</li>
-      <li>(b) Répéteur dans le couloir : capte −65 dBm, retransmet. Améliore le signal en cuisine, mais le four reste derrière sa cage de Faraday → −80 à −85 dBm probable. Marginal.</li>
-      <li>(c) <strong>Câble Ethernet</strong> : solution radicale et fiable. Le four a en général un port Ethernet. Coût : 30 € de câble + 1 h de tirage par un menuisier-agenceur.</li>
-      <li>(d) Wi-Fi mesh (3 boîtiers) : solution moderne et flexible. Coût 200-300 € mais bénéfique pour toute la maison.</li>
-    </ul>
-    <p>Recommandation : (c) si le four a un port Ethernet (le plus simple). Sinon (d) avec un boîtier mesh à 1 m du four.</p>
+    <p>Une <strong>cage de Faraday</strong> est une enceinte conductrice (métal) qui bloque les ondes électromagnétiques. Inventée par Michael Faraday en 1836.</p>
+    <p>Principe : le champ électrique induit un courant à la surface du métal, qui « court-circuite » le champ à l'intérieur. Résultat : pas d'onde EM à l'intérieur.</p>
+    <p>Le four encastré est entouré de tôle d'acier (paroi extérieure) + paroi vitrée à grille métallique (porte) → ferme une enveloppe conductrice. Conçu pour <strong>retenir les micro-ondes</strong> (2,45 GHz) à l'intérieur (sécurité utilisateur). Conséquence : il <strong>bloque aussi le Wi-Fi</strong> (2,4 GHz, fréquence très proche).</p>
+    <p>Autres cages de Faraday connues : voiture (paratonnerre roulant en cas de foudre), ascenseur (pas de réseau mobile), micro-ondes (vu du four), salle blindée pour électronique sensible.</p>
   </div>
 </div>
 
 <div class="exo">
   <h2>Question 3 <span class="badge-yellow">REA</span></h2>
-  <p>Calculer la longueur d'onde des 2 fréquences Wi-Fi standards : 2,4 GHz et 5 GHz. Vitesse des ondes EM : c = 3 × 10⁸ m/s.</p>
+  <p>Calculer la longueur d'onde des 2 fréquences Wi-Fi standards : 2,4 GHz et 5 GHz. Célérité des ondes EM dans l'air : c = 3,0 × 10⁸ m/s. Formule : λ = c / f.</p>
   <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <ul>
-      <li>2,4 GHz : λ = 3×10⁸ / 2,4×10⁹ = <strong>0,125 m = 12,5 cm</strong></li>
-      <li>5 GHz : λ = 3×10⁸ / 5×10⁹ = <strong>0,060 m = 6 cm</strong></li>
+      <li><strong>2,4 GHz :</strong> λ = (3,0 × 10⁸) / (2,4 × 10⁹) = 0,125 m = <strong>12,5 cm</strong></li>
+      <li><strong>5 GHz :</strong> λ = (3,0 × 10⁸) / (5,0 × 10⁹) = 0,060 m = <strong>6 cm</strong></li>
     </ul>
-    <p>Le 2,4 GHz a une longueur d'onde 2 fois plus grande → <strong>traverse mieux les obstacles</strong>. Le 5 GHz est plus rapide mais s'atténue davantage.</p>
-    <p>Pour un four éloigné derrière une cage métallique : <strong>privilégier le 2,4 GHz</strong> dans les paramètres du routeur.</p>
+    <p>Le 2,4 GHz a une longueur d'onde 2 fois plus grande → <strong>traverse mieux les obstacles</strong> (loi physique : plus λ est grande, mieux l'onde contourne les obstacles plus petits qu'elle).</p>
+    <p>Le 5 GHz a un débit théorique plus élevé mais s'atténue davantage avec la distance et les obstacles.</p>
+    <p>Pour un four éloigné derrière une cage métallique : <strong>privilégier le 2,4 GHz</strong>.</p>
   </div>
 </div>
 
 <div class="exo">
-  <h2>Question 4 <span class="badge-yellow">COM</span></h2>
-  <p>Rédiger en 4 lignes la note de Lola au client.</p>
-  <ul class="lignes-reponse"><li></li><li></li><li</li><li></li><li></li></ul>
-  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <h2>Question 4 <span class="badge-blue">VAL</span></h2>
+  <p>Lola pense à 4 solutions. Évaluer chacune en termes de coût, fiabilité, complexité.</p>
+  <ol type="a">
+    <li>Déplacer la box dans le couloir</li>
+    <li>Ajouter un répéteur Wi-Fi dans le couloir</li>
+    <li>Tirer un câble Ethernet du bureau au four</li>
+    <li>Système Wi-Fi mesh (3 boîtiers répartis)</li>
+  </ol>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p><em>Diagnostic Wi-Fi cuisine — 2 mai 2026. Le four encastré agit comme cage de Faraday — il bloque le signal Wi-Fi déjà affaibli par 2 murs (perte totale 55 dB, signal résiduel −95 dBm). Solution recommandée : <strong>câble Ethernet du bureau au four</strong> (le four dispose d'un port RJ45). Coût ≈ 80 € avec pose. Solution la plus fiable, performances garanties. Alternative si pas de câblage possible : système Wi-Fi mesh avec 1 boîtier dans la cuisine (200-300 €). Bonus : configurer le routeur en 2,4 GHz en plus du 5 GHz pour les objets connectés (le 2,4 traverse mieux les obstacles).</em></p>
+    <table>
+      <thead><tr><th>Solution</th><th>Coût</th><th>Fiabilité</th><th>Avis</th></tr></thead>
+      <tbody>
+        <tr><td>(a) Déplacer la box</td><td>~ 0 €</td><td>Inégale</td><td>Pas toujours possible (arrivée fibre fixe). Peut résoudre ici, créer un autre problème ailleurs.</td></tr>
+        <tr><td>(b) Répéteur couloir</td><td>30-50 €</td><td>Moyenne</td><td>Capte −65 dBm → réémet. Améliore en cuisine, mais le four reste derrière sa cage de Faraday → −80 à −85 dBm probable. Marginal.</td></tr>
+        <tr style="background:#dcfce7"><td>(c) <strong>Câble Ethernet</strong></td><td>30 € matériel + 1-2 h pose</td><td>★★★★★</td><td>Solution radicale. Le four moderne a un port RJ45. Débit garanti, latence nulle, sécurisé.</td></tr>
+        <tr><td>(d) Wi-Fi mesh</td><td>200-300 €</td><td>★★★★</td><td>Solution moderne, flexible, bénéfique pour toute la maison. Plus chère.</td></tr>
+      </tbody>
+    </table>
+    <p>Recommandation : <strong>(c) câble Ethernet</strong> si le four a un port Ethernet (le plus simple, le plus fiable). Sinon (d) avec un boîtier mesh à 1 m du four (en façade, hors cage).</p>
   </div>
 </div>
 
-<div class="retenir"><strong>À retenir</strong>
-<ul><li><strong>Atténuation Wi-Fi :</strong> mur cloison −5/10 dB, mur béton −10/20 dB, four métallique −15/25 dB.</li>
-<li><strong>Échelle dBm :</strong> &gt; −60 excellent, −60/−75 bon, &lt; −85 faible.</li>
-<li><strong>2,4 GHz vs 5 GHz :</strong> le 2,4 traverse mieux les obstacles (λ plus grande), le 5 GHz est plus rapide en champ libre.</li>
-<li><strong>Solution la plus fiable :</strong> câble Ethernet (Mb/s garantis, sécurisé). Sinon mesh ≫ répéteur.</li></ul></div>
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">ANA</span></h2>
+  <p>Pourquoi les solutions CPL (Courant Porteur en Ligne) peuvent-elles être une 5ᵉ option ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Le <strong>CPL</strong> utilise les fils électriques de la maison comme câble réseau. Principe : on transmet un signal haute fréquence (1-30 MHz) sur le 230 V/50 Hz (modulation OFDM).</p>
+    <p>2 boîtiers CPL :</p>
+    <ul>
+      <li>Un dans le bureau, branché sur la box + prise.</li>
+      <li>Un en cuisine, branché sur la prise du four.</li>
+    </ul>
+    <p>Avantages : pas de câblage à tirer, débit 200-1 000 Mb/s annoncé, fiable.</p>
+    <p>Limites : doit être sur le <strong>même circuit électrique</strong> (donc même phase, même tableau). Atténuation forte si traversée de disjoncteur.</p>
+    <p>Coût : 50-100 € la paire. Bonne option si pas de port Ethernet possible.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer le rapport entre la puissance d'émission de la box (20 dBm = 100 mW) et la puissance reçue au four (−95 dBm). Conclure.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Atténuation = 20 − (−95) = <strong>115 dB</strong>.</p>
+    <p>Conversion en rapport : 115 dB = 10^(115/10) = 10^11,5 ≈ <strong>3,2 × 10¹¹</strong>.</p>
+    <p>Soit 100 mW émis → 100 × 10⁻³ / (3,2 × 10¹¹) = 3,2 × 10⁻¹³ W = <strong>0,32 pW (picowatt)</strong> reçus.</p>
+    <p>L'antenne du four reçoit donc 320 milliardièmes de milliwatt. C'est extrêmement peu : on est à la limite de détection du récepteur Wi-Fi standard (sensibilité typique : −95 à −100 dBm).</p>
+    <p>D'où les coupures aléatoires.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger en 5 lignes la note de Lola au client.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em><strong>Diagnostic Wi-Fi cuisine connectée — 4 mai 2026</strong></em></p>
+    <p><em>Mesure : −95 dBm devant le four (limite de détection). Cause : atténuation cumulée 55 dB = 2 murs (30 dB) + four métallique-cage de Faraday (20 dB) + distance (5 dB).</em></p>
+    <p><em>Solution recommandée : <strong>câble Ethernet du bureau au four</strong> (le four dispose d'un port RJ45). Coût ~ 80 € avec pose. Solution la plus fiable, performances garanties à vie.</em></p>
+    <p><em>Alternative : système Wi-Fi mesh avec un boîtier en cuisine (200-300 €). Plus cher mais bénéfique pour toute la maison.</em></p>
+    <p><em>Bonus : configurer le routeur en 2,4 GHz en plus du 5 GHz pour les objets connectés (le 2,4 traverse 2× mieux les obstacles).</em></p>
+  </div>
+</div>
+
+<div class="exo" style="background:#fef3c7;border:1px solid #b45309">
+  <h2>🚀 Pour aller plus loin <span class="badge-blue">ANA</span></h2>
+  <p>Pourquoi un micro-ondes en marche perturbe-t-il le Wi-Fi de toute la maison ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Un four à micro-ondes émet à <strong>2,45 GHz</strong> (en France, autorisée pour cet usage par bandes ISM). Or le Wi-Fi 2,4 GHz fonctionne sur les canaux 1-13, soit 2,412-2,472 GHz : <strong>même bande</strong>.</p>
+    <p>La puissance d'un micro-ondes est de 800-1 000 W (~ 30 dBm + 50 dB = 60 dBm... énorme). Même 99,99 % retenu par la cage, il s'échappe ~ 0,01 % = 100 mW. C'est <strong>1 000 fois plus puissant qu'une box Wi-Fi</strong> typique.</p>
+    <p>Conséquence : pendant la cuisson, le Wi-Fi 2,4 GHz est saturé par cette interférence. Le routeur peut perdre la connexion sur les 13 canaux.</p>
+    <p>Solutions :</p>
+    <ul>
+      <li>Utiliser le <strong>Wi-Fi 5 GHz</strong> (bande différente, non perturbée).</li>
+      <li>Renouveler le micro-ondes vieillissant (joints de porte usés laissent fuir plus que prévu).</li>
+      <li>Éloigner physiquement la box du micro-ondes.</li>
+    </ul>
+    <p>C'est un problème classique des installations de cuisine où la box est sur le même mur que le micro-ondes.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Atténuation Wi-Fi :</strong> mur cloison −5/10 dB, mur béton −10/20 dB, dalle −20/30 dB, four métallique −15/25 dB (cage de Faraday).</li>
+    <li><strong>Échelle dBm :</strong> &gt; −60 excellent, −60/−75 bon, −75/−85 moyen, &lt; −85 faible, &lt; −90 hors limite.</li>
+    <li><strong>2,4 GHz vs 5 GHz :</strong> le 2,4 (λ = 12,5 cm) traverse mieux les obstacles, le 5 GHz (λ = 6 cm) est plus rapide en champ libre.</li>
+    <li><strong>Solution la plus fiable :</strong> câble Ethernet (Mb/s garantis, sécurisé). Sinon mesh ≫ répéteur.</li>
+    <li><strong>Cage de Faraday :</strong> enceinte métallique qui bloque les ondes EM (four, voiture, ascenseur).</li>
+  </ul>
+</div>
 
 </div>
 <script src="../../../nav.js"></script>

@@ -3,32 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ch05 – Activité 2 – Diagnostic d'une charpente acier rouillée – Term ERA</title>
+<title>Ch05 – Activité 2 – Diagnostic d'une charpente acier rouillée – PC Term ERA-MA</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <link rel="stylesheet" href="../../../styles.css">
 <link rel="stylesheet" href="../../../print.css" media="print">
-<style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac}</style>
+<style>:root{--p:#2da44e;--p-bg:#f0fff4;--p-border:#86efac;--s:#0ea5e9}</style>
 </head>
 <body>
 <div class="c">
 <a href="../../../pc-term-erama.html" class="nb">← RETOUR SOMMAIRE</a>
+
 <header>
   <h1>Activité 2 – Diagnostic d'une charpente acier rouillée <span style="font-size:.55em;color:#b91c1c;font-weight:600">DIAGNOSTIC</span></h1>
-  <p class="sous-titre">Chapitre 5 – Oxydoréduction et corrosion | Term Bac Pro (Grpt 3) | Chimie | ⏱ 30 min</p>
-  <p class="maj">Dernière mise à jour : 2 mai 2026, 18:42</p>
+  <p class="sous-titre">Chapitre 5 – Oxydoréduction et corrosion | Terminale Bac Pro ERA-MA | Physique-Chimie | ⏱ 50 min</p>
+  <p class="maj">Dernière mise à jour : 4 mai 2026, 13:30</p>
 </header>
-<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer</button>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
 
-<div class="objectifs"><strong>Objectifs :</strong>
-<ul><li>Identifier les conditions favorisant la corrosion de l'acier</li>
-<li>Comprendre les zones critiques d'une structure</li>
-<li>Choisir un mode de réparation adapté</li></ul></div>
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Identifier les conditions favorisant la corrosion de l'acier</li>
+    <li>Écrire les demi-équations d'oxydoréduction de la rouille</li>
+    <li>Comprendre les zones critiques d'une structure</li>
+    <li>Choisir un mode de réparation adapté</li>
+  </ul>
+</div>
 
 <div class="situation">
   <h2>Situation – atelier sous toiture acier des années 70</h2>
-  <p><em>Vincent, charpentier-couvreur, est appelé pour expertiser une charpente métallique d'atelier de menuiserie de 1975. Le client constate des coulures de rouille sur les murs sous les fixations. Il craint pour la solidité de la structure.</em></p>
+  <p><em>Vincent, charpentier-couvreur, est appelé pour expertiser une charpente métallique d'un atelier de menuiserie de 1975. Le client constate des coulures de rouille sur les murs sous les fixations. Il craint pour la solidité de la structure.</em></p>
 
-  <h3>Document — Observations de Vincent</h3>
+  <h3>Document 1 — Observations de Vincent (audit visuel)</h3>
   <table>
     <thead><tr><th>Zone</th><th>État</th><th>Cause probable</th></tr></thead>
     <tbody>
@@ -39,14 +45,57 @@
     </tbody>
   </table>
 
-  <p><strong>Demi-équations en jeu :</strong></p>
-  <ul>
-    <li>Anode : Fe → Fe²⁺ + 2 e⁻</li>
-    <li>Cathode : O₂ + 2 H₂O + 4 e⁻ → 4 OH⁻</li>
-    <li>Bilan : 2 Fe + O₂ + 2 H₂O → 2 Fe(OH)₂ → Fe₂O₃·xH₂O (rouille)</li>
-  </ul>
+  <h3>Document 2 — Réactions chimiques de la rouille</h3>
+  <div style="background:#dbeafe;padding:10px 14px;border-radius:6px;border-left:3px solid #1d4ed8;margin:14px 0">
+    <p>Demi-équations d'oxydoréduction :</p>
+    <ul>
+      <li><strong>Anode (oxydation) :</strong> Fe → Fe²⁺ + 2 e⁻</li>
+      <li><strong>Cathode (réduction) :</strong> O₂ + 2 H₂O + 4 e⁻ → 4 OH⁻</li>
+    </ul>
+    <p>Bilan global : <strong>2 Fe + O₂ + 2 H₂O → 2 Fe(OH)₂ → Fe₂O₃·xH₂O</strong> (rouille)</p>
+    <p><strong>Conditions nécessaires :</strong> Fe + O₂ + H₂O <strong>simultanément</strong>. Sans l'un des trois → pas de rouille.</p>
+  </div>
 
-  <p><strong>Conditions nécessaires à la rouille :</strong> Fe + O₂ + H₂O simultanément. Sans l'un des trois → pas de rouille.</p>
+  <h3>Document 3 — Triangle de la corrosion</h3>
+  <div class="svg-wrap" style="margin:14px 0">
+    <svg width="100%" viewBox="0 0 540 220" style="max-width:540px;display:block;margin:0 auto" role="img" aria-label="Triangle des 3 conditions nécessaires à la rouille : Fer (Fe), Dioxygène (O₂), Eau (H₂O). Au centre : ROUILLE. Supprimer un sommet = pas de rouille.">
+      <defs>
+        <style>
+          .b{stroke:#1a202c;stroke-width:1.5;fill:none}
+          .lbl{font:12px sans-serif;fill:#1a202c;text-anchor:middle}
+          .lblA{font:600 13px sans-serif;text-anchor:middle}
+          .ti{font:700 13px sans-serif;text-anchor:middle;fill:#2da44e}
+        </style>
+      </defs>
+      <text class="ti" x="270" y="22">Triangle de la corrosion : 3 conditions simultanées</text>
+
+      <!-- Triangle équilatéral. Sommets : haut (270,50), bas-gauche (140,180), bas-droite (400,180) -->
+      <polygon points="270,50 140,180 400,180" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+
+      <!-- Sommets avec cercles -->
+      <circle cx="270" cy="50" r="32" fill="#94a3b8" stroke="#1a202c" stroke-width="2"/>
+      <text x="270" y="48" class="lblA" fill="#fff">Fe</text>
+      <text x="270" y="62" class="lbl" fill="#fff">(fer)</text>
+
+      <circle cx="140" cy="180" r="32" fill="#0ea5e9" stroke="#1a202c" stroke-width="2"/>
+      <text x="140" y="178" class="lblA" fill="#fff">O₂</text>
+      <text x="140" y="192" class="lbl" fill="#fff">(O₂ air)</text>
+
+      <circle cx="400" cy="180" r="32" fill="#3b82f6" stroke="#1a202c" stroke-width="2"/>
+      <text x="400" y="178" class="lblA" fill="#fff">H₂O</text>
+      <text x="400" y="192" class="lbl" fill="#fff">(eau)</text>
+
+      <!-- Centre -->
+      <text x="270" y="135" class="lblA" fill="#dc2626" font-weight="bold">⚠ ROUILLE</text>
+      <text x="270" y="153" class="lbl" fill="#dc2626">(Fe₂O₃·xH₂O)</text>
+
+      <!-- Légende -->
+      <text x="500" y="60" class="lbl" text-anchor="end" font-weight="bold">Supprimer un sommet</text>
+      <text x="500" y="76" class="lbl" text-anchor="end" font-style="italic">= pas de rouille</text>
+    </svg>
+  </div>
+
+  <p style="font-size:.9em;color:#475569"><em>📚 Cette activité réinvestit les notions du cours §1 (oxydoréduction) et §3 (corrosion du fer).</em></p>
 </div>
 
 <div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
@@ -56,33 +105,51 @@
 <div class="exo">
   <h2>Question 1 <span class="badge-green">APP</span></h2>
   <p>Citer les 3 conditions nécessaires à la formation de rouille sur l'acier.</p>
-  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p>Il faut <strong>simultanément</strong> : (1) du fer (Fe), (2) du dioxygène (O₂), (3) de l'eau (H₂O). Si l'un manque, la corrosion est très ralentie ou stoppée.</p>
+    <p>Il faut <strong>simultanément</strong> :</p>
+    <ol>
+      <li><strong>Fer (Fe)</strong> ou alliage ferreux</li>
+      <li><strong>Dioxygène (O₂)</strong>, présent dans l'air</li>
+      <li><strong>Eau (H₂O)</strong>, sous forme liquide ou d'humidité</li>
+    </ol>
+    <p>Si l'un manque, la corrosion est très ralentie ou stoppée. Exemple : un clou enfoncé dans une planche bien sèche ne rouille pas.</p>
   </div>
 </div>
 
 <div class="exo">
-  <h2>Question 2 <span class="badge-blue">ANA</span></h2>
-  <p>Pour chaque zone observée par Vincent, expliquer la différence de corrosion par les 3 conditions.</p>
+  <h2>Question 2 <span class="badge-blue">APP</span></h2>
+  <p>Identifier l'oxydant et le réducteur dans la réaction de la rouille (doc 2).</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Réducteur :</strong> le fer Fe (perd des électrons : oxydation Fe → Fe²⁺ + 2 e⁻).</p>
+    <p><strong>Oxydant :</strong> le dioxygène O₂ (gagne des électrons : réduction O₂ + 2H₂O + 4 e⁻ → 4 OH⁻).</p>
+    <p>L'eau joue le rôle d'<strong>électrolyte</strong> (permet la circulation des ions OH⁻ et Fe²⁺) plus que de réactif direct.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-blue">ANA</span></h2>
+  <p>Pour chaque zone observée par Vincent, expliquer la différence de corrosion en utilisant les 3 conditions.</p>
   <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
   <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
     <ul>
-      <li><strong>Pannes zinguées :</strong> protection cathodique par le zinc (la couche de Zn s'oxyde à la place du Fe). Tant qu'il reste du zinc, l'acier est protégé.</li>
-      <li><strong>Boulons acier nu :</strong> aucune protection. La condensation (eau) + air (O₂) + Fe → conditions parfaites pour la rouille.</li>
-      <li><strong>Pieds de poteaux :</strong> humidité du sol par capillarité = source d'eau permanente. Pire endroit pour l'acier.</li>
+      <li><strong>Pannes zinguées :</strong> couche de zinc qui s'oxyde à la place du Fe (<strong>protection cathodique</strong>). Tant qu'il reste du zinc, l'acier est protégé.</li>
+      <li><strong>Boulons acier nu :</strong> aucune protection. La condensation (H₂O) + air (O₂) + Fe → conditions parfaites pour la rouille.</li>
+      <li><strong>Pieds de poteaux :</strong> humidité du sol par <strong>capillarité</strong> = source d'eau permanente. C'est le pire endroit pour de l'acier.</li>
       <li><strong>Côté Nord :</strong> moins d'ensoleillement → séchage moins efficace → humidité résiduelle plus grande → corrosion plus rapide.</li>
     </ul>
   </div>
 </div>
 
 <div class="exo">
-  <h2>Question 3 <span class="badge-blue">VAL</span></h2>
+  <h2>Question 4 <span class="badge-blue">VAL</span></h2>
   <p>Vincent doit choisir une méthode de restauration pour les fixations rouillées. Quelle est la plus adaptée ?</p>
   <ol type="a">
-    <li>Les laisser en l'état (peinture seulement)</li>
+    <li>Les laisser en l'état (peinture seulement par-dessus la rouille)</li>
     <li>Brossage + peinture antirouille</li>
     <li>Remplacement complet par boulons inox</li>
     <li>Brossage + galvanisation à froid + peinture</li>
@@ -92,29 +159,103 @@
   <div class="corr">
     <p><strong>Choix recommandé : (d) brossage + galvanisation à froid + peinture.</strong></p>
     <ul>
-      <li>(a) Sans brossage, la peinture s'appliquera sur la rouille existante → continuera à corroder dessous.</li>
-      <li>(b) Brossage + peinture, mais sans protection cathodique : la peinture finira par se fissurer (10 ans), la rouille reprend.</li>
-      <li>(c) Inox : très cher, surdimensionné pour des boulons de charpente classiques.</li>
-      <li>(d) Galvanisation à froid (peinture au zinc) ajoute la protection cathodique sous la peinture. Combinaison gagnante : 25-30 ans de durabilité.</li>
+      <li>(a) Sans brossage, la peinture s'applique sur la rouille existante → continue à corroder dessous. À éviter absolument.</li>
+      <li>(b) Brossage + peinture, mais sans protection cathodique : la peinture finit par se fissurer (10 ans), la rouille reprend.</li>
+      <li>(c) Inox : très cher, surdimensionné pour des boulons de charpente classiques. Réservé aux environnements extrêmes (mer, chimie).</li>
+      <li>(d) Galvanisation à froid (peinture au zinc) ajoute la protection cathodique sous la peinture. <strong>Combinaison gagnante : 25-30 ans de durabilité.</strong></li>
     </ul>
   </div>
 </div>
 
 <div class="exo">
-  <h2>Question 4 <span class="badge-yellow">COM</span></h2>
-  <p>Rédiger en 4 lignes le rapport d'expertise de Vincent au client.</p>
-  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
-  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <h2>Question 5 <span class="badge-blue">VAL</span></h2>
+  <p>Pour les pieds de poteaux (humidité capillaire), citer 2 solutions différentes.</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
   <div class="corr">
-    <p><em>Expertise charpente — 2 mai 2026. Structure globalement saine, mais 2 zones critiques : (1) fixations en acier nu (rouille sévère, perte de matière à surveiller), (2) pieds de poteaux au sol (humidité capillaire). Travaux préconisés : brossage des boulons + galvanisation à froid + peinture (durabilité +25 ans), barrière étanche au pied des poteaux pour stopper la remontée d'humidité. Devis à venir, urgence modérée (à faire dans les 12 mois).</em></p>
+    <ul>
+      <li><strong>Barrière étanche</strong> entre dalle et pied de poteau : feuille bitumineuse, plot polymère, ou ressaut de béton hydrofuge. Bloque la remontée d'eau capillaire.</li>
+      <li><strong>Drainage</strong> autour du bâtiment : évacue les eaux pluviales avant qu'elles n'entrent dans le sol près des fondations.</li>
+      <li><strong>Habillage en inox</strong> sur les 30 premiers cm : protection physique étanche.</li>
+      <li><strong>Surélévation</strong> par platine acier galvanisé sur dé béton : sépare structure et sol humide.</li>
+    </ul>
+    <p>Le mieux : <strong>combiner</strong> drainage extérieur + barrière étanche en pied. Suppression de la condition « eau » → arrêt total de la corrosion.</p>
   </div>
 </div>
 
-<div class="retenir"><strong>À retenir</strong>
-<ul><li><strong>Rouille :</strong> 2 Fe + O₂ + 2 H₂O → 2 Fe(OH)₂ → rouille (Fe₂O₃·xH₂O).</li>
-<li><strong>3 conditions :</strong> Fe + O₂ + H₂O simultanément. Supprimer une condition arrête la rouille.</li>
-<li><strong>Protection :</strong> peinture (barrière) + galvanisation (anode sacrificielle Zn) = combinaison la plus efficace.</li>
-<li><strong>Zones à risque :</strong> pieds humides, fixations nues, côté Nord (mal séché).</li></ul></div>
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">ANA</span></h2>
+  <p>Si une fixation a perdu 30 % de sa section par corrosion, peut-on la conserver ? Quel test pour décider ?</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Une perte de 30 % de section signifie que la résistance mécanique est divisée par environ <strong>1/0,7 ≈ 1,43</strong>. La résistance résiduelle est suffisante pour des charges courantes, mais la marge de sécurité (norme : 2 à 3) est entamée.</p>
+    <p>Tests / vérifications :</p>
+    <ul>
+      <li><strong>Mesure dimensionnelle</strong> avec un pied à coulisse pour quantifier la perte.</li>
+      <li><strong>Calcul d'effort</strong> : reprendre la note de calcul originale et appliquer le coefficient de sécurité réduit.</li>
+      <li><strong>Audit du bureau de contrôle</strong> (ex. Apave, Bureau Veritas) si charge importante.</li>
+    </ul>
+    <p>Règle pratique : remplacer dès que la perte dépasse <strong>20 %</strong> sur des éléments structurels.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-blue">VAL</span></h2>
+  <p>Vincent recommande aussi un suivi annuel pendant 5 ans. Pourquoi ?</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Raisons du suivi :</p>
+    <ul>
+      <li><strong>Vérifier l'efficacité</strong> des réparations (peinture qui tient, barrière étanche fonctionnelle).</li>
+      <li><strong>Détecter de nouvelles zones</strong> de corrosion (parfois cachées sous peinture).</li>
+      <li><strong>Documenter</strong> l'évolution pour les assurances / responsabilité décennale (10 ans).</li>
+      <li><strong>Anticiper</strong> les futures interventions (planning, budget).</li>
+    </ul>
+    <p>La corrosion est un phénomène <strong>progressif et silencieux</strong>. Il vaut mieux intervenir tôt qu'après effondrement (collapse de toiture).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-yellow">COM</span></h2>
+  <p>Rédiger en 5 lignes le rapport d'expertise de Vincent au client.</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir un exemple</button>
+  <div class="corr">
+    <p><em><strong>Expertise charpente — atelier 1975</strong></em></p>
+    <p><em>Structure globalement saine, mais 2 zones critiques :</em></p>
+    <ul><em>
+      <li><strong>Fixations en acier nu</strong> : rouille sévère, perte de matière à surveiller. Travaux : brossage + galvanisation à froid + peinture (durabilité 25 ans).</li>
+      <li><strong>Pieds de poteaux</strong> au sol : humidité capillaire. Travaux : barrière étanche + drainage extérieur.</li>
+    </em></ul>
+    <p><em>Pannes zinguées et côté Sud : OK, juste à surveiller. Devis détaillé à venir, urgence modérée (12 mois). Suivi annuel pendant 5 ans recommandé.</em></p>
+  </div>
+</div>
+
+<div class="exo" style="background:#fef3c7;border:1px solid #b45309">
+  <h2>🚀 Pour aller plus loin <span class="badge-blue">ANA</span></h2>
+  <p>Pourquoi le titanic a-t-il rouillé si vite à 4 000 m de profondeur, malgré le manque relatif d'O₂ et la basse température ?</p>
+  <ul class="lignes-reponse"><li></li><li</li><li</li><li</li><li</li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>À 4 000 m, l'eau est très froide (~ 2 °C) et contient très peu d'O₂ → la corrosion électrochimique « classique » est lente.</p>
+    <p>MAIS : des bactéries spécifiques (genre <em>Halomonas</em>) consomment le fer pour leur métabolisme — c'est la <strong>« rust biofilm »</strong>. Elles forment des stalactites de rouille (rusticles) qui « digèrent » lentement la coque.</p>
+    <p>Estimation : la coque du Titanic disparaîtra complètement en 2030-2050 (~ 100-120 ans après le naufrage de 1912).</p>
+    <p>Leçon : la corrosion peut prendre des formes inattendues. Les <strong>environnements marins</strong> sont parmi les pires pour l'acier non protégé.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Réaction de la rouille :</strong> 2 Fe + O₂ + 2 H₂O → 2 Fe(OH)₂ → Fe₂O₃·xH₂O (rouille).</li>
+    <li><strong>3 conditions nécessaires :</strong> Fe + O₂ + H₂O simultanément. Supprimer une condition arrête la rouille.</li>
+    <li><strong>Protection :</strong> peinture (barrière) + galvanisation (anode sacrificielle Zn) = combinaison la plus efficace.</li>
+    <li><strong>Zones à risque :</strong> pieds humides, fixations nues, côté Nord (mal séché), atmosphères marines.</li>
+    <li><strong>Acier inox :</strong> sans rouille car couche d'oxyde de chrome (Cr₂O₃) auto-protectrice.</li>
+  </ul>
+</div>
 
 </div>
 <script src="../../../nav.js"></script>
