@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch05 – Activité 2 – Trajectoire parabolique – 1ère Pro</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
+.bonus{background:#fef3c7;border-left:4px solid #f59e0b;padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-1ere-pro.html" class="nb">← Retour au sommaire</a>
+
+<header>
+  <h1>Activité 2 – Trajectoire parabolique d'un copeau <span style="font-size:.55em;color:#0969da;font-weight:600">SITUATION PRO</span></h1>
+  <p class="sous-titre">Chapitre 5 — Polynômes degré 2 | 1ère Bac Pro | Mathématiques | ⏱ 30 min</p>
+  <p class="maj">Dernière mise à jour : 5 mai 2026, format manuel scolaire</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
+
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Reconnaître une fonction polynôme de degré 2</li>
+    <li>Identifier sommet et axe de symétrie d'une parabole</li>
+    <li>Calculer le maximum d'une fonction quadratique</li>
+  </ul>
+</div>
+
+<div class="situation">
+  <h2>Situation – éjection des copeaux d'une scie</h2>
+  <p><em>Une scie projette un copeau qui décrit une trajectoire parabolique. La hauteur h en fonction de la distance x (en m) est : h(x) = −0,5x² + 2x + 0,8 (en m).</em></p>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Quelle est la hauteur maximale du copeau et à quelle distance retombe-t-il au sol ?
+</div>
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-yellow">REA</span></h2>
+  <p>Identifier les coefficients a, b, c.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>a = −0,5 (négatif → parabole tournée vers le bas).</p>
+    <p>b = 2 ; c = 0,8.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer l'abscisse du sommet x_s = −b/(2a) et la hauteur maximale h(x_s).</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>x_s = −2/(2 × −0,5) = −2/−1 = <strong>2 m</strong>.</p>
+    <p>h(2) = −0,5 × 4 + 2 × 2 + 0,8 = −2 + 4 + 0,8 = <strong>2,8 m</strong>.</p>
+    <p>Le copeau atteint 2,8 m de haut à 2 m de la scie.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Trouver à quelle distance le copeau touche le sol (h(x) = 0).</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>−0,5 x² + 2 x + 0,8 = 0. Multiplie par −2 : x² − 4 x − 1,6 = 0.</p>
+    <p>Δ = 16 + 6,4 = 22,4. √Δ ≈ 4,73.</p>
+    <p>x = (4 ± 4,73)/2 → x ≈ 4,37 ou x ≈ −0,37 (rejeté).</p>
+    <p>Le copeau retombe à <strong>4,37 m</strong> de la scie.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">ANA</span></h2>
+  <p>Pourquoi rejeter la solution négative ?</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>x représente une distance positive. Une valeur négative n'a pas de sens physique (le copeau ne va pas en arrière de la scie).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">ANA</span></h2>
+  <p>Pour quelle distance h(x) &gt; 1,5 m (zone dangereuse pour un opérateur debout) ?</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>−0,5 x² + 2 x + 0,8 &gt; 1,5 → −0,5 x² + 2 x − 0,7 &gt; 0 → x² − 4 x + 1,4 &lt; 0.</p>
+    <p>Δ = 16 − 5,6 = 10,4. x = (4 ± 3,22)/2 → x ≈ 0,39 ou x ≈ 3,61.</p>
+    <p>Zone : 0,39 m &lt; x &lt; 3,61 m. Soit ≈ 3,2 m de zone dangereuse.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-yellow">REA</span></h2>
+  <p>Tracer le tableau de variations de h sur [0 ; 4,37].</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>h croissante de [0 ; 2] (de 0,8 à 2,8) puis décroissante de [2 ; 4,37] (de 2,8 à 0).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-green">VAL</span></h2>
+  <p>Pour assurer la sécurité, on installe un capot de protection sur la zone dangereuse + 50 cm de marge. Quelle est la longueur du capot nécessaire ?</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Capot de 0 à 4,37 + 0,5 = <strong>4,87 m de long</strong> (arrondi à 5 m).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-red">COM</span></h2>
+  <p>Rédiger en 4 lignes la fiche de sécurité.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p style="background:#fef3c7;border:2px solid #f59e0b;padding:14px;border-radius:6px">
+      <strong>Sécurité scie projette-copeaux</strong><br>
+      • Trajectoire parabolique : h(x) = −0,5x² + 2x + 0,8.<br>
+      • <strong>Hauteur max</strong> 2,8 m à 2 m, <strong>portée</strong> 4,37 m.<br>
+      • Zone &gt; 1,5 m : 0,4 à 3,6 m (3 m de zone à risque).<br>
+      • <strong>Capot 5 m</strong> + signalisation. Pas d'opérateur dans cette zone.
+    </p>
+  </div>
+</div>
+
+<div class="bonus">
+  <strong>Pour aller plus loin (bonus)</strong>
+  <p>Si la vitesse de coupe augmente, le coefficient b passe à 3. Recalculer la portée maximale.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>−0,5 x² + 3 x + 0,8 = 0 → x² − 6 x − 1,6 = 0 → x = (6 + √(36+6,4))/2 = (6 + 6,51)/2 ≈ <strong>6,25 m</strong>.</p>
+    <p>Augmentation forte de la portée : capot à étendre à 7 m.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li>Polynôme degré 2 : f(x) = ax² + bx + c. Si a &lt; 0 : parabole tournée vers le bas (max au sommet).</li>
+    <li>Sommet : x_s = −b/(2a) ; valeur extrême f(x_s).</li>
+    <li>Discriminant Δ = b² − 4ac : nombre de solutions de ax² + bx + c = 0.</li>
+  </ul>
+  <p style="margin-top:10px"><em>📚 Cette activité s'appuie sur §1 (Forme canonique) et §2 (Sommet, axe de symétrie) de la leçon Ch05.</em></p>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>
