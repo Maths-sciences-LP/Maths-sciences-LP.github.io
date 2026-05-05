@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch11 – Activité 4 – Équilibre thermique – 2nde Bac Pro MAMA</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#6f42c1;--p-bg:#f5f0ff;--p-border:#c4b5fd;--s:#0ea5e9}
+.bonus{background:#fef3c7;border-left:4px solid #f59e0b;padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-2nde-pro.html" class="nb">← RETOUR SOMMAIRE</a>
+
+<header>
+  <h1>Activité 4 – Mise à température d'un atelier <span style="font-size:.55em;color:#6f42c1;font-weight:600">SITUATION PRO</span></h1>
+  <p class="sous-titre">Chapitre 11 – Transferts thermiques | 2nde Bac Pro MAMA | Physique-Chimie | ⏱ 30 min</p>
+  <p class="maj">Dernière mise à jour : 5 mai 2026, format manuel scolaire</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
+
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Comprendre la notion d'équilibre thermique</li>
+    <li>Calculer la puissance de chauffage nécessaire</li>
+    <li>Estimer le temps de mise en température d'un local</li>
+    <li>Optimiser la mise en chauffe (programmation)</li>
+  </ul>
+</div>
+
+<div class="situation">
+  <h2>Situation – allumer le chauffage de l'atelier le matin</h2>
+  <p><em>Karim, gérant de <strong>Bois et Fils</strong> à Reims, doit décider à quelle heure allumer le chauffage de l'atelier (200 m³, jusqu'à 19 °C) en hiver. Il veut que les ouvriers arrivent à 8 h dans un atelier déjà chauffé. Trop tôt = gaspillage. Trop tard = inconfort.</em></p>
+
+  <h3>Document 1 – Données</h3>
+  <ul>
+    <li>Volume de l'atelier : 200 m³.</li>
+    <li>Température de départ (nuit) : 8 °C. Température cible : 19 °C.</li>
+    <li>Capacité thermique massique de l'air : c = 1 005 J/(kg·K).</li>
+    <li>Masse volumique de l'air : ρ = 1,2 kg/m³.</li>
+    <li>Pertes thermiques par les parois : 1,5 kW (déperdition continue).</li>
+    <li>Puissance du chauffage : 8 kW.</li>
+  </ul>
+
+  <h3>Document 2 – Énergie pour chauffer un volume d'air</h3>
+  <p>L'énergie nécessaire pour augmenter la température d'une masse m de ΔT :</p>
+  <p style="text-align:center;font-size:1.1em">\(Q = m \times c \times \Delta T\)</p>
+  <ul>
+    <li>Q en joules (J)</li>
+    <li>m = masse en kg</li>
+    <li>c = capacité thermique en J/(kg·K)</li>
+    <li>ΔT = élévation de température en °C ou K</li>
+  </ul>
+
+  <h3>Document 3 – Équilibre thermique</h3>
+  <p>L'équilibre thermique est atteint quand la puissance fournie par le chauffage = puissance perdue par les parois. La température reste alors stable.</p>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> À quelle heure Karim doit-il allumer le chauffage pour que l'atelier soit à 19 °C à 8 h ?
+</div>
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer la masse d'air contenue dans l'atelier.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>m = ρ × V = 1,2 × 200 = <strong>240 kg</strong> d'air.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer l'énergie Q nécessaire pour chauffer cet air de 8 à 19 °C (ΔT = 11 K).</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Q = m × c × ΔT = 240 × 1 005 × 11 ≈ <strong>2,65 × 10⁶ J = 2 653 200 J</strong> = 0,74 kWh.</p>
+    <p>(1 kWh = 3,6 × 10⁶ J)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Pendant la chauffe, le chauffage doit aussi compenser les pertes (1,5 kW continues). Quelle puissance reste effectivement pour chauffer l'air ?</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>P_utile = P_chauffage − P_pertes = 8 − 1,5 = <strong>6,5 kW</strong> = 6 500 W.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer le temps de chauffe nécessaire (t = Q / P_utile).</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>t = 2 653 200 / 6 500 = 408 s ≈ <strong>6,8 min ≈ 7 min</strong>.</p>
+    <p>L'air se chauffe rapidement. <strong>MAIS</strong> ce calcul ne prend en compte que l'air, pas les parois et meubles qui sont aussi à 8 °C et qui doivent être réchauffés (inertie thermique).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">ANA</span></h2>
+  <p>En réalité, les murs, le sol et les machines (masse totale ≈ 5 000 kg de béton + bois, c moyen ≈ 800 J/(kg·K)) doivent aussi être réchauffés. Calculer cette énergie supplémentaire.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Q_solides = 5 000 × 800 × 11 = 44 × 10⁶ J = <strong>12,2 kWh</strong>.</p>
+    <p>C'est <strong>17 fois plus</strong> que l'air seul ! Les solides dominent largement le calcul.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">ANA</span></h2>
+  <p>Calculer le temps total nécessaire pour chauffer air + solides en supposant que tout doit être réchauffé.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Q_total = Q_air + Q_solides = 2,65 × 10⁶ + 44 × 10⁶ = 46,65 × 10⁶ J.</p>
+    <p>t = 46,65 × 10⁶ / 6 500 ≈ 7 177 s ≈ <strong>2 h</strong>.</p>
+    <p>En réalité, le ressenti des ouvriers (température de l'air à respirer) est OK rapidement (10 min), mais les murs froids continuent de refroidir l'ambiance par rayonnement pendant 1-2 h.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-green">VAL</span></h2>
+  <p>D'après ces calculs, à quelle heure Karim doit-il allumer le chauffage pour avoir 19 °C ressentis à 8 h ?</p>
+  <p>Quelle stratégie est plus économique : allumer en grand l'atelier avant l'arrivée, ou maintenir une température minimale toute la nuit ?</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Mise en chauffe :</strong> ≈ 2 h pour réchauffer le tout. Karim doit allumer vers <strong>6 h</strong> (2 h avant l'arrivée à 8 h).</p>
+    <p><strong>Stratégie économique :</strong></p>
+    <ul>
+      <li>Maintenir 12-15 °C la nuit (consigne basse) : économise l'énergie de réchauffe matinale, plus de confort instantané.</li>
+      <li>Coupure totale + allumage 2 h avant : économise davantage si l'atelier est inoccupé tout le weekend, mais long à remonter en T.</li>
+    </ul>
+    <p>En général, la stratégie « consigne basse de nuit + remontée le matin » est la plus économique pour un usage 5 j/7. Pour un long weekend, on peut couper totalement.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-red">COM</span></h2>
+  <p>Karim programme son thermostat. Rédiger en 5 lignes les consignes journalières d'hiver.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p style="background:#fef3c7;border:2px solid #f59e0b;padding:14px;border-radius:6px">
+      <strong>Programmation chauffage atelier hiver — Bois et Fils</strong><br>
+      • <strong>00 h – 06 h :</strong> consigne basse 12 °C (maintien hors-gel + lent réchauffement).<br>
+      • <strong>06 h – 08 h :</strong> mise en chauffe à 19 °C (remontée 7 °C en 2 h).<br>
+      • <strong>08 h – 17 h :</strong> consigne 19 °C (présence des ouvriers).<br>
+      • <strong>17 h – 24 h :</strong> redescente progressive à 12 °C.<br>
+      • <strong>Weekend :</strong> consigne 8 °C (atelier inoccupé). Allumer dimanche soir 22 h.
+    </p>
+  </div>
+</div>
+
+<div class="bonus">
+  <strong>Pour aller plus loin (bonus)</strong>
+  <p>Karim envisage un poêle à granulés (rendement 90 %) à la place de son chauffage électrique (rendement 100 %). Pour 12,2 kWh thermiques nécessaires, calculer la quantité de granulés à brûler (PCI = 4,8 kWh/kg).</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Énergie chimique nécessaire : 12,2 / 0,90 ≈ 13,6 kWh.</p>
+    <p>Masse de granulés : 13,6 / 4,8 ≈ <strong>2,8 kg</strong> par mise en chauffe matinale.</p>
+    <p>Coût : ≈ 0,40 €/kg de granulés → 1,12 €/jour. À comparer avec l'électricité : 13,6 × 0,15 = 2,04 €. Économie : 0,92 €/jour, soit ≈ 200 €/an. ROI d'un poêle à granulés (≈ 4 000 €) : 20 ans. Pas rentable seul, mais peut faire sens en combinaison avec d'autres travaux.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li>Énergie pour chauffer une masse : \(Q = m \times c \times \Delta T\).</li>
+    <li>Le chauffage doit compenser les <strong>pertes par les parois</strong> en plus du chauffage de l'air.</li>
+    <li>Les <strong>solides</strong> (murs, machines) ont une masse et une chaleur spécifique élevées : ils dominent le bilan.</li>
+    <li>Maintenir une <strong>température basse</strong> la nuit est souvent plus économique que de couper totalement.</li>
+    <li>Programmer le chauffage permet d'optimiser confort et consommation.</li>
+  </ul>
+  <p style="margin-top:10px"><em>📚 Cette activité s'appuie sur §1 (Le transfert thermique), §3 (Flux thermique) et §6 (Applications à l'isolation) de la leçon Ch11.</em></p>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

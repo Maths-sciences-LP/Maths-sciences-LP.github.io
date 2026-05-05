@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch11 – Activité 2 – Isolation thermique d'un mur – 2nde Bac Pro MAMA</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#6f42c1;--p-bg:#f5f0ff;--p-border:#c4b5fd;--s:#0ea5e9}
+.bonus{background:#fef3c7;border-left:4px solid #f59e0b;padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../pc-2nde-pro.html" class="nb">← RETOUR SOMMAIRE</a>
+
+<header>
+  <h1>Activité 2 – Isoler un mur de l'atelier <span style="font-size:.55em;color:#6f42c1;font-weight:600">SITUATION PRO</span></h1>
+  <p class="sous-titre">Chapitre 11 – Transferts thermiques | 2nde Bac Pro MAMA | Physique-Chimie | ⏱ 30 min</p>
+  <p class="maj">Dernière mise à jour : 5 mai 2026, format manuel scolaire</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
+
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Calculer la résistance thermique R d'une paroi</li>
+    <li>Comparer des matériaux d'isolation</li>
+    <li>Estimer les pertes thermiques d'un atelier</li>
+    <li>Choisir une solution d'isolation rentable</li>
+  </ul>
+</div>
+
+<div class="situation">
+  <h2>Situation – améliorer l'isolation pour économiser le chauffage</h2>
+  <p><em>Maxime, gérant de <strong>Bois et Avenir</strong> à Limoges, paye 4 200 €/an de chauffage pour son atelier. Le mur nord (40 m²) est en parpaing de 20 cm sans isolation. Il envisage d'ajouter une isolation pour réduire ses factures.</em></p>
+
+  <h3>Document 1 – Conductivité thermique λ (W/(m·K))</h3>
+  <table>
+    <thead><tr><th>Matériau</th><th>λ</th><th>Type</th></tr></thead>
+    <tbody>
+      <tr><td>Parpaing</td><td>0,9</td><td>Mur structurel</td></tr>
+      <tr><td>Béton plein</td><td>1,75</td><td>Mur lourd</td></tr>
+      <tr><td>Bois (pin)</td><td>0,15</td><td>Bardage</td></tr>
+      <tr><td>Laine de verre</td><td>0,035</td><td>Isolant</td></tr>
+      <tr><td>Polystyrène expansé (PSE)</td><td>0,038</td><td>Isolant</td></tr>
+      <tr><td>Laine de bois (fibre)</td><td>0,040</td><td>Isolant biosourcé</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Document 2 – Formules</h3>
+  <ul>
+    <li>Résistance thermique : \(R = \dfrac{e}{\lambda}\) (en m²·K/W) avec e = épaisseur (m).</li>
+    <li>Pour plusieurs couches en série : R_total = R₁ + R₂ + … (s'additionnent).</li>
+    <li>Plus R est grand, mieux la paroi isole.</li>
+  </ul>
+
+  <h3>Document 3 – Solutions envisagées par Maxime</h3>
+  <table>
+    <thead><tr><th>Solution</th><th>Composition</th><th>Coût TTC posé</th></tr></thead>
+    <tbody>
+      <tr><td>A — Aucune isolation (état actuel)</td><td>Parpaing 20 cm</td><td>0 €</td></tr>
+      <tr><td>B — Laine de verre 100 mm</td><td>Parpaing + LV 100 mm + placo</td><td>2 800 €</td></tr>
+      <tr><td>C — Laine de bois 140 mm</td><td>Parpaing + LB 140 mm + placo</td><td>4 500 €</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Quelle solution d'isolation Maxime doit-il choisir pour rentabiliser son investissement le plus rapidement possible ?
+</div>
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer la résistance thermique R du mur en parpaing seul (épaisseur 20 cm).</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>R = e / λ = 0,20 / 0,9 = <strong>0,22 m²·K/W</strong>.</p>
+    <p>Très faible (un mur isolant a typiquement R = 4 ou plus). Le parpaing seul isole très peu.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer les résistances de la solution B (parpaing + 100 mm de laine de verre).</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>R(parpaing) = 0,22 m²·K/W.</p>
+    <p>R(laine de verre 100 mm) = 0,10 / 0,035 ≈ <strong>2,86 m²·K/W</strong>.</p>
+    <p>R total : 0,22 + 2,86 = <strong>3,08 m²·K/W</strong>.</p>
+    <p>Soit ≈ 14 fois plus isolant que le parpaing seul !</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer les résistances de la solution C (parpaing + 140 mm de laine de bois).</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>R(LB 140 mm) = 0,14 / 0,040 = <strong>3,50 m²·K/W</strong>.</p>
+    <p>R total : 0,22 + 3,50 = <strong>3,72 m²·K/W</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">ANA</span></h2>
+  <p>Le flux thermique à travers la paroi se calcule par : Φ = (T_int − T_ext) × S / R, en watts.</p>
+  <p>Pour S = 40 m², T_int = 19 °C, T_ext = 0 °C (jour d'hiver), calculer Φ pour les 3 solutions.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>ΔT = 19 °C.</p>
+    <ul>
+      <li>Solution A : Φ = 19 × 40 / 0,22 ≈ <strong>3 455 W</strong> (3,5 kW de pertes !).</li>
+      <li>Solution B : Φ = 19 × 40 / 3,08 ≈ <strong>247 W</strong>.</li>
+      <li>Solution C : Φ = 19 × 40 / 3,72 ≈ <strong>204 W</strong>.</li>
+    </ul>
+    <p>L'isolation divise les pertes par environ 14 (B) ou 17 (C).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">ANA</span></h2>
+  <p>En supposant 1 800 h de chauffage par an (5 mois × 12 h/j) et un coût de 0,15 €/kWh, calculer le coût annuel de chauffage à travers ce mur pour les 3 solutions.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <ul>
+      <li>A : 3,455 kW × 1 800 h × 0,15 = <strong>933 €/an</strong> (rien que pour ce mur).</li>
+      <li>B : 0,247 × 1 800 × 0,15 = <strong>67 €/an</strong>.</li>
+      <li>C : 0,204 × 1 800 × 0,15 = <strong>55 €/an</strong>.</li>
+    </ul>
+    <p>Économie annuelle de B vs A : 933 − 67 = <strong>866 €/an</strong>. De C vs A : 878 €/an.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">ANA</span></h2>
+  <p>Calculer le <strong>retour sur investissement</strong> (ROI) pour chacune des solutions B et C : nombre d'années pour amortir l'investissement.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>ROI B : 2 800 / 866 ≈ <strong>3,2 ans</strong>.</p>
+    <p>ROI C : 4 500 / 878 ≈ <strong>5,1 ans</strong>.</p>
+    <p>La solution B s'amortit plus vite. Mais C est plus écologique (laine de bois biosourcée) et plus durable.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-green">VAL</span></h2>
+  <p>Sur 20 ans (durée de vie de l'isolation), quelle solution est la plus rentable ?</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>Solution B (LV) :</strong> coût = 2 800 + 20 × 67 = 4 140 €. Total chauffage évité = 20 × 866 = 17 320 €. <strong>Bilan : économie nette de 13 180 €</strong>.</p>
+    <p><strong>Solution C (LB) :</strong> coût = 4 500 + 20 × 55 = 5 600 €. Total chauffage évité = 20 × 878 = 17 560 €. <strong>Bilan : 11 960 €</strong>.</p>
+    <p>Sur 20 ans, B est légèrement plus rentable (1 220 € de plus). Mais C est plus écologique. Le choix dépend des priorités du gérant.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-red">COM</span></h2>
+  <p>Maxime soumet son projet à son comptable. Rédiger en 5 lignes la note de présentation des deux options.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p style="background:#fef3c7;border:2px solid #f59e0b;padding:14px;border-radius:6px">
+      <strong>Projet isolation mur nord — Atelier Limoges</strong><br>
+      • État actuel : 933 €/an de pertes (3,5 kW perdus à travers 40 m² non isolés).<br>
+      • <strong>Option B (laine de verre 100 mm — 2 800 €) :</strong> ROI 3,2 ans, économie 866 €/an. Retenue économiquement.<br>
+      • <strong>Option C (laine de bois 140 mm — 4 500 €) :</strong> ROI 5,1 ans, écologique, durable.<br>
+      • Décision recommandée : <strong>Option B</strong> sauf si critère développement durable prioritaire.<br>
+      • Aides possibles : MaPrimeRénov' Pro, CEE → réduction effective 20-30 %.
+    </p>
+  </div>
+</div>
+
+<div class="bonus">
+  <strong>Pour aller plus loin (bonus)</strong>
+  <p>Si Maxime ajoute aussi un <strong>bardage bois (15 mm)</strong> par-dessus l'isolation, calculer la nouvelle R et les économies supplémentaires.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>R(bois 15 mm) = 0,015 / 0,15 = 0,10 m²·K/W.</p>
+    <p>Nouvelle R(B) : 3,08 + 0,10 = 3,18 m²·K/W. Gain marginal : 3 % d'économie supplémentaire.</p>
+    <p>Le bardage est surtout esthétique et protège la façade. L'apport thermique est minime à cette épaisseur.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Résistance thermique :</strong> \(R = e/\lambda\) (m²·K/W). Plus R est grand, mieux ça isole.</li>
+    <li><strong>Flux thermique :</strong> \(\Phi = (T_{int} - T_{ext}) \times S / R\) (W).</li>
+    <li>Pour plusieurs couches en série : R_total = somme des R individuelles.</li>
+    <li>Les <strong>isolants thermiques</strong> ont un λ très faible (≤ 0,05 W/(m·K)) : laine minérale, polystyrène, laine de bois.</li>
+    <li>Investir dans l'isolation est rentable en quelques années.</li>
+  </ul>
+  <p style="margin-top:10px"><em>📚 Cette activité s'appuie sur §3 (Flux thermique), §4 (Résistance thermique) et §6 (Applications à l'isolation) de la leçon Ch11.</em></p>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>
