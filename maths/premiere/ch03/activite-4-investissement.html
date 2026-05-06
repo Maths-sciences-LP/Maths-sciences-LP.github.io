@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch03 – Activité 4 – Placement et intérêts composés – 1ère Pro</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
+.bonus{background:#fef3c7;border-left:4px solid #f59e0b;padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-1ere-pro.html" class="nb">← Retour au sommaire</a>
+
+<header>
+  <h1>Activité 4 – Placement de la trésorerie d'entreprise <span style="font-size:.55em;color:#0969da;font-weight:600">SITUATION PRO</span></h1>
+  <p class="sous-titre">Chapitre 3 — Suites numériques | 1ère Bac Pro | Mathématiques | ⏱ 30 min</p>
+  <p class="maj">Dernière mise à jour : 5 mai 2026, format manuel scolaire</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
+
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Comprendre intérêts simples vs composés</li>
+    <li>Calculer la croissance d'un placement</li>
+    <li>Comparer deux options de placement</li>
+    <li>Estimer le pouvoir de l'épargne long terme</li>
+  </ul>
+</div>
+
+<div class="situation">
+  <h2>Situation – placer la trésorerie excédentaire</h2>
+  <p><em>Sophie, comptable chez <strong>Arts du Bois</strong> à Lyon, a 50 000 € de trésorerie excédentaire à placer pendant 8 ans. La banque propose 3 options.</em></p>
+
+  <h3>Document 1 – Options de placement</h3>
+  <ul>
+    <li><strong>A</strong> : intérêts simples 3 %/an (pas de capitalisation, intérêts versés annuellement).</li>
+    <li><strong>B</strong> : intérêts composés 3 %/an (intérêts ajoutés au capital).</li>
+    <li><strong>C</strong> : intérêts composés 2,5 %/an + prime fidélité de 2 % du capital final.</li>
+  </ul>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Quelle option Sophie doit-elle choisir pour maximiser son rendement sur 8 ans ?
+</div>
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-yellow">REA</span></h2>
+  <p>Pour l'option A (intérêts simples 3 %), calculer la valeur après 8 ans.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Intérêts annuels constants : 50 000 × 0,03 = 1 500 €/an.</p>
+    <p>Sur 8 ans : 8 × 1 500 = 12 000 €. <strong>Total : 50 000 + 12 000 = 62 000 €</strong>.</p>
+    <p>(Suite arithmétique de raison 1 500.)</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Pour l'option B (intérêts composés 3 %), calculer la valeur après 8 ans.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>V_n = 50 000 × 1,03^n.</p>
+    <p>V_8 = 50 000 × 1,03⁸ = 50 000 × 1,267 = <strong>63 350 €</strong>.</p>
+    <p>Gain par rapport aux intérêts simples : +1 350 €.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Pour l'option C (composés 2,5 % + prime 2 %), calculer la valeur finale.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>V_8 sans prime = 50 000 × 1,025⁸ = 50 000 × 1,2184 ≈ 60 920 €.</p>
+    <p>Avec prime 2 % : 60 920 × 1,02 ≈ <strong>62 138 €</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">ANA</span></h2>
+  <p>Classer les 3 options par ordre de rendement décroissant. Quelle est la différence entre A et B au bout de 8 ans ?</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p><strong>B (63 350) &gt; C (62 138) &gt; A (62 000)</strong>.</p>
+    <p>Différence A vs B : 1 350 €. C'est l'effet des intérêts composés (« intérêts sur les intérêts »).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">ANA</span></h2>
+  <p>Sur 20 ans (au lieu de 8), recalculer A et B. L'écart se creuse-t-il ?</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>A à 20 ans : 50 000 + 20 × 1 500 = 80 000 €.</p>
+    <p>B à 20 ans : 50 000 × 1,03²⁰ = 50 000 × 1,806 ≈ 90 300 €.</p>
+    <p>Écart : 10 300 € (vs 1 350 € à 8 ans). L'écart se creuse fortement avec la durée. Les intérêts composés deviennent très avantageux à long terme.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">ANA</span></h2>
+  <p>Avec quelle option (A ou B) le capital double-t-il en premier ?</p>
+  <p><em>« Règle de 72 » : durée de doublement ≈ 72 / taux %.</em></p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Option B (intérêts composés 3 %) : 72 / 3 = <strong>24 ans</strong> environ.</p>
+    <p>Vérification : 1,03²⁴ ≈ 2,03 ✔</p>
+    <p>Option A (intérêts simples 3 %) : pour doubler il faut 100 %/3 ≈ 33,3 ans (croissance linéaire).</p>
+    <p>L'option B double plus vite (24 ans vs 33 ans).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-green">VAL</span></h2>
+  <p>Sophie a besoin de retirer 30 000 € au bout de 5 ans. Recalculer la valeur restante en option B après ce retrait, puis la valeur finale au bout des 3 ans suivants.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>V_5 = 50 000 × 1,03⁵ ≈ 57 964 €. Après retrait 30 000 : 27 964 €.</p>
+    <p>V_8 = 27 964 × 1,03³ ≈ <strong>30 558 €</strong>.</p>
+    <p>Total perçu : 30 000 (retrait) + 30 558 (final) = 60 558 €. Moins que 63 350 € sans retrait. Le retrait coûte ≈ 2 800 € en intérêts perdus.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-red">COM</span></h2>
+  <p>Sophie présente sa décision au gérant. 5 lignes max.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p style="background:#fef3c7;border:2px solid #f59e0b;padding:14px;border-radius:6px">
+      <strong>Placement trésorerie 50 k€ — Arts du Bois</strong><br>
+      • Comparaison sur 8 ans : A (simples 3 %) = 62 000 € · B (composés 3 %) = 63 350 € · C (composés 2,5 % + prime 2 %) = 62 138 €.<br>
+      • <strong>Recommandation : option B</strong> (intérêts composés 3 %) — meilleur rendement.<br>
+      • Sur 20 ans, l'écart B vs A serait de 10 300 € (effet exponentiel).<br>
+      • Conserver le placement intact (un retrait à mi-parcours coûte 2 800 € en intérêts perdus).<br>
+      • Surveiller l'inflation : 3 % couvre la dépréciation monétaire actuelle.
+    </p>
+  </div>
+</div>
+
+<div class="bonus">
+  <strong>Pour aller plus loin (bonus)</strong>
+  <p>Pour comparer 2 placements à taux différents, on calcule le « TAEG » (Taux Annuel Effectif Global). Pourquoi est-il toujours plus élevé que le taux nominal pour les composés à fréquence mensuelle ?</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Avec un taux nominal annuel 6 % calculé mensuellement : taux mensuel = 0,5 %, mais sur 12 mois (1,005)¹² ≈ 1,0617 → TAEG = 6,17 %.</p>
+    <p>L'écart vient de la capitalisation plus fréquente. Plus la fréquence augmente, plus le TAEG s'écarte du taux nominal.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li><strong>Intérêts simples</strong> : suite arithmétique. V_n = V_0 + n × V_0 × t.</li>
+    <li><strong>Intérêts composés</strong> : suite géométrique. V_n = V_0 × (1+t)^n.</li>
+    <li>Sur courte durée : peu de différence. Sur longue durée : composés très supérieurs.</li>
+    <li>Règle de 72 : durée de doublement ≈ 72 / taux %.</li>
+  </ul>
+  <p style="margin-top:10px"><em>📚 Cette activité s'appuie sur §1 (Suites arithmétiques) et §2 (Suites géométriques) de la leçon Ch03.</em></p>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

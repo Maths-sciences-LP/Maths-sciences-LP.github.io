@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch09 – Activité 4 – Cercle trigonométrique – 1ère Pro</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
+.bonus{background:#fef3c7;border-left:4px solid #f59e0b;padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-1ere-pro.html" class="nb">← Retour au sommaire</a>
+
+<header>
+  <h1>Activité 4 – Position d'une fraise sur cercle <span style="font-size:.55em;color:#0969da;font-weight:600">SITUATION PRO</span></h1>
+  <p class="sous-titre">Chapitre 9 — Trigonométrie | 1ère Bac Pro | Mathématiques | ⏱ 30 min</p>
+  <p class="maj">Dernière mise à jour : 5 mai 2026, format manuel scolaire</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
+
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Comprendre le cercle trigonométrique</li>
+    <li>Connaître les valeurs remarquables de sin et cos</li>
+    <li>Calculer les coordonnées d'un point sur un cercle</li>
+  </ul>
+</div>
+
+<div class="situation">
+  <h2>Situation – fraisage circulaire</h2>
+  <p><em>Une fraiseuse CNC découpe un cercle de centre O et rayon R = 10 cm. Elle part au nord (12h sur cadran horloge) et tourne dans le sens trigonométrique (anti-horaire).</em></p>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> Quelles sont les coordonnées de la fraise après une rotation de 30°, 60°, 90° et 180° ?
+</div>
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-green">APP</span></h2>
+  <p>Sur le cercle trigonométrique de rayon 1, donner les coordonnées d'un point M(α) selon l'angle α (depuis l'axe Ox, sens anti-horaire).</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>M(α) = (cos α ; sin α).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Sur le cercle de rayon R = 10 cm, donner les coordonnées de la fraise après α = 30°, 60°, 90°, 180°. (On part de l'axe Ox.)</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>α = 30° : (10 cos 30° ; 10 sin 30°) = (8,66 ; 5) cm.</p>
+    <p>α = 60° : (5 ; 8,66) cm.</p>
+    <p>α = 90° : (0 ; 10) cm.</p>
+    <p>α = 180° : (−10 ; 0) cm.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Donner les valeurs remarquables suivantes : cos 0°, sin 0°, cos 90°, sin 90°, cos 180°, sin 180°, cos 30°, sin 30°, cos 45°, sin 45°, cos 60°, sin 60°.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <table>
+      <thead><tr><th>α</th><th>cos</th><th>sin</th></tr></thead>
+      <tbody>
+        <tr><td>0°</td><td>1</td><td>0</td></tr>
+        <tr><td>30°</td><td>√3/2 ≈ 0,866</td><td>1/2 = 0,5</td></tr>
+        <tr><td>45°</td><td>√2/2 ≈ 0,707</td><td>√2/2 ≈ 0,707</td></tr>
+        <tr><td>60°</td><td>1/2 = 0,5</td><td>√3/2 ≈ 0,866</td></tr>
+        <tr><td>90°</td><td>0</td><td>1</td></tr>
+        <tr><td>180°</td><td>−1</td><td>0</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">ANA</span></h2>
+  <p>Vérifier que cos² α + sin² α = 1 (relation fondamentale) pour α = 30°.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>(√3/2)² + (1/2)² = 3/4 + 1/4 = 1 ✔</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-blue">ANA</span></h2>
+  <p>Pour une rotation antihoraire de 270°, donner les coordonnées sur le cercle de rayon 10 cm.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>cos 270° = 0, sin 270° = −1 (sens trigo).</p>
+    <p>(0 ; −10) cm. La fraise se retrouve « en bas » du cercle.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-yellow">REA</span></h2>
+  <p>La fraiseuse parcourt un demi-cercle (180°). Calculer la distance parcourue.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>d = π × R = π × 10 ≈ <strong>31,4 cm</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-green">VAL</span></h2>
+  <p>À vitesse F = 2 000 mm/min, calculer le temps pour faire un cercle complet (360°).</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Périmètre : 2π × 100 ≈ 628 mm.</p>
+    <p>t = 628 / 2 000 = 0,314 min ≈ <strong>19 s</strong>.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-red">COM</span></h2>
+  <p>Rédiger le code G d'un cercle complet pour la CNC.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p style="background:#fef3c7;border:2px solid #f59e0b;padding:14px;border-radius:6px">
+      <strong>Programme G-code cercle Ø 200 mm</strong><br>
+      <code>G00 X100 Y0 (positionnement au point de départ)<br>
+      G03 I-100 J0 F2000 (cercle complet sens trigo, centre relatif (-100;0))<br>
+      M30 (fin)</code><br>
+      • Durée : ≈ 19 s à F = 2 000 mm/min.
+    </p>
+  </div>
+</div>
+
+<div class="bonus">
+  <strong>Pour aller plus loin (bonus)</strong>
+  <p>La radian est l'autre unité de mesure d'angle. 1 tour = 2π rad. Convertir 30°, 60°, 90° en radians.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>30° = π/6 ≈ 0,524 rad. 60° = π/3 ≈ 1,047 rad. 90° = π/2 ≈ 1,571 rad.</p>
+    <p>Conversion : x° × π/180 = x rad.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li>Cercle trigonométrique : M(α) = (cos α ; sin α).</li>
+    <li>Relation fondamentale : cos² α + sin² α = 1.</li>
+    <li>Valeurs remarquables : 0°, 30°, 45°, 60°, 90°, 180°, 270°, 360°.</li>
+    <li>Sens trigonométrique = sens anti-horaire = sens positif.</li>
+  </ul>
+  <p style="margin-top:10px"><em>📚 Cette activité s'appuie sur §3 (Cercle trigonométrique) et §4 (Valeurs remarquables) de la leçon Ch09.</em></p>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>

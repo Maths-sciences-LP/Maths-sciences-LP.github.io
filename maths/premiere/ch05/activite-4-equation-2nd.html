@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch05 – Activité 4 – Équation du 2nd degré – 1ère Pro</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../print.css" media="print">
+<style>:root{--p:#0969da;--p-bg:#dbeafe;--p-border:#93c5fd}
+.bonus{background:#fef3c7;border-left:4px solid #f59e0b;padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0}</style>
+</head>
+<body>
+<div class="c">
+<a href="../../../maths-1ere-pro.html" class="nb">← Retour au sommaire</a>
+
+<header>
+  <h1>Activité 4 – Résolution d'équation du 2nd degré <span style="font-size:.55em;color:#0969da;font-weight:600">SITUATION PRO</span></h1>
+  <p class="sous-titre">Chapitre 5 — Polynômes degré 2 | 1ère Bac Pro | Mathématiques | ⏱ 30 min</p>
+  <p class="maj">Dernière mise à jour : 5 mai 2026, format manuel scolaire</p>
+</header>
+<button onclick="window.print()" style="margin:10px 0;padding:8px 18px;border:1px solid #ccc;border-radius:6px;background:#f8fafc;cursor:pointer;font-size:.9em;font-weight:600">🖨️ Imprimer cette activité</button>
+
+<div class="objectifs">
+  <strong>Objectifs :</strong>
+  <ul>
+    <li>Calculer le discriminant Δ d'une équation du 2nd degré</li>
+    <li>Trouver les racines</li>
+    <li>Étudier le signe d'un polynôme</li>
+  </ul>
+</div>
+
+<div class="situation">
+  <h2>Situation – dimensionner un panneau cintré</h2>
+  <p><em>Une ébéniste fabrique un panneau cintré dont la fonction de hauteur est : f(x) = x² − 5x + 4 (en cm), x étant la position horizontale entre 0 et 5 cm.</em></p>
+</div>
+
+<div class="objectifs" style="border-left:4px solid var(--p);background:var(--p-bg);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0">
+  <strong>Problématique :</strong> En quels points le panneau a-t-il une hauteur nulle, et quel est son point le plus bas ?
+</div>
+
+<div class="exo">
+  <h2>Question 1 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer le discriminant Δ.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Δ = b² − 4ac = (−5)² − 4 × 1 × 4 = 25 − 16 = <strong>9</strong>. Δ &gt; 0 → 2 racines réelles.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 2 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer les racines de f(x) = 0.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>x = (5 ± 3)/2 → x_1 = 1, x_2 = 4.</p>
+    <p>Le panneau a une hauteur nulle en x = 1 cm et x = 4 cm.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 3 <span class="badge-yellow">REA</span></h2>
+  <p>Calculer le sommet de la parabole.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>x_s = −b/(2a) = 5/2 = <strong>2,5 cm</strong>.</p>
+    <p>f(2,5) = 6,25 − 12,5 + 4 = <strong>−2,25 cm</strong>.</p>
+    <p>Le point le plus bas est à 2,25 cm sous l'axe (panneau bombé vers le bas entre x = 1 et x = 4).</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 4 <span class="badge-blue">ANA</span></h2>
+  <p>Étudier le signe de f(x).</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>a = 1 &gt; 0 → la parabole est tournée vers le haut.</p>
+    <ul>
+      <li>x &lt; 1 ou x &gt; 4 : f(x) &gt; 0.</li>
+      <li>1 &lt; x &lt; 4 : f(x) &lt; 0.</li>
+      <li>x = 1 ou x = 4 : f(x) = 0.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 5 <span class="badge-yellow">REA</span></h2>
+  <p>Factoriser f(x) en utilisant les racines.</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>f(x) = (x − 1)(x − 4).</p>
+    <p>Vérification : (x − 1)(x − 4) = x² − 4x − x + 4 = x² − 5x + 4 ✔</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 6 <span class="badge-blue">ANA</span></h2>
+  <p>Si on translate la fonction de 5 cm vers le haut : g(x) = f(x) + 5. Combien de racines ?</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>g(x) = x² − 5x + 9. Δ = 25 − 36 = −11 &lt; 0 → <strong>aucune racine réelle</strong>.</p>
+    <p>La parabole ne touche plus l'axe x : elle est entièrement au-dessus.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 7 <span class="badge-green">VAL</span></h2>
+  <p>Pour quelle translation k la fonction f(x) + k aurait-elle une seule racine (parabole tangente à l'axe) ?</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>Δ = 0 ↔ b² − 4 a (c + k) = 0 → 25 − 4(4 + k) = 0 → k = <strong>2,25</strong>.</p>
+    <p>(C'est exactement la valeur opposée du minimum f_min = −2,25.) f(x) + 2,25 a son sommet sur l'axe.</p>
+  </div>
+</div>
+
+<div class="exo">
+  <h2>Question 8 <span class="badge-red">COM</span></h2>
+  <p>Résumer en 4 lignes les différents cas selon le signe de Δ.</p>
+  <ul class="lignes-reponse"><li></li><li></li><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p style="background:#fef3c7;border:2px solid #f59e0b;padding:14px;border-radius:6px">
+      <strong>Discriminant Δ et racines</strong><br>
+      • Δ &gt; 0 : 2 racines réelles distinctes (parabole coupe l'axe en 2 points).<br>
+      • Δ = 0 : 1 racine double (parabole tangente à l'axe).<br>
+      • Δ &lt; 0 : aucune racine réelle (parabole entière au-dessus ou en-dessous).<br>
+      Pour ax² + bx + c = 0 avec Δ &gt; 0 : x = (−b ± √Δ)/(2a).
+    </p>
+  </div>
+</div>
+
+<div class="bonus">
+  <strong>Pour aller plus loin (bonus)</strong>
+  <p>Pour quelles valeurs de m l'équation x² − 5x + m = 0 a-t-elle 2 solutions positives ?</p>
+  <ul class="lignes-reponse"><li></li><li></li></ul>
+  <button class="bc" onclick="toggle(this)">Voir la correction</button>
+  <div class="corr">
+    <p>2 solutions positives ⇔ Δ &gt; 0 (2 racines), somme &gt; 0 (5 ✓), produit &gt; 0.</p>
+    <p>Δ = 25 − 4m &gt; 0 → m &lt; 25/4 = 6,25. Produit = m &gt; 0.</p>
+    <p>Réponse : <strong>0 &lt; m &lt; 6,25</strong>.</p>
+  </div>
+</div>
+
+<div class="retenir">
+  <strong>À retenir</strong>
+  <ul>
+    <li>Discriminant Δ = b² − 4ac. Selon le signe : 2 / 1 / 0 racines.</li>
+    <li>Racines : x = (−b ± √Δ) / (2a) si Δ &gt; 0.</li>
+    <li>Factorisation : a(x − x_1)(x − x_2).</li>
+    <li>Signe : suit la règle « du signe de a hors des racines, du signe contraire entre ».</li>
+  </ul>
+  <p style="margin-top:10px"><em>📚 Cette activité s'appuie sur §3 (Équations du 2<sup>nd</sup> degré) et §4 (Signe d'un polynôme) de la leçon Ch05.</em></p>
+</div>
+
+</div>
+<script src="../../../nav.js"></script>
+</body>
+</html>
